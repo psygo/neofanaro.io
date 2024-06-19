@@ -33,7 +33,31 @@
     "paths": {
       "@/*": [
         "./src/*"
-      ]
+      ],
+      "@components": [
+        "./src/components/exports.ts"
+      ],
+      "@components/*": [
+        "./src/components/*"
+      ],
+      "@db": [
+        "./src/server/db/exports.ts"
+      ],
+      "@db/*": [
+        "./src/server/db/*"
+      ],
+      "@styles": [
+        "./src/styles/exports.ts"
+      ],
+      "@styles/*": [
+        "./src/styles/*"
+      ],
+      "@types": [
+        "./src/types/exports.ts"
+      ],
+      "@types/*": [
+        "./src/types/*"
+      ],
     }
   },
   "include": [

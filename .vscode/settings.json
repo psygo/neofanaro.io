@@ -15,5 +15,8 @@
         "start-database.sh": true,
         "components.json": true,
         "tailwind.config.ts": true,
+    },
+    "search.exclude": {
+        "tailwind.config.ts": false,
     }
 }
