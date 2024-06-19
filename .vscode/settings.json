@@ -15,8 +15,16 @@
         "start-database.sh": true,
         "components.json": true,
         "tailwind.config.ts": true,
+        "package.json": true,
+        "tsconfig.json": true,
+        "README.md": true,
+        ".env": true,
     },
     "search.exclude": {
         "tailwind.config.ts": false,
+        "package.json": false,
+        "tsconfig.json": false,
+        "README.md": false,
+        ".env": false,
     }
 }
