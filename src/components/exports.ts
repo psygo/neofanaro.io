@@ -1,2 +1,2 @@
-export * from "./articles/exports"
+export * from "./Posts/exports"
 export * from "./common/exports"

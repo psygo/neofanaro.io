@@ -34,6 +34,12 @@
       "@/*": [
         "./src/*"
       ],
+      "@posts": [
+        "src/posts/exports.ts"
+      ],
+      "@posts/*": [
+        "src/posts/*"
+      ],
       "@components": [
         "./src/components/exports.ts"
       ],

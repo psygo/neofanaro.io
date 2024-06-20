@@ -19,8 +19,8 @@ export default function RootLayout({
     <html lang="en" className={GeistSans.variable}>
       <body className="dark flex flex-col gap-4 antialiased">
         <TopNav />
-        <main className="min-h-screen px-6 py-3">
-          {children}
+        <main className="flex min-h-screen justify-center px-6 py-3 pt-8">
+          <div className="w-[600px]">{children}</div>
         </main>
         <Footer />
       </body>

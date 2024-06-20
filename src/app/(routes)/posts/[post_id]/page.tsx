@@ -1,10 +1,17 @@
-import { ArticlesDb } from "../../../../articles/ArticlesDb"
+import { articlesDb } from "@posts"
 
-export default function ArticlePage() {
-  return (
-    <>
-      <h1>Encontro</h1>
-      {ArticlesDb["encontro-semanal-de-go"]}
-    </>
-  )
+import { Post } from "@components"
+
+type ArticlePageProps = {
+  params: { post_id: string }
+}
+
+export default function ArticlePage({
+  params,
+}: ArticlePageProps) {
+  const article = articlesDb[params.post_id]
+
+  if (!article) return
+
+  return <Post postData={article} />
 }
