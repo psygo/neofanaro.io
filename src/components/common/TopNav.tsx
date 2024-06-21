@@ -16,6 +16,7 @@ function LeftNav() {
   return (
     <Link className="flex items-center gap-2" href="/">
       <Image
+        priority
         src="/fanaro.io.svg"
         height={30}
         width={30}

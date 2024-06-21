@@ -26,5 +26,6 @@
         "tsconfig.json": false,
         "README.md": false,
         ".env": false,
+        "next.config.js": false,
     }
 }
