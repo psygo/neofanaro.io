@@ -4,7 +4,6 @@ import Image from "next/image"
 import Link from "next/link"
 
 export default function Nav() {
-
   return (
     <nav className="w-full">
       <div className="mx-auto flex w-full max-w-xl justify-center">
