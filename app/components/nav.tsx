@@ -35,6 +35,19 @@ export default function Nav() {
               />
             </Link>
           </li>
+          <li>
+            <Link
+              href="/articles"
+            >
+              <Image
+                src="/articles.svg"
+                alt="Philippe playing Go"
+                width={23}
+                height={23}
+                className="rounded-full mr-2 ml-1"
+              />
+            </Link>
+          </li>
         </ul>
       </div>
     </nav>
