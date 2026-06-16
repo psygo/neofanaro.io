@@ -5,10 +5,16 @@ export default function Home() {
   return (
     <div className="py-4 px-4">
       <Nav/>
-      <main className="">
-        <p>Hello</p>
-      </main>
+      <Main/>
       <Footer/>
     </div>
   );
+}
+
+function Main() {
+  return (
+    <main className="">
+      <p>Hello</p>
+    </main>
+  )
 }
