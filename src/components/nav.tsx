@@ -8,21 +8,33 @@ export default function Nav() {
     <nav className="w-full">
       <div className="mx-auto flex w-full max-w-xl justify-center">
         <ul className="flex flex-wrap items-center justify-center gap-2 rounded-full bg-slate-100 px-4 py-3 shadow-lg ring-1 ring-slate-200">
-          <NavLogo
-            src="/logos/fanaro.io.svg"
-            alt="Home"
-            href="/"
-            size={22}
-          />
-          <NavLogo
-            src="/nav/about.svg"
-            alt="About"
-            href="/about"
-            size={23}
-          />
+          <FanaroLogo />
+          <AboutLogo />
         </ul>
       </div>
     </nav>
+  )
+}
+
+function FanaroLogo() {
+  return (
+    <NavLogo
+      src="/logos/fanaro.io.svg"
+      alt="Home"
+      href="/"
+      size={22}
+    />
+  )
+}
+
+function AboutLogo() {
+  return (
+    <NavLogo
+      src="/nav/about.svg"
+      alt="About"
+      href="/about"
+      size={23}
+    />
   )
 }
 
