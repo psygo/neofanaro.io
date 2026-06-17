@@ -49,6 +49,8 @@ function LanguageLogo() {
   )
 }
 
+const navLogoMargins = "mr-2 ml-1"
+
 function UsaFlagLogo() {
   return (
     <NavLogo
@@ -56,7 +58,7 @@ function UsaFlagLogo() {
       alt="English"
       href="?lang=pt"
       size={23}
-      className="mr-2 ml-1"
+      className={navLogoMargins}
     />
   )
 }
@@ -68,7 +70,7 @@ function BrazilFlagLogo() {
       alt="Portuguese"
       href="?lang=en"
       size={23}
-      className="mr-2 ml-1"
+      className={navLogoMargins}
     />
   )
 }
@@ -86,7 +88,7 @@ function NavLogo({
   alt,
   href,
   size,
-  className = "mr-2 ml-1 rounded-full",
+  className = `${navLogoMargins} rounded-full`,
 }: NavLogoProps) {
   return (
     <li>
