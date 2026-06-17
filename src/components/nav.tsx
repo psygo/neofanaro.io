@@ -14,6 +14,7 @@ export default function Nav() {
     <nav className="mx-auto flex w-full max-w-xl justify-center">
       <ul className="flex flex-wrap items-center justify-center gap-2 rounded-full bg-slate-100 px-4 py-3 shadow-lg ring-1 ring-slate-200">
         <FanaroLogo />
+        <SoftwareLogo />
         <TeacherLogo />
         <LanguageLogo />
       </ul>
@@ -41,6 +42,17 @@ function TeacherLogo() {
       src="/nav/teacher.svg"
       alt="Teacher"
       href="/teacher"
+      size={23.5}
+    />
+  )
+}
+
+function SoftwareLogo() {
+  return (
+    <NavLogo
+      src="/nav/tie.svg"
+      alt="Software"
+      href="/software"
       size={23.5}
     />
   )
