@@ -9,7 +9,7 @@ export default function Nav() {
       <div className="mx-auto flex w-full max-w-xl justify-center">
         <ul className="flex flex-wrap items-center justify-center gap-2 rounded-full bg-slate-100 px-4 py-3 shadow-lg ring-1 ring-slate-200">
           <NavLogo
-            src="/fanaro.io.svg"
+            src="/logos/fanaro.io.svg"
             alt="Home"
             href="/"
             size={22}
