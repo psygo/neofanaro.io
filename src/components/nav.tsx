@@ -3,6 +3,8 @@
 import Image from "next/image"
 import Link from "next/link"
 
+import "flag-icons/css/flag-icons.min.css"
+
 import useLang from "@hooks/useLang"
 
 export default function Nav() {
@@ -10,7 +12,7 @@ export default function Nav() {
     <nav className="mx-auto flex w-full max-w-xl justify-center">
       <ul className="flex flex-wrap items-center justify-center gap-2 rounded-full bg-slate-100 px-4 py-3 shadow-lg ring-1 ring-slate-200">
         <FanaroLogo />
-        <AboutLogo />
+        <TeacherLogo />
         <LanguageLogo />
       </ul>
     </nav>
@@ -23,18 +25,18 @@ function FanaroLogo() {
       src="/logos/fanaro.io.svg"
       alt="Home"
       href="/"
-      size={22}
+      size={21.25}
     />
   )
 }
 
-function AboutLogo() {
+function TeacherLogo() {
   return (
     <NavLogo
       src="/nav/teacher.svg"
-      alt="About"
-      href="/about"
-      size={23}
+      alt="Teacher"
+      href="/teacher"
+      size={23.5}
     />
   )
 }
@@ -51,27 +53,38 @@ function LanguageLogo() {
 
 const navLogoMargins = "mr-2 ml-1"
 
+function CountryFlagLogo({
+  countryCode,
+  href,
+}: {
+  countryCode: string
+  href: string
+}) {
+  return (
+    <li>
+      <Link href={href}>
+        <span
+          className={`${navLogoMargins} fi fi-${countryCode}`}
+          style={{
+            width: "23.5px",
+            height: "23.5px",
+            marginBottom: "2px",
+          }}
+        ></span>
+      </Link>
+    </li>
+  )
+}
+
 function UsaFlagLogo() {
   return (
-    <NavLogo
-      src="/nav/usa_flag.svg"
-      alt="English"
-      href="?lang=pt"
-      size={23}
-      className={navLogoMargins}
-    />
+    <CountryFlagLogo countryCode="us" href="?lang=pt-br" />
   )
 }
 
 function BrazilFlagLogo() {
   return (
-    <NavLogo
-      src="/nav/brazil_flag.svg"
-      alt="Portuguese"
-      href="?lang=en"
-      size={23}
-      className={navLogoMargins}
-    />
+    <CountryFlagLogo countryCode="br" href="?lang=en" />
   )
 }
 
@@ -94,6 +107,7 @@ function NavLogo({
     <li>
       <Link href={href}>
         <Image
+          loading="eager"
           src={src}
           alt={alt}
           width={size}

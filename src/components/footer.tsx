@@ -31,6 +31,7 @@ function FanaroYouTube() {
       alt="YouTube"
       href="https://www.youtube.com/@fanaro"
       size={24}
+      className="h-6 w-6"
     />
   )
 }
@@ -42,6 +43,7 @@ function GoWithFanaroYouTube() {
       alt="YouTube"
       href="https://www.youtube.com/@gowithfanaro"
       size={24}
+      className="h-6 w-6"
     />
   )
 }
@@ -51,6 +53,7 @@ type FooterLogoProps = {
   alt: string
   href: string
   size: number
+  className?: string
 }
 
 function FooterLogo({
@@ -58,6 +61,7 @@ function FooterLogo({
   alt,
   href,
   size,
+  className = "",
 }: FooterLogoProps) {
   return (
     <Link
@@ -72,6 +76,7 @@ function FooterLogo({
         alt={alt}
         width={size}
         height={size}
+        className={className}
       />
     </Link>
   )
