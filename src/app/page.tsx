@@ -1,18 +1,17 @@
 import Image from "next/image"
-import Link from "next/link"
 
 export default function Home() {
   return (
     <main className="my-6 flex flex-col gap-4">
       <PresentationSection />
       <SubpagesSection />
-      <iframe
+      {/* <iframe
         id="inlineFrameExample"
         title="Inline Frame Example"
         width="300"
         height="200"
         src="https://aquarifolio.vercel.app"
-      ></iframe>
+      ></iframe> */}
     </main>
   )
 }
@@ -21,8 +20,10 @@ function PresentationSection() {
   return (
     <section className="flex gap-4">
       <div className="flex flex-col gap-2">
-        <h2 className="text-3xl font-bold">neofanaro.io</h2>
-        <p>
+        <h2 className="text-4xl font-bold text-slate-950">
+          neofanaro.io
+        </h2>
+        <p className="text-lg text-slate-700">
           Olá! Sou Philippe Fanaro, um desenvolvedor de
           software e professor de Go. Através deste site,
           procuro compartilhar conteúdo útil nesses dois
