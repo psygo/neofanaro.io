@@ -28,7 +28,7 @@ function FanaroLogo() {
 function AboutLogo() {
   return (
     <NavLogo
-      src="/nav/about.svg"
+      src="/nav/teacher.svg"
       alt="About"
       href="/about"
       size={23}

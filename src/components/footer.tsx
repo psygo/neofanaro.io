@@ -3,7 +3,7 @@ import Image from "next/image"
 
 export default function Footer() {
   return (
-    <footer className="mx-auto mt-10 flex w-full max-w-7xl justify-center px-6 pb-6">
+    <footer className="mx-auto mt-10 flex w-full max-w-xl justify-center border-t border-gray-200 px-6 pt-3">
       <GithubLogo />
     </footer>
   )
