@@ -8,65 +8,41 @@ export default function Nav() {
     <nav className="w-full">
       <div className="mx-auto flex w-full max-w-xl justify-center">
         <ul className="flex flex-wrap items-center justify-center gap-2 rounded-full bg-slate-100 px-4 py-3 shadow-lg ring-1 ring-slate-200">
-          <FanaroLogo/>
-          <AboutLogo/>
-          <ArticlesLogo/>
+          <NavLogo
+            src="/fanaro.io.svg"
+            alt="Home"
+            href="/"
+            size={22}
+          />
+          <NavLogo
+            src="/nav/about.svg"
+            alt="About"
+            href="/about"
+            size={23}
+          />
         </ul>
       </div>
     </nav>
   )
 }
 
-const logoClass = "rounded-full mr-2 ml-1"
-
-function FanaroLogo() {
-  return (
-    <li>
-      <Link
-        href="/"
-      >
-        <Image
-          src="/fanaro.io.svg"
-          alt="Philippe playing Go"
-          width={22}
-          height={22}
-          className={`${logoClass}`}
-        />
-      </Link>
-    </li>
-  )
+type NavLogoProps = {
+  src: string
+  alt: string
+  href: string
+  size: number
 }
 
-function AboutLogo() {
+function NavLogo({ src, alt, href, size }: NavLogoProps) {
   return (
     <li>
-      <Link
-        href="/about"
-      >
+      <Link href={href}>
         <Image
-          src="/about.svg"
-          alt="Philippe playing Go"
-          width={23}
-          height={23}
-          className={`${logoClass}`}
-        />
-      </Link>
-    </li>
-  )
-}
-
-function ArticlesLogo() {
-  return (
-    <li>
-      <Link
-        href="/articles"
-      >
-        <Image
-          src="/articles.svg"
-          alt="Philippe playing Go"
-          width={23}
-          height={23}
-          className={`${logoClass}`}
+          src={src}
+          alt={alt}
+          width={size}
+          height={size}
+          className="mr-2 ml-1 rounded-full"
         />
       </Link>
     </li>

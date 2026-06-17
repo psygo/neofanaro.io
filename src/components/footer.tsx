@@ -1,5 +1,5 @@
-import Link from "next/link";
-import Image from "next/image";
+import Link from "next/link"
+import Image from "next/image"
 
 export default function Footer() {
   return (
@@ -13,7 +13,7 @@ export default function Footer() {
       >
         <Image
           loading="eager"
-          src="/github_logo.svg"
+          src="/footer/github_logo.svg"
           alt="Philippe playing Go"
           width={28}
           height={28}
