@@ -13,10 +13,10 @@ export default function Nav() {
   return (
     <nav className="mx-auto flex w-full max-w-xl justify-center">
       <ul className="flex flex-wrap items-center justify-center gap-2 rounded-full bg-slate-100 px-4 py-3 shadow-lg ring-1 ring-slate-200">
-        <FanaroLogo />
+        <FanaroIcon />
         <SoftwareLogo />
         <TeacherLogo />
-        <LanguageLogo />
+        <LanguageIcon />
       </ul>
     </nav>
   )
@@ -25,9 +25,9 @@ export default function Nav() {
 // ---------------------------------------------------------
 // Logos
 
-function FanaroLogo() {
+function FanaroIcon() {
   return (
-    <NavLogo
+    <NavIcon
       src="/logos/fanaro.io.svg"
       alt="Home"
       href="/"
@@ -38,7 +38,7 @@ function FanaroLogo() {
 
 function TeacherLogo() {
   return (
-    <NavLogo
+    <NavIcon
       src="/nav/teacher.svg"
       alt="Teacher"
       href="/teacher"
@@ -49,7 +49,7 @@ function TeacherLogo() {
 
 function SoftwareLogo() {
   return (
-    <NavLogo
+    <NavIcon
       src="/nav/tie.svg"
       alt="Software"
       href="/software"
@@ -68,7 +68,7 @@ type NavLogoProps = {
   className?: string
 }
 
-function NavLogo({
+function NavIcon({
   src,
   alt,
   href,
@@ -129,7 +129,7 @@ function BrazilFlagLogo() {
   )
 }
 
-function LanguageLogo() {
+function LanguageIcon() {
   const currentLang = useLang()
 
   return currentLang === "en" ? (
