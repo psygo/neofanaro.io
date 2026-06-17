@@ -5,13 +5,11 @@ import Link from "next/link"
 
 export default function Nav() {
   return (
-    <nav className="w-full">
-      <div className="mx-auto flex w-full max-w-xl justify-center">
-        <ul className="flex flex-wrap items-center justify-center gap-2 rounded-full bg-slate-100 px-4 py-3 shadow-lg ring-1 ring-slate-200">
-          <FanaroLogo />
-          <AboutLogo />
-        </ul>
-      </div>
+    <nav className="mx-auto flex w-full max-w-xl justify-center">
+      <ul className="flex flex-wrap items-center justify-center gap-2 rounded-full bg-slate-100 px-4 py-3 shadow-lg ring-1 ring-slate-200">
+        <FanaroLogo />
+        <AboutLogo />
+      </ul>
     </nav>
   )
 }
