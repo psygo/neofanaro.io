@@ -9,6 +9,8 @@ export default function Nav() {
       <ul className="flex flex-wrap items-center justify-center gap-2 rounded-full bg-slate-100 px-4 py-3 shadow-lg ring-1 ring-slate-200">
         <FanaroLogo />
         <AboutLogo />
+        <UsaFlagLogo />
+        <BrazilFlagLogo />
       </ul>
     </nav>
   )
@@ -36,14 +38,45 @@ function AboutLogo() {
   )
 }
 
+function UsaFlagLogo() {
+  return (
+    <NavLogo
+      src="/nav/usa_flag.svg"
+      alt="English"
+      href="/en"
+      size={23}
+      className="mr-2 ml-1"
+    />
+  )
+}
+
+function BrazilFlagLogo() {
+  return (
+    <NavLogo
+      src="/nav/brazil_flag.svg"
+      alt="Portuguese"
+      href="/pt"
+      size={23}
+      className="mr-2 ml-1"
+    />
+  )
+}
+
 type NavLogoProps = {
   src: string
   alt: string
   href: string
   size: number
+  className?: string
 }
 
-function NavLogo({ src, alt, href, size }: NavLogoProps) {
+function NavLogo({
+  src,
+  alt,
+  href,
+  size,
+  className = "mr-2 ml-1 rounded-full",
+}: NavLogoProps) {
   return (
     <li>
       <Link href={href}>
@@ -52,7 +85,7 @@ function NavLogo({ src, alt, href, size }: NavLogoProps) {
           alt={alt}
           width={size}
           height={size}
-          className="mr-2 ml-1 rounded-full"
+          className={className}
         />
       </Link>
     </li>
