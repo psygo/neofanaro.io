@@ -3,14 +3,15 @@
 import Image from "next/image"
 import Link from "next/link"
 
+import useLang from "../hooks/useLang"
+
 export default function Nav() {
   return (
     <nav className="mx-auto flex w-full max-w-xl justify-center">
       <ul className="flex flex-wrap items-center justify-center gap-2 rounded-full bg-slate-100 px-4 py-3 shadow-lg ring-1 ring-slate-200">
         <FanaroLogo />
         <AboutLogo />
-        <UsaFlagLogo />
-        <BrazilFlagLogo />
+        <LanguageLogo />
       </ul>
     </nav>
   )
@@ -38,12 +39,22 @@ function AboutLogo() {
   )
 }
 
+function LanguageLogo() {
+  const currentLang = useLang()
+
+  return currentLang === "en" ? (
+    <UsaFlagLogo />
+  ) : (
+    <BrazilFlagLogo />
+  )
+}
+
 function UsaFlagLogo() {
   return (
     <NavLogo
       src="/nav/usa_flag.svg"
       alt="English"
-      href="/en"
+      href="?lang=pt"
       size={23}
       className="mr-2 ml-1"
     />
@@ -55,7 +66,7 @@ function BrazilFlagLogo() {
     <NavLogo
       src="/nav/brazil_flag.svg"
       alt="Portuguese"
-      href="/pt"
+      href="?lang=en"
       size={23}
       className="mr-2 ml-1"
     />
