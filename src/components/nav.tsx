@@ -7,6 +7,8 @@ import "flag-icons/css/flag-icons.min.css"
 
 import useLang from "@hooks/useLang"
 
+// ---------------------------------------------------------
+
 export default function Nav() {
   return (
     <nav className="mx-auto flex w-full max-w-xl justify-center">
@@ -18,6 +20,9 @@ export default function Nav() {
     </nav>
   )
 }
+
+// ---------------------------------------------------------
+// Logos
 
 function FanaroLogo() {
   return (
@@ -41,17 +46,41 @@ function TeacherLogo() {
   )
 }
 
-function LanguageLogo() {
-  const currentLang = useLang()
+const navLogoMargins = "mr-2 ml-1"
 
-  return currentLang === "en" ? (
-    <UsaFlagLogo />
-  ) : (
-    <BrazilFlagLogo />
+type NavLogoProps = {
+  src: string
+  alt: string
+  href: string
+  size: number
+  className?: string
+}
+
+function NavLogo({
+  src,
+  alt,
+  href,
+  size,
+  className = `${navLogoMargins} rounded-full`,
+}: NavLogoProps) {
+  return (
+    <li>
+      <Link href={href}>
+        <Image
+          loading="eager"
+          src={src}
+          alt={alt}
+          width={size}
+          height={size}
+          className={className}
+        />
+      </Link>
+    </li>
   )
 }
 
-const navLogoMargins = "mr-2 ml-1"
+// ---------------------------------------------------------
+// Language Logos
 
 function CountryFlagLogo({
   countryCode,
@@ -88,33 +117,14 @@ function BrazilFlagLogo() {
   )
 }
 
-type NavLogoProps = {
-  src: string
-  alt: string
-  href: string
-  size: number
-  className?: string
-}
+function LanguageLogo() {
+  const currentLang = useLang()
 
-function NavLogo({
-  src,
-  alt,
-  href,
-  size,
-  className = `${navLogoMargins} rounded-full`,
-}: NavLogoProps) {
-  return (
-    <li>
-      <Link href={href}>
-        <Image
-          loading="eager"
-          src={src}
-          alt={alt}
-          width={size}
-          height={size}
-          className={className}
-        />
-      </Link>
-    </li>
+  return currentLang === "en" ? (
+    <UsaFlagLogo />
+  ) : (
+    <BrazilFlagLogo />
   )
 }
+
+// ---------------------------------------------------------
