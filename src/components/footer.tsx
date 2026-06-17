@@ -4,7 +4,10 @@ import Image from "next/image"
 export default function Footer() {
   return (
     <footer className="mx-auto mt-10 flex w-full max-w-xl justify-center border-t border-gray-200 px-6 pt-3">
-      <GithubLogo />
+      <div className="flex items-center justify-center gap-3">
+        <GithubLogo />
+        <YouTubeLogo />
+      </div>
     </footer>
   )
 }
@@ -16,6 +19,17 @@ function GithubLogo() {
       alt="GitHub"
       href="https://github.com/psygo/neofanaro.io"
       size={28}
+    />
+  )
+}
+
+function YouTubeLogo() {
+  return (
+    <FooterLogo
+      src="/footer/youtube_logo.svg"
+      alt="YouTube"
+      href="https://www.youtube.com/@fanaro"
+      size={24}
     />
   )
 }
