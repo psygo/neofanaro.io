@@ -76,16 +76,41 @@ function PresentationParagraph({
 function SoftwareWorkSection() {
   return (
     <section
-      className={`${containerOutline} flex max-w-80 flex-col gap-6 px-6 py-6 sm:max-w-xl`}
+      className={`${containerOutline} flex max-w-80 flex-col gap-4 px-6 py-6 sm:max-w-xl`}
     >
-      <h2 className="text-2xl font-bold">
-        Get to know some of my software work:
+      <h2 className="text-center text-2xl font-bold">
+        Software Work
       </h2>
-      <div className="flex gap-4">
+      <div className="flex flex-col gap-4">
+        <Aquarifolio />
         <Fic />
-        {/* <TecnicasDeGo /> */}
       </div>
     </section>
+  )
+}
+
+function Aquarifolio() {
+  return (
+    <Link
+      href="https://aquarifolio.vercel.app/"
+      target="_blank"
+      rel="noreferrer noopener"
+      className={`${containerOutline} flex flex-col gap-2 bg-gray-50 px-6 py-4 pb-6`}
+    >
+      <h3 className="text-md font-bold">Aquarifolio</h3>
+      <div className="flex gap-2">
+        <Tag text="react" />
+        <Tag text="three.js" />
+        <Tag text="typescript" />
+      </div>
+
+      <iframe
+        id="inlineFrameExample"
+        title="Inline Frame Example"
+        className="h-50 w-full rounded-xl"
+        src="https://aquarifolio.vercel.app/"
+      ></iframe>
+    </Link>
   )
 }
 
@@ -93,9 +118,9 @@ function Fic() {
   return (
     <Link
       href="https://pub.dev/packages/fast_immutable_collections"
-      className={`${containerOutline} flex w-full flex-row items-center gap-5 bg-gray-50 px-6 py-4`}
       target="_blank"
       rel="noreferrer noopener"
+      className={`${containerOutline} flex w-full flex-row items-center gap-5 bg-gray-50 px-6 py-4`}
     >
       <Image
         loading="eager"
