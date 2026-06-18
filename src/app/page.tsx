@@ -5,7 +5,7 @@ import { Suspense } from "react"
 import Image from "next/image"
 import Link from "next/link"
 
-import useLang from "../hooks/useLang"
+import { useLang } from "../hooks/useLang"
 
 export default function Home() {
   return (

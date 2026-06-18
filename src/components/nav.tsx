@@ -7,14 +7,14 @@ import Link from "next/link"
 
 import "flag-icons/css/flag-icons.min.css"
 
-import useLang from "../hooks/useLang"
+import { useLang } from "../hooks/useLang"
 
 // ---------------------------------------------------------
 
 // const navOutline =
 //   "shadow-lg ring-1 ring-slate-200 rounded-full bg-slate-100"
 
-export default function Nav() {
+export function Nav() {
   return (
     <nav className="mx-auto flex w-full max-w-xl justify-center">
       <ul className="flex flex-wrap items-center justify-center gap-2 px-4 py-3">
