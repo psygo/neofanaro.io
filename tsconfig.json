@@ -38,7 +38,9 @@
       "@hooks": [
         "./src/hooks/exports"
       ],
-    }
+    },
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
   },
   "include": [
     "next-env.d.ts",

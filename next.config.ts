@@ -1,7 +1,9 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from "next"
 
 const nextConfig: NextConfig = {
-  /* config options here */
-};
+  experimental: {
+    swcPlugins: [], // If you are using specific swc decorator plugins
+  },
+}
 
-export default nextConfig;
+export default nextConfig
