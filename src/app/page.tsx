@@ -1,5 +1,7 @@
 "use client"
 
+import { Suspense } from "react"
+
 import Image from "next/image"
 
 import useLang from "@hooks/useLang"
@@ -8,8 +10,10 @@ import Link from "next/link"
 export default function Home() {
   return (
     <main className="flex flex-col items-center gap-12">
-      <PresentationSection />
-      <SoftwareWorkSection />
+      <Suspense>
+        <PresentationSection />
+        <SoftwareWorkSection />
+      </Suspense>
     </main>
   )
 }
@@ -78,7 +82,7 @@ function SoftwareWorkSection() {
       className={`flex max-w-80 flex-col gap-4 px-6 py-4 sm:max-w-xl`}
     >
       <h2 className="text-center text-xl font-bold sm:text-2xl">
-        Software Work
+        Software
       </h2>
       <div className="flex flex-col gap-4">
         <Aquarifolio />

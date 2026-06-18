@@ -1,5 +1,7 @@
 "use client"
 
+import { Suspense } from "react"
+
 import Image from "next/image"
 import Link from "next/link"
 
@@ -19,7 +21,9 @@ export default function Nav() {
         <FanaroIcon />
         <SoftwareLogo />
         <TeacherLogo />
-        <LanguageIcon />
+        <Suspense>
+          <LanguageIcon />
+        </Suspense>
       </ul>
     </nav>
   )
