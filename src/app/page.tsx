@@ -17,15 +17,14 @@ export default function Home() {
 // ---------------------------------------------------------
 // Presentation Section
 
-const containerOutline =
-  "rounded-xl shadow-lg ring-1 ring-slate-200"
+const containerOutline = "rounded-xl ring-1 ring-slate-200"
 
 function PresentationSection() {
   const lang = useLang()
 
   return (
     <section
-      className={`${containerOutline} flex max-w-80 flex-col items-center gap-5.5 px-4 py-6 sm:max-w-xl sm:flex-row sm:gap-8 sm:px-7`}
+      className={`flex max-w-80 flex-col items-center gap-5.5 px-4 py-6 sm:max-w-xl sm:flex-row sm:gap-8 sm:px-7`}
     >
       <div className="flex flex-col gap-4">
         <h2 className="text-center text-3xl font-bold sm:text-left sm:text-4xl">
@@ -76,9 +75,9 @@ function PresentationParagraph({
 function SoftwareWorkSection() {
   return (
     <section
-      className={`${containerOutline} flex max-w-80 flex-col gap-4 px-6 py-6 sm:max-w-xl`}
+      className={`flex max-w-80 flex-col gap-4 px-6 py-4 sm:max-w-xl`}
     >
-      <h2 className="text-center text-2xl font-bold">
+      <h2 className="text-center text-xl font-bold sm:text-2xl">
         Software Work
       </h2>
       <div className="flex flex-col gap-4">
@@ -89,15 +88,29 @@ function SoftwareWorkSection() {
   )
 }
 
+function Fic() {
+  return (
+    <GithubRepoCard
+      href="https://pub.dev/packages/fast_immutable_collections"
+      imageSrc="/software_work/fic.svg"
+      title="Fast Immutable Collections"
+      tags={["dart", "flutter"]}
+      starTotal={200}
+    />
+  )
+}
+
 function Aquarifolio() {
   return (
     <Link
       href="https://aquarifolio.vercel.app/"
       target="_blank"
       rel="noreferrer noopener"
-      className={`${containerOutline} flex flex-col gap-2 bg-gray-50 px-6 py-4 pb-6`}
+      className={`${containerOutline} bg-gray-0 flex flex-col gap-2 px-6 py-4 pb-6`}
     >
-      <h3 className="text-md font-bold">Aquarifolio</h3>
+      <h3 className="text-md font-bold sm:text-lg">
+        Aquarifolio
+      </h3>
       <div className="flex gap-2">
         <Tag text="react" />
         <Tag text="three.js" />
@@ -114,32 +127,47 @@ function Aquarifolio() {
   )
 }
 
-function Fic() {
+type GithubRepoCardProps = {
+  href: string
+  imageSrc: string
+  title: string
+  tags: string[]
+  starTotal: number
+}
+
+function GithubRepoCard({
+  href,
+  imageSrc,
+  title,
+  tags,
+  starTotal,
+}: GithubRepoCardProps) {
   return (
     <Link
-      href="https://pub.dev/packages/fast_immutable_collections"
+      href={href}
       target="_blank"
       rel="noreferrer noopener"
-      className={`${containerOutline} flex w-full flex-row items-center gap-5 bg-gray-50 px-6 py-4`}
+      className={`${containerOutline} bg-gray-0 flex w-full flex-row items-center gap-5 px-6 py-4`}
     >
       <Image
         loading="eager"
-        src="/software_work/fic.svg"
-        alt="FIC"
+        src={imageSrc}
+        alt="repo"
         width={80}
         height={80}
         className="hidden sm:block"
       />
       <div className="flex flex-col gap-3">
         <h3 className="text-md font-bold sm:text-lg">
-          Fast Immutable Collections
+          {title}
         </h3>
         {/* <p className="mt-[-4px] hidden sm:block">
           Immutable Collections for Dart/Flutter
         </p> */}
         <div className="flex gap-2">
-          <Tag text="dart" />
-          <Tag text="flutter" />
+          {tags.map((tag, i) => (
+            <Tag key={i} text={tag} />
+          ))}
         </div>
         <div className="flex gap-1">
           <Image
@@ -149,7 +177,7 @@ function Fic() {
             width={20}
             height={20}
           />
-          <p className="font-semibold">200+</p>
+          <p className="font-semibold">{starTotal}+</p>
         </div>
       </div>
     </Link>
