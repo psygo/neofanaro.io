@@ -94,6 +94,8 @@ function Fic() {
     <Link
       href="https://pub.dev/packages/fast_immutable_collections"
       className={`${containerOutline} flex w-full flex-row items-center gap-5 bg-gray-50 px-6 py-4`}
+      target="_blank"
+      rel="noreferrer noopener"
     >
       <Image
         loading="eager"
@@ -101,25 +103,26 @@ function Fic() {
         alt="FIC"
         width={80}
         height={80}
+        className="hidden sm:block"
       />
-      <div className="flex flex-col gap-2">
-        <h3 className="text-lg font-bold">
+      <div className="flex flex-col gap-3">
+        <h3 className="text-md font-bold sm:text-lg">
           Fast Immutable Collections
         </h3>
-        <p className="hidden sm:visible">
+        {/* <p className="mt-[-4px] hidden sm:block">
           Immutable Collections for Dart/Flutter
-        </p>
+        </p> */}
         <div className="flex gap-2">
           <Tag text="dart" />
           <Tag text="flutter" />
         </div>
-        <div className="mt-1 flex gap-1">
+        <div className="flex gap-1">
           <Image
             loading="eager"
             src="/software_work/star.svg"
             alt="FIC"
-            width={21.5}
-            height={21.5}
+            width={20}
+            height={20}
           />
           <p className="font-semibold">200+</p>
         </div>
@@ -139,41 +142,5 @@ function Tag({ text }: TagProps) {
     </span>
   )
 }
-
-// function TecnicasDeGo() {
-//   return (
-//     <Link
-//       href="https://pub.dev/packages/fast_immutable_collections"
-//       className={`${containerOutline} flex w-50 flex-col items-center gap-2 bg-gray-50 px-2 py-4`}
-//     >
-//       <Image
-//         loading="eager"
-//         src="/software_work/tecnicas_de_go_capa.png"
-//         alt="FIC"
-//         width={85}
-//         height={85}
-//       />
-//       <div className="flex flex-col items-center gap-1">
-//         <h3 className="text-center text-lg font-bold">
-//           Técnicas de Go
-//         </h3>
-//         <p className="px-2 text-center">
-//           LaTeX package for vector diagrams for the game of
-//           Go (and a book)
-//         </p>
-//         <div className="mt-1 flex gap-1">
-//           <Image
-//             loading="eager"
-//             src="/software_work/star.svg"
-//             alt="FIC"
-//             width={21.5}
-//             height={21.5}
-//           />
-//           <p className="font-semibold">10+</p>
-//         </div>
-//       </div>
-//     </Link>
-//   )
-// }
 
 // ---------------------------------------------------------
