@@ -20,9 +20,9 @@ function PresentationSection() {
   const lang = useLang()
 
   return (
-    <section className="flex max-w-xl items-center gap-10 px-4">
+    <section className="flex max-w-xl flex-col items-center gap-6 px-4 sm:flex-row sm:gap-8">
       <div className="flex flex-col gap-4">
-        <h2 className="text-4xl font-bold">
+        <h2 className="text-center text-3xl font-bold sm:text-left sm:text-4xl">
           Philippe Fanaro
         </h2>
         {lang === "pt" ? (
@@ -57,7 +57,9 @@ function PresentationParagraph({
   children: React.ReactNode
 }) {
   return (
-    <p className="text-lg text-slate-700">{children}</p>
+    <p className="text-md max-w-75 text-center text-slate-700 sm:text-left sm:text-lg">
+      {children}
+    </p>
   )
 }
 
