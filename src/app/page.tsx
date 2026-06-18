@@ -20,7 +20,7 @@ function PresentationSection() {
   const lang = useLang()
 
   return (
-    <section className="flex max-w-xl flex-col items-center gap-6 px-4 sm:flex-row sm:gap-8">
+    <section className="flex max-w-xl flex-col items-center gap-6 rounded-xl bg-slate-50 px-4 py-6 shadow-lg ring-1 ring-slate-200 sm:flex-row sm:gap-8 sm:px-7">
       <div className="flex flex-col gap-4">
         <h2 className="text-center text-3xl font-bold sm:text-left sm:text-4xl">
           Philippe Fanaro
@@ -34,7 +34,7 @@ function PresentationSection() {
           </PresentationParagraph>
         ) : (
           <PresentationParagraph>
-            Hello! I&apos;m a software developer and Go
+            Hi! I&apos;m a software developer and Go
             teacher. Through this website, I aim to share
             useful content in these two distinct fields.
           </PresentationParagraph>
@@ -57,7 +57,7 @@ function PresentationParagraph({
   children: React.ReactNode
 }) {
   return (
-    <p className="text-md max-w-75 text-center text-slate-700 sm:text-left sm:text-lg">
+    <p className="text-md max-w-75 px-4 text-center text-slate-700 sm:px-0 sm:text-left sm:text-lg">
       {children}
     </p>
   )
