@@ -83,6 +83,8 @@ function SoftwareWorkSection() {
       <div className="flex flex-col gap-4">
         <Aquarifolio />
         <Fic />
+        <TecnicasDeGo />
+        <YouTubeKbdNav />
       </div>
     </section>
   )
@@ -93,9 +95,39 @@ function Fic() {
     <GithubRepoCard
       href="https://pub.dev/packages/fast_immutable_collections"
       imageSrc="/software_work/fic.svg"
+      imageSize={90}
       title="Fast Immutable Collections"
+      description="Immutable data structures for Dart"
       tags={["dart", "flutter"]}
       starTotal={200}
+    />
+  )
+}
+
+function TecnicasDeGo() {
+  return (
+    <GithubRepoCard
+      href="https://github.com/psygo/tecnicas_de_go"
+      imageSrc="/software_work/tecnicas_de_go_capa.png"
+      imageSize={90}
+      title="Técnicas de Go"
+      description="A Go (Baduk or Weiqi), with a complete package for drawing LaTeX vector diagrams"
+      tags={["latex", "svg"]}
+      starTotal={20}
+    />
+  )
+}
+
+function YouTubeKbdNav() {
+  return (
+    <GithubRepoCard
+      href="https://github.com/FanaroEngineering/youtube_kbd_nav"
+      imageSrc="/software_work/yt_kbd_nav.svg"
+      imageSize={90}
+      title="YouTube Kbd Nav"
+      description="A browser extension for controlling YouTube entirely through the keyboard"
+      tags={["typescript", "browser"]}
+      starTotal={20}
     />
   )
 }
@@ -114,7 +146,7 @@ function Aquarifolio() {
       <div className="flex gap-2">
         <Tag text="react" />
         <Tag text="three.js" />
-        <Tag text="typescript" />
+        <Tag text="next.js" />
       </div>
 
       <iframe
@@ -130,7 +162,9 @@ function Aquarifolio() {
 type GithubRepoCardProps = {
   href: string
   imageSrc: string
+  imageSize: number
   title: string
+  description: string
   tags: string[]
   starTotal: number
 }
@@ -138,7 +172,9 @@ type GithubRepoCardProps = {
 function GithubRepoCard({
   href,
   imageSrc,
+  imageSize,
   title,
+  description,
   tags,
   starTotal,
 }: GithubRepoCardProps) {
@@ -153,17 +189,15 @@ function GithubRepoCard({
         loading="eager"
         src={imageSrc}
         alt="repo"
-        width={80}
-        height={80}
+        width={imageSize}
+        height={imageSize}
         className="hidden sm:block"
       />
       <div className="flex flex-col gap-3">
         <h3 className="text-md font-bold sm:text-lg">
           {title}
         </h3>
-        {/* <p className="mt-[-4px] hidden sm:block">
-          Immutable Collections for Dart/Flutter
-        </p> */}
+        <p className="-mt-2 text-sm">{description}</p>
         <div className="flex gap-2">
           {tags.map((tag, i) => (
             <Tag key={i} text={tag} />
