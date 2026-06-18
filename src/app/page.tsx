@@ -83,6 +83,7 @@ function SoftwareWorkSection() {
       </h2>
       <div className="flex gap-4">
         <Fic />
+        {/* <TecnicasDeGo /> */}
       </div>
     </section>
   )
@@ -92,7 +93,7 @@ function Fic() {
   return (
     <Link
       href="https://pub.dev/packages/fast_immutable_collections"
-      className={`${containerOutline} flex w-50 flex-col items-center gap-2 bg-gray-50 px-2 py-4`}
+      className={`${containerOutline} flex w-full flex-row items-center gap-5 bg-gray-50 px-6 py-4`}
     >
       <Image
         loading="eager"
@@ -101,13 +102,17 @@ function Fic() {
         width={80}
         height={80}
       />
-      <div className="flex flex-col items-center gap-1">
-        <h3 className="text-center text-lg font-bold">
+      <div className="flex flex-col gap-2">
+        <h3 className="text-lg font-bold">
           Fast Immutable Collections
         </h3>
-        <p className="text-center">
+        <p className="hidden sm:visible">
           Immutable Collections for Dart/Flutter
         </p>
+        <div className="flex gap-2">
+          <Tag text="dart" />
+          <Tag text="flutter" />
+        </div>
         <div className="mt-1 flex gap-1">
           <Image
             loading="eager"
@@ -116,11 +121,59 @@ function Fic() {
             width={21.5}
             height={21.5}
           />
-          <p className="font-medium">200+</p>
+          <p className="font-semibold">200+</p>
         </div>
       </div>
     </Link>
   )
 }
+
+type TagProps = {
+  text: string
+}
+
+function Tag({ text }: TagProps) {
+  return (
+    <span className="rounded-2xl border border-gray-300 bg-gray-100 px-2 py-0.5 text-xs font-semibold">
+      {text}
+    </span>
+  )
+}
+
+// function TecnicasDeGo() {
+//   return (
+//     <Link
+//       href="https://pub.dev/packages/fast_immutable_collections"
+//       className={`${containerOutline} flex w-50 flex-col items-center gap-2 bg-gray-50 px-2 py-4`}
+//     >
+//       <Image
+//         loading="eager"
+//         src="/software_work/tecnicas_de_go_capa.png"
+//         alt="FIC"
+//         width={85}
+//         height={85}
+//       />
+//       <div className="flex flex-col items-center gap-1">
+//         <h3 className="text-center text-lg font-bold">
+//           Técnicas de Go
+//         </h3>
+//         <p className="px-2 text-center">
+//           LaTeX package for vector diagrams for the game of
+//           Go (and a book)
+//         </p>
+//         <div className="mt-1 flex gap-1">
+//           <Image
+//             loading="eager"
+//             src="/software_work/star.svg"
+//             alt="FIC"
+//             width={21.5}
+//             height={21.5}
+//           />
+//           <p className="font-semibold">10+</p>
+//         </div>
+//       </div>
+//     </Link>
+//   )
+// }
 
 // ---------------------------------------------------------
