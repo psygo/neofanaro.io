@@ -7,7 +7,7 @@ import Link from "next/link"
 
 import "flag-icons/css/flag-icons.min.css"
 
-import useLang from "@hooks/useLang"
+import useLang from "../hooks/useLang"
 
 // ---------------------------------------------------------
 

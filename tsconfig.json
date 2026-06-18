@@ -29,18 +29,10 @@
       "@components/*": [
         "./src/components/*"
       ],
-      "@components": [
-        "./src/components/exports"
-      ],
       "@hooks/*": [
         "./src/hooks/*"
       ],
-      "@hooks": [
-        "./src/hooks/exports"
-      ],
     },
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true
   },
   "include": [
     "next-env.d.ts",
