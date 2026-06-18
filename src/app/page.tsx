@@ -1,10 +1,13 @@
+"use client"
+
 import Image from "next/image"
+
+import useLang from "@hooks/useLang"
 
 export default function Home() {
   return (
-    <main className="my-6 flex flex-col gap-4">
+    <main className="my-6 flex flex-col items-center gap-4">
       <PresentationSection />
-      <SubpagesSection />
       {/* <iframe
         id="inlineFrameExample"
         title="Inline Frame Example"
@@ -17,57 +20,37 @@ export default function Home() {
 }
 
 function PresentationSection() {
+  const lang = useLang()
+
   return (
-    <section className="flex gap-4">
-      <div className="flex flex-col gap-2">
-        <h2 className="text-4xl font-bold text-slate-950">
-          neofanaro.io
+    <section className="flex max-w-xl items-center gap-8 rounded-lg border border-gray-200 bg-slate-100 px-6 py-4 shadow-xl ring-1 ring-slate-200">
+      <div className="flex flex-col gap-4">
+        <h2 className="text-2xl font-bold">
+          Philippe Fanaro
         </h2>
-        <p className="text-lg text-slate-700">
-          Olá! Sou Philippe Fanaro, um desenvolvedor de
-          software e professor de Go. Através deste site,
-          procuro compartilhar conteúdo útil nesses dois
-          ramos distintos.
-        </p>
+        {lang === "pt" ? (
+          <p className="text-lg text-slate-700">
+            Olá! Sou Philippe Fanaro, um desenvolvedor de
+            software e professor de Go. Através deste site,
+            procuro compartilhar conteúdo útil nesses dois
+            ramos distintos.
+          </p>
+        ) : (
+          <p className="text-lg text-slate-700">
+            Hello! I&apos;m Philippe Fanaro, a software
+            developer and Go teacher. Through this site, I
+            aim to share useful content in these two
+            distinct fields.
+          </p>
+        )}
       </div>
       <Image
         src="/pictures/philippe_playing_go.png"
         alt="Fanaro"
         width={200}
         height={200}
-        className="mx-auto mt-4 rounded-full border border-slate-200 shadow-lg"
+        className="rounded-[28px]"
       />
-    </section>
-  )
-}
-
-function SubpagesSection() {
-  return (
-    <section className="flex gap-4">
-      <div className="shadow-lg0 flex w-100 flex-col items-center justify-center gap-2 rounded-lg border border-slate-200 bg-slate-50 p-4">
-        <Image
-          loading="eager"
-          src="/nav/teacher.svg"
-          width={100}
-          height={100}
-          alt="Teacher"
-        />
-        <h3 className="text-center text-xl font-bold">
-          Professor de Go
-        </h3>
-      </div>
-      <div className="shadow-lg0 flex w-100 flex-col items-center justify-center gap-2 rounded-lg border border-slate-200 bg-slate-50 p-4">
-        <Image
-          loading="eager"
-          src="/nav/tie.svg"
-          width={100}
-          height={100}
-          alt="Software Developer"
-        />
-        <h3 className="text-center text-xl font-bold">
-          Desenvolvedor de Software
-        </h3>
-      </div>
     </section>
   )
 }

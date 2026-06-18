@@ -119,7 +119,7 @@ function CountryFlagLogo({
 
 function UsaFlagLogo() {
   return (
-    <CountryFlagLogo countryCode="us" href="?lang=pt-br" />
+    <CountryFlagLogo countryCode="us" href="?lang=pt" />
   )
 }
 
