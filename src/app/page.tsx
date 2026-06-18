@@ -8,16 +8,13 @@ export default function Home() {
   return (
     <main className="flex flex-col items-center gap-4">
       <PresentationSection />
-      {/* <iframe
-        id="inlineFrameExample"
-        title="Inline Frame Example"
-        width="300"
-        height="200"
-        src="https://aquarifolio.vercel.app"
-      ></iframe> */}
+      <SoftwareWorkSection />
     </main>
   )
 }
+
+// ---------------------------------------------------------
+// Presentation Section
 
 function PresentationSection() {
   const lang = useLang()
@@ -63,3 +60,22 @@ function PresentationParagraph({
     <p className="text-lg text-slate-700">{children}</p>
   )
 }
+
+// ---------------------------------------------------------
+// Software Work Section
+
+function SoftwareWorkSection() {
+  return (
+    <section>
+      {/* <iframe
+        id="inlineFrameExample"
+        title="Inline Frame Example"
+        width="300"
+        height="200"
+        src="https://aquarifolio.vercel.app"
+      ></iframe> */}
+    </section>
+  )
+}
+
+// ---------------------------------------------------------
