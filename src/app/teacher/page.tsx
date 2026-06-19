@@ -1,5 +1,7 @@
 "use client"
 
+import { Suspense } from "react"
+
 import { useLang } from "@hooks/useLang"
 
 import {
@@ -13,7 +15,9 @@ import {
 export default function Teacher() {
   return (
     <main className="mx-auto flex max-w-100 flex-col gap-12 px-4 sm:max-w-xl">
-      <GoProfPresentationSection />
+      <Suspense>
+        <GoProfPresentationSection />
+      </Suspense>
       <CourseSection />
     </main>
   )
