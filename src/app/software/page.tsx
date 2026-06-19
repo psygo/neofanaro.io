@@ -14,7 +14,7 @@ export default function Software() {
 export function SoftwareWorkSection() {
   return (
     <section className="flex flex-col gap-4 px-6 py-4">
-      <h2 className="text-center text-2xl font-bold sm:text-2xl">
+      <h2 className="text-center text-2xl font-extrabold sm:text-2xl">
         Software
       </h2>
       <div className="flex flex-col gap-4">

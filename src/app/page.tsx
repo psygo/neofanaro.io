@@ -6,15 +6,12 @@ import Image from "next/image"
 
 import { useLang } from "@hooks/useLang"
 
-import {
-  CourseVideo,
-  GoProfPresentationSection,
-} from "./teacher/page"
+import { GoProfPresentationSection } from "./teacher/page"
 import { SoftwareWorkSection } from "./software/page"
 
 export default function Home() {
   return (
-    <main className="mx-auto flex max-w-80 flex-col gap-12 sm:max-w-xl">
+    <main className="mx-auto flex max-w-80 flex-col gap-12 sm:max-w-4xl">
       <Suspense>
         <PresentationSection />
         <SoftwareWorkSection />
@@ -31,9 +28,9 @@ function PresentationSection() {
   const lang = useLang()
 
   return (
-    <section className="flex flex-col items-center gap-5.5 px-4 py-6 sm:flex-row sm:gap-8 sm:px-7">
+    <section className="mx-auto flex flex-col items-center gap-5.5 px-4 py-6 sm:flex-row sm:gap-8">
       <div className="flex flex-col gap-4">
-        <h2 className="text-center text-3xl font-bold sm:text-left sm:text-4xl">
+        <h2 className="text-center text-3xl font-extrabold sm:text-left sm:text-4xl">
           Philippe Fanaro
         </h2>
         {lang === "pt" ? (
@@ -57,7 +54,7 @@ function PresentationSection() {
         alt="Fanaro"
         width={200}
         height={200}
-        className="rounded-2xl"
+        className="h-full w-50 rounded-2xl sm:w-60"
       />
     </section>
   )
@@ -69,7 +66,7 @@ function PresentationParagraph({
   children: React.ReactNode
 }) {
   return (
-    <p className="text-md max-w-75 px-4 text-center text-slate-700 sm:px-0 sm:text-left sm:text-lg">
+    <p className="max-w-75 px-4 text-center text-slate-700 sm:max-w-90 sm:px-0 sm:text-left sm:text-lg">
       {children}
     </p>
   )
@@ -79,8 +76,6 @@ function PresentationParagraph({
 // Go Prof Home Presentation Section
 
 function GoProfHomePresentationSection() {
-  const lang = useLang()
-
   return (
     <div className="mx-auto flex max-w-sm flex-col gap-6">
       <GoProfPresentationSection />
