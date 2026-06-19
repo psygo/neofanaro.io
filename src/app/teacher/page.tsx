@@ -1,33 +1,52 @@
 export default function Teacher() {
   return (
-    <main className="mx-auto flex max-w-100 gap-12 px-4 sm:max-w-xl">
-      <CourseList />
+    <main className="mx-auto flex max-w-100 flex-col gap-12 px-4 sm:max-w-xl">
+      <GoProfPresentationSection />
+      <CourseSection />
     </main>
   )
 }
 
-function CourseList() {
+function GoProfPresentationSection() {
   return (
-    <section className="flex flex-col gap-8">
-      <Course
-        index={1}
-        title="As Regras do Go"
-        description="As regras. Descomplicadas."
-        url="https://www.youtube.com/embed/MMR_3EZTTFw?list=PLMYMhzMuvitQAPXYv--bdqRJIJGwGMdMe"
-      />
-      <Course
-        index={2}
-        title="Curso de Go para Iniciantes"
-        description="Um curso do zero que aborda as regras, fundamentos de abertura, táticas e a história do Go."
-        url="https://www.youtube.com/embed/nIs6yKuL8ZE?list=PLMYMhzMuvitQAPXYv--bdqRJIJGwGMdMe"
-      />
-      <Course
-        index={3}
-        title="Abertura do Zero | Volume 1"
-        description="Um curso do zero que aborda os princípios básicos da abertura do Go, além de movimentos de canto, josekis básicos e algumas das aberturas mais famosas."
-        url="https://www.youtube.com/embed/7zpef07ei5U?list=PLLWr-AWriURE"
-      />
-      <div className="my-1 border-t border-slate-200" />
+    <div className="flex flex-col gap-3">
+      <h2 className="text-center text-3xl font-bold">
+        Professor de Go
+      </h2>
+      <p className="text-center">
+        Caso você queira ter aulas, contate-me!
+      </p>
+    </div>
+  )
+}
+
+function CourseSection() {
+  return (
+    <section className="flex flex-col gap-4">
+      <h2 className="text-center text-3xl font-bold">
+        Cursos
+      </h2>
+      <div className="flex flex-col gap-8">
+        <Course
+          index={1}
+          title="As Regras do Go"
+          description="As regras. Descomplicadas."
+          url="https://www.youtube.com/embed/MMR_3EZTTFw?list=PLMYMhzMuvitQAPXYv--bdqRJIJGwGMdMe"
+        />
+        <Course
+          index={2}
+          title="Curso de Go para Iniciantes"
+          description="Um curso do zero que aborda as regras, fundamentos de abertura, táticas e a história do Go."
+          url="https://www.youtube.com/embed/nIs6yKuL8ZE?list=PLMYMhzMuvitQAPXYv--bdqRJIJGwGMdMe"
+        />
+        <Course
+          index={3}
+          title="Abertura do Zero | Volume 1"
+          description="Um curso do zero que aborda os princípios básicos da abertura do Go, além de movimentos de canto, josekis básicos e algumas das aberturas mais famosas."
+          url="https://www.youtube.com/embed/7zpef07ei5U?list=PLLWr-AWriURE"
+        />
+        <div className="my-1 border-t border-slate-200" />
+      </div>
     </section>
   )
 }
@@ -109,9 +128,7 @@ function CourseTitleAndDescription({
 }: CourseTitleAndDescriptionProps) {
   return (
     <div className="flex flex-col gap-2">
-      <h1 className="text-4xl font-bold sm:text-5xl">
-        {title}
-      </h1>
+      <h1 className="text-4xl font-bold">{title}</h1>
       <p className="max-w-3xl text-lg text-slate-600">
         {description}
       </p>
