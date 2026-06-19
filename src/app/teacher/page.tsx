@@ -3,7 +3,7 @@ import {
   FanaroInstagram,
   FanaroYouTube,
   FooterLogo,
-} from "../../components/footer"
+} from "@components/footer"
 
 export default function Teacher() {
   return (
