@@ -21,6 +21,7 @@ export function Nav() {
         <FanaroIcon />
         <SoftwareLogo />
         <TeacherLogo />
+        <BlogLogo />
         <Suspense>
           <LanguageIcon />
         </Suspense>
@@ -60,6 +61,17 @@ function SoftwareLogo() {
       src="/nav/tie.svg"
       alt="Software"
       href="/software"
+      size={23.5}
+    />
+  )
+}
+
+function BlogLogo() {
+  return (
+    <NavIcon
+      src="/nav/book.svg"
+      alt="Blog"
+      href="/blog"
       size={23.5}
     />
   )
