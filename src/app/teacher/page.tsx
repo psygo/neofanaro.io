@@ -17,8 +17,8 @@ export default function Teacher() {
     <main className="mx-auto flex max-w-100 flex-col gap-12 px-4 sm:max-w-xl">
       <Suspense>
         <GoProfPresentationSection />
+        <CourseSection />
       </Suspense>
-      <CourseSection />
     </main>
   )
 }
@@ -27,67 +27,78 @@ export function GoProfPresentationSection() {
   const lang = useLang()
 
   return (
-    <div className="flex flex-col gap-3">
-      <h2 className="text-center text-3xl font-bold">
-        {lang === "pt" ? "Professor de Go" : "Go Teacher"}
-      </h2>
-      <div className="mx-auto flex max-w-sm flex-col gap-2">
-        {lang === "pt" ? (
-          <>
-            <p className="text-center">
-              Através dos meus livros e conteúdo no YouTube,
-              procuro compartilhar o que sei deste jogo
-              milenar e de infinita riqueza.
-            </p>
-            <p className="text-center">
-              Caso você queira ter aulas, contate-me!
-            </p>
-          </>
-        ) : (
-          <>
-            <p className="text-center">
-              I&apos;m a dan player from Brazil and through
-              my books and YouTube content, I try to share
-              what I know about this ancient game of
-              infinite richness.
-            </p>
+    <div className="mx-auto flex max-w-sm flex-col gap-6">
+      <div className="flex flex-col gap-3">
+        <h2 className="text-center text-3xl font-bold">
+          {lang === "pt" ? "Professor de Go" : "Go Teacher"}
+        </h2>
+        <div className="mx-auto flex max-w-sm flex-col gap-2">
+          {lang === "pt" ? (
+            <>
+              <p className="text-center">
+                Através dos meus livros e conteúdo no
+                YouTube, procuro compartilhar o que sei
+                deste jogo milenar e de infinita riqueza.
+              </p>
+              <p className="text-center">
+                Caso você queira ter aulas, contate-me!
+              </p>
+            </>
+          ) : (
+            <>
+              <p className="text-center">
+                I&apos;m a dan player from Brazil and
+                through my books and YouTube content, I try
+                to share what I know about this ancient game
+                of infinite richness.
+              </p>
 
-            <p className="text-center">
-              If you would like to take lessons, contact me
-              to get a free teaching game!
-            </p>
-          </>
-        )}
+              <p className="text-center">
+                If you would like to take lessons, contact
+                me to get a free teaching game!
+              </p>
+            </>
+          )}
+        </div>
+        <div className="mx-auto mt-1 flex gap-2">
+          <FanaroInstagram />
+          <FooterLogo
+            src="/footer/book_2.svg"
+            alt="Como Jogar Go - Uma Introdução Concisa"
+            href="https://github.com/psygo/traducao_como_jogar_go"
+            size={24}
+            className="h-6 w-6"
+          />
+          {lang === "pt" ? (
+            <FanaroYouTube />
+          ) : (
+            <GoWithFanaroYouTube />
+          )}
+          <FooterLogo
+            src="/footer/book_1.svg"
+            alt="Técnicas de Go"
+            href="https://github.com/psygo/tecnicas_de_go/releases/tag/1.0"
+            size={24}
+            className="h-6 w-6"
+          />
+          <FanaroFacebook />
+        </div>
       </div>
-      <div className="mx-auto mt-1 flex gap-2">
-        <FanaroInstagram />
-        <FooterLogo
-          src="/footer/book_2.svg"
-          alt="Como Jogar Go - Uma Introdução Concisa"
-          href="https://github.com/psygo/traducao_como_jogar_go"
-          size={24}
-          className="h-6 w-6"
-        />
-        {lang === "pt" ? (
-          <FanaroYouTube />
-        ) : (
-          <GoWithFanaroYouTube />
-        )}
-        <FooterLogo
-          src="/footer/book_1.svg"
-          alt="Técnicas de Go"
-          href="https://github.com/psygo/tecnicas_de_go/releases/tag/1.0"
-          size={24}
-          className="h-6 w-6"
-        />
-        <FanaroFacebook />
-      </div>
+      <CourseVideo
+        url={
+          lang === "pt"
+            ? "https://www.youtube.com/embed/7zpef07ei5U?list=PLLWr-AWriURE"
+            : "https://www.youtube.com/embed/_gGw1FTUKSU"
+        }
+        title="Regras do Go"
+      />
     </div>
   )
 }
 
 function CourseSection() {
-  return (
+  const lang = useLang()
+  return lang === "pt" ? (
     <section className="flex flex-col gap-4">
       <h2 className="text-center text-3xl font-bold">
         Cursos
@@ -114,6 +125,8 @@ function CourseSection() {
         <div className="my-1 border-t border-slate-200" />
       </div>
     </section>
+  ) : (
+    <></>
   )
 }
 

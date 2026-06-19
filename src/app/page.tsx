@@ -79,13 +79,11 @@ function PresentationParagraph({
 // Go Prof Home Presentation Section
 
 function GoProfHomePresentationSection() {
+  const lang = useLang()
+
   return (
     <div className="mx-auto flex max-w-sm flex-col gap-6">
       <GoProfPresentationSection />
-      <CourseVideo
-        url="https://www.youtube.com/embed/7zpef07ei5U?list=PLLWr-AWriURE"
-        title="Regras do Go"
-      />
     </div>
   )
 }
