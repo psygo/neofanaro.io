@@ -14,13 +14,13 @@ export default function Teacher() {
   )
 }
 
-function GoProfPresentationSection() {
+export function GoProfPresentationSection() {
   return (
     <div className="flex flex-col gap-3">
       <h2 className="text-center text-3xl font-bold">
         Professor de Go
       </h2>
-      <div className="mx-auto flex max-w-sm flex-col gap-1">
+      <div className="mx-auto flex max-w-sm flex-col gap-2">
         <p className="text-center">
           Através dos meus livros e conteúdo no YouTube,
           procuro compartilhar o que sei deste jogo milenar
@@ -107,7 +107,7 @@ function Course({
         title={title}
         description={description}
       />
-      <CourseVideoProps url={url} title={title} />
+      <CourseVideo url={url} title={title} />
     </div>
   )
 }
@@ -117,12 +117,12 @@ type CourseVideoProps = {
   title: string
 }
 
-function CourseVideoProps({
+export function CourseVideo({
   url,
   title,
 }: CourseVideoProps) {
   return (
-    <div className="aspect-video w-full overflow-hidden rounded-2xl border border-slate-200 shadow-[0_30px_80px_-40px_rgba(15,23,42,0.15)]">
+    <div className="aspect-video overflow-hidden rounded-2xl border border-slate-200 shadow-lg">
       <iframe
         className="h-full w-full"
         src={url}

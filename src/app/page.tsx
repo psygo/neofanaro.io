@@ -7,12 +7,18 @@ import Link from "next/link"
 
 import { useLang } from "../hooks/useLang"
 
+import {
+  CourseVideo,
+  GoProfPresentationSection,
+} from "./teacher/page"
+
 export default function Home() {
   return (
     <main className="mx-auto flex max-w-80 flex-col gap-12 sm:max-w-xl">
       <Suspense>
         <PresentationSection />
         <SoftwareWorkSection />
+        <GoProfHomePresentationSection />
       </Suspense>
     </main>
   )
@@ -263,6 +269,21 @@ function Tags({ tags }: TagsProps) {
       {tags.map((tag, i) => (
         <Tag key={i} text={tag} />
       ))}
+    </div>
+  )
+}
+
+// ---------------------------------------------------------
+// Go Prof Presentation Section
+
+function GoProfHomePresentationSection() {
+  return (
+    <div className="mx-auto flex max-w-sm flex-col gap-6">
+      <GoProfPresentationSection />
+      <CourseVideo
+        url="https://www.youtube.com/embed/7zpef07ei5U?list=PLLWr-AWriURE"
+        title="Regras do Go"
+      />
     </div>
   )
 }
