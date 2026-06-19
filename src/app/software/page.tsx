@@ -127,12 +127,32 @@ function GithubRepoCard({
         className="hidden sm:block"
       />
       <div className="flex flex-col gap-3">
-        <GithubRepoCardTitleAndDescription
+        <div className="flex items-center justify-between gap-1">
+          <h3 className="text-md font-bold sm:text-lg">
+            {title}
+          </h3>
+          <Image
+            loading="eager"
+            src={imageSrc}
+            alt="repo"
+            width={45}
+            height={45}
+            className="h-full w-6 sm:hidden"
+          />
+        </div>
+        <p className="-mt-2 text-sm text-slate-950">
+          {description}
+        </p>
+        {/* <GithubRepoCardTitleAndDescription
           title={title}
           description={description}
-        />
-        <Tags tags={tags} />
-        <GithubStars total={starTotal} />
+        /> */}
+        <div className="flex items-center gap-4">
+          <div className="flex flex-col gap-2">
+            <Tags tags={tags} />
+            <GithubStars total={starTotal} />
+          </div>
+        </div>
       </div>
     </Link>
   )

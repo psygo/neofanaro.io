@@ -28,7 +28,7 @@ function PresentationSection() {
   const lang = useLang()
 
   return (
-    <section className="mx-auto flex flex-col items-center gap-5.5 px-4 py-6 sm:flex-row sm:gap-8">
+    <section className="mx-auto flex flex-col items-center gap-5.5 px-4 py-6 sm:flex-row sm:gap-8 sm:px-7">
       <div className="flex flex-col gap-4">
         <h2 className="text-center text-3xl font-extrabold sm:text-left sm:text-4xl">
           Philippe Fanaro
