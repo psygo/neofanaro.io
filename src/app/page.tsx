@@ -9,7 +9,7 @@ import { useLang } from "../hooks/useLang"
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center gap-12">
+    <main className="mx-auto flex max-w-80 flex-col gap-12 sm:max-w-xl">
       <Suspense>
         <PresentationSection />
         <SoftwareWorkSection />
@@ -27,9 +27,7 @@ function PresentationSection() {
   const lang = useLang()
 
   return (
-    <section
-      className={`flex max-w-80 flex-col items-center gap-5.5 px-4 py-6 sm:max-w-xl sm:flex-row sm:gap-8 sm:px-7`}
-    >
+    <section className="flex flex-col items-center gap-5.5 px-4 py-6 sm:flex-row sm:gap-8 sm:px-7">
       <div className="flex flex-col gap-4">
         <h2 className="text-center text-3xl font-bold sm:text-left sm:text-4xl">
           Philippe Fanaro
@@ -78,9 +76,7 @@ function PresentationParagraph({
 
 function SoftwareWorkSection() {
   return (
-    <section
-      className={`flex max-w-80 flex-col gap-4 px-6 py-4 sm:max-w-xl`}
-    >
+    <section className="flex flex-col gap-4 px-6 py-4">
       <h2 className="text-center text-xl font-bold sm:text-2xl">
         Software
       </h2>
