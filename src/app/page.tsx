@@ -144,15 +144,11 @@ function Aquarifolio() {
       rel="noreferrer noopener"
       className={`${containerOutline} bg-gray-0 flex flex-col gap-2 px-6 py-4 pb-6`}
     >
-      <h3 className="text-md font-bold sm:text-lg">
-        Aquarifolio
-      </h3>
-      <div className="flex gap-2">
-        <Tag text="react" />
-        <Tag text="three.js" />
-        <Tag text="next.js" />
-      </div>
-
+      <GithubRepoCardTitleAndDescription
+        title="Aquarifolio"
+        description="A 3D presentation of my work"
+      />
+      <Tags tags={["react", "three.js", "next.js"]} />
       <iframe
         id="inlineFrameExample"
         title="Inline Frame Example"
@@ -198,27 +194,54 @@ function GithubRepoCard({
         className="hidden sm:block"
       />
       <div className="flex flex-col gap-3">
-        <h3 className="text-md font-bold sm:text-lg">
-          {title}
-        </h3>
-        <p className="-mt-2 text-sm">{description}</p>
-        <div className="flex gap-2">
-          {tags.map((tag, i) => (
-            <Tag key={i} text={tag} />
-          ))}
-        </div>
-        <div className="flex gap-1">
-          <Image
-            loading="eager"
-            src="/software_work/star.svg"
-            alt="FIC"
-            width={20}
-            height={20}
-          />
-          <p className="font-semibold">{starTotal}+</p>
-        </div>
+        <GithubRepoCardTitleAndDescription
+          title={title}
+          description={description}
+        />
+        <Tags tags={tags} />
+        <GithubStars total={starTotal} />
       </div>
     </Link>
+  )
+}
+
+type GithubStarsProps = {
+  total: number
+}
+
+function GithubStars({ total }: GithubStarsProps) {
+  return (
+    <div className="flex gap-1">
+      <Image
+        loading="eager"
+        src="/software_work/star.svg"
+        alt="Github Stars Total"
+        width={20}
+        height={20}
+      />
+      <p className="font-semibold">{total}+</p>
+    </div>
+  )
+}
+
+type GithubRepoCardTitleAndDescriptionProps = {
+  title: string
+  description: string
+}
+
+function GithubRepoCardTitleAndDescription({
+  title,
+  description,
+}: GithubRepoCardTitleAndDescriptionProps) {
+  return (
+    <>
+      <h3 className="text-md font-bold sm:text-lg">
+        {title}
+      </h3>
+      <p className="-mt-2 text-sm text-slate-950">
+        {description}
+      </p>
+    </>
   )
 }
 
@@ -231,6 +254,20 @@ function Tag({ text }: TagProps) {
     <span className="rounded-2xl border border-gray-300 bg-gray-100 px-2 py-0.5 text-xs font-semibold">
       {text}
     </span>
+  )
+}
+
+type TagsProps = {
+  tags: string[]
+}
+
+function Tags({ tags }: TagsProps) {
+  return (
+    <div className="flex gap-2">
+      {tags.map((tag, i) => (
+        <Tag key={i} text={tag} />
+      ))}
+    </div>
   )
 }
 
