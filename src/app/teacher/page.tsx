@@ -1,3 +1,10 @@
+import {
+  FanaroFacebook,
+  FanaroInstagram,
+  FanaroYouTube,
+  FooterLogo,
+} from "../../components/Footer"
+
 export default function Teacher() {
   return (
     <main className="mx-auto flex max-w-100 flex-col gap-12 px-4 sm:max-w-xl">
@@ -13,9 +20,35 @@ function GoProfPresentationSection() {
       <h2 className="text-center text-3xl font-bold">
         Professor de Go
       </h2>
-      <p className="text-center">
-        Caso você queira ter aulas, contate-me!
-      </p>
+      <div className="mx-auto flex max-w-sm flex-col gap-1">
+        <p className="text-center">
+          Através dos meus livros e conteúdo no YouTube,
+          procuro compartilhar o que sei deste jogo milenar
+          e de infinita riqueza.
+        </p>
+        <p className="text-center">
+          Caso você queira ter aulas, contate-me!
+        </p>
+      </div>
+      <div className="mx-auto mt-1 flex gap-2">
+        <FanaroInstagram />
+        <FooterLogo
+          src="/footer/book_2.svg"
+          alt="Como Jogar Go - Uma Introdução Concisa"
+          href="https://github.com/psygo/traducao_como_jogar_go"
+          size={24}
+          className="h-6 w-6"
+        />
+        <FanaroYouTube />
+        <FooterLogo
+          src="/footer/book_1.svg"
+          alt="Técnicas de Go"
+          href="https://github.com/psygo/tecnicas_de_go/releases/tag/1.0"
+          size={24}
+          className="h-6 w-6"
+        />
+        <FanaroFacebook />
+      </div>
     </div>
   )
 }
