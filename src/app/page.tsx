@@ -46,7 +46,7 @@ function PresentationSection() {
         ) : (
           <PresentationParagraph>
             Hi! I&apos;m a software developer and Go
-            teacher. Through this website, I aim to share
+            teacher. Through this website, I aim at sharing
             useful content in these two distinct fields.
           </PresentationParagraph>
         )}

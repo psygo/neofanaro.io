@@ -14,7 +14,7 @@ export default function Software() {
 export function SoftwareWorkSection() {
   return (
     <section className="flex flex-col gap-4 px-6 py-4">
-      <h2 className="text-center text-xl font-bold sm:text-2xl">
+      <h2 className="text-center text-2xl font-bold sm:text-2xl">
         Software
       </h2>
       <div className="flex flex-col gap-4">
@@ -75,7 +75,7 @@ function Aquarifolio() {
       href="https://aquarifolio.vercel.app/"
       target="_blank"
       rel="noreferrer noopener"
-      className={`${containerOutline} bg-gray-0 flex flex-col gap-2 px-6 py-4 pb-6`}
+      className={`${containerOutline} bg-gray-0 flex flex-col gap-3 px-6 py-4 pb-6`}
     >
       <GithubRepoCardTitleAndDescription
         title="Aquarifolio"

@@ -39,7 +39,7 @@ export function FanaroYouTube() {
   )
 }
 
-function GoWithFanaroYouTube() {
+export function GoWithFanaroYouTube() {
   return (
     <FooterLogo
       src="/footer/youtube_logo_orange.svg"

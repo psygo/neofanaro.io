@@ -1,8 +1,13 @@
+"use client"
+
+import { useLang } from "@hooks/useLang"
+
 import {
   FanaroFacebook,
   FanaroInstagram,
   FanaroYouTube,
   FooterLogo,
+  GoWithFanaroYouTube,
 } from "@components/footer"
 
 export default function Teacher() {
@@ -15,20 +20,40 @@ export default function Teacher() {
 }
 
 export function GoProfPresentationSection() {
+  const lang = useLang()
+
   return (
     <div className="flex flex-col gap-3">
       <h2 className="text-center text-3xl font-bold">
-        Professor de Go
+        {lang === "pt" ? "Professor de Go" : "Go Teacher"}
       </h2>
       <div className="mx-auto flex max-w-sm flex-col gap-2">
-        <p className="text-center">
-          Através dos meus livros e conteúdo no YouTube,
-          procuro compartilhar o que sei deste jogo milenar
-          e de infinita riqueza.
-        </p>
-        <p className="text-center">
-          Caso você queira ter aulas, contate-me!
-        </p>
+        {lang === "pt" ? (
+          <>
+            <p className="text-center">
+              Através dos meus livros e conteúdo no YouTube,
+              procuro compartilhar o que sei deste jogo
+              milenar e de infinita riqueza.
+            </p>
+            <p className="text-center">
+              Caso você queira ter aulas, contate-me!
+            </p>
+          </>
+        ) : (
+          <>
+            <p className="text-center">
+              I&apos;m a dan player from Brazil and through
+              my books and YouTube content, I try to share
+              what I know about this ancient game of
+              infinite richness.
+            </p>
+
+            <p className="text-center">
+              If you would like to take lessons, contact me
+              to get a free teaching game!
+            </p>
+          </>
+        )}
       </div>
       <div className="mx-auto mt-1 flex gap-2">
         <FanaroInstagram />
@@ -39,7 +64,11 @@ export function GoProfPresentationSection() {
           size={24}
           className="h-6 w-6"
         />
-        <FanaroYouTube />
+        {lang === "pt" ? (
+          <FanaroYouTube />
+        ) : (
+          <GoWithFanaroYouTube />
+        )}
         <FooterLogo
           src="/footer/book_1.svg"
           alt="Técnicas de Go"

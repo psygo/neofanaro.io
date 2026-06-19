@@ -37,7 +37,7 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col gap-12 px-4 py-4">
+      <body className="flex min-h-full flex-col gap-8 px-4 py-4 sm:gap-10">
         <Nav />
         {children}
         <Footer />
