@@ -1,0 +1,101 @@
+export default function Teacher() {
+  return (
+    <main className="flex flex-col items-center gap-12">
+      <Course
+        index={1}
+        title="As Regras do Go"
+        description="As regras. Descomplicadas."
+        url="https://www.youtube.com/embed/MMR_3EZTTFw?list=PLMYMhzMuvitQAPXYv--bdqRJIJGwGMdMe"
+      />
+    </main>
+  )
+}
+
+//----------------------------------------------------------
+// Course
+
+type CourseProps = {
+  index: number
+  title: string
+  description: string
+  url: string
+}
+
+function Course({
+  index,
+  title,
+  description,
+  url,
+}: CourseProps) {
+  return (
+    <div className="flex flex-col gap-6">
+      <CourseNumber index={index} />
+      <CourseTitleAndDescription
+        title={title}
+        description={description}
+      />
+      <CourseVideoProps url={url} title={title} />
+    </div>
+  )
+}
+
+type CourseVideoProps = {
+  url: string
+  title: string
+}
+
+function CourseVideoProps({
+  url,
+  title,
+}: CourseVideoProps) {
+  return (
+    <div className="aspect-video w-full overflow-hidden rounded-2xl border border-slate-200 shadow-[0_30px_80px_-40px_rgba(15,23,42,0.15)]">
+      <iframe
+        className="h-full w-full"
+        src={url}
+        title={title}
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+      />
+    </div>
+  )
+}
+
+type CourseNumberProps = {
+  index: number
+}
+
+function CourseNumber({ index }: CourseNumberProps) {
+  return (
+    <div className="flex items-center gap-4">
+      <div className="flex-1 border-t border-slate-200" />
+      <span className="rounded-full bg-white px-4 py-1 text-sm font-semibold text-slate-950 shadow-sm md:text-lg">
+        {index}
+      </span>
+      <div className="flex-1 border-t border-slate-200" />
+    </div>
+  )
+}
+
+type CourseTitleAndDescriptionProps = {
+  title: string
+  description: string
+}
+
+function CourseTitleAndDescription({
+  title,
+  description,
+}: CourseTitleAndDescriptionProps) {
+  return (
+    <div className="flex flex-col gap-2">
+      <h1 className="text-4xl font-bold sm:text-5xl">
+        {title}
+      </h1>
+      <p className="max-w-3xl text-lg text-slate-600">
+        {description}
+      </p>
+    </div>
+  )
+}
+
+//----------------------------------------------------------
