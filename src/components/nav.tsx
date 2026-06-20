@@ -8,6 +8,7 @@ import Link from "next/link"
 import "flag-icons/css/flag-icons.min.css"
 
 import { useLang } from "@hooks/useLang"
+import { LangLink } from "./langLink"
 
 // ---------------------------------------------------------
 
@@ -96,7 +97,7 @@ function NavIcon({
 }: NavLogoProps) {
   return (
     <li>
-      <Link href={href}>
+      <LangLink href={href}>
         <Image
           loading="eager"
           src={src}
@@ -105,7 +106,7 @@ function NavIcon({
           height={size}
           className={className}
         />
-      </Link>
+      </LangLink>
     </li>
   )
 }
