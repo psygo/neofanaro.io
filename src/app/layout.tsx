@@ -18,13 +18,31 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "neofanaro.io",
-  description: "Philippe Fanaro's Blog",
+  description: "neofanaro.io",
+  alternates: {
+    canonical: "https://neofanaroio.vercel.app",
+    languages: {
+      en: "https://neofanaroio.vercel.app/?lang=en",
+      pt: "https://neofanaroio.vercel.app/?lang=pt",
+    },
+  },
   icons: [
     {
       rel: "icon",
       url: "/logos/favicon.png",
     },
   ],
+  openGraph: {
+    title: "neofanaro.io",
+    description: "Philippe Fanaro's Blog",
+    url: "neofanaroio.vercel.app",
+    siteName: "neofanaro.io",
+    images: [
+      {
+        url: "https://neofanaroio.vercel.app/metadata/neofanaro.io_sample.png",
+      },
+    ],
+  },
 }
 
 export default function RootLayout({
