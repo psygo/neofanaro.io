@@ -3,7 +3,7 @@ import Image from "next/image"
 
 export function Footer() {
   return (
-    <footer className="mx-auto mt-10 flex w-full max-w-lg justify-center border-t border-gray-200 px-6 pt-3">
+    <footer className="mx-auto mt-10 flex max-w-lg justify-center border-t border-gray-200 px-8 pt-3">
       <div className="flex items-center justify-center gap-3">
         <GithubLogo />
         <FanaroYouTube />
