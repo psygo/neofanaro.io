@@ -4,6 +4,8 @@ import { Suspense } from "react"
 
 import Image from "next/image"
 
+import { ReactChildren } from "../types/reactChildren"
+
 import { useLang } from "@hooks/useLang"
 
 import { Main } from "@components/main"
@@ -64,9 +66,7 @@ function PresentationSection() {
 
 function PresentationParagraph({
   children,
-}: {
-  children: React.ReactNode
-}) {
+}: ReactChildren) {
   return (
     <p className="max-w-75 px-4 text-center text-slate-700 sm:max-w-100 sm:px-0 sm:text-left sm:text-lg">
       {children}
