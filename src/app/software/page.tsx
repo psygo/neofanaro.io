@@ -45,7 +45,7 @@ function TecnicasDeGo() {
   return (
     <GithubRepoCard
       href="https://github.com/psygo/tecnicas_de_go"
-      imageSrc="/software_work/tecnicas_de_go_capa.png"
+      imageSrc="/software_work/tecnicas_de_go_capa.svg"
       imageSize={90}
       title="Técnicas de Go"
       description="A Go (Baduk or Weiqi), with a complete package for drawing LaTeX vector diagrams"

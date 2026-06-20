@@ -11,7 +11,7 @@ import { SoftwareWorkSection } from "./software/page"
 
 export default function Home() {
   return (
-    <main className="mx-auto flex max-w-80 flex-col gap-12 sm:max-w-4xl">
+    <main className="mx-auto flex max-w-80 flex-col gap-12 sm:max-w-7xl">
       <Suspense>
         <PresentationSection />
         <SoftwareWorkSection />
@@ -66,7 +66,7 @@ function PresentationParagraph({
   children: React.ReactNode
 }) {
   return (
-    <p className="max-w-75 px-4 text-center text-slate-700 sm:max-w-90 sm:px-0 sm:text-left sm:text-lg">
+    <p className="max-w-75 px-4 text-center text-slate-700 sm:max-w-100 sm:px-0 sm:text-left sm:text-lg">
       {children}
     </p>
   )
