@@ -11,15 +11,16 @@ import {
   FooterLogo,
   GoWithFanaroYouTube,
 } from "@components/footer"
+import { Main } from "@components/main"
 
 export default function Teacher() {
   return (
-    <main className="mx-auto flex max-w-100 flex-col gap-12 px-4 sm:max-w-xl">
+    <Main>
       <Suspense>
         <GoProfPresentationSection />
         <CourseSection />
       </Suspense>
-    </main>
+    </Main>
   )
 }
 

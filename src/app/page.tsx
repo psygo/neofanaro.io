@@ -6,18 +6,20 @@ import Image from "next/image"
 
 import { useLang } from "@hooks/useLang"
 
+import { Main } from "@components/main"
+
 import { GoProfPresentationSection } from "./teacher/page"
 import { SoftwareWorkSection } from "./software/page"
 
 export default function Home() {
   return (
-    <main className="mx-auto flex max-w-80 flex-col gap-12 sm:max-w-7xl">
+    <Main>
       <Suspense>
         <PresentationSection />
         <SoftwareWorkSection />
         <GoProfHomePresentationSection />
       </Suspense>
-    </main>
+    </Main>
   )
 }
 

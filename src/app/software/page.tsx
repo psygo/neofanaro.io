@@ -3,11 +3,13 @@ import Link from "next/link"
 
 import { containerOutline } from "@styles/globals"
 
+import { Main } from "@components/main"
+
 export default function Software() {
   return (
-    <main className="mx-auto flex max-w-100 flex-col gap-12 px-4 sm:max-w-xl">
+    <Main>
       <SoftwareWorkSection />
-    </main>
+    </Main>
   )
 }
 
