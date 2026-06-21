@@ -119,26 +119,27 @@ function GithubRepoCard({
         className="hidden sm:block"
       />
       <div className="flex flex-col gap-3">
-        <div className="flex items-center justify-between gap-1">
+        {/* <GithubRepoCardTitleAndDescription
+          title={title}
+          description={description}
+        /> */}
+        <div className="flex items-center gap-2">
           <h3 className="text-md font-bold sm:text-lg">
             {title}
           </h3>
           <Image
             loading="eager"
             src={imageSrc}
-            alt="repo"
-            width={45}
-            height={45}
+            alt="Github Repo Logo"
+            width={0}
+            height={0}
+            sizes="100vw"
             className="h-full w-6 sm:hidden"
           />
         </div>
         <p className="-mt-2 text-sm text-slate-950">
           {description}
         </p>
-        {/* <GithubRepoCardTitleAndDescription
-          title={title}
-          description={description}
-        /> */}
         <div className="flex items-center gap-4">
           <div className="flex flex-col gap-2">
             <Tags tags={tags} />
@@ -156,13 +157,15 @@ type GithubStarsProps = {
 
 function GithubStars({ total }: GithubStarsProps) {
   return (
-    <div className="flex gap-1">
+    <div className="flex items-center gap-1">
       <Image
         loading="eager"
         src="/software_work/star.svg"
         alt="Github Stars Total"
         width={20}
         height={20}
+        sizes="100vw"
+        className="h-full"
       />
       <p className="font-semibold">{total}+</p>
     </div>

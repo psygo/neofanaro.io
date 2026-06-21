@@ -34,8 +34,9 @@ export function PresentationSection() {
         loading="eager"
         src="/pictures/philippe_playing_go.png"
         alt="Fanaro"
-        width={200}
-        height={200}
+        width={0}
+        height={0}
+        sizes="100vw"
         className="h-full w-50 rounded-2xl sm:w-60"
       />
     </section>
