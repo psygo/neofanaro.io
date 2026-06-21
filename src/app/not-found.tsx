@@ -22,7 +22,7 @@ function NotFoundMessage() {
       <div className="mx-auto mt-10 mb-6 flex flex-col gap-4 text-center">
         {lang === "pt" ? (
           <>
-            <h2 className="text-4xl font-bold">
+            <h2 className="text-3xl font-bold">
               Página Não Encontrada
             </h2>
             <p>

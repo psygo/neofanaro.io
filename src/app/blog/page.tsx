@@ -1,21 +1,33 @@
+"use client"
+
+import { Suspense } from "react"
+
 import Link from "next/link"
 
 import "flag-icons/css/flag-icons.min.css"
+
+import { useLang } from "@hooks/useLang"
 
 import { Main } from "@components/main"
 
 export default function Software() {
   return (
     <Main>
-      <ArticlesSection />
+      <Suspense>
+        <ArticlesSection />
+      </Suspense>
     </Main>
   )
 }
 
 function ArticlesSection() {
+  const lang = useLang()
+
   return (
     <section className="flex flex-col items-center gap-3">
-      <h2 className="text-2xl font-extrabold">Articles</h2>
+      <h2 className="text-2xl font-extrabold">
+        {lang === "pt" ? "Artigos" : "Articles"}
+      </h2>
       <ArticlesList />
     </section>
   )
@@ -34,7 +46,7 @@ function ArticlesList() {
         href="/first"
         title="First Article"
         description="Short description ladjflka lajdf lakjdflkajdf lakj dflajs dlfkj asdlkfj alkj dflka jlk"
-        lang="en"
+        lang="pt"
       />
     </div>
   )

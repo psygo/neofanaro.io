@@ -125,7 +125,7 @@ function CountryFlagLogo({
     <li>
       <Link href={href}>
         <span
-          className={`${navLogoMargins} fi fi-${countryCode}`}
+          className={`${navLogoMargins} fi fi-${countryCode} rounded-xl`}
           style={{
             width: "23.5px",
             height: "23.5px",
