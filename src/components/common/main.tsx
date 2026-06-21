@@ -1,4 +1,4 @@
-import { ReactChildren } from "../types/reactChildren"
+import { ReactChildren } from "../../types/reactChildren"
 
 export function Main({ children }: ReactChildren) {
   return (

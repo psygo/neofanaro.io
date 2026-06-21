@@ -8,7 +8,7 @@ import Link from "next/link"
 import "flag-icons/css/flag-icons.min.css"
 
 import { useLang } from "@hooks/useLang"
-import { LangLink } from "./common/langLink"
+import { LangLink } from "./langLink"
 
 // ---------------------------------------------------------
 

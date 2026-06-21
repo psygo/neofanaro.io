@@ -2,7 +2,7 @@ import { Suspense } from "react"
 
 import "flag-icons/css/flag-icons.min.css"
 
-import { Main } from "@components/main"
+import { Main } from "@/src/components/common/main"
 
 import { ArticlesSection } from "./blog"
 

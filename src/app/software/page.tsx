@@ -1,4 +1,4 @@
-import { Main } from "@components/main"
+import { Main } from "@/src/components/common/main"
 
 import { SoftwareWorkSection } from "./software"
 

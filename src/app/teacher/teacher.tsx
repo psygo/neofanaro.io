@@ -8,7 +8,7 @@ import {
   FanaroYouTube,
   FooterLogo,
   GoWithFanaroYouTube,
-} from "@components/footer"
+} from "@/src/components/common/footer"
 
 export function GoProfPresentationSection() {
   const lang = useLang()

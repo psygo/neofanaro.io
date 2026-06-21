@@ -2,7 +2,7 @@
 
 import { useLang } from "@hooks/useLang"
 
-import { Main } from "@components/main"
+import { Main } from "@/src/components/common/main"
 
 export function NotFoundMessage() {
   const lang = useLang()

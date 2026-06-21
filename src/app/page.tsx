@@ -1,6 +1,6 @@
 import { Suspense } from "react"
 
-import { Main } from "@components/main"
+import { Main } from "@/src/components/common/main"
 import { PresentationSection } from "@components/home/presentationSection"
 
 import { GoProfPresentationSection } from "./teacher/teacher"
