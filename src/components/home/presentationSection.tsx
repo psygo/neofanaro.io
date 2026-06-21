@@ -18,15 +18,16 @@ export function PresentationSection() {
         {lang === "pt" ? (
           <PresentationParagraph>
             Olá! Sou um desenvolvedor de software e
-            professor de Go. Através deste site, procuro
-            compartilhar conteúdo útil nesses dois ramos
-            distintos.
+            professor de Go do Brasil. Através deste site,
+            procuro compartilhar conteúdo útil nesses dois
+            ramos distintos.
           </PresentationParagraph>
         ) : (
           <PresentationParagraph>
-            Hi! I&apos;m a software developer and Go
-            teacher. Through this website, I aim at sharing
-            useful content in these two distinct fields.
+            Hi! I&apos;m a software developer and Go teacher
+            from Brazil. Through this website, I aim at
+            sharing useful content in these two distinct
+            fields.
           </PresentationParagraph>
         )}
       </div>

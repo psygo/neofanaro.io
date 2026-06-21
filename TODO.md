@@ -2,15 +2,14 @@
 
 ## Bugs
 
-- [ ] Language Persistence is broken
-
 ## UI
 
+- [ ] Lang translation for PT for the software descriptions
 - [ ] Rounded or Squared Flags
 - [ ] The initial page layout once I get the blog going sould probably have the top article on top, with the website's title above it.
-- [ ] Software ability logos on the software section.
 - [ ] Software presentation section
 - [ ] Card hovering UI
+- [ ] Nav hovering and outline
 
 ## Features
 

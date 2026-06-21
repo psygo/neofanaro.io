@@ -6,9 +6,12 @@ import { containerOutline } from "@styles/globals"
 export function SoftwareWorkSection() {
   return (
     <section className="flex flex-col gap-4 px-6 py-4">
-      <h2 className="text-center text-2xl font-extrabold sm:text-2xl">
-        Software
-      </h2>
+      <div className="flex flex-col gap-2">
+        <h2 className="text-center text-2xl font-extrabold sm:text-2xl">
+          Full Stack Developer
+        </h2>
+        <SoftwareStackLogos />
+      </div>
       <div className="flex flex-col gap-4">
         <Aquarifolio />
         <Fic />
@@ -16,6 +19,66 @@ export function SoftwareWorkSection() {
         <YouTubeKbdNav />
       </div>
     </section>
+  )
+}
+
+function SoftwareStackLogos() {
+  return (
+    <div className="flex items-center justify-center gap-3">
+      <Link
+        target="_blank"
+        rel="noreferrer noopener"
+        href="https://react.dev/"
+      >
+        <Image
+          loading="eager"
+          src="/software_work/react.svg"
+          alt="repo"
+          width={40}
+          height={40}
+        />
+      </Link>
+      <Link
+        target="_blank"
+        rel="noreferrer noopener"
+        href="https://www.typescriptlang.org/"
+      >
+        <Image
+          loading="eager"
+          src="/software_work/typescript.svg"
+          alt="repo"
+          width={40}
+          height={40}
+        />
+      </Link>
+      <Link
+        target="_blank"
+        rel="noreferrer noopener"
+        href="https://nextjs.org/"
+        className="mr-1.25 ml-1"
+      >
+        <Image
+          loading="eager"
+          src="/software_work/nextjs.svg"
+          alt="repo"
+          width={32}
+          height={32}
+        />
+      </Link>
+      <Link
+        target="_blank"
+        rel="noreferrer noopener"
+        href="https://www.latex-project.org/"
+      >
+        <Image
+          loading="eager"
+          src="/software_work/tex.svg"
+          alt="repo"
+          width={40}
+          height={40}
+        />
+      </Link>
+    </div>
   )
 }
 
