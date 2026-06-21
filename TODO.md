@@ -16,3 +16,4 @@
 ## Features
 
 - [ ] Language should be automatically identified by localization.
+- [ ] In order to have the top pages pre-rendered on the server, I should move the client side stuff (such as `useLang`) into another file, this way I can avoid `"use client"`.

@@ -13,7 +13,7 @@ import { Main } from "@components/main"
 export default function Software() {
   return (
     <Main>
-      <Suspense>
+      <Suspense fallback={<p>Loading…</p>}>
         <ArticlesSection />
       </Suspense>
     </Main>
