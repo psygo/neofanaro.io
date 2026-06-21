@@ -2,7 +2,6 @@
 
 ## Bugs
 
-- [ ] Not Found page giving errors on the server
 - [ ] Language Persistence is broken
 
 ## UI
