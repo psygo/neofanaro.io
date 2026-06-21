@@ -4,13 +4,13 @@ import "flag-icons/css/flag-icons.min.css"
 
 import { Main } from "@/src/components/common/main"
 
-import { ArticlesSection } from "./blog"
+import { PostsSection } from "./posts"
 
-export default function Blog() {
+export default function Posts() {
   return (
     <Main>
       <Suspense fallback={<p>Loading…</p>}>
-        <ArticlesSection />
+        <PostsSection />
       </Suspense>
     </Main>
   )

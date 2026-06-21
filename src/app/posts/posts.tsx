@@ -6,7 +6,7 @@ import "flag-icons/css/flag-icons.min.css"
 
 import { useLang } from "@hooks/useLang"
 
-export function ArticlesSection() {
+export function PostsSection() {
   const lang = useLang()
 
   return (
@@ -14,22 +14,22 @@ export function ArticlesSection() {
       <h2 className="text-2xl font-extrabold">
         {lang === "pt" ? "Artigos" : "Articles"}
       </h2>
-      <ArticlesList />
+      <PostsList />
     </section>
   )
 }
 
-function ArticlesList() {
+function PostsList() {
   return (
     <div className="flex flex-col gap-3">
-      <ArticleThumbnail
-        href="/first"
+      <PostThumbnail
+        href="/posts/first"
         title="First Article"
         description="Short description ladjflka lajdf lakjdflkajdf lakj dflajs dlfkj asdlkfj alkj dflka jlk"
         lang="en"
       />
-      <ArticleThumbnail
-        href="/first"
+      <PostThumbnail
+        href="/posts/first"
         title="First Article"
         description="Short description ladjflka lajdf lakjdflkajdf lakj dflajs dlfkj asdlkfj alkj dflka jlk"
         lang="pt"
@@ -45,7 +45,7 @@ type ArticleThumbnailProps = {
   lang: string
 }
 
-function ArticleThumbnail({
+function PostThumbnail({
   href,
   title,
   description,

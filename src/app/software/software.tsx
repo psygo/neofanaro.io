@@ -1,12 +1,13 @@
 "use client"
 
+import { Suspense } from "react"
+
 import Image from "next/image"
 import Link from "next/link"
 
 import { containerOutline } from "@styles/globals"
 
 import { useLang } from "@hooks/useLang"
-import { Suspense } from "react"
 
 export function SoftwareWorkSection() {
   return (
