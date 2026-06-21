@@ -1,7 +1,12 @@
+"use client"
+
 import Image from "next/image"
 import Link from "next/link"
 
 import { containerOutline } from "@styles/globals"
+
+import { useLang } from "@hooks/useLang"
+import { Suspense } from "react"
 
 export function SoftwareWorkSection() {
   return (
@@ -13,10 +18,12 @@ export function SoftwareWorkSection() {
         <SoftwareStackLogos />
       </div>
       <div className="flex flex-col gap-4">
-        <Aquarifolio />
-        <Fic />
-        <TecnicasDeGo />
-        <YouTubeKbdNav />
+        <Suspense>
+          <Aquarifolio />
+          <Fic />
+          <TecnicasDeGo />
+          <YouTubeKbdNav />
+        </Suspense>
       </div>
     </section>
   )
@@ -83,13 +90,19 @@ function SoftwareStackLogos() {
 }
 
 function Fic() {
+  const lang = useLang()
+
   return (
     <GithubRepoCard
       href="https://pub.dev/packages/fast_immutable_collections"
       imageSrc="/software_work/fic.svg"
       imageSize={90}
       title="Fast Immutable Collections"
-      description="Immutable data structures for Dart"
+      description={
+        lang === "pt"
+          ? "Estruturas de Dados Imutáveis em Dart"
+          : "Immutable Data Structures for Dart"
+      }
       tags={["dart", "flutter"]}
       starTotal={200}
     />
@@ -97,13 +110,19 @@ function Fic() {
 }
 
 function TecnicasDeGo() {
+  const lang = useLang()
+
   return (
     <GithubRepoCard
       href="https://github.com/psygo/tecnicas_de_go"
       imageSrc="/software_work/tecnicas_de_go_capa.svg"
       imageSize={90}
       title="Técnicas de Go"
-      description="A Go (Baduk or Weiqi), with a complete package for drawing LaTeX vector diagrams"
+      description={
+        lang === "pt"
+          ? "Um livro e um pacote LaTeX completo para desenhar diagramas vetoriais de Go (Baduk ou Weiqi)"
+          : "A book and a complete LaTeX package for drawing Go (Baduk or Weiqi) vector diagrams"
+      }
       tags={["latex", "svg"]}
       starTotal={20}
     />
@@ -111,13 +130,19 @@ function TecnicasDeGo() {
 }
 
 function YouTubeKbdNav() {
+  const lang = useLang()
+
   return (
     <GithubRepoCard
       href="https://github.com/FanaroEngineering/youtube_kbd_nav"
       imageSrc="/software_work/yt_kbd_nav.svg"
       imageSize={90}
       title="YouTube Kbd Nav"
-      description="A browser extension for controlling YouTube entirely through the keyboard"
+      description={
+        lang === "pt"
+          ? "Uma extensão de navegador para controlar o YouTube inteiramente através do teclado."
+          : "A browser extension for controlling YouTube entirely through the keyboard"
+      }
       tags={["typescript", "browser"]}
       starTotal={20}
     />
@@ -125,6 +150,8 @@ function YouTubeKbdNav() {
 }
 
 function Aquarifolio() {
+  const lang = useLang()
+
   return (
     <Link
       href="https://aquarifolio.vercel.app/"
@@ -134,7 +161,11 @@ function Aquarifolio() {
     >
       <GithubRepoCardTitleAndDescription
         title="Aquarifolio"
-        description="A 3D presentation of my work"
+        description={
+          lang === "pt"
+            ? "Uma apresentação 3D do meu trabalho"
+            : "A 3D presentation of my work"
+        }
       />
       <Tags tags={["react", "three.js", "next.js"]} />
       <iframe
@@ -203,11 +234,9 @@ function GithubRepoCard({
         <p className="-mt-2 text-sm text-slate-950">
           {description}
         </p>
-        <div className="flex items-center gap-4">
-          <div className="flex flex-col gap-2">
-            <Tags tags={tags} />
-            <GithubStars total={starTotal} />
-          </div>
+        <div className="flex flex-col gap-2.5">
+          <Tags tags={tags} />
+          <GithubStars total={starTotal} />
         </div>
       </div>
     </Link>
