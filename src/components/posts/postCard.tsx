@@ -1,5 +1,7 @@
 import "flag-icons/css/flag-icons.min.css"
 
+import { cardDecoration } from "@styles/globals"
+
 import { ReactChildren } from "../../types/reactChildren"
 
 import { LangLink } from "../common/langLink"
@@ -25,10 +27,10 @@ export function PostCard({
   return (
     <LangLink
       href={href}
-      className="flex flex-col gap-2 rounded-xl border border-gray-200 p-4"
+      className={`flex flex-col gap-2 ${cardDecoration}`}
     >
       <PostTitle>{title}</PostTitle>
-      <div className="flex flex-wrap items-center gap-4 sm:items-end-safe">
+      <div className="flex flex-wrap items-center gap-3 sm:items-end-safe">
         <PostTags tags={tags} />
         <PostLang lang={lang} />
       </div>
@@ -54,7 +56,7 @@ type PostLangProps = {
 function PostLang({ lang }: PostLangProps) {
   return (
     <span
-      className={`fi fi-${lang === "pt" ? "br" : "us"}`}
+      className={`fi rounded-xl fi-${lang === "pt" ? "br" : "us"}`}
       style={{
         width: "20px",
         height: "20px",

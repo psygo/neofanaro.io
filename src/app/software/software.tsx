@@ -5,7 +5,10 @@ import { Suspense } from "react"
 import Image from "next/image"
 import Link from "next/link"
 
-import { containerOutline } from "@styles/globals"
+import {
+  cardDecoration,
+  containerOutline,
+} from "@styles/globals"
 
 import { useLang } from "@hooks/useLang"
 
@@ -158,7 +161,7 @@ function Aquarifolio() {
       href="https://aquarifolio.vercel.app/"
       target="_blank"
       rel="noreferrer noopener"
-      className={`${containerOutline} bg-gray-0 flex flex-col gap-3 px-6 py-4 pb-6`}
+      className={`${containerOutline} bg-gray-0 flex flex-col gap-3 px-4.5 py-3 pb-4.5`}
     >
       <GithubRepoCardTitleAndDescription
         title="Aquarifolio"
@@ -203,7 +206,7 @@ function GithubRepoCard({
       href={href}
       target="_blank"
       rel="noreferrer noopener"
-      className={`${containerOutline} bg-gray-0 flex w-full flex-row items-center gap-5 px-6 py-4`}
+      className={`${containerOutline} bg-gray-0 flex w-full flex-row items-center gap-5 px-4.5 py-3`}
     >
       <Image
         loading="eager"
