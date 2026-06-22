@@ -2,9 +2,9 @@ import { Suspense } from "react"
 
 import "flag-icons/css/flag-icons.min.css"
 
-import { Main } from "@/src/components/common/main"
+import { Main } from "@components/common/main"
 
-import { PostsSection } from "./posts"
+import { PostsSection } from "@components/posts/postCard"
 
 export default function Posts() {
   return (
