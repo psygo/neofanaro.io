@@ -27,11 +27,11 @@ export function PostCard({
       href={href}
       className="flex flex-col gap-2 rounded-xl border border-gray-200 p-4"
     >
-      <div className="flex items-center justify-between gap-6 sm:items-end-safe">
-        <PostTitle>{title}</PostTitle>
+      <PostTitle>{title}</PostTitle>
+      <div className="flex flex-wrap items-center gap-4 sm:items-end-safe">
+        <PostTags tags={tags} />
         <PostLang lang={lang} />
       </div>
-      <PostTags tags={tags} />
       <h6 className="text-sm text-slate-500">{date}</h6>
 
       <PostDescription>{description}</PostDescription>
@@ -56,9 +56,9 @@ function PostLang({ lang }: PostLangProps) {
     <span
       className={`fi fi-${lang === "pt" ? "br" : "us"}`}
       style={{
-        width: "23.5px",
-        height: "23.5px",
-        marginBottom: "2px",
+        width: "20px",
+        height: "20px",
+        // marginBottom: "2px",
       }}
     ></span>
   )

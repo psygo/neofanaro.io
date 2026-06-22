@@ -304,7 +304,7 @@ type TagsProps = {
 
 function Tags({ tags }: TagsProps) {
   return (
-    <div className="flex gap-2">
+    <div className="flex flex-wrap gap-2">
       {tags.map((tag, i) => (
         <Tag key={i} text={tag} />
       ))}
