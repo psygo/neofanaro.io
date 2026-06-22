@@ -24,7 +24,7 @@ export function PostTitleSection({
 }
 
 export function PostTitle({ children }: ReactChildren) {
-  return <h1 className="mb-4">{children}</h1>
+  return <h1 className="mb-2.5">{children}</h1>
 }
 
 export function PostDate({ children }: ReactChildren) {
@@ -84,6 +84,26 @@ export function PostLink({
     >
       {children}
     </Link>
+  )
+}
+
+export function PostOrderedList({
+  children,
+}: ReactChildren) {
+  return (
+    <ol className="pl-12 [&>li]:my-1 [&>li]:pl-1">
+      {children}
+    </ol>
+  )
+}
+
+export function PostUnorderedList({
+  children,
+}: ReactChildren) {
+  return (
+    <ul className="mt-0 mb-0 [&>li]:my-1 [&>li]:pl-0.5">
+      {children}
+    </ul>
   )
 }
 

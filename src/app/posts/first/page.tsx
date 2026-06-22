@@ -8,6 +8,8 @@ import {
   PostTitleSection,
   PostLink,
   PostTags,
+  PostOrderedList,
+  PostUnorderedList,
 } from "@components/posts/post"
 
 export default function FirstPost() {
@@ -42,6 +44,19 @@ export default function FirstPost() {
             Now, with AI, things have become much clearer.
             The opening hierarchy goes like this:
           </PostParagraph>
+          <PostOrderedList>
+            <li>Corner</li>
+            <li>
+              Largely interchangeable among these:
+              <PostUnorderedList>
+                <li>Corner Enclosure</li>
+                <li>Corner Approach</li>
+                <li>3-3 Invasion Against the 4-4</li>
+              </PostUnorderedList>
+            </li>
+            <li>Side</li>
+            <li>Center</li>
+          </PostOrderedList>
         </PostSection>
       </Post>
     </Main>
