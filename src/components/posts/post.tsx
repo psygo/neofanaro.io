@@ -33,7 +33,7 @@ export function PostDate({ children }: ReactChildren) {
 
 export function PostTag({ children }: ReactChildren) {
   return (
-    <span className="rounded-2xl border border-gray-300 bg-gray-100 px-2 py-0.5 text-xs font-semibold">
+    <span className="rounded-2xl border border-gray-300 bg-gray-50 px-2 py-0.5 text-xs font-semibold text-gray-600">
       {children}
     </span>
   )
@@ -45,7 +45,7 @@ type PostTagsProps = {
 
 export function PostTags({ tags }: PostTagsProps) {
   return (
-    <div className="mb-5 flex gap-2">
+    <div className="flex gap-2">
       {tags.map((tag, i) => (
         <PostTag key={i}>{tag}</PostTag>
       ))}

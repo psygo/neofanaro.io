@@ -3,6 +3,7 @@ import Link from "next/link"
 import "flag-icons/css/flag-icons.min.css"
 
 import { ReactChildren } from "../../types/reactChildren"
+import { PostTags } from "./post"
 
 export type PostCardProps = {
   href: string
@@ -18,6 +19,8 @@ export function PostCard({
   title,
   description,
   lang,
+  date,
+  tags,
 }: PostCardProps) {
   return (
     <Link
@@ -28,6 +31,9 @@ export function PostCard({
         <PostTitle>{title}</PostTitle>
         <PostLang lang={lang} />
       </div>
+      <PostTags tags={tags} />
+      <h6 className="text-sm text-slate-500">{date}</h6>
+
       <PostDescription>{description}</PostDescription>
     </Link>
   )
