@@ -5,10 +5,7 @@ import { Suspense } from "react"
 import Image from "next/image"
 import Link from "next/link"
 
-import {
-  cardDecoration,
-  containerOutline,
-} from "@styles/globals"
+import { containerOutline } from "@styles/globals"
 
 import { useLang } from "@hooks/useLang"
 

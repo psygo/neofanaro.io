@@ -12,6 +12,7 @@
 - [ ] LinkedIn button
 - [ ] CV download button
 - [ ] Grayer Background for the website
+- [ ] Software I have contributed to
 
 ## Features
 
