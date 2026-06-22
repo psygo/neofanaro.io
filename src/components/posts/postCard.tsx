@@ -1,70 +1,19 @@
-"use client"
-
 import Link from "next/link"
 
 import "flag-icons/css/flag-icons.min.css"
 
 import { ReactChildren } from "../../types/reactChildren"
 
-import { useLang } from "@hooks/useLang"
-
-export function PostsSection() {
-  const lang = useLang()
-
-  return (
-    <section className="flex flex-col items-center gap-3">
-      <h2 className="text-2xl font-extrabold">
-        {lang === "pt" ? "Artigos" : "Articles"}
-      </h2>
-      <PostsList />
-    </section>
-  )
-}
-
-const postCardDb: PostCardProps[] = [
-  {
-    href: "/posts/post-ai-opening-hierarchy",
-    title: "Post-AI Opening Hierarchy",
-    description:
-      "How AI clarified the hierarchy in the opening",
-    lang: "en",
-  },
-  {
-    href: "/posts/sample-size-and-common-sense",
-    title: "Sample Size and Common Sense",
-    description:
-      "How sample size completely undermines a whole field of research",
-    lang: "en",
-  },
-]
-
-function PostsList() {
-  return (
-    <div className="flex flex-col gap-3">
-      {postCardDb.map((postCard, i) => (
-        <PostCard
-          key={i}
-          href={postCard.href}
-          title={postCard.title}
-          description={postCard.description}
-          lang={postCard.lang}
-        />
-      ))}
-    </div>
-  )
-}
-
-// ---------------------------------------------------------
-// Post Card
-
-type PostCardProps = {
+export type PostCardProps = {
   href: string
   title: string
   description: string
   lang: string
+  date: string
+  tags: string[]
 }
 
-function PostCard({
+export function PostCard({
   href,
   title,
   description,

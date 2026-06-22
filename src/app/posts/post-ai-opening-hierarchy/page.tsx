@@ -11,15 +11,16 @@ import {
   PostOrderedList,
   PostUnorderedList,
 } from "@components/posts/post"
+import { postCardDb } from "@components/posts/postsDb"
 
-export default function FirstPost() {
+export default function PostAiOpeningHierarchy() {
   return (
     <Main>
       <Post>
         <PostTitleSection>
-          <PostTitle>Post-AI Opening Hierarchy</PostTitle>
-          <PostDate>June 21st, 2026</PostDate>
-          <PostTags tags={["baduk", "AI"]} />
+          <PostTitle>{postCardDb[0].title}</PostTitle>
+          <PostDate>{postCardDb[0].date}</PostDate>
+          <PostTags tags={postCardDb[0].tags} />
         </PostTitleSection>
         <PostSection>
           <PostParagraph>

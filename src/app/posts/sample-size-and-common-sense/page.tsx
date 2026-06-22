@@ -9,19 +9,16 @@ import {
   PostTitle,
   PostTitleSection,
 } from "@components/posts/post"
+import { postCardDb } from "@components/posts/postsDb"
 
-export default function FirstPost() {
+export default function SampleSizeAndCommonSense() {
   return (
     <Main>
       <Post>
         <PostTitleSection>
-          <PostTitle>
-            Sample Size and Common Sense
-          </PostTitle>
-          <PostDate>June 22nd, 2026</PostDate>
-          <PostTags
-            tags={["statistics", "psychology", "academia"]}
-          />
+          <PostTitle>{postCardDb[1].title}</PostTitle>
+          <PostDate>{postCardDb[1].date}</PostDate>
+          <PostTags tags={postCardDb[1].tags} />
         </PostTitleSection>
         <PostSection>
           <PostParagraph>
@@ -93,10 +90,12 @@ export default function FirstPost() {
           </PostParagraph>
           <PostParagraph>
             Unfortunately, we haven&apos;t yet been educated
-            to investigate research methods, but I have
+            to investigate research methods. But I have
             faith that might change soon, given how open and
             accessible information has become, with the
-            internet and YouTube.
+            internet and YouTube. It might only take one
+            viral video on the topic to open the flood gates
+            to a revolution of awareness.
           </PostParagraph>
         </PostSection>
       </Post>

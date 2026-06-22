@@ -4,7 +4,7 @@ import "flag-icons/css/flag-icons.min.css"
 
 import { Main } from "@components/common/main"
 
-import { PostsSection } from "@components/posts/postCard"
+import { PostsSection } from "@components/posts/postsSection"
 
 export default function Posts() {
   return (
