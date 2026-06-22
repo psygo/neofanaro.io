@@ -62,7 +62,7 @@ export function PostSection({ children }: ReactChildren) {
 
 export function PostParagraph({ children }: ReactChildren) {
   return (
-    <p className="text-justify" lang="pt-br">
+    <p className="text-justify hyphens-auto" lang="pt-br">
       {children}
     </p>
   )
@@ -81,6 +81,8 @@ export function PostLink({
     <Link
       className="text-orange-600 no-underline"
       href={href}
+      target="_blank"
+      rel="noreferrer noopener"
     >
       {children}
     </Link>

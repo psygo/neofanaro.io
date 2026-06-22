@@ -18,7 +18,7 @@ export default function FirstPost() {
       <Post>
         <PostTitleSection>
           <PostTitle>Post-AI Opening Hierarchy</PostTitle>
-          <PostDate>March 25th, 2026</PostDate>
+          <PostDate>June 21st, 2026</PostDate>
           <PostTags tags={["baduk", "AI"]} />
         </PostTitleSection>
         <PostSection>

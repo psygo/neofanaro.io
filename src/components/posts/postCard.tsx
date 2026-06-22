@@ -29,6 +29,13 @@ const postCardDb: PostCardProps[] = [
       "How AI clarified the hierarchy in the opening",
     lang: "en",
   },
+  {
+    href: "/posts/sample-size-and-common-sense",
+    title: "Sample Size and Common Sense",
+    description:
+      "How sample size completely undermines a whole field of research",
+    lang: "en",
+  },
 ]
 
 function PostsList() {
