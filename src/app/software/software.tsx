@@ -292,7 +292,7 @@ type TagProps = {
 
 function Tag({ text }: TagProps) {
   return (
-    <span className="rounded-2xl border border-gray-300 bg-gray-100 px-2 py-0.5 text-xs font-semibold">
+    <span className="rounded-2xl border border-gray-300 bg-gray-100 px-2 py-0.5 text-xs font-semibold text-gray-700">
       {text}
     </span>
   )

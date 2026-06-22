@@ -1,8 +1,8 @@
-import Link from "next/link"
-
 import "flag-icons/css/flag-icons.min.css"
 
 import { ReactChildren } from "../../types/reactChildren"
+
+import { LangLink } from "../common/langLink"
 import { PostTags } from "./post"
 
 export type PostCardProps = {
@@ -23,7 +23,7 @@ export function PostCard({
   tags,
 }: PostCardProps) {
   return (
-    <Link
+    <LangLink
       href={href}
       className="flex flex-col gap-2 rounded-xl border border-gray-200 p-4"
     >
@@ -35,7 +35,7 @@ export function PostCard({
       <h6 className="text-sm text-slate-500">{date}</h6>
 
       <PostDescription>{description}</PostDescription>
-    </Link>
+    </LangLink>
   )
 }
 
