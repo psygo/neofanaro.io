@@ -9,6 +9,8 @@
 - [ ] Software presentation section
 - [ ] Card hovering UI
 - [ ] Nav hovering and outline
+- [ ] LinkedIn button
+- [ ] CV download button
 
 ## Features
 
@@ -16,3 +18,4 @@
 - [ ] Post views
 - [ ] User login
 - [ ] Comments
+- [ ] Dark Theme
