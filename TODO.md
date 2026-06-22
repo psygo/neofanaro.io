@@ -11,6 +11,7 @@
 - [ ] Nav hovering and outline
 - [ ] LinkedIn button
 - [ ] CV download button
+- [ ] Grayer Background for the website
 
 ## Features
 

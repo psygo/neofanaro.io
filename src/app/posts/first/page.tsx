@@ -1,11 +1,13 @@
 import { Main } from "@components/common/main"
 import {
-  JustifiedParagraph,
+  PostParagraph,
   Post,
   PostDate,
   PostSection,
   PostTitle,
   PostTitleSection,
+  PostLink,
+  PostTags,
 } from "@components/posts/post"
 
 export default function FirstPost() {
@@ -13,26 +15,33 @@ export default function FirstPost() {
     <Main>
       <Post>
         <PostTitleSection>
-          <PostTitle>
-            Garlic bread with cheese: What the science tells
-            us
-          </PostTitle>
+          <PostTitle>Post-AI Opening Hierarchy</PostTitle>
           <PostDate>March 25th, 2026</PostDate>
+          <PostTags tags={["baduk", "AI"]} />
         </PostTitleSection>
         <PostSection>
-          <JustifiedParagraph>
-            For years parents have espoused the health
-            benefits of eating garlic bread with cheese to
-            their children, with the food earning such an
-            iconic status in our culture that kids will
-            often dress up as warm, cheesy loaf for
-            Halloween.
-          </JustifiedParagraph>
-          <JustifiedParagraph>
-            But a recent study shows that the celebrated
-            appetizer may be linked to a series of rabies
-            cases springing up around the country.
-          </JustifiedParagraph>
+          <PostParagraph>
+            Before AI, we used to think side moves early in
+            the opening had way closer value to corner moves
+            than they actually do. Or at least way closer
+            value than what AI tells us.
+          </PostParagraph>
+          <PostParagraph>
+            That&apos;s one of the reasons we arrived at
+            openings such as the{" "}
+            <PostLink href="https://senseis.xmp.net/?SanRenSei">
+              sanrensei
+            </PostLink>
+            , or the{" "}
+            <PostLink href="https://senseis.xmp.net/?ChineseFuseki">
+              Chinese
+            </PostLink>{" "}
+            and its variants.
+          </PostParagraph>
+          <PostParagraph>
+            Now, with AI, things have become much clearer.
+            The opening hierarchy goes like this:
+          </PostParagraph>
         </PostSection>
       </Post>
     </Main>
