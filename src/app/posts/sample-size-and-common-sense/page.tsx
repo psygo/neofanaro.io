@@ -32,8 +32,8 @@ export default function SampleSizeAndCommonSense() {
               this video on the differences between reading
               through books or audio content
             </PostLink>{" "}
-            cites articles with sample sizes that average 30
-            people.
+            cites articles with sample sizes which average
+            30 people.
           </PostParagraph>
           <PostParagraph>
             Regardless of the researchers&apos; reasons,

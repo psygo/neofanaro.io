@@ -4,19 +4,20 @@ import Image from "next/image"
 export function Footer() {
   return (
     <footer className="mx-auto mt-10 flex max-w-lg justify-center border-t border-gray-200 px-8 pt-3">
-      <div className="flex items-center justify-center gap-3">
+      <div className="flex flex-wrap items-center justify-center gap-3">
         <GithubLogo />
         <FanaroYouTube />
         <GoWithFanaroYouTube />
         <FanaroEmail />
         <FanaroInstagram />
         <FanaroFacebook />
+        <FanaroLinkedIn />
       </div>
     </footer>
   )
 }
 
-function GithubLogo() {
+export function GithubLogo() {
   return (
     <FooterLogo
       src="/footer/github_logo.svg"
@@ -92,6 +93,18 @@ export function FanaroEmail() {
         loading="eager"
       />
     </Link>
+  )
+}
+
+export function FanaroLinkedIn() {
+  return (
+    <FooterLogo
+      src="/footer/linked_in.svg"
+      alt="Philippe Fanaro's LinkedIn"
+      href="https://www.linkedin.com/in/philippe-fanaro/"
+      size={24}
+      className="h-6.5 w-6.5"
+    />
   )
 }
 

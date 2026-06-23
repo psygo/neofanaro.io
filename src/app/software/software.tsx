@@ -9,6 +9,11 @@ import { containerOutline } from "@styles/globals"
 
 import { useLang } from "@hooks/useLang"
 
+import {
+  FanaroLinkedIn,
+  GithubLogo,
+} from "@components/common/footer"
+
 export function SoftwareWorkSection() {
   return (
     <section className="flex flex-col gap-4 px-6 py-4">
@@ -26,7 +31,17 @@ export function SoftwareWorkSection() {
           <YouTubeKbdNav />
         </Suspense>
       </div>
+      <SoftwareCvButtons />
     </section>
+  )
+}
+
+function SoftwareCvButtons() {
+  return (
+    <div className="flex items-center justify-center gap-2.5">
+      <GithubLogo />
+      <FanaroLinkedIn />
+    </div>
   )
 }
 
@@ -37,6 +52,7 @@ function SoftwareStackLogos() {
         target="_blank"
         rel="noreferrer noopener"
         href="https://react.dev/"
+        className="-mr-0.5"
       >
         <Image
           loading="eager"
