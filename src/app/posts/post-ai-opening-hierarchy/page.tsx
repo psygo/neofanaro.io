@@ -42,7 +42,7 @@ export default function PostAiOpeningHierarchy() {
             </PostLink>{" "}
             and its variants.
           </PostParagraph>
-          <div className="flex flex-wrap items-center justify-center gap-8">
+          <div className="flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-8">
             <GoDiagram
               src="/articles/post-ai-opening-hierarchy/sanrensei_fuseki.svg"
               alt="Sanrensei Fuseki"
