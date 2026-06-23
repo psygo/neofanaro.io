@@ -7,7 +7,7 @@ export const postCardDb: PostCardProps[] = [
     description:
       "How AI clarified the hierarchy in the opening",
     lang: "en",
-    date: "June 21st, 2026",
+    date: "June 22nd, 2026",
     tags: ["baduk", "AI"],
   },
   {
@@ -16,7 +16,7 @@ export const postCardDb: PostCardProps[] = [
     description:
       "How sample size completely undermines a whole field of research",
     lang: "en",
-    date: "June 22nd, 2026",
+    date: "June 21st, 2026",
     tags: ["statistics", "psychology", "academia"],
   },
 ]
