@@ -19,7 +19,7 @@ export function GoDiagram({
         src={src}
         width={0}
         height={0}
-        className={`mt-3.5 mb-1 h-${size} w-full px-8`}
+        className={`mt-3.5 mb-1 h-${size} w-auto px-8`}
         alt={alt}
       />
       <GoDiagramLegend

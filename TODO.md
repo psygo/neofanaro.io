@@ -13,6 +13,7 @@
 - [ ] CV download button
 - [ ] Grayer Background for the website
 - [ ] Software I have contributed to
+- [ ] Metadata preview for each post separately.
 
 ## Features
 
