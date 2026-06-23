@@ -16,7 +16,7 @@ import {
 
 export function SoftwareWorkSection() {
   return (
-    <section className="flex flex-col gap-4 px-6 py-4">
+    <section className="flex flex-col gap-4 px-6">
       <div className="flex flex-col gap-2">
         <h2 className="text-center text-2xl font-extrabold sm:text-2xl">
           Full Stack Developer
