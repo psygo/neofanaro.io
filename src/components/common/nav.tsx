@@ -8,17 +8,15 @@ import Link from "next/link"
 import "flag-icons/css/flag-icons.min.css"
 
 import { useLang } from "@hooks/useLang"
+
 import { LangLink } from "./langLink"
 
 // ---------------------------------------------------------
 
-// const navOutline =
-//   "shadow-lg ring-1 ring-slate-200 rounded-full bg-slate-100"
-
 export function Nav() {
   return (
-    <nav className="mx-auto flex w-full max-w-xl justify-center">
-      <ul className="flex flex-wrap items-center justify-center gap-2 px-4 py-3">
+    <nav className="mx-auto rounded-full bg-slate-100 px-5.5 pt-2.75 pb-3 ring-1 ring-slate-200">
+      <ul className="flex flex-wrap items-center justify-center gap-4.5">
         <FanaroIcon />
         <SoftwareLogo />
         <TeacherLogo />
@@ -40,7 +38,7 @@ function FanaroIcon() {
       src="/logos/fanaro.io.svg"
       alt="Home"
       href="/"
-      size={21.25}
+      size={20}
     />
   )
 }
@@ -62,7 +60,7 @@ function SoftwareLogo() {
       src="/nav/tie.svg"
       alt="Software"
       href="/software"
-      size={23.5}
+      size={24}
     />
   )
 }
@@ -78,8 +76,6 @@ function BlogLogo() {
   )
 }
 
-const navLogoMargins = "mr-2 ml-1"
-
 type NavLogoProps = {
   src: string
   alt: string
@@ -93,7 +89,7 @@ function NavIcon({
   alt,
   href,
   size,
-  className = `${navLogoMargins} rounded-full`,
+  className = "rounded-full",
 }: NavLogoProps) {
   return (
     <li>
@@ -125,7 +121,7 @@ function CountryFlagLogo({
     <li>
       <Link href={href}>
         <span
-          className={`${navLogoMargins} fi fi-${countryCode} rounded-xl`}
+          className={`fi fi-${countryCode} rounded-xl`}
           style={{
             width: "23.5px",
             height: "23.5px",
