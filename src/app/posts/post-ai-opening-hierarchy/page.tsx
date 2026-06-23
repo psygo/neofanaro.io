@@ -12,19 +12,9 @@ import {
   PostUnorderedList,
 } from "@components/posts/post"
 import { postCardDb } from "@components/posts/postsDb"
-import {
-  GobanLegend,
-  WrappedGoban,
-} from "@components/posts/goban"
-
-// import sgf from "@sabaki/sgf"
+import { GoDiagram } from "@components/posts/goDiagram"
 
 export default function PostAiOpeningHierarchy() {
-  // const chineseFuseki =
-  //   "(;GM[1]FF[4]CA[UTF-8]AP[Sabaki:0.52.2]KM[0.5]SZ[19]DT[2026-06-22];B[pd];W[dd];B[pq];W[dp];B[qk])"
-  // const rootNodes = sgf.parse(chineseFuseki)
-  // rootNodes.console.log(rootNodes)
-
   return (
     <Main>
       <Post>
@@ -44,7 +34,7 @@ export default function PostAiOpeningHierarchy() {
             That&apos;s one of the reasons we arrived at
             openings such as the{" "}
             <PostLink href="https://senseis.xmp.net/?SanRenSei">
-              sanrensei
+              Sanrensei
             </PostLink>
             , or the{" "}
             <PostLink href="https://senseis.xmp.net/?ChineseFuseki">
@@ -52,8 +42,18 @@ export default function PostAiOpeningHierarchy() {
             </PostLink>{" "}
             and its variants.
           </PostParagraph>
-          <SanrenseiFuseki />
-          <ChineseFuseki />
+          <GoDiagram
+            src="/articles/post-ai-opening-hierarchy/sanrensei_fuseki.svg"
+            alt="Sanrensei Fuseki"
+            diaNumber={1}
+            legend="The Sanrensei Fuseki"
+          />
+          <GoDiagram
+            src="/articles/post-ai-opening-hierarchy/chinese_fuseki.svg"
+            alt="Chinese Fuseki"
+            diaNumber={2}
+            legend="The Chinese Fuseki"
+          />
           <PostParagraph>
             Now, with AI, things have become much clearer.
             The opening hierarchy goes like this:
@@ -74,187 +74,5 @@ export default function PostAiOpeningHierarchy() {
         </PostSection>
       </Post>
     </Main>
-  )
-}
-
-function SanrenseiFuseki() {
-  return (
-    <WrappedGoban
-      size={17}
-      signMap={[
-        [
-          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-          0, 0,
-        ],
-        [
-          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-          0, 0,
-        ],
-        [
-          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-          0, 0,
-        ],
-        [
-          0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1,
-          0, 0, 0,
-        ],
-        [
-          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-          0, 0,
-        ],
-        [
-          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-          0, 0,
-        ],
-        [
-          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-          0, 0,
-        ],
-        [
-          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-          0, 0,
-        ],
-        [
-          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-          0, 0,
-        ],
-        [
-          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0,
-          0, 0,
-        ],
-        [
-          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-          0, 0,
-        ],
-        [
-          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-          0, 0,
-        ],
-        [
-          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-          0, 0,
-        ],
-        [
-          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-          0, 0,
-        ],
-        [
-          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-          0, 0,
-        ],
-        [
-          0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1,
-          0, 0, 0,
-        ],
-        [
-          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-          0, 0,
-        ],
-        [
-          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-          0, 0,
-        ],
-        [
-          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-          0, 0,
-        ],
-      ]}
-    >
-      <GobanLegend
-        diaNumber={1}
-        legend="The Sanrensei Fuseki"
-      />
-    </WrappedGoban>
-  )
-}
-
-function ChineseFuseki() {
-  return (
-    <WrappedGoban
-      size={17}
-      signMap={[
-        [
-          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-          0, 0,
-        ],
-        [
-          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-          0, 0,
-        ],
-        [
-          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-          0, 0,
-        ],
-        [
-          0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1,
-          0, 0, 0,
-        ],
-        [
-          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-          0, 0,
-        ],
-        [
-          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-          0, 0,
-        ],
-        [
-          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-          0, 0,
-        ],
-        [
-          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-          0, 0,
-        ],
-        [
-          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-          0, 0,
-        ],
-        [
-          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-          0, 0,
-        ],
-        [
-          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1,
-          0, 0,
-        ],
-        [
-          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-          0, 0,
-        ],
-        [
-          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-          0, 0,
-        ],
-        [
-          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-          0, 0,
-        ],
-        [
-          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-          0, 0,
-        ],
-        [
-          0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-          0, 0, 0,
-        ],
-        [
-          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0,
-          0, 0,
-        ],
-        [
-          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-          0, 0,
-        ],
-        [
-          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-          0, 0,
-        ],
-      ]}
-    >
-      <GobanLegend
-        diaNumber={2}
-        legend="The Chinese Fuseki"
-      />
-    </WrappedGoban>
   )
 }
