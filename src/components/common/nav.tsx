@@ -10,13 +10,12 @@ import "flag-icons/css/flag-icons.min.css"
 import { useLang } from "@hooks/useLang"
 
 import { LangLink } from "./langLink"
-
-// ---------------------------------------------------------
+import { usePathname } from "next/navigation"
 
 export function Nav() {
   return (
-    <nav className="mx-auto rounded-full bg-slate-100 px-5.5 pt-2.75 pb-3 ring-1 ring-slate-200">
-      <ul className="flex flex-wrap items-center justify-center gap-4.5">
+    <nav className="mx-auto rounded-full bg-slate-100 px-5.5 pt-2.5 pb-2.5 ring-1 ring-slate-200">
+      <ul className="flex flex-wrap items-center justify-center gap-1.5">
         <FanaroIcon />
         <SoftwareLogo />
         <TeacherLogo />
@@ -38,7 +37,7 @@ function FanaroIcon() {
       src="/logos/fanaro.io.svg"
       alt="Home"
       href="/"
-      size={20}
+      size={22}
     />
   )
 }
@@ -84,15 +83,34 @@ type NavLogoProps = {
   className?: string
 }
 
+const activeLinkClasses = "bg-slate-950/5 text-slate-950"
+const inactiveLinkClasses = "bg-transparent text-slate-700"
+
 function NavIcon({
   src,
   alt,
   href,
   size,
-  className = "rounded-full",
+  className = "",
 }: NavLogoProps) {
+  const pathname = usePathname() || "/"
+  let isActive = ""
+
+  if (href === "/") {
+    isActive =
+      pathname === href
+        ? activeLinkClasses
+        : inactiveLinkClasses
+  } else {
+    isActive = pathname.includes(href)
+      ? activeLinkClasses
+      : inactiveLinkClasses
+  }
+
   return (
-    <li>
+    <li
+      className={`${isActive} flex items-center justify-center rounded-full p-2 transition duration-300 hover:bg-slate-200`}
+    >
       <LangLink href={href}>
         <Image
           loading="eager"
@@ -121,10 +139,10 @@ function CountryFlagLogo({
     <li>
       <Link href={href}>
         <span
-          className={`fi fi-${countryCode} rounded-xl`}
+          className={`fi fi-${countryCode} mr-1.5 ml-2.5 rounded-xl`}
           style={{
-            width: "23.5px",
-            height: "23.5px",
+            width: "25.5px",
+            height: "25.5px",
             marginBottom: "2px",
           }}
         ></span>
