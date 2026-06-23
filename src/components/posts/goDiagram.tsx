@@ -3,6 +3,7 @@ import Image from "next/image"
 type GoDiagramProps = GoDiagramLegendProps & {
   src: string
   alt: string
+  size: number
 }
 
 export function GoDiagram({
@@ -10,6 +11,7 @@ export function GoDiagram({
   alt,
   diaNumber,
   legend,
+  size,
 }: GoDiagramProps) {
   return (
     <div className="flex flex-col items-center gap-0">
@@ -17,7 +19,7 @@ export function GoDiagram({
         src={src}
         width={0}
         height={0}
-        className="mt-3.5 mb-1 h-full w-full"
+        className={`mt-3.5 mb-1 h-${size} w-full px-8`}
         alt={alt}
       />
       <GoDiagramLegend

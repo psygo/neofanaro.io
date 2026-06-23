@@ -42,18 +42,22 @@ export default function PostAiOpeningHierarchy() {
             </PostLink>{" "}
             and its variants.
           </PostParagraph>
-          <GoDiagram
-            src="/articles/post-ai-opening-hierarchy/sanrensei_fuseki.svg"
-            alt="Sanrensei Fuseki"
-            diaNumber={1}
-            legend="The Sanrensei Fuseki"
-          />
-          <GoDiagram
-            src="/articles/post-ai-opening-hierarchy/chinese_fuseki.svg"
-            alt="Chinese Fuseki"
-            diaNumber={2}
-            legend="The Chinese Fuseki"
-          />
+          <div className="flex flex-wrap items-center justify-center gap-8">
+            <GoDiagram
+              src="/articles/post-ai-opening-hierarchy/sanrensei_fuseki.svg"
+              alt="Sanrensei Fuseki"
+              size={80}
+              diaNumber={1}
+              legend="The Sanrensei Fuseki"
+            />
+            <GoDiagram
+              src="/articles/post-ai-opening-hierarchy/chinese_fuseki.svg"
+              alt="Chinese Fuseki"
+              diaNumber={2}
+              size={80}
+              legend="The Chinese Fuseki"
+            />
+          </div>
           <PostParagraph>
             Now, with AI, things have become much clearer.
             The opening hierarchy goes like this:
