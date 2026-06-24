@@ -23,7 +23,7 @@ export const postCardDb: PostCardProps[] = [
     href: "/posts/little-knife-god-books",
     title: "小刀神 Little Knife God's Go Books",
     description:
-      "An unknown Taiwanese author in the West with wonderful Go books",
+      "A little-known Taiwanese author with wonderful Go books",
     lang: "en",
     date: new Date(2026, 5, 24),
     tags: ["baduk", "books"],

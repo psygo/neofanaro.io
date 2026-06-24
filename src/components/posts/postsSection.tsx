@@ -19,9 +19,13 @@ export function PostsSection() {
 }
 
 function PostsList() {
+  const postDbDescending = postCardDb.sort(
+    (a, b) => b.date.getTime() - a.date.getTime(),
+  )
+
   return (
     <div className="flex flex-col gap-3">
-      {postCardDb.map((postCard, i) => (
+      {postDbDescending.map((postCard, i) => (
         <PostCard
           key={i}
           href={postCard.href}
