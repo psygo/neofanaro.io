@@ -17,6 +17,7 @@
 
 ## Features
 
+- [ ] Filter for topics on the blog's page.
 - [ ] Language should be automatically identified by localization.
 - [ ] Post views
 - [ ] User login

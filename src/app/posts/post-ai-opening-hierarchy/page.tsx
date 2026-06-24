@@ -20,7 +20,7 @@ export default function PostAiOpeningHierarchy() {
       <Post>
         <PostTitleSection>
           <PostTitle>{postCardDb[0].title}</PostTitle>
-          <PostDate>{postCardDb[0].date}</PostDate>
+          <PostDate date={postCardDb[0].date} />
           <PostTags tags={postCardDb[0].tags} />
         </PostTitleSection>
         <PostSection>

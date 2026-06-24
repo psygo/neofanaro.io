@@ -17,7 +17,7 @@ export default function SampleSizeAndCommonSense() {
       <Post>
         <PostTitleSection>
           <PostTitle>{postCardDb[1].title}</PostTitle>
-          <PostDate>{postCardDb[1].date}</PostDate>
+          <PostDate date={postCardDb[1].date} />
           <PostTags tags={postCardDb[1].tags} />
         </PostTitleSection>
         <PostSection>

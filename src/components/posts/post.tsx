@@ -1,6 +1,10 @@
+"use client"
+
 import Link from "next/link"
 
 import { ReactChildren } from "../../types/reactChildren"
+
+import { useLang } from "@hooks/useLang"
 
 export function Post({ children }: ReactChildren) {
   return (
@@ -27,8 +31,27 @@ export function PostTitle({ children }: ReactChildren) {
   return <h1 className="mb-2.5">{children}</h1>
 }
 
-export function PostDate({ children }: ReactChildren) {
-  return <h6 className="pb-1 text-slate-500">{children}</h6>
+type PostDateProps = {
+  date: Date
+  className?: string
+}
+
+export function PostDate({
+  date,
+  className = "pb-1 text-slate-500",
+}: PostDateProps) {
+  const lang = useLang()
+
+  const formattedDate = date.toLocaleDateString(
+    lang === "pt" ? "pt-BR" : "en-US",
+    {
+      month: "long",
+      day: "numeric",
+      year: "numeric",
+    },
+  )
+
+  return <h6 className={className}>{formattedDate}</h6>
 }
 
 export function PostTag({ children }: ReactChildren) {

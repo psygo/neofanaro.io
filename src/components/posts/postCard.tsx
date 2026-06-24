@@ -5,14 +5,14 @@ import { cardDecoration } from "@styles/globals"
 import { ReactChildren } from "../../types/reactChildren"
 
 import { LangLink } from "../common/langLink"
-import { PostTags } from "./post"
+import { PostDate, PostTags } from "./post"
 
 export type PostCardProps = {
   href: string
   title: string
   description: string
   lang: string
-  date: string
+  date: Date
   tags: string[]
 }
 
@@ -34,7 +34,10 @@ export function PostCard({
         <PostTags tags={tags} />
         <PostLang lang={lang} />
       </div>
-      <h6 className="text-sm text-slate-500">{date}</h6>
+      <PostDate
+        date={date}
+        className="pb-1 text-sm text-slate-500"
+      />
 
       <PostDescription>{description}</PostDescription>
     </LangLink>

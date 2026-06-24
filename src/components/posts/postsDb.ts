@@ -7,7 +7,7 @@ export const postCardDb: PostCardProps[] = [
     description:
       "How AI clarified the hierarchy in the opening",
     lang: "en",
-    date: "June 22nd, 2026",
+    date: new Date(2026, 5, 22),
     tags: ["baduk", "AI"],
   },
   {
@@ -16,7 +16,16 @@ export const postCardDb: PostCardProps[] = [
     description:
       "How sample size completely undermines a whole field of research",
     lang: "en",
-    date: "June 21st, 2026",
+    date: new Date(2026, 5, 23),
     tags: ["statistics", "psychology", "academia"],
+  },
+  {
+    href: "/posts/little-knife-god-books",
+    title: "小刀神 Little Knife God's Go Books",
+    description:
+      "An unknown Taiwanese author in the West with wonderful Go books",
+    lang: "en",
+    date: new Date(2026, 5, 24),
+    tags: ["baduk", "books"],
   },
 ]
