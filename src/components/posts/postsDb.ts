@@ -26,6 +26,6 @@ export const postCardDb: PostCardProps[] = [
       "A little-known Taiwanese author with wonderful Go books",
     lang: "en",
     date: new Date(2026, 5, 24),
-    tags: ["baduk", "books"],
+    tags: ["baduk", "books", "pro games"],
   },
 ]

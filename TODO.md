@@ -14,6 +14,7 @@
 - [ ] Grayer Background for the website
 - [ ] Software I have contributed to
 - [ ] Metadata preview for each post separately.
+- [ ] Thumbnails for the article
 
 ## Features
 
