@@ -25,7 +25,7 @@ export default function PostAiOpeningHierarchy() {
         </PostTitleSection>
         <PostSection>
           <PostParagraph>
-            Last year, a dear friend of mine, Frédéric
+            This year, a dear friend of mine, Frédéric
             Vieira 4d EGF, introduced me to a little-known
             &mdash; in the West &mdash; Taiwanese Go books
             author,{" "}
@@ -99,7 +99,8 @@ export default function PostAiOpeningHierarchy() {
             The book shows plenty more diagrams, but
             I&apos;ll leave a link to{" "}
             <PostLink href="https://ai-sensei.com/game/wCbiGfZSh7TjX5eXM8TDgvMzi5u2/Umm4U2uTsfxEkcRboCle">
-              AI Sensei&apos;s analysis{" "}
+              that game&apos;s AI Sensei&apos;s
+              analysis{" "}
             </PostLink>{" "}
             on its Dan plan, with 2,500 playouts, if you
             would like to check everything in detail.
@@ -113,8 +114,10 @@ export default function PostAiOpeningHierarchy() {
           <PostParagraph>
             He also seems to have an amusing taste for
             creating covers with AI. Personally, I find
-            these quite funny and playful, especially for
-            children, which are probably his main target:
+            those quite funny and playful, especially for
+            children, which are one of his main targets,
+            since most of his in-person students seem to be
+            of that age.
           </PostParagraph>
           <Image
             src="/articles/little-knife-god-books/little_knife_god_cover_1.png"
