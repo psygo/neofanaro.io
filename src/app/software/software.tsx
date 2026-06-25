@@ -1,7 +1,5 @@
 "use client"
 
-import { Suspense } from "react"
-
 import Image from "next/image"
 import Link from "next/link"
 
@@ -13,6 +11,7 @@ import {
   FanaroLinkedIn,
   GithubLogo,
 } from "@components/common/footer"
+import { CpiSuspense } from "@components/common/cpiSuspense"
 
 export function SoftwareWorkSection() {
   return (
@@ -24,12 +23,12 @@ export function SoftwareWorkSection() {
         <SoftwareStackLogos />
       </div>
       <div className="flex flex-col gap-4">
-        <Suspense>
+        <CpiSuspense>
           <Aquarifolio />
           <Fic />
           <TecnicasDeGo />
           <YouTubeKbdNav />
-        </Suspense>
+        </CpiSuspense>
       </div>
       <SoftwareCvButtons />
     </section>

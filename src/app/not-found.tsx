@@ -1,11 +1,10 @@
-import { Suspense } from "react"
-
-import { NotFoundMessage } from "../components/not-found/notFoundMessage"
+import { NotFoundMessage } from "@components/not-found/notFoundMessage"
+import { CpiSuspense } from "@components/common/cpiSuspense"
 
 export default function NotFound() {
   return (
-    <Suspense>
+    <CpiSuspense>
       <NotFoundMessage />
-    </Suspense>
+    </CpiSuspense>
   )
 }

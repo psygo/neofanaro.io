@@ -1,7 +1,6 @@
-import { Suspense } from "react"
-
-import { Main } from "@/src/components/common/main"
+import { Main } from "@components/common/main"
 import { PresentationSection } from "@components/home/presentationSection"
+import { CpiSuspense } from "@components/common/cpiSuspense"
 
 import { GoProfPresentationSection } from "./teacher/teacher"
 import { SoftwareWorkSection } from "./software/software"
@@ -9,11 +8,11 @@ import { SoftwareWorkSection } from "./software/software"
 export default function Home() {
   return (
     <Main>
-      <Suspense>
+      <CpiSuspense>
         <PresentationSection />
         <SoftwareWorkSection />
         <GoProfPresentationSection />
-      </Suspense>
+      </CpiSuspense>
     </Main>
   )
 }

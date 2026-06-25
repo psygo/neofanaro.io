@@ -1,12 +1,11 @@
-import { Suspense } from "react"
-
 import type { Metadata } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
 
 import "./globals.css"
 
-import { Nav } from "@/src/components/common/nav"
-import { Footer } from "@/src/components/common/footer"
+import { Nav } from "@components/common/nav"
+import { Footer } from "@components/common/footer"
+import { CpiSuspense } from "@components/common/cpiSuspense"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -58,11 +57,11 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col gap-16 bg-gray-50 px-4 py-5.5 sm:gap-10">
-        <Suspense>
+        <CpiSuspense>
           <Nav />
           {children}
           <Footer />
-        </Suspense>
+        </CpiSuspense>
       </body>
     </html>
   )

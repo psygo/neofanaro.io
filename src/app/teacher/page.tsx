@@ -1,6 +1,5 @@
-import { Suspense } from "react"
-
-import { Main } from "@/src/components/common/main"
+import { Main } from "@components/common/main"
+import { CpiSuspense } from "@components/common/cpiSuspense"
 
 import {
   CourseSection,
@@ -10,10 +9,10 @@ import {
 export default function Teacher() {
   return (
     <Main>
-      <Suspense>
+      <CpiSuspense>
         <GoProfPresentationSection />
         <CourseSection />
-      </Suspense>
+      </CpiSuspense>
     </Main>
   )
 }

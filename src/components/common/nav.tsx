@@ -1,16 +1,15 @@
 "use client"
 
-import { Suspense } from "react"
-
 import Image from "next/image"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 
 import "flag-icons/css/flag-icons.min.css"
 
 import { useLang } from "@hooks/useLang"
 
 import { LangLink } from "./langLink"
-import { usePathname } from "next/navigation"
+import { CpiSuspense } from "./cpiSuspense"
 
 export function Nav() {
   return (
@@ -20,9 +19,9 @@ export function Nav() {
         <SoftwareLogo />
         <TeacherLogo />
         <BlogLogo />
-        <Suspense>
+        <CpiSuspense>
           <LanguageIcon />
-        </Suspense>
+        </CpiSuspense>
       </ul>
     </nav>
   )
