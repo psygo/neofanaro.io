@@ -1,5 +1,4 @@
 export const containerOutline =
-  // "rounded-xl ring-1 ring-slate-200"
   "rounded-xl border border-gray-300 px-4 pt-3 pb-3.5 transition-all duration-300 ease-in-out hover:bg-gray-100 hover:duration-200"
 
 export const cardDecoration =
