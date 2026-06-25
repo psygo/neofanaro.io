@@ -28,7 +28,7 @@ export function PostTitleSection({
 }
 
 export function PostTitle({ children }: ReactChildren) {
-  return <h1 className="mb-2.5">{children}</h1>
+  return <h1 className="mb-4">{children}</h1>
 }
 
 type PostDateProps = {
@@ -80,7 +80,7 @@ export function PostTags({ tags }: PostTagsProps) {
 // Post Content
 
 export function PostSection({ children }: ReactChildren) {
-  return <section>{children}</section>
+  return <section className="mt-10">{children}</section>
 }
 
 export function PostParagraph({ children }: ReactChildren) {

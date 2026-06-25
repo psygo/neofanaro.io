@@ -1,5 +1,8 @@
 import Image from "next/image"
 
+import { post_view } from "@server/actions/posts/post_posts"
+import { get_views } from "@server/actions/posts/get_posts"
+
 import { Main } from "@components/common/main"
 import {
   PostParagraph,
@@ -14,12 +17,29 @@ import {
 import { postCardDb } from "@components/posts/postsDb"
 import { GoDiagram } from "@components/posts/goDiagram"
 
-export default function PostAiOpeningHierarchy() {
+type PostViewsProps = {
+  views: number
+}
+
+export function PostViews({ views }: PostViewsProps) {
+  return (
+    <h6 className="flex gap-1 text-base font-bold text-slate-600">
+      {views} {views === 1 ? "view" : "views"}
+    </h6>
+  )
+}
+
+export default async function PostLittleKnifeGodBooks() {
+  // await post_view("little-knife-god-books")
+  // const views = await get_views("little-knife-god-books")
+  // TODO: add a short timer before triggering the view change
+
   return (
     <Main>
       <Post>
         <PostTitleSection>
           <PostTitle>{postCardDb[2].title}</PostTitle>
+          {/* <PostViews views={views || 0} /> */}
           <PostDate date={postCardDb[2].date} />
           <PostTags tags={postCardDb[2].tags} />
         </PostTitleSection>
