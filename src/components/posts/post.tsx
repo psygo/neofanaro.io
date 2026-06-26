@@ -28,7 +28,7 @@ export function PostTitleSection({
 }
 
 export function PostTitle({ children }: ReactChildren) {
-  return <h1 className="mb-4">{children}</h1>
+  return <h1 className="mb-6">{children}</h1>
 }
 
 type PostDateProps = {

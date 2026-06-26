@@ -1,6 +1,5 @@
 import Image from "next/image"
 
-import { post_view } from "@server/actions/posts/post_posts"
 import { get_views } from "@server/actions/posts/get_posts"
 
 import { Main } from "@components/common/main"
@@ -14,6 +13,7 @@ import {
   PostTags,
   PostLink,
 } from "@components/posts/post"
+import { PostViewTracker } from "@components/posts/postViewTracker"
 import { postCardDb } from "@components/posts/postsDb"
 import { GoDiagram } from "@components/posts/goDiagram"
 
@@ -29,17 +29,18 @@ export function PostViews({ views }: PostViewsProps) {
   )
 }
 
+const pageName = "little-knife-god-books"
+
 export default async function PostLittleKnifeGodBooks() {
-  // await post_view("little-knife-god-books")
-  // const views = await get_views("little-knife-god-books")
-  // TODO: add a short timer before triggering the view change
+  const views = await get_views(pageName)
 
   return (
     <Main>
       <Post>
+        <PostViewTracker path={pageName} />
         <PostTitleSection>
           <PostTitle>{postCardDb[2].title}</PostTitle>
-          {/* <PostViews views={views || 0} /> */}
+          <PostViews views={views || 0} />
           <PostDate date={postCardDb[2].date} />
           <PostTags tags={postCardDb[2].tags} />
         </PostTitleSection>
