@@ -4,6 +4,7 @@
 
 - [ ] Use the database for post data
 - [ ] Post Views on Post List Page
+- [ ] [Foiled card effect for the main page image](https://poke-holo.simey.me/)
 
 ## Bugs
 

@@ -17,17 +17,17 @@ export function PresentationSection() {
         </h2>
         {lang === "pt" ? (
           <PresentationParagraph>
-            Olá! Sou um desenvolvedor de software e
-            professor de Go do Brasil. Através deste site,
-            procuro compartilhar conteúdo útil nesses dois
-            ramos distintos.
+            Olá! Sou um programador e professor de Go do
+            Brasil. Através deste site, procuro compartilhar
+            meu trabalho, e conteúdo útil nesses dois ramos
+            um tanto distintos.
           </PresentationParagraph>
         ) : (
           <PresentationParagraph>
             Hi! I&apos;m a software developer and Go teacher
             from Brazil. Through this website, I aim at
-            sharing useful content in these two distinct
-            fields.
+            sharing my work, and useful content on those two
+            quite distinct fields.
           </PresentationParagraph>
         )}
       </div>
