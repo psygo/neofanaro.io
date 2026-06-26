@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import Image from "next/image"
 
 import { get_post_views } from "@server/actions/posts/get_posts"
@@ -11,6 +12,15 @@ import {
 } from "@components/posts/post"
 import { postCardDb } from "@components/posts/postsDb"
 import { GoDiagram } from "@components/posts/goDiagram"
+
+const postData = postCardDb[2]
+
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: postData.title,
+    description: postData.description,
+  }
+}
 
 export default async function PostLittleKnifeGodBooks() {
   const postData = postCardDb[2]
