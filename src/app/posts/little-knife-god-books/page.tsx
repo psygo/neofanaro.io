@@ -1,6 +1,6 @@
 import Image from "next/image"
 
-import { get_views } from "@server/actions/posts/get_posts"
+import { get_post_views } from "@server/actions/posts/get_posts"
 
 import { Main } from "@components/common/main"
 import {
@@ -15,7 +15,7 @@ import { GoDiagram } from "@components/posts/goDiagram"
 export default async function PostLittleKnifeGodBooks() {
   const postData = postCardDb[2]
   const pagePath = postData.href.split("/")[2]
-  const views = (await get_views(pagePath)) || 0
+  const views = (await get_post_views(pagePath)) || 0
 
   return (
     <Main>

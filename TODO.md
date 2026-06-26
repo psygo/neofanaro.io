@@ -1,5 +1,10 @@
 # TODO
 
+## Priorities
+
+- [ ] Use the database for post data
+- [ ] Post Views on Post List Page
+
 ## Bugs
 
 ## UI
@@ -20,7 +25,6 @@
 
 - [ ] Filter for topics on the blog's page.
 - [ ] Language should be automatically identified by localization.
-- [ ] Post views
 - [ ] User login
 - [ ] Comments
 - [ ] Dark Theme

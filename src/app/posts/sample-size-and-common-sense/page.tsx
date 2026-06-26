@@ -1,4 +1,4 @@
-import { get_views } from "@server/actions/posts/get_posts"
+import { get_post_views } from "@server/actions/posts/get_posts"
 
 import { Main } from "@components/common/main"
 import {
@@ -12,7 +12,7 @@ import { postCardDb } from "@components/posts/postsDb"
 export default async function SampleSizeAndCommonSense() {
   const postData = postCardDb[1]
   const pagePath = postData.href.split("/")[2]
-  const views = (await get_views(pagePath)) || 0
+  const views = (await get_post_views(pagePath)) || 0
 
   return (
     <Main>
