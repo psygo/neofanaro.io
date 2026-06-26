@@ -1,6 +1,8 @@
 import type { Metadata } from "next"
 import Image from "next/image"
 
+import { generateMetadataHelper } from "@utils/generateMetadata"
+
 import { get_post_views } from "@server/actions/posts/get_posts"
 
 import { Main } from "@components/common/main"
@@ -16,18 +18,13 @@ import { GoDiagram } from "@components/posts/goDiagram"
 const postData = postCardDb[2]
 
 export async function generateMetadata(): Promise<Metadata> {
-  return {
-    title: postData.title,
-    description: postData.description,
-    openGraph: {
-      title: postData.title,
-      description: postData.description,
-    },
-  }
+  return generateMetadataHelper(
+    postData.title,
+    postData.description,
+  )
 }
 
 export default async function PostLittleKnifeGodBooks() {
-  const postData = postCardDb[2]
   const pagePath = postData.href.split("/")[2]
   const views = (await get_post_views(pagePath)) || 0
 

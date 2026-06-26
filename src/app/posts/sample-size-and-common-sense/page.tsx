@@ -1,3 +1,7 @@
+import type { Metadata } from "next"
+
+import { generateMetadataHelper } from "@utils/generateMetadata"
+
 import { get_post_views } from "@server/actions/posts/get_posts"
 
 import { Main } from "@components/common/main"
@@ -9,8 +13,16 @@ import {
 } from "@components/posts/post"
 import { postCardDb } from "@components/posts/postsDb"
 
+const postData = postCardDb[1]
+
+export async function generateMetadata(): Promise<Metadata> {
+  return generateMetadataHelper(
+    postData.title,
+    postData.description,
+  )
+}
+
 export default async function SampleSizeAndCommonSense() {
-  const postData = postCardDb[1]
   const pagePath = postData.href.split("/")[2]
   const views = (await get_post_views(pagePath)) || 0
 
