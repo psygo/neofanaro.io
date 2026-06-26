@@ -6,9 +6,26 @@ import { ReactChildren } from "../../types/reactChildren"
 
 import { useLang } from "@hooks/useLang"
 
-export function Post({ children }: ReactChildren) {
+import { PostCardProps } from "./postCard"
+import { PostViewTracker } from "./postViewTracker"
+
+type PostProps = {
+  data: PostCardProps
+  views: number
+  children: React.ReactNode
+}
+
+export function Post({ data, views, children }: PostProps) {
+  const pagePath = data.href.split("/")[2]
   return (
     <article className="prose max-w-110">
+      <PostViewTracker path={pagePath} />
+      <PostTitleSection>
+        <PostTitle>{data.title}</PostTitle>
+        <PostViews views={views || 0} />
+        <PostDate date={data.date} />
+        <PostTags tags={data.tags} />
+      </PostTitleSection>
       {children}
     </article>
   )
@@ -29,6 +46,18 @@ export function PostTitleSection({
 
 export function PostTitle({ children }: ReactChildren) {
   return <h1 className="mb-6">{children}</h1>
+}
+
+type PostViewsProps = {
+  views: number
+}
+
+export function PostViews({ views }: PostViewsProps) {
+  return (
+    <h6 className="flex gap-1 text-base font-bold text-slate-600">
+      {views} {views === 1 ? "view" : "views"}
+    </h6>
+  )
 }
 
 type PostDateProps = {

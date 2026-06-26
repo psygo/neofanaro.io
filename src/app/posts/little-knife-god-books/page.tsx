@@ -6,44 +6,19 @@ import { Main } from "@components/common/main"
 import {
   PostParagraph,
   Post,
-  PostDate,
   PostSection,
-  PostTitle,
-  PostTitleSection,
-  PostTags,
   PostLink,
 } from "@components/posts/post"
-import { PostViewTracker } from "@components/posts/postViewTracker"
 import { postCardDb } from "@components/posts/postsDb"
 import { GoDiagram } from "@components/posts/goDiagram"
 
-type PostViewsProps = {
-  views: number
-}
-
-export function PostViews({ views }: PostViewsProps) {
-  return (
-    <h6 className="flex gap-1 text-base font-bold text-slate-600">
-      {views} {views === 1 ? "view" : "views"}
-    </h6>
-  )
-}
-
-const pageName = "little-knife-god-books"
-
 export default async function PostLittleKnifeGodBooks() {
-  const views = await get_views(pageName)
+  const pagePath = postCardDb[2].href.split("/")[2]
+  const views = (await get_views(pagePath)) || 0
 
   return (
     <Main>
-      <Post>
-        <PostViewTracker path={pageName} />
-        <PostTitleSection>
-          <PostTitle>{postCardDb[2].title}</PostTitle>
-          <PostViews views={views || 0} />
-          <PostDate date={postCardDb[2].date} />
-          <PostTags tags={postCardDb[2].tags} />
-        </PostTitleSection>
+      <Post data={postCardDb[2]} views={views}>
         <PostSection>
           <PostParagraph>
             This year, a dear friend of mine, Frédéric
