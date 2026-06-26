@@ -65,7 +65,6 @@ export default async function PostLittleKnifeGodBooks() {
           </PostParagraph>
           <GoDiagram
             src="/articles/little-knife-god-books/kato_chie_vs_yoshihiro_koike.svg"
-            alt="Kato Chie 3p (White) vs Yoshihiro Koike 7p"
             size={100}
             diaNumber={1}
             legend="Kato Chie 3p (White) vs Yoshihiro Koike 7p (Black). Black to play."
@@ -77,22 +76,43 @@ export default async function PostLittleKnifeGodBooks() {
           </PostParagraph>
           <GoDiagram
             src="/articles/little-knife-god-books/kato_chie_vs_yoshihiro_koike_p1.svg"
-            alt="Lukewarm"
             size={100}
             diaNumber={2}
             legend="Lukewarm. And White gets to exploit a cut."
           />
           <PostParagraph>
-            The correct move is to apply pressure based on
-            Black&apos;s cutting stone in the center. By
-            doing so, we can create cutting many cutting
-            points on White&apos;s shape:
+            As a hint, the correct move is very similar to
+            the solution to{" "}
+            <PostLink href="https://www.101weiqi.com/q/128242/">
+              this problem on 101weiqi (Q-128242)
+            </PostLink>
+            :
+          </PostParagraph>
+          <GoDiagram
+            src="/articles/little-knife-god-books/101_weiqi_p1.svg"
+            size={50}
+            diaNumber={3}
+            legend="Problem 128242 from 101weiqi."
+          />
+          <PostParagraph>
+            Here&apos;s that problem&apos;s solution:
+          </PostParagraph>
+          <GoDiagram
+            src="/articles/little-knife-god-books/101_weiqi_p3.svg"
+            size={50}
+            diaNumber={4}
+            legend="Black's marked stones have more liberties than it seems. And, with 1, we can contain White while shortening the group's liberties."
+          />
+          <PostParagraph>
+            The correct move in the game was to apply
+            pressure based on Black&apos;s cutting stone in
+            the center. By doing so, we can create cutting
+            many cutting points on White&apos;s shape:
           </PostParagraph>
           <GoDiagram
             src="/articles/little-knife-god-books/kato_chie_vs_yoshihiro_koike_p2.svg"
-            alt="Applying pressure and creating cutting points on White's shape."
             size={100}
-            diaNumber={2}
+            diaNumber={5}
             legend="Applying pressure and creating cutting points on White's shape."
           />
           <PostParagraph>
@@ -101,9 +121,8 @@ export default async function PostLittleKnifeGodBooks() {
           </PostParagraph>
           <GoDiagram
             src="/articles/little-knife-god-books/kato_chie_vs_yoshihiro_koike_p3.svg"
-            alt="Black wins most fights."
             size={100}
-            diaNumber={2}
+            diaNumber={6}
             legend="Black wins most semeais."
           />
           <PostParagraph>

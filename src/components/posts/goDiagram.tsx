@@ -2,13 +2,11 @@ import Image from "next/image"
 
 type GoDiagramProps = GoDiagramLegendProps & {
   src: string
-  alt: string
   size: number
 }
 
 export function GoDiagram({
   src,
-  alt,
   diaNumber,
   legend,
   size,
@@ -20,7 +18,7 @@ export function GoDiagram({
         width={0}
         height={0}
         className={`mt-3.5 mb-1 h-${size} w-auto px-7`}
-        alt={alt}
+        alt={legend}
       />
       <GoDiagramLegend
         diaNumber={diaNumber}

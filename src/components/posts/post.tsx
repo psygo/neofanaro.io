@@ -136,7 +136,7 @@ export function PostLink({
     <Link
       className={`${
         internal ? "text-red-700" : "text-purple-700"
-      } no-underline`}
+      } underline`}
       href={href}
       target="_blank"
       rel="noreferrer noopener"
