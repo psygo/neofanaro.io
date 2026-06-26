@@ -1,25 +1,22 @@
+import { get_views } from "@server/actions/posts/get_posts"
+
 import { Main } from "@components/common/main"
 import {
   Post,
-  PostDate,
   PostLink,
   PostParagraph,
   PostSection,
-  PostTags,
-  PostTitle,
-  PostTitleSection,
 } from "@components/posts/post"
 import { postCardDb } from "@components/posts/postsDb"
 
-export default function SampleSizeAndCommonSense() {
+export default async function SampleSizeAndCommonSense() {
+  const postData = postCardDb[1]
+  const pagePath = postData.href.split("/")[2]
+  const views = (await get_views(pagePath)) || 0
+
   return (
     <Main>
-      <Post>
-        <PostTitleSection>
-          <PostTitle>{postCardDb[1].title}</PostTitle>
-          <PostDate date={postCardDb[1].date} />
-          <PostTags tags={postCardDb[1].tags} />
-        </PostTitleSection>
+      <Post data={postData} views={views}>
         <PostSection>
           <PostParagraph>
             If you start digging at psychology research,

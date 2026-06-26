@@ -13,12 +13,13 @@ import { postCardDb } from "@components/posts/postsDb"
 import { GoDiagram } from "@components/posts/goDiagram"
 
 export default async function PostLittleKnifeGodBooks() {
-  const pagePath = postCardDb[2].href.split("/")[2]
+  const postData = postCardDb[2]
+  const pagePath = postData.href.split("/")[2]
   const views = (await get_views(pagePath)) || 0
 
   return (
     <Main>
-      <Post data={postCardDb[2]} views={views}>
+      <Post data={postData} views={views}>
         <PostSection>
           <PostParagraph>
             This year, a dear friend of mine, Frédéric

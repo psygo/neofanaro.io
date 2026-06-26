@@ -17,6 +17,7 @@ type PostProps = {
 
 export function Post({ data, views, children }: PostProps) {
   const pagePath = data.href.split("/")[2]
+
   return (
     <article className="prose max-w-110">
       <PostViewTracker path={pagePath} />

@@ -1,28 +1,25 @@
+import { get_views } from "@server/actions/posts/get_posts"
+
 import { Main } from "@components/common/main"
 import {
   PostParagraph,
   Post,
-  PostDate,
   PostSection,
-  PostTitle,
-  PostTitleSection,
   PostLink,
-  PostTags,
   PostOrderedList,
   PostUnorderedList,
 } from "@components/posts/post"
 import { postCardDb } from "@components/posts/postsDb"
 import { GoDiagram } from "@components/posts/goDiagram"
 
-export default function PostAiOpeningHierarchy() {
+export default async function PostAiOpeningHierarchy() {
+  const postData = postCardDb[0]
+  const pagePath = postData.href.split("/")[2]
+  const views = (await get_views(pagePath)) || 0
+
   return (
     <Main>
-      <Post>
-        <PostTitleSection>
-          <PostTitle>{postCardDb[0].title}</PostTitle>
-          <PostDate date={postCardDb[0].date} />
-          <PostTags tags={postCardDb[0].tags} />
-        </PostTitleSection>
+      <Post data={postData} views={views}>
         <PostSection>
           <PostParagraph>
             Before AI, we used to think side moves early in
