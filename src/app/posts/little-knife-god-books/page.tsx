@@ -68,9 +68,12 @@ export default async function PostLittleKnifeGodBooks() {
           </PostParagraph>
           <PostParagraph>
             So far, I only own his sabaki book. Here&apos;s
-            an example from a professional game between Kato
-            Chie 3p (White) and Yoshihiro Koike 7p (Black),
-            where should Black play?
+            an example from a professional game between{" "}
+            <PostLink href="https://kifudepot.net/kifucontents.php?id=s%2FfzvBdQObbE93Xj6SuZYg%3D%3D">
+              Kato Chie 3p (White) and Yoshihiro Koike 7p
+              (Black)
+            </PostLink>
+            , where should Black play?
           </PostParagraph>
           <GoDiagram
             src="/articles/little-knife-god-books/kato_chie_vs_yoshihiro_koike.svg"
@@ -141,16 +144,18 @@ export default async function PostLittleKnifeGodBooks() {
           </PostParagraph>
           <Image
             src="/articles/little-knife-god-books/little_knife_god_cover_1.png"
-            width={200}
-            height={200}
-            className="mx-auto"
+            width={0}
+            height={0}
+            sizes="100vw"
+            className="mx-auto h-full w-50"
             alt="Cover 1"
           />
           <Image
             src="/articles/little-knife-god-books/little_knife_god_cover_2.png"
-            width={200}
-            height={200}
-            className="mx-auto"
+            width={0}
+            height={0}
+            sizes="100vw"
+            className="mx-auto h-full w-50"
             alt="Cover 1"
           />
         </PostSection>

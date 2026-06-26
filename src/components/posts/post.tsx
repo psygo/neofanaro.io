@@ -94,18 +94,25 @@ export function PostParagraph({ children }: ReactChildren) {
 type PostLinkProps = {
   children: React.ReactNode
   href: string
+  internal?: boolean
 }
 
 export function PostLink({
   children,
   href,
+  internal = false,
 }: PostLinkProps) {
   return (
     <Link
-      className="text-orange-600 no-underline"
+      className={`${
+        internal ? "text-red-700" : "text-purple-700"
+      } no-underline`}
       href={href}
       target="_blank"
       rel="noreferrer noopener"
+      style={{
+        textUnderlineOffset: "3px",
+      }}
     >
       {children}
     </Link>
