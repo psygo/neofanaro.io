@@ -54,14 +54,12 @@ export default async function PostAiOpeningHierarchy() {
           <div className="flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-8">
             <GoDiagram
               src="/articles/post-ai-opening-hierarchy/sanrensei_fuseki.svg"
-              alt="Sanrensei Fuseki"
               size={80}
               diaNumber={1}
               legend="The Sanrensei Fuseki"
             />
             <GoDiagram
               src="/articles/post-ai-opening-hierarchy/chinese_fuseki.svg"
-              alt="Chinese Fuseki"
               diaNumber={2}
               size={80}
               legend="The Chinese Fuseki"
