@@ -2,6 +2,8 @@
 
 import Image from "next/image"
 
+import "./presentationImage.css"
+
 import { ReactChildren } from "../../types/reactChildren"
 
 import { useLang } from "@hooks/useLang"
@@ -31,16 +33,38 @@ export function PresentationSection() {
           </PresentationParagraph>
         )}
       </div>
-      <Image
-        loading="eager"
-        src="/pictures/philippe_playing_go.png"
-        alt="Fanaro"
-        width={0}
-        height={0}
-        sizes="100vw"
-        className="h-full w-50 rounded-2xl sm:w-60"
-      />
+      <div className="shader">
+        <PresentationImage src="/pictures/philippe_playing_go.png" />
+        <div className="shader-layer specular gradient-presentation">
+          <PresentationImage
+            src="/pictures/philippe_playing_go_black_and_white_inverted.png"
+            className="shader-layer mask"
+          />
+        </div>
+      </div>
     </section>
+  )
+}
+
+type PresentationImageProps = {
+  className?: string
+  src: string
+}
+
+function PresentationImage({
+  className = "",
+  src,
+}: PresentationImageProps) {
+  return (
+    <Image
+      loading="eager"
+      src={src}
+      alt="Fanaro"
+      width={0}
+      height={0}
+      sizes="100vw"
+      className={`${className} h-full w-53 rounded-2xl sm:w-60`}
+    />
   )
 }
 

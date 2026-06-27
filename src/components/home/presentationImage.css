@@ -1,0 +1,35 @@
+.shader {
+  position: relative;
+  overflow: hidden;
+  backface-visibility: hidden; /* Forces GPU */
+}
+
+.shader-layer {
+  background: black;
+  mix-blend-mode: multiply;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+}
+
+.specular {
+  mix-blend-mode: color-dodge;
+  background-attachment: fixed;
+}
+
+.mask {
+  mix-blend-mode: multiply;
+}
+
+/* From [this Codepen](https://codepen.io/HejChristian/pen/YPzLbYX) by Christian Alder */
+.gradient-presentation {
+  background-image: linear-gradient(
+    -40deg,
+    hsl(0, 0%, 0%) 30%,
+    hsl(104, 26%, 83%) 45%,
+    hsl(273, 22%, 25%) 65%,
+    hsl(0, 0%, 0%) 70%
+  );
+}
