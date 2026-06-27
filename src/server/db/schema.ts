@@ -1,11 +1,17 @@
 import {
+  date,
   integer,
+  json,
   pgTable,
-  varchar,
+  text,
 } from "drizzle-orm/pg-core"
 
 export const postsTable = pgTable("posts", {
   id: integer().primaryKey().generatedAlwaysAsIdentity(),
-  path: varchar({ length: 255 }).primaryKey(),
+  path: text().primaryKey(),
+  date: date().notNull(),
+  title: text().notNull(),
+  description: text().notNull(),
   views: integer().notNull(),
+  tags: json().notNull(),
 })
