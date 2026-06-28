@@ -1,14 +1,17 @@
-import { pgTable, integer, text, date, json } from "drizzle-orm/pg-core"
+import { pgTable, uniqueIndex, text, integer, date, json, serial } from "drizzle-orm/pg-core"
 import { sql } from "drizzle-orm"
 
 
 
 export const posts = pgTable("posts", {
-	id: integer().primaryKey().generatedAlwaysAsIdentity({ name: "posts_id_seq", startWith: 1, increment: 1, minValue: 1, maxValue: 2147483647, cache: 1 }),
-	path: text().notNull(),
-	views: integer().notNull(),
-	date: date().notNull(),
-	description: text().notNull(),
-	title: text().notNull(),
-	tags: json().notNull(),
-});
+	path: text().default('),
+	views: integer().default(0).notNull(),
+	date: date().default('2026-06-28').notNull(),
+	description: text().default(').notNull(),
+	title: text().default(').notNull(),
+	tags: json().default([]).notNull(),
+	lang: text().default('en').notNull(),
+	id: serial().primaryKey().notNull(),
+}, (table) => [
+	uniqueIndex("path_idx").using("btree", table.path.asc().nullsLast().op("text_ops")),
+]);

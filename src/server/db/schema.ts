@@ -3,15 +3,26 @@ import {
   integer,
   json,
   pgTable,
+  serial,
   text,
+  uniqueIndex,
 } from "drizzle-orm/pg-core"
 
-export const postsTable = pgTable("posts", {
-  id: integer().primaryKey().generatedAlwaysAsIdentity(),
-  path: text(),
-  date: date().notNull(),
-  title: text().notNull(),
-  description: text().notNull(),
-  views: integer().notNull(),
-  tags: json().notNull(),
-})
+function todayDate() {
+  return new Date().toLocaleDateString("en-CA")
+}
+
+export const postsTable = pgTable(
+  "posts",
+  {
+    id: serial().primaryKey(),
+    path: text().default(""),
+    date: date().notNull().default(todayDate()),
+    title: text().notNull().default(""),
+    description: text().notNull().default(""),
+    lang: text().notNull().default("en"),
+    views: integer().notNull().default(0),
+    tags: json().notNull().default([]),
+  },
+  (table) => [uniqueIndex("path_idx").on(table.path)],
+)

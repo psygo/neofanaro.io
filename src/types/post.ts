@@ -1,9 +1,10 @@
 export type Post = {
-  id: number
+  // id: number
   path: string
   date: string
   title: string
   description: string
+  lang: string
   views: number
   tags: string[]
 }

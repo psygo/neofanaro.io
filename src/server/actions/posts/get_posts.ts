@@ -25,12 +25,12 @@ export async function get_post_views(path: string) {
 
 export async function get_posts() {
   try {
-    const viewsFromDb = await db
+    const posts = await db
       .select()
       .from(postsTable)
       .orderBy(desc(postsTable.date))
 
-    return viewsFromDb as Post[]
+    return posts as Post[]
   } catch (e) {
     console.error(e)
   }
