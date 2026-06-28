@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import Image from "next/image"
 
-import { generateMetadataHelper } from "@server/utils/generateMetadata"
+import { generatePostMetadataHelper } from "@/src/server/utils/generatePostMetadataHelper"
 import { get_post } from "@server/actions/posts/get_posts"
 
 import { Main } from "@components/common/main"
@@ -17,12 +17,7 @@ import { CpiSuspense } from "@components/common/cpiSuspense"
 const postPath = "little-knife-god-books"
 
 export async function generateMetadata(): Promise<Metadata> {
-  const post = await get_post(postPath)
-
-  return generateMetadataHelper(
-    post?.title || "",
-    post?.description || "",
-  )
+  return generatePostMetadataHelper(postPath)
 }
 
 export default async function PostLittleKnifeGodBooks() {
