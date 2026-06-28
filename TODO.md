@@ -3,6 +3,8 @@
 ## Priorities
 
 - [ ] Buy the new blog address
+- [ ] Get Magi to work once again.
+- [ ] Create a post about Magi.
 
 ## Bugs
 

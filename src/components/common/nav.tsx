@@ -107,10 +107,10 @@ function NavIcon({
   }
 
   return (
-    <li
-      className={`${isActive} flex items-center justify-center rounded-full p-2 transition duration-300 hover:bg-slate-200`}
-    >
-      <LangLink href={href}>
+    <LangLink href={href}>
+      <li
+        className={`${isActive} flex items-center justify-center rounded-full p-2 transition duration-300 hover:bg-slate-200`}
+      >
         <Image
           loading="eager"
           src={src}
@@ -119,8 +119,8 @@ function NavIcon({
           height={size}
           className={className}
         />
-      </LangLink>
-    </li>
+      </li>
+    </LangLink>
   )
 }
 

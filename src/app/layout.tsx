@@ -2,6 +2,8 @@ import type { Metadata } from "next"
 
 import "@utils"
 
+import { WithReactChildren } from "@types"
+
 import { geistMono, geistSans } from "@styles"
 import "@styles"
 
@@ -15,9 +17,7 @@ export const metadata: Metadata = topLevelMetadata
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode
-}>) {
+}: WithReactChildren) {
   return (
     <html
       lang="en"
