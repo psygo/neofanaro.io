@@ -3,9 +3,9 @@
 import Image from "next/image"
 import Link from "next/link"
 
-import { containerOutline } from "@styles/globals"
+import { containerOutline } from "@styles"
 
-import { useLang } from "@hooks/useLang"
+import { useLang } from "@hooks"
 
 import {
   FanaroLinkedIn,

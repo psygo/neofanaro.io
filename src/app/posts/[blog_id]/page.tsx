@@ -1,10 +1,9 @@
 import { Metadata } from "next"
 
-import { get_post } from "@server/actions/posts/get_posts"
+import { PostFromDb } from "@types"
 
-import { PostFromDb } from "../../../types/post"
-
-import { generatePostMetadataHelper } from "@server/utils/generateMetadataHelper"
+import { generatePostMetadataHelper } from "@server"
+import { get_post } from "@actions"
 
 import { Main } from "@components/common/main"
 import { CpiSuspense } from "@components/common/cpiSuspense"

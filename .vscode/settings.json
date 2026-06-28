@@ -3,5 +3,9 @@
         "**/node_modules/": true,
         ".next": true,
         "next-env.d.ts": true,
+        ".vercel/": true,
+        "drizzle/": true,
+        "pnpm-lock.yaml": true,
+        "pnpm-workspace.yaml": true,
     },
 }
