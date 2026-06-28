@@ -8,12 +8,12 @@ import {
   type SetStateAction,
 } from "react"
 
-import { Post } from "../types/post"
+import { PostFromDb } from "../types/post"
 import { WithReactChildren } from "../types/reactChildren"
 
 type PostsContext = {
-  posts: Post[]
-  setPosts: Dispatch<SetStateAction<Post[]>>
+  posts: PostFromDb[]
+  setPosts: Dispatch<SetStateAction<PostFromDb[]>>
 }
 
 const PostsContext = createContext<PostsContext | null>(
@@ -21,14 +21,15 @@ const PostsContext = createContext<PostsContext | null>(
 )
 
 type PostsProviderProps = WithReactChildren & {
-  initialPosts: Post[]
+  initialPosts: PostFromDb[]
 }
 
 export function PostsProvider({
   initialPosts,
   children,
 }: PostsProviderProps) {
-  const [posts, setPosts] = useState<Post[]>(initialPosts)
+  const [posts, setPosts] =
+    useState<PostFromDb[]>(initialPosts)
 
   return (
     <PostsContext.Provider value={{ posts, setPosts }}>

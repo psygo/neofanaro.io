@@ -1,5 +1,5 @@
-export type Post = {
-  // id: number
+export type PostFromDb = {
+  id: number
   path: string
   date: string
   title: string

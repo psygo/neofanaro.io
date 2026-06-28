@@ -2,22 +2,20 @@
 
 import { desc, eq } from "drizzle-orm"
 
-import { Post } from "../../../types/post"
+import { PostFromDb } from "../../../types/post"
 
 import { db } from "../../.."
 import { postsTable } from "../../db/schema"
 
-export async function get_post_views(path: string) {
+export async function get_post(path: string) {
   try {
-    const viewsFromDb = await db
-      .select({
-        views: postsTable.views,
-        path: postsTable.path,
-      })
+    const post = await db
+      .select()
       .from(postsTable)
       .where(eq(postsTable.path, path))
+      .limit(1)
 
-    return viewsFromDb[0].views
+    return post[0] as PostFromDb
   } catch (e) {
     console.error(e)
   }
@@ -30,7 +28,7 @@ export async function get_posts() {
       .from(postsTable)
       .orderBy(desc(postsTable.date))
 
-    return posts as Post[]
+    return posts as PostFromDb[]
   } catch (e) {
     console.error(e)
   }

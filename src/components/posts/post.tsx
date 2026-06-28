@@ -6,25 +6,22 @@ import { WithReactChildren } from "../../types/reactChildren"
 
 import { useLang } from "@hooks/useLang"
 
-import { PostCardProps } from "./postCard"
 import { PostViewTracker } from "./postViewTracker"
+import { PostFromDb } from "../../types/post"
 
 type PostProps = {
-  data: PostCardProps
-  views: number
+  data: PostFromDb
   children: React.ReactNode
 }
 
-export function Post({ data, views, children }: PostProps) {
-  const pagePath = data.href.split("/")[2]
-
+export function Post({ data, children }: PostProps) {
   return (
     <article className="prose max-w-110">
-      <PostViewTracker path={pagePath} />
+      <PostViewTracker path={data.path} />
       <PostTitleSection>
         <PostTitle>{data.title}</PostTitle>
-        <PostViews views={views || 0} />
-        <PostDate date={data.date} />
+        <PostViews views={data.views || 0} />
+        <PostDate date={new Date(data.date)} />
         <PostTags tags={data.tags} />
       </PostTitleSection>
       {children}
