@@ -76,9 +76,9 @@ export function WhatIsGoAbout({ post }: BlogPostProps) {
         </PostParagraph>
         <PostParagraph>
           Personally, if Go were about territory, I would
-          have lost interest a long time ago. Fighting
-          became a matter of not only entertainment very
-          early on in my Go life. But, when{" "}
+          have lost interest a long time ago. Very early on
+          in my Go life, fighting became a matter beyond
+          mere entertainment. But, when{" "}
           <PostLink href="https://senseis.xmp.net/?Tewari">
             tewari
           </PostLink>{" "}
