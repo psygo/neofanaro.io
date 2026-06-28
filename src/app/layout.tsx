@@ -3,9 +3,9 @@ import { Geist, Geist_Mono } from "next/font/google"
 
 import "@utils"
 
-import "./globals.css"
+import "@styles/globals.css"
 
-import { topLevelMetadata } from "@server/utils/generateMetadataHelper"
+import { topLevelMetadata } from "@server"
 
 import { Nav } from "@components/common/nav"
 import { Footer } from "@components/common/footer"

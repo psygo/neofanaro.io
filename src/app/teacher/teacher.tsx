@@ -1,6 +1,6 @@
 "use client"
 
-import { useLang } from "@hooks/useLang"
+import { useLang } from "@hooks"
 
 import {
   FanaroFacebook,
@@ -8,7 +8,7 @@ import {
   FanaroYouTube,
   FooterLogo,
   GoWithFanaroYouTube,
-} from "@/src/components/common/footer"
+} from "@components/common/footer"
 
 export function GoProfPresentationSection() {
   const lang = useLang()
