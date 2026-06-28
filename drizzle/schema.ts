@@ -4,11 +4,11 @@ import { sql } from "drizzle-orm"
 
 
 export const posts = pgTable("posts", {
-	path: text().default('),
+	path: text().default('/'),
 	views: integer().default(0).notNull(),
 	date: date().default('2026-06-28').notNull(),
-	description: text().default(').notNull(),
-	title: text().default(').notNull(),
+	description: text().default('Description').notNull(),
+	title: text().default('Title').notNull(),
 	tags: json().default([]).notNull(),
 	lang: text().default('en').notNull(),
 	id: serial().primaryKey().notNull(),

@@ -1,1 +1,0 @@
-ALTER TABLE "posts" ALTER COLUMN "path" SET DATA TYPE varchar(255);

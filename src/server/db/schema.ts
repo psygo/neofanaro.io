@@ -16,10 +16,10 @@ export const postsTable = pgTable(
   "posts",
   {
     id: serial().primaryKey(),
-    path: text().default(""),
+    path: text().default("/"),
     date: date().notNull().default(todayDate()),
-    title: text().notNull().default(""),
-    description: text().notNull().default(""),
+    title: text().notNull().default("Title"),
+    description: text().notNull().default("Description"),
     lang: text().notNull().default("en"),
     views: integer().notNull().default(0),
     tags: json().notNull().default([]),
