@@ -9,6 +9,7 @@ import {
   Post,
   PostSection,
   PostUnorderedList,
+  PostLink,
 } from "@components/posts/post"
 import { CpiSuspense } from "@components/common/cpiSuspense"
 import Image from "next/image"
@@ -30,17 +31,12 @@ export default async function PostLittleKnifeGodBooks() {
             <PostSection>
               <PostParagraph>
                 Last year, as a way of practicing Korean, I
-                asked a professional player, namely Lee Uju
-                이우주 1p, what she thought Go was about:
+                asked a professional player, namely{" "}
+                <PostLink href="https://kbcl.baduk.or.kr/record/player_view.asp?gisa_code=10001333">
+                  Lee Uju 이우주 1p
+                </PostLink>
+                , what she thought Go was about:
               </PostParagraph>
-              <Image
-                src="/articles/what-is-go-about/lee_uju.jpeg"
-                width={0}
-                height={0}
-                sizes="100vw"
-                className="mx-auto h-full w-80 rounded-lg"
-                alt="Lee Uju 이우주 1p"
-              />
               <PostUnorderedList>
                 <li>Territory</li>
                 <li>Fighting</li>
@@ -53,6 +49,20 @@ export default async function PostLittleKnifeGodBooks() {
                 was all just for language practice, as she
                 also wanted to practice English.
               </PostParagraph>
+              <div className="-mt-3 flex flex-col items-center">
+                <Image
+                  loading="eager"
+                  src="/articles/what-is-go-about/lee_uju.jpeg"
+                  width={0}
+                  height={0}
+                  sizes="100vw"
+                  className="mx-7 mb-0 h-full w-80 rounded-xl"
+                  alt="Lee Uju 이우주 1p"
+                />
+                <p className="mt-2 mb-2 px-10 text-center text-sm">
+                  Lee Uju 이우주 1p
+                </p>
+              </div>
               <PostParagraph>
                 Her answer was <em>efficiency</em>. However,
                 the intensity behind it surprised me quite a
@@ -71,27 +81,33 @@ export default async function PostLittleKnifeGodBooks() {
               </PostParagraph>
               <PostParagraph>
                 If winning in Go is defined by the player
-                with <em>more</em> territory, then Go
-                actually cannot be about territory in
-                absolute but relative terms. And, since we
-                have finite resources on the board, the
-                winner is the one who can score more points
-                per stone, which is the definition of
-                efficiency.
+                with <em>more</em> territory, then Go cannot
+                actually be about territory in absolute but
+                relative terms. And, since we have finite
+                resources on the board, the winner is the
+                one who can score more points per stone,
+                which is the definition of efficiency.
               </PostParagraph>
               <PostParagraph>
                 Many other players will mention fighting as
                 the heart of Go, but, if questioned why,
-                besides pride they would likely say it is a
+                besides pride, they would likely say it is a
                 way of extracting more territory, which
                 circles back to efficiency in the end.
               </PostParagraph>
-              {/* <PostParagraph>
+              <PostParagraph>
                 Personally, if Go were about territory, I
                 would have lost interest a long time ago.
-                After all, Go would seemingly be reduced to
-                accounting.
-              </PostParagraph> */}
+                Fighting became a matter of not only
+                entertainment very early on in my Go life.
+                But, when{" "}
+                <PostLink href="https://senseis.xmp.net/?Tewari">
+                  tewari
+                </PostLink>{" "}
+                analysis entered the picture, unbeknownst to
+                me, I gradually converged to Lee Uju&apos;s
+                point of view.
+              </PostParagraph>
             </PostSection>
           </Post>
         ) : (
