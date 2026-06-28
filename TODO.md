@@ -2,8 +2,6 @@
 
 ## Priorities
 
-- [ ] Generalize metadata
-- [ ] Site logo metadata isn't working
 - [ ] Buy the new blog address
 
 ## Bugs
