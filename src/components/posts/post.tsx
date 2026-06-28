@@ -116,7 +116,7 @@ export function PostParagraph({
   children,
 }: WithReactChildren) {
   return (
-    <p className="text-justify hyphens-auto" lang="pt-br">
+    <p className="text-justify hyphens-auto" lang="en-us">
       {children}
     </p>
   )
