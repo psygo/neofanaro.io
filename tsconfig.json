@@ -26,20 +26,44 @@
       "@/*": [
         "./*"
       ],
+      "@": [
+        "./src"
+      ],
       "@components/*": [
         "./src/components/*"
+      ],
+      "@components/": [
+        "./src/components/exports"
+      ],
+      "@db/*": [
+        "./src/server/db/*"
+      ],
+      "@db": [
+        "./src/server/db/exports"
       ],
       "@hooks/*": [
         "./src/hooks/*"
       ],
+      "@hooks": [
+        "./src/hooks/exports"
+      ],
       "@providers/*": [
         "./src/providers/*"
+      ],
+      "@providers": [
+        "./src/providers/exports"
       ],
       "@server/*": [
         "./src/server/*"
       ],
+      "@server": [
+        "./src/server/exports"
+      ],
       "@styles/*": [
         "./src/styles/*"
+      ],
+      "@styles": [
+        "./src/styles/exports"
       ],
       "@types/*": [
         "./src/types/*"

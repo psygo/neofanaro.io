@@ -2,10 +2,9 @@
 
 import { desc, eq } from "drizzle-orm"
 
-import { PostFromDb } from "../../../types/post"
+import { PostFromDb } from "@types"
 
-import { db } from "../../.."
-import { postsTable } from "../../db/schema"
+import { db, postsTable } from "@db"
 
 export async function get_post(path: string) {
   try {

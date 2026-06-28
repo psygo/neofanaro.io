@@ -90,8 +90,8 @@ export function WhatIsGoAbout({ post }: BlogPostProps) {
         <hr className="mt-30 mb-6 border border-gray-300" />
         <PostParagraph>
           I ended up talking about this short story on my
-          &quot;Opening from Zero&quot; course, though it is
-          in Portuguese:
+          &quot;Opening from Zero&quot; course, though
+          it&apos;s in Portuguese:
         </PostParagraph>
         <div className="mx-6 aspect-video overflow-hidden rounded-2xl border border-slate-200 shadow-lg">
           <iframe

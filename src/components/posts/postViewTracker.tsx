@@ -1,6 +1,6 @@
 "use client"
 
-import { usePostView } from "@hooks/postView"
+import { usePostView } from "@/src/hooks/usePostView"
 
 type PostViewTrackerProps = {
   path: string
