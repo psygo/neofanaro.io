@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 
-import { ReactChildren } from "../../types/reactChildren"
+import { WithReactChildren } from "../../types/reactChildren"
 
 import { useLang } from "@hooks/useLang"
 
@@ -37,7 +37,7 @@ export function Post({ data, views, children }: PostProps) {
 
 export function PostTitleSection({
   children,
-}: ReactChildren) {
+}: WithReactChildren) {
   return (
     <section className="flex flex-col gap-1">
       {children}
@@ -45,7 +45,7 @@ export function PostTitleSection({
   )
 }
 
-export function PostTitle({ children }: ReactChildren) {
+export function PostTitle({ children }: WithReactChildren) {
   return <h1 className="mb-6">{children}</h1>
 }
 
@@ -84,7 +84,7 @@ export function PostDate({
   return <h6 className={className}>{formattedDate}</h6>
 }
 
-export function PostTag({ children }: ReactChildren) {
+export function PostTag({ children }: WithReactChildren) {
   return (
     <span className="rounded-2xl border border-gray-300 bg-gray-50 px-2 py-0.5 text-xs font-semibold text-gray-600">
       {children}
@@ -109,11 +109,15 @@ export function PostTags({ tags }: PostTagsProps) {
 // ---------------------------------------------------------
 // Post Content
 
-export function PostSection({ children }: ReactChildren) {
+export function PostSection({
+  children,
+}: WithReactChildren) {
   return <section className="mt-10">{children}</section>
 }
 
-export function PostParagraph({ children }: ReactChildren) {
+export function PostParagraph({
+  children,
+}: WithReactChildren) {
   return (
     <p className="text-justify hyphens-auto" lang="pt-br">
       {children}
@@ -151,7 +155,7 @@ export function PostLink({
 
 export function PostOrderedList({
   children,
-}: ReactChildren) {
+}: WithReactChildren) {
   return (
     <ol className="pl-12 [&>li]:my-1 [&>li]:pl-1">
       {children}
@@ -161,7 +165,7 @@ export function PostOrderedList({
 
 export function PostUnorderedList({
   children,
-}: ReactChildren) {
+}: WithReactChildren) {
   return (
     <ul className="mt-0 mb-0 [&>li]:my-1 [&>li]:pl-0.5">
       {children}

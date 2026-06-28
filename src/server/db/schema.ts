@@ -8,7 +8,7 @@ import {
 
 export const postsTable = pgTable("posts", {
   id: integer().primaryKey().generatedAlwaysAsIdentity(),
-  path: text().primaryKey(),
+  path: text(),
   date: date().notNull(),
   title: text().notNull(),
   description: text().notNull(),

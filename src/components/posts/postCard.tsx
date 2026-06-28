@@ -2,7 +2,7 @@ import "flag-icons/css/flag-icons.min.css"
 
 import { cardDecoration } from "@styles/globals"
 
-import { ReactChildren } from "../../types/reactChildren"
+import { WithReactChildren } from "../../types/reactChildren"
 
 import { LangLink } from "../common/langLink"
 import { PostDate, PostTags } from "./post"
@@ -44,7 +44,7 @@ export function PostCard({
   )
 }
 
-function PostTitle({ children }: ReactChildren) {
+function PostTitle({ children }: WithReactChildren) {
   return (
     <h2 className="text-2xl font-bold tracking-wide">
       {children}
@@ -69,7 +69,7 @@ function PostLang({ lang }: PostLangProps) {
   )
 }
 
-function PostDescription({ children }: ReactChildren) {
+function PostDescription({ children }: WithReactChildren) {
   return (
     <p className="text-sm text-slate-700">{children}</p>
   )

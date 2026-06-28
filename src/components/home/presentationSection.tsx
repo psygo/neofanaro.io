@@ -4,7 +4,7 @@ import Image from "next/image"
 
 import "./presentationImage.css"
 
-import { ReactChildren } from "../../types/reactChildren"
+import { WithReactChildren } from "../../types/reactChildren"
 
 import { useLang } from "@hooks/useLang"
 
@@ -70,7 +70,7 @@ function PresentationImage({
 
 function PresentationParagraph({
   children,
-}: ReactChildren) {
+}: WithReactChildren) {
   return (
     <p className="max-w-75 px-4 text-center text-slate-700 sm:max-w-100 sm:px-0 sm:text-left sm:text-lg">
       {children}

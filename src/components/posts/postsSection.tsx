@@ -3,7 +3,8 @@
 import { useLang } from "@hooks/useLang"
 
 import { PostCard } from "./postCard"
-import { postCardDb } from "./postsDb"
+
+import { usePosts } from "@providers/postsProvider"
 
 export function PostsSection() {
   const lang = useLang()
@@ -19,20 +20,18 @@ export function PostsSection() {
 }
 
 function PostsList() {
-  const postDbDescending = postCardDb.sort(
-    (a, b) => b.date.getTime() - a.date.getTime(),
-  )
+  const { posts } = usePosts()
 
   return (
     <div className="flex flex-col gap-3">
-      {postDbDescending.map((postCard, i) => (
+      {posts.map((postCard, i) => (
         <PostCard
           key={i}
-          href={postCard.href}
+          href={`/posts/${postCard.path}`}
           title={postCard.title}
           description={postCard.description}
-          lang={postCard.lang}
-          date={postCard.date}
+          lang={"en"}
+          date={new Date(postCard.date)}
           tags={postCard.tags}
         />
       ))}

@@ -32,6 +32,9 @@
       "@hooks/*": [
         "./src/hooks/*"
       ],
+      "@providers/*": [
+        "./src/providers/*"
+      ],
       "@server/*": [
         "./src/server/*"
       ],

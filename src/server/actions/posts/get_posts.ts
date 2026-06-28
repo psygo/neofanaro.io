@@ -1,6 +1,6 @@
 "use server"
 
-import { eq, getTableColumns } from "drizzle-orm"
+import { desc, eq } from "drizzle-orm"
 
 import { Post } from "../../../types/post"
 
@@ -10,7 +10,10 @@ import { postsTable } from "../../db/schema"
 export async function get_post_views(path: string) {
   try {
     const viewsFromDb = await db
-      .select({ ...getTableColumns(postsTable) })
+      .select({
+        views: postsTable.views,
+        path: postsTable.path,
+      })
       .from(postsTable)
       .where(eq(postsTable.path, path))
 
@@ -22,7 +25,10 @@ export async function get_post_views(path: string) {
 
 export async function get_posts() {
   try {
-    const viewsFromDb = await db.select().from(postsTable)
+    const viewsFromDb = await db
+      .select()
+      .from(postsTable)
+      .orderBy(desc(postsTable.date))
 
     return viewsFromDb as Post[]
   } catch (e) {

@@ -1,3 +1,5 @@
-export type ReactChildren = {
-  children: React.ReactNode
+import { type ReactNode } from "react"
+
+export type WithReactChildren = {
+  children: ReactNode
 }
