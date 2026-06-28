@@ -2,9 +2,10 @@
 
 ## Priorities
 
-- [ ] Use the database for post data
-- [ ] Post Views on Post List Page
-- [ ] [Foiled card effect for the main page image](https://poke-holo.simey.me/)
+- [ ] Generalize blog posts through slugs
+- [ ] Generalize metadata
+- [ ] Site logo metadata isn't working
+- [ ] Buy the new blog address
 
 ## Bugs
 

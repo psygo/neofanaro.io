@@ -8,3 +8,7 @@ export type PostFromDb = {
   views: number
   tags: string[]
 }
+
+export type BlogPostProps = {
+  post: PostFromDb
+}
