@@ -86,6 +86,22 @@ export function WhatIsGoAbout({ post }: BlogPostProps) {
           gradually converged to Lee Uju&apos;s point of
           view.
         </PostParagraph>
+
+        <hr className="mt-30 mb-6 border border-gray-300" />
+        <PostParagraph>
+          I ended up talking about this short story on my
+          &quot;Opening from Zero&quot; course, though it is
+          in Portuguese:
+        </PostParagraph>
+        <div className="mx-6 aspect-video overflow-hidden rounded-2xl border border-slate-200 shadow-lg">
+          <iframe
+            className="h-full w-full"
+            src="https://www.youtube.com/embed/7zpef07ei5U?list=PLLWr-AWriURE"
+            title="Abertura do Zero | Volume 1"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
+        </div>
       </PostSection>
     </Post>
   )
