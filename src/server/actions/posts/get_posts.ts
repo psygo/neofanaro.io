@@ -15,7 +15,7 @@ export async function get_post(path: string) {
       .where(eq(postsTable.path, path))
       .limit(1)
 
-    return post[0] as PostFromDb
+    return post.first() as PostFromDb
   } catch (e) {
     console.error(e)
   }

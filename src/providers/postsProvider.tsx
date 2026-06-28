@@ -9,7 +9,7 @@ import {
 } from "react"
 
 import { PostFromDb } from "../types/post"
-import { WithReactChildren } from "../types/reactChildren"
+import { WithReactChildren } from "../types/utils"
 
 type PostsContext = {
   posts: PostFromDb[]

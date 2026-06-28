@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 
-import { WithReactChildren } from "../../types/reactChildren"
+import { WithReactChildren } from "../../types/utils"
 
 import { useLang } from "@hooks/useLang"
 

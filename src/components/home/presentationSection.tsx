@@ -4,7 +4,7 @@ import Image from "next/image"
 
 import "./presentationImage.css"
 
-import { WithReactChildren } from "../../types/reactChildren"
+import { WithReactChildren } from "../../types/utils"
 
 import { useLang } from "@hooks/useLang"
 

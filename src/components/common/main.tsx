@@ -1,4 +1,4 @@
-import { WithReactChildren } from "../../types/reactChildren"
+import { WithReactChildren } from "../../types/utils"
 
 export function Main({ children }: WithReactChildren) {
   return (

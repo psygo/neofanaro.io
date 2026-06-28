@@ -1,6 +1,8 @@
 import type { Metadata } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
 
+import "@utils"
+
 import "./globals.css"
 
 import { topLevelMetadata } from "@server/utils/generateMetadataHelper"

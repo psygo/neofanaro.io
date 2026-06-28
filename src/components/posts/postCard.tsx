@@ -2,7 +2,7 @@ import "flag-icons/css/flag-icons.min.css"
 
 import { cardDecoration } from "@styles/globals"
 
-import { WithReactChildren } from "../../types/reactChildren"
+import { WithReactChildren } from "../../types/utils"
 
 import { LangLink } from "../common/langLink"
 import { PostDate, PostTags } from "./post"
