@@ -4,7 +4,7 @@ import { get_post } from "@server/actions/posts/get_posts"
 
 import { PostFromDb } from "../../../types/post"
 
-import { generatePostMetadataHelper } from "@server/utils/generatePostMetadataHelper"
+import { generatePostMetadataHelper } from "@server/utils/generateMetadataHelper"
 
 import { Main } from "@components/common/main"
 import { CpiSuspense } from "@components/common/cpiSuspense"
@@ -21,6 +21,7 @@ export async function generateMetadata({
   params,
 }: BlogPageProps): Promise<Metadata> {
   const { blog_id } = await params
+
   return generatePostMetadataHelper(blog_id)
 }
 
@@ -28,7 +29,7 @@ export default async function BlogPost({
   params,
 }: BlogPageProps) {
   const { blog_id } = await params
-  console.log(blog_id)
+
   const post = await get_post(blog_id)
 
   return (

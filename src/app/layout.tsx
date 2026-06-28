@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google"
 
 import "./globals.css"
 
+import { topLevelMetadata } from "@server/utils/generateMetadataHelper"
+
 import { Nav } from "@components/common/nav"
 import { Footer } from "@components/common/footer"
 import { CpiSuspense } from "@components/common/cpiSuspense"
@@ -17,34 +19,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 })
 
-export const metadata: Metadata = {
-  title: "neofanaro.io",
-  description: "neofanaro.io",
-  alternates: {
-    canonical: "https://neofanaroio.vercel.app",
-    languages: {
-      en: "https://neofanaroio.vercel.app/?lang=en",
-      pt: "https://neofanaroio.vercel.app/?lang=pt",
-    },
-  },
-  icons: [
-    {
-      rel: "icon",
-      url: "/logos/favicon.png",
-    },
-  ],
-  openGraph: {
-    title: "neofanaro.io",
-    description: "Philippe Fanaro's Blog",
-    url: "neofanaroio.vercel.app",
-    siteName: "neofanaro.io",
-    images: [
-      {
-        url: "https://neofanaroio.vercel.app/metadata/neofanaro.io_sample.png",
-      },
-    ],
-  },
-}
+export const metadata: Metadata = topLevelMetadata
 
 export default function RootLayout({
   children,
