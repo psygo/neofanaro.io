@@ -45,7 +45,7 @@ export async function generatePostMetadataHelper(
           description: post.description,
           images: [
             {
-              url: "https://neofanaroio.vercel.app/logos/favicon.svg",
+              url: "https://neofanaroio.vercel.app/logos/favicon.io.svg",
             },
           ],
         },
