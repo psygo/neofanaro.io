@@ -25,6 +25,7 @@ export function SoftwareWorkSection() {
       <div className="flex flex-col gap-4">
         <CpiSuspense>
           <Aquarifolio />
+          <Magi />
           <Fic />
           <TecnicasDeGo />
           <YouTubeKbdNav />
@@ -189,6 +190,35 @@ function Aquarifolio() {
         title="Inline Frame Example"
         className="h-50 w-full rounded-xl"
         src="https://aquarifolio.vercel.app/"
+      ></iframe>
+    </Link>
+  )
+}
+
+function Magi() {
+  const lang = useLang()
+
+  return (
+    <Link
+      href="https://magi-phi.vercel.app/"
+      target="_blank"
+      rel="noreferrer noopener"
+      className={`${containerOutline} bg-gray-0 flex flex-col gap-3 px-4.5 py-3 pb-4.5`}
+    >
+      <GithubRepoCardTitleAndDescription
+        title="Magi"
+        description={
+          lang === "pt"
+            ? "Uma exploração 2D da internet"
+            : "A 2D exploration of the internet"
+        }
+      />
+      <Tags tags={["react", "graph", "next.js", "sql"]} />
+      <iframe
+        id="inlineFrameExample"
+        title="Inline Frame Example"
+        className="h-50 w-full rounded-2xl"
+        src="https://magi-phi.vercel.app/"
       ></iframe>
     </Link>
   )
