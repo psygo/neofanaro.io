@@ -87,7 +87,7 @@ export function Magi({ post }: BlogPostProps) {
           effort.
         </PostParagraph>
         <PostImageWithLegend
-          src="/articles/magi/excalidraw.png"
+          src="/articles/magi/Excalidraw.png"
           legend="Excalidraw"
           className="mb-0 h-full w-80"
         />
