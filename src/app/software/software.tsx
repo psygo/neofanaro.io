@@ -15,14 +15,14 @@ import { CpiSuspense } from "@components/common/cpiSuspense"
 
 export function SoftwareWorkSection() {
   return (
-    <section className="flex flex-col gap-4 px-6">
-      <div className="flex flex-col gap-2">
-        <h2 className="text-center text-[21pt] font-black">
+    <section className="mx-auto flex flex-col gap-6">
+      <div className="flex flex-col gap-4 sm:gap-2">
+        <h2 className="text-center text-2xl font-black sm:text-[21pt]">
           Full Stack Developer
         </h2>
         <SoftwareStackLogos />
       </div>
-      <div className="flex flex-col gap-4">
+      <div className="flex w-full flex-col gap-4">
         <CpiSuspense>
           <Aquarifolio />
           <Magi />
