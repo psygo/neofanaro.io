@@ -11,6 +11,7 @@ import { PostLittleKnifeGodBooks } from "@components/posts/articles/postLittleKn
 import { PostAiOpeningHierarchy } from "@components/posts/articles/postAiOpeningHierarchy"
 import { SampleSizeAndCommonSense } from "@components/posts/articles/sampleSizeAndCommonSense"
 import { WhatIsGoAbout } from "@components/posts/articles/whatIsGoAbout"
+import { Magi } from "@components/posts/articles/magi"
 
 type BlogPageProps = {
   params: Promise<{ blog_id: string }>
@@ -50,6 +51,8 @@ function whichBlogPost(path: string, post: PostFromDb) {
       return <SampleSizeAndCommonSense post={post} />
     case "what-is-go-about":
       return <WhatIsGoAbout post={post} />
+    case "magi":
+      return <Magi post={post} />
     default:
       return <></>
   }

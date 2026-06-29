@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 
 import { WithReactChildren } from "../../types/utils"
 
@@ -167,6 +168,58 @@ export function PostUnorderedList({
     <ul className="mt-0 mb-0 [&>li]:my-1 [&>li]:pl-0.5">
       {children}
     </ul>
+  )
+}
+type PostImageWithLegendProps = {
+  src: string
+  legend: string
+  className: string
+}
+
+export function PostImageWithLegend({
+  src,
+  legend,
+  className,
+}: PostImageWithLegendProps) {
+  return (
+    <div className="-mt-3 flex flex-col items-center">
+      <Image
+        loading="eager"
+        src={src}
+        width={0}
+        height={0}
+        sizes="100vw"
+        className={className}
+        alt={legend}
+      />
+      <p className="mt-2 mb-2 px-10 text-center text-sm">
+        {legend}
+      </p>
+    </div>
+  )
+}
+
+export function PostCode({ children }: WithReactChildren) {
+  return (
+    <code className="mr-1.5 rounded-lg bg-gray-300 px-1.75 py-0.5 font-semibold before:content-[''] after:content-['']">
+      {children}
+    </code>
+  )
+}
+
+export function PostSectionTitle({
+  children,
+}: WithReactChildren) {
+  return <h2>{children}</h2>
+}
+
+export function PostBlockQuote({
+  children,
+}: WithReactChildren) {
+  return (
+    <blockquote className="pl-2.5 font-normal not-italic">
+      {children}
+    </blockquote>
   )
 }
 

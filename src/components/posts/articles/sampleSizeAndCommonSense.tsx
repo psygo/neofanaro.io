@@ -1,4 +1,4 @@
-import { BlogPostProps } from "../../../types/post"
+import { BlogPostProps } from "@types"
 
 import {
   PostParagraph,

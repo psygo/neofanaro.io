@@ -1,4 +1,4 @@
-import { BlogPostProps } from "../../../types/post"
+import { BlogPostProps } from "@types"
 
 import {
   PostParagraph,
@@ -6,8 +6,8 @@ import {
   PostSection,
   PostLink,
   PostUnorderedList,
+  PostImageWithLegend,
 } from "@components/posts/post"
-import Image from "next/image"
 
 export function WhatIsGoAbout({ post }: BlogPostProps) {
   return (
@@ -33,20 +33,11 @@ export function WhatIsGoAbout({ post }: BlogPostProps) {
           just for language practice, as she also wanted to
           practice English.
         </PostParagraph>
-        <div className="-mt-3 flex flex-col items-center">
-          <Image
-            loading="eager"
-            src="/articles/what-is-go-about/lee_uju.jpeg"
-            width={0}
-            height={0}
-            sizes="100vw"
-            className="mx-7 mb-0 h-full w-80 rounded-xl"
-            alt="Lee Uju 이우주 1p"
-          />
-          <p className="mt-2 mb-2 px-10 text-center text-sm">
-            Lee Uju 이우주 1p
-          </p>
-        </div>
+        <PostImageWithLegend
+          src="/articles/what-is-go-about/lee_uju.jpeg"
+          legend="Lee Uju 이우주 1p"
+          className="mx-7 mb-0 h-full w-80 rounded-xl"
+        />
         <PostParagraph>
           Her answer was <em>efficiency</em>. However, the
           intensity behind it surprised me quite a bit. The
