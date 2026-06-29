@@ -16,7 +16,7 @@ export function GoProfPresentationSection() {
   return (
     <div className="mx-auto flex max-w-sm flex-col gap-6">
       <div className="flex flex-col gap-3">
-        <h2 className="text-center text-3xl font-extrabold">
+        <h2 className="text-center text-3xl font-black">
           {lang === "pt" ? "Professor de Go" : "Go Teacher"}
         </h2>
         <div className="mx-auto flex max-w-sm flex-col gap-2">

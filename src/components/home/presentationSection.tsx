@@ -12,9 +12,9 @@ export function PresentationSection() {
   const lang = useLang()
 
   return (
-    <section className="mx-auto flex flex-col items-center gap-5.5 px-4 sm:flex-row sm:gap-8 sm:px-7">
+    <section className="mx-auto flex flex-col items-center gap-5.5 sm:flex-row sm:gap-8 sm:px-7">
       <div className="flex flex-col gap-4">
-        <h2 className="text-center text-3xl font-extrabold sm:text-left sm:text-4xl">
+        <h2 className="text-center text-4xl font-black sm:text-left sm:text-4xl">
           Philippe Fanaro
         </h2>
         {lang === "pt" ? (
@@ -63,7 +63,7 @@ function PresentationImage({
       width={0}
       height={0}
       sizes="100vw"
-      className={`${className} h-full w-53 rounded-2xl sm:w-60`}
+      className={`${className} h-full w-60 rounded-2xl sm:w-60`}
     />
   )
 }

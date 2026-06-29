@@ -11,7 +11,7 @@ export function PostsSection() {
 
   return (
     <section className="flex flex-col items-center gap-3">
-      <h2 className="text-2xl font-extrabold">
+      <h2 className="text-2xl font-black">
         {lang === "pt" ? "Artigos" : "Articles"}
       </h2>
       <PostsList />

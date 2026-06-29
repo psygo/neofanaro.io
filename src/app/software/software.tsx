@@ -17,7 +17,7 @@ export function SoftwareWorkSection() {
   return (
     <section className="flex flex-col gap-4 px-6">
       <div className="flex flex-col gap-2">
-        <h2 className="text-center text-2xl font-extrabold sm:text-2xl">
+        <h2 className="text-center text-2xl font-black sm:text-2xl">
           Full Stack Developer
         </h2>
         <SoftwareStackLogos />
@@ -188,7 +188,7 @@ function Aquarifolio() {
       <iframe
         id="inlineFrameExample"
         title="Inline Frame Example"
-        className="h-50 w-full rounded-xl"
+        className="h-60 w-full rounded-xl sm:h-80"
         src="https://aquarifolio.vercel.app/"
       ></iframe>
     </Link>
@@ -217,7 +217,7 @@ function Magi() {
       <iframe
         id="inlineFrameExample"
         title="Inline Frame Example"
-        className="h-50 w-full rounded-2xl"
+        className="h-60 w-full rounded-2xl sm:h-90"
         src="https://magi-phi.vercel.app/"
       ></iframe>
     </Link>
