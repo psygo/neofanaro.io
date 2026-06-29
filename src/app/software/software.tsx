@@ -17,7 +17,7 @@ export function SoftwareWorkSection() {
   return (
     <section className="flex flex-col gap-4 px-6">
       <div className="flex flex-col gap-2">
-        <h2 className="text-center text-2xl font-black sm:text-2xl">
+        <h2 className="text-center text-[21pt] font-black">
           Full Stack Developer
         </h2>
         <SoftwareStackLogos />
@@ -253,7 +253,7 @@ function GithubRepoCard({
       <Image
         loading="eager"
         src={imageSrc}
-        alt="repo"
+        alt="Github Repo"
         width={imageSize}
         height={imageSize}
         className="hidden sm:block"

@@ -23,7 +23,7 @@ export function GoProfPresentationSection() {
           {lang === "pt" ? (
             <>
               <p className="text-center">
-                Através dos meus livros e conteúdo no
+                Olá! Através dos meus livros e conteúdo no
                 YouTube, procuro compartilhar o que sei
                 deste jogo milenar e de infinita riqueza.
               </p>
@@ -34,7 +34,7 @@ export function GoProfPresentationSection() {
           ) : (
             <>
               <p className="text-center">
-                I&apos;m a dan player from Brazil and
+                Hi! I&apos;m a dan player from Brazil and
                 through my books and YouTube content, I try
                 to share what I know about this ancient game
                 of infinite richness.
