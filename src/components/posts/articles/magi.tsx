@@ -64,6 +64,12 @@ export function Magi({ post }: BlogPostProps) {
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
         ></iframe>
+        <PostParagraph>
+          Visualizing the web as a graph is nothing new, but
+          having but having a tool which lets you do it with
+          other users is something I had never seen and
+          wanted to have become a reality.
+        </PostParagraph>
       </PostSection>
       <PostSection>
         <PostSectionTitle>
@@ -132,6 +138,21 @@ export function Magi({ post }: BlogPostProps) {
           category is for sure many decades behind the
           typical relational ones.
         </PostParagraph>
+        <PostBlockQuote>
+          One of the most famous applications of treating
+          the web as a network was Google&apos;s{" "}
+          <PostLink href="https://en.wikipedia.org/wiki/PageRank">
+            PageRank
+          </PostLink>
+          , which used collected data to create a usage
+          graph for each website in the net. One possible
+          visualization of that approach of the current
+          state of the internet is{" "}
+          <PostLink href="https://internet-map.net/">
+            The Internet Map
+          </PostLink>
+          .
+        </PostBlockQuote>
       </PostSection>
     </Post>
   )

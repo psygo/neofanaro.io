@@ -37,14 +37,14 @@ export function PostTitleSection({
   children,
 }: WithReactChildren) {
   return (
-    <section className="flex flex-col gap-1">
+    <section className="flex flex-col gap-1 font-semibold">
       {children}
     </section>
   )
 }
 
 export function PostTitle({ children }: WithReactChildren) {
-  return <h1 className="mb-6">{children}</h1>
+  return <h1 className="mb-6 font-black">{children}</h1>
 }
 
 type PostViewsProps = {
@@ -217,7 +217,7 @@ export function PostBlockQuote({
   children,
 }: WithReactChildren) {
   return (
-    <blockquote className="pl-2.5 font-normal not-italic">
+    <blockquote className="mr-4 ml-8 pl-2.5 font-normal not-italic">
       {children}
     </blockquote>
   )

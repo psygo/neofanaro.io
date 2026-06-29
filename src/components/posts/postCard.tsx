@@ -36,7 +36,7 @@ export function PostCard({
       </div>
       <PostDate
         date={date}
-        className="pb-1 text-sm text-slate-500"
+        className="pb-1 text-sm font-semibold text-slate-500"
       />
 
       <PostDescription>{description}</PostDescription>
@@ -46,7 +46,7 @@ export function PostCard({
 
 function PostTitle({ children }: WithReactChildren) {
   return (
-    <h2 className="text-2xl font-bold tracking-wide">
+    <h2 className="text-2xl font-extrabold tracking-wide">
       {children}
     </h2>
   )
