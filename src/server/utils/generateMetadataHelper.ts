@@ -25,7 +25,7 @@ export const topLevelMetadata: Metadata = {
     siteName: "neofanaro.io",
     images: [
       {
-        url: "https://neofanaroio.vercel.app/metadata/neofanaro.io_sample.png",
+        url: "/metadata/neofanaro.io_sample.png",
       },
     ],
   },
