@@ -1,5 +1,6 @@
 "use client"
 
+import { useEffect, useRef, useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 
@@ -15,18 +16,105 @@ type PostProps = {
   children: React.ReactNode
 }
 
+const DEFAULT_MAX_WIDTH_REM = 27.5 // matches former max-w-110
+
 export function Post({ data, children }: PostProps) {
+  const [maxWidth, setMaxWidth] = useState(
+    DEFAULT_MAX_WIDTH_REM,
+  )
+
   return (
-    <article className="prose max-w-110">
+    <article
+      className="prose"
+      style={{ maxWidth: `${maxWidth}rem` }}
+    >
       <PostViewTracker path={data.path} />
       <PostTitleSection>
-        <PostTitle>{data.title}</PostTitle>
+        <div className="mb-5 flex items-center justify-between">
+          <PostTitle>{data.title}</PostTitle>
+          <PostWidthSlider
+            maxWidth={maxWidth}
+            setMaxWidth={setMaxWidth}
+          />
+        </div>
         <PostViews views={data.views || 0} />
         <PostDate date={new Date(data.date)} />
         <PostTags tags={data.tags} />
       </PostTitleSection>
       {children}
     </article>
+  )
+}
+
+// ---------------------------------------------------------
+// Slider
+
+type PostWidthSliderProps = {
+  maxWidth: number
+  setMaxWidth: (w: number) => void
+}
+
+function PostWidthSlider({
+  maxWidth,
+  setMaxWidth,
+}: PostWidthSliderProps) {
+  const dragState = useRef<{
+    startX: number
+    startWidth: number
+  } | null>(null)
+
+  useEffect(() => {
+    const onMouseMove = (e: MouseEvent) => {
+      if (!dragState.current) return
+      const delta =
+        (e.clientX - dragState.current.startX) / 16
+      setMaxWidth(
+        Math.min(
+          56,
+          Math.max(
+            20,
+            dragState.current.startWidth + delta,
+          ),
+        ),
+      )
+    }
+    const onMouseUp = () => {
+      dragState.current = null
+    }
+    document.addEventListener("mousemove", onMouseMove)
+    document.addEventListener("mouseup", onMouseUp)
+    return () => {
+      document.removeEventListener("mousemove", onMouseMove)
+      document.removeEventListener("mouseup", onMouseUp)
+    }
+  }, [setMaxWidth])
+
+  return (
+    <button
+      onMouseDown={(e) => {
+        e.preventDefault()
+        dragState.current = {
+          startX: e.clientX,
+          startWidth: maxWidth,
+        }
+      }}
+      className="not-prose hidden shrink-0 cursor-ew-resize rounded p-1 text-gray-400 select-none hover:bg-gray-100 hover:text-gray-600 active:bg-gray-200 sm:block"
+      title="Drag to resize"
+    >
+      <svg
+        width={26}
+        height={26}
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M8 7l-5 5 5 5" />
+        <path d="M16 7l5 5-5 5" />
+      </svg>
+    </button>
   )
 }
 
@@ -44,7 +132,7 @@ export function PostTitleSection({
 }
 
 export function PostTitle({ children }: WithReactChildren) {
-  return <h1 className="mb-6 font-black">{children}</h1>
+  return <h1 className="mb-0 font-black">{children}</h1>
 }
 
 type PostViewsProps = {

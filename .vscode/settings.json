@@ -6,6 +6,6 @@
         ".vercel/": true,
         "drizzle/": true,
         "pnpm-lock.yaml": true,
-        // "pnpm-workspace.yaml": true,
+        "pnpm-workspace.yaml": true,
     },
 }
