@@ -1,5 +1,3 @@
-import Image from "next/image"
-
 import { BlogPostProps } from "@types"
 
 import {
@@ -11,6 +9,8 @@ import {
   PostCode,
   PostBlockQuote,
   PostSectionTitle,
+  PostImage,
+  PostIframe,
 } from "@components/posts/post"
 
 export function Magi({ post }: BlogPostProps) {
@@ -32,20 +32,12 @@ export function Magi({ post }: BlogPostProps) {
           </PostLink>{" "}
           could fill in the gap.
         </PostParagraph>
-        <Image
+        <PostImage
           src="/articles/magi/magi_demo_1.png"
-          width={0}
-          height={0}
-          sizes="100vw"
-          className="mx-auto h-full w-full px-3"
           alt="Magi Demo 1"
         />
-        <Image
+        <PostImage
           src="/articles/magi/magi_demo_3.png"
-          width={0}
-          height={0}
-          sizes="100vw"
-          className="mx-auto h-full w-full px-3"
           alt="Magi Demo 2"
         />
         <PostParagraph>
@@ -54,16 +46,10 @@ export function Magi({ post }: BlogPostProps) {
           different visual elements to relate them. Take a
           look:
         </PostParagraph>
-        <iframe
-          id="inlineFrameExample"
+        <PostIframe
           title="Magi"
-          width={0}
-          height={0}
           src="https://magi-phi.vercel.app/"
-          className="mx-auto h-60 w-full px-3"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        ></iframe>
+        />
         <PostParagraph>
           Visualizing the web as a graph is nothing new, but
           having but having a tool which lets you do it with
@@ -95,7 +81,7 @@ export function Magi({ post }: BlogPostProps) {
         <PostImageWithLegend
           src="/articles/magi/Excalidraw.png"
           legend="Excalidraw"
-          className="mb-0 h-full w-80"
+          className="mb-0 h-full w-120 px-8"
         />
         <PostParagraph>
           In the end, the app&apos;s structure consists of

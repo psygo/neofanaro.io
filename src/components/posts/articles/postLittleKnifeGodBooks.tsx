@@ -1,5 +1,3 @@
-import Image from "next/image"
-
 import { BlogPostProps } from "@types"
 
 import {
@@ -7,6 +5,7 @@ import {
   Post,
   PostSection,
   PostLink,
+  PostImage,
 } from "@components/posts/post"
 import { GoDiagram } from "@components/posts/goDiagram"
 
@@ -130,21 +129,15 @@ export function PostLittleKnifeGodBooks({
           which are one of his main targets, since most of
           his in-person students seem to be of that age.
         </PostParagraph>
-        <Image
+        <PostImage
           src="/articles/little-knife-god-books/little_knife_god_cover_1.png"
-          width={0}
-          height={0}
-          sizes="100vw"
-          className="mx-auto h-full w-50"
           alt="Cover 1"
+          className="mx-auto h-full w-50"
         />
-        <Image
+        <PostImage
           src="/articles/little-knife-god-books/little_knife_god_cover_2.png"
-          width={0}
-          height={0}
-          sizes="100vw"
+          alt="Cover 2"
           className="mx-auto h-full w-50"
-          alt="Cover 1"
         />
       </PostSection>
     </Post>

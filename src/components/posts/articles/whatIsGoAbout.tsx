@@ -8,6 +8,7 @@ import {
   PostUnorderedList,
   PostImageWithLegend,
   PostYouTubeIframe,
+  PostDivider,
 } from "@components/posts/post"
 
 export function WhatIsGoAbout({ post }: BlogPostProps) {
@@ -79,7 +80,7 @@ export function WhatIsGoAbout({ post }: BlogPostProps) {
           view.
         </PostParagraph>
 
-        <hr className="mt-30 mb-6 border border-gray-300" />
+        <PostDivider />
         <PostParagraph>
           I ended up talking about this short story on my
           &quot;Opening from Zero&quot; course, though

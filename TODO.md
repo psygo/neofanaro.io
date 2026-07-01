@@ -9,6 +9,7 @@
 
 ## UI
 
+- [ ] PostCard's should have the same height.
 - [ ] Social Media preview per page
 - [ ] Add top-left decoration to the `PostCard` for each category
 - [ ] Rounded or Squared Flags

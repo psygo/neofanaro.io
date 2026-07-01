@@ -263,11 +263,35 @@ export function PostUnorderedList({
   children,
 }: WithReactChildren) {
   return (
-    <ul className="mt-0 mb-0 [&>li]:my-1 [&>li]:pl-0.5">
+    <ul className="mt-0 mb-0 pl-12 [&>li]:my-1 [&>li]:pl-0.5">
       {children}
     </ul>
   )
 }
+
+type PostImageProps = {
+  src: string
+  alt: string
+  className?: string
+}
+
+export function PostImage({
+  src,
+  alt,
+  className = "mx-auto h-full w-full px-3",
+}: PostImageProps) {
+  return (
+    <Image
+      src={src}
+      width={0}
+      height={0}
+      sizes="100vw"
+      className={className}
+      alt={alt}
+    />
+  )
+}
+
 type PostImageWithLegendProps = {
   src: string
   legend: string
@@ -322,8 +346,26 @@ export function PostBlockQuote({
 }
 
 type PostIframeProps = {
-  src: string
   title: string
+  src: string
+}
+
+export function PostIframe({
+  title,
+  src,
+}: PostIframeProps) {
+  return (
+    <iframe
+      id="inlineFrameExample"
+      title={title}
+      width={0}
+      height={0}
+      src={src}
+      className="mx-auto h-60 w-full px-3"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen
+    ></iframe>
+  )
 }
 
 export function PostYouTubeIframe({
@@ -342,6 +384,12 @@ export function PostYouTubeIframe({
         />
       </div>
     </div>
+  )
+}
+
+export function PostDivider() {
+  return (
+    <hr className="mt-30 mb-6 border border-gray-300" />
   )
 }
 
