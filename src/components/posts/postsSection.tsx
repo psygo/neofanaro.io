@@ -24,16 +24,8 @@ function PostsList() {
 
   return (
     <div className="flex flex-col gap-3">
-      {posts.map((postCard, i) => (
-        <PostCard
-          key={i}
-          href={`/posts/${postCard.path}`}
-          title={postCard.title}
-          description={postCard.description}
-          lang={"en"}
-          date={new Date(postCard.date)}
-          tags={postCard.tags}
-        />
+      {posts.map((post, i) => (
+        <PostCard key={i} post={post} />
       ))}
     </div>
   )

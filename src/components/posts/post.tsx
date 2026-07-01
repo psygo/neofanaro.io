@@ -143,11 +143,15 @@ export function PostTitle({ children }: WithReactChildren) {
 
 type PostViewsProps = {
   views: number
+  className?: string
 }
 
-export function PostViews({ views }: PostViewsProps) {
+export function PostViews({
+  views,
+  className = "flex gap-1 text-base font-bold text-slate-600",
+}: PostViewsProps) {
   return (
-    <h6 className="flex gap-1 text-base font-bold text-slate-600">
+    <h6 className={className}>
       {views} {views === 1 ? "view" : "views"}
     </h6>
   )

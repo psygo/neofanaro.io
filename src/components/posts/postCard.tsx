@@ -1,45 +1,36 @@
 import "flag-icons/css/flag-icons.min.css"
 
-import { cardDecoration } from "@styles/globals"
+import { cardDecoration } from "@styles"
 
-import { WithReactChildren } from "../../types/utils"
+import { PostFromDb, WithReactChildren } from "@types"
 
 import { LangLink } from "../common/langLink"
-import { PostDate, PostTags } from "./post"
+import { PostDate, PostTags, PostViews } from "./post"
 
 export type PostCardProps = {
-  href: string
-  title: string
-  description: string
-  lang: string
-  date: Date
-  tags: string[]
+  post: PostFromDb
 }
 
-export function PostCard({
-  href,
-  title,
-  description,
-  lang,
-  date,
-  tags,
-}: PostCardProps) {
+export function PostCard({ post }: PostCardProps) {
   return (
     <LangLink
-      href={href}
+      href={`/posts/${post.path}`}
       className={`flex flex-col gap-2 ${cardDecoration}`}
     >
-      <PostTitle>{title}</PostTitle>
-      <div className="flex flex-wrap items-center gap-3 sm:items-end-safe">
-        <PostTags tags={tags} />
-        <PostLang lang={lang} />
+      <PostTitle>{post.title}</PostTitle>
+      <div className="mt-1 mb-1 flex flex-wrap items-center gap-3 sm:items-end-safe">
+        <PostViews
+          views={post.views}
+          className="flex gap-1 text-sm font-bold text-slate-700"
+        />
+        <PostTags tags={post.tags} />
+        <PostLang lang={post.lang} />
       </div>
       <PostDate
-        date={date}
+        date={new Date(post.date)}
         className="pb-1 text-sm font-semibold text-slate-500"
       />
-
-      <PostDescription>{description}</PostDescription>
+      <PostDescription>{post.description}</PostDescription>
     </LangLink>
   )
 }
