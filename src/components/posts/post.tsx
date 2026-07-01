@@ -16,16 +16,17 @@ type PostProps = {
   children: React.ReactNode
 }
 
-const DEFAULT_MAX_WIDTH_REM = 27.5 // matches former max-w-110
+const DEFAULT_MAX_WIDTH_REM = 29 // matches former max-w-110
 
 export function Post({ data, children }: PostProps) {
   const [maxWidth, setMaxWidth] = useState(
     DEFAULT_MAX_WIDTH_REM,
   )
+  const [isDragging, setIsDragging] = useState(false)
 
   return (
     <article
-      className="prose"
+      className={`prose border-r-2 transition-colors duration-150 sm:px-2 ${isDragging ? "border-r-slate-300" : "border-r-transparent"}`}
       style={{ maxWidth: `${maxWidth}rem` }}
     >
       <PostViewTracker path={data.path} />
@@ -35,6 +36,7 @@ export function Post({ data, children }: PostProps) {
           <PostWidthSlider
             maxWidth={maxWidth}
             setMaxWidth={setMaxWidth}
+            setIsDragging={setIsDragging}
           />
         </div>
         <PostViews views={data.views || 0} />
@@ -52,11 +54,13 @@ export function Post({ data, children }: PostProps) {
 type PostWidthSliderProps = {
   maxWidth: number
   setMaxWidth: (w: number) => void
+  setIsDragging: (v: boolean) => void
 }
 
 function PostWidthSlider({
   maxWidth,
   setMaxWidth,
+  setIsDragging,
 }: PostWidthSliderProps) {
   const dragState = useRef<{
     startX: number
@@ -79,6 +83,7 @@ function PostWidthSlider({
       )
     }
     const onMouseUp = () => {
+      if (dragState.current) setIsDragging(false)
       dragState.current = null
     }
     document.addEventListener("mousemove", onMouseMove)
@@ -87,7 +92,7 @@ function PostWidthSlider({
       document.removeEventListener("mousemove", onMouseMove)
       document.removeEventListener("mouseup", onMouseUp)
     }
-  }, [setMaxWidth])
+  }, [setMaxWidth, setIsDragging])
 
   return (
     <button
@@ -97,6 +102,7 @@ function PostWidthSlider({
           startX: e.clientX,
           startWidth: maxWidth,
         }
+        setIsDragging(true)
       }}
       className="not-prose hidden shrink-0 cursor-ew-resize rounded p-1 text-gray-400 select-none hover:bg-gray-100 hover:text-gray-600 active:bg-gray-200 sm:block"
       title="Drag to resize"
