@@ -18,14 +18,14 @@ export function OneYearInAsia({ post }: BlogPostProps) {
           Asia.
         </PostParagraph>
         <PostYouTubeIframe
-          src="https://www.youtube.com/embed/6eYDAIJXLso?si=6L1f0IT8cIDQC8iB"
+          src="https://www.youtube.com/embed/apgV3qMGfmg?si=ZNtzgT7wVLZFo3GE"
           title="One Year in Asia | A Summary"
         />
         <PostParagraph>
           In general, I find it very hard to talk into the
           void, without anyone else for me to bounce things
           off. If you feel it&apos;s annoying to watch, I
-          suggest increasing the video speed.
+          suggest increasing the video&apos;s speed.
         </PostParagraph>
         <PostParagraph>
           My favorite part of that video is for sure the

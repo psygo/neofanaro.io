@@ -253,7 +253,7 @@ export function PostOrderedList({
   children,
 }: WithReactChildren) {
   return (
-    <ol className="pl-12 [&>li]:my-1 [&>li]:pl-1">
+    <ol className="pl-10 sm:pl-12 [&>li]:my-1 [&>li]:pl-1">
       {children}
     </ol>
   )
@@ -263,7 +263,7 @@ export function PostUnorderedList({
   children,
 }: WithReactChildren) {
   return (
-    <ul className="mt-0 mb-0 pl-12 [&>li]:my-1 [&>li]:pl-0.5">
+    <ul className="mt-0 mb-0 pl-10 sm:pl-12 [&>li]:my-1 [&>li]:pl-0.5">
       {children}
     </ul>
   )
