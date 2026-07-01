@@ -31,7 +31,7 @@ export function Post({ data, children }: PostProps) {
     >
       <PostViewTracker path={data.path} />
       <PostTitleSection>
-        <div className="mb-5 flex items-center justify-between">
+        <div className="mb-5 flex items-center justify-between gap-20">
           <PostTitle>{data.title}</PostTitle>
           <PostWidthSlider
             maxWidth={maxWidth}
@@ -318,6 +318,30 @@ export function PostBlockQuote({
     <blockquote className="mr-4 ml-8 pl-2.5 font-normal not-italic">
       {children}
     </blockquote>
+  )
+}
+
+type PostIframeProps = {
+  src: string
+  title: string
+}
+
+export function PostYouTubeIframe({
+  src,
+  title,
+}: PostIframeProps) {
+  return (
+    <div className="flex justify-center">
+      <div className="mx-6 mb-0.5 flex aspect-video w-full max-w-lg items-center overflow-hidden rounded-2xl border border-slate-200 shadow-lg">
+        <iframe
+          className="h-full w-full"
+          src={src}
+          title={title}
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        />
+      </div>
+    </div>
   )
 }
 

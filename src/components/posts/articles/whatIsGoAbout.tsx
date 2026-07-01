@@ -7,6 +7,7 @@ import {
   PostLink,
   PostUnorderedList,
   PostImageWithLegend,
+  PostYouTubeIframe,
 } from "@components/posts/post"
 
 export function WhatIsGoAbout({ post }: BlogPostProps) {
@@ -84,15 +85,10 @@ export function WhatIsGoAbout({ post }: BlogPostProps) {
           &quot;Opening from Zero&quot; course, though
           it&apos;s in Portuguese:
         </PostParagraph>
-        <div className="mx-6 aspect-video overflow-hidden rounded-2xl border border-slate-200 shadow-lg">
-          <iframe
-            className="h-full w-full"
-            src="https://www.youtube.com/embed/7zpef07ei5U?list=PLLWr-AWriURE"
-            title="Abertura do Zero | Volume 1"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
-        </div>
+        <PostYouTubeIframe
+          src="https://www.youtube.com/embed/7zpef07ei5U?list=PLLWr-AWriURE"
+          title="Abertura do Zero | Volume 1"
+        />
       </PostSection>
     </Post>
   )

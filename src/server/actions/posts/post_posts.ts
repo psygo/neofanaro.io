@@ -2,8 +2,7 @@
 
 import { eq, sql } from "drizzle-orm"
 
-import { db } from "../../.."
-import { postsTable } from "../../db/schema"
+import { db, postsTable } from "@db"
 
 export async function post_view(path: string) {
   try {

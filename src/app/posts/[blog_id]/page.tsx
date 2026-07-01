@@ -12,6 +12,7 @@ import { PostAiOpeningHierarchy } from "@components/posts/articles/postAiOpening
 import { SampleSizeAndCommonSense } from "@components/posts/articles/sampleSizeAndCommonSense"
 import { WhatIsGoAbout } from "@components/posts/articles/whatIsGoAbout"
 import { Magi } from "@components/posts/articles/magi"
+import { OneYearInAsia } from "@components/posts/articles/oneYearInAsia"
 
 type BlogPageProps = {
   params: Promise<{ blog_id: string }>
@@ -53,6 +54,8 @@ function whichBlogPost(path: string, post: PostFromDb) {
       return <WhatIsGoAbout post={post} />
     case "magi":
       return <Magi post={post} />
+    case "one-year-in-asia":
+      return <OneYearInAsia post={post} />
     default:
       return <></>
   }
