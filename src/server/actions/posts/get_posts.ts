@@ -2,7 +2,7 @@
 
 import { desc, eq } from "drizzle-orm"
 
-import { PostFromDb } from "@types"
+import { OrderBy, PostFromDb } from "@types"
 
 import { db, postsTable } from "@db"
 
@@ -20,12 +20,18 @@ export async function get_post(path: string) {
   }
 }
 
-export async function get_posts() {
+export async function get_posts(
+  orderBy: OrderBy = OrderBy.date,
+) {
   try {
     const posts = await db
       .select()
       .from(postsTable)
-      .orderBy(desc(postsTable.date))
+      .orderBy(
+        orderBy === OrderBy.date
+          ? desc(postsTable.date)
+          : desc(postsTable.views),
+      )
 
     return posts as PostFromDb[]
   } catch (e) {
