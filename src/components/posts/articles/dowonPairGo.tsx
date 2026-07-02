@@ -21,22 +21,37 @@ export function DowonPairGo({ post }: BlogPostProps) {
           충무로.
         </PostParagraph>
         <PostParagraph>
-          Founded in 2014 by four Korean female professional
-          players, its objective was &mdash; and still is
-          &mdash; to provide adult amateurs with lessons
-          from pro players. Nowadays, the sole owner is{" "}
+          <PostLink href="https://www.cyberoro.com/news/N_news_view.oro?num=531154">
+            Founded in 2014 by four Korean female
+            professional players
+          </PostLink>
+          , its objective was &mdash; and still is &mdash;
+          to provide in-person lessons with pro players to
+          adult amateurs. Nowadays, the sole owner is{" "}
           <PostLink href="https://senseis.xmp.net/?MoonDowon">
             Moon Dowon 문도원 3p
           </PostLink>
           , one of the four founders, one of the main
           casters on Baduk TV, and a former holder of the
           most-wins-in-a-row record on the Women&apos;s
-          Nongshim Cup (7).
+          Nongshim Cup, 7 in total. Around 2018, Moon Dowon
+          retired from playing in order to focus on teaching
+          and casting.
         </PostParagraph>
         <PostImageWithLegend
           src="/articles/dowon-pairgo/moon_dowon.webp"
           legend="Moon Dowon 문도원 3p"
           className="mx-7 mb-0 h-full w-50 rounded-xl"
+        />
+        <PostImageWithLegend
+          src="/articles/dowon-pairgo/flower_baduk_founders.jpg"
+          legend="Flower Baduk's founders, from left to right: Lee Dahye 이다혜 4p, Kim Hyerim 김혜림 2p, Bae Yunjin 배윤진 3p and Moon Dowon 문도원 3p."
+          className="mx-7 mb-0 h-full w-80 rounded-xl sm:w-100"
+        />
+        <PostImageWithLegend
+          src="/articles/dowon-pairgo/Flower_Baduk_2.jpg"
+          legend="A panel of Flower Baduk's founders, from left to right: Lee Dahye 이다혜 4p, Bae Yunjin 배윤진 3p, Moon Dowon 문도원 3p and Kim Hyerim 김혜림 2p."
+          className="mx-7 mb-0 h-full w-80 rounded-xl sm:w-100"
         />
         <PostParagraph>
           The ambiance is always pleasant at Flower Baduk,
@@ -44,6 +59,11 @@ export function DowonPairGo({ post }: BlogPostProps) {
           for its students, as most people find it much
           easier to learn in a more positive environment.
         </PostParagraph>
+        <PostImageWithLegend
+          src="/articles/dowon-pairgo/Flower_Baduk_4.jpg"
+          legend="Flower Baduk"
+          className="mx-7 mb-0 h-full w-80 rounded-xl sm:w-100"
+        />
         <PostBlockQuote>
           I studied with BIBA at Flower Baduk for 6 months
           in 2025. Overall, I studied in Asia for a year,
@@ -58,12 +78,13 @@ export function DowonPairGo({ post }: BlogPostProps) {
           for that period.
         </PostBlockQuote>
         <PostParagraph>
-          One day, realizing I was by myself, without any
-          other BIBA student nor Diana Koszegi 2p, my main
-          teacher, Moon Dowon 3p invited me to play a pair
-          Go game with three of her students. During a more
-          or less common side pattern, my partner played the
-          unexpected cut at 8:
+          One day, after realizing I was by myself, without
+          any other BIBA student, nor Diana Koszegi 2p
+          &mdash; my main teacher &mdash;, Moon Dowon 3p
+          invited me to play pair Go with three of her
+          students. During a more or less common side
+          pattern, my partner played the unexpected cut at
+          8:
         </PostParagraph>
         <GoDiagram
           src="/articles/dowon-pairgo/dowon_pairgo_1.svg"
@@ -83,11 +104,12 @@ export function DowonPairGo({ post }: BlogPostProps) {
         However, right when I thought this was all obvious,
         during the review with Moon Dowon 3p, she and the
         other three students started discussing for a while
-        in Korean. Since my Korean at the time was
+        in Korean, without placing any sequences on the
+        board. Since my Korean at the time was
         infinitesimal, I mentally checked out. But, later,
-        after checking the game out with AI, I understood
-        why they stopped to discuss at a seemingly obvious
-        move.
+        after checking the game out with AI, I started to
+        understand why they stopped to discuss at a
+        seemingly obvious move.
       </PostParagraph>
       <PostParagraph>
         If Black tries to capture White&apos;s group, White
@@ -117,12 +139,14 @@ export function DowonPairGo({ post }: BlogPostProps) {
       />
       <PostParagraph>
         Black gets sente to play 19; but White gets thick on
-        the left and bottom-right, Black&apos;s bottom-left
-        corner is greatly reduced, and Black&apos;s bottom
-        is essentially the captured group in the end.
+        the left and bottom-right, the aji in the
+        bottom-right is drastically reduced, Black&apos;s
+        bottom-left corner is greatly reduced, and
+        Black&apos;s bottom is essentially the captured
+        group in the end.
       </PostParagraph>
       <PostParagraph>
-        Black&apos;s best choice at the beginning was to
+        Going back, Black&apos;s best choice was to instead
         play what my opponent pair opted for, to capture the
         cutting stone:
       </PostParagraph>
@@ -130,7 +154,7 @@ export function DowonPairGo({ post }: BlogPostProps) {
         src="/articles/dowon-pairgo/dowon_pairgo_4.svg"
         size={100}
         diaNumber={4}
-        legend="Black's groups surrounding White's captured stones are bound to get squeezed."
+        legend="Black's thickness and outside trump capturing a sizeable chunk on the side."
       />
       <PostParagraph>
         Black 1 damages the A stone while thickening out
@@ -144,7 +168,7 @@ export function DowonPairGo({ post }: BlogPostProps) {
         on her face when she told me the squeeze and the
         outside forcing moves were what she was suggesting
         to her students when I zoned out due to my lacking
-        Korean.
+        Korean abilities.
       </PostParagraph>
     </Post>
   )
