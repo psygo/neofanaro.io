@@ -6,6 +6,7 @@ import {
   PostSection,
   PostLink,
   PostImageWithLegend,
+  PostBlockQuote,
 } from "@components/posts/post"
 import { GoDiagram } from "../goDiagram"
 
@@ -16,7 +17,7 @@ export function DowonPairGo({ post }: BlogPostProps) {
         <PostParagraph>
           During my stay at BIBA, our studies and activities
           were almost always at Flower Baduk, a Go center
-          located in the heart of Seoul, in Chungmuro
+          located at the heart of Seoul, in Chungmuro
           충무로.
         </PostParagraph>
         <PostParagraph>
@@ -29,8 +30,8 @@ export function DowonPairGo({ post }: BlogPostProps) {
           </PostLink>
           , one of the four founders, one of the main
           casters on Baduk TV, and a former holder of the
-          most-wins-in-a-row record on the female Nongshim
-          Cup, at 7.
+          most-wins-in-a-row record on the Women&apos;s
+          Nongshim Cup (7).
         </PostParagraph>
         <PostImageWithLegend
           src="/articles/dowon-pairgo/moon_dowon.webp"
@@ -43,12 +44,25 @@ export function DowonPairGo({ post }: BlogPostProps) {
           for its students, as most people find it much
           easier to learn in a more positive environment.
         </PostParagraph>
+        <PostBlockQuote>
+          I studied with BIBA at Flower Baduk for 6 months
+          in 2025. Overall, I studied in Asia for a year,
+          between 2025 and 2026. If you would like to know
+          more, do check my{" "}
+          <PostLink
+            internal
+            href="https://neofanaroio.vercel.app/posts/one-year-in-asia?lang=en"
+          >
+            video summary
+          </PostLink>{" "}
+          for that period.
+        </PostBlockQuote>
         <PostParagraph>
           One day, realizing I was by myself, without any
-          other BIBA student or Diana Koszegi 2p, my main
+          other BIBA student nor Diana Koszegi 2p, my main
           teacher, Moon Dowon 3p invited me to play a pair
           Go game with three of her students. During a more
-          or less common pattern, my partner played the
+          or less common side pattern, my partner played the
           unexpected cut at 8:
         </PostParagraph>
         <GoDiagram
@@ -62,7 +76,7 @@ export function DowonPairGo({ post }: BlogPostProps) {
         Where should Black play next?
       </PostParagraph>
       <PostParagraph>
-        My first, immediate answer was simply turning and
+        My first, immediate answer was simply turning at A,
         capturing White&apos;s stones on the side.
       </PostParagraph>
       <PostParagraph>
@@ -92,7 +106,7 @@ export function DowonPairGo({ post }: BlogPostProps) {
         a 3-point loss.
       </PostParagraph>
       <PostParagraph>
-        This is AI&apos;s recommended sequence after Black
+        This is AI&apos;s recommended sequence, after Black
         captures White&apos;s group on the side:
       </PostParagraph>
       <GoDiagram
@@ -102,10 +116,10 @@ export function DowonPairGo({ post }: BlogPostProps) {
         legend="Black's groups surrounding White's captured stones are bound to get squeezed."
       />
       <PostParagraph>
-        Black gets sente to play 19, but White gets thick on
-        the outside, Black&apos;s bottom-left corner is
-        greatly reduced, and Black&apos;s bottom is
-        essentially the captured group in the end.
+        Black gets sente to play 19; but White gets thick on
+        the left and bottom-right, Black&apos;s bottom-left
+        corner is greatly reduced, and Black&apos;s bottom
+        is essentially the captured group in the end.
       </PostParagraph>
       <PostParagraph>
         Black&apos;s best choice at the beginning was to
@@ -119,9 +133,9 @@ export function DowonPairGo({ post }: BlogPostProps) {
         legend="Black's groups surrounding White's captured stones are bound to get squeezed."
       />
       <PostParagraph>
-        Black&apos;s 1 damages the A stone while thickening
-        out Black&apos;s corner and outside, which grants
-        Black sente to play the urgent move at 5.
+        Black 1 damages the A stone while thickening out
+        Black&apos;s corner and outside, which grants Black
+        sente to play the urgent move at 5.
       </PostParagraph>
       <PostParagraph>
         Later that day, I showed these surprising AI

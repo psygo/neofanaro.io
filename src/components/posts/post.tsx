@@ -339,7 +339,7 @@ export function PostBlockQuote({
   children,
 }: WithReactChildren) {
   return (
-    <blockquote className="mr-4 ml-8 pl-2.5 font-normal not-italic">
+    <blockquote className="mr-4 ml-8 pl-2.5 font-normal text-slate-600 not-italic">
       {children}
     </blockquote>
   )
