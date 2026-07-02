@@ -164,11 +164,11 @@ export function DowonPairGo({ post }: BlogPostProps) {
       <PostParagraph>
         Later that day, I showed these surprising AI
         sequences to Moon Dowon 3p, thinking she would be
-        just as amazed. I was then stunned by the bored look
-        on her face when she told me the squeeze and the
-        outside forcing moves were what she was suggesting
-        to her students when I zoned out due to my lacking
-        Korean abilities.
+        just as amazed. I was then dumbfounded by the bored
+        look on her face when she told me the squeeze and
+        the outside forcing moves were what she was
+        suggesting to her students when I zoned out due to
+        my lacking Korean abilities.
       </PostParagraph>
     </Post>
   )
