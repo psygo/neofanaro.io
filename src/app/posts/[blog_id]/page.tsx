@@ -13,6 +13,7 @@ import { SampleSizeAndCommonSense } from "@components/posts/articles/sampleSizeA
 import { WhatIsGoAbout } from "@components/posts/articles/whatIsGoAbout"
 import { Magi } from "@components/posts/articles/magi"
 import { OneYearInAsia } from "@components/posts/articles/oneYearInAsia"
+import { DowonPairGo } from "@components/posts/articles/dowonPairGo"
 
 type BlogPageProps = {
   params: Promise<{ blog_id: string }>
@@ -56,6 +57,8 @@ function whichBlogPost(path: string, post: PostFromDb) {
       return <Magi post={post} />
     case "one-year-in-asia":
       return <OneYearInAsia post={post} />
+    case "dowon-pairgo":
+      return <DowonPairGo post={post} />
     default:
       return <></>
   }
