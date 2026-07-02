@@ -38,7 +38,7 @@ export function GoDiagramLegend({
   legend,
 }: GoDiagramLegendProps) {
   return (
-    <div className="-mt-3 grid grid-cols-[auto_1fr] items-baseline gap-2 px-12 text-sm">
+    <div className="-mt-3 -mb-2.5 grid grid-cols-[auto_1fr] items-baseline gap-2 px-12 text-sm">
       <p className="whitespace-nowrap text-gray-500">
         Dia. {diaNumber}.
       </p>
