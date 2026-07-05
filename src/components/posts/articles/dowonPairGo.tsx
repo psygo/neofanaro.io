@@ -83,14 +83,14 @@ export function DowonPairGo({ post }: BlogPostProps) {
           &mdash; my main teacher &mdash;, Moon Dowon 3p
           invited me to play pair Go with three of her
           students. During a more or less common side
-          pattern, my partner played the unexpected cut at
-          8:
+          pattern, my partner played the mistaken,
+          unexpected cut at 8:
         </PostParagraph>
         <GoDiagram
           src="/articles/dowon-pairgo/dowon_pairgo_1.svg"
           size={100}
           diaNumber={1}
-          legend="An unexpected cut (8) from my pair Go partner. White should have crawled with 8 at 9."
+          legend="A mistaken, unexpected cut (8) from my pair Go partner. White should have crawled with 8 at 9."
         />
       </PostSection>
       <PostParagraph>

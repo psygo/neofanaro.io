@@ -56,9 +56,10 @@ export function WhatIsGoAbout({ post }: BlogPostProps) {
           If winning in Go is defined by the player with{" "}
           <em>more</em> territory, then Go cannot actually
           be about territory in absolute but relative terms.
-          And, since we have finite resources on the board,
-          the winner is the one who can score more points
-          per stone, which is the definition of efficiency.
+          And, especially since we have finite resources on
+          the board, the winner is the one who can score
+          more points per stone, which is the definition of
+          efficiency.
         </PostParagraph>
         <PostParagraph>
           Many other players will mention fighting as the
