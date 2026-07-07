@@ -8,7 +8,7 @@ import {
   PostImageWithLegend,
   PostBlockQuote,
   PostSectionTitle,
-  PostOrderedList,
+  PostUnorderedList,
 } from "@components/posts/post"
 import { GoDiagram } from "../goDiagram"
 
@@ -53,7 +53,8 @@ export function OkaigoAiArticles({ post }: BlogPostProps) {
           FineArt&apos;s &mdash; 绝艺 (jué yì) in Chinese or
           絶芸 (zetsu gei) in Japanese &mdash; games on the
           Fox server, played either against pros or
-          extremely strong amateurs.
+          extremely strong amateurs. Those games are a
+          treasure trove of incredible technique.
         </PostParagraph>
 
         <PostBlockQuote>
@@ -86,8 +87,10 @@ export function OkaigoAiArticles({ post }: BlogPostProps) {
           Japanese text.
         </PostBlockQuote>
         <PostParagraph>
-          FineArt answers with a beautiful driving
-          technique:
+          FineArt refutes the cut with a beautiful driving
+          technique. If Black A, White B threatens the left
+          Black group&apos;s capture while also being an
+          atari on the original cutting stone:
         </PostParagraph>
         <GoDiagram
           src="/articles/okaigo-ai-articles/okaigo_1.2.svg"
@@ -129,7 +132,7 @@ export function OkaigoAiArticles({ post }: BlogPostProps) {
           src="/articles/okaigo-ai-articles/okaigo_3.2.svg"
           size={100}
           diaNumber={5}
-          legend="Through a sacrifice and a tesuji, White exposes Black's shortage of liberties on the left and the C cutting point."
+          legend="Through a sacrifice and a tesuji, White exposes Black's shortage of liberties on the left, and the cutting point at C, all at the same time."
         />
         <PostParagraph>
           If Black plays at A, White B is sente for
@@ -153,7 +156,7 @@ export function OkaigoAiArticles({ post }: BlogPostProps) {
           Here&apos;s a selection of a few other great posts
           from that same series:
         </PostParagraph>
-        <PostOrderedList>
+        <PostUnorderedList>
           <li>
             <PostLink href="https://note.com/okaoigo/n/n1a6d658919d2">
               Masterful Technique #079
@@ -194,7 +197,7 @@ export function OkaigoAiArticles({ post }: BlogPostProps) {
               Masterful Technique #119
             </PostLink>
           </li>
-        </PostOrderedList>
+        </PostUnorderedList>
       </PostSection>
     </Post>
   )
