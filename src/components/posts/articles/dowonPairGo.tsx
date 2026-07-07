@@ -7,6 +7,7 @@ import {
   PostLink,
   PostImageWithLegend,
   PostBlockQuote,
+  PostSectionTitle,
 } from "@components/posts/post"
 import { GoDiagram } from "../goDiagram"
 
@@ -77,6 +78,11 @@ export function DowonPairGo({ post }: BlogPostProps) {
           </PostLink>{" "}
           for that period.
         </PostBlockQuote>
+      </PostSection>
+      <PostSection>
+        <PostSectionTitle>
+          A Pair Go Challenge
+        </PostSectionTitle>
         <PostParagraph>
           One day, after realizing I was by myself, without
           any other BIBA student, nor Diana Koszegi 2p
@@ -92,84 +98,85 @@ export function DowonPairGo({ post }: BlogPostProps) {
           diaNumber={1}
           legend="A mistaken, unexpected cut (8) from my pair Go partner. White should have crawled with 8 at 9."
         />
+        <PostParagraph>
+          Where should Black play next?
+        </PostParagraph>
+        <PostParagraph>
+          My first, immediate answer was simply turning at
+          A, capturing White&apos;s stones on the side.
+        </PostParagraph>
+        <PostParagraph>
+          However, right when I thought this was all
+          obvious, during the review with Moon Dowon 3p, she
+          and the other three students started discussing
+          for a while in Korean, without placing any
+          sequences on the board. Since my Korean at the
+          time was infinitesimal, I mentally checked out.
+          But, later, after checking the game out with AI, I
+          started to understand why they stopped to discuss
+          at a seemingly obvious move.
+        </PostParagraph>
+        <PostParagraph>
+          If Black tries to capture White&apos;s group,
+          White gets a ton of squeezing power from the
+          outside:
+        </PostParagraph>
+        <GoDiagram
+          src="/articles/dowon-pairgo/dowon_pairgo_3.svg"
+          size={100}
+          diaNumber={2}
+          legend="Black's groups surrounding White's captured stones are bound to get squeezed."
+        />
+        <PostParagraph>
+          Black has three directions from which to squeezed,
+          from A to C, there&apos;s no way to protect them
+          all. According to AI, capturing White on the side
+          is a 3-point loss.
+        </PostParagraph>
+        <PostParagraph>
+          This is AI&apos;s recommended sequence, after
+          Black captures White&apos;s group on the side:
+        </PostParagraph>
+        <GoDiagram
+          src="/articles/dowon-pairgo/dowon_pairgo_2.svg"
+          size={100}
+          diaNumber={3}
+          legend="Black's groups surrounding White's captured stones are bound to get squeezed."
+        />
+        <PostParagraph>
+          Black gets sente to play 19; but White gets thick
+          on the left and bottom-right, the aji in the
+          bottom-right is drastically reduced, Black&apos;s
+          bottom-left corner is greatly reduced, and
+          Black&apos;s bottom is essentially the captured
+          group in the end.
+        </PostParagraph>
+        <PostParagraph>
+          Going back, Black&apos;s best choice was to
+          instead play what my opponent pair opted for, to
+          capture the cutting stone:
+        </PostParagraph>
+        <GoDiagram
+          src="/articles/dowon-pairgo/dowon_pairgo_4.svg"
+          size={100}
+          diaNumber={4}
+          legend="Black's thickness and outside trump capturing a sizeable chunk on the side."
+        />
+        <PostParagraph>
+          Black 1 damages the A stone while thickening out
+          Black&apos;s corner and outside, which grants
+          Black sente to play the urgent move at 5.
+        </PostParagraph>
+        <PostParagraph>
+          Later that day, I showed these surprising AI
+          sequences to Moon Dowon 3p, thinking she would be
+          just as amazed. I was then dumbfounded by the
+          bored look on her face when she told me the
+          squeeze and the outside forcing moves were what
+          she was suggesting to her students when I zoned
+          out due to my lacking Korean abilities.
+        </PostParagraph>
       </PostSection>
-      <PostParagraph>
-        Where should Black play next?
-      </PostParagraph>
-      <PostParagraph>
-        My first, immediate answer was simply turning at A,
-        capturing White&apos;s stones on the side.
-      </PostParagraph>
-      <PostParagraph>
-        However, right when I thought this was all obvious,
-        during the review with Moon Dowon 3p, she and the
-        other three students started discussing for a while
-        in Korean, without placing any sequences on the
-        board. Since my Korean at the time was
-        infinitesimal, I mentally checked out. But, later,
-        after checking the game out with AI, I started to
-        understand why they stopped to discuss at a
-        seemingly obvious move.
-      </PostParagraph>
-      <PostParagraph>
-        If Black tries to capture White&apos;s group, White
-        gets a ton of squeezing power from the outside:
-      </PostParagraph>
-      <GoDiagram
-        src="/articles/dowon-pairgo/dowon_pairgo_3.svg"
-        size={100}
-        diaNumber={2}
-        legend="Black's groups surrounding White's captured stones are bound to get squeezed."
-      />
-      <PostParagraph>
-        Black has three directions from which to squeezed,
-        from A to C, there&apos;s no way to protect them
-        all. According to AI, capturing White on the side is
-        a 3-point loss.
-      </PostParagraph>
-      <PostParagraph>
-        This is AI&apos;s recommended sequence, after Black
-        captures White&apos;s group on the side:
-      </PostParagraph>
-      <GoDiagram
-        src="/articles/dowon-pairgo/dowon_pairgo_2.svg"
-        size={100}
-        diaNumber={3}
-        legend="Black's groups surrounding White's captured stones are bound to get squeezed."
-      />
-      <PostParagraph>
-        Black gets sente to play 19; but White gets thick on
-        the left and bottom-right, the aji in the
-        bottom-right is drastically reduced, Black&apos;s
-        bottom-left corner is greatly reduced, and
-        Black&apos;s bottom is essentially the captured
-        group in the end.
-      </PostParagraph>
-      <PostParagraph>
-        Going back, Black&apos;s best choice was to instead
-        play what my opponent pair opted for, to capture the
-        cutting stone:
-      </PostParagraph>
-      <GoDiagram
-        src="/articles/dowon-pairgo/dowon_pairgo_4.svg"
-        size={100}
-        diaNumber={4}
-        legend="Black's thickness and outside trump capturing a sizeable chunk on the side."
-      />
-      <PostParagraph>
-        Black 1 damages the A stone while thickening out
-        Black&apos;s corner and outside, which grants Black
-        sente to play the urgent move at 5.
-      </PostParagraph>
-      <PostParagraph>
-        Later that day, I showed these surprising AI
-        sequences to Moon Dowon 3p, thinking she would be
-        just as amazed. I was then dumbfounded by the bored
-        look on her face when she told me the squeeze and
-        the outside forcing moves were what she was
-        suggesting to her students when I zoned out due to
-        my lacking Korean abilities.
-      </PostParagraph>
     </Post>
   )
 }
