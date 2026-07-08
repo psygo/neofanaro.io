@@ -24,9 +24,9 @@ export function OkaigoAiArticles({ post }: BlogPostProps) {
             href="https://neofanaroio.vercel.app/posts/little-knife-god-go-books"
           >
             this post about Little Knife God&apos;s Go Books
-          </PostLink>
-          , I got to know an excellent Go online resource,
-          especially for higher dan players:{" "}
+          </PostLink>{" "}
+          &mdash;, I got to know another excellent Go online
+          resource, especially for higher dan players:{" "}
           <PostLink href="https://note.com/okaoigo">
             okaigo
           </PostLink>
@@ -35,9 +35,9 @@ export function OkaigoAiArticles({ post }: BlogPostProps) {
             note.com
           </PostLink>
           , which is a Japanese blogging platform, similar
-          to Medium or Substack.{" "}
+          to Medium or Substack &mdash;{" "}
           <PostLink href="https://www.youtube.com/@okao941">
-            Okaigo is also present on YouTube
+            okaigo is also present on YouTube
           </PostLink>
           , currently with frequent live streams.
         </PostParagraph>
@@ -48,13 +48,16 @@ export function OkaigoAiArticles({ post }: BlogPostProps) {
         />
         <PostParagraph>
           To me, the biggest differentiator for this creator
-          is his series about AI brilliances. He seems to
-          collect most, if not all, of them from
-          FineArt&apos;s &mdash; 绝艺 (jué yì) in Chinese or
-          絶芸 (zetsu gei) in Japanese &mdash; games on the
-          Fox server, played either against pros or
-          extremely strong amateurs. Those games are a
-          treasure trove of incredible technique.
+          is his series on AI brilliances. He seems to
+          collect most, if not all, of them from{" "}
+          <PostLink href="https://senseis.xmp.net/?FineArt">
+            FineArt
+          </PostLink>
+          &apos;s &mdash; 绝艺 (jué yì) in Chinese or 絶芸
+          (zetsu gei) in Japanese &mdash; games on the Fox
+          server, played either against pros or extremely
+          strong amateurs. Those games are a treasure trove
+          of incredible technique.
         </PostParagraph>
 
         <PostBlockQuote>
@@ -62,14 +65,19 @@ export function OkaigoAiArticles({ post }: BlogPostProps) {
           way, you can easily access them through its
           profile.
         </PostBlockQuote>
+
+        <PostParagraph>
+          Let&apos;s take a look at some examples of
+          AI&apos;s superhuman abilities.
+        </PostParagraph>
       </PostSection>
       <PostSection>
         <PostSectionTitle>
           Masterful Technique #079
         </PostSectionTitle>
         <PostParagraph>
-          Here&apos;s a first example of a majestic sequence
-          from AI, from his{" "}
+          Here&apos;s a first problem with a majestic
+          sequence from AI, from his{" "}
           <PostLink href="https://note.com/okaoigo/n/n1a6d658919d2">
             Masterful Technique #079
           </PostLink>{" "}
@@ -79,7 +87,7 @@ export function OkaigoAiArticles({ post }: BlogPostProps) {
           src="/articles/okaigo-ai-articles/okaigo_1.1.svg"
           size={100}
           diaNumber={1}
-          legend="How would should you deal with Black's cut?"
+          legend="How should you deal with Black's cut?"
         />
         <PostBlockQuote>
           You can use Google Translate, or any other
@@ -88,9 +96,7 @@ export function OkaigoAiArticles({ post }: BlogPostProps) {
         </PostBlockQuote>
         <PostParagraph>
           FineArt refutes the cut with a beautiful driving
-          technique. If Black A, White B threatens the left
-          Black group&apos;s capture while also being an
-          atari on the original cutting stone:
+          technique:
         </PostParagraph>
         <GoDiagram
           src="/articles/okaigo-ai-articles/okaigo_1.2.svg"
@@ -98,6 +104,11 @@ export function OkaigoAiArticles({ post }: BlogPostProps) {
           diaNumber={2}
           legend="This requires reading, but it's mostly technique at its core."
         />
+        <PostParagraph>
+          If Black A, White B threatens the left Black
+          group&apos;s capture while also being an atari on
+          the original cutting stone.
+        </PostParagraph>
         <PostParagraph>
           Black will need to then accept terrible shape and
           overconcentration in the bottom-left corner, while
@@ -125,8 +136,9 @@ export function OkaigoAiArticles({ post }: BlogPostProps) {
           legend="How can White survive or escape?"
         />
         <PostParagraph>
-          Black doesn&apos;t the best shape, but, still, it
-          looks difficult to get out. What can White do?
+          Black doesn&apos;t have the best shape, but,
+          still, it looks difficult to live inside that
+          area, or to get out. What can White do?
         </PostParagraph>
         <GoDiagram
           src="/articles/okaigo-ai-articles/okaigo_3.2.svg"
@@ -135,9 +147,9 @@ export function OkaigoAiArticles({ post }: BlogPostProps) {
           legend="Through a sacrifice and a tesuji, White exposes Black's shortage of liberties on the left, and the cutting point at C, all at the same time."
         />
         <PostParagraph>
-          If Black plays at A, White B is sente for
-          rescueing White&apos;s 3 stone. If Black then
-          fixes, the C cut gets activated.
+          If Black plays at A, White B is sente for rescuing
+          White&apos;s 3 stone. If Black then fixes, the C
+          cut gets activated.
         </PostParagraph>
         <PostParagraph>
           What if Black blocks from D instead? Check it out
