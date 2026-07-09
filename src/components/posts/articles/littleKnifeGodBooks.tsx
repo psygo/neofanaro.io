@@ -9,7 +9,7 @@ import {
 } from "@components/posts/post"
 import { GoDiagram } from "@components/posts/goDiagram"
 
-export function PostLittleKnifeGodBooks({
+export function LittleKnifeGodBooks({
   post,
 }: BlogPostProps) {
   return (

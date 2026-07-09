@@ -7,14 +7,18 @@ import { get_post } from "@actions"
 
 import { Main } from "@components/common/main"
 import { CpiSuspense } from "@components/common/cpiSuspense"
-import { PostLittleKnifeGodBooks } from "@components/posts/articles/postLittleKnifeGodBooks"
-import { PostAiOpeningHierarchy } from "@components/posts/articles/postAiOpeningHierarchy"
-import { SampleSizeAndCommonSense } from "@components/posts/articles/sampleSizeAndCommonSense"
-import { WhatIsGoAbout } from "@components/posts/articles/whatIsGoAbout"
-import { Magi } from "@components/posts/articles/magi"
-import { OneYearInAsia } from "@components/posts/articles/oneYearInAsia"
-import { DowonPairGo } from "@components/posts/articles/dowonPairGo"
-import { OkaoigoAiArticles } from "@components/posts/articles/okaigo-ai-articles"
+
+import {
+  DowonPairGo,
+  LatexShogi,
+  Magi,
+  OkaoigoAiArticles,
+  OneYearInAsia,
+  PostAiOpeningHierarchy,
+  LittleKnifeGodBooks,
+  SampleSizeAndCommonSense,
+  WhatIsGoAbout,
+} from "@components/posts/articles/exports"
 
 type BlogPageProps = {
   params: Promise<{ blog_id: string }>
@@ -47,7 +51,7 @@ export default async function BlogPost({
 function whichBlogPost(path: string, post: PostFromDb) {
   switch (path) {
     case "little-knife-god-books":
-      return <PostLittleKnifeGodBooks post={post} />
+      return <LittleKnifeGodBooks post={post} />
     case "post-ai-opening-hierarchy":
       return <PostAiOpeningHierarchy post={post} />
     case "sample-size-and-common-sense":
@@ -62,6 +66,8 @@ function whichBlogPost(path: string, post: PostFromDb) {
       return <DowonPairGo post={post} />
     case "okaoigo-ai-articles":
       return <OkaoigoAiArticles post={post} />
+    case "latex-shogi":
+      return <LatexShogi post={post} />
     default:
       return <></>
   }
