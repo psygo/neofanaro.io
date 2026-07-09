@@ -113,8 +113,8 @@ export function DowonPairGo({ post }: BlogPostProps) {
           sequences on the board. Since my Korean at the
           time was infinitesimal, I mentally checked out.
           But, later, after checking the game out with AI, I
-          started to understand why they stopped to discuss
-          at a seemingly obvious move.
+          began to suspect why they stopped to discuss at
+          such a seemingly obvious move.
         </PostParagraph>
         <PostParagraph>
           If Black tries to capture White&apos;s group,
