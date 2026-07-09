@@ -43,13 +43,13 @@ export function OkaigoAiArticles({ post }: BlogPostProps) {
         </PostParagraph>
         <PostImageWithLegend
           src="/articles/okaigo-ai-articles/okaigo_on_note.png"
-          legend="Okaigo's Articles on note.com"
+          legend="okaigo's Articles on note.com"
           className="mx-7 mb-0 h-full w-115 rounded-xl"
         />
         <PostParagraph>
-          To me, the biggest differentiator for this creator
+          To me, this teacher&apos;s biggest differentiator
           is his series on AI brilliances. He seems to
-          collect most, if not all, of them from{" "}
+          collect most of them, if not all, from{" "}
           <PostLink href="https://senseis.xmp.net/?FineArt">
             FineArt
           </PostLink>
@@ -92,7 +92,7 @@ export function OkaigoAiArticles({ post }: BlogPostProps) {
         <PostBlockQuote>
           You can use Google Translate, or any other
           translator tool, to have access to the original,
-          Japanese text.
+          Japanese text in his articles.
         </PostBlockQuote>
         <PostParagraph>
           FineArt refutes the cut with a beautiful driving
@@ -127,7 +127,7 @@ export function OkaigoAiArticles({ post }: BlogPostProps) {
         </PostSectionTitle>
         <PostParagraph>
           And here&apos;s another exquisite example of
-          AI&apos;s next level skills:
+          AI&apos;s next-level skills:
         </PostParagraph>
         <GoDiagram
           src="/articles/okaigo-ai-articles/okaigo_3.1.svg"
@@ -152,8 +152,8 @@ export function OkaigoAiArticles({ post }: BlogPostProps) {
           cut gets activated.
         </PostParagraph>
         <PostParagraph>
-          What if Black blocks from D instead? Check it out
-          in the{" "}
+          What if Black blocks from D instead after White 3?
+          Check it out in the{" "}
           <PostLink href="https://note.com/okaoigo/n/nef7a8a915dd0">
             original article
           </PostLink>
@@ -210,6 +210,11 @@ export function OkaigoAiArticles({ post }: BlogPostProps) {
             </PostLink>
           </li>
         </PostUnorderedList>
+        <PostParagraph>
+          His other posts and series all seem interesting as
+          well. Do check them out! I&apos;m even considering
+          signing up for his paid series!
+        </PostParagraph>
       </PostSection>
     </Post>
   )
