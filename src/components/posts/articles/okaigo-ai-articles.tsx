@@ -12,7 +12,7 @@ import {
 } from "@components/posts/post"
 import { GoDiagram } from "../goDiagram"
 
-export function OkaigoAiArticles({ post }: BlogPostProps) {
+export function OkaoigoAiArticles({ post }: BlogPostProps) {
   return (
     <Post data={post}>
       <PostSection>
@@ -28,7 +28,7 @@ export function OkaigoAiArticles({ post }: BlogPostProps) {
           &mdash;, I got to know another excellent Go online
           resource, especially for higher dan players:{" "}
           <PostLink href="https://note.com/okaoigo">
-            okaigo
+            okaoigo
           </PostLink>
           . Its creator frequently posts on{" "}
           <PostLink href="https://note.com/okaoigo">
@@ -37,13 +37,13 @@ export function OkaigoAiArticles({ post }: BlogPostProps) {
           , which is a Japanese blogging platform, similar
           to Medium or Substack &mdash;{" "}
           <PostLink href="https://www.youtube.com/@okao941">
-            okaigo is also present on YouTube
+            okaoigo is also present on YouTube
           </PostLink>
           , currently with frequent live streams.
         </PostParagraph>
         <PostImageWithLegend
           src="/articles/okaigo-ai-articles/okaigo_on_note.png"
-          legend="okaigo's Articles on note.com"
+          legend="okaoigo's Articles on note.com"
           className="mx-7 mb-0 h-full w-115 rounded-xl"
         />
         <PostParagraph>

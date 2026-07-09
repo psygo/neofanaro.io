@@ -14,7 +14,7 @@ import { WhatIsGoAbout } from "@components/posts/articles/whatIsGoAbout"
 import { Magi } from "@components/posts/articles/magi"
 import { OneYearInAsia } from "@components/posts/articles/oneYearInAsia"
 import { DowonPairGo } from "@components/posts/articles/dowonPairGo"
-import { OkaigoAiArticles } from "@components/posts/articles/okaigo-ai-articles"
+import { OkaoigoAiArticles } from "@components/posts/articles/okaigo-ai-articles"
 
 type BlogPageProps = {
   params: Promise<{ blog_id: string }>
@@ -60,8 +60,8 @@ function whichBlogPost(path: string, post: PostFromDb) {
       return <OneYearInAsia post={post} />
     case "dowon-pairgo":
       return <DowonPairGo post={post} />
-    case "okaigo-ai-articles":
-      return <OkaigoAiArticles post={post} />
+    case "okaoigo-ai-articles":
+      return <OkaoigoAiArticles post={post} />
     default:
       return <></>
   }
