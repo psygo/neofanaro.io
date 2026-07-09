@@ -7,17 +7,29 @@ import {
   PostLink,
   PostImageWithLegend,
   PostSectionTitle,
+  PostPre,
 } from "@components/posts/post"
 
 const latexCode = String.raw`\documentclass[12pt]{standalone}
 
-\def\repoPath{/Users/phili/Code/latex_shogi/src}
+\def\repoPath{/path/to/shogiban}
 \usepackage{\repoPath/shogiban/shogiban}
 
 \begin{document}
-  \begin{shogiban}[board dimension = 8 cm, font scale = 2.5, book style, letter ranks]
+  \begin{shogiban}[%
+    board dimension = 8 cm,
+    font scale      = 2.5,
+    book style,
+    letter ranks
+  ]
     % Defending
-    \pic at (9, 1) {shogi piece = {text = \shogiKingGote, scale = 1.25, rotate = 180}};
+    \pic at (9, 1) {%
+      shogi piece = {%
+        text   = \shogiKingGote,
+        scale  = 1.25,
+        rotate = 180
+      }
+    };
     \pic at (8, 1) {shogi piece = {text = \shogiGold, scale = 1.15, rotate = 180}};
 
     % Captured (Gote)
@@ -77,7 +89,7 @@ export function LatexShogi({ post }: BlogPostProps) {
           , we&apos;re now able to draw beautiful shogi
           diagrams which won&apos;t ever pixelate:
         </PostParagraph>
-        <pre>{latexCode}</pre>
+        <PostPre language="latex">{latexCode}</PostPre>
         <PostParagraph>
           That piece of code generates this square diagram,
           which is what you&apos;re gonna find in most shogi
@@ -88,6 +100,29 @@ export function LatexShogi({ post }: BlogPostProps) {
           legend="A square diagram example, the more common format in shogi books. Note that we do have the captured pieces on the side of the board feature."
           className="mx-7 mb-0 h-full w-90"
         />
+      </PostSection>
+      <PostSection>
+        <PostSectionTitle>
+          Programming in LaTeX with AI
+        </PostSectionTitle>
+        <PostParagraph>
+          One thing I need to add is that AI fastforwarded
+          this project considerably. After I got the first
+          version going, if I add up the other features, I
+          could have easily worked for 2 weeks to have them
+          happen cleanly. Instead, it took me 1-2 days with
+          AI.
+        </PostParagraph>
+        <PostParagraph>
+          Less than 2 years ago, even though AI was doing
+          well in most programming languages, when it came
+          to LaTeX, but, now, Claude AI does just as well as
+          anyone &mdash; other AIs might make you suffer
+          considerably still though. And it does well
+          through code that&apos;s very easy to read, which
+          cannot be said about many LaTeX experts out there,
+          who mostly come from the academic world.
+        </PostParagraph>
       </PostSection>
       <PostSection>
         <PostSectionTitle>
@@ -110,7 +145,9 @@ export function LatexShogi({ post }: BlogPostProps) {
           you prefer the more programmatic version, you
           could just use this on the command line:
         </PostParagraph>
-        <pre>pdftocairo -svg filename.pdf filename.svg</pre>
+        <PostPre language="bash">
+          pdftocairo -svg filename.pdf filename.svg
+        </PostPre>
       </PostSection>
     </Post>
   )

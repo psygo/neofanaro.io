@@ -1,15 +1,18 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
+
 import Link from "next/link"
 import Image from "next/image"
 
-import { WithReactChildren } from "../../types/utils"
+import hljs from "highlight.js"
+import "highlight.js/styles/atom-one-dark.css"
+
+import { PostFromDb, WithReactChildren } from "@types"
 
 import { useLang } from "@hooks/useLang"
 
 import { PostViewTracker } from "./postViewTracker"
-import { PostFromDb } from "../../types/post"
 
 type PostProps = {
   data: PostFromDb
@@ -390,6 +393,32 @@ export function PostYouTubeIframe({
 export function PostDivider() {
   return (
     <hr className="mt-30 mb-6 border border-gray-300" />
+  )
+}
+
+// ---------------------------------------------------------
+// Pre / Code Block
+
+type PostPreProps = {
+  children: string
+  language?: string
+}
+
+export function PostPre({
+  children,
+  language,
+}: PostPreProps) {
+  const result = language
+    ? hljs.highlight(children.trim(), { language })
+    : hljs.highlightAuto(children.trim())
+
+  return (
+    <pre className="not-prose overflow-x-auto rounded-lg text-sm">
+      <code
+        className="hljs"
+        dangerouslySetInnerHTML={{ __html: result.value }}
+      />
+    </pre>
   )
 }
 
