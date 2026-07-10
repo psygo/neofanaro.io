@@ -11,11 +11,11 @@ import { CpiSuspense } from "@components/common/cpiSuspense"
 import {
   DowonPairGo,
   LatexShogi,
+  LittleKnifeGodBooks,
   Magi,
   OkaoigoAiArticles,
   OneYearInAsia,
   PostAiOpeningHierarchy,
-  LittleKnifeGodBooks,
   SampleSizeAndCommonSense,
   WhatIsGoAbout,
 } from "@components/posts/articles/exports"

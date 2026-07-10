@@ -5,6 +5,8 @@ import { useEffect, useRef, useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 
+import { PDFViewer } from "@embedpdf/react-pdf-viewer"
+
 import hljs from "highlight.js"
 import "highlight.js/styles/atom-one-dark.css"
 
@@ -422,4 +424,22 @@ export function PostPre({
   )
 }
 
+// ---------------------------------------------------------
+// PDF Viewer
+
+type PostPDFViewerProps = {
+  src: string
+}
+
+export function PostPDFViewer({ src }: PostPDFViewerProps) {
+  return (
+    <PDFViewer
+      config={{ src }}
+      className="h-150 px-4"
+      onReady={(registry) => {
+        console.log("PDF viewer ready!", registry)
+      }}
+    />
+  )
+}
 // ---------------------------------------------------------

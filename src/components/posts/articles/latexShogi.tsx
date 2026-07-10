@@ -8,6 +8,7 @@ import {
   PostImageWithLegend,
   PostSectionTitle,
   PostPre,
+  PostPDFViewer,
 } from "@components/posts/post"
 
 const latexCode = String.raw`\documentclass[12pt]{standalone}
@@ -58,7 +59,7 @@ export function LatexShogi({ post }: BlogPostProps) {
           LaTeX for Japanese chess, or shogi.{" "}
         </PostParagraph>
         <PostImageWithLegend
-          src="/articles/latex_shogi/sample_1.svg"
+          src="/articles/latex-shogi/sample_1.svg"
           legend="An example diagram using all the pieces."
           className="mx-7 mb-0 h-full w-80"
         />
@@ -77,7 +78,7 @@ export function LatexShogi({ post }: BlogPostProps) {
           .
         </PostParagraph>
         <PostImageWithLegend
-          src="/articles/latex_shogi/shogi_problema_1.svg"
+          src="/articles/latex-shogi/shogi_problema_1.svg"
           legend="Another example, this time with coordinates."
           className="mx-7 mb-0 h-full w-80"
         />
@@ -96,10 +97,18 @@ export function LatexShogi({ post }: BlogPostProps) {
           books:
         </PostParagraph>
         <PostImageWithLegend
-          src="/articles/latex_shogi/shogi_diagram_export.svg"
+          src="/articles/latex-shogi/shogi_diagram_export.svg"
           legend="A square diagram example, the more common format in shogi books. Note that we do have the captured pieces on the side of the board feature."
           className="mx-7 mb-0 h-full w-90"
         />
+        <PostParagraph>
+          Here&apos;s a{" "}
+          <PostLink href="/articles/latex-shogi/sample.pdf">
+            sample
+          </PostLink>{" "}
+          of what can be done with the current package:
+        </PostParagraph>
+        <PostPDFViewer src="/articles/latex-shogi/sample.pdf" />
       </PostSection>
       <PostSection>
         <PostSectionTitle>
