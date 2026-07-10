@@ -21,7 +21,7 @@ type PostProps = {
   children: React.ReactNode
 }
 
-const DEFAULT_MAX_WIDTH_REM = 29 // matches former max-w-110
+const DEFAULT_MAX_WIDTH_REM = 32
 
 export function Post({ data, children }: PostProps) {
   const [maxWidth, setMaxWidth] = useState(
@@ -246,7 +246,7 @@ export function PostLink({
       target="_blank"
       rel="noreferrer noopener"
       style={{
-        textUnderlineOffset: "3px",
+        textUnderlineOffset: "4px",
       }}
     >
       {children}
@@ -337,7 +337,7 @@ export function PostCode({ children }: WithReactChildren) {
 export function PostSectionTitle({
   children,
 }: WithReactChildren) {
-  return <h2>{children}</h2>
+  return <h2 className="font-extrabold">{children}</h2>
 }
 
 export function PostBlockQuote({
