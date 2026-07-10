@@ -55,8 +55,8 @@ export function LatexShogi({ post }: BlogPostProps) {
           <PostLink href="https://github.com/psygo/latex_shogi">
             @psygo/latex_shogi
           </PostLink>
-          , which allows people to draw vector diagrams with
-          LaTeX for Japanese chess, or shogi.{" "}
+          , a package which allows writers to draw vector
+          diagrams for Japanese chess, or shogi, with LaTeX.
         </PostParagraph>
         <PostImageWithLegend
           src="/articles/latex-shogi/sample_1.svg"
@@ -79,7 +79,7 @@ export function LatexShogi({ post }: BlogPostProps) {
         </PostParagraph>
         <PostImageWithLegend
           src="/articles/latex-shogi/shogi_problema_1.svg"
-          legend="Another example, this time with coordinates."
+          legend="Another example diagram, this time with coordinates."
           className="mx-7 mb-0 h-full w-80"
         />
         <PostParagraph>
@@ -98,7 +98,7 @@ export function LatexShogi({ post }: BlogPostProps) {
         </PostParagraph>
         <PostImageWithLegend
           src="/articles/latex-shogi/shogi_diagram_export.svg"
-          legend="A square diagram example, the more common format in shogi books. Note that we do have the captured pieces on the side of the board feature."
+          legend='A square diagram example, the more common format in shogi books. Note that we do have the "mochigoma" feature, that is, the captured pieces on the side of the board.'
           className="mx-7 mb-0 h-full w-90"
         />
         <PostParagraph>
@@ -106,7 +106,8 @@ export function LatexShogi({ post }: BlogPostProps) {
           <PostLink href="/articles/latex-shogi/sample.pdf">
             sample
           </PostLink>{" "}
-          of what can be done with the current package:
+          of what can be done with the current package, in
+          Portuguese though:
         </PostParagraph>
         <PostPDFViewer src="/articles/latex-shogi/sample.pdf" />
       </PostSection>
@@ -117,20 +118,21 @@ export function LatexShogi({ post }: BlogPostProps) {
         <PostParagraph>
           One thing I need to add is that AI fastforwarded
           this project considerably. After I got the first
-          version going, if I add up the other features, I
-          could have easily worked for 2 weeks to have them
-          happen cleanly. Instead, it took me 1-2 days with
-          AI.
+          version going, if I were to implement all the
+          other features myself, without any help, I could
+          have easily worked for 2 weeks to have them happen
+          cleanly. Instead, it took me 1-2 days with AI.
         </PostParagraph>
         <PostParagraph>
           Less than 2 years ago, even though AI was doing
-          well in most programming languages, when it came
-          to LaTeX, but, now, Claude AI does just as well as
-          anyone &mdash; other AIs might make you suffer
-          considerably still though. And it does well
-          through code that&apos;s very easy to read, which
-          cannot be said about many LaTeX experts out there,
-          who mostly come from the academic world.
+          well in most programming languages, that was not
+          the case when it came to LaTeX. But, now, Claude
+          AI does just as well as anyone &mdash; although
+          other AIs might make you suffer quite a lot still.
+          And it does well through code that&apos;s very
+          easy to read, which cannot be said about many
+          LaTeX experts out there, who mostly come from the
+          academic world.
         </PostParagraph>
       </PostSection>
       <PostSection>
@@ -139,8 +141,8 @@ export function LatexShogi({ post }: BlogPostProps) {
         </PostSectionTitle>
         <PostParagraph>
           If you would like to use the diagrams as vector
-          images on other projects, you could easily open
-          the resulting PDF inside a vector graphics editor,
+          images on other projects, you could just open the
+          resulting PDF inside a vector graphics editor,
           such{" "}
           <PostLink href="https://inkscape.org/">
             Inkscape
@@ -150,9 +152,10 @@ export function LatexShogi({ post }: BlogPostProps) {
         </PostParagraph>
         <PostParagraph>
           But that&apos;s the manual option, which might be
-          more versatile, depending on your context. But, if
-          you prefer the more programmatic version, you
-          could just use this on the command line:
+          more versatile, depending on your context.
+          However, if you prefer the more programmatic
+          version, you could instead use this on the command
+          line:
         </PostParagraph>
         <PostPre language="bash">
           pdftocairo -svg filename.pdf filename.svg
