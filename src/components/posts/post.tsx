@@ -21,7 +21,7 @@ type PostProps = {
   children: React.ReactNode
 }
 
-const DEFAULT_MAX_WIDTH_REM = 32
+const DEFAULT_MAX_WIDTH_REM = 29 // matches former max-w-110
 
 export function Post({ data, children }: PostProps) {
   const [maxWidth, setMaxWidth] = useState(
