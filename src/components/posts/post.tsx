@@ -319,7 +319,7 @@ export function PostImageWithLegend({
         className={className}
         alt={legend}
       />
-      <p className="mt-2 mb-2 px-10 text-center text-sm text-slate-600 sm:text-base">
+      <p className="mt-2 mb-2 px-10 text-sm text-slate-600 sm:text-base">
         {legend}
       </p>
     </div>
