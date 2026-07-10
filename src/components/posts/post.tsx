@@ -31,7 +31,7 @@ export function Post({ data, children }: PostProps) {
 
   return (
     <article
-      className={`prose border-r-2 transition-colors duration-150 sm:px-2 ${isDragging ? "border-r-slate-300" : "border-r-transparent"}`}
+      className={`prose min-w-0 border-r-2 transition-colors duration-150 sm:px-2 ${isDragging ? "border-r-slate-300" : "border-r-transparent"}`}
       style={{ maxWidth: `${maxWidth}rem` }}
     >
       <PostViewTracker path={data.path} />
@@ -415,7 +415,7 @@ export function PostPre({
     : hljs.highlightAuto(children.trim())
 
   return (
-    <pre className="not-prose overflow-x-auto rounded-lg text-sm">
+    <pre className="not-prose max-w-full overflow-x-scroll rounded-lg text-sm whitespace-pre-wrap">
       <code
         className="hljs"
         dangerouslySetInnerHTML={{ __html: result.value }}

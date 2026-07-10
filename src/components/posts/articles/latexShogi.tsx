@@ -9,41 +9,44 @@ import {
   PostSectionTitle,
   PostPre,
   PostPDFViewer,
+  PostBlockQuote,
 } from "@components/posts/post"
 
-const latexCode = String.raw`\documentclass[12pt]{standalone}
+// const latexCode = String.raw`
+// \documentclass[12pt]{standalone}
 
-\def\repoPath{/path/to/shogiban}
-\usepackage{\repoPath/shogiban/shogiban}
+// \def\repoPath{/path/to/shogiban}
+// \usepackage{\repoPath/shogiban/shogiban}
 
-\begin{document}
-  \begin{shogiban}[%
-    board dimension = 8 cm,
-    font scale      = 2.5,
-    book style,
-    letter ranks
-  ]
-    % Defending
-    \pic at (9, 1) {%
-      shogi piece = {%
-        text   = \shogiKingGote,
-        scale  = 1.25,
-        rotate = 180
-      }
-    };
-    \pic at (8, 1) {shogi piece = {text = \shogiGold, scale = 1.15, rotate = 180}};
+// \begin{document}
+//   \begin{shogiban}[%
+//     board dimension = 8 cm,
+//     font scale      = 2.5,
+//     book style,
+//     letter ranks
+//   ]
+//     % Defending
+//     \pic at (9, 1) {%
+//       shogi piece = {%
+//         text   = \shogiKingGote,
+//         scale  = 1.25,
+//         rotate = 180
+//       }
+//     };
+//     \pic at (8, 1) {shogi piece = {text = \shogiGold, scale = 1.15, rotate = 180}};
 
-    % Captured (Gote)
-    \pic at (10.5, 1) {shogi piece = {text = \shogiRook, scale = 1, rotate = 180}};
+//     % Captured (Gote)
+//     \pic at (10.5, 1) {shogi piece = {text = \shogiRook, scale = 1, rotate = 180}};
 
-    % Attacking
-    \pic at (6, 1) {shogi piece = {text = \shogiRook, scale = 1.2}};
-    \pic at (8, 3) {shogi piece = {text = \shogiPawn, scale = 1.1}};
+//     % Attacking
+//     \pic at (6, 1) {shogi piece = {text = \shogiRook, scale = 1.2}};
+//     \pic at (8, 3) {shogi piece = {text = \shogiPawn, scale = 1.1}};
 
-    % Captured (Sente)
-    \pic at (-0.875, 9) {shogi piece = {text = \shogiGold, scale = 1}};
-  \end{shogiban}
-\end{document}`
+//     % Captured (Sente)
+//     \pic at (-0.875, 9) {shogi piece = {text = \shogiGold, scale = 1}};
+//   \end{shogiban}
+// \end{document}
+// `
 
 export function LatexShogi({ post }: BlogPostProps) {
   return (
@@ -61,7 +64,7 @@ export function LatexShogi({ post }: BlogPostProps) {
         <PostImageWithLegend
           src="/articles/latex-shogi/sample_1.svg"
           legend="An example diagram using all the pieces."
-          className="mx-7 mb-0 h-full w-80"
+          className="mx-7 mb-0 h-full w-full max-w-80"
         />
         <PostParagraph>
           That project started as an adaptation of the
@@ -88,9 +91,9 @@ export function LatexShogi({ post }: BlogPostProps) {
             this
           </PostLink>
           , we&apos;re now able to draw beautiful shogi
-          diagrams which won&apos;t ever pixelate:
+          diagrams which won&apos;t ever pixelate.
         </PostParagraph>
-        <PostPre language="latex">{latexCode}</PostPre>
+        {/* <PostPre language="latex">{latexCode}</PostPre> */}
         <PostParagraph>
           That piece of code generates this square diagram,
           which is what you&apos;re gonna find in most shogi
@@ -160,6 +163,18 @@ export function LatexShogi({ post }: BlogPostProps) {
         <PostPre language="bash">
           pdftocairo -svg filename.pdf filename.svg
         </PostPre>
+        <PostBlockQuote>
+          Those are the processes I&apos;ve been using to
+          create my Go diagrams in my Go articles, such as
+          the{" "}
+          <PostLink
+            internal
+            href="https://neofanaroio.vercel.app/posts/okaoigo-ai-articles"
+          >
+            okaoigo&apos;s one
+          </PostLink>
+          .
+        </PostBlockQuote>
       </PostSection>
     </Post>
   )
