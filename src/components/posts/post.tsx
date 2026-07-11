@@ -415,9 +415,9 @@ export function PostPre({
     : hljs.highlightAuto(children.trim())
 
   return (
-    <pre className="">
+    <pre className="not-prose max-w-full overflow-x-scroll rounded-lg text-sm">
       <code
-        className="hljs not-prose max-w-full overflow-x-scroll rounded-lg text-sm"
+        className="hljs"
         dangerouslySetInnerHTML={{ __html: result.value }}
       />
     </pre>
