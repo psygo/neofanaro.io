@@ -96,7 +96,7 @@ export function GoProfPresentationSection() {
             </p>
           )}
         </div>
-        {/* <LessonTypes /> */}
+        <LessonTypes />
       </div>
       <CourseVideo
         url={
@@ -110,24 +110,50 @@ export function GoProfPresentationSection() {
   )
 }
 
-// function LessonTypes() {
-//   return (
-//     <div className="mt-2 flex flex-col gap-2.5 px-3.5 text-gray-800">
-//       <p>Lesson types include:</p>
-//       <ul className="ml-10 list-disc">
-//         <li>
-//           <span className="font-semibold">
-//             Teaching game
-//           </span>
-//           : we play, and I try{" "}
-//         </li>
-//         <li>Game review</li>
-//         <li>Interactive game</li>
-//         <li>Playing against</li>
-//       </ul>
-//     </div>
-//   )
-// }
+function LessonTypes() {
+  const lang = useLang()
+
+  return (
+    <div className="mt-2 flex flex-col gap-2.5 px-3.5 text-sm text-gray-800">
+      {lang === "pt" ? (
+        <p>Os tipos de aula incluem, dentre outos:</p>
+      ) : (
+        <p>Lesson types include, among others:</p>
+      )}
+      {lang === "pt" ? (
+        <ul className="ml-10 list-disc">
+          <li>Partida educativa</li>
+          <li>Revisão de partida</li>
+          <li>Partida Interativa</li>
+          <li>Aula de tsumego</li>
+          <li>
+            Jogar juntos contra um oponente do nível do
+            aluno
+          </li>
+          <li>
+            Aula sobre um tópico específico (joseki, fuseki,
+            fim de jogo, etc.)
+          </li>
+        </ul>
+      ) : (
+        <ul className="ml-10 list-disc">
+          <li>Teaching game</li>
+          <li>Game review</li>
+          <li>Interactive game</li>
+          <li>Tsumego lesson</li>
+          <li>
+            Playing together against an opponent of similar
+            rank
+          </li>
+          <li>
+            Specific topic lecture (joseki, fuseki, endgame,
+            etc.)
+          </li>
+        </ul>
+      )}
+    </div>
+  )
+}
 
 type PriceContainerProps = WithReactChildren
 
