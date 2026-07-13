@@ -2,6 +2,8 @@
 
 import { containerOutline } from "@styles"
 
+import { WithReactChildren } from "@types"
+
 import { useLang } from "@hooks"
 
 import {
@@ -11,18 +13,17 @@ import {
   FooterLogo,
   GoWithFanaroYouTube,
 } from "@components/common/footer"
-import { WithReactChildren } from "../../types/utils"
 
 export function GoProfPresentationSection() {
   const lang = useLang()
 
   return (
-    <div className="mx-auto flex max-w-sm flex-col gap-6">
+    <div className="mx-auto flex max-w-110 flex-col gap-6">
       <div className="flex flex-col gap-3">
         <h2 className="text-center text-3xl font-black">
           {lang === "pt" ? "Professor de Go" : "Go Teacher"}
         </h2>
-        <div className="mx-auto flex max-w-sm flex-col gap-2 px-2">
+        <div className="mx-auto flex max-w-110 flex-col gap-2 px-2">
           {lang === "pt" ? (
             <>
               <p className="text-center">
@@ -95,6 +96,7 @@ export function GoProfPresentationSection() {
             </p>
           )}
         </div>
+        {/* <LessonTypes /> */}
       </div>
       <CourseVideo
         url={
@@ -107,6 +109,25 @@ export function GoProfPresentationSection() {
     </div>
   )
 }
+
+// function LessonTypes() {
+//   return (
+//     <div className="mt-2 flex flex-col gap-2.5 px-3.5 text-gray-800">
+//       <p>Lesson types include:</p>
+//       <ul className="ml-10 list-disc">
+//         <li>
+//           <span className="font-semibold">
+//             Teaching game
+//           </span>
+//           : we play, and I try{" "}
+//         </li>
+//         <li>Game review</li>
+//         <li>Interactive game</li>
+//         <li>Playing against</li>
+//       </ul>
+//     </div>
+//   )
+// }
 
 type PriceContainerProps = WithReactChildren
 
@@ -126,7 +147,7 @@ function PricePerHourCard() {
   return (
     <PriceContainer>
       <p className="text-xl font-black">
-        {lang === "pt" ? "R$ 75" : "US$ 19"}
+        {lang === "pt" ? "R$ 75" : "US$ 18"}
       </p>
       <p className="text-gray-700">
         {lang === "pt" ? "por aula*" : "per lesson*"}
