@@ -1,5 +1,7 @@
 "use client"
 
+import { containerOutline } from "@styles"
+
 import { useLang } from "@hooks"
 
 import {
@@ -9,6 +11,7 @@ import {
   FooterLogo,
   GoWithFanaroYouTube,
 } from "@components/common/footer"
+import { WithReactChildren } from "../../types/utils"
 
 export function GoProfPresentationSection() {
   const lang = useLang()
@@ -19,7 +22,7 @@ export function GoProfPresentationSection() {
         <h2 className="text-center text-3xl font-black">
           {lang === "pt" ? "Professor de Go" : "Go Teacher"}
         </h2>
-        <div className="mx-auto flex max-w-sm flex-col gap-2">
+        <div className="mx-auto flex max-w-sm flex-col gap-2 px-2">
           {lang === "pt" ? (
             <>
               <p className="text-center">
@@ -71,6 +74,28 @@ export function GoProfPresentationSection() {
           <FanaroFacebook />
         </div>
       </div>
+      <div className="mt-0.5 flex flex-col gap-2 px-2">
+        <div className="flex w-full flex-row gap-2">
+          <PricePerHourCard />
+          <PricePerPackCard />
+        </div>
+        <div className="flex gap-1 px-3 text-sm text-gray-600">
+          <span className="text-base">*</span>
+          {lang === "pt" ? (
+            <p>
+              Para cada novo aluno, e para cada 4 aulas, eu
+              também ofereço uma partida gratuita contra
+              mim, com comentários breves no final.
+            </p>
+          ) : (
+            <p>
+              For every new student, and for every 4
+              lessons, I also offer a free teaching game,
+              with brief comments at the end.
+            </p>
+          )}
+        </div>
+      </div>
       <CourseVideo
         url={
           lang === "pt"
@@ -80,6 +105,50 @@ export function GoProfPresentationSection() {
         title="Regras do Go"
       />
     </div>
+  )
+}
+
+type PriceContainerProps = WithReactChildren
+
+function PriceContainer({ children }: PriceContainerProps) {
+  return (
+    <div
+      className={`${containerOutline} flex w-full flex-col gap-0.5 bg-gray-50 shadow-sm`}
+    >
+      {children}
+    </div>
+  )
+}
+
+function PricePerHourCard() {
+  const lang = useLang()
+
+  return (
+    <PriceContainer>
+      <p className="text-xl font-black">
+        {lang === "pt" ? "R$ 75" : "US$ 19"}
+      </p>
+      <p className="text-gray-700">
+        {lang === "pt" ? "por aula*" : "per lesson*"}
+      </p>
+    </PriceContainer>
+  )
+}
+
+function PricePerPackCard() {
+  const lang = useLang()
+
+  return (
+    <PriceContainer>
+      <p className="text-xl font-black">
+        {lang === "pt" ? "R$ 275" : "US$ 60"}
+      </p>
+      <p className="text-gray-700">
+        {lang === "pt"
+          ? "pacote de 4 aulas*"
+          : "4-lesson pack*"}
+      </p>
+    </PriceContainer>
   )
 }
 

@@ -2,6 +2,7 @@
 
 ## Priorities
 
+- [ ] Add prices to my lessons.
 - [ ] Convert the `<PostImageWithLegend>` into a component that uses children.
 - [ ] Run my posts through Grammarly or some other autocorrect.
 - [ ] Go diagram numbering should be automatically increasing (but overrideable)
