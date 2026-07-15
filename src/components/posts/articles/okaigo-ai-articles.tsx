@@ -85,10 +85,11 @@ export function OkaoigoAiArticles({ post }: BlogPostProps) {
         </PostParagraph>
         <GoDiagram
           src="/articles/okaigo-ai-articles/okaigo_1.1.svg"
-          size={100}
+          maxHeight={100}
           diaNumber={1}
-          legend="How should you deal with Black's cut?"
-        />
+        >
+          <p>How should you deal with Black&apos;s cut?</p>
+        </GoDiagram>
         <PostBlockQuote>
           You can use Google Translate, or any other
           translator tool, to have access to the original,
@@ -100,10 +101,14 @@ export function OkaoigoAiArticles({ post }: BlogPostProps) {
         </PostParagraph>
         <GoDiagram
           src="/articles/okaigo-ai-articles/okaigo_1.2.svg"
-          size={100}
+          maxHeight={100}
           diaNumber={2}
-          legend="This requires reading, but it's mostly technique at its core."
-        />
+        >
+          <p>
+            This requires reading, but it&apos;s mostly
+            technique at its core.
+          </p>
+        </GoDiagram>
         <PostParagraph>
           If Black A, White B threatens the left Black
           group&apos;s capture while also being an atari on
@@ -116,10 +121,14 @@ export function OkaoigoAiArticles({ post }: BlogPostProps) {
         </PostParagraph>
         <GoDiagram
           src="/articles/okaigo-ai-articles/okaigo_1.3.svg"
-          size={100}
+          maxHeight={100}
           diaNumber={3}
-          legend="White even gets to capture the original cutting stone, A."
-        />
+        >
+          <p>
+            White even gets to capture the original cutting
+            stone, A.
+          </p>
+        </GoDiagram>
       </PostSection>
       <PostSection>
         <PostSectionTitle>
@@ -131,10 +140,11 @@ export function OkaoigoAiArticles({ post }: BlogPostProps) {
         </PostParagraph>
         <GoDiagram
           src="/articles/okaigo-ai-articles/okaigo_3.1.svg"
-          size={100}
+          maxHeight={100}
           diaNumber={4}
-          legend="How can White survive or escape?"
-        />
+        >
+          <p>How can White survive or escape?</p>
+        </GoDiagram>
         <PostParagraph>
           Black doesn&apos;t have the best shape, but,
           still, it looks difficult to live inside that
@@ -142,10 +152,16 @@ export function OkaoigoAiArticles({ post }: BlogPostProps) {
         </PostParagraph>
         <GoDiagram
           src="/articles/okaigo-ai-articles/okaigo_3.2.svg"
-          size={100}
+          maxHeight={100}
           diaNumber={5}
-          legend="Through a sacrifice and a tesuji, White exposes Black's shortage of liberties on the left, and the cutting point at C, all at the same time."
-        />
+        >
+          <p>
+            Through a sacrifice and a tesuji, White exposes
+            Black&apos;s shortage of liberties on the left,
+            and the cutting point at C, all at the same
+            time.
+          </p>
+        </GoDiagram>
         <PostParagraph>
           If Black plays at A, White B is sente for rescuing
           White&apos;s 3 stone. If Black then fixes, the C

@@ -34,19 +34,21 @@ export function PostAiOpeningHierarchy({
           </PostLink>{" "}
           and its variants.
         </PostParagraph>
-        <div className="flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-8">
+        <div className="flex flex-col items-center justify-center px-8 sm:flex-row">
           <GoDiagram
             src="/articles/post-ai-opening-hierarchy/sanrensei_fuseki.svg"
-            size={80}
+            maxHeight={60}
             diaNumber={1}
-            legend="The Sanrensei Fuseki"
-          />
+          >
+            <p>The Sanrensei Fuseki</p>
+          </GoDiagram>
           <GoDiagram
             src="/articles/post-ai-opening-hierarchy/chinese_fuseki.svg"
+            maxHeight={60}
             diaNumber={2}
-            size={80}
-            legend="The Chinese Fuseki"
-          />
+          >
+            <p>The Chinese Fuseki</p>
+          </GoDiagram>
         </div>
         <PostParagraph>
           Now, with AI, things have become much clearer. The

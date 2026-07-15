@@ -47,10 +47,14 @@ export function LittleKnifeGodBooks({
         </PostParagraph>
         <GoDiagram
           src="/articles/little-knife-god-books/kato_chie_vs_yoshihiro_koike.svg"
-          size={100}
+          maxHeight={100}
           diaNumber={1}
-          legend="Kato Chie 3p (White) vs Yoshihiro Koike 7p (Black). Black to play."
-        />
+        >
+          <p>
+            Kato Chie 3p (White) vs Yoshihiro Koike 7p
+            (Black). Black to play.
+          </p>
+        </GoDiagram>
         <PostParagraph>
           Going for a keima is lukewarm, White&apos;s shape
           will get fixed on the outside, and the cut at 4
@@ -58,10 +62,11 @@ export function LittleKnifeGodBooks({
         </PostParagraph>
         <GoDiagram
           src="/articles/little-knife-god-books/kato_chie_vs_yoshihiro_koike_p1.svg"
-          size={100}
+          maxHeight={100}
           diaNumber={2}
-          legend="Lukewarm. And White gets to exploit a cut."
-        />
+        >
+          <p>Lukewarm. And White gets to exploit a cut.</p>
+        </GoDiagram>
         <PostParagraph>
           As a hint, the correct move is very similar to the
           solution to{" "}
@@ -72,19 +77,25 @@ export function LittleKnifeGodBooks({
         </PostParagraph>
         <GoDiagram
           src="/articles/little-knife-god-books/101_weiqi_p1.svg"
-          size={50}
+          maxHeight={60}
           diaNumber={3}
-          legend="Problem 128242 from 101weiqi."
-        />
+        >
+          <p>Problem 128242 from 101weiqi.</p>
+        </GoDiagram>
         <PostParagraph>
           Here&apos;s that problem&apos;s solution:
         </PostParagraph>
         <GoDiagram
           src="/articles/little-knife-god-books/101_weiqi_p3.svg"
-          size={50}
+          maxHeight={60}
           diaNumber={4}
-          legend="Black's marked stones have more liberties than it seems. And, with 1, we can contain White while shortening the group's liberties."
-        />
+        >
+          <p>
+            Black&apos;s marked stones have more liberties
+            than it seems. And, with 1, we can contain White
+            while shortening the group&apos;s liberties.
+          </p>
+        </GoDiagram>
         <PostParagraph>
           The correct move in the game was to apply pressure
           based on Black&apos;s cutting stone in the center.
@@ -93,20 +104,25 @@ export function LittleKnifeGodBooks({
         </PostParagraph>
         <GoDiagram
           src="/articles/little-knife-god-books/kato_chie_vs_yoshihiro_koike_p2.svg"
-          size={100}
+          maxHeight={100}
           diaNumber={5}
-          legend="Applying pressure and creating cutting points on White's shape."
-        />
+        >
+          <p>
+            Applying pressure and creating cutting points on
+            White&apos;s shape.
+          </p>
+        </GoDiagram>
         <PostParagraph>
           If White goes for a capturing race, Black is the
           one ahead actually.
         </PostParagraph>
         <GoDiagram
           src="/articles/little-knife-god-books/kato_chie_vs_yoshihiro_koike_p3.svg"
-          size={100}
+          maxHeight={100}
           diaNumber={6}
-          legend="Black wins most semeais."
-        />
+        >
+          <p>Black wins most semeais.</p>
+        </GoDiagram>
         <PostParagraph>
           The book shows plenty more diagrams, but I&apos;ll
           leave a link to{" "}

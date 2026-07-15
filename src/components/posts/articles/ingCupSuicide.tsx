@@ -56,26 +56,36 @@ export function IngCupSuicide({ post }: BlogPostProps) {
         </PostParagraph>
         <GoDiagram
           src="/articles/ing-cup-suicide/ing_cup_rules_1.svg"
-          size={60}
+          maxHeight={60}
           diaNumber={1}
-          legend="Who wins the capturing race inside? Is it a seki?"
-        />
+        >
+          <p>
+            Who wins the capturing race inside? Is it a
+            seki?
+          </p>
+        </GoDiagram>
         <PostParagraph>
           That capturing race is an example of the &quot;big
           eye kills small eye&quot; principle:
         </PostParagraph>
         <GoDiagram
           src="/articles/ing-cup-suicide/ing_cup_rules_2.svg"
-          size={60}
+          maxHeight={60}
           diaNumber={2}
-          legend="Black 2 and 4 are played elsewhere."
-        />
+        >
+          <p>Black 2 and 4 are played elsewhere.</p>
+        </GoDiagram>
         <GoDiagram
           src="/articles/ing-cup-suicide/ing_cup_rules_3.svg"
-          size={60}
+          maxHeight={60}
           diaNumber={3}
-          legend="Since Black cannot play at A, the triangle points are a privilege of the group with the bigger eye."
-        />
+        >
+          <p>
+            Since Black cannot play at A, the triangle
+            points are a privilege of the group with the
+            bigger eye.
+          </p>
+        </GoDiagram>
         <PostParagraph>
           However, something very unexpected happens when we
           take away the Suicide Rule, which is one of the
@@ -84,10 +94,11 @@ export function IngCupSuicide({ post }: BlogPostProps) {
         </PostParagraph>
         <GoDiagram
           src="/articles/ing-cup-suicide/ing_cup_rules_4.svg"
-          size={60}
-          diaNumber={3}
-          legend="Black can now race with White more freely."
-        />
+          maxHeight={60}
+          diaNumber={4}
+        >
+          <p>Black can now race with White more freely.</p>
+        </GoDiagram>
         <PostParagraph>
           After the inner liberties are freed, Black is able
           to turn the intersections between both groups into

@@ -1,15 +1,20 @@
 import Image from "next/image"
 
-type GoDiagramProps = GoDiagramLegendProps & {
+import { WithReactChildren } from "@types"
+
+type GoDiagramProps = WithReactChildren & {
   src: string
-  size: number
+  alt?: string
+  maxHeight: number
+  diaNumber: number
 }
 
 export function GoDiagram({
   src,
+  alt = "",
+  maxHeight,
   diaNumber,
-  legend,
-  size,
+  children,
 }: GoDiagramProps) {
   return (
     <div className="mx-auto flex w-fit flex-col">
@@ -17,32 +22,15 @@ export function GoDiagram({
         src={src}
         width={0}
         height={0}
-        className={`mt-3.5 mb-1 h-${size} w-auto px-7`}
-        alt={legend}
+        className={`mt-3.5 mb-1 max-h-${maxHeight} w-auto px-3 sm:h-100 sm:px-7`}
+        alt={alt}
       />
-      <GoDiagramLegend
-        diaNumber={diaNumber}
-        legend={legend}
-      />
-    </div>
-  )
-}
-
-type GoDiagramLegendProps = {
-  diaNumber: number
-  legend: string
-}
-
-export function GoDiagramLegend({
-  diaNumber,
-  legend,
-}: GoDiagramLegendProps) {
-  return (
-    <div className="-mt-3 -mb-2 grid grid-cols-[auto_1fr] gap-2 px-12 text-sm sm:text-base">
-      <p className="whitespace-nowrap text-gray-500">
-        Dia. {diaNumber}.
-      </p>
-      <p>{legend}</p>
+      <div className="-mt-3 -mb-2 grid grid-cols-[auto_1fr] gap-2 px-12 text-sm sm:text-base">
+        <p className="whitespace-nowrap text-gray-500">
+          Dia. {diaNumber}.
+        </p>
+        {children}
+      </div>
     </div>
   )
 }

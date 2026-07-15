@@ -94,10 +94,14 @@ export function DowonPairGo({ post }: BlogPostProps) {
         </PostParagraph>
         <GoDiagram
           src="/articles/dowon-pairgo/dowon_pairgo_1.svg"
-          size={100}
+          maxHeight={100}
           diaNumber={1}
-          legend="A mistaken, unexpected cut (8) from my pair Go partner. White should have crawled with 8 at 9."
-        />
+        >
+          <p>
+            A mistaken, unexpected cut (8) from my pair Go
+            partner. White should have crawled with 8 at 9.
+          </p>
+        </GoDiagram>
         <PostParagraph>
           Where should Black play next?
         </PostParagraph>
@@ -123,10 +127,14 @@ export function DowonPairGo({ post }: BlogPostProps) {
         </PostParagraph>
         <GoDiagram
           src="/articles/dowon-pairgo/dowon_pairgo_3.svg"
-          size={100}
+          maxHeight={100}
           diaNumber={2}
-          legend="Black's groups surrounding White's captured stones are bound to get squeezed."
-        />
+        >
+          <p>
+            Black&apos;s groups surrounding White&apos;s
+            captured stones are bound to get squeezed.
+          </p>
+        </GoDiagram>
         <PostParagraph>
           Black has three directions from which to squeezed,
           from A to C, there&apos;s no way to protect them
@@ -139,10 +147,14 @@ export function DowonPairGo({ post }: BlogPostProps) {
         </PostParagraph>
         <GoDiagram
           src="/articles/dowon-pairgo/dowon_pairgo_2.svg"
-          size={100}
+          maxHeight={100}
           diaNumber={3}
-          legend="Black's groups surrounding White's captured stones are bound to get squeezed."
-        />
+        >
+          <p>
+            Black&apos;s groups surrounding White&apos;s
+            captured stones are bound to get squeezed.
+          </p>
+        </GoDiagram>
         <PostParagraph>
           Black gets sente to play 19; but White gets thick
           on the left and bottom-right, the aji in the
@@ -158,10 +170,14 @@ export function DowonPairGo({ post }: BlogPostProps) {
         </PostParagraph>
         <GoDiagram
           src="/articles/dowon-pairgo/dowon_pairgo_4.svg"
-          size={100}
+          maxHeight={100}
           diaNumber={4}
-          legend="Black's thickness and outside trump capturing a sizeable chunk on the side."
-        />
+        >
+          <p>
+            Black&apos;s thickness and outside trump
+            capturing a sizeable chunk on the side.
+          </p>
+        </GoDiagram>
         <PostParagraph>
           Black 1 damages the A stone while thickening out
           Black&apos;s corner and outside, which grants
