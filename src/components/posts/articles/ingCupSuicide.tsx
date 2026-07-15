@@ -6,6 +6,7 @@ import {
   PostSection,
   PostLink,
   PostSectionTitle,
+  PostImageWithLegend,
 } from "@components/posts/post"
 import { GoDiagram } from "../goDiagram"
 
@@ -23,6 +24,11 @@ export function IngCupSuicide({ post }: BlogPostProps) {
           rule was unnecessary, and that the game would be
           strictly richer if we dropped it.
         </PostParagraph>
+        <PostImageWithLegend
+          src="/articles/ing-cup-suicide/psygo_corner_1.jpeg"
+          legend="psygo's Corner's first article."
+          className="mx-7 mb-0 h-full w-80 rounded-xl"
+        />
         <PostParagraph>
           My opinion remains the same. Let&apos;s now take a
           look at how it was actually even reinforced.
