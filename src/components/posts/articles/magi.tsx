@@ -9,7 +9,6 @@ import {
   PostCode,
   PostBlockQuote,
   PostSectionTitle,
-  PostImage,
   PostIframe,
 } from "@components/posts/post"
 
@@ -32,14 +31,24 @@ export function Magi({ post }: BlogPostProps) {
           </PostLink>{" "}
           could fill in the gap.
         </PostParagraph>
-        <PostImage
+        <PostImageWithLegend
           src="/articles/magi/magi_demo_1.png"
+          height={425}
+          width={425}
+          className="rounded-sm"
           alt="Magi Demo 1"
-        />
-        <PostImage
+        >
+          <p></p>
+        </PostImageWithLegend>
+        <PostImageWithLegend
           src="/articles/magi/magi_demo_3.png"
+          height={425}
+          width={425}
+          className="rounded-sm"
           alt="Magi Demo 2"
-        />
+        >
+          <p></p>
+        </PostImageWithLegend>
         <PostParagraph>
           Magi is essentially a 2D version of Reddit, in
           which users create posts on a canvas and use
@@ -80,9 +89,13 @@ export function Magi({ post }: BlogPostProps) {
         </PostParagraph>
         <PostImageWithLegend
           src="/articles/magi/Excalidraw.png"
-          legend="Excalidraw"
-          className="mb-0 h-full w-120 px-8"
-        />
+          height={425}
+          width={425}
+          className="rounded-sm"
+          alt="Excalidraw"
+        >
+          <p>Excalidraw</p>
+        </PostImageWithLegend>
         <PostParagraph>
           In the end, the app&apos;s structure consists of
           an HTML <PostCode>&lt;canvas&gt;</PostCode> layer

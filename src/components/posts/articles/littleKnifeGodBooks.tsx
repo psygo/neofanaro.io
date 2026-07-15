@@ -150,7 +150,7 @@ export function LittleKnifeGodBooks({
           src="/articles/little-knife-god-books/little_knife_god_cover_1.png"
           height={225}
           width={225}
-          className="rounded-lg"
+          className="rounded-sm"
           alt="Cover 1"
         >
           <p></p>
@@ -159,7 +159,7 @@ export function LittleKnifeGodBooks({
           src="/articles/little-knife-god-books/little_knife_god_cover_2.png"
           height={225}
           width={225}
-          className="rounded-lg"
+          className="rounded-sm"
           alt="Cover 2"
         >
           <p></p>
