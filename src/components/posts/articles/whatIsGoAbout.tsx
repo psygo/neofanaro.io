@@ -19,7 +19,11 @@ export function WhatIsGoAbout({ post }: BlogPostProps) {
           Last year, as a way of practicing Korean, I asked
           a professional player, namely{" "}
           <PostLink href="https://kbcl.baduk.or.kr/record/player_view.asp?gisa_code=10001333">
-            Lee Uju 이우주 1p
+            Lee Uju{" "}
+            <span className="whitespace-nowrap">
+              이우주
+            </span>{" "}
+            1p
           </PostLink>
           , what she thought Go was about:
         </PostParagraph>

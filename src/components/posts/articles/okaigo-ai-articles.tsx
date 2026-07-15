@@ -53,7 +53,10 @@ export function OkaoigoAiArticles({ post }: BlogPostProps) {
           <PostLink href="https://senseis.xmp.net/?FineArt">
             FineArt
           </PostLink>
-          &apos;s &mdash; 绝艺 (jué yì) in Chinese or 絶芸
+          &apos;s &mdash;{" "}
+          <span className="whitespace-nowrap">绝艺</span>{" "}
+          (jué yì) in Chinese or{" "}
+          <span className="whitespace-nowrap">絶芸</span>{" "}
           (zetsu gei) in Japanese &mdash; games on the Fox
           server, played either against pros or extremely
           strong amateurs. Those games are a treasure trove

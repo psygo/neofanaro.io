@@ -20,7 +20,10 @@ export function LittleKnifeGodBooks({
           4d EGF, introduced me to a little-known &mdash; in
           the West &mdash; Taiwanese Go books author,{" "}
           <PostLink href="https://www.facebook.com/profile.php?id=100063804315640">
-            小刀神 or Little Knife God
+            <span className="whitespace-nowrap">
+              小刀神
+            </span>{" "}
+            or Little Knife God
           </PostLink>
           , who&apos;s very active on Facebook.
         </PostParagraph>

@@ -16,10 +16,14 @@ export function DowonPairGo({ post }: BlogPostProps) {
     <Post data={post}>
       <PostSection>
         <PostParagraph>
-          During my stay at BIBA, our studies and activities
-          were almost always at Flower Baduk, a Go center
-          located at the heart of Seoul, in Chungmuro
-          충무로.
+          During my stay at{" "}
+          <PostLink href="https://www.bibabaduk.online/">
+            BIBA
+          </PostLink>
+          , our studies and activities were almost always at
+          Flower Baduk, a Go center located at the heart of
+          Seoul, in Chungmuro{" "}
+          <span className="whitespace-nowrap">충무로</span>.
         </PostParagraph>
         <PostParagraph>
           <PostLink href="https://www.cyberoro.com/news/N_news_view.oro?num=531154">
@@ -30,7 +34,11 @@ export function DowonPairGo({ post }: BlogPostProps) {
           to provide in-person lessons with pro players to
           adult amateurs. Nowadays, the sole owner is{" "}
           <PostLink href="https://senseis.xmp.net/?MoonDowon">
-            Moon Dowon 문도원 3p
+            Moon Dowon{" "}
+            <span className="whitespace-nowrap">
+              문도원
+            </span>{" "}
+            3p
           </PostLink>
           , one of the four founders, one of the main
           casters on Baduk TV, and a former holder of the
