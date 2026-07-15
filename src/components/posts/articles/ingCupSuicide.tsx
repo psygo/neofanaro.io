@@ -98,9 +98,12 @@ export function IngCupSuicide({ post }: BlogPostProps) {
         <PostParagraph>
           However, something very unexpected happens when we
           take away the Suicide Rule, which is one of the
-          Ing Cup&apos;s quirks &mdash; the Ing Cup is
-          considered to be the Olympics of Go, by the way,
-          its most important tournament, happening only
+          Ing Cup&apos;s quirks &mdash; the{" "}
+          <PostLink href="https://senseis.xmp.net/?IngCup">
+            Ing Cup
+          </PostLink>{" "}
+          is considered to be the Olympics of Go, by the
+          way, its most important tournament, happening only
           every four years. What then is the outcome if
           Black is able to play at A in diagram 3?
         </PostParagraph>
