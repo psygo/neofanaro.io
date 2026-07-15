@@ -5,24 +5,26 @@ import { WithReactChildren } from "@types"
 type GoDiagramProps = WithReactChildren & {
   src: string
   alt?: string
-  maxHeight: number
+  height?: number
+  width?: number
   diaNumber: number
 }
 
 export function GoDiagram({
   src,
   alt = "",
-  maxHeight,
+  height = 400,
+  width = 400,
   diaNumber,
   children,
 }: GoDiagramProps) {
   return (
-    <div className="mx-auto mt-2 mb-6 flex w-fit flex-col gap-3 pt-3">
+    <div className="flex flex-col items-center gap-3 px-4 pt-3 pb-3">
       <Image
         src={src}
-        width={0}
-        height={0}
-        className={`mt-0 mb-0 max-h-${maxHeight} w-auto px-3 sm:h-100 sm:px-7`}
+        width={width}
+        height={height}
+        className={`mt-0 mb-0`}
         alt={alt}
       />
       <div className="grid grid-cols-[auto_1fr] gap-2 px-12 text-sm sm:text-base [&>p]:mt-0 [&>p]:mb-0">

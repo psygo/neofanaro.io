@@ -48,7 +48,6 @@ export function LittleKnifeGodBooks({
         </PostParagraph>
         <GoDiagram
           src="/articles/little-knife-god-books/kato_chie_vs_yoshihiro_koike.svg"
-          maxHeight={100}
           diaNumber={1}
         >
           <p>
@@ -63,7 +62,6 @@ export function LittleKnifeGodBooks({
         </PostParagraph>
         <GoDiagram
           src="/articles/little-knife-god-books/kato_chie_vs_yoshihiro_koike_p1.svg"
-          maxHeight={100}
           diaNumber={2}
         >
           <p>Lukewarm. And White gets to exploit a cut.</p>
@@ -78,7 +76,8 @@ export function LittleKnifeGodBooks({
         </PostParagraph>
         <GoDiagram
           src="/articles/little-knife-god-books/101_weiqi_p1.svg"
-          maxHeight={60}
+          height={240}
+          width={240}
           diaNumber={3}
         >
           <p>Problem 128242 from 101weiqi.</p>
@@ -88,7 +87,8 @@ export function LittleKnifeGodBooks({
         </PostParagraph>
         <GoDiagram
           src="/articles/little-knife-god-books/101_weiqi_p3.svg"
-          maxHeight={60}
+          height={240}
+          width={240}
           diaNumber={4}
         >
           <p>
@@ -105,7 +105,6 @@ export function LittleKnifeGodBooks({
         </PostParagraph>
         <GoDiagram
           src="/articles/little-knife-god-books/kato_chie_vs_yoshihiro_koike_p2.svg"
-          maxHeight={100}
           diaNumber={5}
         >
           <p>
@@ -119,7 +118,6 @@ export function LittleKnifeGodBooks({
         </PostParagraph>
         <GoDiagram
           src="/articles/little-knife-god-books/kato_chie_vs_yoshihiro_koike_p3.svg"
-          maxHeight={100}
           diaNumber={6}
         >
           <p>Black wins most semeais.</p>

@@ -90,7 +90,6 @@ export function OkaoigoAiArticles({ post }: BlogPostProps) {
         </PostParagraph>
         <GoDiagram
           src="/articles/okaigo-ai-articles/okaigo_1.1.svg"
-          maxHeight={100}
           diaNumber={1}
         >
           <p>How should you deal with Black&apos;s cut?</p>
@@ -106,7 +105,6 @@ export function OkaoigoAiArticles({ post }: BlogPostProps) {
         </PostParagraph>
         <GoDiagram
           src="/articles/okaigo-ai-articles/okaigo_1.2.svg"
-          maxHeight={100}
           diaNumber={2}
         >
           <p>
@@ -126,7 +124,6 @@ export function OkaoigoAiArticles({ post }: BlogPostProps) {
         </PostParagraph>
         <GoDiagram
           src="/articles/okaigo-ai-articles/okaigo_1.3.svg"
-          maxHeight={100}
           diaNumber={3}
         >
           <p>
@@ -145,7 +142,6 @@ export function OkaoigoAiArticles({ post }: BlogPostProps) {
         </PostParagraph>
         <GoDiagram
           src="/articles/okaigo-ai-articles/okaigo_3.1.svg"
-          maxHeight={100}
           diaNumber={4}
         >
           <p>How can White survive or escape?</p>
@@ -157,7 +153,6 @@ export function OkaoigoAiArticles({ post }: BlogPostProps) {
         </PostParagraph>
         <GoDiagram
           src="/articles/okaigo-ai-articles/okaigo_3.2.svg"
-          maxHeight={100}
           diaNumber={5}
         >
           <p>

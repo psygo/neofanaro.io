@@ -125,7 +125,6 @@ export function DowonPairGo({ post }: BlogPostProps) {
         </PostParagraph>
         <GoDiagram
           src="/articles/dowon-pairgo/dowon_pairgo_1.svg"
-          maxHeight={100}
           diaNumber={1}
         >
           <p>
@@ -158,7 +157,6 @@ export function DowonPairGo({ post }: BlogPostProps) {
         </PostParagraph>
         <GoDiagram
           src="/articles/dowon-pairgo/dowon_pairgo_3.svg"
-          maxHeight={100}
           diaNumber={2}
         >
           <p>
@@ -178,7 +176,6 @@ export function DowonPairGo({ post }: BlogPostProps) {
         </PostParagraph>
         <GoDiagram
           src="/articles/dowon-pairgo/dowon_pairgo_2.svg"
-          maxHeight={100}
           diaNumber={3}
         >
           <p>
@@ -201,7 +198,6 @@ export function DowonPairGo({ post }: BlogPostProps) {
         </PostParagraph>
         <GoDiagram
           src="/articles/dowon-pairgo/dowon_pairgo_4.svg"
-          maxHeight={100}
           diaNumber={4}
         >
           <p>

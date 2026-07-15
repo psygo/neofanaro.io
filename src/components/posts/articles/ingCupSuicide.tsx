@@ -62,7 +62,8 @@ export function IngCupSuicide({ post }: BlogPostProps) {
         </PostParagraph>
         <GoDiagram
           src="/articles/ing-cup-suicide/ing_cup_rules_1.svg"
-          maxHeight={60}
+          width={200}
+          height={200}
           diaNumber={1}
         >
           <p>
@@ -76,14 +77,16 @@ export function IngCupSuicide({ post }: BlogPostProps) {
         </PostParagraph>
         <GoDiagram
           src="/articles/ing-cup-suicide/ing_cup_rules_2.svg"
-          maxHeight={60}
+          width={200}
+          height={200}
           diaNumber={2}
         >
           <p>Black 2 and 4 are played elsewhere.</p>
         </GoDiagram>
         <GoDiagram
           src="/articles/ing-cup-suicide/ing_cup_rules_3.svg"
-          maxHeight={60}
+          width={200}
+          height={200}
           diaNumber={3}
         >
           <p>
@@ -100,7 +103,8 @@ export function IngCupSuicide({ post }: BlogPostProps) {
         </PostParagraph>
         <GoDiagram
           src="/articles/ing-cup-suicide/ing_cup_rules_4.svg"
-          maxHeight={60}
+          width={200}
+          height={200}
           diaNumber={4}
         >
           <p>Black can now race with White more freely.</p>
