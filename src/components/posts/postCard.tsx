@@ -21,24 +21,27 @@ export function PostCard({ post }: PostCardProps) {
   }
 
   return (
-    <LangLink
-      href={`/posts/${post.path}`}
-      className={`flex flex-col gap-2 border-l-[7px] border-l-${borderColor} ${cardDecoration}`}
-    >
-      <PostTitle>{post.title}</PostTitle>
-      <div className="mt-1 mb-1 flex flex-wrap items-center gap-3 sm:items-end-safe">
-        <PostViews
-          views={post.views}
-          className="flex gap-1 text-sm font-bold text-slate-700"
+    <LangLink href={`/posts/${post.path}`}>
+      <div
+        className={`flex flex-col gap-2 border-l-[7px] border-l-${borderColor} ${cardDecoration}`}
+      >
+        <PostTitle>{post.title}</PostTitle>
+        <div className="mt-1 mb-1 flex flex-wrap items-center gap-3 sm:items-end-safe">
+          <PostViews
+            views={post.views}
+            className="flex gap-1 text-sm font-bold text-slate-700"
+          />
+          <PostTags tags={post.tags} />
+          <PostLang lang={post.lang} />
+        </div>
+        <PostDate
+          date={new Date(post.date)}
+          className="pb-1 text-sm font-semibold text-slate-500"
         />
-        <PostTags tags={post.tags} />
-        <PostLang lang={post.lang} />
+        <PostDescription>
+          {post.description}
+        </PostDescription>
       </div>
-      <PostDate
-        date={new Date(post.date)}
-        className="pb-1 text-sm font-semibold text-slate-500"
-      />
-      <PostDescription>{post.description}</PostDescription>
     </LangLink>
   )
 }
