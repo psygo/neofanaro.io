@@ -5,9 +5,10 @@ import {
   Post,
   PostSection,
   PostLink,
-  PostImageWithLegend,
   PostBlockQuote,
   PostSectionTitle,
+  PostImageWithLegend,
+  NoWrap,
 } from "@components/posts/post"
 import { GoDiagram } from "../goDiagram"
 
@@ -22,8 +23,7 @@ export function DowonPairGo({ post }: BlogPostProps) {
           </PostLink>
           , our studies and activities were almost always at
           Flower Baduk, a Go center located at the heart of
-          Seoul, in Chungmuro{" "}
-          <span className="whitespace-nowrap">충무로</span>.
+          Seoul, in Chungmuro <NoWrap>충무로</NoWrap>.
         </PostParagraph>
         <PostParagraph>
           <PostLink href="https://www.cyberoro.com/news/N_news_view.oro?num=531154">
@@ -34,11 +34,7 @@ export function DowonPairGo({ post }: BlogPostProps) {
           to provide in-person lessons with pro players to
           adult amateurs. Nowadays, the sole owner is{" "}
           <PostLink href="https://senseis.xmp.net/?MoonDowon">
-            Moon Dowon{" "}
-            <span className="whitespace-nowrap">
-              문도원
-            </span>{" "}
-            3p
+            Moon Dowon <NoWrap>문도원</NoWrap> 3p
           </PostLink>
           , one of the four founders, one of the main
           casters on Baduk TV, and a former holder of the
@@ -49,19 +45,43 @@ export function DowonPairGo({ post }: BlogPostProps) {
         </PostParagraph>
         <PostImageWithLegend
           src="/articles/dowon-pairgo/moon_dowon.webp"
-          legend="Moon Dowon 문도원 3p"
-          className="mx-7 mb-0 h-full w-50 rounded-xl"
-        />
+          height={100}
+          width={225}
+          className="rounded-xl"
+        >
+          <p>
+            Moon Dowon <NoWrap>문도원</NoWrap> 3p
+          </p>
+        </PostImageWithLegend>
         <PostImageWithLegend
           src="/articles/dowon-pairgo/flower_baduk_founders.jpg"
-          legend="Flower Baduk's founders, from left to right: Lee Dahye 이다혜 4p, Kim Hyerim 김혜림 2p, Bae Yunjin 배윤진 3p and Moon Dowon 문도원 3p."
-          className="mx-7 mb-0 h-full w-80 rounded-xl sm:w-100"
-        />
+          height={100}
+          width={325}
+          className="rounded-xl"
+        >
+          <p>
+            Flower Baduk&apos;s founders, from left to
+            right: Lee Dahye <NoWrap>이다혜</NoWrap> 4p, Kim
+            Hyerim <NoWrap>김혜림</NoWrap> 2p, Bae Yunjin{" "}
+            <NoWrap>배윤진</NoWrap> 3p and Moon Dowon{" "}
+            <NoWrap>문도원</NoWrap> 3p.
+          </p>
+        </PostImageWithLegend>
         <PostImageWithLegend
           src="/articles/dowon-pairgo/Flower_Baduk_2.jpg"
-          legend="A panel of Flower Baduk's founders, from left to right: Lee Dahye 이다혜 4p, Bae Yunjin 배윤진 3p, Moon Dowon 문도원 3p and Kim Hyerim 김혜림 2p."
-          className="mx-7 mb-0 h-full w-80 rounded-xl sm:w-100"
-        />
+          height={100}
+          width={325}
+          className="rounded-xl"
+        >
+          <p>
+            A panel of Flower Baduk&apos;s founders, from
+            left to right: Lee Dahye <NoWrap>이다혜</NoWrap>{" "}
+            4p, Bae Yunjin
+            <NoWrap>배윤진</NoWrap> 3p, Moon Dowon{" "}
+            <NoWrap>문도원</NoWrap> 3p and Kim Hyerim{" "}
+            <NoWrap>김혜림</NoWrap> 2p.
+          </p>
+        </PostImageWithLegend>
         <PostParagraph>
           The ambiance is always pleasant at Flower Baduk,
           and that&apos;s certainly one of its main upsides
@@ -70,9 +90,12 @@ export function DowonPairGo({ post }: BlogPostProps) {
         </PostParagraph>
         <PostImageWithLegend
           src="/articles/dowon-pairgo/Flower_Baduk_4.jpg"
-          legend="Flower Baduk"
-          className="mx-7 mb-0 h-full w-80 rounded-xl sm:w-100"
-        />
+          height={100}
+          width={325}
+          className="rounded-xl"
+        >
+          <p>Flower Baduk</p>
+        </PostImageWithLegend>
         <PostBlockQuote>
           I studied with BIBA at Flower Baduk for 6 months
           in 2025. Overall, I studied in Asia for a year,

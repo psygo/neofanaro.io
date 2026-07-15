@@ -5,10 +5,11 @@ import {
   Post,
   PostSection,
   PostLink,
-  PostImageWithLegend,
   PostBlockQuote,
   PostSectionTitle,
   PostUnorderedList,
+  PostImageWithLegend,
+  NoWrap,
 } from "@components/posts/post"
 import { GoDiagram } from "../goDiagram"
 
@@ -43,9 +44,12 @@ export function OkaoigoAiArticles({ post }: BlogPostProps) {
         </PostParagraph>
         <PostImageWithLegend
           src="/articles/okaigo-ai-articles/okaigo_on_note.png"
-          legend="okaoigo's Articles on note.com"
-          className="mx-7 mb-0 h-full w-115 rounded-xl"
-        />
+          height={425}
+          width={425}
+          className="rounded-xl"
+        >
+          <p>okaoigo&apos;s Articles on note.com</p>
+        </PostImageWithLegend>
         <PostParagraph>
           To me, this teacher&apos;s biggest differentiator
           is his series on AI brilliances. He seems to
@@ -53,14 +57,12 @@ export function OkaoigoAiArticles({ post }: BlogPostProps) {
           <PostLink href="https://senseis.xmp.net/?FineArt">
             FineArt
           </PostLink>
-          &apos;s &mdash;{" "}
-          <span className="whitespace-nowrap">绝艺</span>{" "}
-          (jué yì) in Chinese or{" "}
-          <span className="whitespace-nowrap">絶芸</span>{" "}
-          (zetsu gei) in Japanese &mdash; games on the Fox
-          server, played either against pros or extremely
-          strong amateurs. Those games are a treasure trove
-          of incredible technique.
+          &apos;s &mdash; <NoWrap>绝艺</NoWrap> (jué yì) in
+          Chinese or <NoWrap>絶芸</NoWrap> (zetsu gei) in
+          Japanese &mdash; games on the Fox server, played
+          either against pros or extremely strong amateurs.
+          Those games are a treasure trove of incredible
+          technique.
         </PostParagraph>
 
         <PostBlockQuote>

@@ -297,31 +297,36 @@ export function PostImage({
   )
 }
 
-type PostImageWithLegendProps = {
+type PostImageWithLegendProps = WithReactChildren & {
   src: string
-  legend: string
-  className: string
+  alt?: string
+  height?: number
+  width?: number
+  className?: string
 }
 
 export function PostImageWithLegend({
   src,
-  legend,
-  className,
+  alt = "",
+  height = 300,
+  width = 300,
+  className = "",
+  children,
 }: PostImageWithLegendProps) {
   return (
-    <div className="-mt-3 flex flex-col items-center">
+    <div className="flex flex-col items-center gap-2 pt-4 pb-2.5">
       <Image
         loading="eager"
         src={src}
-        width={0}
-        height={0}
+        height={height}
+        width={width}
         sizes="100vw"
-        className={className}
-        alt={legend}
+        alt={alt}
+        className={`mt-0 mb-0 ${className}`}
       />
-      <p className="mt-2 mb-2 px-10 text-sm text-slate-600 sm:text-base">
-        {legend}
-      </p>
+      <div className="px-10 text-sm text-slate-600 sm:text-base [&>p]:mt-0 [&>p]:mb-0">
+        {children}
+      </div>
     </div>
   )
 }
@@ -442,4 +447,13 @@ export function PostPDFViewer({ src }: PostPDFViewerProps) {
     />
   )
 }
+
 // ---------------------------------------------------------
+
+type NoWrapProps = WithReactChildren
+
+export function NoWrap({ children }: NoWrapProps) {
+  return (
+    <span className="whitespace-nowrap">{children}</span>
+  )
+}

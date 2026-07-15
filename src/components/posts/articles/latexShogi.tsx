@@ -5,11 +5,11 @@ import {
   Post,
   PostSection,
   PostLink,
-  PostImageWithLegend,
   PostSectionTitle,
   PostPre,
   PostPDFViewer,
   PostBlockQuote,
+  PostImageWithLegend,
 } from "@components/posts/post"
 
 const latexCode = String.raw`
@@ -61,11 +61,9 @@ export function LatexShogi({ post }: BlogPostProps) {
           , a package which allows writers to draw vector
           diagrams for Japanese chess, or shogi, with LaTeX.
         </PostParagraph>
-        <PostImageWithLegend
-          src="/articles/latex-shogi/sample_1.svg"
-          legend="An example diagram using all the pieces."
-          className="mx-7 mb-0 h-full w-full max-w-80"
-        />
+        <PostImageWithLegend src="/articles/latex-shogi/sample_1.svg">
+          <p>An example diagram using all the pieces.</p>
+        </PostImageWithLegend>
         <PostParagraph>
           That project started as an adaptation of the
           package I had built for drawing LaTeX vector
@@ -80,11 +78,12 @@ export function LatexShogi({ post }: BlogPostProps) {
           </PostLink>
           .
         </PostParagraph>
-        <PostImageWithLegend
-          src="/articles/latex-shogi/shogi_problema_1.svg"
-          legend="Another example diagram, this time with coordinates."
-          className="mx-7 mb-0 h-full w-full max-w-80"
-        />
+        <PostImageWithLegend src="/articles/latex-shogi/shogi_problema_1.svg">
+          <p>
+            Another example diagram, this time with
+            coordinates.
+          </p>
+        </PostImageWithLegend>
         <PostParagraph>
           Through code that&apos;s as simple as{" "}
           <PostLink href="https://github.com/psygo/latex_shogi/blob/main/src/shogi_diagram_export.tex">
@@ -99,11 +98,14 @@ export function LatexShogi({ post }: BlogPostProps) {
           which is what you&apos;re gonna find in most shogi
           books:
         </PostParagraph>
-        <PostImageWithLegend
-          src="/articles/latex-shogi/shogi_diagram_export.svg"
-          legend='A square diagram example, the more common format in shogi books. Note that we do have the "mochigoma" feature, that is, the captured pieces on the side of the board.'
-          className="mx-7 mb-0 h-full w-full max-w-80"
-        />
+        <PostImageWithLegend src="/articles/latex-shogi/shogi_diagram_export.svg">
+          <p>
+            A square diagram example, the more common format
+            in shogi books. Note that we do have the
+            &quot;mochigoma&quot; feature, that is, the
+            captured pieces on the side of the board.
+          </p>
+        </PostImageWithLegend>
         <PostParagraph>
           Here&apos;s a{" "}
           <PostLink href="/articles/latex-shogi/sample.pdf">

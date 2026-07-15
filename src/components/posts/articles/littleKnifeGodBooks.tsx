@@ -5,7 +5,8 @@ import {
   Post,
   PostSection,
   PostLink,
-  PostImage,
+  NoWrap,
+  PostImageWithLegend,
 } from "@components/posts/post"
 import { GoDiagram } from "@components/posts/goDiagram"
 
@@ -20,10 +21,7 @@ export function LittleKnifeGodBooks({
           4d EGF, introduced me to a little-known &mdash; in
           the West &mdash; Taiwanese Go books author,{" "}
           <PostLink href="https://www.facebook.com/profile.php?id=100063804315640">
-            <span className="whitespace-nowrap">
-              小刀神
-            </span>{" "}
-            or Little Knife God
+            <NoWrap>小刀神</NoWrap> or Little Knife God
           </PostLink>
           , who&apos;s very active on Facebook.
         </PostParagraph>
@@ -148,16 +146,24 @@ export function LittleKnifeGodBooks({
           which are one of his main targets, since most of
           his in-person students seem to be of that age.
         </PostParagraph>
-        <PostImage
+        <PostImageWithLegend
           src="/articles/little-knife-god-books/little_knife_god_cover_1.png"
+          height={225}
+          width={225}
+          className="rounded-lg"
           alt="Cover 1"
-          className="mx-auto h-full w-50"
-        />
-        <PostImage
+        >
+          <p></p>
+        </PostImageWithLegend>
+        <PostImageWithLegend
           src="/articles/little-knife-god-books/little_knife_god_cover_2.png"
+          height={225}
+          width={225}
+          className="rounded-lg"
           alt="Cover 2"
-          className="mx-auto h-full w-50"
-        />
+        >
+          <p></p>
+        </PostImageWithLegend>
       </PostSection>
     </Post>
   )

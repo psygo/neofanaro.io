@@ -7,6 +7,7 @@ import {
   PostLink,
   PostSectionTitle,
   PostImageWithLegend,
+  NoWrap,
 } from "@components/posts/post"
 import { GoDiagram } from "../goDiagram"
 
@@ -26,9 +27,10 @@ export function IngCupSuicide({ post }: BlogPostProps) {
         </PostParagraph>
         <PostImageWithLegend
           src="/articles/ing-cup-suicide/psygo_corner_1.jpeg"
-          legend="psygo's Corner's first article."
-          className="mx-7 mb-0 h-full w-80 rounded-xl"
-        />
+          className="rounded-xl"
+        >
+          <p>psygo&apos;s Corner&apos;s first article.</p>
+        </PostImageWithLegend>
         <PostParagraph>
           My opinion remains the same. Let&apos;s now take a
           look at how it was actually even reinforced.
@@ -40,9 +42,7 @@ export function IngCupSuicide({ post }: BlogPostProps) {
         </PostSection>
         <PostParagraph>
           A few months after that article went public, Park
-          Jeongsu{" "}
-          <span className="whitespace-nowrap">박정수</span>{" "}
-          4p, one of{" "}
+          Jeongsu <NoWrap>박정수</NoWrap> 4p, one of{" "}
           <PostLink href="https://www.bibabaduk.online/">
             BIBA
           </PostLink>

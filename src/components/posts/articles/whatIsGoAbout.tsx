@@ -6,9 +6,10 @@ import {
   PostSection,
   PostLink,
   PostUnorderedList,
-  PostImageWithLegend,
   PostYouTubeIframe,
   PostDivider,
+  NoWrap,
+  PostImageWithLegend,
 } from "@components/posts/post"
 
 export function WhatIsGoAbout({ post }: BlogPostProps) {
@@ -19,11 +20,7 @@ export function WhatIsGoAbout({ post }: BlogPostProps) {
           Last year, as a way of practicing Korean, I asked
           a professional player, namely{" "}
           <PostLink href="https://kbcl.baduk.or.kr/record/player_view.asp?gisa_code=10001333">
-            Lee Uju{" "}
-            <span className="whitespace-nowrap">
-              이우주
-            </span>{" "}
-            1p
+            Lee Uju <NoWrap>이우주</NoWrap> 1p
           </PostLink>
           , what she thought Go was about:
         </PostParagraph>
@@ -41,9 +38,14 @@ export function WhatIsGoAbout({ post }: BlogPostProps) {
         </PostParagraph>
         <PostImageWithLegend
           src="/articles/what-is-go-about/lee_uju.jpeg"
-          legend="Lee Uju 이우주 1p"
-          className="mx-7 mb-0 h-full w-80 rounded-xl"
-        />
+          height={325}
+          width={325}
+          className="rounded-xl"
+        >
+          <p>
+            Lee Uju <NoWrap>이우주</NoWrap> 1p
+          </p>
+        </PostImageWithLegend>
         <PostParagraph>
           Her answer was <em>efficiency</em>. However, the
           intensity behind it surprised me quite a bit. The
