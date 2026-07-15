@@ -12,18 +12,21 @@ export type PostCardProps = {
 }
 
 export function PostCard({ post }: PostCardProps) {
-  let borderColor = "gray-800"
+  let borderColor = "oklch(21% 0.034 264.665)"
 
   if (post.tags.includes("baduk")) {
-    borderColor = "yellow-500"
+    borderColor = "oklch(79.5% 0.184 86.047)"
   } else if (post.tags.includes("software")) {
-    borderColor = "amber-600"
+    borderColor = "oklch(66.6% 0.179 58.318)"
   }
 
   return (
     <LangLink href={`/posts/${post.path}`}>
       <div
-        className={`flex flex-col gap-2 border-l-[7px] border-l-${borderColor} ${cardDecoration}`}
+        style={{
+          borderLeftColor: borderColor,
+        }}
+        className={`flex flex-col gap-2 border-l-[7px] ${cardDecoration}`}
       >
         <PostTitle>{post.title}</PostTitle>
         <div className="mt-1 mb-1 flex flex-wrap items-center gap-3 sm:items-end-safe">
