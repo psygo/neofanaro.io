@@ -10,6 +10,7 @@ import { CpiSuspense } from "@components/common/cpiSuspense"
 
 import {
   DowonPairGo,
+  GobanWeb,
   IngCupSuicide,
   LatexShogi,
   LittleKnifeGodBooks,
@@ -71,6 +72,8 @@ function whichBlogPost(path: string, post: PostFromDb) {
       return <LatexShogi post={post} />
     case "ing-cup-suicide":
       return <IngCupSuicide post={post} />
+    case "goban-web":
+      return <GobanWeb post={post} />
     default:
       return <></>
   }
