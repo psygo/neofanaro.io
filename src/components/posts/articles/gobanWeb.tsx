@@ -8,6 +8,7 @@ import {
   PostSectionTitle,
   PostBlockQuote,
 } from "@components/posts/post"
+import { WgoPlayer } from "@components/posts/wgoPlayer"
 
 export function GobanWeb({ post }: BlogPostProps) {
   return (
@@ -116,7 +117,12 @@ export function GobanWeb({ post }: BlogPostProps) {
           non-web frameworks also offer ports for Web
           Components.
         </PostParagraph>
-        {/* TODO: Also use wgo.js here, as a point of comparison. */}
+        <PostParagraph>
+          Here is wgo.js in action, showing Shusaku&apos;s
+          famous Ear-Reddening Game (1846) — use the
+          controls to step through the moves:
+        </PostParagraph>
+        <WgoPlayer sgf="/articles/goban-web/xu_wenyan_vs_risa_ueno_17_07_2026.sgf" />
         {/* TODO: Show how I use SVGs from LaTeX project here. */}
       </PostSection>
     </Post>
