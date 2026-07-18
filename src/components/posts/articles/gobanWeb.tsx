@@ -6,12 +6,21 @@ import {
   PostSection,
   PostLink,
   PostSectionTitle,
+  PostBlockQuote,
 } from "@components/posts/post"
 
 export function GobanWeb({ post }: BlogPostProps) {
   return (
     <Post data={post}>
       <PostSection>
+        <PostBlockQuote>
+          If you would like to directly skip to the code,
+          here&apos;s the project on Github:{" "}
+          <PostLink href="https://github.com/psygo/goban_web">
+            @psygo/goban_web
+          </PostLink>
+          .
+        </PostBlockQuote>
         <PostParagraph>
           Up till now, still, the most used web viewer for
           the game of Go is{" "}
@@ -72,6 +81,19 @@ export function GobanWeb({ post }: BlogPostProps) {
           game changer here, and even all the AI haters will
           have to accept things as they are.
         </PostParagraph>
+        <PostParagraph>
+          Through{" "}
+          <PostLink href="https://claude.com/product/claude-code">
+            Claude Code
+          </PostLink>{" "}
+          more specifically, I was able to create a new
+          viewer in a matter of a few days, with a few dozen
+          customizable parameters even. At the very least,
+          this speed is an amazing tool for experimentation.
+          And, given that I do have professional experience
+          with Web Components, I can safely say the code is
+          of pretty good quality as well.
+        </PostParagraph>
       </PostSection>
       <PostSection>
         <PostSectionTitle>
@@ -87,8 +109,15 @@ export function GobanWeb({ post }: BlogPostProps) {
           <PostLink href="https://lit.dev/">
             Lit Framework
           </PostLink>
-          .
+          . Web Components are supported by all browsers,
+          and pretty much all web frameworks also offer
+          ports for them, since they should be recognized as
+          just another HTML tag in the end anyways. And many
+          non-web frameworks also offer ports for Web
+          Components.
         </PostParagraph>
+        {/* TODO: Also use wgo.js here, as a point of comparison. */}
+        {/* TODO: Show how I use SVGs from LaTeX project here. */}
       </PostSection>
     </Post>
   )
