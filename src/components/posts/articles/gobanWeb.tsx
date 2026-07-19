@@ -7,8 +7,10 @@ import {
   PostLink,
   PostSectionTitle,
   PostBlockQuote,
+  PostCode,
 } from "@components/posts/post"
 import { WgoPlayer } from "@components/posts/wgoPlayer"
+import { GoDiagram } from "../goDiagram"
 
 export function GobanWeb({ post }: BlogPostProps) {
   return (
@@ -26,7 +28,7 @@ export function GobanWeb({ post }: BlogPostProps) {
           Up till now, still, the most used web viewer for
           the game of Go is{" "}
           <PostLink href="https://github.com/waltheri/wgo.js">
-            wgo.js
+            <PostCode>wgo.js</PostCode>
           </PostLink>
           , a project created by Jan Prokop 6d EGF, spanning
           more or less 2013 to 2016 for its development
@@ -42,21 +44,26 @@ export function GobanWeb({ post }: BlogPostProps) {
           , the biggest database for kifus, use it.
         </PostParagraph>
         <PostParagraph>
-          Even considering that wgo.js is an outstanding
-          project, it is still sad no alternatives have
-          popped up, and, even worse, wgo.js hasn&apos;t had
-          any updates in at least 5 years.
+          Even considering that <PostCode>wgo.js</PostCode>{" "}
+          is an outstanding project, it is still sad no
+          alternatives have popped up, and, even worse,{" "}
+          <PostCode>wgo.js</PostCode> hasn&apos;t had any
+          updates in at least 5 years.
         </PostParagraph>
         <PostParagraph>
-          The only two real alternatives for wgo.js I can
-          think of are{" "}
+          The only two real alternatives for{" "}
+          <PostCode>wgo.js</PostCode> I can think of are{" "}
           <PostLink href="https://sabaki.yichuanshen.de/">
             Sabaki
           </PostLink>
-          , and Go Magic&apos; viewer &mdash; which you can
-          have exemplified at the end of one of{" "}
+          , and{" "}
+          <PostLink href="https://gomagic.org/">
+            Go Magic
+          </PostLink>
+          &apos; viewer &mdash; which you can have
+          exemplified at the end of this{" "}
           <PostLink href="https://gomagic.org/secrets-of-the-master-of-go-kawabata-shusai-kitani/">
-            their articles
+            article
           </PostLink>
           . But Sabaki was not intentionally built for this,
           and the original maintainer or creator hasn&apos;t
@@ -67,17 +74,19 @@ export function GobanWeb({ post }: BlogPostProps) {
         </PostParagraph>
         <PostParagraph>
           Thankfully, things might change from now. And
-          that&apos;s not due to the project I&apos;m gonna
-          share down below, but due to AI. Programming a
-          visual component for the game of Go isn&apos;t the
-          most complex of projects, but it&apos;s still a
-          ton of work, just take a look at all the code
-          around{" "}
+          that&apos;s not necessarily due to the project
+          I&apos;m gonna share down below, but due to AI.
+        </PostParagraph>
+        <PostParagraph>
+          Programming a visual component for the game of Go
+          isn&apos;t the most complex of projects, but
+          it&apos;s still a ton of work, just take a look at
+          all the code around{" "}
           <PostLink href="https://github.com/SabakiHQ">
             Sabaki&apos;s ecosystem on Github
           </PostLink>{" "}
           . And what&apos;s worse is that nobody should be
-          expecting any substantial reward for that work.
+          expecting any substantial reward for that effort.
           Given all those constraints, I think AI can be a
           game changer here, and even all the AI haters will
           have to accept things as they are.
@@ -95,7 +104,12 @@ export function GobanWeb({ post }: BlogPostProps) {
           with Web Components, I can safely say the code is
           of pretty good quality as well.
         </PostParagraph>
+        <PostParagraph>
+          Anyhow, I hope this project opens up new
+          possibilities for Go projects in the near future.
+        </PostParagraph>
       </PostSection>
+
       <PostSection>
         <PostSectionTitle>
           The Goban Web Project
@@ -118,12 +132,92 @@ export function GobanWeb({ post }: BlogPostProps) {
           Components.
         </PostParagraph>
         <PostParagraph>
-          Here is wgo.js in action, showing Shusaku&apos;s
-          famous Ear-Reddening Game (1846) — use the
-          controls to step through the moves:
+          There are mainly two options for drawing on the
+          web: the{" "}
+          <PostLink href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API">
+            <PostCode>&lt;canvas&gt;</PostCode>
+          </PostLink>{" "}
+          and{" "}
+          <PostLink href="https://developer.mozilla.org/en-US/docs/Web/SVG">
+            SVG
+          </PostLink>
+          s . For videogames or complex drawings, with lots
+          of animations, the canvas component is much more
+          performant. For simpler drawings, I would rather
+          go with SVGs, since then each visual component is
+          also easily accessible externally, granting other
+          developers many more possibilities about further
+          styling, animations and functionalities. Both
+          options offer scalability without pixelation
+          though.
         </PostParagraph>
-        {/* <WgoPlayer sgf="/articles/goban-web/xu_wenyan_vs_risa_ueno_17_07_2026.sgf" /> */}
-        {/* TODO: Show how I use SVGs from LaTeX project here. */}
+        <PostParagraph>
+          Before developing the Goban Web package, for
+          displaying Go diagrams, I was using my{" "}
+          <PostLink href="https://github.com/psygo/tecnicas_de_go">
+            LaTeX Goban
+          </PostLink>{" "}
+          package, which I developed to write my Go
+          techniques book in Portuguese. With it, I would
+          generate an SVG either through the command line or
+          through opening the PDF with{" "}
+          <PostLink href="https://inkscape.org/">
+            Inkscape
+          </PostLink>
+          . Here&apos;s an example:
+        </PostParagraph>
+        <GoDiagram
+          src="/articles/dowon-pairgo/dowon_pairgo_1.svg"
+          diaNumber={1}
+        >
+          <p>
+            A mistaken, unexpected cut (8), with surprising
+            results afterwards. For more info, check out{" "}
+            <PostLink internal href="/posts/dowon-pairgo">
+              this article
+            </PostLink>
+            .
+          </p>
+        </GoDiagram>
+        <PostParagraph>
+          Comparatively, <PostCode>wgo.js</PostCode> has way
+          more features and interactivity. Here&apos;s{" "}
+          <PostLink href="https://kifudepot.net/kifucontents.php?id=NpTievFCGfFGHBj%2BVKpSLw%3D%3D">
+            Game 4 of this year&apos;s Honinbo Title Match
+          </PostLink>
+          , between Fukuoka Kotaro 6p (Black) and Ichiriki
+          Ryo 9p (White), one of the best games this year:
+        </PostParagraph>
+        <div className="px-4">
+          <WgoPlayer sgf="/articles/goban-web/fukuoka_vs_ichiriki_honinbo_4.sgf" />
+        </div>
+        <PostParagraph>
+          However, I&apos;m still not sure if{" "}
+          <PostCode>wgo.js</PostCode> does cover all the
+          necessary features for being a Go viewer. I
+          haven&apos;t yet been able to find out how to deal
+          with partial boards with it, for example.
+          Here&apos;s an example of a partial board diagram:
+        </PostParagraph>
+        <GoDiagram
+          src="/articles/ing-cup-suicide/ing_cup_rules_1.svg"
+          width={200}
+          height={200}
+          diaNumber={1}
+        >
+          <p>
+            This capturing race yields a different result if
+            we take away the suicide rule. Check{" "}
+            <PostLink href="/posts/ing-cup-suicide">
+              this article
+            </PostLink>{" "}
+            for more.
+          </p>
+        </GoDiagram>
+        <PostParagraph>
+          With the Goban Web project, we can now cover all
+          of the basic Go viewer features:
+        </PostParagraph>
       </PostSection>
     </Post>
   )

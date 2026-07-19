@@ -333,7 +333,7 @@ export function PostImageWithLegend({
 
 export function PostCode({ children }: WithReactChildren) {
   return (
-    <code className="mr-1.5 rounded-lg bg-gray-300 px-1.75 py-0.5 font-semibold before:content-[''] after:content-['']">
+    <code className="rounded-lg bg-gray-300 px-1.5 py-0.5 font-semibold before:content-[''] after:content-['']">
       {children}
     </code>
   )

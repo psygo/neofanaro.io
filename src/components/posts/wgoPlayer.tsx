@@ -4,7 +4,13 @@ import { useEffect, useRef } from "react"
 
 declare global {
   interface Window {
-    WGo: unknown
+    WGo: {
+      Board: unknown
+      BasicPlayer: new (
+        el: HTMLElement,
+        config: Record<string, unknown>,
+      ) => void
+    }
   }
 }
 
@@ -14,10 +20,27 @@ type WgoPlayerProps = {
   sgf?: string
 }
 
-function loadScript(src: string): Promise<void> {
+function loadScript(
+  src: string,
+  isLoaded: () => boolean,
+): Promise<void> {
   return new Promise((resolve, reject) => {
-    if (document.querySelector(`script[src="${src}"]`)) {
+    if (isLoaded()) {
       resolve()
+      return
+    }
+    const existing = document.querySelector(
+      `script[src="${src}"]`,
+    )
+    if (existing) {
+      existing.addEventListener("load", () => resolve(), {
+        once: true,
+      })
+      existing.addEventListener(
+        "error",
+        () => reject(new Error(`Failed to load: ${src}`)),
+        { once: true },
+      )
       return
     }
     const el = document.createElement("script")
@@ -52,13 +75,17 @@ export function WgoPlayer({
     const init = async () => {
       try {
         loadCss(`${WGO_BASE}wgo.player.css`)
-        await loadScript(`${WGO_BASE}wgo.min.js`)
-        await loadScript(`${WGO_BASE}wgo.player.min.js`)
+        await loadScript(
+          `${WGO_BASE}wgo.min.js`,
+          () => !!window.WGo?.Board,
+        )
+        await loadScript(
+          `${WGO_BASE}wgo.player.min.js`,
+          () => !!window.WGo?.BasicPlayer,
+        )
         if (cancelled || !container) return
         const isFile =
           sgf.startsWith("/") || sgf.startsWith("http")
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
         new window.WGo.BasicPlayer(container, {
           ...(isFile ? { sgfFile: sgf } : { sgf }),
           move: 1,
@@ -83,7 +110,7 @@ export function WgoPlayer({
   }, [sgf])
 
   return (
-    <div className="not-prose my-6">
+    <div className="not-prose">
       <div ref={containerRef} />
     </div>
   )
