@@ -14,6 +14,12 @@ importers:
       flag-icons:
         specifier: ^7.5.0
         version: 7.5.0
+      goban-web:
+        specifier: file:/tmp/goban-web-0.1.0.tgz
+        version: file:../../../../tmp/goban-web-0.1.0.tgz
+      goban-web-react:
+        specifier: file:/tmp/goban-web-react-0.1.0.tgz
+        version: file:../../../../tmp/goban-web-react-0.1.0.tgz(goban-web@file:../../../../tmp/goban-web-0.1.0.tgz)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       highlight.js:
         specifier: ^11.11.1
         version: 11.11.1
@@ -2295,6 +2301,18 @@ packages:
   globalthis@1.0.4:
     resolution: {integrity: sha512-DpLKbNU4WylpxJykQujfCcwYWiV/Jhm50Goo0wrVILAv5jOr9d+H+UR3PhSCD2rCCEIg0uc+G+muBTwD54JhDQ==}
     engines: {node: '>= 0.4'}
+
+  goban-web-react@file:../../../../tmp/goban-web-react-0.1.0.tgz:
+    resolution: {integrity: sha512-p3zIBzX3A6kHWr9I4+45huQ4OxLJCfZ4h2PkR3nXriZGdWYNXPrkHzYXcP528PcDhtBigO4WezudJcTQL2ucAw==, tarball: file:../../../../tmp/goban-web-react-0.1.0.tgz}
+    version: 0.1.0
+    peerDependencies:
+      goban-web: '*'
+      react: '>=18'
+      react-dom: '>=18'
+
+  goban-web@file:../../../../tmp/goban-web-0.1.0.tgz:
+    resolution: {integrity: sha512-DXn6MgXxlYBLfz9f7vGdVfuSbxNsD63kkd9f211KhUS61zWZOEGJAftEPYjmwlQx3e2/5Pz5UPLPfZ7dEmtUcw==, tarball: file:../../../../tmp/goban-web-0.1.0.tgz}
+    version: 0.1.0
 
   gopd@1.2.0:
     resolution: {integrity: sha512-ZUKRh6/kUFoAiTAtTYPZJ3hw9wNxx+BIBOijnlG9PnrJsCcSjs1wyyD6vJpaYtgnzDrKYRSqf3OO6Rfa93xsRg==}
@@ -5383,6 +5401,14 @@ snapshots:
     dependencies:
       define-properties: 1.2.1
       gopd: 1.2.0
+
+  goban-web-react@file:../../../../tmp/goban-web-react-0.1.0.tgz(goban-web@file:../../../../tmp/goban-web-0.1.0.tgz)(react-dom@19.2.4(react@19.2.4))(react@19.2.4):
+    dependencies:
+      goban-web: file:../../../../tmp/goban-web-0.1.0.tgz
+      react: 19.2.4
+      react-dom: 19.2.4(react@19.2.4)
+
+  goban-web@file:../../../../tmp/goban-web-0.1.0.tgz: {}
 
   gopd@1.2.0: {}
 

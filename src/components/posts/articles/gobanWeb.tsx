@@ -1,3 +1,7 @@
+"use client"
+
+import dynamic from "next/dynamic"
+
 import { BlogPostProps } from "@types"
 
 import {
@@ -11,6 +15,14 @@ import {
 } from "@components/posts/post"
 import { WgoPlayer } from "@components/posts/wgoPlayer"
 import { GoDiagram } from "../goDiagram"
+
+const GoBoardPlayer = dynamic(
+  () =>
+    import("@components/posts/goBoardPlayer").then(
+      (m) => m.GoBoardPlayer,
+    ),
+  { ssr: false },
+)
 
 export function GobanWeb({ post }: BlogPostProps) {
   return (
@@ -218,6 +230,7 @@ export function GobanWeb({ post }: BlogPostProps) {
           With the Goban Web project, we can now cover all
           of the basic Go viewer features:
         </PostParagraph>
+        <GoBoardPlayer sgf="/articles/goban-web/fukuoka_vs_ichiriki_honinbo_4.sgf" />
       </PostSection>
     </Post>
   )
