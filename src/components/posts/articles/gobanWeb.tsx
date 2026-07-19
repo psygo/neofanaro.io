@@ -46,13 +46,12 @@ export function GobanWeb({ post }: BlogPostProps) {
         <PostParagraph>
           Even considering that <PostCode>wgo.js</PostCode>{" "}
           is an outstanding project, it is still sad no
-          alternatives have popped up, and, even worse,{" "}
-          <PostCode>wgo.js</PostCode> hasn&apos;t had any
-          updates in at least 5 years.
+          alternatives have popped up, and, even worse, it
+          hasn&apos;t had any updates in at least 5 years.
         </PostParagraph>
         <PostParagraph>
-          The only two real alternatives for{" "}
-          <PostCode>wgo.js</PostCode> I can think of are{" "}
+          The only real alternatives to it I can think of
+          are{" "}
           <PostLink href="https://sabaki.yichuanshen.de/">
             Sabaki
           </PostLink>
@@ -180,8 +179,9 @@ export function GobanWeb({ post }: BlogPostProps) {
           </p>
         </GoDiagram>
         <PostParagraph>
-          Comparatively, <PostCode>wgo.js</PostCode> has way
-          more features and interactivity. Here&apos;s{" "}
+          Comparatively, <PostCode>wgo.js</PostCode>
+          &nbsp;has way more features and interactivity.
+          Here&apos;s{" "}
           <PostLink href="https://kifudepot.net/kifucontents.php?id=NpTievFCGfFGHBj%2BVKpSLw%3D%3D">
             Game 4 of this year&apos;s Honinbo Title Match
           </PostLink>
@@ -193,8 +193,8 @@ export function GobanWeb({ post }: BlogPostProps) {
         </div>
         <PostParagraph>
           However, I&apos;m still not sure if{" "}
-          <PostCode>wgo.js</PostCode> does cover all the
-          necessary features for being a Go viewer. I
+          <PostCode>wgo.js</PostCode>&nbsp;does cover all
+          the necessary features for being a Go viewer. I
           haven&apos;t yet been able to find out how to deal
           with partial boards with it, for example.
           Here&apos;s an example of a partial board diagram:
