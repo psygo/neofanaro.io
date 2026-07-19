@@ -22,9 +22,10 @@ export async function get_post(path: string) {
 
 export async function get_posts(
   orderBy: OrderBy = OrderBy.date,
+  includeDrafts = false,
 ) {
   try {
-    const posts = await db
+    const query = db
       .select()
       .from(postsTable)
       .orderBy(
@@ -32,6 +33,10 @@ export async function get_posts(
           ? desc(postsTable.date)
           : desc(postsTable.views),
       )
+
+    const posts = includeDrafts
+      ? await query
+      : await query.where(eq(postsTable.draft, false))
 
     return posts as PostFromDb[]
   } catch (e) {

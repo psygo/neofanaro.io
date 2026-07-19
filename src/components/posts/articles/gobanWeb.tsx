@@ -122,7 +122,7 @@ export function GobanWeb({ post }: BlogPostProps) {
           famous Ear-Reddening Game (1846) — use the
           controls to step through the moves:
         </PostParagraph>
-        <WgoPlayer sgf="/articles/goban-web/xu_wenyan_vs_risa_ueno_17_07_2026.sgf" />
+        {/* <WgoPlayer sgf="/articles/goban-web/xu_wenyan_vs_risa_ueno_17_07_2026.sgf" /> */}
         {/* TODO: Show how I use SVGs from LaTeX project here. */}
       </PostSection>
     </Post>

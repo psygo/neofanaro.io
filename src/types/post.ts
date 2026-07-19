@@ -7,6 +7,7 @@ export type PostFromDb = {
   lang: string
   views: number
   tags: string[]
+  draft: boolean
 }
 
 export type BlogPostProps = {

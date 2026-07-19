@@ -6,8 +6,13 @@ import { Main } from "@components/common/main"
 import { PostsSection } from "@components/posts/postsSection"
 import { CpiSuspense } from "@components/common/cpiSuspense"
 
-export default async function Posts() {
-  const posts = await get_posts()
+type Props = {
+  searchParams: Promise<{ draft?: string }>
+}
+
+export default async function Posts({ searchParams }: Props) {
+  const { draft } = await searchParams
+  const posts = await get_posts(undefined, draft === "true")
 
   return (
     <Main>

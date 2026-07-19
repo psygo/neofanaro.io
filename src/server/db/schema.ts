@@ -1,4 +1,5 @@
 import {
+  boolean,
   date,
   integer,
   json,
@@ -23,6 +24,7 @@ export const postsTable = pgTable(
     lang: text().notNull().default("en"),
     views: integer().notNull().default(0),
     tags: json().notNull().default([]),
+    draft: boolean().notNull().default(false),
   },
   (table) => [uniqueIndex("path_idx").on(table.path)],
 )
