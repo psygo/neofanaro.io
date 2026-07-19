@@ -12,6 +12,7 @@ import {
   PostSectionTitle,
   PostBlockQuote,
   PostCode,
+  PostPre,
 } from "@components/posts/post"
 import { WgoPlayer } from "@components/posts/wgoPlayer"
 import { GoDiagram } from "../goDiagram"
@@ -236,7 +237,43 @@ export function GobanWeb({ post }: BlogPostProps) {
           of the basic Go viewer features:
         </PostParagraph>
         <GoBoardPlayer sgf="/articles/goban-web/fukuoka_vs_ichiriki_honinbo_4.sgf" />
+        <PostParagraph>
+          With code as simple as this, we&apos;re able to
+          use the Goban Web project:
+        </PostParagraph>
+        <PostPre language="html">
+          {gobanWebHtmlCode}
+        </PostPre>
+        <PostParagraph>
+          You may use{" "}
+          <PostLink href="https://github.com/psygo/neofanaro.io/blob/main/src/components/posts/goBoardPlayer.tsx">
+            this website&apos;s code
+          </PostLink>{" "}
+          as reference, but here is an example of using the
+          React version of Goban Web:
+        </PostParagraph>
       </PostSection>
     </Post>
   )
 }
+
+const gobanWebHtmlCode = String.raw`
+<go-board-container>
+  <go-metadata-container details="false"></go-metadata-container>
+  <go-board
+    theme="wgojs"
+    sgf="/assets/ing_cup_rules_2.sgf"
+    width="480"
+    height="480"
+    coordinates="none"
+    coordinates-gap="15px"
+    coordinates-font-size="10pt"
+    padding="16px"
+    corner-radius="8px"
+    label-offset-y="-1.25"
+    label-font="'Latin Modern Roman', serif"
+    stone-size="1.0"
+  ></go-board>
+  <go-board-controls counter="false"></go-board-controls>
+</go-board-container>
+`
