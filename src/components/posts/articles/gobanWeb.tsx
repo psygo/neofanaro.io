@@ -252,6 +252,9 @@ export function GobanWeb({ post }: BlogPostProps) {
           as reference, but here is an example of using the
           React version of Goban Web:
         </PostParagraph>
+        <PostPre language="jsx">
+          {gobanWebReactCode}
+        </PostPre>
       </PostSection>
     </Post>
   )
@@ -276,4 +279,17 @@ const gobanWebHtmlCode = String.raw`
   ></go-board>
   <go-board-controls counter="false"></go-board-controls>
 </go-board-container>
+`
+
+const gobanWebReactCode = String.raw`
+<GoBoardContainer>
+  <GoMetadataContainer />
+  <GoBoard
+    sgf={sgf}
+    width={width}
+    height={height}
+    interactive={interactive}
+  />
+  <GoBoardControls />
+</GoBoardContainer>
 `

@@ -9,10 +9,11 @@ import {
 
 type GoBoardPlayerProps = {
   sgf?: string
-  width?: number
-  height?: number
+  width?: number | string
+  height?: number | string
   interactive?: boolean
   showMetadata?: boolean
+  theme?: string
 }
 
 export function GoBoardPlayer({
@@ -21,17 +22,21 @@ export function GoBoardPlayer({
   height = 480,
   interactive = true,
   showMetadata = true,
+  theme = "wood",
 }: GoBoardPlayerProps) {
   return (
-    <GoBoardContainer>
-      {showMetadata && <GoMetadataContainer />}
-      <GoBoard
-        sgf={sgf}
-        width={width}
-        height={height}
-        interactive={interactive}
-      />
-      <GoBoardControls />
-    </GoBoardContainer>
+    <div className="not-prose">
+      <GoBoardContainer>
+        {showMetadata && <GoMetadataContainer />}
+        <GoBoard
+          sgf={sgf}
+          width={width}
+          height={height}
+          interactive={interactive}
+          theme={theme}
+        />
+        <GoBoardControls />
+      </GoBoardContainer>
+    </div>
   )
 }

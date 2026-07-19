@@ -14,7 +14,7 @@ declare global {
   }
 }
 
-const WGO_BASE = "/wgojs/"
+const WGO_BASE = "/software/wgojs/"
 
 type WgoPlayerProps = {
   sgf?: string
