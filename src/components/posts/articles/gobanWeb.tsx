@@ -83,6 +83,11 @@ export function GobanWeb({ post }: BlogPostProps) {
           seem interested in sharing their viewer, not even
           through licensing.
         </PostParagraph>
+        <PostBlockQuote>
+          If nothing else, this article and the Goban Web
+          project are good reference points for future
+          projects.
+        </PostBlockQuote>
         <PostParagraph>
           Thankfully, things might change from now. And
           that&apos;s not necessarily due to the project

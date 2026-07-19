@@ -19,7 +19,7 @@ export function GoBoardPlayer({
   sgf,
   width = 480,
   height = 480,
-  interactive = false,
+  interactive = true,
   showMetadata = true,
 }: GoBoardPlayerProps) {
   return (
