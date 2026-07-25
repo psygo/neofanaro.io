@@ -98,9 +98,9 @@ export function Magi({ post }: BlogPostProps) {
         </PostImageWithLegend>
         <PostParagraph>
           In the end, the app&apos;s structure consists of
-          an HTML <PostCode>&lt;canvas&gt;</PostCode> layer
-          &mdash; handled by Excalidraw &mdash; and a
-          regular HTML one. In many ways, Magi simply
+          an HTML <PostCode>&lt;canvas&gt;</PostCode>
+          &nbsp;layer &mdash; handled by Excalidraw &mdash;
+          and a regular HTML one. In many ways, Magi simply
           extends Excalidraw to become more socially
           interactive.
         </PostParagraph>

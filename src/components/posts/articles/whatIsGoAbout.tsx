@@ -20,7 +20,7 @@ export function WhatIsGoAbout({ post }: BlogPostProps) {
           Last year, as a way of practicing Korean, I asked
           a professional player, namely{" "}
           <PostLink href="https://kbcl.baduk.or.kr/record/player_view.asp?gisa_code=10001333">
-            Lee Uju <NoWrap>이우주</NoWrap> 1p
+            Lee Woojoo <NoWrap>이우주</NoWrap> 1p
           </PostLink>
           , what she thought Go was about:
         </PostParagraph>
@@ -43,7 +43,7 @@ export function WhatIsGoAbout({ post }: BlogPostProps) {
           className="rounded-xl"
         >
           <p>
-            Lee Uju <NoWrap>이우주</NoWrap> 1p
+            Lee Woojoo <NoWrap>이우주</NoWrap> 1p
           </p>
         </PostImageWithLegend>
         <PostParagraph>
@@ -83,7 +83,7 @@ export function WhatIsGoAbout({ post }: BlogPostProps) {
             tewari
           </PostLink>{" "}
           analysis entered the picture, unbeknownst to me, I
-          gradually converged to Lee Uju&apos;s point of
+          gradually converged to Lee Woojoo&apos;s point of
           view.
         </PostParagraph>
 

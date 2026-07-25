@@ -18,6 +18,7 @@ import {
   OkaoigoAiArticles,
   OneYearInAsia,
   PostAiOpeningHierarchy,
+  Pumu,
   SampleSizeAndCommonSense,
   WhatIsGoAbout,
 } from "@components/posts/articles/exports"
@@ -74,6 +75,8 @@ function whichBlogPost(path: string, post: PostFromDb) {
       return <IngCupSuicide post={post} />
     case "goban-web":
       return <GobanWeb post={post} />
+    case "pumu":
+      return <Pumu post={post} />
     default:
       return <></>
   }
