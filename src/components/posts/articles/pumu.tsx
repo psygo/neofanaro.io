@@ -12,6 +12,7 @@ import {
   PostSectionTitle,
   PostUnorderedList,
   PostYouTubeIframe,
+  PostBlockQuote,
 } from "@components/posts/post"
 
 export function Pumu({ post }: BlogPostProps) {
@@ -19,9 +20,13 @@ export function Pumu({ post }: BlogPostProps) {
     <Post data={post}>
       <PostSection>
         <PostYouTubeIframe
-          src="https://www.youtube.com/embed/AaoP6_f2GyA"
+          src="https://www.youtube.com/embed/MSvIstLgX34"
           title="PUMU 璞木, and Customizing Fox and OGS Board and Stones"
         />
+        <PostBlockQuote>
+          PUMU is offering a discount code, check the video
+          description for more!
+        </PostBlockQuote>
         <PostParagraph>
           Recently, I was going through{" "}
           <PostLink href="https://www.reddit.com/r/baduk/">
