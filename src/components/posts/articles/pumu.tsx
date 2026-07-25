@@ -19,7 +19,7 @@ export function Pumu({ post }: BlogPostProps) {
     <Post data={post}>
       <PostSection>
         <PostYouTubeIframe
-          src="https://www.youtube.com/embed/uj6ZJ9EZ53c"
+          src="https://www.youtube.com/embed/AaoP6_f2GyA"
           title="PUMU 璞木, and Customizing Fox and OGS Board and Stones"
         />
         <PostParagraph>
@@ -92,7 +92,7 @@ export function Pumu({ post }: BlogPostProps) {
             Find where in the{" "}
             <PostCode>Program Files (x86)</PostCode>
             &nbsp;folder your <PostCode>foxwq</PostCode>
-            &nbsp;is installed
+            &nbsp;is installed;
           </li>
           <li>
             Replace the <PostCode>badukpan4.png</PostCode>,{" "}
