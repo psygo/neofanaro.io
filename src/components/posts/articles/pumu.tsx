@@ -32,8 +32,8 @@ export function Pumu({ post }: BlogPostProps) {
           <PostLink href="https://www.reddit.com/r/baduk/">
             r/baduk on Reddit
           </PostLink>{" "}
-          when I saw a quirky dark theme for gobans which
-          reminded me of my{" "}
+          when I saw an interesting dark theme for gobans
+          which reminded me of my{" "}
           <PostLink href="https://github.com/FanaroEngineering/fanaro_sabaki_theme_collection">
             Sabaki Theme Collection
           </PostLink>
@@ -48,8 +48,8 @@ export function Pumu({ post }: BlogPostProps) {
           <PostLink href="https://www.patreon.com/c/GoSkins/home">
             PUMU 璞木
           </PostLink>{" "}
-          reached out to me to share his work and ask for
-          recommendations about how to port his themes for
+          reached out to me to share his work and ask me for
+          reccommendations about how to port his themes to
           Sabaki.
         </PostParagraph>
         <PostImageWithLegend
@@ -88,9 +88,11 @@ export function Pumu({ post }: BlogPostProps) {
         <PostParagraph>
           Before knowing PUMU, I wasn&apos;t aware it was
           possible to customize Fox&apos;s board and stones
-          themes. However, there is a way. There are charts
-          on his Patreon page guiding the users, but what
-          you need to do is, on Windows:
+          themes. It actually isn&apos;t. Not through its
+          interface at least. However, there&apos;s a way to
+          hack into it. PUMU shares charts on his Patreon
+          page guiding users with the process. On Windows,
+          what you need to do is:
         </PostParagraph>
         <PostOrderedList>
           <li>
@@ -155,8 +157,7 @@ export function Pumu({ post }: BlogPostProps) {
         <PostParagraph>
           OGS is probably the easiest platform to customize.
           Just click on your username on the top-right and
-          you&apos;re gonna have many presets available
-          already.
+          you will be met with many presets already.
         </PostParagraph>
         <PostParagraph>
           If you wanna go any further, click on &quot;More
@@ -183,7 +184,7 @@ export function Pumu({ post }: BlogPostProps) {
         </PostImageWithLegend>
         <PostParagraph>
           My two favorite OGS themes in the past 5 years
-          have been the &quot;Desert&quot; and
+          have been the &quot;Desert&quot; and the
           &quot;Pistacchio&quot;, which I adapted from these
           two OGS Forum threads:
         </PostParagraph>
