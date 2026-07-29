@@ -23,7 +23,11 @@ export function LatexBackgammon({ post }: BlogPostProps) {
           project , I got an itch for doing something
           analogous but to another game, one that I believe
           is only second to Go in terms of strategy and
-          beauty: backgammon.
+          beauty. The resulting code is here:{" "}
+          <PostLink href="https://github.com/psygo/latex_backgammon">
+            @psygo/latex_backgammon
+          </PostLink>
+          .
         </PostParagraph>
         <PostImageWithLegend
           src="/articles/latex-backgammon/backgammon_color.svg"

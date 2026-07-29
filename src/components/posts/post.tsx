@@ -241,13 +241,10 @@ export function PostLink({
     <Link
       className={`${
         internal ? "text-red-700" : "text-purple-700"
-      } underline`}
+      } underline underline-offset-4 [&:has(>_code)]:decoration-gray-700 [&:has(>_code)]:underline-offset-8`}
       href={href}
       target="_blank"
       rel="noreferrer noopener"
-      style={{
-        textUnderlineOffset: "4px",
-      }}
     >
       {children}
     </Link>
