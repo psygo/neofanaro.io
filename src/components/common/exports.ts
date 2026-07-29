@@ -1,4 +1,5 @@
 export * from "./circularProgressIndicator"
+export * from "./multiSelect"
 export * from "./cpiSuspense"
 export * from "./footer"
 export * from "./langLink"

@@ -14,6 +14,7 @@ import { WithReactChildren } from "../types/utils"
 type PostsContext = {
   posts: PostFromDb[]
   setPosts: Dispatch<SetStateAction<PostFromDb[]>>
+  allTags: string[]
 }
 
 const PostsContext = createContext<PostsContext | null>(
@@ -31,8 +32,12 @@ export function PostsProvider({
   const [posts, setPosts] =
     useState<PostFromDb[]>(initialPosts)
 
+  const allTags = Array.from(
+    new Set(initialPosts.flatMap((p) => p.tags)),
+  ).sort()
+
   return (
-    <PostsContext.Provider value={{ posts, setPosts }}>
+    <PostsContext.Provider value={{ posts, setPosts, allTags }}>
       {children}
     </PostsContext.Provider>
   )
