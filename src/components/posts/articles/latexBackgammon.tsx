@@ -76,8 +76,8 @@ export function LatexBackgammon({ post }: BlogPostProps) {
         </PostParagraph>
         <PostParagraph>
           After generating the PDF, you could also generate
-          an SVG through either opening up a graphic editor,
-          such as{" "}
+          an SVG through either opening up a graphical
+          editor, such as{" "}
           <PostLink href="https://inkscape.org/">
             Inkscape
           </PostLink>
