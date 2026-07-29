@@ -12,6 +12,7 @@ import {
   DowonPairGo,
   GobanWeb,
   IngCupSuicide,
+  LatexBackgammon,
   LatexShogi,
   LittleKnifeGodBooks,
   Magi,
@@ -53,30 +54,32 @@ export default async function BlogPost({
 
 function whichBlogPost(path: string, post: PostFromDb) {
   switch (path) {
+    case "dowon-pairgo":
+      return <DowonPairGo post={post} />
+    case "goban-web":
+      return <GobanWeb post={post} />
+    case "ing-cup-suicide":
+      return <IngCupSuicide post={post} />
+    case "latex-backgammon":
+      return <LatexBackgammon post={post} />
+    case "latex-shogi":
+      return <LatexShogi post={post} />
     case "little-knife-god-books":
       return <LittleKnifeGodBooks post={post} />
+    case "magi":
+      return <Magi post={post} />
+    case "okaoigo-ai-articles":
+      return <OkaoigoAiArticles post={post} />
+    case "one-year-in-asia":
+      return <OneYearInAsia post={post} />
     case "post-ai-opening-hierarchy":
       return <PostAiOpeningHierarchy post={post} />
+    case "pumu":
+      return <Pumu post={post} />
     case "sample-size-and-common-sense":
       return <SampleSizeAndCommonSense post={post} />
     case "what-is-go-about":
       return <WhatIsGoAbout post={post} />
-    case "magi":
-      return <Magi post={post} />
-    case "one-year-in-asia":
-      return <OneYearInAsia post={post} />
-    case "dowon-pairgo":
-      return <DowonPairGo post={post} />
-    case "okaoigo-ai-articles":
-      return <OkaoigoAiArticles post={post} />
-    case "latex-shogi":
-      return <LatexShogi post={post} />
-    case "ing-cup-suicide":
-      return <IngCupSuicide post={post} />
-    case "goban-web":
-      return <GobanWeb post={post} />
-    case "pumu":
-      return <Pumu post={post} />
     default:
       return <></>
   }
