@@ -12,6 +12,7 @@ import {
   DowonPairGo,
   GobanWeb,
   IngCupSuicide,
+  Lang101,
   LatexBackgammon,
   LatexShogi,
   LittleKnifeGodBooks,
@@ -60,6 +61,8 @@ function whichBlogPost(path: string, post: PostFromDb) {
       return <GobanWeb post={post} />
     case "ing-cup-suicide":
       return <IngCupSuicide post={post} />
+    case "lang101":
+      return <Lang101 post={post} />
     case "latex-backgammon":
       return <LatexBackgammon post={post} />
     case "latex-shogi":
