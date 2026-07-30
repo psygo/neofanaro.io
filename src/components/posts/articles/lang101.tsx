@@ -49,13 +49,6 @@ export function Lang101({ post }: BlogPostProps) {
         >
           <p>The &quot;Exercises&quot; page on Lang101.</p>
         </PostImageWithLegend>
-        {/* <PostBlockQuote>
-          Lang101 also features a{" "}
-          <PostLink href="https://lang101.expo.app/">
-            web interface
-          </PostLink>
-          .
-        </PostBlockQuote> */}
         <PostParagraph>
           <PostLink href="https://expo.dev/accounts/psygo/projects/lang101/builds/7e036e2f-8647-42b7-8062-0313b29aba27">
             Lang101
@@ -155,6 +148,7 @@ export function Lang101({ post }: BlogPostProps) {
           <li>User following</li>
           <li>User messaging</li>
         </PostUnorderedList>
+        <div className="mt-8"></div>
         <PostImageWithLegend
           src="/articles/lang101/Screenshot Alpha 1.0 - 4.png"
           height={300}
@@ -265,30 +259,36 @@ export function Lang101({ post }: BlogPostProps) {
         </PostParagraph>
         <PostParagraph>
           Claude Code, however, does not do well when it
-          comes to UI design. For that, I suggest using{" "}
+          comes to UI design. Even after installing specific{" "}
+          <PostLink href="https://support.claude.com/en/articles/12512176-what-are-skills">
+            AI Skills
+          </PostLink>{" "}
+          , the results were disappointing. For handling the
+          visual aspect of an app, I suggest using{" "}
           <PostLink href="https://claude.com/product/design">
             Claude Design
           </PostLink>
-          . After sketching the UI there, you&apos;re able
-          to ask Claude to export it as a document such that
-          Claude Code can implement it more or less
-          precisely.
+          . After refining the UI there, you&apos;re gonna
+          be able to ask Claude to export resulting design
+          as a document, such that Claude Code can implement
+          it more or less precisely.
         </PostParagraph>
         <PostParagraph>
           Coming from a more than year-long hiatus, I feel
           quite frightened for the software development as a
           profession. Overall, I would much rather spend
           most of my time doing top-level work rather than
-          in the muck of lower level code, trying to debug
-          things. But how many openings for product managers
-          will there be in the future if we all programmers
-          need to move into that market?{" "}
+          in the muck of lower level code, either writing or
+          debugging things. But how many openings for
+          product managers will there be in the future if
+          all programmers need to move into that
+          market?{" "}
         </PostParagraph>
         <PostParagraph>
           In the meantime, at least, even our{" "}
-          <s>billionaire</s> trillionaire overlord<s>s</s>{" "}
-          might be starting to be aware we need to get past
-          the wage economy:
+          <s>billionaire</s> trillionaire overlord(<s>s</s>){" "}
+          might be starting to become aware we need to get
+          past the wage economy:
         </PostParagraph>
         <PostYouTubeIframe
           src="https://www.youtube.com/embed/8YEdm-ZTgT4"
