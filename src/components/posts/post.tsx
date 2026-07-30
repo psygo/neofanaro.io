@@ -265,7 +265,7 @@ export function PostUnorderedList({
   children,
 }: WithReactChildren) {
   return (
-    <ul className="mt-0 mb-0 pl-10 sm:pl-12 [&>li]:my-1 [&>li]:pl-0.5">
+    <ul className="mt-0 mb-0 pl-12 [&>li]:my-1 [&>li]:pl-0.5 [&>li]:marker:text-slate-700">
       {children}
     </ul>
   )
@@ -381,7 +381,7 @@ export function PostYouTubeIframe({
 }: PostIframeProps) {
   return (
     <div className="flex justify-center">
-      <div className="mx-6 mb-0.5 flex aspect-video w-full max-w-lg items-center overflow-hidden rounded-2xl border border-slate-200 shadow-lg">
+      <div className="mx-6 mt-3.5 mb-0.5 flex aspect-video w-full max-w-lg items-center overflow-hidden rounded-2xl border border-slate-200 shadow-lg">
         <iframe
           className="h-full w-full"
           src={src}

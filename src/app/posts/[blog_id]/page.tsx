@@ -22,6 +22,7 @@ import {
   PostAiOpeningHierarchy,
   Pumu,
   SampleSizeAndCommonSense,
+  TewariDelight2,
   WhatIsGoAbout,
 } from "@components/posts/articles/exports"
 
@@ -79,6 +80,8 @@ function whichBlogPost(path: string, post: PostFromDb) {
       return <PostAiOpeningHierarchy post={post} />
     case "pumu":
       return <Pumu post={post} />
+    case "tewari-delight-2":
+      return <TewariDelight2 post={post} />
     case "sample-size-and-common-sense":
       return <SampleSizeAndCommonSense post={post} />
     case "what-is-go-about":

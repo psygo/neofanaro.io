@@ -20,15 +20,22 @@ export function Lang101({ post }: BlogPostProps) {
           <p>
             For now, the app version of Lang101 is in{" "}
             <em>alpha</em> testing, do message me if you
-            would like to join:{" "}
+            would like to join!
+            {/* :{" "}
             <PostLink href="mailto:philippefanaro@gmail.com">
               philippefanaro@gmail.com
             </PostLink>
-            !
+            ! */}
           </p>
           <p>
-            But, in the meantime, Lang101 is also available
-            through a{" "}
+            A first{" "}
+            <PostLink href="https://expo.dev/accounts/psygo/projects/lang101/builds/7e036e2f-8647-42b7-8062-0313b29aba27">
+              Android bundle
+            </PostLink>{" "}
+            is already openly available, while iOS has more
+            security requirements for sharing builds with
+            users. But, in the meantime, Lang101 is also
+            available through a{" "}
             <PostLink href="https://lang101.expo.app/">
               web interface
             </PostLink>
@@ -59,7 +66,8 @@ export function Lang101({ post }: BlogPostProps) {
           <li>
             <PostLink href="https://en.wikipedia.org/wiki/Anki">
               Anki
-            </PostLink>
+            </PostLink>{" "}
+            &mdash; a flashcard app
           </li>
           <li>
             A Statistical Rating Sytem &mdash; more
@@ -255,14 +263,17 @@ export function Lang101({ post }: BlogPostProps) {
           well. If I had to program this app myself, I could
           easily see the whole process stretching on to 3+
           months. Instead, the bulk of it took me only a
-          couple of weeks.
+          couple of weeks &mdash; plus a week or two to get
+          through Apple&apos;s and Google&apos;s obnoxious
+          verification processes for newly created developer
+          accounts.
         </PostParagraph>
         <PostParagraph>
           Claude Code, however, does not do well when it
           comes to UI design. Even after installing specific{" "}
           <PostLink href="https://support.claude.com/en/articles/12512176-what-are-skills">
             AI Skills
-          </PostLink>{" "}
+          </PostLink>
           , the results were disappointing. For handling the
           visual aspect of an app, I suggest using{" "}
           <PostLink href="https://claude.com/product/design">
