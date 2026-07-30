@@ -166,6 +166,47 @@ export function Lang101({ post }: BlogPostProps) {
           decks. But, as the community gets bigger, the
           human-created percentage will hopefully increase.
         </PostParagraph>
+        <PostParagraph>
+          One future leap for the app would be having AI
+          monitor the student&apos;s progress and then
+          create exercises on the go based on his or her
+          difficulties. That might become a paid
+          subscription service though, as AI services are
+          currently not free.
+        </PostParagraph>
+        <PostImageWithLegend
+          src="/articles/lang101/Furigana.png"
+          height={300}
+          width={250}
+          className="rounded-lg"
+        >
+          <p>
+            For languages such as Chinese and Japanese, even
+            for native speakers, it&apos;s very common for
+            text to have a top row guiding the pronunciation
+            of a symbol. That feature is already present in
+            Lang101.
+          </p>
+        </PostImageWithLegend>
+        <PostParagraph>
+          Anki (暗記) means &quot;learning by heart&quot; or
+          &quot;rote memorization&quot; in Japanese, and its
+          respective software was created by an Australian
+          programmer, Damien Elmes, to learn, you guessed
+          it, Japanese. The flashcard approach is very
+          helpful for East Asian language-learning, as so
+          much of their languages is based on and compacted
+          into many different symbols, as opposed to
+          deconstructed with an alphabet. However, I think
+          we could also deconstruct many, more complex
+          concepts and topics into bite-sized exercises too,
+          and that&apos;s my bet with this app. Let&apos;s
+          see if it pans out!
+        </PostParagraph>
+        <PostBlockQuote>
+          Should I rename the app as &quot;Lanki&quot; at
+          this point?
+        </PostBlockQuote>
       </PostSection>
     </Post>
   )
