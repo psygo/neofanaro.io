@@ -311,7 +311,10 @@ export function PostImageWithLegend({
   children,
 }: PostImageWithLegendProps) {
   return (
-    <div className="flex flex-col items-center gap-2 pt-4 pb-2.5">
+    <div
+      className="flex flex-col items-center gap-2 pt-4 pb-2.5 hyphens-auto"
+      lang="en-us"
+    >
       <Image
         loading="eager"
         src={src}
