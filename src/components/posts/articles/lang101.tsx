@@ -253,14 +253,15 @@ export function Lang101({ post }: BlogPostProps) {
           <PostLink href="https://claude.com/product/claude-code">
             Claude Code
           </PostLink>
-          . It is quite shocking how good the baseline paid
-          model, Sonnet, is.
+          , using React Native. It is quite shocking how
+          good the baseline paid model, Sonnet, is.
         </PostParagraph>
         <PostParagraph>
           I did have to use my software know-how in order to
-          get the app to where it is, but Claude Code is
+          get the app to where it is, so it wasn&apos;t a
+          pure &quot;vibe coding&quot; project. Claude is
           incredibly skilled at programming, and DevOps as
-          well. If I had to program this app myself, I could
+          well, if I had to program this app myself, I could
           easily see the whole process stretching on to 3+
           months. Instead, the bulk of it took me only a
           couple of weeks &mdash; plus a week or two to get

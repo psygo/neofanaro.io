@@ -24,7 +24,7 @@ export const postsTable = pgTable(
     lang: text().notNull().default("en"),
     views: integer().notNull().default(0),
     tags: json().notNull().default([]),
-    draft: boolean().notNull().default(false),
+    draft: boolean().notNull().default(true),
   },
   (table) => [uniqueIndex("path_idx").on(table.path)],
 )
