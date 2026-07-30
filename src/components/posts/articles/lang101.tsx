@@ -8,12 +8,33 @@ import {
   PostImageWithLegend,
   PostBlockQuote,
   PostUnorderedList,
+  PostSectionTitle,
+  PostYouTubeIframe,
 } from "@components/posts/post"
 
 export function Lang101({ post }: BlogPostProps) {
   return (
     <Post data={post}>
       <PostSection>
+        <PostBlockQuote>
+          <p>
+            For now, the app version of Lang101 is in{" "}
+            <em>alpha</em> testing, do message me if you
+            would like to join:{" "}
+            <PostLink href="mailto:philippefanaro@gmail.com">
+              philippefanaro@gmail.com
+            </PostLink>
+            !
+          </p>
+          <p>
+            But, in the meantime, Lang101 is also available
+            through a{" "}
+            <PostLink href="https://lang101.expo.app/">
+              web interface
+            </PostLink>
+            .
+          </p>
+        </PostBlockQuote>
         <PostParagraph>
           I&apos;m happy to announce the release of my first
           mobile app in a long while, an idea I had been
@@ -28,13 +49,13 @@ export function Lang101({ post }: BlogPostProps) {
         >
           <p>The &quot;Exercises&quot; page on Lang101.</p>
         </PostImageWithLegend>
-        <PostBlockQuote>
+        {/* <PostBlockQuote>
           Lang101 also features a{" "}
           <PostLink href="https://lang101.expo.app/">
             web interface
           </PostLink>
           .
-        </PostBlockQuote>
+        </PostBlockQuote> */}
         <PostParagraph>
           <PostLink href="https://expo.dev/accounts/psygo/projects/lang101/builds/7e036e2f-8647-42b7-8062-0313b29aba27">
             Lang101
@@ -207,6 +228,72 @@ export function Lang101({ post }: BlogPostProps) {
           Should I rename the app as &quot;Lanki&quot; at
           this point?
         </PostBlockQuote>
+        <PostImageWithLegend
+          src="/articles/lang101/Feedback.png"
+          height={300}
+          width={250}
+          className="rounded-lg"
+        >
+          <p>
+            The profile page features a &quot;Send
+            feedback&quot; button. Do share your thoughts
+            and suggestions with me!
+          </p>
+        </PostImageWithLegend>
+      </PostSection>
+
+      <PostSection>
+        <PostSectionTitle>
+          On Developing Lang101 (with AI)
+        </PostSectionTitle>
+        <PostParagraph>
+          Lang101 was almost entirely develped with{" "}
+          <PostLink href="https://claude.com/product/claude-code">
+            Claude Code
+          </PostLink>
+          . It is quite shocking how good the baseline paid
+          model, Sonnet, is.
+        </PostParagraph>
+        <PostParagraph>
+          I did have to use my software know-how in order to
+          get the app to where it is, but Claude Code is
+          incredibly skilled at programming, and DevOps as
+          well. If I had to program this app myself, I could
+          easily see the whole process stretching on to 3+
+          months. Instead, the bulk of it took me only a
+          couple of weeks.
+        </PostParagraph>
+        <PostParagraph>
+          Claude Code, however, does not do well when it
+          comes to UI design. For that, I suggest using{" "}
+          <PostLink href="https://claude.com/product/design">
+            Claude Design
+          </PostLink>
+          . After sketching the UI there, you&apos;re able
+          to ask Claude to export it as a document such that
+          Claude Code can implement it more or less
+          precisely.
+        </PostParagraph>
+        <PostParagraph>
+          Coming from a more than year-long hiatus, I feel
+          quite frightened for the software development as a
+          profession. Overall, I would much rather spend
+          most of my time doing top-level work rather than
+          in the muck of lower level code, trying to debug
+          things. But how many openings for product managers
+          will there be in the future if we all programmers
+          need to move into that market?{" "}
+        </PostParagraph>
+        <PostParagraph>
+          In the meantime, at least, even our{" "}
+          <s>billionaire</s> trillionaire overlord<s>s</s>{" "}
+          might be starting to be aware we need to get past
+          the wage economy:
+        </PostParagraph>
+        <PostYouTubeIframe
+          src="https://www.youtube.com/embed/8YEdm-ZTgT4"
+          title="Elon Musk getting aware of how the economy might need to change in the post-AI era"
+        />
       </PostSection>
     </Post>
   )
