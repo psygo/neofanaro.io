@@ -5,6 +5,7 @@ import { and, desc, eq, or } from "drizzle-orm"
 import { db, gamesTable } from "@db"
 
 export async function get_games_between(
+  leagueId: number,
   playerAId: number,
   playerBId: number,
 ) {
@@ -12,14 +13,17 @@ export async function get_games_between(
     .select()
     .from(gamesTable)
     .where(
-      or(
-        and(
-          eq(gamesTable.blackId, playerAId),
-          eq(gamesTable.whiteId, playerBId),
-        ),
-        and(
-          eq(gamesTable.blackId, playerBId),
-          eq(gamesTable.whiteId, playerAId),
+      and(
+        eq(gamesTable.leagueId, leagueId),
+        or(
+          and(
+            eq(gamesTable.blackId, playerAId),
+            eq(gamesTable.whiteId, playerBId),
+          ),
+          and(
+            eq(gamesTable.blackId, playerBId),
+            eq(gamesTable.whiteId, playerAId),
+          ),
         ),
       ),
     )

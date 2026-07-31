@@ -35,6 +35,7 @@ export async function create_game(
     return { errorCode: "not_authorized" }
   }
 
+  const leagueId = optionalInt(formData.get("leagueId"))
   const blackId = optionalInt(formData.get("blackId"))
   const whiteId = optionalInt(formData.get("whiteId"))
   const ratingBlack = optionalInt(formData.get("ratingBlack"))
@@ -49,6 +50,7 @@ export async function create_game(
   const date = optionalText(formData.get("date"))
 
   if (
+    !leagueId ||
     !blackId ||
     !whiteId ||
     ratingBlack === undefined ||
@@ -62,6 +64,7 @@ export async function create_game(
 
   await db.insert(gamesTable).values({
     date,
+    leagueId,
     blackId,
     whiteId,
     ratingBlack,

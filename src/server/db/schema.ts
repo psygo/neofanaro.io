@@ -49,6 +49,7 @@ export const playersRelations = relations(
   ({ many }) => ({
     games: many(gamesTable),
     sessions: many(sessionsTable),
+    leaguePlayers: many(leaguePlayersTable),
   }),
 )
 
@@ -64,6 +65,49 @@ export const sessionsRelations = relations(
   ({ one }) => ({
     player: one(players, {
       fields: [sessionsTable.playerId],
+      references: [players.id],
+    }),
+  }),
+)
+
+export const leaguesTable = pgTable("leagues", {
+  id: serial().primaryKey(),
+  title: text().notNull(),
+  startDate: date("start_date"),
+})
+
+export const leaguesRelations = relations(
+  leaguesTable,
+  ({ many }) => ({
+    games: many(gamesTable),
+    leaguePlayers: many(leaguePlayersTable),
+  }),
+)
+
+export const leaguePlayersTable = pgTable(
+  "league_players",
+  {
+    id: serial().primaryKey(),
+    leagueId: integer("league_id").notNull(),
+    playerId: integer("player_id").notNull(),
+  },
+  (table) => [
+    uniqueIndex("league_player_idx").on(
+      table.leagueId,
+      table.playerId,
+    ),
+  ],
+)
+
+export const leaguePlayersRelations = relations(
+  leaguePlayersTable,
+  ({ one }) => ({
+    league: one(leaguesTable, {
+      fields: [leaguePlayersTable.leagueId],
+      references: [leaguesTable.id],
+    }),
+    player: one(players, {
+      fields: [leaguePlayersTable.playerId],
       references: [players.id],
     }),
   }),
@@ -87,10 +131,8 @@ export const gamesTable = pgTable("games", {
   youtubeLink: text(),
   twitchLink: text(),
   reviewed: boolean().default(false),
-  leagueFeatured: boolean("league_featured")
-    .default(false)
-    .notNull(),
   // Relationships
+  leagueId: integer("league_id").notNull(),
   blackId: integer("black_id").notNull(),
   whiteId: integer("white_id").notNull(),
 })
@@ -98,6 +140,10 @@ export const gamesTable = pgTable("games", {
 export const gamesRelations = relations(
   gamesTable,
   ({ one }) => ({
+    league: one(leaguesTable, {
+      fields: [gamesTable.leagueId],
+      references: [leaguesTable.id],
+    }),
     black: one(players, {
       fields: [gamesTable.blackId],
       references: [players.id],
@@ -108,23 +154,3 @@ export const gamesRelations = relations(
     }),
   }),
 )
-
-// export const leaguesTable = pgTable("leagues", {
-//   // Metadata
-//   id: serial().primaryKey(),
-//   date: date().notNull().default(todayDate()),
-//   title: text(),
-//   group: text(),
-//   // Relationships
-//   gameId: integer("game_id").notNull(),
-// })
-
-// export const leaguesRelations = relations(
-//   leaguesTable,
-//   ({ one }) => ({
-//     game: one(gamesTable, {
-//       fields: [leaguesTable.gameId],
-//       references: [gamesTable.id],
-//     }),
-//   }),
-// )

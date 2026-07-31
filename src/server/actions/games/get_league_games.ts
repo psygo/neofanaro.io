@@ -1,17 +1,17 @@
 "use server"
 
-import { eq } from "drizzle-orm"
+import { desc, eq } from "drizzle-orm"
 
 import { db, gamesTable } from "@db"
 
-export type FeaturedGame = {
+export type LeagueGame = {
   id: number
   blackId: number
   whiteId: number
   result: string
 }
 
-export async function get_featured_games() {
+export async function get_league_games(leagueId: number) {
   return db
     .select({
       id: gamesTable.id,
@@ -20,5 +20,6 @@ export async function get_featured_games() {
       result: gamesTable.result,
     })
     .from(gamesTable)
-    .where(eq(gamesTable.leagueFeatured, true))
+    .where(eq(gamesTable.leagueId, leagueId))
+    .orderBy(desc(gamesTable.date))
 }

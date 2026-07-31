@@ -1,16 +1,9 @@
 "use client"
 
-import { useActionState, useEffect, useRef, useState } from "react"
+import { useActionState, useState } from "react"
 
-import {
-  get_games_between,
-  set_featured_game,
-  update_game_links,
-} from "@actions"
-import type {
-  SetFeaturedGameState,
-  UpdateGameLinksState,
-} from "@server"
+import { get_games_between, update_game_links } from "@actions"
+import type { UpdateGameLinksState } from "@server"
 
 import { useLang } from "@hooks"
 
@@ -31,7 +24,6 @@ type GamePickerProps = {
   games: GameRow[]
   loading: boolean
   onAddNewGame: () => void
-  onGameFeatured: () => void
 }
 
 function playerLabel(
@@ -49,7 +41,6 @@ export function GamePicker({
   games,
   loading,
   onAddNewGame,
-  onGameFeatured,
 }: GamePickerProps) {
   const lang = useLang()
   const [expandedGameId, setExpandedGameId] = useState<
@@ -103,11 +94,7 @@ export function GamePicker({
                 </span>
               </button>
               {expandedGameId === game.id && (
-                <div className="flex flex-col gap-3 border-t border-slate-200 p-3">
-                  <ChooseGameForm
-                    game={game}
-                    onFeatured={onGameFeatured}
-                  />
+                <div className="border-t border-slate-200 p-3">
                   <GameLinksForm game={game} />
                 </div>
               )}
@@ -149,83 +136,6 @@ function linksErrorMessage(
     default:
       return null
   }
-}
-
-function chooseErrorMessage(
-  errorCode: SetFeaturedGameState["errorCode"],
-  lang: string,
-) {
-  switch (errorCode) {
-    case "not_authorized":
-      return lang === "pt"
-        ? "Você não tem permissão para fazer isso."
-        : "You're not allowed to do that."
-    case "invalid_fields":
-      return lang === "pt"
-        ? "Não foi possível identificar a partida."
-        : "Couldn't identify the game."
-    default:
-      return null
-  }
-}
-
-function ChooseGameForm({
-  game,
-  onFeatured,
-}: {
-  game: GameRow
-  onFeatured: () => void
-}) {
-  const lang = useLang()
-  const [state, formAction, isPending] = useActionState(
-    set_featured_game,
-    {},
-  )
-  const wasPending = useRef(false)
-
-  useEffect(() => {
-    if (wasPending.current && !isPending && !state.errorCode) {
-      onFeatured()
-    }
-    wasPending.current = isPending
-  }, [isPending, state, onFeatured])
-
-  return (
-    <form
-      action={formAction}
-      className="flex items-center gap-2"
-    >
-      <input type="hidden" name="gameId" value={game.id} />
-      <input
-        type="hidden"
-        name="blackId"
-        value={game.blackId}
-      />
-      <input
-        type="hidden"
-        name="whiteId"
-        value={game.whiteId}
-      />
-      <button
-        type="submit"
-        disabled={isPending}
-        className="cursor-pointer rounded-full bg-slate-950 px-3 py-1.5 text-xs font-semibold text-white transition duration-300 hover:bg-slate-800 disabled:cursor-not-allowed disabled:opacity-60"
-      >
-        {isPending
-          ? lang === "pt"
-            ? "Definindo..."
-            : "Setting..."
-          : lang === "pt"
-            ? "Usar na tabela"
-            : "Use for table"}
-      </button>
-      {chooseErrorMessage(state.errorCode, lang) && (
-        <span className="text-xs text-red-600">
-          {chooseErrorMessage(state.errorCode, lang)}
-        </span>
-      )}
-    </form>
-  )
 }
 
 function GameLinksForm({ game }: { game: GameRow }) {

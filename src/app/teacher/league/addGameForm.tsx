@@ -16,6 +16,7 @@ type PlayerOption = {
 }
 
 type AddGameFormProps = {
+  leagueId: number
   players: PlayerOption[]
   prefillBlackId?: number
   prefillWhiteId?: number
@@ -51,6 +52,7 @@ function errorMessage(
 
 
 export function AddGameForm({
+  leagueId,
   players,
   prefillBlackId,
   prefillWhiteId,
@@ -122,6 +124,11 @@ export function AddGameForm({
       action={formAction}
       className="flex flex-col gap-4 rounded-xl border border-slate-200 p-4"
     >
+      <input
+        type="hidden"
+        name="leagueId"
+        value={leagueId}
+      />
       <h2 className="text-lg font-bold">
         {lang === "pt" ? "Adicionar partida" : "Add game"}
       </h2>

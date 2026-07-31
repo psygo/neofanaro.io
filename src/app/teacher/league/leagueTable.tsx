@@ -1,5 +1,7 @@
 "use client"
 
+import type { LeagueGame } from "@server"
+
 import { useLang } from "@hooks"
 import { winnerFromResult } from "@utils"
 
@@ -13,17 +15,10 @@ export type LeaguePlayerRow = {
   rating: number
 }
 
-type FeaturedGame = {
-  id: number
-  blackId: number
-  whiteId: number
-  result: string
-}
-
 type LeagueTableProps = {
   players: LeaguePlayerRow[]
   isModerator?: boolean
-  featuredGames?: FeaturedGame[]
+  games?: LeagueGame[]
   onCellClick?: (blackId: number, whiteId: number) => void
 }
 
@@ -42,12 +37,14 @@ function ratingToRank(rating: number): string {
   return `${kyu}k`
 }
 
-function findFeaturedGame(
-  featuredGames: FeaturedGame[],
+// `games` comes pre-sorted newest-first, so the first match here
+// is the latest game played between these two players.
+function findLatestGame(
+  games: LeagueGame[],
   playerAId: number,
   playerBId: number,
 ) {
-  return featuredGames.find(
+  return games.find(
     (game) =>
       (game.blackId === playerAId &&
         game.whiteId === playerBId) ||
@@ -59,10 +56,12 @@ function findFeaturedGame(
 export function LeagueTable({
   players,
   isModerator = false,
-  featuredGames = [],
+  games = [],
   onCellClick,
 }: LeagueTableProps) {
   const lang = useLang()
+  const winLabel = lang === "pt" ? "V" : "W"
+  const lossLabel = lang === "pt" ? "D" : "L"
 
   return (
     <div className="overflow-x-auto rounded-xl border border-slate-200">
@@ -111,29 +110,37 @@ export function LeagueTable({
                   return (
                     <td
                       key={column.playerId}
-                      className="px-3 py-2"
+                      className="px-3 py-2 text-slate-300"
                     >
                       X
                     </td>
                   )
                 }
 
-                const featuredGame = findFeaturedGame(
-                  featuredGames,
+                const latestGame = findLatestGame(
+                  games,
                   row.playerId,
                   column.playerId,
                 )
-
-                if (featuredGame) {
-                  const winner = winnerFromResult(
-                    featuredGame.result,
-                  )
-                  const rowWon =
-                    (winner === "B" &&
-                      featuredGame.blackId ===
-                        row.playerId) ||
+                const winner = latestGame
+                  ? winnerFromResult(latestGame.result)
+                  : null
+                const rowWon = latestGame
+                  ? (winner === "B" &&
+                      latestGame.blackId === row.playerId) ||
                     (winner === "W" &&
-                      featuredGame.whiteId === row.playerId)
+                      latestGame.whiteId === row.playerId)
+                  : false
+
+                if (!isModerator) {
+                  if (!latestGame) {
+                    return (
+                      <td
+                        key={column.playerId}
+                        className="px-3 py-2"
+                      />
+                    )
+                  }
 
                   return (
                     <td
@@ -141,25 +148,16 @@ export function LeagueTable({
                       className="p-0"
                     >
                       <LangLink
-                        href={`/game/${featuredGame.id}`}
+                        href={`/game/${latestGame.id}`}
                         className={`flex h-full w-full items-center justify-center px-3 py-2 font-bold transition duration-300 ${
                           rowWon
                             ? "text-green-600 hover:bg-green-50"
                             : "text-red-600 hover:bg-red-50"
                         }`}
                       >
-                        {rowWon ? "W" : "L"}
+                        {rowWon ? winLabel : lossLabel}
                       </LangLink>
                     </td>
-                  )
-                }
-
-                if (!isModerator) {
-                  return (
-                    <td
-                      key={column.playerId}
-                      className="px-3 py-2"
-                    />
                   )
                 }
 
@@ -172,8 +170,8 @@ export function LeagueTable({
                       type="button"
                       title={
                         lang === "pt"
-                          ? "Adicionar partida"
-                          : "Add game"
+                          ? "Ver ou adicionar partida"
+                          : "View or add game"
                       }
                       onClick={() =>
                         onCellClick?.(
@@ -181,9 +179,19 @@ export function LeagueTable({
                           column.playerId,
                         )
                       }
-                      className="h-full w-full cursor-pointer px-3 py-2 text-slate-300 transition duration-300 hover:bg-slate-200 hover:text-slate-600"
+                      className={`h-full w-full cursor-pointer px-3 py-2 font-bold transition duration-300 hover:bg-slate-200 ${
+                        latestGame
+                          ? rowWon
+                            ? "text-green-600"
+                            : "text-red-600"
+                          : "text-slate-300 hover:text-slate-600"
+                      }`}
                     >
-                      +
+                      {latestGame
+                        ? rowWon
+                          ? winLabel
+                          : lossLabel
+                        : "+"}
                     </button>
                   </td>
                 )

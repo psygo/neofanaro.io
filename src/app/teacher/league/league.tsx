@@ -1,10 +1,9 @@
 "use client"
 
-import { useRouter } from "next/navigation"
 import { useRef, useState } from "react"
 
 import { get_games_between } from "@actions"
-import type { FeaturedGame } from "@server"
+import type { LeagueGame } from "@server"
 
 import { useLang } from "@hooks"
 
@@ -13,21 +12,17 @@ import {
   type LeaguePlayerRow,
 } from "./leagueTable"
 import { AddGameForm } from "./addGameForm"
+import { AddPlayerForm } from "./addPlayerForm"
+import { CreateLeagueForm } from "./createLeagueForm"
 import { GamePicker } from "./gamePicker"
 
-// Emails of this league's participants. A moderator maintains
-// this list by hand, keyed by email since it's the one unique,
-// stable identifier every player row is guaranteed to have.
-const LEAGUE_ROSTER_EMAILS: string[] = [
-  "philippefanaro@gmail.com",
-  // "dejan@example.com",
-  // "diogo@example.com",
-  "di@gmail.com",
-  // "ariel@example.com",
-  // "gilberto@example.com",
-]
+type League = {
+  id: number
+  title: string
+  startDate: string | null
+}
 
-type DbPlayer = {
+type RosterPlayer = {
   id: number
   name: string
   nick: string
@@ -37,26 +32,21 @@ type DbPlayer = {
 
 type LeagueSectionProps = {
   isModerator: boolean
-  players: DbPlayer[]
-  featuredGames: FeaturedGame[]
+  league: League | null
+  roster: RosterPlayer[]
+  games: LeagueGame[]
 }
 
 function buildLeagueRows(
-  rosterEmails: string[],
-  dbPlayers: DbPlayer[],
+  roster: RosterPlayer[],
 ): LeaguePlayerRow[] {
-  return rosterEmails
-    .map((email) =>
-      dbPlayers.find((player) => player.email === email),
-    )
-    .filter((player): player is DbPlayer => player != null)
-    .map((player) => ({
-      playerId: player.id,
-      code: player.name.slice(0, 2),
-      name: player.name,
-      nick: player.nick,
-      rating: player.rating,
-    }))
+  return roster.map((player) => ({
+    playerId: player.id,
+    code: player.name.slice(0, 2),
+    name: player.name,
+    nick: player.nick,
+    rating: player.rating,
+  }))
 }
 
 type Picker = {
@@ -68,21 +58,78 @@ type Picker = {
 
 export function LeagueSection({
   isModerator,
-  players,
-  featuredGames,
+  league,
+  roster,
+  games,
 }: LeagueSectionProps) {
   const lang = useLang()
-  const router = useRouter()
-  const leagueRows = buildLeagueRows(
-    LEAGUE_ROSTER_EMAILS,
-    players,
+  const [showCreateLeagueForm, setShowCreateLeagueForm] =
+    useState(false)
+
+  if (!league) {
+    return (
+      <div className="flex flex-col items-center gap-4">
+        <h1 className="text-center text-2xl font-bold">
+          {lang === "pt" ? "Liga" : "League"}
+        </h1>
+        {isModerator ? (
+          showCreateLeagueForm ? (
+            <CreateLeagueForm />
+          ) : (
+            <button
+              type="button"
+              onClick={() => setShowCreateLeagueForm(true)}
+              className="cursor-pointer rounded-full bg-slate-100 px-4 py-2 ring-1 ring-slate-200 transition duration-300 hover:bg-slate-200"
+            >
+              {lang === "pt"
+                ? "+ Criar liga"
+                : "+ Create league"}
+            </button>
+          )
+        ) : (
+          <p className="text-center text-slate-500">
+            {lang === "pt"
+              ? "Ainda não há uma liga criada."
+              : "There's no league yet."}
+          </p>
+        )}
+      </div>
+    )
+  }
+
+  return (
+    <LeagueContent
+      isModerator={isModerator}
+      league={league}
+      roster={roster}
+      games={games}
+    />
   )
+}
+
+function LeagueContent({
+  isModerator,
+  league,
+  roster,
+  games,
+}: {
+  isModerator: boolean
+  league: League
+  roster: RosterPlayer[]
+  games: LeagueGame[]
+}) {
+  const lang = useLang()
+  const leagueRows = buildLeagueRows(roster)
 
   const [picker, setPicker] = useState<Picker | null>(null)
   const [prefill, setPrefill] = useState<{
     blackId: number
     whiteId: number
   } | null>(null)
+  const [showAddPlayerForm, setShowAddPlayerForm] =
+    useState(false)
+  const [showCreateLeagueForm, setShowCreateLeagueForm] =
+    useState(false)
 
   const pickerRef = useRef<HTMLDivElement>(null)
   const formRef = useRef<HTMLDivElement>(null)
@@ -103,6 +150,7 @@ export function LeagueSection({
     })
 
     const games = await get_games_between(
+      league.id,
       playerAId,
       playerBId,
     )
@@ -121,46 +169,69 @@ export function LeagueSection({
     })
   }
 
-  function handleGameFeatured() {
-    setPicker(null)
-    router.refresh()
-  }
-
   return (
     <div className="flex flex-col gap-8">
       <div className="flex flex-col gap-4">
         <h1 className="text-center text-2xl font-bold">
-          {lang === "pt" ? "Liga" : "League"}
+          {league.title}
         </h1>
         <LeagueTable
           players={leagueRows}
           isModerator={isModerator}
-          featuredGames={featuredGames}
+          games={games}
           onCellClick={handleCellClick}
         />
+        {isModerator &&
+          (showAddPlayerForm ? (
+            <AddPlayerForm leagueId={league.id} />
+          ) : (
+            <button
+              type="button"
+              onClick={() => setShowAddPlayerForm(true)}
+              className="cursor-pointer self-start rounded-full bg-slate-100 px-4 py-2 ring-1 ring-slate-200 transition duration-300 hover:bg-slate-200"
+            >
+              {lang === "pt"
+                ? "+ Adicionar jogador"
+                : "+ Add player"}
+            </button>
+          ))}
       </div>
       {isModerator && picker && (
         <div ref={pickerRef}>
           <GamePicker
             playerAId={picker.playerAId}
             playerBId={picker.playerBId}
-            players={players}
+            players={roster}
             games={picker.games}
             loading={picker.loading}
             onAddNewGame={handleAddNewGame}
-            onGameFeatured={handleGameFeatured}
           />
         </div>
       )}
       {isModerator && (
         <div ref={formRef}>
           <AddGameForm
-            players={players}
+            leagueId={league.id}
+            players={roster}
             prefillBlackId={prefill?.blackId}
             prefillWhiteId={prefill?.whiteId}
           />
         </div>
       )}
+      {isModerator &&
+        (showCreateLeagueForm ? (
+          <CreateLeagueForm />
+        ) : (
+          <button
+            type="button"
+            onClick={() => setShowCreateLeagueForm(true)}
+            className="cursor-pointer self-start rounded-full bg-slate-100 px-4 py-2 ring-1 ring-slate-200 transition duration-300 hover:bg-slate-200"
+          >
+            {lang === "pt"
+              ? "+ Criar liga"
+              : "+ Create league"}
+          </button>
+        ))}
     </div>
   )
 }

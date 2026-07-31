@@ -1,24 +1,42 @@
 import {
   getCurrentPlayer,
-  get_featured_games,
-  get_players,
+  get_league_games,
+  get_league_roster,
+  get_leagues,
 } from "@server"
 
 import { LeagueSection } from "./league"
 
 export default async function TeacherLeaguePage() {
-  const [player, allPlayers, featuredGames] =
-    await Promise.all([
-      getCurrentPlayer(),
-      get_players(),
-      get_featured_games(),
-    ])
+  const [player, leagues] = await Promise.all([
+    getCurrentPlayer(),
+    get_leagues(),
+  ])
+  const isModerator = Boolean(player?.moderator)
+  const league = leagues[0] ?? null
+
+  if (!league) {
+    return (
+      <LeagueSection
+        isModerator={isModerator}
+        league={null}
+        roster={[]}
+        games={[]}
+      />
+    )
+  }
+
+  const [roster, games] = await Promise.all([
+    get_league_roster(league.id),
+    get_league_games(league.id),
+  ])
 
   return (
     <LeagueSection
-      isModerator={Boolean(player?.moderator)}
-      players={allPlayers}
-      featuredGames={featuredGames}
+      isModerator={isModerator}
+      league={league}
+      roster={roster}
+      games={games}
     />
   )
 }
