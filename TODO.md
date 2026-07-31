@@ -10,6 +10,16 @@
 - [ ] Move the language to a global state (It's on the top layout at the moment)
 - [ ] The initial page layout once I get the blog going should probably have the top article on top, with the website's title above it.
 
+### Leagues
+
+| Name     | Nick          | Ph  | De  | Di  | Ar  | Gil |
+| -------- | ------------- | --- | --- | --- | --- | --- |
+| Philippe | psygo         | X   |     |     |     |     |
+| Dejan    | mal           |     | X   |     |     |     |
+| Diogo    | Diogo Barbosa |     |     | X   |     |     |
+| Ariel    | GOiano        |     |     |     | X   |     |
+| Gilberto | Gil           |     |     |     |     | X   |
+
 ## Bugs
 
 ## UI
