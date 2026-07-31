@@ -8,6 +8,7 @@ export async function get_players() {
       id: players.id,
       name: players.name,
       nick: players.nick,
+      email: players.email,
       rating: players.rating,
     })
     .from(players)

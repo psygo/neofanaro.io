@@ -10,28 +10,23 @@ import {
 } from "./leagueTable"
 import { AddGameForm } from "./addGameForm"
 
-type RosterEntry = {
-  name: string
-  nick: string
-  code: string
-}
-
-const LEAGUE_ROSTER: RosterEntry[] = [
-  { name: "Philippe Fanaro", nick: "psygo", code: "Ph" },
-  // { name: "Dejan Vekic", nick: "mal", code: "De" },
-  {
-    name: "Diogo Barbosa",
-    nick: "Diogo Barbosa",
-    code: "Di",
-  },
-  // { name: "Ariel Oliveira", nick: "GOiano", code: "Ar" },
-  // { name: "Gilberto Espínola", nick: "Gil", code: "Gi" },
+// Emails of this league's participants. A moderator maintains
+// this list by hand, keyed by email since it's the one unique,
+// stable identifier every player row is guaranteed to have.
+const LEAGUE_ROSTER_EMAILS: string[] = [
+  "philippefanaro@gmail.com",
+  // "dejan@example.com",
+  // "diogo@example.com",
+  "di@gmail.com",
+  // "ariel@example.com",
+  // "gilberto@example.com",
 ]
 
 type DbPlayer = {
   id: number
   name: string
   nick: string
+  email: string | null
   rating: number
 }
 
@@ -41,20 +36,21 @@ type LeagueSectionProps = {
 }
 
 function buildLeagueRows(
-  roster: RosterEntry[],
+  rosterEmails: string[],
   dbPlayers: DbPlayer[],
 ): LeaguePlayerRow[] {
-  return roster.map((entry) => {
-    const match = dbPlayers.find(
-      (p) => p.nick === entry.nick,
+  return rosterEmails
+    .map((email) =>
+      dbPlayers.find((player) => player.email === email),
     )
-    return {
-      code: entry.code,
-      name: match?.name ?? entry.name,
-      rating: match?.rating ?? null,
-      playerId: match?.id ?? null,
-    }
-  })
+    .filter((player): player is DbPlayer => player != null)
+    .map((player) => ({
+      playerId: player.id,
+      code: player.name.slice(0, 2),
+      name: player.name,
+      nick: player.nick,
+      rating: player.rating,
+    }))
 }
 
 export function LeagueSection({
@@ -62,7 +58,10 @@ export function LeagueSection({
   players,
 }: LeagueSectionProps) {
   const lang = useLang()
-  const leagueRows = buildLeagueRows(LEAGUE_ROSTER, players)
+  const leagueRows = buildLeagueRows(
+    LEAGUE_ROSTER_EMAILS,
+    players,
+  )
 
   const [prefill, setPrefill] = useState<{
     blackId: number

@@ -3,10 +3,11 @@
 import { useLang } from "@hooks"
 
 export type LeaguePlayerRow = {
+  playerId: number
   code: string
   name: string
-  rating: number | null
-  playerId: number | null
+  nick: string
+  rating: number
 }
 
 type LeagueTableProps = {
@@ -33,9 +34,12 @@ export function LeagueTable({
             <th className="border-b border-slate-200 px-3 py-2">
               Rating
             </th>
+            <th className="border-b border-slate-200 px-3 py-2 text-left">
+              {lang === "pt" ? "Apelido" : "Nick"}
+            </th>
             {players.map((player) => (
               <th
-                key={player.code}
+                key={player.playerId}
                 className="border-b border-slate-200 px-3 py-2"
               >
                 {player.code}
@@ -46,20 +50,23 @@ export function LeagueTable({
         <tbody>
           {players.map((row) => (
             <tr
-              key={row.code}
+              key={row.playerId}
               className="divide-x divide-slate-200 odd:bg-white even:bg-slate-50"
             >
               <td className="px-3 py-2 text-left font-semibold">
                 {row.name}
               </td>
               <td className="px-3 py-2 text-slate-600">
-                {row.rating ?? "-"}
+                {row.rating}
+              </td>
+              <td className="px-3 py-2 text-left text-slate-600">
+                {row.nick}
               </td>
               {players.map((column) => {
-                if (column.code === row.code) {
+                if (column.playerId === row.playerId) {
                   return (
                     <td
-                      key={column.code}
+                      key={column.playerId}
                       className="px-3 py-2"
                     >
                       X
@@ -67,22 +74,20 @@ export function LeagueTable({
                   )
                 }
 
-                const canAddGame =
-                  isModerator &&
-                  row.playerId != null &&
-                  column.playerId != null
-
-                if (!canAddGame) {
+                if (!isModerator) {
                   return (
                     <td
-                      key={column.code}
+                      key={column.playerId}
                       className="px-3 py-2"
                     />
                   )
                 }
 
                 return (
-                  <td key={column.code} className="p-0">
+                  <td
+                    key={column.playerId}
+                    className="p-0"
+                  >
                     <button
                       type="button"
                       title={
@@ -92,8 +97,8 @@ export function LeagueTable({
                       }
                       onClick={() =>
                         onCellClick?.(
-                          row.playerId as number,
-                          column.playerId as number,
+                          row.playerId,
+                          column.playerId,
                         )
                       }
                       className="h-full w-full cursor-pointer px-3 py-2 text-slate-300 transition duration-300 hover:bg-slate-200 hover:text-slate-600"
