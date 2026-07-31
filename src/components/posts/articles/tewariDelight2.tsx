@@ -6,6 +6,7 @@ import {
   PostSection,
   PostLink,
   PostYouTubeIframe,
+  PostBlockQuote,
 } from "@components/posts/post"
 import { PostMath } from "@components/posts/postMath"
 import { GoDiagram } from "../goDiagram"
@@ -23,6 +24,15 @@ export function TewariDelight2({ post }: BlogPostProps) {
           beauty but also for its usefulness in helping us
           avoid mistakes and inefficient moves.
         </PostParagraph>
+        <PostBlockQuote>
+          In case you&apos;re wondering, Tewari Delight #1
+          doesn&apos;t exist as a post here, it was actually
+          a{" "}
+          <PostLink href="https://youtu.be/c3GU2td0To8">
+            video
+          </PostLink>
+          .
+        </PostBlockQuote>
         <PostParagraph>
           As a teaching aid, about a year and a half ago, I
           found myself wanting an example of how not to do

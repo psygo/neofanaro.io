@@ -6,12 +6,18 @@ import { usePathname } from "next/navigation"
 
 import "flag-icons/css/flag-icons.min.css"
 
+import type { Player } from "@server"
+
 import { useLang } from "@hooks/useLang"
 
 import { LangLink } from "./langLink"
 import { CpiSuspense } from "./cpiSuspense"
 
-export function Nav() {
+type NavProps = {
+  player: Player | null
+}
+
+export function Nav({ player }: NavProps) {
   return (
     <nav className="mx-auto rounded-full bg-slate-100 px-5.5 pt-2.5 pb-2.5 ring-1 ring-slate-200">
       <ul className="flex flex-wrap items-center justify-center gap-1.5">
@@ -22,6 +28,7 @@ export function Nav() {
         <CpiSuspense>
           <LanguageIcon />
         </CpiSuspense>
+        <UserIcon player={player} />
       </ul>
     </nav>
   )
@@ -169,6 +176,31 @@ function LanguageIcon() {
     <UsaFlagLogo />
   ) : (
     <BrazilFlagLogo />
+  )
+}
+
+// ---------------------------------------------------------
+// User
+
+function UserIcon({ player }: { player: Player | null }) {
+  if (!player) {
+    return (
+      <NavIcon
+        src="/nav/sign_in.svg"
+        alt="Sign in"
+        href="/sign-in"
+        size={23.5}
+      />
+    )
+  }
+
+  return (
+    <NavIcon
+      src="/nav/user.svg"
+      alt={player.nick || player.name}
+      href="/profile"
+      size={21}
+    />
   )
 }
 

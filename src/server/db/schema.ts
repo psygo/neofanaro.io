@@ -5,8 +5,10 @@ import {
   integer,
   json,
   pgTable,
+  real,
   serial,
   text,
+  timestamp,
   uniqueIndex,
 } from "drizzle-orm/pg-core"
 
@@ -35,13 +37,33 @@ export const players = pgTable("players", {
   name: text().default("").notNull(),
   email: text().unique(),
   nick: text().default("").notNull(),
+  description: text(),
   rating: integer().default(0).notNull(),
+  passwordHash: text("password_hash"),
 })
 
 export const playersRelations = relations(
   players,
   ({ many }) => ({
     games: many(gamesTable),
+    sessions: many(sessionsTable),
+  }),
+)
+
+export const sessionsTable = pgTable("sessions", {
+  id: serial().primaryKey(),
+  token: text().notNull().unique(),
+  playerId: integer("player_id").notNull(),
+  expiresAt: timestamp("expires_at").notNull(),
+})
+
+export const sessionsRelations = relations(
+  sessionsTable,
+  ({ one }) => ({
+    player: one(players, {
+      fields: [sessionsTable.playerId],
+      references: [players.id],
+    }),
   }),
 )
 
@@ -54,6 +76,9 @@ export const gamesTable = pgTable("games", {
   ratingDiffBlack: integer().notNull(),
   ratingWhite: integer().notNull(),
   ratingDiffWhite: integer().notNull(),
+  handicapStones: integer(),
+  handicapPoints: real(),
+  komi: real(),
   result: text().default("").notNull(),
   ogsLink: text(),
   aiSenseiLink: text(),
