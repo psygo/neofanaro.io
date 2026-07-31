@@ -2,7 +2,7 @@ import { Main } from "@components/common/main"
 import { PresentationSection } from "@components/home/presentationSection"
 import { CpiSuspense } from "@components/common/cpiSuspense"
 
-import { GoProfPresentationSection } from "./teacher/teacher"
+import { GoProfPresentationSection } from "./teacher/presentation/presentation"
 import { SoftwareWorkSection } from "./software/software"
 
 export default function Home() {

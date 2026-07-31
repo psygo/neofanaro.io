@@ -22,14 +22,10 @@ export async function sign_up(
   const password = String(formData.get("password") || "")
 
   if (!email || !nick || !password) {
-    return {
-      error: "Name, nickname, email, and password are required.",
-    }
+    return { errorCode: "missing_fields" }
   }
   if (password.length < 8) {
-    return {
-      error: "Password must be at least 8 characters.",
-    }
+    return { errorCode: "password_too_short" }
   }
 
   const [existing] = await db
@@ -39,7 +35,7 @@ export async function sign_up(
     .limit(1)
 
   if (existing?.passwordHash) {
-    return { error: "An account with this email already exists." }
+    return { errorCode: "email_taken" }
   }
 
   const passwordHash = await hashPassword(password)

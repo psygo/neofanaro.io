@@ -12,7 +12,7 @@
 
 ### Leagues
 
-| Name     | Nick          | Ph  | De  | Di  | Ar  | Gil |
+| Name     | Nick          | Ph  | De  | Di  | Ar  | Gi  |
 | -------- | ------------- | --- | --- | --- | --- | --- |
 | Philippe | psygo         | X   |     |     |     |     |
 | Dejan    | mal           |     | X   |     |     |     |

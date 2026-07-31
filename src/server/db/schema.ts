@@ -34,9 +34,11 @@ export const postsTable = pgTable(
 
 export const players = pgTable("players", {
   id: serial().primaryKey(),
+  moderator: boolean().default(false).notNull(),
   name: text().default("").notNull(),
   email: text().unique(),
   nick: text().default("").notNull(),
+  ogsLink: text(),
   description: text(),
   rating: integer().default(0).notNull(),
   passwordHash: text("password_hash"),

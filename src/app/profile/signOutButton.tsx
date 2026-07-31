@@ -4,7 +4,10 @@ import { useTransition } from "react"
 
 import { sign_out } from "@actions"
 
+import { useLang } from "@hooks"
+
 export function SignOutButton() {
+  const lang = useLang()
   const [isPending, startTransition] = useTransition()
 
   return (
@@ -13,7 +16,13 @@ export function SignOutButton() {
       disabled={isPending}
       className="w-max cursor-pointer rounded-full border border-red-500 bg-slate-100 px-4 py-2 text-red-600 ring-1 ring-slate-200 transition duration-300 hover:bg-slate-200 disabled:cursor-not-allowed disabled:opacity-60"
     >
-      {isPending ? "Signing out..." : "Sign out"}
+      {isPending
+        ? lang === "pt"
+          ? "Saindo..."
+          : "Signing out..."
+        : lang === "pt"
+          ? "Sair"
+          : "Sign out"}
     </button>
   )
 }

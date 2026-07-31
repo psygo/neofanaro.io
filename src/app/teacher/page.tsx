@@ -1,18 +1,14 @@
-import { Main } from "@components/common/main"
-import { CpiSuspense } from "@components/common/cpiSuspense"
+import { redirect } from "next/navigation"
 
-import {
-  CourseSection,
-  GoProfPresentationSection,
-} from "./teacher"
+type TeacherPageProps = {
+  searchParams: Promise<{ lang?: string }>
+}
 
-export default function Teacher() {
-  return (
-    <Main>
-      <CpiSuspense>
-        <GoProfPresentationSection />
-        <CourseSection />
-      </CpiSuspense>
-    </Main>
+export default async function TeacherPage({
+  searchParams,
+}: TeacherPageProps) {
+  const { lang } = await searchParams
+  redirect(
+    `/teacher/presentation${lang ? `?lang=${lang}` : ""}`,
   )
 }

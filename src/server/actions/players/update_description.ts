@@ -8,7 +8,7 @@ import { db, players } from "@db"
 import { getCurrentPlayer } from "@server/auth/session"
 
 export type UpdateDescriptionState = {
-  error?: string
+  errorCode?: "not_signed_in"
 }
 
 export async function update_description(
@@ -17,7 +17,7 @@ export async function update_description(
 ): Promise<UpdateDescriptionState> {
   const player = await getCurrentPlayer()
   if (!player) {
-    return { error: "You need to sign in." }
+    return { errorCode: "not_signed_in" }
   }
 
   const description = String(

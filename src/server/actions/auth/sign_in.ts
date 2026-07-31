@@ -20,7 +20,7 @@ export async function sign_in(
   const password = String(formData.get("password") || "")
 
   if (!email || !password) {
-    return { error: "Email and password are required." }
+    return { errorCode: "missing_fields" }
   }
 
   const [player] = await db
@@ -30,7 +30,7 @@ export async function sign_in(
     .limit(1)
 
   if (!player?.passwordHash) {
-    return { error: "Invalid email or password." }
+    return { errorCode: "invalid_credentials" }
   }
 
   const valid = await verifyPassword(
@@ -38,7 +38,7 @@ export async function sign_in(
     player.passwordHash,
   )
   if (!valid) {
-    return { error: "Invalid email or password." }
+    return { errorCode: "invalid_credentials" }
   }
 
   await createSession(player.id)
