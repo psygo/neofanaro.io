@@ -1,6 +1,6 @@
 "use client"
 
-import { useActionState } from "react"
+import { useActionState, useState } from "react"
 
 import { create_game } from "@actions"
 import type { CreateGameState } from "@server"
@@ -11,6 +11,7 @@ type PlayerOption = {
   id: number
   name: string
   nick: string
+  rating: number
 }
 
 type AddGameFormProps = {
@@ -22,6 +23,12 @@ type AddGameFormProps = {
 const inputClasses =
   "rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-slate-700 focus:outline-2 focus:outline-slate-400"
 const labelClasses = "text-sm font-semibold text-slate-700"
+
+// Standard Elo K-factor for the diff estimate. Not tuned to any
+// particular rating pool, just a reasonable club-level default.
+const K_FACTOR = 32
+// Rough rule of thumb: one handicap stone ~= 100 rating points.
+const HANDICAP_POINTS_PER_STONE = 100
 
 function errorMessage(
   errorCode: CreateGameState["errorCode"],
@@ -41,6 +48,12 @@ function errorMessage(
   }
 }
 
+// Reads who won off of a result string like "B+3.5" or "W+R".
+function winnerFromResult(result: string): "B" | "W" | null {
+  const first = result.trim().charAt(0).toUpperCase()
+  return first === "B" || first === "W" ? first : null
+}
+
 export function AddGameForm({
   players,
   prefillBlackId,
@@ -51,6 +64,61 @@ export function AddGameForm({
     create_game,
     {},
   )
+
+  const [blackId, setBlackId] = useState(
+    prefillBlackId ? String(prefillBlackId) : "",
+  )
+  const [whiteId, setWhiteId] = useState(
+    prefillWhiteId ? String(prefillWhiteId) : "",
+  )
+  const [handicapStones, setHandicapStones] = useState("")
+  const [result, setResult] = useState("")
+
+  const blackPlayer = players.find(
+    (player) => String(player.id) === blackId,
+  )
+  const whitePlayer = players.find(
+    (player) => String(player.id) === whiteId,
+  )
+
+  const ratingBlack = blackPlayer
+    ? String(blackPlayer.rating)
+    : ""
+  const ratingWhite = whitePlayer
+    ? String(whitePlayer.rating)
+    : ""
+
+  let ratingDiffBlack = ""
+  let ratingDiffWhite = ""
+
+  const winner = winnerFromResult(result)
+  if (blackPlayer && whitePlayer && winner) {
+    const handicapBoost =
+      (parseInt(handicapStones, 10) || 0) *
+      HANDICAP_POINTS_PER_STONE
+    const effectiveBlackRating =
+      blackPlayer.rating + handicapBoost
+
+    const expectedBlack =
+      1 /
+      (1 +
+        10 **
+          ((whitePlayer.rating - effectiveBlackRating) /
+            400))
+    const actualBlack = winner === "B" ? 1 : 0
+
+    const diffBlack = Math.round(
+      K_FACTOR * (actualBlack - expectedBlack),
+    )
+    ratingDiffBlack = String(diffBlack)
+    ratingDiffWhite = String(-diffBlack)
+  }
+
+  // Forces the rating/diff inputs below to pick up the freshly
+  // computed defaultValue whenever an input they depend on
+  // changes, while still letting a moderator hand-edit them
+  // afterward without being clobbered on every keystroke.
+  const computedKey = `${blackId}-${whiteId}-${handicapStones}-${result}`
 
   return (
     <form
@@ -84,6 +152,8 @@ export function AddGameForm({
             name="result"
             type="text"
             required
+            value={result}
+            onChange={(e) => setResult(e.target.value)}
             className={inputClasses}
           />
         </label>
@@ -97,7 +167,8 @@ export function AddGameForm({
           <select
             name="blackId"
             required
-            defaultValue={prefillBlackId ?? ""}
+            value={blackId}
+            onChange={(e) => setBlackId(e.target.value)}
             className={inputClasses}
           >
             <option value="" disabled>
@@ -117,7 +188,8 @@ export function AddGameForm({
           <select
             name="whiteId"
             required
-            defaultValue={prefillWhiteId ?? ""}
+            value={whiteId}
+            onChange={(e) => setWhiteId(e.target.value)}
             className={inputClasses}
           >
             <option value="" disabled>
@@ -140,9 +212,11 @@ export function AddGameForm({
               : "Rating (Black)"}
           </span>
           <input
+            key={computedKey}
             name="ratingBlack"
             type="number"
             required
+            defaultValue={ratingBlack}
             className={inputClasses}
           />
         </label>
@@ -153,9 +227,11 @@ export function AddGameForm({
               : "Rating diff (Black)"}
           </span>
           <input
+            key={computedKey}
             name="ratingDiffBlack"
             type="number"
             required
+            defaultValue={ratingDiffBlack}
             className={inputClasses}
           />
         </label>
@@ -166,9 +242,11 @@ export function AddGameForm({
               : "Rating (White)"}
           </span>
           <input
+            key={computedKey}
             name="ratingWhite"
             type="number"
             required
+            defaultValue={ratingWhite}
             className={inputClasses}
           />
         </label>
@@ -179,9 +257,11 @@ export function AddGameForm({
               : "Rating diff (White)"}
           </span>
           <input
+            key={computedKey}
             name="ratingDiffWhite"
             type="number"
             required
+            defaultValue={ratingDiffWhite}
             className={inputClasses}
           />
         </label>
@@ -190,17 +270,25 @@ export function AddGameForm({
       <div className="grid grid-cols-3 gap-3">
         <label className="flex flex-col gap-1">
           <span className={labelClasses}>
-            {lang === "pt" ? "Pedras de handicap" : "Handicap stones"}
+            {lang === "pt"
+              ? "Pedras de handicap"
+              : "Handicap stones"}
           </span>
           <input
             name="handicapStones"
             type="number"
+            value={handicapStones}
+            onChange={(e) =>
+              setHandicapStones(e.target.value)
+            }
             className={inputClasses}
           />
         </label>
         <label className="flex flex-col gap-1">
           <span className={labelClasses}>
-            {lang === "pt" ? "Pontos de handicap" : "Handicap points"}
+            {lang === "pt"
+              ? "Pontos de handicap"
+              : "Handicap points"}
           </span>
           <input
             name="handicapPoints"

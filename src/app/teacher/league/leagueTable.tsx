@@ -16,6 +16,21 @@ type LeagueTableProps = {
   onCellClick?: (blackId: number, whiteId: number) => void
 }
 
+// 2000+ is dan ranks, one rank per 100 points (2000-2099 = 1d).
+// Below 2000, kyu ranks mirror that, clamped to 1k-20k.
+function ratingToRank(rating: number): string {
+  if (rating >= 2000) {
+    const dan = Math.floor((rating - 2000) / 100) + 1
+    return `${dan}d`
+  }
+
+  const kyu = Math.min(
+    Math.max(Math.floor((1999 - rating) / 100) + 1, 1),
+    20,
+  )
+  return `${kyu}k`
+}
+
 export function LeagueTable({
   players,
   isModerator = false,
@@ -57,7 +72,10 @@ export function LeagueTable({
                 {row.name}
               </td>
               <td className="px-3 py-2 text-slate-600">
-                {row.rating}
+                {row.rating}{" "}
+                <span className="text-xs text-slate-400">
+                  ({ratingToRank(row.rating)})
+                </span>
               </td>
               <td className="px-3 py-2 text-left text-slate-600">
                 {row.nick}
