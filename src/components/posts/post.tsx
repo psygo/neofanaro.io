@@ -349,7 +349,10 @@ export function PostBlockQuote({
   children,
 }: WithReactChildren) {
   return (
-    <blockquote className="mr-8 ml-8 border-gray-300 pl-2.5 font-normal text-slate-600 not-italic [&_p:first-of-type]:before:content-[''] [&_p:last-of-type]:after:content-['']">
+    <blockquote
+      className="mr-8 ml-8 border-gray-300 pl-2.5 font-normal hyphens-auto text-slate-600 not-italic [&_p:first-of-type]:before:content-[''] [&_p:last-of-type]:after:content-['']"
+      lang="en"
+    >
       {children}
     </blockquote>
   )

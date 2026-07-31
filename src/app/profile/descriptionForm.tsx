@@ -20,7 +20,7 @@ export function DescriptionForm({
   return (
     <form
       action={formAction}
-      className="flex flex-col gap-2"
+      className="flex w-full flex-col gap-2"
     >
       <label
         htmlFor="description"
@@ -37,12 +37,14 @@ export function DescriptionForm({
         className={inputClasses}
       />
       {state.error && (
-        <p className="text-sm text-red-600">{state.error}</p>
+        <p className="text-sm text-red-600">
+          {state.error}
+        </p>
       )}
       <button
         type="submit"
         disabled={isPending}
-        className="cursor-pointer self-start rounded-full bg-slate-100 px-4 py-2 ring-1 ring-slate-200 transition duration-300 hover:bg-slate-200 disabled:cursor-not-allowed disabled:opacity-60"
+        className="cursor-pointer self-end rounded-lg bg-slate-100 px-4 py-1 ring-1 ring-slate-200 transition duration-300 hover:bg-slate-200 disabled:cursor-not-allowed disabled:opacity-60"
       >
         {isPending ? "Saving..." : "Save"}
       </button>

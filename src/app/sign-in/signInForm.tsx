@@ -2,6 +2,8 @@
 
 import { useActionState } from "react"
 
+import Link from "next/link"
+
 import { sign_in } from "@actions"
 
 const inputClasses =
@@ -14,7 +16,10 @@ export function SignInForm() {
   )
 
   return (
-    <form action={formAction} className="flex flex-col gap-3">
+    <form
+      action={formAction}
+      className="flex w-70 flex-col gap-3"
+    >
       <input
         name="email"
         type="email"
@@ -30,15 +35,25 @@ export function SignInForm() {
         className={inputClasses}
       />
       {state.error && (
-        <p className="text-sm text-red-600">{state.error}</p>
+        <p className="text-sm text-red-600">
+          {state.error}
+        </p>
       )}
-      <button
-        type="submit"
-        disabled={isPending}
-        className="cursor-pointer rounded-full bg-slate-100 px-4 py-2 ring-1 ring-slate-200 transition duration-300 hover:bg-slate-200 disabled:cursor-not-allowed disabled:opacity-60"
-      >
-        {isPending ? "Signing in..." : "Sign in"}
-      </button>
+      <div className="flex justify-between">
+        <Link
+          href="/sign-up"
+          className="cursor-pointer rounded-lg bg-slate-50 px-4 py-2 ring-1 ring-slate-200 transition duration-300 hover:bg-slate-200 disabled:cursor-not-allowed disabled:opacity-60"
+        >
+          Sign Up
+        </Link>
+        <button
+          type="submit"
+          disabled={isPending}
+          className="cursor-pointer rounded-lg bg-slate-100 px-4 py-2 ring-1 ring-slate-200 transition duration-300 hover:bg-slate-200 disabled:cursor-not-allowed disabled:opacity-60"
+        >
+          {isPending ? "Signing in..." : "Sign In"}
+        </button>
+      </div>
     </form>
   )
 }
