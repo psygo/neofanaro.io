@@ -6,6 +6,7 @@ import { create_game } from "@actions"
 import type { CreateGameState } from "@server"
 
 import { useLang } from "@hooks"
+import { winnerFromResult } from "@utils"
 
 type PlayerOption = {
   id: number
@@ -48,11 +49,6 @@ function errorMessage(
   }
 }
 
-// Reads who won off of a result string like "B+3.5" or "W+R".
-function winnerFromResult(result: string): "B" | "W" | null {
-  const first = result.trim().charAt(0).toUpperCase()
-  return first === "B" || first === "W" ? first : null
-}
 
 export function AddGameForm({
   players,

@@ -1,1 +1,6 @@
 export * from "./create_game"
+export * from "./get_featured_games"
+export * from "./get_game"
+export * from "./get_games_between"
+export * from "./set_featured_game"
+export * from "./update_game_links"

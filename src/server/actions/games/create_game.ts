@@ -2,7 +2,9 @@
 
 import { revalidatePath } from "next/cache"
 
-import { db, gamesTable } from "@db"
+import { eq, sql } from "drizzle-orm"
+
+import { db, gamesTable, players } from "@db"
 import { getCurrentPlayer } from "@server/auth/session"
 
 export type CreateGameState = {
@@ -80,6 +82,15 @@ export async function create_game(
     twitchLink: optionalText(formData.get("twitchLink")),
     reviewed: formData.get("reviewed") === "on",
   })
+
+  await db
+    .update(players)
+    .set({ rating: sql`${players.rating} + ${ratingDiffBlack}` })
+    .where(eq(players.id, blackId))
+  await db
+    .update(players)
+    .set({ rating: sql`${players.rating} + ${ratingDiffWhite}` })
+    .where(eq(players.id, whiteId))
 
   revalidatePath("/teacher/league")
   return {}

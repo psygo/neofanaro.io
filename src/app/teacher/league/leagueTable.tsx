@@ -1,6 +1,9 @@
 "use client"
 
 import { useLang } from "@hooks"
+import { winnerFromResult } from "@utils"
+
+import { LangLink } from "@components/common/langLink"
 
 export type LeaguePlayerRow = {
   playerId: number
@@ -10,9 +13,17 @@ export type LeaguePlayerRow = {
   rating: number
 }
 
+type FeaturedGame = {
+  id: number
+  blackId: number
+  whiteId: number
+  result: string
+}
+
 type LeagueTableProps = {
   players: LeaguePlayerRow[]
   isModerator?: boolean
+  featuredGames?: FeaturedGame[]
   onCellClick?: (blackId: number, whiteId: number) => void
 }
 
@@ -31,9 +42,24 @@ function ratingToRank(rating: number): string {
   return `${kyu}k`
 }
 
+function findFeaturedGame(
+  featuredGames: FeaturedGame[],
+  playerAId: number,
+  playerBId: number,
+) {
+  return featuredGames.find(
+    (game) =>
+      (game.blackId === playerAId &&
+        game.whiteId === playerBId) ||
+      (game.blackId === playerBId &&
+        game.whiteId === playerAId),
+  )
+}
+
 export function LeagueTable({
   players,
   isModerator = false,
+  featuredGames = [],
   onCellClick,
 }: LeagueTableProps) {
   const lang = useLang()
@@ -88,6 +114,42 @@ export function LeagueTable({
                       className="px-3 py-2"
                     >
                       X
+                    </td>
+                  )
+                }
+
+                const featuredGame = findFeaturedGame(
+                  featuredGames,
+                  row.playerId,
+                  column.playerId,
+                )
+
+                if (featuredGame) {
+                  const winner = winnerFromResult(
+                    featuredGame.result,
+                  )
+                  const rowWon =
+                    (winner === "B" &&
+                      featuredGame.blackId ===
+                        row.playerId) ||
+                    (winner === "W" &&
+                      featuredGame.whiteId === row.playerId)
+
+                  return (
+                    <td
+                      key={column.playerId}
+                      className="p-0"
+                    >
+                      <LangLink
+                        href={`/game/${featuredGame.id}`}
+                        className={`flex h-full w-full items-center justify-center px-3 py-2 font-bold transition duration-300 ${
+                          rowWon
+                            ? "text-green-600 hover:bg-green-50"
+                            : "text-red-600 hover:bg-red-50"
+                        }`}
+                      >
+                        {rowWon ? "W" : "L"}
+                      </LangLink>
                     </td>
                   )
                 }

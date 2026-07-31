@@ -87,6 +87,9 @@ export const gamesTable = pgTable("games", {
   youtubeLink: text(),
   twitchLink: text(),
   reviewed: boolean().default(false),
+  leagueFeatured: boolean("league_featured")
+    .default(false)
+    .notNull(),
   // Relationships
   blackId: integer("black_id").notNull(),
   whiteId: integer("white_id").notNull(),
@@ -105,3 +108,23 @@ export const gamesRelations = relations(
     }),
   }),
 )
+
+// export const leaguesTable = pgTable("leagues", {
+//   // Metadata
+//   id: serial().primaryKey(),
+//   date: date().notNull().default(todayDate()),
+//   title: text(),
+//   group: text(),
+//   // Relationships
+//   gameId: integer("game_id").notNull(),
+// })
+
+// export const leaguesRelations = relations(
+//   leaguesTable,
+//   ({ one }) => ({
+//     game: one(gamesTable, {
+//       fields: [leaguesTable.gameId],
+//       references: [gamesTable.id],
+//     }),
+//   }),
+// )

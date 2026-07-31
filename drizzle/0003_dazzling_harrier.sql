@@ -1,0 +1,1 @@
+ALTER TABLE "games" ADD COLUMN "league_featured" boolean DEFAULT false NOT NULL;

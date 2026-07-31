@@ -1,6 +1,10 @@
 "use client"
 
+import { useRouter } from "next/navigation"
 import { useRef, useState } from "react"
+
+import { get_games_between } from "@actions"
+import type { FeaturedGame } from "@server"
 
 import { useLang } from "@hooks"
 
@@ -9,6 +13,7 @@ import {
   type LeaguePlayerRow,
 } from "./leagueTable"
 import { AddGameForm } from "./addGameForm"
+import { GamePicker } from "./gamePicker"
 
 // Emails of this league's participants. A moderator maintains
 // this list by hand, keyed by email since it's the one unique,
@@ -33,6 +38,7 @@ type DbPlayer = {
 type LeagueSectionProps = {
   isModerator: boolean
   players: DbPlayer[]
+  featuredGames: FeaturedGame[]
 }
 
 function buildLeagueRows(
@@ -53,31 +59,71 @@ function buildLeagueRows(
     }))
 }
 
+type Picker = {
+  playerAId: number
+  playerBId: number
+  games: Awaited<ReturnType<typeof get_games_between>>
+  loading: boolean
+}
+
 export function LeagueSection({
   isModerator,
   players,
+  featuredGames,
 }: LeagueSectionProps) {
   const lang = useLang()
+  const router = useRouter()
   const leagueRows = buildLeagueRows(
     LEAGUE_ROSTER_EMAILS,
     players,
   )
 
+  const [picker, setPicker] = useState<Picker | null>(null)
   const [prefill, setPrefill] = useState<{
     blackId: number
     whiteId: number
   } | null>(null)
+
+  const pickerRef = useRef<HTMLDivElement>(null)
   const formRef = useRef<HTMLDivElement>(null)
 
-  function handleCellClick(
-    blackId: number,
-    whiteId: number,
+  async function handleCellClick(
+    playerAId: number,
+    playerBId: number,
   ) {
-    setPrefill({ blackId, whiteId })
+    setPicker({
+      playerAId,
+      playerBId,
+      games: [],
+      loading: true,
+    })
+    pickerRef.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    })
+
+    const games = await get_games_between(
+      playerAId,
+      playerBId,
+    )
+    setPicker({ playerAId, playerBId, games, loading: false })
+  }
+
+  function handleAddNewGame() {
+    if (!picker) return
+    setPrefill({
+      blackId: picker.playerAId,
+      whiteId: picker.playerBId,
+    })
     formRef.current?.scrollIntoView({
       behavior: "smooth",
       block: "start",
     })
+  }
+
+  function handleGameFeatured() {
+    setPicker(null)
+    router.refresh()
   }
 
   return (
@@ -89,9 +135,23 @@ export function LeagueSection({
         <LeagueTable
           players={leagueRows}
           isModerator={isModerator}
+          featuredGames={featuredGames}
           onCellClick={handleCellClick}
         />
       </div>
+      {isModerator && picker && (
+        <div ref={pickerRef}>
+          <GamePicker
+            playerAId={picker.playerAId}
+            playerBId={picker.playerBId}
+            players={players}
+            games={picker.games}
+            loading={picker.loading}
+            onAddNewGame={handleAddNewGame}
+            onGameFeatured={handleGameFeatured}
+          />
+        </div>
+      )}
       {isModerator && (
         <div ref={formRef}>
           <AddGameForm
