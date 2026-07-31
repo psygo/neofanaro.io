@@ -255,7 +255,14 @@ export function TewariDelight2({ post }: BlogPostProps) {
           2-point loss, we get into a near 6-point deficit.
         </PostParagraph>
         <PostParagraph>So there you go:</PostParagraph>
-        <PostMath display>{equations}</PostMath>
+        <PostMath display>
+          {String.raw`
+            \begin{align}
+              &Broken\ Keima = Empty\ Triangle \\
+              &Broken\ Jump = Broken\ Keima - 4
+            \end{align}
+          `}
+        </PostMath>
         <PostParagraph>
           That&apos;s simple math for you. Relatively true.
           Absolute nonsense.
@@ -264,10 +271,3 @@ export function TewariDelight2({ post }: BlogPostProps) {
     </Post>
   )
 }
-
-const equations = String.raw`
-\begin{align}
-  &Broken\ Keima = Empty\ Triangle \\
-  &Broken\ Jump = Broken\ Keima - 4
-\end{align}
-`
