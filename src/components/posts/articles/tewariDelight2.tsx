@@ -6,8 +6,8 @@ import {
   PostSection,
   PostLink,
   PostYouTubeIframe,
-  PostUnorderedList,
 } from "@components/posts/post"
+import { PostMath } from "@components/posts/postMath"
 import { GoDiagram } from "../goDiagram"
 
 export function TewariDelight2({ post }: BlogPostProps) {
@@ -255,10 +255,7 @@ export function TewariDelight2({ post }: BlogPostProps) {
           2-point loss, we get into a near 6-point deficit.
         </PostParagraph>
         <PostParagraph>So there you go:</PostParagraph>
-        <PostUnorderedList>
-          <li>Broken Keima = Empty Triangle</li>
-          <li>Broken Jump = Broken Keima - 4</li>
-        </PostUnorderedList>
+        <PostMath display>{equations}</PostMath>
         <PostParagraph>
           That&apos;s simple math for you. Relatively true.
           Absolute nonsense.
@@ -267,3 +264,10 @@ export function TewariDelight2({ post }: BlogPostProps) {
     </Post>
   )
 }
+
+const equations = String.raw`
+\begin{align}
+  &Broken\ Keima = Empty\ Triangle \\
+  &Broken\ Jump = Broken\ Keima - 4
+\end{align}
+`
