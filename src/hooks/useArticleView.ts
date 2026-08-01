@@ -2,12 +2,12 @@
 
 import { useEffect } from "react"
 
-import { post_view } from "@server/actions/posts/post_posts"
+import { add_article_view } from "@server/actions/articles/add_article_view"
 
-export function usePostView(path: string) {
+export function useArticleView(path: string) {
   useEffect(() => {
     const timer = window.setTimeout(() => {
-      post_view(path)
+      add_article_view(path)
     }, 5_000)
 
     return () => {

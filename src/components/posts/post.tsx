@@ -10,20 +10,22 @@ import { PDFViewer } from "@embedpdf/react-pdf-viewer"
 import hljs from "highlight.js"
 import "highlight.js/styles/atom-one-dark.css"
 
-import { PostFromDb, WithReactChildren } from "@types"
+import { ArticleFromDb, WithReactChildren } from "@types"
 
 import { useLang } from "@hooks/useLang"
+import { localizedText } from "@utils"
 
 import { PostViewTracker } from "./postViewTracker"
 
 type PostProps = {
-  data: PostFromDb
+  data: ArticleFromDb
   children: React.ReactNode
 }
 
 const DEFAULT_MAX_WIDTH_REM = 29 // matches former max-w-110
 
 export function Post({ data, children }: PostProps) {
+  const lang = useLang()
   const [maxWidth, setMaxWidth] = useState(
     DEFAULT_MAX_WIDTH_REM,
   )
@@ -37,7 +39,13 @@ export function Post({ data, children }: PostProps) {
       <PostViewTracker path={data.path} />
       <PostTitleSection>
         <div className="mb-5 flex items-center justify-between gap-20">
-          <PostTitle>{data.title}</PostTitle>
+          <PostTitle>
+            {localizedText(
+              data.titleEn,
+              data.titlePt,
+              lang,
+            )}
+          </PostTitle>
           <PostWidthSlider
             maxWidth={maxWidth}
             setMaxWidth={setMaxWidth}

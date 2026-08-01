@@ -171,7 +171,7 @@ export function LatexShogi({ post }: BlogPostProps) {
           the{" "}
           <PostLink
             internal
-            href="https://neofanaroio.vercel.app/posts/okaoigo-ai-articles"
+            href="https://neofanaroio.vercel.app/articles/okaoigo-ai-articles"
           >
             okaoigo&apos;s one
           </PostLink>

@@ -49,7 +49,7 @@ export function IngCupSuicide({ post }: BlogPostProps) {
           &apos;s &mdash; Blackie&apos;s International Baduk
           Academy, a Go school for foreigners in Korea; have
           a watch of{" "}
-          <PostLink internal href="/posts/one-year-in-asia">
+          <PostLink internal href="/articles/one-year-in-asia">
             this video
           </PostLink>{" "}
           for more info &mdash; substitute teachers, wanted

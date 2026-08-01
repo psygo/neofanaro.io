@@ -1,6 +1,6 @@
 "use client"
 
-import { usePostView } from "@/src/hooks/usePostView"
+import { useArticleView } from "@/src/hooks/useArticleView"
 
 type PostViewTrackerProps = {
   path: string
@@ -9,7 +9,7 @@ type PostViewTrackerProps = {
 export function PostViewTracker({
   path,
 }: PostViewTrackerProps) {
-  usePostView(path)
+  useArticleView(path)
 
   return <></>
 }

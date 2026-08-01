@@ -1,2 +1,2 @@
-export * from "./usePostView"
+export * from "./useArticleView"
 export * from "./useLang"

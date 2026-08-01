@@ -16,15 +16,20 @@ function todayDate() {
   return new Date().toLocaleDateString("en-CA")
 }
 
-export const postsTable = pgTable(
-  "posts",
+export const articlesTable = pgTable(
+  "articles",
   {
     id: serial().primaryKey(),
     path: text().notNull().default("/"),
     date: date().notNull().default(todayDate()),
-    title: text().notNull().default("Title"),
-    description: text().notNull().default("Description"),
-    lang: text().notNull().default("en"),
+    titleEn: text("title_en").notNull().default("Title"),
+    titlePt: text("title_pt").notNull().default(""),
+    descriptionEn: text("description_en")
+      .notNull()
+      .default("Description"),
+    descriptionPt: text("description_pt")
+      .notNull()
+      .default(""),
     views: integer().notNull().default(0),
     tags: json().notNull().default([]),
     draft: boolean().notNull().default(true),

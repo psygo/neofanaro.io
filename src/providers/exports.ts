@@ -1,1 +1,1 @@
-export * from "./postsProvider"
+export * from "./articlesProvider"

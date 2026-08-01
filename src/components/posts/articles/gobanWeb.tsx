@@ -190,7 +190,7 @@ export function GobanWeb({ post }: BlogPostProps) {
           <p>
             A mistaken, unexpected cut (8), with surprising
             results afterwards. For more info, check out{" "}
-            <PostLink internal href="/posts/dowon-pairgo">
+            <PostLink internal href="/articles/dowon-pairgo">
               this article
             </PostLink>
             .
@@ -226,7 +226,7 @@ export function GobanWeb({ post }: BlogPostProps) {
           <p>
             This capturing race yields a different result if
             we take away the suicide rule. Check{" "}
-            <PostLink href="/posts/ing-cup-suicide">
+            <PostLink href="/articles/ing-cup-suicide">
               this article
             </PostLink>{" "}
             for more.

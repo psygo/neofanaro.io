@@ -2,25 +2,25 @@
 
 import { and, desc, eq, sql } from "drizzle-orm"
 
-import { OrderBy, PostFromDb } from "@types"
+import { ArticleFromDb, OrderBy } from "@types"
 
-import { db, postsTable } from "@db"
+import { db, articlesTable } from "@db"
 
-export async function get_post(path: string) {
+export async function get_article(path: string) {
   try {
-    const post = await db
+    const article = await db
       .select()
-      .from(postsTable)
-      .where(eq(postsTable.path, path))
+      .from(articlesTable)
+      .where(eq(articlesTable.path, path))
       .limit(1)
 
-    return post.first() as PostFromDb
+    return article.first() as ArticleFromDb
   } catch (e) {
     console.error(e)
   }
 }
 
-export async function get_posts(
+export async function get_articles(
   orderBy: OrderBy = OrderBy.date,
   includeDrafts = false,
   tags?: string[],
@@ -28,11 +28,11 @@ export async function get_posts(
   try {
     const draftCondition = includeDrafts
       ? undefined
-      : eq(postsTable.draft, false)
+      : eq(articlesTable.draft, false)
 
     const tagCondition =
       tags && tags.length > 0
-        ? sql`${postsTable.tags}::jsonb @> ${JSON.stringify(tags)}::jsonb`
+        ? sql`${articlesTable.tags}::jsonb @> ${JSON.stringify(tags)}::jsonb`
         : undefined
 
     const condition =
@@ -40,17 +40,17 @@ export async function get_posts(
         ? and(draftCondition, tagCondition)
         : (draftCondition ?? tagCondition)
 
-    const posts = await db
+    const articles = await db
       .select()
-      .from(postsTable)
+      .from(articlesTable)
       .where(condition)
       .orderBy(
         orderBy === OrderBy.date
-          ? desc(postsTable.date)
-          : desc(postsTable.views),
+          ? desc(articlesTable.date)
+          : desc(articlesTable.views),
       )
 
-    return posts as PostFromDb[]
+    return articles as ArticleFromDb[]
   } catch (e) {
     console.error(e)
   }

@@ -22,7 +22,7 @@ export function OkaoigoAiArticles({ post }: BlogPostProps) {
           Vieira 4d EGF &mdash; see{" "}
           <PostLink
             internal
-            href="https://neofanaroio.vercel.app/posts/little-knife-god-go-books"
+            href="https://neofanaroio.vercel.app/articles/little-knife-god-go-books"
           >
             this post about Little Knife God&apos;s Go Books
           </PostLink>{" "}

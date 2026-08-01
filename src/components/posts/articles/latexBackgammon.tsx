@@ -17,7 +17,7 @@ export function LatexBackgammon({ post }: BlogPostProps) {
       <PostSection>
         <PostParagraph>
           Right after finishing my{" "}
-          <PostLink href="/posts/latex-shogi">
+          <PostLink href="/articles/latex-shogi">
             LaTeX Shogi
           </PostLink>{" "}
           project , I got an itch for doing something
@@ -64,7 +64,7 @@ export function LatexBackgammon({ post }: BlogPostProps) {
             LaTeX Shogi on Github
           </PostLink>{" "}
           and{" "}
-          <PostLink href="/posts/latex-shogi">
+          <PostLink href="/articles/latex-shogi">
             its companion article
           </PostLink>{" "}
           too, but the{" "}

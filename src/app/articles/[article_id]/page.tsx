@@ -1,9 +1,9 @@
 import { Metadata } from "next"
 
-import { PostFromDb } from "@types"
+import { ArticleFromDb } from "@types"
 
-import { generatePostMetadataHelper } from "@server"
-import { get_post } from "@actions"
+import { generateArticleMetadataHelper } from "@server"
+import { get_article } from "@actions"
 
 import { Main } from "@components/common/main"
 import { CpiSuspense } from "@components/common/cpiSuspense"
@@ -26,35 +26,38 @@ import {
   WhatIsGoAbout,
 } from "@components/posts/articles/exports"
 
-type BlogPageProps = {
-  params: Promise<{ blog_id: string }>
+type ArticlePageProps = {
+  params: Promise<{ article_id: string }>
+  searchParams: Promise<{ lang?: string }>
 }
 
 export async function generateMetadata({
   params,
-}: BlogPageProps): Promise<Metadata> {
-  const { blog_id } = await params
+  searchParams,
+}: ArticlePageProps): Promise<Metadata> {
+  const { article_id } = await params
+  const { lang } = await searchParams
 
-  return generatePostMetadataHelper(blog_id)
+  return generateArticleMetadataHelper(article_id, lang)
 }
 
-export default async function BlogPost({
+export default async function ArticlePage({
   params,
-}: BlogPageProps) {
-  const { blog_id } = await params
+}: ArticlePageProps) {
+  const { article_id } = await params
 
-  const post = await get_post(blog_id)
+  const article = await get_article(article_id)
 
   return (
     <Main>
       <CpiSuspense>
-        {post ? whichBlogPost(blog_id, post) : <></>}
+        {article ? whichArticle(article_id, article) : <></>}
       </CpiSuspense>
     </Main>
   )
 }
 
-function whichBlogPost(path: string, post: PostFromDb) {
+function whichArticle(path: string, post: ArticleFromDb) {
   switch (path) {
     case "dowon-pairgo":
       return <DowonPairGo post={post} />

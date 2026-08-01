@@ -1,6 +1,8 @@
 import type { Metadata } from "next"
 
-import { get_post } from "../actions/posts/get_posts"
+import { localizedText } from "@utils"
+
+import { get_article } from "../actions/articles/get_articles"
 
 export const topLevelMetadata: Metadata = {
   metadataBase: new URL("https://neofanaroio.vercel.app"),
@@ -32,24 +34,35 @@ export const topLevelMetadata: Metadata = {
   },
 }
 
-export async function generatePostMetadataHelper(
+export async function generateArticleMetadataHelper(
   path: string,
+  lang?: string,
 ): Promise<Metadata> {
-  const post = await get_post(path)
+  const article = await get_article(path)
+  if (!article) return {}
 
-  return post
-    ? {
-        title: post.title,
-        description: post.description,
-        openGraph: {
-          title: post.title,
-          description: post.description,
-          images: [
-            {
-              url: "logos/fanaro.io_32.png",
-            },
-          ],
+  const title = localizedText(
+    article.titleEn,
+    article.titlePt,
+    lang ?? "en",
+  )
+  const description = localizedText(
+    article.descriptionEn,
+    article.descriptionPt,
+    lang ?? "en",
+  )
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      images: [
+        {
+          url: "logos/fanaro.io_32.png",
         },
-      }
-    : {}
+      ],
+    },
+  }
 }

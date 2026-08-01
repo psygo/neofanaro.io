@@ -1,17 +1,20 @@
-import "flag-icons/css/flag-icons.min.css"
-
 import { cardDecoration } from "@styles"
 
-import { PostFromDb, WithReactChildren } from "@types"
+import { ArticleFromDb, WithReactChildren } from "@types"
+
+import { useLang } from "@hooks/useLang"
+import { localizedText } from "@utils"
 
 import { LangLink } from "../common/langLink"
 import { PostDate, PostTags, PostViews } from "./post"
 
 export type PostCardProps = {
-  post: PostFromDb
+  post: ArticleFromDb
 }
 
 export function PostCard({ post }: PostCardProps) {
+  const lang = useLang()
+
   let borderColor = "oklch(21% 0.034 264.665)"
 
   if (post.tags.includes("baduk")) {
@@ -21,28 +24,33 @@ export function PostCard({ post }: PostCardProps) {
   }
 
   return (
-    <LangLink href={`/posts/${post.path}`}>
+    <LangLink href={`/articles/${post.path}`}>
       <div
         style={{
           borderLeftColor: borderColor,
         }}
         className={`flex flex-col gap-2 border-l-[7px] ${cardDecoration}`}
       >
-        <PostTitle>{post.title}</PostTitle>
+        <PostTitle>
+          {localizedText(post.titleEn, post.titlePt, lang)}
+        </PostTitle>
         <div className="mt-1 mb-1 flex flex-wrap items-center gap-3 sm:items-end-safe">
           <PostViews
             views={post.views}
             className="flex gap-1 text-sm font-bold text-slate-700"
           />
           <PostTags tags={post.tags} />
-          <PostLang lang={post.lang} />
         </div>
         <PostDate
           date={new Date(post.date)}
           className="pb-1 text-sm font-semibold text-slate-500"
         />
         <PostDescription>
-          {post.description}
+          {localizedText(
+            post.descriptionEn,
+            post.descriptionPt,
+            lang,
+          )}
         </PostDescription>
       </div>
     </LangLink>
@@ -54,23 +62,6 @@ function PostTitle({ children }: WithReactChildren) {
     <h2 className="text-2xl font-extrabold tracking-wide">
       {children}
     </h2>
-  )
-}
-
-type PostLangProps = {
-  lang: string
-}
-
-function PostLang({ lang }: PostLangProps) {
-  return (
-    <span
-      className={`fi rounded-xl fi-${lang === "pt" ? "br" : "us"}`}
-      style={{
-        width: "20px",
-        height: "20px",
-        // marginBottom: "2px",
-      }}
-    ></span>
   )
 }
 

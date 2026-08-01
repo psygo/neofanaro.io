@@ -75,7 +75,7 @@ function BlogLogo() {
     <NavIcon
       src="/nav/book.svg"
       alt="Blog"
-      href="/posts"
+      href="/articles"
       size={23.5}
     />
   )

@@ -1,6 +1,6 @@
-import { get_posts } from "@actions"
+import { get_articles } from "@actions"
 
-import { PostsProvider } from "@providers"
+import { ArticlesProvider } from "@providers"
 
 import { Main } from "@components/common/main"
 import { PostsSection } from "@components/posts/postsSection"
@@ -10,16 +10,21 @@ type Props = {
   searchParams: Promise<{ draft?: string }>
 }
 
-export default async function Posts({ searchParams }: Props) {
+export default async function Articles({
+  searchParams,
+}: Props) {
   const { draft } = await searchParams
-  const posts = await get_posts(undefined, draft === "true")
+  const articles = await get_articles(
+    undefined,
+    draft === "true",
+  )
 
   return (
     <Main>
       <CpiSuspense>
-        <PostsProvider initialPosts={posts || []}>
+        <ArticlesProvider initialArticles={articles || []}>
           <PostsSection />
-        </PostsProvider>
+        </ArticlesProvider>
       </CpiSuspense>
     </Main>
   )

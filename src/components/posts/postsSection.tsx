@@ -2,11 +2,11 @@
 
 import { useState } from "react"
 
-import { get_posts } from "@actions"
+import { get_articles } from "@actions"
 
 import { useLang } from "@hooks/useLang"
 
-import { usePosts } from "@providers/postsProvider"
+import { useArticles } from "@providers/articlesProvider"
 
 import { MultiSelect } from "@components/common/multiSelect"
 
@@ -14,19 +14,19 @@ import { PostCard } from "./postCard"
 
 export function PostsSection() {
   const lang = useLang()
-  const { posts, setPosts, allTags } = usePosts()
+  const { articles, setArticles, allTags } = useArticles()
   const [selectedTags, setSelectedTags] = useState<
     string[]
   >([])
 
   async function handleTagsChange(tags: string[]) {
     setSelectedTags(tags)
-    const filtered = await get_posts(
+    const filtered = await get_articles(
       undefined,
       false,
       tags.length > 0 ? tags : undefined,
     )
-    if (filtered) setPosts(filtered)
+    if (filtered) setArticles(filtered)
   }
 
   return (
@@ -47,7 +47,7 @@ export function PostsSection() {
         />
       </div>
       <div className="flex flex-col gap-3">
-        {posts.map((post, i) => (
+        {articles.map((post, i) => (
           <PostCard key={i} post={post} />
         ))}
       </div>
