@@ -270,6 +270,10 @@ export function TewariDelight2({ post }: BlogPostProps) {
             \begin{array}{l@{\;}l}
               Broken\ Keima &= Empty\ Triangle \\
               Broken\ Jump &= Broken\ Keima - 4
+              \\
+              \therefore
+              \\
+              Broken\ Jump &= Empty\ Triangle - 4
             \end{array}
           `}
         </PostMath>
