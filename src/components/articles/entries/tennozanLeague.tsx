@@ -22,7 +22,103 @@ export function TennozanLeague({ post }: ArticleProps) {
     <Article data={post}>
       {lang === "pt" ? (
         <ArticleSection>
-          <ArticleParagraph>Olá</ArticleParagraph>
+          <ArticleBlockQuote>
+            <ArticleLink internal href="/teacher/league">
+              Acesse a liga aqui!
+            </ArticleLink>
+          </ArticleBlockQuote>
+          <ArticleParagraph>
+            Há alguns anos, administrei uma liga online
+            chamada{" "}
+            <ArticleLink href="https://fanaroengineering.github.io/dogemp_build/">
+              DOGemP
+            </ArticleLink>{" "}
+            ou &quot;Dojo Online de Go em Português&quot;,
+            que também contava com revisões de partidas e
+            palestras sobre diversos temas &mdash; e que era
+            gerenciada através{" "}
+            <ArticleLink href="https://docs.google.com/spreadsheets/d/1Nmf-qVtF1t-IQWB7Dul8G3B17y-wuyXiWfwxvFVyAbI/edit?gid=570732630#gid=570732630">
+              desta planilha
+            </ArticleLink>
+            .
+          </ArticleParagraph>
+          <ArticleYouTubeIframe
+            src="https://www.youtube.com/embed/41MSBjL5qu4"
+            title="O Tesuji-Mor"
+          />
+          <ArticleParagraph>
+            As palestras por si só já davam um baita
+            trabalho para produzir semanalmente. Mas eu
+            também revisava praticamente todas as partidas
+            da liga, e transmitia as minhas ao vivo. No
+            final das contas, aos poucos, à medida que
+            outras coisas na minha vida passaram a exigir
+            mais tempo, administrar aquele dojo online foi
+            ficando cada vez mais inviável. Na época, eu
+            tinha uma mentalidade de tudo ou nada em relação
+            à ideia, então optei por encerrá-la.
+          </ArticleParagraph>
+          <ArticleYouTubeIframe
+            src="https://www.youtube.com/embed/IK5dFFTS_M8"
+            title="Revisão de Cactus Juice vs Pedepano"
+          />
+          <ArticleParagraph>
+            Agora estou reiniciando-a. Mais ou menos.
+          </ArticleParagraph>
+          <ArticleParagraph>
+            Faremos uma liga semanal com compensação
+            (handicap), na qual transmitirei minhas partidas
+            ao vivo. Vou tentar fazer com que todos agendem
+            suas partidas para as quartas-feiras às 20h
+            (GMT-3), assim conseguimos socializar melhor. E,
+            já que estarei ao vivo, também poderei comentar
+            as partidas de outros jogadores, depois que
+            terminar a minha.
+          </ArticleParagraph>
+          <ArticleParagraph>
+            Todos são bem-vindos, você não precisa ser
+            brasileiro nem falar português para participar.
+            A maioria dos brasileiros sabe pelo menos um
+            pouco de inglês, o que ajuda bastante na
+            comunicação com estrangeiros.
+          </ArticleParagraph>
+          <ArticleParagraph>
+            <ArticleLink href="https://senseis.xmp.net/?Tennozan">
+              Tennozan (天王山)
+            </ArticleLink>
+            , ou &quot;montanha rei-celestial&quot;, foi a
+            colina ou monte que o xogum Toyotomi Hideyoshi
+            usou para vencer a batalha decisiva pela
+            reunificação do Japão em 1582. Esse termo pode
+            ser usado de forma parecida com o meme
+            &quot;Anakin, eu tenho a vantagem do terreno
+            elevado&quot;, de Star Wars.
+          </ArticleParagraph>
+          <ArticleImageWithLegend
+            src="/articles/tennozan-league/high_ground.jpg"
+            height={350}
+            width={350}
+            className="rounded-xl"
+          >
+            <p>
+              O icônico &quot;Acabou, Anakin, eu tenho a
+              vantagem do terreno elevado&quot;, de Obi-Wan.
+            </p>
+          </ArticleImageWithLegend>
+          <GoDiagram
+            src="/articles/tennozan-league/1.svg"
+            width={400}
+            height={400}
+            diaNumber={1}
+          >
+            <p>
+              Um exemplo de &quot;tennozan&quot; no Go, na
+              Sensei&apos;s Library. Preto 1 controla o
+              quadrante superior direito do tabuleiro
+              &quot;de cima&quot;, pressionando o oponente
+              ao mesmo tempo.
+            </p>
+          </GoDiagram>
         </ArticleSection>
       ) : (
         <ArticleSection>
@@ -73,9 +169,9 @@ export function TennozanLeague({ post }: ArticleProps) {
             in which I&apos;ll stream my games. And
             I&apos;ll try to have everyone schedule games
             for Wednesdays 8 pm GMT-3, this way we can
-            socialize better. And, since I&apos;m gonna be
-            live streaming, I can also provide comments on
-            other players&apos; games after I finish mine.
+            socialize better. Since I&apos;m gonna be live
+            streaming, I can also provide comments on other
+            players&apos; games after I finish mine.
           </ArticleParagraph>
           <ArticleParagraph>
             Everyone is welcome, you don&apos;t need to be
