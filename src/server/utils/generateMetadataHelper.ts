@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import { get_post } from "../actions/posts/get_posts"
 
 export const topLevelMetadata: Metadata = {
+  metadataBase: new URL("https://neofanaroio.vercel.app"),
   title: "neofanaro.io",
   description: "neofanaro.io",
   alternates: {
