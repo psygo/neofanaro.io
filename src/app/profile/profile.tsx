@@ -7,6 +7,7 @@ import { useLang } from "@hooks"
 import { LangLink } from "@components/common/langLink"
 
 import { DescriptionForm } from "./descriptionForm"
+import { ProfileDetailsForm } from "./profileDetailsForm"
 import { SignOutButton } from "./signOutButton"
 
 export function ProfileSection({
@@ -18,7 +19,7 @@ export function ProfileSection({
 
   if (!player) {
     return (
-      <div className="flex flex-col gap-3">
+      <div className="flex w-110 flex-col gap-3">
         <h1 className="text-2xl font-bold">
           {lang === "pt" ? "Perfil" : "Profile"}
         </h1>
@@ -36,7 +37,7 @@ export function ProfileSection({
   }
 
   return (
-    <div className="flex w-70 flex-col items-center gap-8">
+    <div className="flex max-w-110 flex-col items-center gap-8">
       <h1 className="text-center text-2xl font-bold">
         {lang === "pt" ? "Perfil" : "Profile"}
       </h1>
@@ -45,12 +46,16 @@ export function ProfileSection({
           <p className="text-lg font-semibold">
             {player.name}
           </p>
-          <p className="text-slate-600">@{player.nick}</p>
         </div>
         <ul className="text-slate-700">
           <li>Rating: {player.rating}</li>
           {player.email && <li>Email: {player.email}</li>}
         </ul>
+        <ProfileDetailsForm
+          country={player.country}
+          nick={player.nick}
+          ogsLink={player.ogsLink}
+        />
         <DescriptionForm description={player.description} />
       </div>
       <hr className="border-0.75 w-full border-gray-200" />

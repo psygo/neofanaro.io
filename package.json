@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "@embedpdf/react-pdf-viewer": "^2.14.4",
+    "country-flag-icons": "^1.6.20",
     "flag-icons": "^7.5.0",
     "goban-web": "file:public/software/goban-web",
     "goban-web-react": "file:public/software/goban-web-react",

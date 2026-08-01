@@ -12,6 +12,8 @@ export async function get_division_roster(divisionId: number) {
       nick: players.nick,
       email: players.email,
       rating: players.rating,
+      ogsLink: players.ogsLink,
+      country: players.country,
     })
     .from(leaguePlayersTable)
     .innerJoin(

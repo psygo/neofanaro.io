@@ -3,9 +3,11 @@
 import type { DivisionGame } from "@server"
 
 import { useLang } from "@hooks"
-import { winnerFromResult } from "@utils"
+import { countryName, winnerFromResult } from "@utils"
 
+import { CountryFlag } from "@components/common/countryFlag"
 import { LangLink } from "@components/common/langLink"
+import Link from "next/link"
 
 export type LeaguePlayerRow = {
   playerId: number
@@ -13,6 +15,8 @@ export type LeaguePlayerRow = {
   name: string
   nick: string
   rating: number
+  country: string | null
+  ogsLink: string | null
 }
 
 type LeagueTableProps = {
@@ -80,7 +84,7 @@ export function LeagueTable({
               Rating
             </th>
             <th className="border-b border-slate-200 px-3 py-2 text-left">
-              {lang === "pt" ? "Apelido" : "Nick"}
+              {lang === "pt" ? "OGS" : "OGS"}
             </th>
             {players.map((player) => (
               <th
@@ -117,21 +121,37 @@ export function LeagueTable({
                 </td>
               )}
               <td className="px-3 py-2 text-left font-semibold">
-                {row.name}
+                <span className="inline-flex items-center gap-1.5">
+                  {row.name}
+                  <CountryFlag
+                    countryCode={row.country}
+                    title={countryName(row.country, lang)}
+                    className="h-2.75 w-5 shrink-0 rounded-xs"
+                  />
+                </span>
               </td>
               <td className="px-3 py-2 text-slate-600">
                 <span className="inline-flex items-baseline justify-center gap-1 tabular-nums">
-                  <span className="w-10 text-right">
+                  <span className="w-7 text-right">
+                    {ratingToRank(row.rating)}
+                  </span>{" "}
+                  <span className="w-8 text-left text-slate-400">
                     {row.rating}
-                  </span>
-                  <span className="w-12 text-left text-xs text-slate-400">
-                    {" "}
-                    ({ratingToRank(row.rating)})
                   </span>
                 </span>
               </td>
-              <td className="px-3 py-2 text-left text-slate-600">
-                {row.nick}
+              <td className="px-3 py-2 text-left text-green-700">
+                {row.ogsLink ? (
+                  <Link
+                    href={row.ogsLink}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                  >
+                    {row.nick}
+                  </Link>
+                ) : (
+                  row.nick
+                )}
               </td>
               {players.map((column) => {
                 if (column.playerId === row.playerId) {

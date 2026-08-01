@@ -39,6 +39,7 @@ export const players = pgTable("players", {
   email: text().unique(),
   nick: text().default("").notNull(),
   ogsLink: text(),
+  country: text(),
   description: text(),
   rating: integer().default(0).notNull(),
   passwordHash: text("password_hash"),

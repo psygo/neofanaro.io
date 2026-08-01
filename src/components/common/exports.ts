@@ -1,5 +1,6 @@
 export * from "./circularProgressIndicator"
 export * from "./multiSelect"
+export * from "./countryFlag"
 export * from "./cpiSuspense"
 export * from "./footer"
 export * from "./langLink"

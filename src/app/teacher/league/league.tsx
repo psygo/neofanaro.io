@@ -40,6 +40,8 @@ type RosterPlayer = {
   nick: string
   email: string | null
   rating: number
+  ogsLink: string | null
+  country: string | null
 }
 
 type DivisionData = {
@@ -72,6 +74,8 @@ function buildLeagueRows(
     name: player.name,
     nick: player.nick,
     rating: player.rating,
+    country: player.country,
+    ogsLink: player.ogsLink,
   }))
 }
 
@@ -238,7 +242,7 @@ function LeagueContent({
     )?.roster ?? []
 
   return (
-    <div className="flex flex-col gap-8">
+    <div className="flex w-full min-w-0 flex-col gap-8">
       <h1 className="text-center text-2xl font-bold">
         {lang === "pt" ? league.titlePt : league.titleEn}
       </h1>
@@ -252,7 +256,7 @@ function LeagueContent({
       )}
 
       {visibleDivision && (
-        <div className="flex flex-col gap-4">
+        <div className="flex w-full min-w-0 flex-col gap-4">
           <DivisionTabs
             divisions={divisions.map(
               (entry) => entry.division,
