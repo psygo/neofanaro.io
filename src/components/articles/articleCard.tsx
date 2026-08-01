@@ -5,8 +5,14 @@ import { ArticleFromDb, WithReactChildren } from "@types"
 import { useLang } from "@hooks/useLang"
 import { localizedText } from "@utils"
 
+// import { CountryFlag } from "@components/common/countryFlag"
+
 import { LangLink } from "../common/langLink"
-import { ArticleDate, ArticleTags, ArticleViews } from "./article"
+import {
+  ArticleDate,
+  ArticleTags,
+  ArticleViews,
+} from "./article"
 
 export type ArticleCardProps = {
   post: ArticleFromDb
@@ -40,6 +46,11 @@ export function ArticleCard({ post }: ArticleCardProps) {
             className="flex gap-1 text-sm font-bold text-slate-700"
           />
           <ArticleTags tags={post.tags} />
+          <div className="flex gap-2">
+            {post.langs.map((l, i) => (
+              <ArticleLang key={i} lang={l} />
+            ))}
+          </div>
         </div>
         <ArticleDate
           date={new Date(post.date)}
@@ -65,10 +76,27 @@ function ArticleTitle({ children }: WithReactChildren) {
   )
 }
 
-function ArticleDescription({ children }: WithReactChildren) {
+function ArticleDescription({
+  children,
+}: WithReactChildren) {
   return (
     <p className="text-sm text-slate-700">{children}</p>
   )
 }
 
-// ---------------------------------------------------------
+type ArticleLangProps = {
+  lang: string
+}
+
+function ArticleLang({ lang }: ArticleLangProps) {
+  return (
+    <span
+      className={`fi rounded-xl fi-${lang === "pt" ? "br" : "us"}`}
+      style={{
+        width: "20px",
+        height: "20px",
+        // marginBottom: "2px",
+      }}
+    ></span>
+  )
+}

@@ -2,6 +2,7 @@ export type ArticleFromDb = {
   id: number
   path: string
   date: string
+  langs: string[]
   titleEn: string
   titlePt: string
   descriptionEn: string

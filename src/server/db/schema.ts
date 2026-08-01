@@ -22,6 +22,7 @@ export const articlesTable = pgTable(
     id: serial().primaryKey(),
     path: text().notNull().default("/"),
     date: date().notNull().default(todayDate()),
+    langs: json().notNull().default(["en"]),
     titleEn: text("title_en").notNull().default("Title"),
     titlePt: text("title_pt").notNull().default(""),
     descriptionEn: text("description_en")
