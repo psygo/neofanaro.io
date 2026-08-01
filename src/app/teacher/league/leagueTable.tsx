@@ -131,11 +131,11 @@ export function LeagueTable({
                 </span>
               </td>
               <td className="px-3 py-2 text-slate-600">
-                <span className="inline-flex items-baseline justify-center gap-1 tabular-nums">
-                  <span className="w-7 text-right">
+                <span className="-mr-0.5 -ml-3 grid grid-cols-2 gap-2">
+                  <span className="text-right">
                     {ratingToRank(row.rating)}
                   </span>{" "}
-                  <span className="w-8 text-left text-slate-400">
+                  <span className="text-left text-slate-400">
                     {row.rating}
                   </span>
                 </span>
