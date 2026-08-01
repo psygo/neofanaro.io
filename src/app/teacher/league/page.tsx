@@ -1,3 +1,5 @@
+import { Metadata } from "next"
+
 import {
   getCurrentPlayer,
   get_division_games,
@@ -9,6 +11,27 @@ import {
 
 import { LeagueHeader } from "./leagueHeader"
 import { LeagueSection } from "./league"
+
+type TeacherLeaguePageProps = {
+  searchParams: Promise<{ lang?: string }>
+}
+
+export async function generateMetadata({
+  searchParams,
+}: TeacherLeaguePageProps): Promise<Metadata> {
+  const { lang } = await searchParams
+  const title =
+    lang === "pt"
+      ? "Liga Tennozan 天王山"
+      : "Tennozan 天王山 League"
+
+  return {
+    title,
+    openGraph: {
+      title,
+    },
+  }
+}
 
 export default async function TeacherLeaguePage() {
   const [player, leagues] = await Promise.all([
