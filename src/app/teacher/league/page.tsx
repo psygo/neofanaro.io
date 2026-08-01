@@ -1,10 +1,13 @@
 import {
   getCurrentPlayer,
-  get_league_games,
-  get_league_roster,
+  get_division_games,
+  get_division_roster,
+  get_divisions,
   get_leagues,
+  get_players,
 } from "@server"
 
+import { LeagueHeader } from "./leagueHeader"
 import { LeagueSection } from "./league"
 
 export default async function TeacherLeaguePage() {
@@ -20,23 +23,36 @@ export default async function TeacherLeaguePage() {
       <LeagueSection
         isModerator={isModerator}
         league={null}
-        roster={[]}
-        games={[]}
+        divisions={[]}
+        allPlayers={[]}
       />
     )
   }
 
-  const [roster, games] = await Promise.all([
-    get_league_roster(league.id),
-    get_league_games(league.id),
+  const [divisionRows, allPlayers] = await Promise.all([
+    get_divisions(league.id),
+    get_players(),
   ])
 
+  const divisions = await Promise.all(
+    divisionRows.map(async (division) => {
+      const [roster, games] = await Promise.all([
+        get_division_roster(division.id),
+        get_division_games(division.id),
+      ])
+      return { division, roster, games }
+    }),
+  )
+
   return (
-    <LeagueSection
-      isModerator={isModerator}
-      league={league}
-      roster={roster}
-      games={games}
-    />
+    <div className="flex flex-col items-center gap-12">
+      <LeagueHeader />
+      <LeagueSection
+        isModerator={isModerator}
+        league={league}
+        divisions={divisions}
+        allPlayers={allPlayers}
+      />
+    </div>
   )
 }

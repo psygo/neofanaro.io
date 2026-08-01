@@ -1,10 +1,10 @@
 "use server"
 
-import { eq } from "drizzle-orm"
+import { desc, eq } from "drizzle-orm"
 
 import { db, leaguePlayersTable, players } from "@db"
 
-export async function get_league_roster(leagueId: number) {
+export async function get_division_roster(divisionId: number) {
   return db
     .select({
       id: players.id,
@@ -18,6 +18,6 @@ export async function get_league_roster(leagueId: number) {
       players,
       eq(leaguePlayersTable.playerId, players.id),
     )
-    .where(eq(leaguePlayersTable.leagueId, leagueId))
-    .orderBy(players.name)
+    .where(eq(leaguePlayersTable.divisionId, divisionId))
+    .orderBy(desc(players.rating))
 }

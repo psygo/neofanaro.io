@@ -22,8 +22,8 @@ function errorMessage(
         : "You're not allowed to do that."
     case "invalid_fields":
       return lang === "pt"
-        ? "Informe um título para a liga."
-        : "Give the league a title."
+        ? "Informe o título da liga em inglês e português."
+        : "Give the league both an English and a Portuguese title."
     default:
       return null
   }
@@ -46,13 +46,28 @@ export function CreateLeagueForm() {
           ? "Criar liga"
           : "Create a league"}
       </h2>
-      <div className="grid grid-cols-2 gap-3">
+      <div className="grid grid-cols-3 gap-3">
         <label className="flex flex-col gap-1">
           <span className={labelClasses}>
-            {lang === "pt" ? "Título" : "Title"}
+            {lang === "pt"
+              ? "Título (inglês)"
+              : "Title (English)"}
           </span>
           <input
-            name="title"
+            name="titleEn"
+            type="text"
+            required
+            className={inputClasses}
+          />
+        </label>
+        <label className="flex flex-col gap-1">
+          <span className={labelClasses}>
+            {lang === "pt"
+              ? "Título (português)"
+              : "Title (Portuguese)"}
+          </span>
+          <input
+            name="titlePt"
             type="text"
             required
             className={inputClasses}

@@ -43,6 +43,13 @@
       "when": 1785531639673,
       "tag": "0005_little_mephisto",
       "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1785587864651,
+      "tag": "0006_premium_roland_deschain",
+      "breakpoints": true
     }
   ]
 }

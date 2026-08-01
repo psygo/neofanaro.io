@@ -1,6 +1,6 @@
 "use client"
 
-import type { LeagueGame } from "@server"
+import type { DivisionGame } from "@server"
 
 import { useLang } from "@hooks"
 import { winnerFromResult } from "@utils"
@@ -18,8 +18,9 @@ export type LeaguePlayerRow = {
 type LeagueTableProps = {
   players: LeaguePlayerRow[]
   isModerator?: boolean
-  games?: LeagueGame[]
+  games?: DivisionGame[]
   onCellClick?: (blackId: number, whiteId: number) => void
+  onRemovePlayer?: (playerId: number) => void
 }
 
 // 2000+ is dan ranks, one rank per 100 points (2000-2099 = 1d).
@@ -40,7 +41,7 @@ function ratingToRank(rating: number): string {
 // `games` comes pre-sorted newest-first, so the first match here
 // is the latest game played between these two players.
 function findLatestGame(
-  games: LeagueGame[],
+  games: DivisionGame[],
   playerAId: number,
   playerBId: number,
 ) {
@@ -58,6 +59,7 @@ export function LeagueTable({
   isModerator = false,
   games = [],
   onCellClick,
+  onRemovePlayer,
 }: LeagueTableProps) {
   const lang = useLang()
   const winLabel = lang === "pt" ? "V" : "W"
@@ -68,6 +70,9 @@ export function LeagueTable({
       <table className="w-full border-collapse text-center text-sm">
         <thead>
           <tr className="divide-x divide-slate-200 bg-slate-100">
+            {isModerator && (
+              <th className="border-b border-slate-200 px-2 py-2" />
+            )}
             <th className="border-b border-slate-200 px-3 py-2 text-left">
               {lang === "pt" ? "Nome" : "Name"}
             </th>
@@ -93,13 +98,36 @@ export function LeagueTable({
               key={row.playerId}
               className="divide-x divide-slate-200 odd:bg-white even:bg-slate-50"
             >
+              {isModerator && (
+                <td className="px-2 py-2">
+                  <button
+                    type="button"
+                    title={
+                      lang === "pt"
+                        ? "Remover jogador da divisão"
+                        : "Remove player from division"
+                    }
+                    onClick={() =>
+                      onRemovePlayer?.(row.playerId)
+                    }
+                    className="mx-auto flex size-5 cursor-pointer items-center justify-center rounded-full border border-red-300 text-red-600 transition duration-300 hover:bg-red-100"
+                  >
+                    −
+                  </button>
+                </td>
+              )}
               <td className="px-3 py-2 text-left font-semibold">
                 {row.name}
               </td>
               <td className="px-3 py-2 text-slate-600">
-                {row.rating}{" "}
-                <span className="text-xs text-slate-400">
-                  ({ratingToRank(row.rating)})
+                <span className="inline-flex items-baseline justify-center gap-1 tabular-nums">
+                  <span className="w-10 text-right">
+                    {row.rating}
+                  </span>
+                  <span className="w-12 text-left text-xs text-slate-400">
+                    {" "}
+                    ({ratingToRank(row.rating)})
+                  </span>
                 </span>
               </td>
               <td className="px-3 py-2 text-left text-slate-600">
@@ -127,7 +155,8 @@ export function LeagueTable({
                   : null
                 const rowWon = latestGame
                   ? (winner === "B" &&
-                      latestGame.blackId === row.playerId) ||
+                      latestGame.blackId ===
+                        row.playerId) ||
                     (winner === "W" &&
                       latestGame.whiteId === row.playerId)
                   : false
@@ -162,10 +191,7 @@ export function LeagueTable({
                 }
 
                 return (
-                  <td
-                    key={column.playerId}
-                    className="p-0"
-                  >
+                  <td key={column.playerId} className="p-0">
                     <button
                       type="button"
                       title={

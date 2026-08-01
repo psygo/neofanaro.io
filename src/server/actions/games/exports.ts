@@ -1,5 +1,5 @@
 export * from "./create_game"
+export * from "./get_division_games"
 export * from "./get_game"
 export * from "./get_games_between"
-export * from "./get_league_games"
 export * from "./update_game_links"

@@ -72,13 +72,31 @@ export const sessionsRelations = relations(
 
 export const leaguesTable = pgTable("leagues", {
   id: serial().primaryKey(),
-  title: text().notNull(),
+  titleEn: text("title_en").notNull(),
+  titlePt: text("title_pt").notNull(),
   startDate: date("start_date"),
 })
 
 export const leaguesRelations = relations(
   leaguesTable,
   ({ many }) => ({
+    divisions: many(divisionsTable),
+  }),
+)
+
+export const divisionsTable = pgTable("divisions", {
+  id: serial().primaryKey(),
+  leagueId: integer("league_id").notNull(),
+  title: text().notNull(),
+})
+
+export const divisionsRelations = relations(
+  divisionsTable,
+  ({ one, many }) => ({
+    league: one(leaguesTable, {
+      fields: [divisionsTable.leagueId],
+      references: [leaguesTable.id],
+    }),
     games: many(gamesTable),
     leaguePlayers: many(leaguePlayersTable),
   }),
@@ -88,12 +106,12 @@ export const leaguePlayersTable = pgTable(
   "league_players",
   {
     id: serial().primaryKey(),
-    leagueId: integer("league_id").notNull(),
+    divisionId: integer("division_id").notNull(),
     playerId: integer("player_id").notNull(),
   },
   (table) => [
-    uniqueIndex("league_player_idx").on(
-      table.leagueId,
+    uniqueIndex("division_player_idx").on(
+      table.divisionId,
       table.playerId,
     ),
   ],
@@ -102,9 +120,9 @@ export const leaguePlayersTable = pgTable(
 export const leaguePlayersRelations = relations(
   leaguePlayersTable,
   ({ one }) => ({
-    league: one(leaguesTable, {
-      fields: [leaguePlayersTable.leagueId],
-      references: [leaguesTable.id],
+    division: one(divisionsTable, {
+      fields: [leaguePlayersTable.divisionId],
+      references: [divisionsTable.id],
     }),
     player: one(players, {
       fields: [leaguePlayersTable.playerId],
@@ -132,7 +150,7 @@ export const gamesTable = pgTable("games", {
   twitchLink: text(),
   reviewed: boolean().default(false),
   // Relationships
-  leagueId: integer("league_id").notNull(),
+  divisionId: integer("division_id").notNull(),
   blackId: integer("black_id").notNull(),
   whiteId: integer("white_id").notNull(),
 })
@@ -140,9 +158,9 @@ export const gamesTable = pgTable("games", {
 export const gamesRelations = relations(
   gamesTable,
   ({ one }) => ({
-    league: one(leaguesTable, {
-      fields: [gamesTable.leagueId],
-      references: [leaguesTable.id],
+    division: one(divisionsTable, {
+      fields: [gamesTable.divisionId],
+      references: [divisionsTable.id],
     }),
     black: one(players, {
       fields: [gamesTable.blackId],

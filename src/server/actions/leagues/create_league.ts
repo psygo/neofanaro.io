@@ -18,8 +18,9 @@ export async function create_league(
     return { errorCode: "not_authorized" }
   }
 
-  const title = String(formData.get("title") || "").trim()
-  if (!title) {
+  const titleEn = String(formData.get("titleEn") || "").trim()
+  const titlePt = String(formData.get("titlePt") || "").trim()
+  if (!titleEn || !titlePt) {
     return { errorCode: "invalid_fields" }
   }
 
@@ -28,7 +29,8 @@ export async function create_league(
   ).trim()
 
   await db.insert(leaguesTable).values({
-    title,
+    titleEn,
+    titlePt,
     startDate: startDate || undefined,
   })
 

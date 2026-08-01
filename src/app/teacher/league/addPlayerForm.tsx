@@ -10,6 +10,17 @@ import { useLang } from "@hooks"
 const inputClasses =
   "rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-slate-700 focus:outline-2 focus:outline-slate-400"
 
+type DivisionOption = {
+  id: number
+  title: string
+}
+
+type PlayerOption = {
+  id: number
+  name: string
+  nick: string
+}
+
 function errorMessage(
   errorCode: AddLeaguePlayerState["errorCode"],
   lang: string,
@@ -21,21 +32,23 @@ function errorMessage(
         : "You're not allowed to do that."
     case "player_not_found":
       return lang === "pt"
-        ? "Nenhum jogador com esse email."
-        : "No player with that email."
-    case "already_in_league":
+        ? "Selecione uma divisão e um jogador."
+        : "Select a division and a player."
+    case "already_in_division":
       return lang === "pt"
-        ? "Esse jogador já está na liga."
-        : "That player is already in the league."
+        ? "Esse jogador já está nessa divisão."
+        : "That player is already in that division."
     default:
       return null
   }
 }
 
 export function AddPlayerForm({
-  leagueId,
+  divisions,
+  allPlayers,
 }: {
-  leagueId: number
+  divisions: DivisionOption[]
+  allPlayers: PlayerOption[]
 }) {
   const lang = useLang()
   const [state, formAction, isPending] = useActionState(
@@ -50,22 +63,40 @@ export function AddPlayerForm({
     >
       <h2 className="text-lg font-bold">
         {lang === "pt"
-          ? "Adicionar jogador à liga"
-          : "Add player to league"}
+          ? "Adicionar jogador à divisão"
+          : "Add player to division"}
       </h2>
-      <input type="hidden" name="leagueId" value={leagueId} />
-      <div className="flex gap-3">
-        <input
-          name="email"
-          type="email"
+      <div className="flex flex-wrap gap-3">
+        <select
+          name="divisionId"
           required
-          placeholder={
-            lang === "pt"
-              ? "Email do jogador"
-              : "Player's email"
-          }
+          defaultValue=""
+          className={inputClasses}
+        >
+          <option value="" disabled>
+            {lang === "pt" ? "Divisão" : "Division"}
+          </option>
+          {divisions.map((division) => (
+            <option key={division.id} value={division.id}>
+              {division.title}
+            </option>
+          ))}
+        </select>
+        <select
+          name="playerId"
+          required
+          defaultValue=""
           className={`flex-1 ${inputClasses}`}
-        />
+        >
+          <option value="" disabled>
+            {lang === "pt" ? "Jogador" : "Player"}
+          </option>
+          {allPlayers.map((player) => (
+            <option key={player.id} value={player.id}>
+              {player.name} ({player.nick})
+            </option>
+          ))}
+        </select>
         <button
           type="submit"
           disabled={isPending}
@@ -85,11 +116,6 @@ export function AddPlayerForm({
           {errorMessage(state.errorCode, lang)}
         </p>
       )}
-      <p className="text-xs text-slate-500">
-        {lang === "pt"
-          ? "O jogador precisa já ter uma conta com esse email."
-          : "The player needs to already have an account with that email."}
-      </p>
     </form>
   )
 }

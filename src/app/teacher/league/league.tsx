@@ -2,8 +2,11 @@
 
 import { useRef, useState } from "react"
 
-import { get_games_between } from "@actions"
-import type { LeagueGame } from "@server"
+import {
+  get_games_between,
+  remove_league_player,
+} from "@actions"
+import type { DivisionGame } from "@server"
 
 import { useLang } from "@hooks"
 
@@ -13,13 +16,22 @@ import {
 } from "./leagueTable"
 import { AddGameForm } from "./addGameForm"
 import { AddPlayerForm } from "./addPlayerForm"
+import { CreateDivisionForm } from "./createDivisionForm"
 import { CreateLeagueForm } from "./createLeagueForm"
+import { DivisionTabs } from "./divisionTabs"
 import { GamePicker } from "./gamePicker"
 
 type League = {
   id: number
-  title: string
+  titleEn: string
+  titlePt: string
   startDate: string | null
+}
+
+type Division = {
+  id: number
+  leagueId: number
+  title: string
 }
 
 type RosterPlayer = {
@@ -30,11 +42,25 @@ type RosterPlayer = {
   rating: number
 }
 
+type DivisionData = {
+  division: Division
+  roster: RosterPlayer[]
+  games: DivisionGame[]
+}
+
+type PlayerOption = {
+  id: number
+  name: string
+  nick: string
+  email: string | null
+  rating: number
+}
+
 type LeagueSectionProps = {
   isModerator: boolean
   league: League | null
-  roster: RosterPlayer[]
-  games: LeagueGame[]
+  divisions: DivisionData[]
+  allPlayers: PlayerOption[]
 }
 
 function buildLeagueRows(
@@ -50,6 +76,7 @@ function buildLeagueRows(
 }
 
 type Picker = {
+  divisionId: number
   playerAId: number
   playerBId: number
   games: Awaited<ReturnType<typeof get_games_between>>
@@ -59,8 +86,8 @@ type Picker = {
 export function LeagueSection({
   isModerator,
   league,
-  roster,
-  games,
+  divisions,
+  allPlayers,
 }: LeagueSectionProps) {
   const lang = useLang()
   const [showCreateLeagueForm, setShowCreateLeagueForm] =
@@ -101,8 +128,8 @@ export function LeagueSection({
     <LeagueContent
       isModerator={isModerator}
       league={league}
-      roster={roster}
-      games={games}
+      divisions={divisions}
+      allPlayers={allPlayers}
     />
   )
 }
@@ -110,23 +137,28 @@ export function LeagueSection({
 function LeagueContent({
   isModerator,
   league,
-  roster,
-  games,
+  divisions,
+  allPlayers,
 }: {
   isModerator: boolean
   league: League
-  roster: RosterPlayer[]
-  games: LeagueGame[]
+  divisions: DivisionData[]
+  allPlayers: PlayerOption[]
 }) {
   const lang = useLang()
-  const leagueRows = buildLeagueRows(roster)
 
+  const [selectedDivisionId, setSelectedDivisionId] = useState<
+    number | null
+  >(divisions[0]?.division.id ?? null)
   const [picker, setPicker] = useState<Picker | null>(null)
   const [prefill, setPrefill] = useState<{
+    divisionId: number
     blackId: number
     whiteId: number
   } | null>(null)
   const [showAddPlayerForm, setShowAddPlayerForm] =
+    useState(false)
+  const [showCreateDivisionForm, setShowCreateDivisionForm] =
     useState(false)
   const [showCreateLeagueForm, setShowCreateLeagueForm] =
     useState(false)
@@ -135,10 +167,12 @@ function LeagueContent({
   const formRef = useRef<HTMLDivElement>(null)
 
   async function handleCellClick(
+    divisionId: number,
     playerAId: number,
     playerBId: number,
   ) {
     setPicker({
+      divisionId,
       playerAId,
       playerBId,
       games: [],
@@ -150,16 +184,36 @@ function LeagueContent({
     })
 
     const games = await get_games_between(
-      league.id,
+      divisionId,
       playerAId,
       playerBId,
     )
-    setPicker({ playerAId, playerBId, games, loading: false })
+    setPicker({
+      divisionId,
+      playerAId,
+      playerBId,
+      games,
+      loading: false,
+    })
+  }
+
+  async function handleRemovePlayer(
+    divisionId: number,
+    playerId: number,
+  ) {
+    const confirmed = window.confirm(
+      lang === "pt"
+        ? "Remover este jogador da divisão?"
+        : "Remove this player from the division?",
+    )
+    if (!confirmed) return
+    await remove_league_player(divisionId, playerId)
   }
 
   function handleAddNewGame() {
     if (!picker) return
     setPrefill({
+      divisionId: picker.divisionId,
       blackId: picker.playerAId,
       whiteId: picker.playerBId,
     })
@@ -169,21 +223,75 @@ function LeagueContent({
     })
   }
 
+  const visibleDivision =
+    divisions.find(
+      (entry) => entry.division.id === selectedDivisionId,
+    ) ?? divisions[0]
+
+  const activeDivisionId =
+    prefill?.divisionId ??
+    picker?.divisionId ??
+    visibleDivision?.division.id
+  const activeRoster =
+    divisions.find(
+      (entry) => entry.division.id === activeDivisionId,
+    )?.roster ?? []
+
   return (
     <div className="flex flex-col gap-8">
-      <div className="flex flex-col gap-4">
-        <h1 className="text-center text-2xl font-bold">
-          {league.title}
-        </h1>
-        <LeagueTable
-          players={leagueRows}
-          isModerator={isModerator}
-          games={games}
-          onCellClick={handleCellClick}
-        />
-        {isModerator &&
-          (showAddPlayerForm ? (
-            <AddPlayerForm leagueId={league.id} />
+      <h1 className="text-center text-2xl font-bold">
+        {lang === "pt" ? league.titlePt : league.titleEn}
+      </h1>
+
+      {divisions.length === 0 && (
+        <p className="text-center text-slate-500">
+          {lang === "pt"
+            ? "Ainda não há divisões nesta liga."
+            : "There are no divisions in this league yet."}
+        </p>
+      )}
+
+      {visibleDivision && (
+        <div className="flex flex-col gap-4">
+          <DivisionTabs
+            divisions={divisions.map(
+              (entry) => entry.division,
+            )}
+            activeDivisionId={visibleDivision.division.id}
+            onSelect={setSelectedDivisionId}
+          />
+          <LeagueTable
+            players={buildLeagueRows(
+              visibleDivision.roster,
+            )}
+            isModerator={isModerator}
+            games={visibleDivision.games}
+            onCellClick={(playerAId, playerBId) =>
+              handleCellClick(
+                visibleDivision.division.id,
+                playerAId,
+                playerBId,
+              )
+            }
+            onRemovePlayer={(playerId) =>
+              handleRemovePlayer(
+                visibleDivision.division.id,
+                playerId,
+              )
+            }
+          />
+        </div>
+      )}
+
+      {isModerator && (
+        <div className="flex flex-wrap gap-3">
+          {showAddPlayerForm ? (
+            <AddPlayerForm
+              divisions={divisions.map(
+                (entry) => entry.division,
+              )}
+              allPlayers={allPlayers}
+            />
           ) : (
             <button
               type="button"
@@ -194,30 +302,47 @@ function LeagueContent({
                 ? "+ Adicionar jogador"
                 : "+ Add player"}
             </button>
-          ))}
-      </div>
+          )}
+          {showCreateDivisionForm ? (
+            <CreateDivisionForm leagueId={league.id} />
+          ) : (
+            <button
+              type="button"
+              onClick={() => setShowCreateDivisionForm(true)}
+              className="cursor-pointer self-start rounded-full bg-slate-100 px-4 py-2 ring-1 ring-slate-200 transition duration-300 hover:bg-slate-200"
+            >
+              {lang === "pt"
+                ? "+ Criar divisão"
+                : "+ Create division"}
+            </button>
+          )}
+        </div>
+      )}
+
       {isModerator && picker && (
         <div ref={pickerRef}>
           <GamePicker
             playerAId={picker.playerAId}
             playerBId={picker.playerBId}
-            players={roster}
+            players={activeRoster}
             games={picker.games}
             loading={picker.loading}
             onAddNewGame={handleAddNewGame}
           />
         </div>
       )}
-      {isModerator && (
+
+      {isModerator && activeDivisionId && (
         <div ref={formRef}>
           <AddGameForm
-            leagueId={league.id}
-            players={roster}
+            divisionId={activeDivisionId}
+            players={activeRoster}
             prefillBlackId={prefill?.blackId}
             prefillWhiteId={prefill?.whiteId}
           />
         </div>
       )}
+
       {isModerator &&
         (showCreateLeagueForm ? (
           <CreateLeagueForm />
