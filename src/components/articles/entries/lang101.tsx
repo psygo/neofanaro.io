@@ -1,94 +1,94 @@
-import { BlogPostProps } from "@types"
+import { ArticleProps } from "@types"
 
 import {
-  PostParagraph,
-  Post,
-  PostSection,
-  PostLink,
-  PostImageWithLegend,
-  PostBlockQuote,
-  PostUnorderedList,
-  PostSectionTitle,
-  PostYouTubeIframe,
-} from "@components/posts/post"
+  ArticleParagraph,
+  Article,
+  ArticleSection,
+  ArticleLink,
+  ArticleImageWithLegend,
+  ArticleBlockQuote,
+  ArticleUnorderedList,
+  ArticleSectionTitle,
+  ArticleYouTubeIframe,
+} from "@components/articles/article"
 
-export function Lang101({ post }: BlogPostProps) {
+export function Lang101({ post }: ArticleProps) {
   return (
-    <Post data={post}>
-      <PostSection>
-        <PostBlockQuote>
+    <Article data={post}>
+      <ArticleSection>
+        <ArticleBlockQuote>
           <p>
             For now, the app version of Lang101 is in{" "}
             <em>alpha</em> testing, do message me if you
             would like to join!
             {/* :{" "}
-            <PostLink href="mailto:philippefanaro@gmail.com">
+            <ArticleLink href="mailto:philippefanaro@gmail.com">
               philippefanaro@gmail.com
-            </PostLink>
+            </ArticleLink>
             ! */}
           </p>
           <p>
             A first{" "}
-            <PostLink href="https://expo.dev/accounts/psygo/projects/lang101/builds/7e036e2f-8647-42b7-8062-0313b29aba27">
+            <ArticleLink href="https://expo.dev/accounts/psygo/projects/lang101/builds/7e036e2f-8647-42b7-8062-0313b29aba27">
               Android bundle
-            </PostLink>{" "}
+            </ArticleLink>{" "}
             is already openly available, while iOS has more
             security requirements for sharing builds with
             users. But, in the meantime, Lang101 is also
             available through a{" "}
-            <PostLink href="https://lang101.expo.app/">
+            <ArticleLink href="https://lang101.expo.app/">
               web interface
-            </PostLink>
+            </ArticleLink>
             .
           </p>
-        </PostBlockQuote>
-        <PostParagraph>
+        </ArticleBlockQuote>
+        <ArticleParagraph>
           I&apos;m happy to announce the release of my first
           mobile app in a long while, an idea I had been
           brewing for a long time, out of my frustrations
           with language learning apps and overall ecosystem.
-        </PostParagraph>
-        <PostImageWithLegend
+        </ArticleParagraph>
+        <ArticleImageWithLegend
           src="/articles/lang101/Screenshot Alpha 1.0 - 3.png"
           height={300}
           width={250}
           className="rounded-lg"
         >
           <p>The &quot;Exercises&quot; page on Lang101.</p>
-        </PostImageWithLegend>
-        <PostParagraph>
-          <PostLink href="https://expo.dev/accounts/psygo/projects/lang101/builds/7e036e2f-8647-42b7-8062-0313b29aba27">
+        </ArticleImageWithLegend>
+        <ArticleParagraph>
+          <ArticleLink href="https://expo.dev/accounts/psygo/projects/lang101/builds/7e036e2f-8647-42b7-8062-0313b29aba27">
             Lang101
-          </PostLink>{" "}
+          </ArticleLink>{" "}
           is the fusion of :
-        </PostParagraph>
-        <PostUnorderedList>
+        </ArticleParagraph>
+        <ArticleUnorderedList>
           <li>
-            <PostLink href="https://en.wikipedia.org/wiki/Anki">
+            <ArticleLink href="https://en.wikipedia.org/wiki/Anki">
               Anki
-            </PostLink>{" "}
+            </ArticleLink>{" "}
             &mdash; a flashcard app
           </li>
           <li>
             A Statistical Rating Sytem &mdash; more
             specifically,{" "}
-            <PostLink href="https://en.wikipedia.org/wiki/Elo_rating_system">
+            <ArticleLink href="https://en.wikipedia.org/wiki/Elo_rating_system">
               Elo
-            </PostLink>
+            </ArticleLink>
           </li>
           <li>Social Features</li>
-        </PostUnorderedList>
+        </ArticleUnorderedList>
 
-        <PostParagraph>
+        <ArticleParagraph>
           I&apos;ve also taken quite a bit of inspiration
           from{" "}
-          <PostLink href="https://101weiqi.com">
+          <ArticleLink href="https://101weiqi.com">
             101weiqi
-          </PostLink>
+          </ArticleLink>
           , a popular website for practicing Go (board game)
           problems.
-        </PostParagraph>
-        <PostImageWithLegend
+        </ArticleParagraph>
+        <ArticleImageWithLegend
           src="/articles/lang101/Screenshot Alpha 1.0 - 1.png"
           height={300}
           width={250}
@@ -98,8 +98,8 @@ export function Lang101({ post }: BlogPostProps) {
             Lang101&apos;s landing page. For now, I&apos;m
             using this website&apos;s logo as a placeholder.
           </p>
-        </PostImageWithLegend>
-        <PostParagraph>
+        </ArticleImageWithLegend>
+        <ArticleParagraph>
           A statistical rating system is self-adjusting,
           while in practice mode, both the student&apos;s
           and the exercise&apos;s ratings get readjusted
@@ -109,15 +109,15 @@ export function Lang101({ post }: BlogPostProps) {
           while the exercise also gets a large boost to its
           rating. On the other hand, if the student solves
           it correctly, only a few points will be earned.
-        </PostParagraph>
-        <PostParagraph>
+        </ArticleParagraph>
+        <ArticleParagraph>
           By avoiding a dependence on instructors to level
           problem difficulty, not only do we relieve
           ourselves from a clunky burden, but create a more
           engaging experience, as we get challenges which
           reflect the real world much more closely.
-        </PostParagraph>
-        <PostImageWithLegend
+        </ArticleParagraph>
+        <ArticleImageWithLegend
           src="/articles/lang101/Screenshot Alpha 1.0 - 9.png"
           height={300}
           width={250}
@@ -130,8 +130,8 @@ export function Lang101({ post }: BlogPostProps) {
             rating had been higher, an even bigger penalty
             would be applied.
           </p>
-        </PostImageWithLegend>
-        <PostParagraph>
+        </ArticleImageWithLegend>
+        <ArticleParagraph>
           Anki does feature a rating system, typically based
           on the user&apos;s difficulty in recalling an
           answer. However, I find that quite lacking in
@@ -139,12 +139,12 @@ export function Lang101({ post }: BlogPostProps) {
           tiring, as not only will you have to practice the
           cards but also worry about how to classify your
           results.
-        </PostParagraph>
-        <PostParagraph>
+        </ArticleParagraph>
+        <ArticleParagraph>
           Besides the key feature of a rating system,
           Lang101 also offers:
-        </PostParagraph>
-        <PostUnorderedList>
+        </ArticleParagraph>
+        <ArticleUnorderedList>
           <li>Per-language question filtering</li>
           <li>Per-language question prompt filtering</li>
           <li>Leaderboards</li>
@@ -155,9 +155,9 @@ export function Lang101({ post }: BlogPostProps) {
           <li>Exercise list creation</li>
           <li>User following</li>
           <li>User messaging</li>
-        </PostUnorderedList>
+        </ArticleUnorderedList>
         <div className="mt-8"></div>
-        <PostImageWithLegend
+        <ArticleImageWithLegend
           src="/articles/lang101/Screenshot Alpha 1.0 - 4.png"
           height={300}
           width={250}
@@ -167,37 +167,37 @@ export function Lang101({ post }: BlogPostProps) {
             Lang101&apos;s &quot;History&quot; page, on dark
             mode.
           </p>
-        </PostImageWithLegend>
-        <PostParagraph>
+        </ArticleImageWithLegend>
+        <ArticleParagraph>
           The current version of the app also offer exercise
           variety, which will only increase over time:
-        </PostParagraph>
-        <PostUnorderedList>
+        </ArticleParagraph>
+        <ArticleUnorderedList>
           <li>Multiple choice</li>
           <li>Type the answer</li>
           <li>Listening to a (YouTube) video</li>
-        </PostUnorderedList>
-        <PostParagraph>
+        </ArticleUnorderedList>
+        <ArticleParagraph>
           I have plenty more features in line for the near
           future, such as a multiplayer mode and better
           integration with Anki decks.
-        </PostParagraph>
-        <PostParagraph>
+        </ArticleParagraph>
+        <ArticleParagraph>
           At the moment, as a first seed, a lot of the
           questions have been either created by AI, or
           batch-transcribed by it, based on open-source Anki
           decks. But, as the community gets bigger, the
           human-created percentage will hopefully increase.
-        </PostParagraph>
-        <PostParagraph>
+        </ArticleParagraph>
+        <ArticleParagraph>
           One future leap for the app would be having AI
           monitor the student&apos;s progress and then
           create exercises on the go based on his or her
           difficulties. That might become a paid
           subscription service though, as AI services are
           currently not free.
-        </PostParagraph>
-        <PostImageWithLegend
+        </ArticleParagraph>
+        <ArticleImageWithLegend
           src="/articles/lang101/Furigana.png"
           height={300}
           width={250}
@@ -210,8 +210,8 @@ export function Lang101({ post }: BlogPostProps) {
             of a symbol. That feature is already present in
             Lang101.
           </p>
-        </PostImageWithLegend>
-        <PostParagraph>
+        </ArticleImageWithLegend>
+        <ArticleParagraph>
           Anki (暗記) means &quot;learning by heart&quot; or
           &quot;rote memorization&quot; in Japanese, and its
           respective software was created by an Australian
@@ -225,12 +225,12 @@ export function Lang101({ post }: BlogPostProps) {
           concepts and topics into bite-sized exercises too,
           and that&apos;s my bet with this app. Let&apos;s
           see if it pans out!
-        </PostParagraph>
-        <PostBlockQuote>
+        </ArticleParagraph>
+        <ArticleBlockQuote>
           Should I rename the app as &quot;Lanki&quot; at
           this point?
-        </PostBlockQuote>
-        <PostImageWithLegend
+        </ArticleBlockQuote>
+        <ArticleImageWithLegend
           src="/articles/lang101/Feedback.png"
           height={300}
           width={250}
@@ -241,22 +241,22 @@ export function Lang101({ post }: BlogPostProps) {
             feedback&quot; button. Do share your thoughts
             and suggestions with me!
           </p>
-        </PostImageWithLegend>
-      </PostSection>
+        </ArticleImageWithLegend>
+      </ArticleSection>
 
-      <PostSection>
-        <PostSectionTitle>
+      <ArticleSection>
+        <ArticleSectionTitle>
           On Developing Lang101 (with AI)
-        </PostSectionTitle>
-        <PostParagraph>
+        </ArticleSectionTitle>
+        <ArticleParagraph>
           Lang101 was almost entirely develped with{" "}
-          <PostLink href="https://claude.com/product/claude-code">
+          <ArticleLink href="https://claude.com/product/claude-code">
             Claude Code
-          </PostLink>
+          </ArticleLink>
           , using React Native. It is quite shocking how
           good the baseline paid model, Sonnet, is.
-        </PostParagraph>
-        <PostParagraph>
+        </ArticleParagraph>
+        <ArticleParagraph>
           I did have to use my software know-how in order to
           get the app to where it is, so it wasn&apos;t a
           pure &quot;vibe coding&quot; project. Claude is
@@ -268,24 +268,24 @@ export function Lang101({ post }: BlogPostProps) {
           through Apple&apos;s and Google&apos;s obnoxious
           verification processes for newly created developer
           accounts.
-        </PostParagraph>
-        <PostParagraph>
+        </ArticleParagraph>
+        <ArticleParagraph>
           Claude Code, however, does not do well when it
           comes to UI design. Even after installing specific{" "}
-          <PostLink href="https://support.claude.com/en/articles/12512176-what-are-skills">
+          <ArticleLink href="https://support.claude.com/en/articles/12512176-what-are-skills">
             AI Skills
-          </PostLink>
+          </ArticleLink>
           , the results were disappointing. For handling the
           visual aspect of an app, I suggest using{" "}
-          <PostLink href="https://claude.com/product/design">
+          <ArticleLink href="https://claude.com/product/design">
             Claude Design
-          </PostLink>
+          </ArticleLink>
           . After refining the UI there, you&apos;re gonna
           be able to ask Claude to export resulting design
           as a document, such that Claude Code can implement
           it more or less precisely.
-        </PostParagraph>
-        <PostParagraph>
+        </ArticleParagraph>
+        <ArticleParagraph>
           Coming from a more than year-long hiatus, I feel
           quite frightened for the software development as a
           profession. Overall, I would much rather spend
@@ -295,18 +295,18 @@ export function Lang101({ post }: BlogPostProps) {
           product managers will there be in the future if
           all programmers need to move into that
           market?{" "}
-        </PostParagraph>
-        <PostParagraph>
+        </ArticleParagraph>
+        <ArticleParagraph>
           In the meantime, at least, even our{" "}
           <s>billionaire</s> trillionaire overlord(<s>s</s>){" "}
           might be starting to become aware we need to get
           past the wage economy:
-        </PostParagraph>
-        <PostYouTubeIframe
+        </ArticleParagraph>
+        <ArticleYouTubeIframe
           src="https://www.youtube.com/embed/8YEdm-ZTgT4"
           title="Elon Musk getting aware of how the economy might need to change in the post-AI era"
         />
-      </PostSection>
-    </Post>
+      </ArticleSection>
+    </Article>
   )
 }

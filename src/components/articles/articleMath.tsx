@@ -13,15 +13,15 @@ async function getMathJax(): Promise<MathJaxInstance> {
   return instance
 }
 
-type PostMathProps = {
+type ArticleMathProps = {
   children: string
   display?: boolean
 }
 
-export async function PostMath({
+export async function ArticleMath({
   children,
   display = false,
-}: PostMathProps) {
+}: ArticleMathProps) {
   const MathJax = await getMathJax()
   const node = MathJax.tex2svg(children, { display })
   const html = MathJax.startup.adaptor.outerHTML(node)

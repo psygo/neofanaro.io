@@ -1,35 +1,35 @@
-import { BlogPostProps } from "@types"
+import { ArticleProps } from "@types"
 
 import {
-  PostParagraph,
-  Post,
-  PostSection,
-  PostLink,
-  PostBlockQuote,
-  PostCode,
-  PostPre,
-  PostImageWithLegend,
-} from "@components/posts/post"
+  ArticleParagraph,
+  Article,
+  ArticleSection,
+  ArticleLink,
+  ArticleBlockQuote,
+  ArticleCode,
+  ArticlePre,
+  ArticleImageWithLegend,
+} from "@components/articles/article"
 
-export function LatexBackgammon({ post }: BlogPostProps) {
+export function LatexBackgammon({ post }: ArticleProps) {
   return (
-    <Post data={post}>
-      <PostSection>
-        <PostParagraph>
+    <Article data={post}>
+      <ArticleSection>
+        <ArticleParagraph>
           Right after finishing my{" "}
-          <PostLink href="/articles/latex-shogi">
+          <ArticleLink href="/articles/latex-shogi">
             LaTeX Shogi
-          </PostLink>{" "}
+          </ArticleLink>{" "}
           project , I got an itch for doing something
           analogous but to another game, one that I believe
           is only second to Go in terms of strategy and
           beauty. The resulting code is here:{" "}
-          <PostLink href="https://github.com/psygo/latex_backgammon">
+          <ArticleLink href="https://github.com/psygo/latex_backgammon">
             @psygo/latex_backgammon
-          </PostLink>
+          </ArticleLink>
           .
-        </PostParagraph>
-        <PostImageWithLegend
+        </ArticleParagraph>
+        <ArticleImageWithLegend
           src="/articles/latex-backgammon/backgammon_color.svg"
           height={100}
           width={390}
@@ -37,56 +37,56 @@ export function LatexBackgammon({ post }: BlogPostProps) {
           <p>
             A vector diagram for the game of backgammon.
           </p>
-        </PostImageWithLegend>
-        <PostParagraph>
+        </ArticleImageWithLegend>
+        <ArticleParagraph>
           This time though, I did 99% of the project with
           AI, more especifically, with Claude AI. The only
           thing I didn&apos;t create with AI was the
           specific scaffolding with TikZ and its{" "}
-          <PostCode>\pic</PostCode> API, in an attempt to
+          <ArticleCode>\pic</ArticleCode> API, in an attempt to
           have the code more organized and readable.
-        </PostParagraph>
-        <PostBlockQuote>
+        </ArticleParagraph>
+        <ArticleBlockQuote>
           Curiously, backgammon is also the only board game,
           out of the ones still played, which could compete
           with Go when it comes to age. Its predecessor was
           known as{" "}
-          <PostLink href="https://youtu.be/WZskjLq040I">
+          <ArticleLink href="https://youtu.be/WZskjLq040I">
             The Royal Game of Ur
-          </PostLink>{" "}
+          </ArticleLink>{" "}
           , and was played as far back as ancient Babylon,
           around 4,000 years ago!
-        </PostBlockQuote>
-        <PostParagraph>
+        </ArticleBlockQuote>
+        <ArticleParagraph>
           If you&apos;re interested in the project, I
           suggest you check out{" "}
-          <PostLink href="https://github.com/psygo/latex_shogi">
+          <ArticleLink href="https://github.com/psygo/latex_shogi">
             LaTeX Shogi on Github
-          </PostLink>{" "}
+          </ArticleLink>{" "}
           and{" "}
-          <PostLink href="/articles/latex-shogi">
+          <ArticleLink href="/articles/latex-shogi">
             its companion article
-          </PostLink>{" "}
+          </ArticleLink>{" "}
           too, but the{" "}
-          <PostLink href="https://github.com/psygo/latex_backgammon/blob/main/src/backgammon_export.tex">
-            <PostCode>backgammon_export.tex</PostCode>
-          </PostLink>{" "}
+          <ArticleLink href="https://github.com/psygo/latex_backgammon/blob/main/src/backgammon_export.tex">
+            <ArticleCode>backgammon_export.tex</ArticleCode>
+          </ArticleLink>{" "}
           file provides a pretty nice example of how to use
           the package.
-        </PostParagraph>
-        <PostParagraph>
+        </ArticleParagraph>
+        <ArticleParagraph>
           After generating the PDF, you could also generate
           an SVG through either opening up a graphical
           editor, such as{" "}
-          <PostLink href="https://inkscape.org/">
+          <ArticleLink href="https://inkscape.org/">
             Inkscape
-          </PostLink>
+          </ArticleLink>
           , or by using this on the command line:
-        </PostParagraph>
-        <PostPre language="bash">
+        </ArticleParagraph>
+        <ArticlePre language="bash">
           pdftocairo -svg filename.pdf filename.svg
-        </PostPre>
-      </PostSection>
-    </Post>
+        </ArticlePre>
+      </ArticleSection>
+    </Article>
   )
 }

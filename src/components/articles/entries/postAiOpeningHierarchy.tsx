@@ -1,39 +1,39 @@
-import { BlogPostProps } from "@types"
+import { ArticleProps } from "@types"
 
 import {
-  PostParagraph,
-  Post,
-  PostSection,
-  PostLink,
-  PostUnorderedList,
-  PostOrderedList,
-} from "@components/posts/post"
-import { GoDiagram } from "@components/posts/goDiagram"
+  ArticleParagraph,
+  Article,
+  ArticleSection,
+  ArticleLink,
+  ArticleUnorderedList,
+  ArticleOrderedList,
+} from "@components/articles/article"
+import { GoDiagram } from "@components/articles/goDiagram"
 
 export function PostAiOpeningHierarchy({
   post,
-}: BlogPostProps) {
+}: ArticleProps) {
   return (
-    <Post data={post}>
-      <PostSection>
-        <PostParagraph>
+    <Article data={post}>
+      <ArticleSection>
+        <ArticleParagraph>
           Before AI, we used to think side moves early in
           the opening had way closer value to corner moves
           than they actually do. Or at least way closer
           value than what AI tells us.
-        </PostParagraph>
-        <PostParagraph>
+        </ArticleParagraph>
+        <ArticleParagraph>
           That&apos;s one of the reasons we arrived at
           openings such as the{" "}
-          <PostLink href="https://senseis.xmp.net/?SanRenSei">
+          <ArticleLink href="https://senseis.xmp.net/?SanRenSei">
             Sanrensei
-          </PostLink>
+          </ArticleLink>
           , or the{" "}
-          <PostLink href="https://senseis.xmp.net/?ChineseFuseki">
+          <ArticleLink href="https://senseis.xmp.net/?ChineseFuseki">
             Chinese
-          </PostLink>{" "}
+          </ArticleLink>{" "}
           and its variants.
-        </PostParagraph>
+        </ArticleParagraph>
         <div className="flex flex-col items-center justify-center px-8 sm:flex-row">
           <GoDiagram
             src="/articles/post-ai-opening-hierarchy/sanrensei_fuseki.svg"
@@ -52,24 +52,24 @@ export function PostAiOpeningHierarchy({
             <p>The Chinese Fuseki</p>
           </GoDiagram>
         </div>
-        <PostParagraph>
+        <ArticleParagraph>
           Now, with AI, things have become much clearer. The
           opening hierarchy goes like this:
-        </PostParagraph>
-        <PostOrderedList>
+        </ArticleParagraph>
+        <ArticleOrderedList>
           <li>Corner</li>
           <li>
             Largely interchangeable among these:
-            <PostUnorderedList>
+            <ArticleUnorderedList>
               <li>Corner Enclosure</li>
               <li>Corner Approach</li>
               <li>3-3 Invasion Against the 4-4</li>
-            </PostUnorderedList>
+            </ArticleUnorderedList>
           </li>
           <li>Side</li>
           <li>Center</li>
-        </PostOrderedList>
-      </PostSection>
-    </Post>
+        </ArticleOrderedList>
+      </ArticleSection>
+    </Article>
   )
 }

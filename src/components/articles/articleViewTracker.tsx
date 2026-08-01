@@ -2,13 +2,13 @@
 
 import { useArticleView } from "@/src/hooks/useArticleView"
 
-type PostViewTrackerProps = {
+type ArticleViewTrackerProps = {
   path: string
 }
 
-export function PostViewTracker({
+export function ArticleViewTracker({
   path,
-}: PostViewTrackerProps) {
+}: ArticleViewTrackerProps) {
   useArticleView(path)
 
   return <></>

@@ -10,9 +10,9 @@ import { useArticles } from "@providers/articlesProvider"
 
 import { MultiSelect } from "@components/common/multiSelect"
 
-import { PostCard } from "./postCard"
+import { ArticleCard } from "./articleCard"
 
-export function PostsSection() {
+export function ArticlesSection() {
   const lang = useLang()
   const { articles, setArticles, allTags } = useArticles()
   const [selectedTags, setSelectedTags] = useState<
@@ -48,7 +48,7 @@ export function PostsSection() {
       </div>
       <div className="flex flex-col gap-3">
         {articles.map((post, i) => (
-          <PostCard key={i} post={post} />
+          <ArticleCard key={i} post={post} />
         ))}
       </div>
     </section>

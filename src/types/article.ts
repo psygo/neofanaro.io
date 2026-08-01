@@ -11,6 +11,6 @@ export type ArticleFromDb = {
   draft: boolean
 }
 
-export type BlogPostProps = {
+export type ArticleProps = {
   post: ArticleFromDb
 }

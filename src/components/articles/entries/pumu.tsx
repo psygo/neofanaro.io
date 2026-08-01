@@ -1,91 +1,91 @@
-import { BlogPostProps } from "@types"
+import { ArticleProps } from "@types"
 
 import {
-  PostParagraph,
-  Post,
-  PostSection,
-  PostLink,
-  PostImageWithLegend,
-  PostCode,
-  PostOrderedList,
-  PostPre,
-  PostSectionTitle,
-  PostUnorderedList,
-  PostYouTubeIframe,
-  PostBlockQuote,
-} from "@components/posts/post"
+  ArticleParagraph,
+  Article,
+  ArticleSection,
+  ArticleLink,
+  ArticleImageWithLegend,
+  ArticleCode,
+  ArticleOrderedList,
+  ArticlePre,
+  ArticleSectionTitle,
+  ArticleUnorderedList,
+  ArticleYouTubeIframe,
+  ArticleBlockQuote,
+} from "@components/articles/article"
 
-export function Pumu({ post }: BlogPostProps) {
+export function Pumu({ post }: ArticleProps) {
   return (
-    <Post data={post}>
-      <PostSection>
-        <PostYouTubeIframe
+    <Article data={post}>
+      <ArticleSection>
+        <ArticleYouTubeIframe
           src="https://www.youtube.com/embed/MSvIstLgX34"
           title="PUMU 璞木, and Customizing Fox and OGS Board and Stones"
         />
-        <PostBlockQuote>
+        <ArticleBlockQuote>
           PUMU is offering a discount code, check the video
           description for more!
-        </PostBlockQuote>
-        <PostParagraph>
+        </ArticleBlockQuote>
+        <ArticleParagraph>
           Recently, I was going through{" "}
-          <PostLink href="https://www.reddit.com/r/baduk/">
+          <ArticleLink href="https://www.reddit.com/r/baduk/">
             r/baduk on Reddit
-          </PostLink>{" "}
+          </ArticleLink>{" "}
           when I saw an interesting dark theme for gobans
           which reminded me of my{" "}
-          <PostLink href="https://github.com/FanaroEngineering/fanaro_sabaki_theme_collection">
+          <ArticleLink href="https://github.com/FanaroEngineering/fanaro_sabaki_theme_collection">
             Sabaki Theme Collection
-          </PostLink>
+          </ArticleLink>
           , a repo I created in a couple of days many years
           ago for learning how to customize the theming for
           the editor{" "}
-          <PostLink href="https://sabaki.yichuanshen.de/">
+          <ArticleLink href="https://sabaki.yichuanshen.de/">
             Sabaki
-          </PostLink>
+          </ArticleLink>
           . After posting a comment about what that repo,
           the user behind the Patreon creator{" "}
-          <PostLink href="https://www.patreon.com/c/GoSkins/home">
+          <ArticleLink href="https://www.patreon.com/c/GoSkins/home">
             PUMU 璞木
-          </PostLink>{" "}
+          </ArticleLink>{" "}
           reached out to me to share his work and ask me for
           reccommendations about how to port his themes to
           Sabaki.
-        </PostParagraph>
-        <PostImageWithLegend
+        </ArticleParagraph>
+        <ArticleImageWithLegend
           src="/articles/pumu/pumu_patreon.png"
           className="rounded-xl"
           height={100}
           width={425}
         >
           <p>PUMU 璞木 on Patreon</p>
-        </PostImageWithLegend>
-        <PostParagraph>
+        </ArticleImageWithLegend>
+        <ArticleParagraph>
           I was quite surprised by not only the fact that he
           has a catalog with dozens of themes but that PUMU
           seems to be present on many of the most popular Go
           streams on Twitch.
-        </PostParagraph>
-        <PostImageWithLegend
+        </ArticleParagraph>
+        <ArticleImageWithLegend
           src="/articles/pumu/pumu_glass_kiri.png"
           className="rounded-lg"
           height={100}
           width={400}
         >
           <p>PUMU&apos;s &quot;Glass Kiri&quot; theme</p>
-        </PostImageWithLegend>
-        <PostImageWithLegend
+        </ArticleImageWithLegend>
+        <ArticleImageWithLegend
           src="/articles/pumu/pumu_kaya_1.png"
           className="rounded-lg"
           height={100}
           width={400}
         >
           <p>PUMU&apos;s &quot;Kaya 01&quot; theme</p>
-        </PostImageWithLegend>
-      </PostSection>
-      <PostSection>
-        <PostSectionTitle>Customizing Fox</PostSectionTitle>
-        <PostParagraph>
+        </ArticleImageWithLegend>
+      </ArticleSection>
+      <ArticleSection>
+        <ArticleSectionTitle>Customizing Fox</ArticleSectionTitle>
+        <ArticleParagraph>
           Before knowing PUMU, I wasn&apos;t aware it was
           possible to customize Fox&apos;s board and stones
           themes. It actually isn&apos;t. Not through its
@@ -93,46 +93,46 @@ export function Pumu({ post }: BlogPostProps) {
           hack into it. PUMU shares charts on his Patreon
           page guiding users with the process. On Windows,
           what you need to do is:
-        </PostParagraph>
-        <PostOrderedList>
+        </ArticleParagraph>
+        <ArticleOrderedList>
           <li>
             Find where in the{" "}
-            <PostCode>Program Files (x86)</PostCode>
-            &nbsp;folder your <PostCode>foxwq</PostCode>
+            <ArticleCode>Program Files (x86)</ArticleCode>
+            &nbsp;folder your <ArticleCode>foxwq</ArticleCode>
             &nbsp;is installed;
           </li>
           <li>
-            Replace the <PostCode>badukpan4.png</PostCode>,{" "}
-            <PostCode>badukpan4old.png</PostCode>,{" "}
-            <PostCode>whiteStone.png</PostCode>&nbsp;and{" "}
-            <PostCode>blackStone.png</PostCode>&nbsp;files
-            in the <PostCode>Images</PostCode>&nbsp;folder
+            Replace the <ArticleCode>badukpan4.png</ArticleCode>,{" "}
+            <ArticleCode>badukpan4old.png</ArticleCode>,{" "}
+            <ArticleCode>whiteStone.png</ArticleCode>&nbsp;and{" "}
+            <ArticleCode>blackStone.png</ArticleCode>&nbsp;files
+            in the <ArticleCode>Images</ArticleCode>&nbsp;folder
             with the new image assets &mdash; do make sure
             you don&apos;t lose the original assets, just in
             case.
           </li>
-        </PostOrderedList>
-      </PostSection>
-      <PostSection>
-        <PostSectionTitle>
+        </ArticleOrderedList>
+      </ArticleSection>
+      <ArticleSection>
+        <ArticleSectionTitle>
           Customizing Sabaki
-        </PostSectionTitle>
-        <PostParagraph>
+        </ArticleSectionTitle>
+        <ArticleParagraph>
           If you&apos;re curious about how to package his
           themes for use in Sabaki, I suggest you use{" "}
-          <PostLink href="https://github.com/FanaroEngineering/fanaro_sabaki_theme_collection/tree/master/Bluish%20Purple%20Squared">
+          <ArticleLink href="https://github.com/FanaroEngineering/fanaro_sabaki_theme_collection/tree/master/Bluish%20Purple%20Squared">
             one of my themes on my Sabaki Theme Collection
-          </PostLink>{" "}
+          </ArticleLink>{" "}
           as reference. In short, the CSS code is gonna look
           like this:
-        </PostParagraph>
-        <PostPre language="css">{sabakiCss}</PostPre>
-        <PostParagraph>
+        </ArticleParagraph>
+        <ArticlePre language="css">{sabakiCss}</ArticlePre>
+        <ArticleParagraph>
           You will then mostly only need to replace the
           image URLs, and then package everything into an{" "}
-          <PostCode>.asar</PostCode>&nbsp;file.
-        </PostParagraph>
-        <PostImageWithLegend
+          <ArticleCode>.asar</ArticleCode>&nbsp;file.
+        </ArticleParagraph>
+        <ArticleImageWithLegend
           src="/articles/pumu/bluish_purple_squared.png"
           className="rounded-xl"
           height={100}
@@ -142,66 +142,66 @@ export function Pumu({ post }: BlogPostProps) {
             My &quot;Bluish Purple Square&quot; Sabaki theme
             from the code above.
           </p>
-        </PostImageWithLegend>
-        <PostImageWithLegend
+        </ArticleImageWithLegend>
+        <ArticleImageWithLegend
           src="/articles/pumu/fire_and_ice.png"
           className="rounded-xl"
           height={100}
           width={400}
         >
           <p>My &quot;Fire and Ice&quot; theme.</p>
-        </PostImageWithLegend>
-      </PostSection>
-      <PostSection>
-        <PostSectionTitle>Customizing OGS</PostSectionTitle>
-        <PostParagraph>
+        </ArticleImageWithLegend>
+      </ArticleSection>
+      <ArticleSection>
+        <ArticleSectionTitle>Customizing OGS</ArticleSectionTitle>
+        <ArticleParagraph>
           OGS is probably the easiest platform to customize.
           Just click on your username on the top-right and
           you will be met with many presets already.
-        </PostParagraph>
-        <PostParagraph>
+        </ArticleParagraph>
+        <ArticleParagraph>
           If you wanna go any further, click on &quot;More
           Options&quot; and you&apos;re gonna have URL links
           available for customizing the board and stones.
           And, just like Sabaki, you can even customize the
           grid&apos;s color.
-        </PostParagraph>
-        <PostImageWithLegend
+        </ArticleParagraph>
+        <ArticleImageWithLegend
           src="/articles/pumu/ogs_desert_theme.png"
           className="rounded-xl"
           height={100}
           width={400}
         >
           <p>My OGS &quot;Desert&quot; theme.</p>
-        </PostImageWithLegend>
-        <PostImageWithLegend
+        </ArticleImageWithLegend>
+        <ArticleImageWithLegend
           src="/articles/pumu/ogs_pistacchio_theme.png"
           className="rounded-xl"
           height={100}
           width={400}
         >
           <p>My OGS &quot;Pistacchio&quot; theme.</p>
-        </PostImageWithLegend>
-        <PostParagraph>
+        </ArticleImageWithLegend>
+        <ArticleParagraph>
           My two favorite OGS themes in the past 5 years
           have been the &quot;Desert&quot; and the
           &quot;Pistacchio&quot;, which I adapted from these
           two OGS Forum threads:
-        </PostParagraph>
-        <PostUnorderedList>
+        </ArticleParagraph>
+        <ArticleUnorderedList>
           <li>
-            <PostLink href="https://forums.online-go.com/t/board-backgrounds-library/29388/90?u=psygo">
+            <ArticleLink href="https://forums.online-go.com/t/board-backgrounds-library/29388/90?u=psygo">
               Board Backgrounds
-            </PostLink>
+            </ArticleLink>
           </li>
           <li>
-            <PostLink href="https://forums.online-go.com/t/custom-boards/28358/40">
+            <ArticleLink href="https://forums.online-go.com/t/custom-boards/28358/40">
               Custom Boards
-            </PostLink>
+            </ArticleLink>
           </li>
-        </PostUnorderedList>
-      </PostSection>
-    </Post>
+        </ArticleUnorderedList>
+      </ArticleSection>
+    </Article>
   )
 }
 

@@ -1,108 +1,108 @@
-import { BlogPostProps } from "@types"
+import { ArticleProps } from "@types"
 
 import {
-  PostParagraph,
-  Post,
-  PostSection,
-  PostLink,
-  PostBlockQuote,
-  PostSectionTitle,
-  PostUnorderedList,
-  PostImageWithLegend,
+  ArticleParagraph,
+  Article,
+  ArticleSection,
+  ArticleLink,
+  ArticleBlockQuote,
+  ArticleSectionTitle,
+  ArticleUnorderedList,
+  ArticleImageWithLegend,
   NoWrap,
-} from "@components/posts/post"
+} from "@components/articles/article"
 import { GoDiagram } from "../goDiagram"
 
-export function OkaoigoAiArticles({ post }: BlogPostProps) {
+export function OkaoigoAiArticles({ post }: ArticleProps) {
   return (
-    <Post data={post}>
-      <PostSection>
-        <PostParagraph>
+    <Article data={post}>
+      <ArticleSection>
+        <ArticleParagraph>
           Last year, thanks again to my friend, Frédéric
           Vieira 4d EGF &mdash; see{" "}
-          <PostLink
+          <ArticleLink
             internal
             href="https://neofanaroio.vercel.app/articles/little-knife-god-go-books"
           >
             this post about Little Knife God&apos;s Go Books
-          </PostLink>{" "}
+          </ArticleLink>{" "}
           &mdash;, I got to know another excellent Go online
           resource, especially for higher dan players:{" "}
-          <PostLink href="https://note.com/okaoigo">
+          <ArticleLink href="https://note.com/okaoigo">
             okaoigo
-          </PostLink>
+          </ArticleLink>
           . Its creator frequently posts on{" "}
-          <PostLink href="https://note.com/okaoigo">
+          <ArticleLink href="https://note.com/okaoigo">
             note.com
-          </PostLink>
+          </ArticleLink>
           , which is a Japanese blogging platform, similar
           to Medium or Substack &mdash;{" "}
-          <PostLink href="https://www.youtube.com/@okao941">
+          <ArticleLink href="https://www.youtube.com/@okao941">
             okaoigo is also present on YouTube
-          </PostLink>
+          </ArticleLink>
           , currently with frequent live streams.
-        </PostParagraph>
-        <PostImageWithLegend
+        </ArticleParagraph>
+        <ArticleImageWithLegend
           src="/articles/okaigo-ai-articles/okaigo_on_note.png"
           height={425}
           width={425}
           className="rounded-xl"
         >
           <p>okaoigo&apos;s Articles on note.com</p>
-        </PostImageWithLegend>
-        <PostParagraph>
+        </ArticleImageWithLegend>
+        <ArticleParagraph>
           To me, this teacher&apos;s biggest differentiator
           is his series on AI brilliances. He seems to
           collect most of them, if not all, from{" "}
-          <PostLink href="https://senseis.xmp.net/?FineArt">
+          <ArticleLink href="https://senseis.xmp.net/?FineArt">
             FineArt
-          </PostLink>
+          </ArticleLink>
           &apos;s &mdash; <NoWrap>绝艺</NoWrap> (jué yì) in
           Chinese or <NoWrap>絶芸</NoWrap> (zetsu gei) in
           Japanese &mdash; games on the Fox server, played
           either against pros or extremely strong amateurs.
           Those games are a treasure trove of incredible
           technique.
-        </PostParagraph>
+        </ArticleParagraph>
 
-        <PostBlockQuote>
+        <ArticleBlockQuote>
           FineArt&apos;s games on Fox are public, by the
           way, you can easily access them through its
           profile.
-        </PostBlockQuote>
+        </ArticleBlockQuote>
 
-        <PostParagraph>
+        <ArticleParagraph>
           Let&apos;s take a look at some examples of
           AI&apos;s superhuman abilities.
-        </PostParagraph>
-      </PostSection>
-      <PostSection>
-        <PostSectionTitle>
+        </ArticleParagraph>
+      </ArticleSection>
+      <ArticleSection>
+        <ArticleSectionTitle>
           Masterful Technique #079
-        </PostSectionTitle>
-        <PostParagraph>
+        </ArticleSectionTitle>
+        <ArticleParagraph>
           Here&apos;s a first problem with a majestic
           sequence from AI, from his{" "}
-          <PostLink href="https://note.com/okaoigo/n/n1a6d658919d2">
+          <ArticleLink href="https://note.com/okaoigo/n/n1a6d658919d2">
             Masterful Technique #079
-          </PostLink>{" "}
+          </ArticleLink>{" "}
           post:
-        </PostParagraph>
+        </ArticleParagraph>
         <GoDiagram
           src="/articles/okaigo-ai-articles/okaigo_1.1.svg"
           diaNumber={1}
         >
           <p>How should you deal with Black&apos;s cut?</p>
         </GoDiagram>
-        <PostBlockQuote>
+        <ArticleBlockQuote>
           You can use Google Translate, or any other
           translator tool, to have access to the original,
           Japanese text in his articles.
-        </PostBlockQuote>
-        <PostParagraph>
+        </ArticleBlockQuote>
+        <ArticleParagraph>
           FineArt refutes the cut with a beautiful driving
           technique:
-        </PostParagraph>
+        </ArticleParagraph>
         <GoDiagram
           src="/articles/okaigo-ai-articles/okaigo_1.2.svg"
           diaNumber={2}
@@ -112,16 +112,16 @@ export function OkaoigoAiArticles({ post }: BlogPostProps) {
             technique at its core.
           </p>
         </GoDiagram>
-        <PostParagraph>
+        <ArticleParagraph>
           If Black A, White B threatens the left Black
           group&apos;s capture while also being an atari on
           the original cutting stone.
-        </PostParagraph>
-        <PostParagraph>
+        </ArticleParagraph>
+        <ArticleParagraph>
           Black will need to then accept terrible shape and
           overconcentration in the bottom-left corner, while
           White reaps all the benefits on the outside:
-        </PostParagraph>
+        </ArticleParagraph>
         <GoDiagram
           src="/articles/okaigo-ai-articles/okaigo_1.3.svg"
           diaNumber={3}
@@ -131,26 +131,26 @@ export function OkaoigoAiArticles({ post }: BlogPostProps) {
             stone, A.
           </p>
         </GoDiagram>
-      </PostSection>
-      <PostSection>
-        <PostSectionTitle>
+      </ArticleSection>
+      <ArticleSection>
+        <ArticleSectionTitle>
           Masterful Technique #081
-        </PostSectionTitle>
-        <PostParagraph>
+        </ArticleSectionTitle>
+        <ArticleParagraph>
           And here&apos;s another exquisite example of
           AI&apos;s next-level skills:
-        </PostParagraph>
+        </ArticleParagraph>
         <GoDiagram
           src="/articles/okaigo-ai-articles/okaigo_3.1.svg"
           diaNumber={4}
         >
           <p>How can White survive or escape?</p>
         </GoDiagram>
-        <PostParagraph>
+        <ArticleParagraph>
           Black doesn&apos;t have the best shape, but,
           still, it looks difficult to live inside that
           area, or to get out. What can White do?
-        </PostParagraph>
+        </ArticleParagraph>
         <GoDiagram
           src="/articles/okaigo-ai-articles/okaigo_3.2.svg"
           diaNumber={5}
@@ -162,76 +162,76 @@ export function OkaoigoAiArticles({ post }: BlogPostProps) {
             time.
           </p>
         </GoDiagram>
-        <PostParagraph>
+        <ArticleParagraph>
           If Black plays at A, White B is sente for rescuing
           White&apos;s 3 stone. If Black then fixes, the C
           cut gets activated.
-        </PostParagraph>
-        <PostParagraph>
+        </ArticleParagraph>
+        <ArticleParagraph>
           What if Black blocks from D instead after White 3?
           Check it out in the{" "}
-          <PostLink href="https://note.com/okaoigo/n/nef7a8a915dd0">
+          <ArticleLink href="https://note.com/okaoigo/n/nef7a8a915dd0">
             original article
-          </PostLink>
+          </ArticleLink>
           !
-        </PostParagraph>
-      </PostSection>
-      <PostSection>
-        <PostSectionTitle>
+        </ArticleParagraph>
+      </ArticleSection>
+      <ArticleSection>
+        <ArticleSectionTitle>
           Other Highlights
-        </PostSectionTitle>
-        <PostParagraph>
+        </ArticleSectionTitle>
+        <ArticleParagraph>
           Here&apos;s a selection of a few other great posts
           from that same series:
-        </PostParagraph>
-        <PostUnorderedList>
+        </ArticleParagraph>
+        <ArticleUnorderedList>
           <li>
-            <PostLink href="https://note.com/okaoigo/n/n1a6d658919d2">
+            <ArticleLink href="https://note.com/okaoigo/n/n1a6d658919d2">
               Masterful Technique #079
-            </PostLink>
+            </ArticleLink>
           </li>
           <li>
-            <PostLink href="https://note.com/okaoigo/n/nde4bc1bc0982">
+            <ArticleLink href="https://note.com/okaoigo/n/nde4bc1bc0982">
               Masterful Technique #080
-            </PostLink>
+            </ArticleLink>
           </li>
           <li>
-            <PostLink href="https://note.com/okaoigo/n/nef7a8a915dd0">
+            <ArticleLink href="https://note.com/okaoigo/n/nef7a8a915dd0">
               Masterful Technique #081
-            </PostLink>
+            </ArticleLink>
           </li>
           <li>
-            <PostLink href="https://note.com/okaoigo/n/n7257c9712a5d">
+            <ArticleLink href="https://note.com/okaoigo/n/n7257c9712a5d">
               Masterful Technique #086
-            </PostLink>
+            </ArticleLink>
           </li>
           <li>
-            <PostLink href="https://note.com/okaoigo/n/nead89a818772">
+            <ArticleLink href="https://note.com/okaoigo/n/nead89a818772">
               Masterful Technique #088
-            </PostLink>
+            </ArticleLink>
           </li>
           <li>
-            <PostLink href="https://note.com/okaoigo/n/nb8e0ab25da71">
+            <ArticleLink href="https://note.com/okaoigo/n/nb8e0ab25da71">
               Masterful Technique #092
-            </PostLink>
+            </ArticleLink>
           </li>
           <li>
-            <PostLink href="https://note.com/okaoigo/n/nae94774f7863">
+            <ArticleLink href="https://note.com/okaoigo/n/nae94774f7863">
               Masterful Technique #117
-            </PostLink>
+            </ArticleLink>
           </li>
           <li>
-            <PostLink href="https://note.com/okaoigo/n/n42a984a05daf">
+            <ArticleLink href="https://note.com/okaoigo/n/n42a984a05daf">
               Masterful Technique #119
-            </PostLink>
+            </ArticleLink>
           </li>
-        </PostUnorderedList>
-        <PostParagraph>
+        </ArticleUnorderedList>
+        <ArticleParagraph>
           His other posts and series all seem interesting as
           well. Do check them out! I&apos;m even considering
           signing up for his paid series!
-        </PostParagraph>
-      </PostSection>
-    </Post>
+        </ArticleParagraph>
+      </ArticleSection>
+    </Article>
   )
 }

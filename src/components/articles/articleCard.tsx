@@ -6,13 +6,13 @@ import { useLang } from "@hooks/useLang"
 import { localizedText } from "@utils"
 
 import { LangLink } from "../common/langLink"
-import { PostDate, PostTags, PostViews } from "./post"
+import { ArticleDate, ArticleTags, ArticleViews } from "./article"
 
-export type PostCardProps = {
+export type ArticleCardProps = {
   post: ArticleFromDb
 }
 
-export function PostCard({ post }: PostCardProps) {
+export function ArticleCard({ post }: ArticleCardProps) {
   const lang = useLang()
 
   let borderColor = "oklch(21% 0.034 264.665)"
@@ -31,33 +31,33 @@ export function PostCard({ post }: PostCardProps) {
         }}
         className={`flex flex-col gap-2 border-l-[7px] ${cardDecoration}`}
       >
-        <PostTitle>
+        <ArticleTitle>
           {localizedText(post.titleEn, post.titlePt, lang)}
-        </PostTitle>
+        </ArticleTitle>
         <div className="mt-1 mb-1 flex flex-wrap items-center gap-3 sm:items-end-safe">
-          <PostViews
+          <ArticleViews
             views={post.views}
             className="flex gap-1 text-sm font-bold text-slate-700"
           />
-          <PostTags tags={post.tags} />
+          <ArticleTags tags={post.tags} />
         </div>
-        <PostDate
+        <ArticleDate
           date={new Date(post.date)}
           className="pb-1 text-sm font-semibold text-slate-500"
         />
-        <PostDescription>
+        <ArticleDescription>
           {localizedText(
             post.descriptionEn,
             post.descriptionPt,
             lang,
           )}
-        </PostDescription>
+        </ArticleDescription>
       </div>
     </LangLink>
   )
 }
 
-function PostTitle({ children }: WithReactChildren) {
+function ArticleTitle({ children }: WithReactChildren) {
   return (
     <h2 className="text-2xl font-extrabold tracking-wide">
       {children}
@@ -65,7 +65,7 @@ function PostTitle({ children }: WithReactChildren) {
   )
 }
 
-function PostDescription({ children }: WithReactChildren) {
+function ArticleDescription({ children }: WithReactChildren) {
   return (
     <p className="text-sm text-slate-700">{children}</p>
   )

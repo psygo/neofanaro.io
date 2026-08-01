@@ -3,7 +3,7 @@ import { get_articles } from "@actions"
 import { ArticlesProvider } from "@providers"
 
 import { Main } from "@components/common/main"
-import { PostsSection } from "@components/posts/postsSection"
+import { ArticlesSection } from "@components/articles/articlesSection"
 import { CpiSuspense } from "@components/common/cpiSuspense"
 
 type Props = {
@@ -23,7 +23,7 @@ export default async function Articles({
     <Main>
       <CpiSuspense>
         <ArticlesProvider initialArticles={articles || []}>
-          <PostsSection />
+          <ArticlesSection />
         </ArticlesProvider>
       </CpiSuspense>
     </Main>

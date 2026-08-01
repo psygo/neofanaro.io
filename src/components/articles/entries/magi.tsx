@@ -1,37 +1,37 @@
-import { BlogPostProps } from "@types"
+import { ArticleProps } from "@types"
 
 import {
-  PostParagraph,
-  Post,
-  PostSection,
-  PostLink,
-  PostImageWithLegend,
-  PostCode,
-  PostBlockQuote,
-  PostSectionTitle,
-  PostIframe,
-} from "@components/posts/post"
+  ArticleParagraph,
+  Article,
+  ArticleSection,
+  ArticleLink,
+  ArticleImageWithLegend,
+  ArticleCode,
+  ArticleBlockQuote,
+  ArticleSectionTitle,
+  ArticleIframe,
+} from "@components/articles/article"
 
-export function Magi({ post }: BlogPostProps) {
+export function Magi({ post }: ArticleProps) {
   return (
-    <Post data={post}>
-      <PostSection>
-        <PostParagraph>
+    <Article data={post}>
+      <ArticleSection>
+        <ArticleParagraph>
           Even though we typically explore the internet
           through a list, in the minds of its original
           creators, I would bet they viewed it as something
           two-dimensional, network is in the name after all.
-        </PostParagraph>
-        <PostParagraph>
+        </ArticleParagraph>
+        <ArticleParagraph>
           Perhaps it was all just a matter of lacking the
           tools, or lacking performant-enough tools. And, if
           that&apos;s the case, maybe{" "}
-          <PostLink href="https://magi-phi.vercel.app/">
+          <ArticleLink href="https://magi-phi.vercel.app/">
             Magi
-          </PostLink>{" "}
+          </ArticleLink>{" "}
           could fill in the gap.
-        </PostParagraph>
-        <PostImageWithLegend
+        </ArticleParagraph>
+        <ArticleImageWithLegend
           src="/articles/magi/magi_demo_1.png"
           height={425}
           width={425}
@@ -39,8 +39,8 @@ export function Magi({ post }: BlogPostProps) {
           alt="Magi Demo 1"
         >
           <p></p>
-        </PostImageWithLegend>
-        <PostImageWithLegend
+        </ArticleImageWithLegend>
+        <ArticleImageWithLegend
           src="/articles/magi/magi_demo_3.png"
           height={425}
           width={425}
@@ -48,46 +48,46 @@ export function Magi({ post }: BlogPostProps) {
           alt="Magi Demo 2"
         >
           <p></p>
-        </PostImageWithLegend>
-        <PostParagraph>
+        </ArticleImageWithLegend>
+        <ArticleParagraph>
           Magi is essentially a 2D version of Reddit, in
           which users create posts on a canvas and use
           different visual elements to relate them. Take a
           look:
-        </PostParagraph>
-        <PostIframe
+        </ArticleParagraph>
+        <ArticleIframe
           title="Magi"
           src="https://magi-phi.vercel.app/"
         />
-        <PostParagraph>
+        <ArticleParagraph>
           Visualizing the web as a graph is nothing new, but
           having but having a tool which lets you do it with
           other users is something I had never seen and
           wanted to have become a reality.
-        </PostParagraph>
-      </PostSection>
-      <PostSection>
-        <PostSectionTitle>
+        </ArticleParagraph>
+      </ArticleSection>
+      <ArticleSection>
+        <ArticleSectionTitle>
           Technical Challenges
-        </PostSectionTitle>
-        <PostBlockQuote>
+        </ArticleSectionTitle>
+        <ArticleBlockQuote>
           <strong className="font-extrabold">Magi</strong>{" "}
           is open source:{" "}
-          <PostLink href="https://github.com/psygo/magi">
+          <ArticleLink href="https://github.com/psygo/magi">
             @psygo/magi
-          </PostLink>
-        </PostBlockQuote>
-        <PostParagraph>
+          </ArticleLink>
+        </ArticleBlockQuote>
+        <ArticleParagraph>
           Building Magi was not easy. I had to exploit every
           single React trick I knew and more, but,
           thankfully, the outstanding{" "}
-          <PostLink href="https://github.com/excalidraw/excalidraw">
+          <ArticleLink href="https://github.com/excalidraw/excalidraw">
             Excalidraw
-          </PostLink>{" "}
+          </ArticleLink>{" "}
           package saved a colossal amount of time and
           effort.
-        </PostParagraph>
-        <PostImageWithLegend
+        </ArticleParagraph>
+        <ArticleImageWithLegend
           src="/articles/magi/Excalidraw.png"
           height={425}
           width={425}
@@ -95,40 +95,40 @@ export function Magi({ post }: BlogPostProps) {
           alt="Excalidraw"
         >
           <p>Excalidraw</p>
-        </PostImageWithLegend>
-        <PostParagraph>
+        </ArticleImageWithLegend>
+        <ArticleParagraph>
           In the end, the app&apos;s structure consists of
-          an HTML <PostCode>&lt;canvas&gt;</PostCode>
+          an HTML <ArticleCode>&lt;canvas&gt;</ArticleCode>
           &nbsp;layer &mdash; handled by Excalidraw &mdash;
           and a regular HTML one. In many ways, Magi simply
           extends Excalidraw to become more socially
           interactive.
-        </PostParagraph>
-        <PostParagraph>
+        </ArticleParagraph>
+        <ArticleParagraph>
           The orchestration of all elements was quite the
           challenge, especially the pagination, which you
           can inspect{" "}
-          <PostLink href="https://github.com/psygo/magi/blob/main/src/providers/canvas/PaginationProvider.tsx">
+          <ArticleLink href="https://github.com/psygo/magi/blob/main/src/providers/canvas/PaginationProvider.tsx">
             here
-          </PostLink>
+          </ArticleLink>
           .
-        </PostParagraph>
-        <PostParagraph>
+        </ArticleParagraph>
+        <ArticleParagraph>
           However, maybe this project&apos;s toughest aspect
           was using a relational database to handle what
           should be in a graph database, such as{" "}
-          <PostLink href="https://neo4j.com/">
+          <ArticleLink href="https://neo4j.com/">
             Neo4j
-          </PostLink>
+          </ArticleLink>
           . The resulting{" "}
-          <PostLink href="https://github.com/psygo/magi/blob/main/src/server/db/schema.ts">
+          <ArticleLink href="https://github.com/psygo/magi/blob/main/src/server/db/schema.ts">
             schema
-          </PostLink>{" "}
+          </ArticleLink>{" "}
           was much simpler than I ever expected, but that
           needed many prior failed attempts with many
           different tools to ever become a reality.
-        </PostParagraph>
-        <PostParagraph>
+        </ArticleParagraph>
+        <ArticleParagraph>
           Neo4j seemed like a perfect solution at the
           beginning, but its performance as a front-facing
           database did not convince me, it doesn&apos;t seem
@@ -136,23 +136,23 @@ export function Magi({ post }: BlogPostProps) {
           the most advanced graph database still, that DB
           category is for sure many decades behind the
           typical relational ones.
-        </PostParagraph>
-        <PostBlockQuote>
+        </ArticleParagraph>
+        <ArticleBlockQuote>
           One of the most famous applications of treating
           the web as a network was Google&apos;s{" "}
-          <PostLink href="https://en.wikipedia.org/wiki/PageRank">
+          <ArticleLink href="https://en.wikipedia.org/wiki/PageRank">
             PageRank
-          </PostLink>
+          </ArticleLink>
           , which used collected data to create a usage
           graph for each website in the net. One possible
           visualization of that approach of the current
           state of the internet is{" "}
-          <PostLink href="https://internet-map.net/">
+          <ArticleLink href="https://internet-map.net/">
             The Internet Map
-          </PostLink>
+          </ArticleLink>
           .
-        </PostBlockQuote>
-      </PostSection>
-    </Post>
+        </ArticleBlockQuote>
+      </ArticleSection>
+    </Article>
   )
 }

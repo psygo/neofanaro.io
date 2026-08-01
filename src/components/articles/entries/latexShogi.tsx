@@ -1,16 +1,16 @@
-import { BlogPostProps } from "@types"
+import { ArticleProps } from "@types"
 
 import {
-  PostParagraph,
-  Post,
-  PostSection,
-  PostLink,
-  PostSectionTitle,
-  PostPre,
-  PostPDFViewer,
-  PostBlockQuote,
-  PostImageWithLegend,
-} from "@components/posts/post"
+  ArticleParagraph,
+  Article,
+  ArticleSection,
+  ArticleLink,
+  ArticleSectionTitle,
+  ArticlePre,
+  ArticlePDFViewer,
+  ArticleBlockQuote,
+  ArticleImageWithLegend,
+} from "@components/articles/article"
 
 const latexCode = String.raw`
 \documentclass[12pt]{standalone}
@@ -48,87 +48,87 @@ const latexCode = String.raw`
 \end{document}
 `
 
-export function LatexShogi({ post }: BlogPostProps) {
+export function LatexShogi({ post }: ArticleProps) {
   return (
-    <Post data={post}>
-      <PostSection>
-        <PostParagraph>
+    <Article data={post}>
+      <ArticleSection>
+        <ArticleParagraph>
           Recently, I&apos;ve been revisiting one of my last
           LaTeX projects:{" "}
-          <PostLink href="https://github.com/psygo/latex_shogi">
+          <ArticleLink href="https://github.com/psygo/latex_shogi">
             @psygo/latex_shogi
-          </PostLink>
+          </ArticleLink>
           , a package which allows writers to draw vector
           diagrams for Japanese chess, or shogi, with LaTeX.
-        </PostParagraph>
-        <PostImageWithLegend src="/articles/latex-shogi/sample_1.svg">
+        </ArticleParagraph>
+        <ArticleImageWithLegend src="/articles/latex-shogi/sample_1.svg">
           <p>An example diagram using all the pieces.</p>
-        </PostImageWithLegend>
-        <PostParagraph>
+        </ArticleImageWithLegend>
+        <ArticleParagraph>
           That project started as an adaptation of the
           package I had built for drawing LaTeX vector
           diagrams for the game of{" "}
-          <PostLink href="https://en.wikipedia.org/wiki/Go_(game)">
+          <ArticleLink href="https://en.wikipedia.org/wiki/Go_(game)">
             Go
-          </PostLink>
+          </ArticleLink>
           , which I, in turn, had used to create my Go
           techniques book:{" "}
-          <PostLink href="https://github.com/psygo/tecnicas_de_go">
+          <ArticleLink href="https://github.com/psygo/tecnicas_de_go">
             @psygo/tecnicas_de_go
-          </PostLink>
+          </ArticleLink>
           .
-        </PostParagraph>
-        <PostImageWithLegend src="/articles/latex-shogi/shogi_problema_1.svg">
+        </ArticleParagraph>
+        <ArticleImageWithLegend src="/articles/latex-shogi/shogi_problema_1.svg">
           <p>
             Another example diagram, this time with
             coordinates.
           </p>
-        </PostImageWithLegend>
-        <PostParagraph>
+        </ArticleImageWithLegend>
+        <ArticleParagraph>
           Through code that&apos;s as simple as{" "}
-          <PostLink href="https://github.com/psygo/latex_shogi/blob/main/src/shogi_diagram_export.tex">
+          <ArticleLink href="https://github.com/psygo/latex_shogi/blob/main/src/shogi_diagram_export.tex">
             this
-          </PostLink>
+          </ArticleLink>
           , we&apos;re now able to draw beautiful shogi
           diagrams which won&apos;t ever pixelate:
-        </PostParagraph>
-        <PostPre language="latex">{latexCode}</PostPre>
-        <PostParagraph>
+        </ArticleParagraph>
+        <ArticlePre language="latex">{latexCode}</ArticlePre>
+        <ArticleParagraph>
           That piece of code generates this square diagram,
           which is what you&apos;re gonna find in most shogi
           books:
-        </PostParagraph>
-        <PostImageWithLegend src="/articles/latex-shogi/shogi_diagram_export.svg">
+        </ArticleParagraph>
+        <ArticleImageWithLegend src="/articles/latex-shogi/shogi_diagram_export.svg">
           <p>
             A square diagram example, the more common format
             in shogi books. Note that we do have the
             &quot;mochigoma&quot; feature, that is, the
             captured pieces on the side of the board.
           </p>
-        </PostImageWithLegend>
-        <PostParagraph>
+        </ArticleImageWithLegend>
+        <ArticleParagraph>
           Here&apos;s a{" "}
-          <PostLink href="/articles/latex-shogi/sample.pdf">
+          <ArticleLink href="/articles/latex-shogi/sample.pdf">
             sample
-          </PostLink>{" "}
+          </ArticleLink>{" "}
           of what can be done with the current package, in
           Portuguese though:
-        </PostParagraph>
-        <PostPDFViewer src="/articles/latex-shogi/sample.pdf" />
-      </PostSection>
-      <PostSection>
-        <PostSectionTitle>
+        </ArticleParagraph>
+        <ArticlePDFViewer src="/articles/latex-shogi/sample.pdf" />
+      </ArticleSection>
+      <ArticleSection>
+        <ArticleSectionTitle>
           Programming in LaTeX with AI
-        </PostSectionTitle>
-        <PostParagraph>
+        </ArticleSectionTitle>
+        <ArticleParagraph>
           One thing I need to add is that AI fastforwarded
           this project considerably. After I got the first
           version going, if I were to implement all the
           other features myself, without any help, I could
           have easily worked for 2 weeks to have them happen
           cleanly. Instead, it took me 1-2 days with AI.
-        </PostParagraph>
-        <PostParagraph>
+        </ArticleParagraph>
+        <ArticleParagraph>
           Less than 2 years ago, even though AI was doing
           well in most programming languages, that was not
           the case when it came to LaTeX. But, now, Claude
@@ -138,46 +138,46 @@ export function LatexShogi({ post }: BlogPostProps) {
           easy to read, which cannot be said about many
           LaTeX experts out there, who mostly come from the
           academic world.
-        </PostParagraph>
-      </PostSection>
-      <PostSection>
-        <PostSectionTitle>
+        </ArticleParagraph>
+      </ArticleSection>
+      <ArticleSection>
+        <ArticleSectionTitle>
           Exporting the Diagrams to Vector Images
-        </PostSectionTitle>
-        <PostParagraph>
+        </ArticleSectionTitle>
+        <ArticleParagraph>
           If you would like to use the diagrams as vector
           images on other projects, you could just open the
           resulting PDF inside a vector graphics editor,
           such{" "}
-          <PostLink href="https://inkscape.org/">
+          <ArticleLink href="https://inkscape.org/">
             Inkscape
-          </PostLink>
+          </ArticleLink>
           , and export a selection to a vector graphics
           image, such as an SVG.
-        </PostParagraph>
-        <PostParagraph>
+        </ArticleParagraph>
+        <ArticleParagraph>
           But that&apos;s the manual option, which might be
           more versatile, depending on your context.
           However, if you prefer the more programmatic
           version, you could instead use this on the command
           line:
-        </PostParagraph>
-        <PostPre language="bash">
+        </ArticleParagraph>
+        <ArticlePre language="bash">
           pdftocairo -svg filename.pdf filename.svg
-        </PostPre>
-        <PostBlockQuote>
+        </ArticlePre>
+        <ArticleBlockQuote>
           Those are the processes I&apos;ve been using to
           create my Go diagrams in my Go articles, such as
           the{" "}
-          <PostLink
+          <ArticleLink
             internal
             href="https://neofanaroio.vercel.app/articles/okaoigo-ai-articles"
           >
             okaoigo&apos;s one
-          </PostLink>
+          </ArticleLink>
           .
-        </PostBlockQuote>
-      </PostSection>
-    </Post>
+        </ArticleBlockQuote>
+      </ArticleSection>
+    </Article>
   )
 }

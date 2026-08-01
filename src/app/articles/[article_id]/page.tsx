@@ -24,7 +24,7 @@ import {
   SampleSizeAndCommonSense,
   TewariDelight2,
   WhatIsGoAbout,
-} from "@components/posts/articles/exports"
+} from "@components/articles/entries/exports"
 
 type ArticlePageProps = {
   params: Promise<{ article_id: string }>

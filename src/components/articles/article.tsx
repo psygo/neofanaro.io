@@ -15,16 +15,16 @@ import { ArticleFromDb, WithReactChildren } from "@types"
 import { useLang } from "@hooks/useLang"
 import { localizedText } from "@utils"
 
-import { PostViewTracker } from "./postViewTracker"
+import { ArticleViewTracker } from "./articleViewTracker"
 
-type PostProps = {
+type ArticleProps = {
   data: ArticleFromDb
   children: React.ReactNode
 }
 
 const DEFAULT_MAX_WIDTH_REM = 29 // matches former max-w-110
 
-export function Post({ data, children }: PostProps) {
+export function Article({ data, children }: ArticleProps) {
   const lang = useLang()
   const [maxWidth, setMaxWidth] = useState(
     DEFAULT_MAX_WIDTH_REM,
@@ -36,26 +36,26 @@ export function Post({ data, children }: PostProps) {
       className={`prose min-w-0 border-r-2 transition-colors duration-150 sm:px-2 ${isDragging ? "border-r-slate-300" : "border-r-transparent"}`}
       style={{ maxWidth: `${maxWidth}rem` }}
     >
-      <PostViewTracker path={data.path} />
-      <PostTitleSection>
+      <ArticleViewTracker path={data.path} />
+      <ArticleTitleSection>
         <div className="mb-5 flex items-center justify-between gap-20">
-          <PostTitle>
+          <ArticleTitle>
             {localizedText(
               data.titleEn,
               data.titlePt,
               lang,
             )}
-          </PostTitle>
-          <PostWidthSlider
+          </ArticleTitle>
+          <ArticleWidthSlider
             maxWidth={maxWidth}
             setMaxWidth={setMaxWidth}
             setIsDragging={setIsDragging}
           />
         </div>
-        <PostViews views={data.views || 0} />
-        <PostDate date={new Date(data.date)} />
-        <PostTags tags={data.tags} />
-      </PostTitleSection>
+        <ArticleViews views={data.views || 0} />
+        <ArticleDate date={new Date(data.date)} />
+        <ArticleTags tags={data.tags} />
+      </ArticleTitleSection>
       {children}
     </article>
   )
@@ -64,17 +64,17 @@ export function Post({ data, children }: PostProps) {
 // ---------------------------------------------------------
 // Slider
 
-type PostWidthSliderProps = {
+type ArticleWidthSliderProps = {
   maxWidth: number
   setMaxWidth: (w: number) => void
   setIsDragging: (v: boolean) => void
 }
 
-function PostWidthSlider({
+function ArticleWidthSlider({
   maxWidth,
   setMaxWidth,
   setIsDragging,
-}: PostWidthSliderProps) {
+}: ArticleWidthSliderProps) {
   const dragState = useRef<{
     startX: number
     startWidth: number
@@ -138,9 +138,9 @@ function PostWidthSlider({
 }
 
 // ---------------------------------------------------------
-// Post Title Section
+// Article Title Section
 
-export function PostTitleSection({
+export function ArticleTitleSection({
   children,
 }: WithReactChildren) {
   return (
@@ -150,19 +150,19 @@ export function PostTitleSection({
   )
 }
 
-export function PostTitle({ children }: WithReactChildren) {
+export function ArticleTitle({ children }: WithReactChildren) {
   return <h1 className="mb-0 font-black">{children}</h1>
 }
 
-type PostViewsProps = {
+type ArticleViewsProps = {
   views: number
   className?: string
 }
 
-export function PostViews({
+export function ArticleViews({
   views,
   className = "flex gap-1 text-base font-bold text-slate-600",
-}: PostViewsProps) {
+}: ArticleViewsProps) {
   return (
     <h6 className={className}>
       {views} {views === 1 ? "view" : "views"}
@@ -170,15 +170,15 @@ export function PostViews({
   )
 }
 
-type PostDateProps = {
+type ArticleDateProps = {
   date: Date
   className?: string
 }
 
-export function PostDate({
+export function ArticleDate({
   date,
   className = "pb-1 text-slate-500",
-}: PostDateProps) {
+}: ArticleDateProps) {
   const lang = useLang()
 
   const formattedDate = date.toLocaleDateString(
@@ -193,7 +193,7 @@ export function PostDate({
   return <h6 className={className}>{formattedDate}</h6>
 }
 
-export function PostTag({ children }: WithReactChildren) {
+export function ArticleTag({ children }: WithReactChildren) {
   return (
     <span className="rounded-2xl border border-gray-300 bg-gray-50 px-2 py-0.5 text-xs font-semibold text-gray-600">
       {children}
@@ -201,30 +201,30 @@ export function PostTag({ children }: WithReactChildren) {
   )
 }
 
-type PostTagsProps = {
+type ArticleTagsProps = {
   tags: string[]
 }
 
-export function PostTags({ tags }: PostTagsProps) {
+export function ArticleTags({ tags }: ArticleTagsProps) {
   return (
     <div className="flex flex-wrap gap-2">
       {tags.map((tag, i) => (
-        <PostTag key={i}>{tag}</PostTag>
+        <ArticleTag key={i}>{tag}</ArticleTag>
       ))}
     </div>
   )
 }
 
 // ---------------------------------------------------------
-// Post Content
+// Article Content
 
-export function PostSection({
+export function ArticleSection({
   children,
 }: WithReactChildren) {
   return <section className="mt-10">{children}</section>
 }
 
-export function PostParagraph({
+export function ArticleParagraph({
   children,
 }: WithReactChildren) {
   return (
@@ -234,17 +234,17 @@ export function PostParagraph({
   )
 }
 
-type PostLinkProps = {
+type ArticleLinkProps = {
   children: React.ReactNode
   href: string
   internal?: boolean
 }
 
-export function PostLink({
+export function ArticleLink({
   children,
   href,
   internal = false,
-}: PostLinkProps) {
+}: ArticleLinkProps) {
   return (
     <Link
       className={`${
@@ -259,7 +259,7 @@ export function PostLink({
   )
 }
 
-export function PostOrderedList({
+export function ArticleOrderedList({
   children,
 }: WithReactChildren) {
   return (
@@ -269,7 +269,7 @@ export function PostOrderedList({
   )
 }
 
-export function PostUnorderedList({
+export function ArticleUnorderedList({
   children,
 }: WithReactChildren) {
   return (
@@ -279,17 +279,17 @@ export function PostUnorderedList({
   )
 }
 
-type PostImageProps = {
+type ArticleImageProps = {
   src: string
   alt: string
   className?: string
 }
 
-export function PostImage({
+export function ArticleImage({
   src,
   alt,
   className = "mx-auto h-full w-full px-3",
-}: PostImageProps) {
+}: ArticleImageProps) {
   return (
     <Image
       src={src}
@@ -302,7 +302,7 @@ export function PostImage({
   )
 }
 
-type PostImageWithLegendProps = WithReactChildren & {
+type ArticleImageWithLegendProps = WithReactChildren & {
   src: string
   alt?: string
   height?: number
@@ -310,14 +310,14 @@ type PostImageWithLegendProps = WithReactChildren & {
   className?: string
 }
 
-export function PostImageWithLegend({
+export function ArticleImageWithLegend({
   src,
   alt = "",
   height = 300,
   width = 300,
   className = "",
   children,
-}: PostImageWithLegendProps) {
+}: ArticleImageWithLegendProps) {
   return (
     <div
       className="flex flex-col items-center gap-2 pt-4 pb-2.5 hyphens-auto"
@@ -339,7 +339,7 @@ export function PostImageWithLegend({
   )
 }
 
-export function PostCode({ children }: WithReactChildren) {
+export function ArticleCode({ children }: WithReactChildren) {
   return (
     <code className="rounded bg-gray-700 px-1.5 py-0.5 font-mono text-[0.8em] font-medium text-gray-100 before:content-[''] after:content-['']">
       {children}
@@ -347,13 +347,13 @@ export function PostCode({ children }: WithReactChildren) {
   )
 }
 
-export function PostSectionTitle({
+export function ArticleSectionTitle({
   children,
 }: WithReactChildren) {
   return <h2 className="font-extrabold">{children}</h2>
 }
 
-export function PostBlockQuote({
+export function ArticleBlockQuote({
   children,
 }: WithReactChildren) {
   return (
@@ -366,15 +366,15 @@ export function PostBlockQuote({
   )
 }
 
-type PostIframeProps = {
+type ArticleIframeProps = {
   title: string
   src: string
 }
 
-export function PostIframe({
+export function ArticleIframe({
   title,
   src,
-}: PostIframeProps) {
+}: ArticleIframeProps) {
   return (
     <iframe
       id="inlineFrameExample"
@@ -389,10 +389,10 @@ export function PostIframe({
   )
 }
 
-export function PostYouTubeIframe({
+export function ArticleYouTubeIframe({
   src,
   title,
-}: PostIframeProps) {
+}: ArticleIframeProps) {
   return (
     <div className="flex justify-center">
       <div className="mx-6 mt-3.5 mb-0.5 flex aspect-video w-full max-w-lg items-center overflow-hidden rounded-2xl border border-slate-200 shadow-lg">
@@ -408,7 +408,7 @@ export function PostYouTubeIframe({
   )
 }
 
-export function PostDivider() {
+export function ArticleDivider() {
   return (
     <hr className="mt-30 mb-6 border border-gray-300" />
   )
@@ -417,15 +417,15 @@ export function PostDivider() {
 // ---------------------------------------------------------
 // Pre / Code Block
 
-type PostPreProps = {
+type ArticlePreProps = {
   children: string
   language?: string
 }
 
-export function PostPre({
+export function ArticlePre({
   children,
   language,
-}: PostPreProps) {
+}: ArticlePreProps) {
   const result = language
     ? hljs.highlight(children.trim(), { language })
     : hljs.highlightAuto(children.trim())
@@ -443,11 +443,11 @@ export function PostPre({
 // ---------------------------------------------------------
 // PDF Viewer
 
-type PostPDFViewerProps = {
+type ArticlePDFViewerProps = {
   src: string
 }
 
-export function PostPDFViewer({ src }: PostPDFViewerProps) {
+export function ArticlePDFViewer({ src }: ArticlePDFViewerProps) {
   return (
     <PDFViewer
       config={{ src }}
