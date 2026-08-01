@@ -27,6 +27,14 @@ export function TennozanLeague({ post }: ArticleProps) {
               Acesse a liga aqui!
             </ArticleLink>
           </ArticleBlockQuote>
+          <ArticleImageWithLegend
+            src="/articles/tennozan-league/first_participants.png"
+            height={350}
+            width={350}
+            className="rounded-xl"
+          >
+            <p>Os primeiros participantes da liga.</p>
+          </ArticleImageWithLegend>
           <ArticleParagraph>
             Há alguns anos, administrei uma liga online
             chamada{" "}
@@ -127,6 +135,15 @@ export function TennozanLeague({ post }: ArticleProps) {
               Access the league here!
             </ArticleLink>
           </ArticleBlockQuote>
+          <ArticleImageWithLegend
+            src="/articles/tennozan-league/first_participants.png"
+            height={350}
+            width={350}
+            className="rounded-xl"
+          >
+            <p>The first league participants.</p>
+          </ArticleImageWithLegend>
+
           <ArticleParagraph>
             Some years ago, I managed an online league
             called{" "}
