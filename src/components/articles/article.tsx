@@ -150,7 +150,9 @@ export function ArticleTitleSection({
   )
 }
 
-export function ArticleTitle({ children }: WithReactChildren) {
+export function ArticleTitle({
+  children,
+}: WithReactChildren) {
   return <h1 className="mb-0 font-black">{children}</h1>
 }
 
@@ -193,7 +195,9 @@ export function ArticleDate({
   return <h6 className={className}>{formattedDate}</h6>
 }
 
-export function ArticleTag({ children }: WithReactChildren) {
+export function ArticleTag({
+  children,
+}: WithReactChildren) {
   return (
     <span className="rounded-2xl border border-gray-300 bg-gray-50 px-2 py-0.5 text-xs font-semibold text-gray-600">
       {children}
@@ -339,7 +343,9 @@ export function ArticleImageWithLegend({
   )
 }
 
-export function ArticleCode({ children }: WithReactChildren) {
+export function ArticleCode({
+  children,
+}: WithReactChildren) {
   return (
     <code className="rounded bg-gray-700 px-1.5 py-0.5 font-mono text-[0.8em] font-medium text-gray-100 before:content-[''] after:content-['']">
       {children}
@@ -395,7 +401,7 @@ export function ArticleYouTubeIframe({
 }: ArticleIframeProps) {
   return (
     <div className="flex justify-center">
-      <div className="mx-6 mt-3.5 mb-0.5 flex aspect-video w-full max-w-lg items-center overflow-hidden rounded-2xl border border-slate-200 shadow-lg">
+      <div className="mx-6 mb-0.5 flex aspect-video w-full max-w-lg items-center overflow-hidden rounded-2xl border border-slate-200 shadow-lg">
         <iframe
           className="h-full w-full"
           src={src}
@@ -447,7 +453,9 @@ type ArticlePDFViewerProps = {
   src: string
 }
 
-export function ArticlePDFViewer({ src }: ArticlePDFViewerProps) {
+export function ArticlePDFViewer({
+  src,
+}: ArticlePDFViewerProps) {
   return (
     <PDFViewer
       config={{ src }}

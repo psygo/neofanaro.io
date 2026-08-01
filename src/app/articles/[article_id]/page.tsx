@@ -22,6 +22,7 @@ import {
   PostAiOpeningHierarchy,
   Pumu,
   SampleSizeAndCommonSense,
+  TennozanLeague,
   TewariDelight2,
   WhatIsGoAbout,
 } from "@components/articles/entries/exports"
@@ -51,7 +52,11 @@ export default async function ArticlePage({
   return (
     <Main>
       <CpiSuspense>
-        {article ? whichArticle(article_id, article) : <></>}
+        {article ? (
+          whichArticle(article_id, article)
+        ) : (
+          <></>
+        )}
       </CpiSuspense>
     </Main>
   )
@@ -83,6 +88,8 @@ function whichArticle(path: string, post: ArticleFromDb) {
       return <PostAiOpeningHierarchy post={post} />
     case "pumu":
       return <Pumu post={post} />
+    case "tennozan-league":
+      return <TennozanLeague post={post} />
     case "tewari-delight-2":
       return <TewariDelight2 post={post} />
     case "sample-size-and-common-sense":
