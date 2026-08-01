@@ -164,9 +164,7 @@ function UsaFlagLogo() {
 }
 
 function BrazilFlagLogo() {
-  return (
-    <CountryFlagLogo countryCode="br" href="?lang=en" />
-  )
+  return <CountryFlagLogo countryCode="br" href="?" />
 }
 
 function LanguageIcon() {

@@ -15,7 +15,8 @@ export function LangLink({
 }: LangLinkProps) {
   const lang = useLang()
 
-  const completeHref = `${href}?lang=${lang}`
+  const completeHref =
+    lang === "en" ? href : `${href}?lang=${lang}`
 
   return (
     <Link className={className} href={completeHref}>

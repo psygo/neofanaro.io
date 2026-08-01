@@ -9,7 +9,7 @@ export const topLevelMetadata: Metadata = {
   alternates: {
     canonical: "https://neofanaroio.vercel.app",
     languages: {
-      en: "https://neofanaroio.vercel.app/?lang=en",
+      en: "https://neofanaroio.vercel.app",
       pt: "https://neofanaroio.vercel.app/?lang=pt",
     },
   },

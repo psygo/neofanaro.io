@@ -103,7 +103,7 @@ export function DowonPairGo({ post }: BlogPostProps) {
           more, do check my{" "}
           <PostLink
             internal
-            href="https://neofanaroio.vercel.app/posts/one-year-in-asia?lang=en"
+            href="https://neofanaroio.vercel.app/posts/one-year-in-asia"
           >
             video summary
           </PostLink>{" "}

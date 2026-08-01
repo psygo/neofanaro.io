@@ -9,6 +9,8 @@ export default async function TeacherPage({
 }: TeacherPageProps) {
   const { lang } = await searchParams
   redirect(
-    `/teacher/presentation${lang ? `?lang=${lang}` : ""}`,
+    `/teacher/presentation${
+      lang && lang !== "en" ? `?lang=${lang}` : ""
+    }`,
   )
 }
