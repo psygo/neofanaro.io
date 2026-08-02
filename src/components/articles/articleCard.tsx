@@ -1,6 +1,10 @@
 import { cardDecoration } from "@styles"
 
-import { ArticleFromDb, WithReactChildren } from "@types"
+import {
+  ArticleFromDb,
+  VoteSummary,
+  WithReactChildren,
+} from "@types"
 
 import { useLang } from "@hooks/useLang"
 import { localizedText } from "@utils"
@@ -8,7 +12,7 @@ import { localizedText } from "@utils"
 // import { CountryFlag } from "@components/common/countryFlag"
 
 import { LangLink } from "../common/langLink"
-import { ArticleVoteWidget } from "./articleVoteWidget"
+import { VoteButtons } from "./voteButtons"
 import {
   ArticleDate,
   ArticleTags,
@@ -17,9 +21,13 @@ import {
 
 export type ArticleCardProps = {
   post: ArticleFromDb
+  votes?: VoteSummary
 }
 
-export function ArticleCard({ post }: ArticleCardProps) {
+export function ArticleCard({
+  post,
+  votes,
+}: ArticleCardProps) {
   const lang = useLang()
 
   let borderColor = "oklch(21% 0.034 264.665)"
@@ -63,8 +71,10 @@ export function ArticleCard({ post }: ArticleCardProps) {
               date={new Date(post.date)}
               className="text-sm font-semibold text-slate-500"
             />
-            <ArticleVoteWidget
-              articleId={post.id}
+            <VoteButtons
+              upvotes={votes?.upvotes ?? 0}
+              downvotes={votes?.downvotes ?? 0}
+              myVote={votes?.myVote ?? 0}
               readOnly
             />
           </div>

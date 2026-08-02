@@ -39,6 +39,42 @@ export async function getArticleVoteSummary(
   return summarizeVotes(rows, currentPlayerId)
 }
 
+export async function getArticleVoteSummaries(
+  articleIds: number[],
+  currentPlayerId?: number,
+): Promise<Map<number, VoteSummary>> {
+  if (articleIds.length === 0) return new Map()
+
+  const rows = await db
+    .select({
+      articleId: articleVotesTable.articleId,
+      playerId: articleVotesTable.playerId,
+      value: articleVotesTable.value,
+    })
+    .from(articleVotesTable)
+    .where(inArray(articleVotesTable.articleId, articleIds))
+
+  const byArticle = new Map<
+    number,
+    { playerId: number; value: number }[]
+  >()
+  for (const row of rows) {
+    const list = byArticle.get(row.articleId) ?? []
+    list.push({ playerId: row.playerId, value: row.value })
+    byArticle.set(row.articleId, list)
+  }
+
+  return new Map(
+    articleIds.map((id) => [
+      id,
+      summarizeVotes(
+        byArticle.get(id) ?? [],
+        currentPlayerId,
+      ),
+    ]),
+  )
+}
+
 export async function getCommentVoteSummary(
   commentId: number,
   currentPlayerId?: number,

@@ -1,8 +1,13 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
-import { get_articles } from "@actions"
+import { VoteSummary } from "@types"
+
+import {
+  get_article_votes_batch,
+  get_articles,
+} from "@actions"
 
 import { useLang } from "@hooks/useLang"
 
@@ -18,6 +23,23 @@ export function ArticlesSection() {
   const [selectedTags, setSelectedTags] = useState<
     string[]
   >([])
+  const [votes, setVotes] = useState<
+    Record<number, VoteSummary>
+  >({})
+
+  useEffect(() => {
+    let cancelled = false
+
+    get_article_votes_batch(
+      articles.map((post) => post.id),
+    ).then((data) => {
+      if (!cancelled) setVotes(data)
+    })
+
+    return () => {
+      cancelled = true
+    }
+  }, [articles])
 
   async function handleTagsChange(tags: string[]) {
     setSelectedTags(tags)
@@ -47,8 +69,12 @@ export function ArticlesSection() {
         />
       </div>
       <div className="flex flex-col gap-3">
-        {articles.map((post, i) => (
-          <ArticleCard key={i} post={post} />
+        {articles.map((post) => (
+          <ArticleCard
+            key={post.id}
+            post={post}
+            votes={votes[post.id]}
+          />
         ))}
       </div>
     </section>
