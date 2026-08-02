@@ -157,7 +157,7 @@ export function Haengma3({ article }: ArticleProps) {
           , students debate answers with their pro teachers.
           AI doesn&apos;t evaluate this specific technique
           to be worth it for this joseki context, but
-          it&apos; still a useful haengma.
+          it&apos;s still a useful haengma.
         </ArticleParagraph>
         <ArticleParagraph>
           AI would be satisfied with the dumpling in dia. 6,
@@ -166,7 +166,7 @@ export function Haengma3({ article }: ArticleProps) {
           hanging.
         </ArticleParagraph>
         <GoDiagram
-          src="/articles/haengma3/5.svg"
+          src="/articles/haengma3/6.svg"
           width={375}
           height={375}
           diaNumber={6}
@@ -185,7 +185,12 @@ export function Haengma3({ article }: ArticleProps) {
           </ArticleLink>{" "}
           might be the best volume in the series, with most
           students experiencing a sharp increase in their Go
-          skills after finishing it.
+          skills after finishing it. I will eventually
+          transcribe Haengma 4 and the other volumes &mdash;
+          I wish there were more than 4 volumes! Haengma 4
+          goes up to Fox 7d only, skill-wise &mdash;, but
+          here&apos;s Haengma 3 in PDF, with vector
+          diagrams.
         </ArticleParagraph>
         <ArticleBlockQuote>
           <ArticleParagraph>

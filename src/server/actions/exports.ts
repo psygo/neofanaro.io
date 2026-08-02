@@ -1,5 +1,6 @@
 export * from "./articles/exports"
 export * from "./auth/exports"
+export * from "./comments/exports"
 export * from "./games/exports"
 export * from "./leagues/exports"
 export * from "./players/exports"

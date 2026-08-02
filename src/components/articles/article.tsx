@@ -8,6 +8,7 @@ import { useLang } from "@hooks"
 
 import { localizedText } from "@utils"
 
+import { ArticleComments } from "./articleComments"
 import { ArticleViewTracker } from "./articleViewTracker"
 import { ArticleWidthSlider } from "./articleWidthSlider"
 import {
@@ -67,6 +68,10 @@ export function Article({
         <ArticleTags tags={article.tags} />
       </ArticleTitleSection>
       {children}
+      <ArticleComments
+        articleId={article.id}
+        articlePath={article.path}
+      />
     </article>
   )
 }

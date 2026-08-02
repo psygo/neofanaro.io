@@ -38,6 +38,13 @@ export const articlesTable = pgTable(
   (table) => [uniqueIndex("path_idx").on(table.path)],
 )
 
+export const articlesRelations = relations(
+  articlesTable,
+  ({ many }) => ({
+    comments: many(commentsTable),
+  }),
+)
+
 export const players = pgTable("players", {
   id: serial().primaryKey(),
   moderator: boolean().default(false).notNull(),
@@ -57,6 +64,7 @@ export const playersRelations = relations(
     games: many(gamesTable),
     sessions: many(sessionsTable),
     leaguePlayers: many(leaguePlayersTable),
+    comments: many(commentsTable),
   }),
 )
 
@@ -175,6 +183,30 @@ export const gamesRelations = relations(
     }),
     white: one(players, {
       fields: [gamesTable.whiteId],
+      references: [players.id],
+    }),
+  }),
+)
+
+export const commentsTable = pgTable("comments", {
+  id: serial().primaryKey(),
+  articleId: integer("article_id").notNull(),
+  playerId: integer("player_id").notNull(),
+  content: text().notNull(),
+  createdAt: timestamp("created_at")
+    .notNull()
+    .defaultNow(),
+})
+
+export const commentsRelations = relations(
+  commentsTable,
+  ({ one }) => ({
+    article: one(articlesTable, {
+      fields: [commentsTable.articleId],
+      references: [articlesTable.id],
+    }),
+    player: one(players, {
+      fields: [commentsTable.playerId],
       references: [players.id],
     }),
   }),

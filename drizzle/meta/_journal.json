@@ -64,6 +64,13 @@
       "when": 1785602743043,
       "tag": "0008_unusual_wallflower",
       "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "7",
+      "when": 1785691383097,
+      "tag": "0009_petite_white_queen",
+      "breakpoints": true
     }
   ]
 }
