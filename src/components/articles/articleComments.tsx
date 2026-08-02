@@ -212,12 +212,14 @@ function Comment({
       <p className="mt-0 mb-0 text-sm hyphens-auto whitespace-pre-wrap text-slate-700">
         {comment.content}
       </p>
-      <VoteButtons
-        upvotes={comment.upvotes}
-        downvotes={comment.downvotes}
-        myVote={comment.myVote}
-        onVote={handleVote}
-      />
+      <div className="self-end">
+        <VoteButtons
+          upvotes={comment.upvotes}
+          downvotes={comment.downvotes}
+          myVote={comment.myVote}
+          onVote={handleVote}
+        />
+      </div>
     </div>
   )
 }

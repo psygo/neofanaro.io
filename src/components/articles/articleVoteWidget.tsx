@@ -10,11 +10,13 @@ import { VoteButtons } from "./voteButtons"
 
 type ArticleVoteWidgetProps = {
   articleId: number
+  readOnly?: boolean
   className?: string
 }
 
 export function ArticleVoteWidget({
   articleId,
+  readOnly = false,
   className = "",
 }: ArticleVoteWidgetProps) {
   const [summary, setSummary] = useState<VoteSummary>({
@@ -36,6 +38,7 @@ export function ArticleVoteWidget({
   }, [articleId])
 
   async function handleVote(value: VoteValue) {
+    if (readOnly) return
     const result = await vote_article(articleId, value)
     if (!("errorCode" in result)) setSummary(result)
   }
@@ -44,6 +47,7 @@ export function ArticleVoteWidget({
     <VoteButtons
       {...summary}
       onVote={handleVote}
+      readOnly={readOnly}
       className={className}
     />
   )

@@ -32,13 +32,12 @@ export function ArticleCard({ post }: ArticleCardProps) {
 
   return (
     <div className="flex flex-col gap-1.5">
-      <ArticleVoteWidget articleId={post.id} />
       <LangLink href={`/articles/${post.path}`}>
         <div
           style={{
             borderLeftColor: borderColor,
           }}
-          className={`flex flex-col gap-2 border-l-[7px] ${cardDecoration}`}
+          className={`flex flex-col gap-3 border-l-[7px] ${cardDecoration}`}
         >
           <ArticleTitle>
             {localizedText(
@@ -47,7 +46,7 @@ export function ArticleCard({ post }: ArticleCardProps) {
               lang,
             )}
           </ArticleTitle>
-          <div className="mt-1 mb-1 flex flex-wrap items-center gap-3 sm:items-end-safe">
+          <div className="flex flex-wrap items-center gap-3 sm:items-end-safe">
             <ArticleViews
               views={post.views}
               className="flex gap-1 text-sm font-bold text-slate-700"
@@ -59,10 +58,16 @@ export function ArticleCard({ post }: ArticleCardProps) {
               ))}
             </div>
           </div>
-          <ArticleDate
-            date={new Date(post.date)}
-            className="pb-1 text-sm font-semibold text-slate-500"
-          />
+          <div className="flex items-center gap-2">
+            <ArticleDate
+              date={new Date(post.date)}
+              className="text-sm font-semibold text-slate-500"
+            />
+            <ArticleVoteWidget
+              articleId={post.id}
+              readOnly
+            />
+          </div>
           <ArticleDescription>
             {localizedText(
               post.descriptionEn,

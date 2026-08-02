@@ -67,7 +67,9 @@ export function Article({
         <ArticleViews views={article.views || 0} />
         <ArticleDate date={new Date(article.date)} />
         <ArticleTags tags={article.tags} />
-        <ArticleVoteWidget articleId={article.id} />
+        <div className="mt-1">
+          <ArticleVoteWidget articleId={article.id} />
+        </div>
       </ArticleTitleSection>
       {children}
       <ArticleComments
