@@ -11,9 +11,11 @@ import {
 import { ArticleMath } from "@components/articles/articleMath"
 import { GoDiagram } from "../goDiagram"
 
-export function TewariDelight2({ post }: ArticleProps) {
+export function TewariDelight2({
+  article: post,
+}: ArticleProps) {
   return (
-    <Article data={post}>
+    <Article article={post}>
       <ArticleSection>
         <ArticleParagraph>
           <ArticleLink href="https://senseis.xmp.net/?Tewari">

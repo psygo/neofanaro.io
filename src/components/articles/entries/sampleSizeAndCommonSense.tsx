@@ -8,10 +8,10 @@ import {
 } from "@components/articles/article"
 
 export function SampleSizeAndCommonSense({
-  post,
+  article: post,
 }: ArticleProps) {
   return (
-    <Article data={post}>
+    <Article article={post}>
       <ArticleSection>
         <ArticleParagraph>
           If you start digging at psychology research,

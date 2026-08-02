@@ -25,9 +25,9 @@ const GoBoardPlayer = dynamic(
   { ssr: false },
 )
 
-export function GobanWeb({ post }: ArticleProps) {
+export function GobanWeb({ article: post }: ArticleProps) {
   return (
-    <Article data={post}>
+    <Article article={post}>
       <ArticleSection>
         <ArticleBlockQuote>
           If you would like to directly skip to the code,

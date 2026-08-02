@@ -13,5 +13,5 @@ export type ArticleFromDb = {
 }
 
 export type ArticleProps = {
-  post: ArticleFromDb
+  article: ArticleFromDb
 }

@@ -18,31 +18,40 @@ import { localizedText } from "@utils"
 import { ArticleViewTracker } from "./articleViewTracker"
 
 type ArticleProps = {
-  data: ArticleFromDb
+  article: ArticleFromDb
   children: React.ReactNode
 }
 
 const DEFAULT_MAX_WIDTH_REM = 29 // matches former max-w-110
 
-export function Article({ data, children }: ArticleProps) {
+export function Article({
+  article,
+  children,
+}: ArticleProps) {
   const lang = useLang()
   const [maxWidth, setMaxWidth] = useState(
     DEFAULT_MAX_WIDTH_REM,
   )
   const [isDragging, setIsDragging] = useState(false)
 
+  const articleLang =
+    lang === "pt" && article.langs.includes("pt")
+      ? "pt-br"
+      : "en-us"
+
   return (
     <article
+      lang={articleLang}
       className={`prose min-w-0 border-r-2 transition-colors duration-150 sm:px-2 ${isDragging ? "border-r-slate-300" : "border-r-transparent"}`}
       style={{ maxWidth: `${maxWidth}rem` }}
     >
-      <ArticleViewTracker path={data.path} />
+      <ArticleViewTracker path={article.path} />
       <ArticleTitleSection>
         <div className="mb-5 flex items-center justify-between gap-20">
           <ArticleTitle>
             {localizedText(
-              data.titleEn,
-              data.titlePt,
+              article.titleEn,
+              article.titlePt,
               lang,
             )}
           </ArticleTitle>
@@ -52,9 +61,9 @@ export function Article({ data, children }: ArticleProps) {
             setIsDragging={setIsDragging}
           />
         </div>
-        <ArticleViews views={data.views || 0} />
-        <ArticleDate date={new Date(data.date)} />
-        <ArticleTags tags={data.tags} />
+        <ArticleViews views={article.views || 0} />
+        <ArticleDate date={new Date(article.date)} />
+        <ArticleTags tags={article.tags} />
       </ArticleTitleSection>
       {children}
     </article>
@@ -232,9 +241,7 @@ export function ArticleParagraph({
   children,
 }: WithReactChildren) {
   return (
-    <p className="text-justify hyphens-auto" lang="en-us">
-      {children}
-    </p>
+    <p className="text-justify hyphens-auto">{children}</p>
   )
 }
 
@@ -323,10 +330,7 @@ export function ArticleImageWithLegend({
   children,
 }: ArticleImageWithLegendProps) {
   return (
-    <div
-      className="flex flex-col items-center gap-2 pt-4 pb-2.5 hyphens-auto"
-      lang="en-us"
-    >
+    <div className="flex flex-col items-center gap-2 pt-4 pb-2.5">
       <Image
         loading="eager"
         src={src}
@@ -363,10 +367,7 @@ export function ArticleBlockQuote({
   children,
 }: WithReactChildren) {
   return (
-    <blockquote
-      className="mr-8 ml-8 border-gray-300 pl-2.5 font-normal hyphens-auto text-slate-600 not-italic [&_p:first-of-type]:before:content-[''] [&_p:last-of-type]:after:content-['']"
-      lang="en"
-    >
+    <blockquote className="mr-8 ml-8 border-gray-300 pl-2.5 font-normal text-slate-600 not-italic [&_p:first-of-type]:before:content-[''] [&_p:last-of-type]:after:content-['']">
       {children}
     </blockquote>
   )

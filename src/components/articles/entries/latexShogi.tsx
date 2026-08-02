@@ -48,9 +48,11 @@ const latexCode = String.raw`
 \end{document}
 `
 
-export function LatexShogi({ post }: ArticleProps) {
+export function LatexShogi({
+  article: post,
+}: ArticleProps) {
   return (
-    <Article data={post}>
+    <Article article={post}>
       <ArticleSection>
         <ArticleParagraph>
           Recently, I&apos;ve been revisiting one of my last

@@ -13,9 +13,11 @@ import {
 } from "@components/articles/article"
 import { GoDiagram } from "../goDiagram"
 
-export function OkaoigoAiArticles({ post }: ArticleProps) {
+export function OkaoigoAiArticles({
+  article: post,
+}: ArticleProps) {
   return (
-    <Article data={post}>
+    <Article article={post}>
       <ArticleSection>
         <ArticleParagraph>
           Last year, thanks again to my friend, Frédéric

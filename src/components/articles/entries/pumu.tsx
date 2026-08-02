@@ -15,9 +15,9 @@ import {
   ArticleBlockQuote,
 } from "@components/articles/article"
 
-export function Pumu({ post }: ArticleProps) {
+export function Pumu({ article: post }: ArticleProps) {
   return (
-    <Article data={post}>
+    <Article article={post}>
       <ArticleSection>
         <ArticleYouTubeIframe
           src="https://www.youtube.com/embed/MSvIstLgX34"

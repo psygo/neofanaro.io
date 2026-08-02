@@ -11,10 +11,10 @@ import {
 import { GoDiagram } from "@components/articles/goDiagram"
 
 export function PostAiOpeningHierarchy({
-  post,
+  article: post,
 }: ArticleProps) {
   return (
-    <Article data={post}>
+    <Article article={post}>
       <ArticleSection>
         <ArticleParagraph>
           Before AI, we used to think side moves early in

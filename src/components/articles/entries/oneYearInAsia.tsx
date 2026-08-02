@@ -9,9 +9,11 @@ import {
   ArticleYouTubeIframe,
 } from "@components/articles/article"
 
-export function OneYearInAsia({ post }: ArticleProps) {
+export function OneYearInAsia({
+  article: post,
+}: ArticleProps) {
   return (
-    <Article data={post}>
+    <Article article={post}>
       <ArticleSection>
         <ArticleParagraph>
           Here goes a summary of my one year experience in

@@ -11,9 +11,11 @@ import {
   ArticleImageWithLegend,
 } from "@components/articles/article"
 
-export function LatexBackgammon({ post }: ArticleProps) {
+export function LatexBackgammon({
+  article: post,
+}: ArticleProps) {
   return (
-    <Article data={post}>
+    <Article article={post}>
       <ArticleSection>
         <ArticleParagraph>
           Right after finishing my{" "}

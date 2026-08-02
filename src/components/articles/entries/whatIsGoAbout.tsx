@@ -12,9 +12,11 @@ import {
   ArticleImageWithLegend,
 } from "@components/articles/article"
 
-export function WhatIsGoAbout({ post }: ArticleProps) {
+export function WhatIsGoAbout({
+  article: post,
+}: ArticleProps) {
   return (
-    <Article data={post}>
+    <Article article={post}>
       <ArticleSection>
         <ArticleParagraph>
           Last year, as a way of practicing Korean, I asked

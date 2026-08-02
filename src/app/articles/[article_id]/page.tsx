@@ -65,37 +65,37 @@ export default async function ArticlePage({
 function whichArticle(path: string, post: ArticleFromDb) {
   switch (path) {
     case "dowon-pairgo":
-      return <DowonPairGo post={post} />
+      return <DowonPairGo article={post} />
     case "goban-web":
-      return <GobanWeb post={post} />
+      return <GobanWeb article={post} />
     case "ing-cup-suicide":
-      return <IngCupSuicide post={post} />
+      return <IngCupSuicide article={post} />
     case "lang101":
-      return <Lang101 post={post} />
+      return <Lang101 article={post} />
     case "latex-backgammon":
-      return <LatexBackgammon post={post} />
+      return <LatexBackgammon article={post} />
     case "latex-shogi":
-      return <LatexShogi post={post} />
+      return <LatexShogi article={post} />
     case "little-knife-god-books":
-      return <LittleKnifeGodBooks post={post} />
+      return <LittleKnifeGodBooks article={post} />
     case "magi":
-      return <Magi post={post} />
+      return <Magi article={post} />
     case "okaoigo-ai-articles":
-      return <OkaoigoAiArticles post={post} />
+      return <OkaoigoAiArticles article={post} />
     case "one-year-in-asia":
-      return <OneYearInAsia post={post} />
+      return <OneYearInAsia article={post} />
     case "post-ai-opening-hierarchy":
-      return <PostAiOpeningHierarchy post={post} />
+      return <PostAiOpeningHierarchy article={post} />
     case "pumu":
-      return <Pumu post={post} />
+      return <Pumu article={post} />
     case "tennozan-league":
-      return <TennozanLeague post={post} />
+      return <TennozanLeague article={post} />
     case "tewari-delight-2":
-      return <TewariDelight2 post={post} />
+      return <TewariDelight2 article={post} />
     case "sample-size-and-common-sense":
-      return <SampleSizeAndCommonSense post={post} />
+      return <SampleSizeAndCommonSense article={post} />
     case "what-is-go-about":
-      return <WhatIsGoAbout post={post} />
+      return <WhatIsGoAbout article={post} />
     default:
       return <></>
   }

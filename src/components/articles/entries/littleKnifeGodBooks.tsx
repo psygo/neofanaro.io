@@ -11,10 +11,10 @@ import {
 import { GoDiagram } from "@components/articles/goDiagram"
 
 export function LittleKnifeGodBooks({
-  post,
+  article: post,
 }: ArticleProps) {
   return (
-    <Article data={post}>
+    <Article article={post}>
       <ArticleSection>
         <ArticleParagraph>
           This year, a dear friend of mine, Frédéric Vieira
