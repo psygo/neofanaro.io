@@ -9,11 +9,18 @@ export function ArticleSection({
   return <section className="mt-10">{children}</section>
 }
 
+type ArticleParagraphProps = WithReactChildren & {
+  textAlign?: React.CSSProperties["textAlign"]
+}
+
 export function ArticleParagraph({
   children,
-}: WithReactChildren) {
+  textAlign = "justify",
+}: ArticleParagraphProps) {
   return (
-    <p className="text-justify hyphens-auto">{children}</p>
+    <p className="hyphens-auto" style={{ textAlign }}>
+      {children}
+    </p>
   )
 }
 
