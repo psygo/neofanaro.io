@@ -29,7 +29,9 @@ export function IngCupSuicide({ post }: ArticleProps) {
           src="/articles/ing-cup-suicide/psygo_corner_1.jpeg"
           className="rounded-xl"
         >
-          <p>psygo&apos;s Corner&apos;s first article.</p>
+          <ArticleParagraph>
+            psygo&apos;s Corner&apos;s first article.
+          </ArticleParagraph>
         </ArticleImageWithLegend>
         <ArticleParagraph>
           My opinion remains the same. Let&apos;s now take a
@@ -49,7 +51,10 @@ export function IngCupSuicide({ post }: ArticleProps) {
           &apos;s &mdash; Blackie&apos;s International Baduk
           Academy, a Go school for foreigners in Korea; have
           a watch of{" "}
-          <ArticleLink internal href="/articles/one-year-in-asia">
+          <ArticleLink
+            internal
+            href="/articles/one-year-in-asia"
+          >
             this video
           </ArticleLink>{" "}
           for more info &mdash; substitute teachers, wanted
@@ -66,10 +71,10 @@ export function IngCupSuicide({ post }: ArticleProps) {
           height={200}
           diaNumber={1}
         >
-          <p>
+          <ArticleParagraph>
             Who wins the capturing race inside? Is it a
             seki?
-          </p>
+          </ArticleParagraph>
         </GoDiagram>
         <ArticleParagraph>
           That capturing race is an example of the &quot;big
@@ -81,7 +86,9 @@ export function IngCupSuicide({ post }: ArticleProps) {
           height={200}
           diaNumber={2}
         >
-          <p>Black 2 and 4 are played elsewhere.</p>
+          <ArticleParagraph>
+            Black 2 and 4 are played elsewhere.
+          </ArticleParagraph>
         </GoDiagram>
         <GoDiagram
           src="/articles/ing-cup-suicide/ing_cup_rules_3.svg"
@@ -89,11 +96,11 @@ export function IngCupSuicide({ post }: ArticleProps) {
           height={200}
           diaNumber={3}
         >
-          <p>
+          <ArticleParagraph>
             Since Black cannot play at A, the triangle
             points are a privilege of the group with the
             bigger eye.
-          </p>
+          </ArticleParagraph>
         </GoDiagram>
         <ArticleParagraph>
           However, something very unexpected happens when we
@@ -113,7 +120,9 @@ export function IngCupSuicide({ post }: ArticleProps) {
           height={200}
           diaNumber={4}
         >
-          <p>Black can now race with White more freely.</p>
+          <ArticleParagraph>
+            Black can now race with White more freely.
+          </ArticleParagraph>
         </GoDiagram>
         <ArticleParagraph>
           After the inner liberties are freed, Black is able

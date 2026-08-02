@@ -49,9 +49,9 @@ export function DowonPairGo({ post }: ArticleProps) {
           width={225}
           className="rounded-xl"
         >
-          <p>
+          <ArticleParagraph>
             Moon Dowon <NoWrap>문도원</NoWrap> 3p
-          </p>
+          </ArticleParagraph>
         </ArticleImageWithLegend>
         <ArticleImageWithLegend
           src="/articles/dowon-pairgo/flower_baduk_founders.jpg"
@@ -59,13 +59,13 @@ export function DowonPairGo({ post }: ArticleProps) {
           width={325}
           className="rounded-xl"
         >
-          <p>
+          <ArticleParagraph>
             Flower Baduk&apos;s founders, from left to
             right: Lee Dahye <NoWrap>이다혜</NoWrap> 4p, Kim
             Hyerim <NoWrap>김혜림</NoWrap> 2p, Bae Yunjin{" "}
             <NoWrap>배윤진</NoWrap> 3p and Moon Dowon{" "}
             <NoWrap>문도원</NoWrap> 3p.
-          </p>
+          </ArticleParagraph>
         </ArticleImageWithLegend>
         <ArticleImageWithLegend
           src="/articles/dowon-pairgo/Flower_Baduk_2.jpg"
@@ -73,14 +73,14 @@ export function DowonPairGo({ post }: ArticleProps) {
           width={325}
           className="rounded-xl"
         >
-          <p>
+          <ArticleParagraph>
             A panel of Flower Baduk&apos;s founders, from
             left to right: Lee Dahye <NoWrap>이다혜</NoWrap>{" "}
             4p, Bae Yunjin
             <NoWrap>배윤진</NoWrap> 3p, Moon Dowon{" "}
             <NoWrap>문도원</NoWrap> 3p and Kim Hyerim{" "}
             <NoWrap>김혜림</NoWrap> 2p.
-          </p>
+          </ArticleParagraph>
         </ArticleImageWithLegend>
         <ArticleParagraph>
           The ambiance is always pleasant at Flower Baduk,
@@ -94,20 +94,22 @@ export function DowonPairGo({ post }: ArticleProps) {
           width={325}
           className="rounded-xl"
         >
-          <p>Flower Baduk</p>
+          <ArticleParagraph>Flower Baduk</ArticleParagraph>
         </ArticleImageWithLegend>
         <ArticleBlockQuote>
-          I studied with BIBA at Flower Baduk for 6 months
-          in 2025. Overall, I studied in Asia for a year,
-          between 2025 and 2026. If you would like to know
-          more, do check my{" "}
-          <ArticleLink
-            internal
-            href="https://neofanaroio.vercel.app/articles/one-year-in-asia"
-          >
-            video summary
-          </ArticleLink>{" "}
-          for that period.
+          <ArticleParagraph>
+            I studied with BIBA at Flower Baduk for 6 months
+            in 2025. Overall, I studied in Asia for a year,
+            between 2025 and 2026. If you would like to know
+            more, do check my{" "}
+            <ArticleLink
+              internal
+              href="https://neofanaroio.vercel.app/articles/one-year-in-asia"
+            >
+              video summary
+            </ArticleLink>{" "}
+            for that period.
+          </ArticleParagraph>
         </ArticleBlockQuote>
       </ArticleSection>
       <ArticleSection>
@@ -127,10 +129,10 @@ export function DowonPairGo({ post }: ArticleProps) {
           src="/articles/dowon-pairgo/dowon_pairgo_1.svg"
           diaNumber={1}
         >
-          <p>
+          <ArticleParagraph>
             A mistaken, unexpected cut (8) from my pair Go
             partner. White should have crawled with 8 at 9.
-          </p>
+          </ArticleParagraph>
         </GoDiagram>
         <ArticleParagraph>
           Where should Black play next?
@@ -159,10 +161,10 @@ export function DowonPairGo({ post }: ArticleProps) {
           src="/articles/dowon-pairgo/dowon_pairgo_3.svg"
           diaNumber={2}
         >
-          <p>
+          <ArticleParagraph>
             Black&apos;s groups surrounding White&apos;s
             captured stones are bound to get squeezed.
-          </p>
+          </ArticleParagraph>
         </GoDiagram>
         <ArticleParagraph>
           Black has three directions from which to squeezed,
@@ -178,10 +180,10 @@ export function DowonPairGo({ post }: ArticleProps) {
           src="/articles/dowon-pairgo/dowon_pairgo_2.svg"
           diaNumber={3}
         >
-          <p>
+          <ArticleParagraph>
             Black&apos;s groups surrounding White&apos;s
             captured stones are bound to get squeezed.
-          </p>
+          </ArticleParagraph>
         </GoDiagram>
         <ArticleParagraph>
           Black gets sente to play 19; but White gets thick
@@ -200,10 +202,10 @@ export function DowonPairGo({ post }: ArticleProps) {
           src="/articles/dowon-pairgo/dowon_pairgo_4.svg"
           diaNumber={4}
         >
-          <p>
+          <ArticleParagraph>
             Black&apos;s thickness and outside trump
             capturing a sizeable chunk on the side.
-          </p>
+          </ArticleParagraph>
         </GoDiagram>
         <ArticleParagraph>
           Black 1 damages the A stone while thickening out

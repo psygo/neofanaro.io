@@ -12,11 +12,17 @@ export function LeagueHeader() {
           ? "Liga Tennozan 天王山"
           : "Tennozan 天王山 League"}
       </h1>
-      <p>
-        {lang === "pt"
-          ? "Uma liga semanal, com compensação, onde todos são bem-vindos."
-          : "A weekly, handicap league where everyone's welcome."}
-      </p>
+      {lang === "pt" ? (
+        <p>
+          Uma liga semanal, com compensação, onde todos são
+          bem-vindos.
+        </p>
+      ) : (
+        <p>
+          A weekly, handicap league where everyone&apos;s
+          welcome.
+        </p>
+      )}
     </div>
   )
 }

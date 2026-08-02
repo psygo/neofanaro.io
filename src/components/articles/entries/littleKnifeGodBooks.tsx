@@ -50,10 +50,10 @@ export function LittleKnifeGodBooks({
           src="/articles/little-knife-god-books/kato_chie_vs_yoshihiro_koike.svg"
           diaNumber={1}
         >
-          <p>
+          <ArticleParagraph>
             Kato Chie 3p (White) vs Yoshihiro Koike 7p
             (Black). Black to play.
-          </p>
+          </ArticleParagraph>
         </GoDiagram>
         <ArticleParagraph>
           Going for a keima is lukewarm, White&apos;s shape
@@ -64,7 +64,9 @@ export function LittleKnifeGodBooks({
           src="/articles/little-knife-god-books/kato_chie_vs_yoshihiro_koike_p1.svg"
           diaNumber={2}
         >
-          <p>Lukewarm. And White gets to exploit a cut.</p>
+          <ArticleParagraph>
+            Lukewarm. And White gets to exploit a cut.
+          </ArticleParagraph>
         </GoDiagram>
         <ArticleParagraph>
           As a hint, the correct move is very similar to the
@@ -80,7 +82,9 @@ export function LittleKnifeGodBooks({
           width={240}
           diaNumber={3}
         >
-          <p>Problem 128242 from 101weiqi.</p>
+          <ArticleParagraph>
+            Problem 128242 from 101weiqi.
+          </ArticleParagraph>
         </GoDiagram>
         <ArticleParagraph>
           Here&apos;s that problem&apos;s solution:
@@ -91,11 +95,11 @@ export function LittleKnifeGodBooks({
           width={240}
           diaNumber={4}
         >
-          <p>
+          <ArticleParagraph>
             Black&apos;s marked stones have more liberties
             than it seems. And, with 1, we can contain White
             while shortening the group&apos;s liberties.
-          </p>
+          </ArticleParagraph>
         </GoDiagram>
         <ArticleParagraph>
           The correct move in the game was to apply pressure
@@ -107,10 +111,10 @@ export function LittleKnifeGodBooks({
           src="/articles/little-knife-god-books/kato_chie_vs_yoshihiro_koike_p2.svg"
           diaNumber={5}
         >
-          <p>
+          <ArticleParagraph>
             Applying pressure and creating cutting points on
             White&apos;s shape.
-          </p>
+          </ArticleParagraph>
         </GoDiagram>
         <ArticleParagraph>
           If White goes for a capturing race, Black is the
@@ -120,7 +124,9 @@ export function LittleKnifeGodBooks({
           src="/articles/little-knife-god-books/kato_chie_vs_yoshihiro_koike_p3.svg"
           diaNumber={6}
         >
-          <p>Black wins most semeais.</p>
+          <ArticleParagraph>
+            Black wins most semeais.
+          </ArticleParagraph>
         </GoDiagram>
         <ArticleParagraph>
           The book shows plenty more diagrams, but I&apos;ll

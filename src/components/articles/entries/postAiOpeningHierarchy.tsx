@@ -41,7 +41,9 @@ export function PostAiOpeningHierarchy({
             width={120}
             diaNumber={1}
           >
-            <p>The Sanrensei Fuseki</p>
+            <ArticleParagraph>
+              The Sanrensei Fuseki
+            </ArticleParagraph>
           </GoDiagram>
           <GoDiagram
             src="/articles/post-ai-opening-hierarchy/chinese_fuseki.svg"
@@ -49,7 +51,9 @@ export function PostAiOpeningHierarchy({
             width={120}
             diaNumber={2}
           >
-            <p>The Chinese Fuseki</p>
+            <ArticleParagraph>
+              The Chinese Fuseki
+            </ArticleParagraph>
           </GoDiagram>
         </div>
         <ArticleParagraph>

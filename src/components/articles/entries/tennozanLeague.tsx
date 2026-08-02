@@ -33,7 +33,9 @@ export function TennozanLeague({ post }: ArticleProps) {
             width={350}
             className="rounded-xl"
           >
-            <p>Os primeiros participantes da liga.</p>
+            <ArticleParagraph>
+              Os primeiros participantes da liga.
+            </ArticleParagraph>
           </ArticleImageWithLegend>
           <ArticleParagraph>
             Há alguns anos, administrei uma liga online
@@ -50,6 +52,17 @@ export function TennozanLeague({ post }: ArticleProps) {
             </ArticleLink>
             .
           </ArticleParagraph>
+          <ArticleBlockQuote>
+            <ArticleParagraph>
+              O formato da liga consiste de os 2 primeiros
+              de cada divisão sendo promovidos, e os 2
+              últimos, demovidos.
+            </ArticleParagraph>
+            <ArticleParagraph>
+              A configuração de tempo será Fischer 20min +
+              20s.
+            </ArticleParagraph>
+          </ArticleBlockQuote>
           <ArticleYouTubeIframe
             src="https://www.youtube.com/embed/41MSBjL5qu4"
             title="O Tesuji-Mor"
@@ -108,10 +121,10 @@ export function TennozanLeague({ post }: ArticleProps) {
             width={350}
             className="rounded-xl"
           >
-            <p>
+            <ArticleParagraph>
               O icônico &quot;Acabou, Anakin, eu tenho a
               vantagem do terreno elevado&quot;, de Obi-Wan.
-            </p>
+            </ArticleParagraph>
           </ArticleImageWithLegend>
           <GoDiagram
             src="/articles/tennozan-league/1.svg"
@@ -119,13 +132,13 @@ export function TennozanLeague({ post }: ArticleProps) {
             height={400}
             diaNumber={1}
           >
-            <p>
+            <ArticleParagraph>
               Um exemplo de &quot;tennozan&quot; no Go, na
               Sensei&apos;s Library. Preto 1 controla o
               quadrante superior direito do tabuleiro
               &quot;de cima&quot;, pressionando o oponente
               ao mesmo tempo.
-            </p>
+            </ArticleParagraph>
           </GoDiagram>
         </ArticleSection>
       ) : (
@@ -141,7 +154,9 @@ export function TennozanLeague({ post }: ArticleProps) {
             width={350}
             className="rounded-xl"
           >
-            <p>The first league participants.</p>
+            <ArticleParagraph>
+              The first league participants.
+            </ArticleParagraph>
           </ArticleImageWithLegend>
 
           <ArticleParagraph>
@@ -159,6 +174,17 @@ export function TennozanLeague({ post }: ArticleProps) {
             </ArticleLink>
             .
           </ArticleParagraph>
+          <ArticleBlockQuote>
+            <ArticleParagraph>
+              The league format is gonna be the top 2
+              players in each division go up, and the bottom
+              2 go down.
+            </ArticleParagraph>
+            <ArticleParagraph>
+              The time settings will be 20 min + 20s Fischer
+              time.
+            </ArticleParagraph>
+          </ArticleBlockQuote>
           <ArticleYouTubeIframe
             src="https://www.youtube.com/embed/41MSBjL5qu4"
             title="O Tesuji-Mor"
@@ -214,10 +240,10 @@ export function TennozanLeague({ post }: ArticleProps) {
             width={350}
             className="rounded-xl"
           >
-            <p>
+            <ArticleParagraph>
               Obi-Wan&apos;s iconic &quot;It&apos;s over,
               Anakin, I have the high ground&quot;.
-            </p>
+            </ArticleParagraph>
           </ArticleImageWithLegend>
           <GoDiagram
             src="/articles/tennozan-league/1.svg"
@@ -225,13 +251,13 @@ export function TennozanLeague({ post }: ArticleProps) {
             height={400}
             diaNumber={1}
           >
-            <p>
+            <ArticleParagraph>
               An example of a &quot;tennozan&quot; in Go,
               from Sensei&apos;s Library. Black&apos;s 1
               controls the top-right quadrant of the board
               from &quot;above&quot;, pressuring the
               opponent at the same time.
-            </p>
+            </ArticleParagraph>
           </GoDiagram>
         </ArticleSection>
       )}

@@ -415,9 +415,7 @@ export function ArticleYouTubeIframe({
 }
 
 export function ArticleDivider() {
-  return (
-    <hr className="mt-30 mb-6 border border-gray-300" />
-  )
+  return <hr className="mt-6 mb-6 border border-gray-300" />
 }
 
 // ---------------------------------------------------------

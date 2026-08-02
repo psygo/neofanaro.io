@@ -42,9 +42,9 @@ export function WhatIsGoAbout({ post }: ArticleProps) {
           width={325}
           className="rounded-xl"
         >
-          <p>
+          <ArticleParagraph>
             Lee Woojoo <NoWrap>이우주</NoWrap> 1p
-          </p>
+          </ArticleParagraph>
         </ArticleImageWithLegend>
         <ArticleParagraph>
           Her answer was <em>efficiency</em>. However, the
@@ -57,7 +57,9 @@ export function WhatIsGoAbout({ post }: ArticleProps) {
           Nevertheless, it got me thinking afterwards. Maybe
           this topic goes beyond a matter of opinion.
         </ArticleParagraph>
-        <ArticleParagraph>And I think it does.</ArticleParagraph>
+        <ArticleParagraph>
+          And I think it does.
+        </ArticleParagraph>
         <ArticleParagraph>
           If winning in Go is defined by the player with{" "}
           <em>more</em> territory, then Go cannot actually

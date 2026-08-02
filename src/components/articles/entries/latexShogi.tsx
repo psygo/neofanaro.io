@@ -62,7 +62,9 @@ export function LatexShogi({ post }: ArticleProps) {
           diagrams for Japanese chess, or shogi, with LaTeX.
         </ArticleParagraph>
         <ArticleImageWithLegend src="/articles/latex-shogi/sample_1.svg">
-          <p>An example diagram using all the pieces.</p>
+          <ArticleParagraph>
+            An example diagram using all the pieces.
+          </ArticleParagraph>
         </ArticleImageWithLegend>
         <ArticleParagraph>
           That project started as an adaptation of the
@@ -79,10 +81,10 @@ export function LatexShogi({ post }: ArticleProps) {
           .
         </ArticleParagraph>
         <ArticleImageWithLegend src="/articles/latex-shogi/shogi_problema_1.svg">
-          <p>
+          <ArticleParagraph>
             Another example diagram, this time with
             coordinates.
-          </p>
+          </ArticleParagraph>
         </ArticleImageWithLegend>
         <ArticleParagraph>
           Through code that&apos;s as simple as{" "}
@@ -92,19 +94,21 @@ export function LatexShogi({ post }: ArticleProps) {
           , we&apos;re now able to draw beautiful shogi
           diagrams which won&apos;t ever pixelate:
         </ArticleParagraph>
-        <ArticlePre language="latex">{latexCode}</ArticlePre>
+        <ArticlePre language="latex">
+          {latexCode}
+        </ArticlePre>
         <ArticleParagraph>
           That piece of code generates this square diagram,
           which is what you&apos;re gonna find in most shogi
           books:
         </ArticleParagraph>
         <ArticleImageWithLegend src="/articles/latex-shogi/shogi_diagram_export.svg">
-          <p>
+          <ArticleParagraph>
             A square diagram example, the more common format
             in shogi books. Note that we do have the
             &quot;mochigoma&quot; feature, that is, the
             captured pieces on the side of the board.
-          </p>
+          </ArticleParagraph>
         </ArticleImageWithLegend>
         <ArticleParagraph>
           Here&apos;s a{" "}

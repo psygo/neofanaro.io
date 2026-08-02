@@ -25,13 +25,15 @@ export function TewariDelight2({ post }: ArticleProps) {
           avoid mistakes and inefficient moves.
         </ArticleParagraph>
         <ArticleBlockQuote>
-          In case you&apos;re wondering, Tewari Delight #1
-          doesn&apos;t exist as a post here, it was actually
-          a{" "}
-          <ArticleLink href="https://youtu.be/c3GU2td0To8">
-            video
-          </ArticleLink>
-          .
+          <ArticleParagraph>
+            In case you&apos;re wondering, Tewari Delight #1
+            doesn&apos;t exist as a post here, it was
+            actually a{" "}
+            <ArticleLink href="https://youtu.be/c3GU2td0To8">
+              video
+            </ArticleLink>
+            .
+          </ArticleParagraph>
         </ArticleBlockQuote>
         <ArticleParagraph>
           As a teaching aid, about a year and a half ago, I
@@ -53,11 +55,11 @@ export function TewariDelight2({ post }: ArticleProps) {
           height={250}
           diaNumber={1}
         >
-          <p>
+          <ArticleParagraph>
             An adaptation of the board position on the
             &quot;How to lie with tewari&quot; page, causing
             a heated discussion on Sensei&apos;s Library.
-          </p>
+          </ArticleParagraph>
         </GoDiagram>
         <ArticleParagraph>
           The original diagram had move 2 at B, the stone at
@@ -89,7 +91,9 @@ export function TewariDelight2({ post }: ArticleProps) {
           height={250}
           diaNumber={2}
         >
-          <p>White ends up with a broken keima.</p>
+          <ArticleParagraph>
+            White ends up with a broken keima.
+          </ArticleParagraph>
         </GoDiagram>
         <ArticleParagraph>
           However, it&apos;s also true that Black ends up
@@ -101,7 +105,9 @@ export function TewariDelight2({ post }: ArticleProps) {
           height={250}
           diaNumber={3}
         >
-          <p>Black ends up with an empty triangle.</p>
+          <ArticleParagraph>
+            Black ends up with an empty triangle.
+          </ArticleParagraph>
         </GoDiagram>
         <ArticleParagraph>
           In this case, two things are true at the same
@@ -121,10 +127,10 @@ export function TewariDelight2({ post }: ArticleProps) {
           height={350}
           diaNumber={4}
         >
-          <p>
+          <ArticleParagraph>
             The same problem, but transposed to a modern,
             post-AI joseki.
-          </p>
+          </ArticleParagraph>
         </GoDiagram>
         <ArticleParagraph>
           If we apply tewari to the similar position in Dia.
@@ -144,10 +150,10 @@ export function TewariDelight2({ post }: ArticleProps) {
           height={350}
           diaNumber={5}
         >
-          <p>
+          <ArticleParagraph>
             White tries to get back to the subpar version of
             the joseki.
-          </p>
+          </ArticleParagraph>
         </GoDiagram>
         <ArticleParagraph>
           Through that joseki analysis, it&apos;s more
@@ -172,7 +178,9 @@ export function TewariDelight2({ post }: ArticleProps) {
           height={350}
           diaNumber={6}
         >
-          <p>Black tries to justify connecting at 4.</p>
+          <ArticleParagraph>
+            Black tries to justify connecting at 4.
+          </ArticleParagraph>
         </GoDiagram>
         <ArticleParagraph>
           White shouldn&apos;t give Black a clean ponnuki
@@ -200,10 +208,10 @@ export function TewariDelight2({ post }: ArticleProps) {
           height={250}
           diaNumber={7}
         >
-          <p>
+          <ArticleParagraph>
             The same pattern, but now in the center of the
             board. Black should now atari at 2 instead of 3.
-          </p>
+          </ArticleParagraph>
         </GoDiagram>
         <ArticleParagraph>
           The same rationale still applies. However, AI now
@@ -238,7 +246,9 @@ export function TewariDelight2({ post }: ArticleProps) {
           height={250}
           diaNumber={8}
         >
-          <p>Should we play at A or go for open corners?</p>
+          <ArticleParagraph>
+            Should we play at A or go for open corners?
+          </ArticleParagraph>
         </GoDiagram>
         <ArticleParagraph>
           Black should absolutely complete the broken keima
@@ -258,13 +268,17 @@ export function TewariDelight2({ post }: ArticleProps) {
           height={250}
           diaNumber={9}
         >
-          <p>What&apos;s the cost of not playing at A?</p>
+          <ArticleParagraph>
+            What&apos;s the cost of not playing at A?
+          </ArticleParagraph>
         </GoDiagram>
         <ArticleParagraph>
           If Black plays for a corner now, instead of a
           2-point loss, we get into a near 6-point deficit.
         </ArticleParagraph>
-        <ArticleParagraph>So there you go:</ArticleParagraph>
+        <ArticleParagraph>
+          So there you go:
+        </ArticleParagraph>
         <ArticleMath display>
           {String.raw`
             \begin{array}{l@{\;}l}

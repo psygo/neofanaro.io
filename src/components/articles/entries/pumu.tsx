@@ -24,8 +24,10 @@ export function Pumu({ post }: ArticleProps) {
           title="PUMU 璞木, and Customizing Fox and OGS Board and Stones"
         />
         <ArticleBlockQuote>
-          PUMU is offering a discount code, check the video
-          description for more!
+          <ArticleParagraph>
+            PUMU is offering a discount code, check the
+            video description for more!
+          </ArticleParagraph>
         </ArticleBlockQuote>
         <ArticleParagraph>
           Recently, I was going through{" "}
@@ -58,7 +60,9 @@ export function Pumu({ post }: ArticleProps) {
           height={100}
           width={425}
         >
-          <p>PUMU 璞木 on Patreon</p>
+          <ArticleParagraph>
+            PUMU 璞木 on Patreon
+          </ArticleParagraph>
         </ArticleImageWithLegend>
         <ArticleParagraph>
           I was quite surprised by not only the fact that he
@@ -72,7 +76,9 @@ export function Pumu({ post }: ArticleProps) {
           height={100}
           width={400}
         >
-          <p>PUMU&apos;s &quot;Glass Kiri&quot; theme</p>
+          <ArticleParagraph>
+            PUMU&apos;s &quot;Glass Kiri&quot; theme
+          </ArticleParagraph>
         </ArticleImageWithLegend>
         <ArticleImageWithLegend
           src="/articles/pumu/pumu_kaya_1.png"
@@ -80,11 +86,15 @@ export function Pumu({ post }: ArticleProps) {
           height={100}
           width={400}
         >
-          <p>PUMU&apos;s &quot;Kaya 01&quot; theme</p>
+          <ArticleParagraph>
+            PUMU&apos;s &quot;Kaya 01&quot; theme
+          </ArticleParagraph>
         </ArticleImageWithLegend>
       </ArticleSection>
       <ArticleSection>
-        <ArticleSectionTitle>Customizing Fox</ArticleSectionTitle>
+        <ArticleSectionTitle>
+          Customizing Fox
+        </ArticleSectionTitle>
         <ArticleParagraph>
           Before knowing PUMU, I wasn&apos;t aware it was
           possible to customize Fox&apos;s board and stones
@@ -98,15 +108,19 @@ export function Pumu({ post }: ArticleProps) {
           <li>
             Find where in the{" "}
             <ArticleCode>Program Files (x86)</ArticleCode>
-            &nbsp;folder your <ArticleCode>foxwq</ArticleCode>
+            &nbsp;folder your{" "}
+            <ArticleCode>foxwq</ArticleCode>
             &nbsp;is installed;
           </li>
           <li>
-            Replace the <ArticleCode>badukpan4.png</ArticleCode>,{" "}
+            Replace the{" "}
+            <ArticleCode>badukpan4.png</ArticleCode>,{" "}
             <ArticleCode>badukpan4old.png</ArticleCode>,{" "}
-            <ArticleCode>whiteStone.png</ArticleCode>&nbsp;and{" "}
-            <ArticleCode>blackStone.png</ArticleCode>&nbsp;files
-            in the <ArticleCode>Images</ArticleCode>&nbsp;folder
+            <ArticleCode>whiteStone.png</ArticleCode>
+            &nbsp;and{" "}
+            <ArticleCode>blackStone.png</ArticleCode>
+            &nbsp;files in the{" "}
+            <ArticleCode>Images</ArticleCode>&nbsp;folder
             with the new image assets &mdash; do make sure
             you don&apos;t lose the original assets, just in
             case.
@@ -138,10 +152,10 @@ export function Pumu({ post }: ArticleProps) {
           height={100}
           width={400}
         >
-          <p>
+          <ArticleParagraph>
             My &quot;Bluish Purple Square&quot; Sabaki theme
             from the code above.
-          </p>
+          </ArticleParagraph>
         </ArticleImageWithLegend>
         <ArticleImageWithLegend
           src="/articles/pumu/fire_and_ice.png"
@@ -149,11 +163,15 @@ export function Pumu({ post }: ArticleProps) {
           height={100}
           width={400}
         >
-          <p>My &quot;Fire and Ice&quot; theme.</p>
+          <ArticleParagraph>
+            My &quot;Fire and Ice&quot; theme.
+          </ArticleParagraph>
         </ArticleImageWithLegend>
       </ArticleSection>
       <ArticleSection>
-        <ArticleSectionTitle>Customizing OGS</ArticleSectionTitle>
+        <ArticleSectionTitle>
+          Customizing OGS
+        </ArticleSectionTitle>
         <ArticleParagraph>
           OGS is probably the easiest platform to customize.
           Just click on your username on the top-right and
@@ -172,7 +190,9 @@ export function Pumu({ post }: ArticleProps) {
           height={100}
           width={400}
         >
-          <p>My OGS &quot;Desert&quot; theme.</p>
+          <ArticleParagraph>
+            My OGS &quot;Desert&quot; theme.
+          </ArticleParagraph>
         </ArticleImageWithLegend>
         <ArticleImageWithLegend
           src="/articles/pumu/ogs_pistacchio_theme.png"
@@ -180,7 +200,9 @@ export function Pumu({ post }: ArticleProps) {
           height={100}
           width={400}
         >
-          <p>My OGS &quot;Pistacchio&quot; theme.</p>
+          <ArticleParagraph>
+            My OGS &quot;Pistacchio&quot; theme.
+          </ArticleParagraph>
         </ArticleImageWithLegend>
         <ArticleParagraph>
           My two favorite OGS themes in the past 5 years

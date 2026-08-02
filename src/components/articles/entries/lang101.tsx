@@ -17,7 +17,7 @@ export function Lang101({ post }: ArticleProps) {
     <Article data={post}>
       <ArticleSection>
         <ArticleBlockQuote>
-          <p>
+          <ArticleParagraph>
             For now, the app version of Lang101 is in{" "}
             <em>alpha</em> testing, do message me if you
             would like to join!
@@ -26,8 +26,8 @@ export function Lang101({ post }: ArticleProps) {
               philippefanaro@gmail.com
             </ArticleLink>
             ! */}
-          </p>
-          <p>
+          </ArticleParagraph>
+          <ArticleParagraph>
             A first{" "}
             <ArticleLink href="https://expo.dev/accounts/psygo/projects/lang101/builds/7e036e2f-8647-42b7-8062-0313b29aba27">
               Android bundle
@@ -40,7 +40,7 @@ export function Lang101({ post }: ArticleProps) {
               web interface
             </ArticleLink>
             .
-          </p>
+          </ArticleParagraph>
         </ArticleBlockQuote>
         <ArticleParagraph>
           I&apos;m happy to announce the release of my first
@@ -54,7 +54,9 @@ export function Lang101({ post }: ArticleProps) {
           width={250}
           className="rounded-lg"
         >
-          <p>The &quot;Exercises&quot; page on Lang101.</p>
+          <ArticleParagraph>
+            The &quot;Exercises&quot; page on Lang101.
+          </ArticleParagraph>
         </ArticleImageWithLegend>
         <ArticleParagraph>
           <ArticleLink href="https://expo.dev/accounts/psygo/projects/lang101/builds/7e036e2f-8647-42b7-8062-0313b29aba27">
@@ -94,10 +96,10 @@ export function Lang101({ post }: ArticleProps) {
           width={250}
           className="rounded-lg border border-gray-200"
         >
-          <p>
+          <ArticleParagraph>
             Lang101&apos;s landing page. For now, I&apos;m
             using this website&apos;s logo as a placeholder.
-          </p>
+          </ArticleParagraph>
         </ArticleImageWithLegend>
         <ArticleParagraph>
           A statistical rating system is self-adjusting,
@@ -123,13 +125,13 @@ export function Lang101({ post }: ArticleProps) {
           width={250}
           className="rounded-lg"
         >
-          <p>
+          <ArticleParagraph>
             The student loses 19 points for solving a
             problem incorrectly. The 19 points are based on
             his Elo rating prior to the question, if that
             rating had been higher, an even bigger penalty
             would be applied.
-          </p>
+          </ArticleParagraph>
         </ArticleImageWithLegend>
         <ArticleParagraph>
           Anki does feature a rating system, typically based
@@ -163,10 +165,10 @@ export function Lang101({ post }: ArticleProps) {
           width={250}
           className="rounded-lg"
         >
-          <p>
+          <ArticleParagraph>
             Lang101&apos;s &quot;History&quot; page, on dark
             mode.
-          </p>
+          </ArticleParagraph>
         </ArticleImageWithLegend>
         <ArticleParagraph>
           The current version of the app also offer exercise
@@ -203,13 +205,13 @@ export function Lang101({ post }: ArticleProps) {
           width={250}
           className="rounded-lg"
         >
-          <p>
+          <ArticleParagraph>
             For languages such as Chinese and Japanese, even
             for native speakers, it&apos;s very common for
             text to have a top row guiding the pronunciation
             of a symbol. That feature is already present in
             Lang101.
-          </p>
+          </ArticleParagraph>
         </ArticleImageWithLegend>
         <ArticleParagraph>
           Anki (暗記) means &quot;learning by heart&quot; or
@@ -236,11 +238,11 @@ export function Lang101({ post }: ArticleProps) {
           width={250}
           className="rounded-lg"
         >
-          <p>
+          <ArticleParagraph>
             The profile page features a &quot;Send
             feedback&quot; button. Do share your thoughts
             and suggestions with me!
-          </p>
+          </ArticleParagraph>
         </ArticleImageWithLegend>
       </ArticleSection>
 

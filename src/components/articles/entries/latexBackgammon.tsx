@@ -34,17 +34,17 @@ export function LatexBackgammon({ post }: ArticleProps) {
           height={100}
           width={390}
         >
-          <p>
+          <ArticleParagraph>
             A vector diagram for the game of backgammon.
-          </p>
+          </ArticleParagraph>
         </ArticleImageWithLegend>
         <ArticleParagraph>
           This time though, I did 99% of the project with
           AI, more especifically, with Claude AI. The only
           thing I didn&apos;t create with AI was the
           specific scaffolding with TikZ and its{" "}
-          <ArticleCode>\pic</ArticleCode> API, in an attempt to
-          have the code more organized and readable.
+          <ArticleCode>\pic</ArticleCode> API, in an attempt
+          to have the code more organized and readable.
         </ArticleParagraph>
         <ArticleBlockQuote>
           Curiously, backgammon is also the only board game,

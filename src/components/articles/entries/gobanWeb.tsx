@@ -57,8 +57,9 @@ export function GobanWeb({ post }: ArticleProps) {
           , the biggest database for kifus, use it.
         </ArticleParagraph>
         <ArticleParagraph>
-          Even considering that <ArticleCode>wgo.js</ArticleCode>{" "}
-          is an outstanding project, it is still sad no
+          Even considering that{" "}
+          <ArticleCode>wgo.js</ArticleCode> is an
+          outstanding project, it is still sad no
           alternatives have popped up, and, even worse, it
           hasn&apos;t had any updates in at least 5 years.
         </ArticleParagraph>
@@ -187,14 +188,17 @@ export function GobanWeb({ post }: ArticleProps) {
           src="/articles/dowon-pairgo/dowon_pairgo_1.svg"
           diaNumber={1}
         >
-          <p>
+          <ArticleParagraph>
             A mistaken, unexpected cut (8), with surprising
             results afterwards. For more info, check out{" "}
-            <ArticleLink internal href="/articles/dowon-pairgo">
+            <ArticleLink
+              internal
+              href="/articles/dowon-pairgo"
+            >
               this article
             </ArticleLink>
             .
-          </p>
+          </ArticleParagraph>
         </GoDiagram>
         <ArticleParagraph>
           Comparatively, <ArticleCode>wgo.js</ArticleCode>
@@ -211,10 +215,10 @@ export function GobanWeb({ post }: ArticleProps) {
         </div>
         <ArticleParagraph>
           However, I&apos;m still not sure if{" "}
-          <ArticleCode>wgo.js</ArticleCode>&nbsp;does cover all
-          the necessary features for being a Go viewer. I
-          haven&apos;t yet been able to find out how to deal
-          with partial boards with it, for example.
+          <ArticleCode>wgo.js</ArticleCode>&nbsp;does cover
+          all the necessary features for being a Go viewer.
+          I haven&apos;t yet been able to find out how to
+          deal with partial boards with it, for example.
           Here&apos;s an example of a partial board diagram:
         </ArticleParagraph>
         <GoDiagram
@@ -223,14 +227,14 @@ export function GobanWeb({ post }: ArticleProps) {
           height={200}
           diaNumber={1}
         >
-          <p>
+          <ArticleParagraph>
             This capturing race yields a different result if
             we take away the suicide rule. Check{" "}
             <ArticleLink href="/articles/ing-cup-suicide">
               this article
             </ArticleLink>{" "}
             for more.
-          </p>
+          </ArticleParagraph>
         </GoDiagram>
         <ArticleParagraph>
           With the Goban Web project, we can now cover all

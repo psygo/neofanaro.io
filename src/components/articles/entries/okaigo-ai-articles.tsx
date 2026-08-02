@@ -48,7 +48,9 @@ export function OkaoigoAiArticles({ post }: ArticleProps) {
           width={425}
           className="rounded-xl"
         >
-          <p>okaoigo&apos;s Articles on note.com</p>
+          <ArticleParagraph>
+            okaoigo&apos;s Articles on note.com
+          </ArticleParagraph>
         </ArticleImageWithLegend>
         <ArticleParagraph>
           To me, this teacher&apos;s biggest differentiator
@@ -66,9 +68,11 @@ export function OkaoigoAiArticles({ post }: ArticleProps) {
         </ArticleParagraph>
 
         <ArticleBlockQuote>
-          FineArt&apos;s games on Fox are public, by the
-          way, you can easily access them through its
-          profile.
+          <ArticleParagraph>
+            FineArt&apos;s games on Fox are public, by the
+            way, you can easily access them through its
+            profile.
+          </ArticleParagraph>
         </ArticleBlockQuote>
 
         <ArticleParagraph>
@@ -92,12 +96,16 @@ export function OkaoigoAiArticles({ post }: ArticleProps) {
           src="/articles/okaigo-ai-articles/okaigo_1.1.svg"
           diaNumber={1}
         >
-          <p>How should you deal with Black&apos;s cut?</p>
+          <ArticleParagraph>
+            How should you deal with Black&apos;s cut?
+          </ArticleParagraph>
         </GoDiagram>
         <ArticleBlockQuote>
-          You can use Google Translate, or any other
-          translator tool, to have access to the original,
-          Japanese text in his articles.
+          <ArticleParagraph>
+            You can use Google Translate, or any other
+            translator tool, to have access to the original,
+            Japanese text in his articles.
+          </ArticleParagraph>
         </ArticleBlockQuote>
         <ArticleParagraph>
           FineArt refutes the cut with a beautiful driving
@@ -107,10 +115,10 @@ export function OkaoigoAiArticles({ post }: ArticleProps) {
           src="/articles/okaigo-ai-articles/okaigo_1.2.svg"
           diaNumber={2}
         >
-          <p>
+          <ArticleParagraph>
             This requires reading, but it&apos;s mostly
             technique at its core.
-          </p>
+          </ArticleParagraph>
         </GoDiagram>
         <ArticleParagraph>
           If Black A, White B threatens the left Black
@@ -126,10 +134,10 @@ export function OkaoigoAiArticles({ post }: ArticleProps) {
           src="/articles/okaigo-ai-articles/okaigo_1.3.svg"
           diaNumber={3}
         >
-          <p>
+          <ArticleParagraph>
             White even gets to capture the original cutting
             stone, A.
-          </p>
+          </ArticleParagraph>
         </GoDiagram>
       </ArticleSection>
       <ArticleSection>
@@ -144,7 +152,9 @@ export function OkaoigoAiArticles({ post }: ArticleProps) {
           src="/articles/okaigo-ai-articles/okaigo_3.1.svg"
           diaNumber={4}
         >
-          <p>How can White survive or escape?</p>
+          <ArticleParagraph>
+            How can White survive or escape?
+          </ArticleParagraph>
         </GoDiagram>
         <ArticleParagraph>
           Black doesn&apos;t have the best shape, but,
@@ -155,12 +165,12 @@ export function OkaoigoAiArticles({ post }: ArticleProps) {
           src="/articles/okaigo-ai-articles/okaigo_3.2.svg"
           diaNumber={5}
         >
-          <p>
+          <ArticleParagraph>
             Through a sacrifice and a tesuji, White exposes
             Black&apos;s shortage of liberties on the left,
             and the cutting point at C, all at the same
             time.
-          </p>
+          </ArticleParagraph>
         </GoDiagram>
         <ArticleParagraph>
           If Black plays at A, White B is sente for rescuing

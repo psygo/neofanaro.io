@@ -94,7 +94,7 @@ export function Magi({ post }: ArticleProps) {
           className="rounded-sm"
           alt="Excalidraw"
         >
-          <p>Excalidraw</p>
+          <ArticleParagraph>Excalidraw</ArticleParagraph>
         </ArticleImageWithLegend>
         <ArticleParagraph>
           In the end, the app&apos;s structure consists of
@@ -138,19 +138,21 @@ export function Magi({ post }: ArticleProps) {
           typical relational ones.
         </ArticleParagraph>
         <ArticleBlockQuote>
-          One of the most famous applications of treating
-          the web as a network was Google&apos;s{" "}
-          <ArticleLink href="https://en.wikipedia.org/wiki/PageRank">
-            PageRank
-          </ArticleLink>
-          , which used collected data to create a usage
-          graph for each website in the net. One possible
-          visualization of that approach of the current
-          state of the internet is{" "}
-          <ArticleLink href="https://internet-map.net/">
-            The Internet Map
-          </ArticleLink>
-          .
+          <ArticleParagraph>
+            One of the most famous applications of treating
+            the web as a network was Google&apos;s{" "}
+            <ArticleLink href="https://en.wikipedia.org/wiki/PageRank">
+              PageRank
+            </ArticleLink>
+            , which used collected data to create a usage
+            graph for each website in the net. One possible
+            visualization of that approach of the current
+            state of the internet is{" "}
+            <ArticleLink href="https://internet-map.net/">
+              The Internet Map
+            </ArticleLink>
+            .
+          </ArticleParagraph>
         </ArticleBlockQuote>
       </ArticleSection>
     </Article>
