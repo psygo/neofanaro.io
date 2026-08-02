@@ -12,9 +12,9 @@ import {
   ArticleYouTubeIframe,
 } from "@components/articles/article"
 
-export function Lang101({ article: post }: ArticleProps) {
+export function Lang101({ article }: ArticleProps) {
   return (
-    <Article article={post}>
+    <Article article={article}>
       <ArticleSection>
         <ArticleBlockQuote>
           <ArticleParagraph>

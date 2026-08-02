@@ -12,11 +12,9 @@ import {
 } from "@components/articles/article"
 import { GoDiagram } from "../goDiagram"
 
-export function DowonPairGo({
-  article: post,
-}: ArticleProps) {
+export function DowonPairGo({ article }: ArticleProps) {
   return (
-    <Article article={post}>
+    <Article article={article}>
       <ArticleSection>
         <ArticleParagraph>
           During my stay at{" "}

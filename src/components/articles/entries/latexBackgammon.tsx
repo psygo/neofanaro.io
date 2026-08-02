@@ -7,15 +7,13 @@ import {
   ArticleLink,
   ArticleBlockQuote,
   ArticleCode,
-  ArticlePre,
   ArticleImageWithLegend,
 } from "@components/articles/article"
+import { ArticlePre } from "@components/articles/articlePre"
 
-export function LatexBackgammon({
-  article: post,
-}: ArticleProps) {
+export function LatexBackgammon({ article }: ArticleProps) {
   return (
-    <Article article={post}>
+    <Article article={article}>
       <ArticleSection>
         <ArticleParagraph>
           Right after finishing my{" "}

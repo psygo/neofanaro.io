@@ -14,10 +14,10 @@ import {
 import { GoDiagram } from "../goDiagram"
 
 export function OkaoigoAiArticles({
-  article: post,
+  article,
 }: ArticleProps) {
   return (
-    <Article article={post}>
+    <Article article={article}>
       <ArticleSection>
         <ArticleParagraph>
           Last year, thanks again to my friend, Frédéric

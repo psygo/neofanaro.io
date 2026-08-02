@@ -15,13 +15,11 @@ import {
 } from "@components/articles/article"
 import { GoDiagram } from "../goDiagram"
 
-export function TennozanLeague({
-  article: post,
-}: ArticleProps) {
+export function TennozanLeague({ article }: ArticleProps) {
   const lang = useLang()
 
   return (
-    <Article article={post}>
+    <Article article={article}>
       {lang === "pt" ? (
         <ArticleSection>
           <ArticleBlockQuote>

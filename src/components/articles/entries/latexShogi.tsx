@@ -6,11 +6,11 @@ import {
   ArticleSection,
   ArticleLink,
   ArticleSectionTitle,
-  ArticlePre,
-  ArticlePDFViewer,
   ArticleBlockQuote,
   ArticleImageWithLegend,
 } from "@components/articles/article"
+import { ArticlePDFViewer } from "@components/articles/articlePDFViewer"
+import { ArticlePre } from "@components/articles/articlePre"
 
 const latexCode = String.raw`
 \documentclass[12pt]{standalone}
@@ -48,11 +48,9 @@ const latexCode = String.raw`
 \end{document}
 `
 
-export function LatexShogi({
-  article: post,
-}: ArticleProps) {
+export function LatexShogi({ article }: ArticleProps) {
   return (
-    <Article article={post}>
+    <Article article={article}>
       <ArticleSection>
         <ArticleParagraph>
           Recently, I&apos;ve been revisiting one of my last

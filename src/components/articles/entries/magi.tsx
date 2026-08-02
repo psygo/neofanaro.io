@@ -12,9 +12,9 @@ import {
   ArticleIframe,
 } from "@components/articles/article"
 
-export function Magi({ article: post }: ArticleProps) {
+export function Magi({ article }: ArticleProps) {
   return (
-    <Article article={post}>
+    <Article article={article}>
       <ArticleSection>
         <ArticleParagraph>
           Even though we typically explore the internet

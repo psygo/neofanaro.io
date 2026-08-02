@@ -11,11 +11,9 @@ import {
 } from "@components/articles/article"
 import { GoDiagram } from "../goDiagram"
 
-export function IngCupSuicide({
-  article: post,
-}: ArticleProps) {
+export function IngCupSuicide({ article }: ArticleProps) {
   return (
-    <Article article={post}>
+    <Article article={article}>
       <ArticleSection>
         <ArticleParagraph>
           About a year and a half ago, I published my first

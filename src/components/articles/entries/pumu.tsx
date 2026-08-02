@@ -8,16 +8,16 @@ import {
   ArticleImageWithLegend,
   ArticleCode,
   ArticleOrderedList,
-  ArticlePre,
   ArticleSectionTitle,
   ArticleUnorderedList,
   ArticleYouTubeIframe,
   ArticleBlockQuote,
 } from "@components/articles/article"
+import { ArticlePre } from "@components/articles/articlePre"
 
-export function Pumu({ article: post }: ArticleProps) {
+export function Pumu({ article }: ArticleProps) {
   return (
-    <Article article={post}>
+    <Article article={article}>
       <ArticleSection>
         <ArticleYouTubeIframe
           src="https://www.youtube.com/embed/MSvIstLgX34"

@@ -22,6 +22,7 @@ import {
   PostAiOpeningHierarchy,
   Pumu,
   SampleSizeAndCommonSense,
+  Sugeundaesajeon,
   TennozanLeague,
   TewariDelight2,
   WhatIsGoAbout,
@@ -94,6 +95,8 @@ function whichArticle(path: string, post: ArticleFromDb) {
       return <TewariDelight2 article={post} />
     case "sample-size-and-common-sense":
       return <SampleSizeAndCommonSense article={post} />
+    case "sugeundaesajeon":
+      return <Sugeundaesajeon article={post} />
     case "what-is-go-about":
       return <WhatIsGoAbout article={post} />
     default:

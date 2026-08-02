@@ -12,9 +12,9 @@ import {
   ArticleSectionTitle,
   ArticleBlockQuote,
   ArticleCode,
-  ArticlePre,
 } from "@components/articles/article"
 import { WgoPlayer } from "@components/articles/wgoPlayer"
+import { ArticlePre } from "@components/articles/articlePre"
 import { GoDiagram } from "../goDiagram"
 
 const GoBoardPlayer = dynamic(
@@ -25,9 +25,9 @@ const GoBoardPlayer = dynamic(
   { ssr: false },
 )
 
-export function GobanWeb({ article: post }: ArticleProps) {
+export function GobanWeb({ article }: ArticleProps) {
   return (
-    <Article article={post}>
+    <Article article={article}>
       <ArticleSection>
         <ArticleBlockQuote>
           If you would like to directly skip to the code,
