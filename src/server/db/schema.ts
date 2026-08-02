@@ -42,6 +42,7 @@ export const articlesRelations = relations(
   articlesTable,
   ({ many }) => ({
     comments: many(commentsTable),
+    votes: many(articleVotesTable),
   }),
 )
 
@@ -65,6 +66,8 @@ export const playersRelations = relations(
     sessions: many(sessionsTable),
     leaguePlayers: many(leaguePlayersTable),
     comments: many(commentsTable),
+    articleVotes: many(articleVotesTable),
+    commentVotes: many(commentVotesTable),
   }),
 )
 
@@ -201,13 +204,74 @@ export const commentsTable = pgTable("comments", {
 
 export const commentsRelations = relations(
   commentsTable,
-  ({ one }) => ({
+  ({ one, many }) => ({
     article: one(articlesTable, {
       fields: [commentsTable.articleId],
       references: [articlesTable.id],
     }),
     player: one(players, {
       fields: [commentsTable.playerId],
+      references: [players.id],
+    }),
+    votes: many(commentVotesTable),
+  }),
+)
+
+export const articleVotesTable = pgTable(
+  "article_votes",
+  {
+    id: serial().primaryKey(),
+    articleId: integer("article_id").notNull(),
+    playerId: integer("player_id").notNull(),
+    value: integer().notNull(),
+  },
+  (table) => [
+    uniqueIndex("article_vote_idx").on(
+      table.articleId,
+      table.playerId,
+    ),
+  ],
+)
+
+export const articleVotesRelations = relations(
+  articleVotesTable,
+  ({ one }) => ({
+    article: one(articlesTable, {
+      fields: [articleVotesTable.articleId],
+      references: [articlesTable.id],
+    }),
+    player: one(players, {
+      fields: [articleVotesTable.playerId],
+      references: [players.id],
+    }),
+  }),
+)
+
+export const commentVotesTable = pgTable(
+  "comment_votes",
+  {
+    id: serial().primaryKey(),
+    commentId: integer("comment_id").notNull(),
+    playerId: integer("player_id").notNull(),
+    value: integer().notNull(),
+  },
+  (table) => [
+    uniqueIndex("comment_vote_idx").on(
+      table.commentId,
+      table.playerId,
+    ),
+  ],
+)
+
+export const commentVotesRelations = relations(
+  commentVotesTable,
+  ({ one }) => ({
+    comment: one(commentsTable, {
+      fields: [commentVotesTable.commentId],
+      references: [commentsTable.id],
+    }),
+    player: one(players, {
+      fields: [commentVotesTable.playerId],
       references: [players.id],
     }),
   }),

@@ -8,6 +8,7 @@ import { CommentWithAuthor } from "@types"
 
 import { db, commentsTable } from "@db"
 import { getCurrentPlayer } from "@server/auth/session"
+import { getCommentVoteSummary } from "@server/utils/voteSummary"
 
 export type UpdateCommentState = {
   errorCode?: "not_signed_in" | "empty" | "not_authorized"
@@ -49,11 +50,17 @@ export async function update_comment(
   if (articlePath) revalidatePath(`/articles/${articlePath}`)
   revalidatePath("/profile")
 
+  const voteSummary = await getCommentVoteSummary(
+    commentId,
+    player.id,
+  )
+
   return {
     comment: {
       ...updated,
       playerName: player.name,
       playerNick: player.nick,
+      ...voteSummary,
     },
   }
 }

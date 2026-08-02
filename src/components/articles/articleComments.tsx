@@ -3,7 +3,11 @@
 import { useEffect, useRef, useState } from "react"
 import { useActionState } from "react"
 
-import { CommentWithAuthor } from "@types"
+import {
+  CommentWithAuthor,
+  VoteSummary,
+  VoteValue,
+} from "@types"
 
 import { useLang } from "@hooks"
 
@@ -13,15 +17,17 @@ import {
   add_comment,
   get_article_comments,
   update_comment,
+  vote_comment,
   type AddCommentState,
   type UpdateCommentState,
 } from "@actions"
 import type { Player } from "@server"
 
 import { LangLink } from "@components/common/langLink"
+import { VoteButtons } from "./voteButtons"
 
 const inputClasses =
-  "rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-slate-700 focus:outline-2 focus:outline-slate-400"
+  "rounded-lg border border-slate-300 bg-slate-50 px-3 py-2 text-slate-700 focus:outline-2 focus:outline-slate-400"
 
 type ArticleCommentsProps = {
   articleId: number
@@ -59,9 +65,22 @@ export function ArticleComments({
     setComments((prev) => [comment, ...prev])
   }
 
-  function handleCommentUpdated(comment: CommentWithAuthor) {
+  function handleCommentUpdated(
+    comment: CommentWithAuthor,
+  ) {
     setComments((prev) =>
       prev.map((c) => (c.id === comment.id ? comment : c)),
+    )
+  }
+
+  function handleCommentVoted(
+    commentId: number,
+    summary: VoteSummary,
+  ) {
+    setComments((prev) =>
+      prev.map((c) =>
+        c.id === commentId ? { ...c, ...summary } : c,
+      ),
     )
   }
 
@@ -117,8 +136,11 @@ export function ArticleComments({
             key={comment.id}
             comment={comment}
             articlePath={articlePath}
-            isAuthor={currentPlayer?.id === comment.playerId}
+            isAuthor={
+              currentPlayer?.id === comment.playerId
+            }
             onUpdated={handleCommentUpdated}
+            onVoted={handleCommentVoted}
           />
         ))}
       </div>
@@ -131,6 +153,7 @@ type CommentProps = {
   articlePath: string
   isAuthor: boolean
   onUpdated: (comment: CommentWithAuthor) => void
+  onVoted: (commentId: number, summary: VoteSummary) => void
 }
 
 function Comment({
@@ -138,9 +161,16 @@ function Comment({
   articlePath,
   isAuthor,
   onUpdated,
+  onVoted,
 }: CommentProps) {
   const lang = useLang()
   const [isEditing, setIsEditing] = useState(false)
+
+  async function handleVote(value: VoteValue) {
+    const result = await vote_comment(comment.id, value)
+    if (!("errorCode" in result))
+      onVoted(comment.id, result)
+  }
 
   if (isEditing) {
     return (
@@ -157,10 +187,10 @@ function Comment({
   }
 
   return (
-    <div className="flex flex-col gap-3 rounded-lg border border-slate-200 px-3 pt-1 pb-2.5">
+    <div className="flex flex-col gap-2 rounded-lg border border-slate-300 px-4.25 pt-2.5 pb-2.5 hover:bg-slate-100">
       <div className="flex items-baseline justify-between gap-2">
         <span className="font-semibold">
-          {comment.playerNick || comment.playerName}
+          {comment.playerName}
         </span>
         <div className="flex items-center gap-2">
           <span className="text-xs text-slate-500">
@@ -182,6 +212,12 @@ function Comment({
       <p className="mt-0 mb-0 text-sm hyphens-auto whitespace-pre-wrap text-slate-700">
         {comment.content}
       </p>
+      <VoteButtons
+        upvotes={comment.upvotes}
+        downvotes={comment.downvotes}
+        myVote={comment.myVote}
+        onVote={handleVote}
+      />
     </div>
   )
 }
@@ -324,7 +360,7 @@ function CommentForm({
       <button
         type="submit"
         disabled={isPending}
-        className="cursor-pointer self-end rounded-lg bg-slate-100 px-4 py-1 ring-1 ring-slate-200 transition duration-300 hover:bg-slate-200 disabled:cursor-not-allowed disabled:opacity-60"
+        className="cursor-pointer self-end rounded-lg bg-slate-100 px-3 py-1 text-sm ring-1 ring-slate-300 transition duration-300 hover:bg-slate-200 disabled:cursor-not-allowed disabled:opacity-60"
       >
         {isPending
           ? lang === "pt"

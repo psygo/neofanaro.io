@@ -41,6 +41,9 @@ export async function add_comment(
       ...inserted,
       playerName: player.name,
       playerNick: player.nick,
+      upvotes: 0,
+      downvotes: 0,
+      myVote: 0,
     },
   }
 }

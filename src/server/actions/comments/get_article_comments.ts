@@ -6,6 +6,7 @@ import { CommentWithAuthor } from "@types"
 
 import { db, commentsTable, players } from "@db"
 import { getCurrentPlayer, Player } from "@server/auth/session"
+import { getCommentVoteSummaries } from "@server/utils/voteSummary"
 
 export async function get_article_comments(
   articleId: number,
@@ -13,7 +14,7 @@ export async function get_article_comments(
   comments: CommentWithAuthor[]
   currentPlayer: Player | null
 }> {
-  const [comments, currentPlayer] = await Promise.all([
+  const [rows, currentPlayer] = await Promise.all([
     db
       .select({
         id: commentsTable.id,
@@ -34,6 +35,20 @@ export async function get_article_comments(
       .orderBy(desc(commentsTable.createdAt)),
     getCurrentPlayer(),
   ])
+
+  const voteSummaries = await getCommentVoteSummaries(
+    rows.map((row) => row.id),
+    currentPlayer?.id,
+  )
+
+  const comments = rows.map((row) => ({
+    ...row,
+    ...(voteSummaries.get(row.id) ?? {
+      upvotes: 0,
+      downvotes: 0,
+      myVote: 0 as const,
+    }),
+  }))
 
   return { comments, currentPlayer }
 }

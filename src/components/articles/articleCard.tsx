@@ -8,6 +8,7 @@ import { localizedText } from "@utils"
 // import { CountryFlag } from "@components/common/countryFlag"
 
 import { LangLink } from "../common/langLink"
+import { ArticleVoteWidget } from "./articleVoteWidget"
 import {
   ArticleDate,
   ArticleTags,
@@ -30,41 +31,48 @@ export function ArticleCard({ post }: ArticleCardProps) {
   }
 
   return (
-    <LangLink href={`/articles/${post.path}`}>
-      <div
-        style={{
-          borderLeftColor: borderColor,
-        }}
-        className={`flex flex-col gap-2 border-l-[7px] ${cardDecoration}`}
-      >
-        <ArticleTitle>
-          {localizedText(post.titleEn, post.titlePt, lang)}
-        </ArticleTitle>
-        <div className="mt-1 mb-1 flex flex-wrap items-center gap-3 sm:items-end-safe">
-          <ArticleViews
-            views={post.views}
-            className="flex gap-1 text-sm font-bold text-slate-700"
-          />
-          <ArticleTags tags={post.tags} />
-          <div className="flex gap-2">
-            {post.langs.map((l, i) => (
-              <ArticleLang key={i} lang={l} />
-            ))}
+    <div className="flex flex-col gap-1.5">
+      <ArticleVoteWidget articleId={post.id} />
+      <LangLink href={`/articles/${post.path}`}>
+        <div
+          style={{
+            borderLeftColor: borderColor,
+          }}
+          className={`flex flex-col gap-2 border-l-[7px] ${cardDecoration}`}
+        >
+          <ArticleTitle>
+            {localizedText(
+              post.titleEn,
+              post.titlePt,
+              lang,
+            )}
+          </ArticleTitle>
+          <div className="mt-1 mb-1 flex flex-wrap items-center gap-3 sm:items-end-safe">
+            <ArticleViews
+              views={post.views}
+              className="flex gap-1 text-sm font-bold text-slate-700"
+            />
+            <ArticleTags tags={post.tags} />
+            <div className="flex gap-2">
+              {post.langs.map((l, i) => (
+                <ArticleLang key={i} lang={l} />
+              ))}
+            </div>
           </div>
+          <ArticleDate
+            date={new Date(post.date)}
+            className="pb-1 text-sm font-semibold text-slate-500"
+          />
+          <ArticleDescription>
+            {localizedText(
+              post.descriptionEn,
+              post.descriptionPt,
+              lang,
+            )}
+          </ArticleDescription>
         </div>
-        <ArticleDate
-          date={new Date(post.date)}
-          className="pb-1 text-sm font-semibold text-slate-500"
-        />
-        <ArticleDescription>
-          {localizedText(
-            post.descriptionEn,
-            post.descriptionPt,
-            lang,
-          )}
-        </ArticleDescription>
-      </div>
-    </LangLink>
+      </LangLink>
+    </div>
   )
 }
 

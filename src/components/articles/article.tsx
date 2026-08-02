@@ -10,6 +10,7 @@ import { localizedText } from "@utils"
 
 import { ArticleComments } from "./articleComments"
 import { ArticleViewTracker } from "./articleViewTracker"
+import { ArticleVoteWidget } from "./articleVoteWidget"
 import { ArticleWidthSlider } from "./articleWidthSlider"
 import {
   ArticleDate,
@@ -66,6 +67,7 @@ export function Article({
         <ArticleViews views={article.views || 0} />
         <ArticleDate date={new Date(article.date)} />
         <ArticleTags tags={article.tags} />
+        <ArticleVoteWidget articleId={article.id} />
       </ArticleTitleSection>
       {children}
       <ArticleComments
