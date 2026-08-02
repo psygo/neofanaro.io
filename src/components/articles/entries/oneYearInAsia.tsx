@@ -1,13 +1,13 @@
 import { ArticleProps } from "@types"
 
+import { Article } from "@components/articles/article"
 import {
   ArticleParagraph,
-  Article,
   ArticleSection,
   ArticleLink,
   ArticleUnorderedList,
   ArticleYouTubeIframe,
-} from "@components/articles/article"
+} from "../articleContent"
 
 export function OneYearInAsia({ article }: ArticleProps) {
   return (

@@ -4,15 +4,15 @@ import dynamic from "next/dynamic"
 
 import { ArticleProps } from "@types"
 
+import { Article } from "@components/articles/article"
 import {
   ArticleParagraph,
-  Article,
   ArticleSection,
   ArticleLink,
   ArticleSectionTitle,
   ArticleBlockQuote,
   ArticleCode,
-} from "@components/articles/article"
+} from "../articleContent"
 import { WgoPlayer } from "@components/articles/wgoPlayer"
 import { ArticlePre } from "@components/articles/articlePre"
 import { GoDiagram } from "../goDiagram"

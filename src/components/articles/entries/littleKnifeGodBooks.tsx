@@ -1,13 +1,13 @@
 import { ArticleProps } from "@types"
 
+import { Article } from "@components/articles/article"
 import {
   ArticleParagraph,
-  Article,
   ArticleSection,
   ArticleLink,
   NoWrap,
   ArticleImageWithLegend,
-} from "@components/articles/article"
+} from "../articleContent"
 import { GoDiagram } from "@components/articles/goDiagram"
 
 export function LittleKnifeGodBooks({

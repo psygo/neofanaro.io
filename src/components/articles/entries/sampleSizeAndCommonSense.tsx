@@ -1,11 +1,11 @@
 import { ArticleProps } from "@types"
 
+import { Article } from "@components/articles/article"
 import {
   ArticleParagraph,
-  Article,
   ArticleSection,
   ArticleLink,
-} from "@components/articles/article"
+} from "../articleContent"
 
 export function SampleSizeAndCommonSense({
   article,

@@ -12,7 +12,7 @@ import {
   ArticleDate,
   ArticleTags,
   ArticleViews,
-} from "./article"
+} from "./articleTitleSection"
 
 export type ArticleCardProps = {
   post: ArticleFromDb

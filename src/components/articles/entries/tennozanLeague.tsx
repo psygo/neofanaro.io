@@ -4,15 +4,15 @@ import { ArticleProps } from "@types"
 
 import { useLang } from "@hooks"
 
+import { Article } from "@components/articles/article"
 import {
   ArticleParagraph,
-  Article,
   ArticleSection,
   ArticleLink,
   ArticleYouTubeIframe,
   ArticleBlockQuote,
   ArticleImageWithLegend,
-} from "@components/articles/article"
+} from "../articleContent"
 import { GoDiagram } from "../goDiagram"
 
 export function TennozanLeague({ article }: ArticleProps) {

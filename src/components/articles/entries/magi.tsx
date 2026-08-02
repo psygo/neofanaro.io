@@ -1,8 +1,8 @@
 import { ArticleProps } from "@types"
 
+import { Article } from "@components/articles/article"
 import {
   ArticleParagraph,
-  Article,
   ArticleSection,
   ArticleLink,
   ArticleImageWithLegend,
@@ -10,7 +10,7 @@ import {
   ArticleBlockQuote,
   ArticleSectionTitle,
   ArticleIframe,
-} from "@components/articles/article"
+} from "../articleContent"
 
 export function Magi({ article }: ArticleProps) {
   return (

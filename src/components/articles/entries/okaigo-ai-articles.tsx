@@ -1,8 +1,8 @@
 import { ArticleProps } from "@types"
 
+import { Article } from "@components/articles/article"
 import {
   ArticleParagraph,
-  Article,
   ArticleSection,
   ArticleLink,
   ArticleBlockQuote,
@@ -10,7 +10,7 @@ import {
   ArticleUnorderedList,
   ArticleImageWithLegend,
   NoWrap,
-} from "@components/articles/article"
+} from "../articleContent"
 import { GoDiagram } from "../goDiagram"
 
 export function OkaoigoAiArticles({

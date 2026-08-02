@@ -1,13 +1,13 @@
 import { ArticleProps } from "@types"
 
+import { Article } from "@components/articles/article"
 import {
   ArticleParagraph,
-  Article,
   ArticleSection,
   ArticleLink,
   ArticleYouTubeIframe,
   ArticleBlockQuote,
-} from "@components/articles/article"
+} from "../articleContent"
 import { ArticleMath } from "@components/articles/articleMath"
 import { GoDiagram } from "../goDiagram"
 

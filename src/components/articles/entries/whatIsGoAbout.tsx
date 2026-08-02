@@ -1,8 +1,8 @@
 import { ArticleProps } from "@types"
 
+import { Article } from "@components/articles/article"
 import {
   ArticleParagraph,
-  Article,
   ArticleSection,
   ArticleLink,
   ArticleUnorderedList,
@@ -10,7 +10,7 @@ import {
   ArticleDivider,
   NoWrap,
   ArticleImageWithLegend,
-} from "@components/articles/article"
+} from "../articleContent"
 
 export function WhatIsGoAbout({ article }: ArticleProps) {
   return (

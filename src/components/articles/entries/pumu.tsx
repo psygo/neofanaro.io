@@ -1,8 +1,8 @@
 import { ArticleProps } from "@types"
 
+import { Article } from "@components/articles/article"
 import {
   ArticleParagraph,
-  Article,
   ArticleSection,
   ArticleLink,
   ArticleImageWithLegend,
@@ -12,7 +12,7 @@ import {
   ArticleUnorderedList,
   ArticleYouTubeIframe,
   ArticleBlockQuote,
-} from "@components/articles/article"
+} from "../articleContent"
 import { ArticlePre } from "@components/articles/articlePre"
 
 export function Pumu({ article }: ArticleProps) {

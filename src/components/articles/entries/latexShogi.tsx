@@ -1,14 +1,14 @@
 import { ArticleProps } from "@types"
 
+import { Article } from "@components/articles/article"
 import {
   ArticleParagraph,
-  Article,
   ArticleSection,
   ArticleLink,
   ArticleSectionTitle,
   ArticleBlockQuote,
   ArticleImageWithLegend,
-} from "@components/articles/article"
+} from "../articleContent"
 import { ArticlePDFViewer } from "@components/articles/articlePDFViewer"
 import { ArticlePre } from "@components/articles/articlePre"
 

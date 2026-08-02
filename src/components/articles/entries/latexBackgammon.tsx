@@ -1,14 +1,14 @@
 import { ArticleProps } from "@types"
 
+import { Article } from "@components/articles/article"
 import {
   ArticleParagraph,
-  Article,
   ArticleSection,
   ArticleLink,
   ArticleBlockQuote,
   ArticleCode,
   ArticleImageWithLegend,
-} from "@components/articles/article"
+} from "../articleContent"
 import { ArticlePre } from "@components/articles/articlePre"
 
 export function LatexBackgammon({ article }: ArticleProps) {
@@ -47,15 +47,17 @@ export function LatexBackgammon({ article }: ArticleProps) {
           to have the code more organized and readable.
         </ArticleParagraph>
         <ArticleBlockQuote>
-          Curiously, backgammon is also the only board game,
-          out of the ones still played, which could compete
-          with Go when it comes to age. Its predecessor was
-          known as{" "}
-          <ArticleLink href="https://youtu.be/WZskjLq040I">
-            The Royal Game of Ur
-          </ArticleLink>{" "}
-          , and was played as far back as ancient Babylon,
-          around 4,000 years ago!
+          <ArticleParagraph>
+            Curiously, backgammon is also the only board
+            game, out of the ones still played, which could
+            compete with Go when it comes to age. Its
+            predecessor was known as{" "}
+            <ArticleLink href="https://youtu.be/WZskjLq040I">
+              The Royal Game of Ur
+            </ArticleLink>
+            , and was played as far back as ancient Babylon,
+            around 4,000 years ago!
+          </ArticleParagraph>
         </ArticleBlockQuote>
         <ArticleParagraph>
           If you&apos;re interested in the project, I

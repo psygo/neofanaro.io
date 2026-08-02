@@ -1,3 +1,5 @@
+"use client"
+
 import { PDFViewer } from "@embedpdf/react-pdf-viewer"
 
 type ArticlePDFViewerProps = {
