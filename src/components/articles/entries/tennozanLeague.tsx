@@ -54,17 +54,6 @@ export function TennozanLeague({
             </ArticleLink>
             .
           </ArticleParagraph>
-          <ArticleBlockQuote>
-            <ArticleParagraph>
-              O formato da liga consiste de os 2 primeiros
-              de cada divisão sendo promovidos, e os 2
-              últimos, demovidos.
-            </ArticleParagraph>
-            <ArticleParagraph>
-              A configuração de tempo será Fischer 20min +
-              20s.
-            </ArticleParagraph>
-          </ArticleBlockQuote>
           <ArticleYouTubeIframe
             src="https://www.youtube.com/embed/41MSBjL5qu4"
             title="O Tesuji-Mor"
@@ -97,6 +86,12 @@ export function TennozanLeague({
             já que estarei ao vivo, também poderei comentar
             as partidas de outros jogadores, depois que
             terminar a minha.
+          </ArticleParagraph>
+          <ArticleParagraph>
+            O formato da liga consistirá de os 2 primeiros
+            de cada divisão sendo promovidos, e os 2
+            últimos, demovidos. E a configuração de tempo
+            será Fischer 20min + 20s.
           </ArticleParagraph>
           <ArticleParagraph>
             Todos são bem-vindos, você não precisa ser
@@ -176,17 +171,6 @@ export function TennozanLeague({
             </ArticleLink>
             .
           </ArticleParagraph>
-          <ArticleBlockQuote>
-            <ArticleParagraph>
-              The league format is gonna be the top 2
-              players in each division go up, and the bottom
-              2 go down.
-            </ArticleParagraph>
-            <ArticleParagraph>
-              The time settings will be 20 min + 20s Fischer
-              time.
-            </ArticleParagraph>
-          </ArticleBlockQuote>
           <ArticleYouTubeIframe
             src="https://www.youtube.com/embed/41MSBjL5qu4"
             title="O Tesuji-Mor"
@@ -217,6 +201,12 @@ export function TennozanLeague({
             socialize better. Since I&apos;m gonna be live
             streaming, I can also provide comments on other
             players&apos; games after I finish mine.
+          </ArticleParagraph>
+          <ArticleParagraph>
+            The league format is gonna be the top 2 players
+            in each division get promoted, and the bottom 2,
+            demoted . And the time settings will be 20 min +
+            20s Fischer.
           </ArticleParagraph>
           <ArticleParagraph>
             Everyone is welcome, you don&apos;t need to be
