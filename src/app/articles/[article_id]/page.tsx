@@ -11,6 +11,7 @@ import { CpiSuspense } from "@components/common/cpiSuspense"
 import {
   DowonPairGo,
   GobanWeb,
+  Haengma3,
   IngCupSuicide,
   Lang101,
   LatexBackgammon,
@@ -69,6 +70,8 @@ function whichArticle(path: string, post: ArticleFromDb) {
       return <DowonPairGo article={post} />
     case "goban-web":
       return <GobanWeb article={post} />
+    case "haengma3":
+      return <Haengma3 article={post} />
     case "ing-cup-suicide":
       return <IngCupSuicide article={post} />
     case "lang101":

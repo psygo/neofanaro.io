@@ -1,5 +1,6 @@
 export * from "./dowonPairGo"
 export * from "./gobanWeb"
+export * from "./haengma3"
 export * from "./ingCupSuicide"
 export * from "./lang101"
 export * from "./latexBackgammon"
