@@ -16,6 +16,7 @@ export async function get_player_comments(
       playerId: commentsTable.playerId,
       content: commentsTable.content,
       createdAt: commentsTable.createdAt,
+      editedAt: commentsTable.editedAt,
       articlePath: articlesTable.path,
       articleTitleEn: articlesTable.titleEn,
       articleTitlePt: articlesTable.titlePt,

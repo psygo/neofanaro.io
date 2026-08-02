@@ -4,6 +4,7 @@ export type CommentFromDb = {
   playerId: number
   content: string
   createdAt: Date
+  editedAt: Date | null
 }
 
 export type CommentWithAuthor = CommentFromDb & {

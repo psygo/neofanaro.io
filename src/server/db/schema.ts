@@ -196,6 +196,7 @@ export const commentsTable = pgTable("comments", {
   createdAt: timestamp("created_at")
     .notNull()
     .defaultNow(),
+  editedAt: timestamp("edited_at"),
 })
 
 export const commentsRelations = relations(

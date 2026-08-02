@@ -1,4 +1,5 @@
 export * from "./array"
 export * from "./countries"
+export * from "./formatDate"
 export * from "./gameResult"
 export * from "./localizedText"
