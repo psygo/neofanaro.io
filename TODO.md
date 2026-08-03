@@ -2,33 +2,16 @@
 
 ## Priorities
 
-- [ ] Hyphenation per language
-- [ ] Pre syntax highlight got broken
-
-- [ ] Add prices to my lessons.
-- [ ] Convert the `<PostImageWithLegend>` into a component that uses children.
 - [ ] Run my posts through Grammarly or some other autocorrect.
 - [ ] Go diagram numbering should be automatically increasing (but overrideable)
 - [ ] Create a staging/branching environment for the project.
-- [ ] Move the language to a global state (It's on the top layout at the moment)
 - [ ] The initial page layout once I get the blog going should probably have the top article on top, with the website's title above it.
-
-### Leagues
-
-| Name     | Nick          | Ph  | De  | Di  | Ar  | Gi  |
-| -------- | ------------- | --- | --- | --- | --- | --- |
-| Philippe | psygo         | X   |     |     |     |     |
-| Dejan    | mal           |     | X   |     |     |     |
-| Diogo    | Diogo Barbosa |     |     | X   |     |     |
-| Ariel    | GOiano        |     |     |     | X   |     |
-| Gilberto | Gil           |     |     |     |     | X   |
 
 ## Bugs
 
 ## UI
 
 - [ ] PostCard's should have the same height.
-- [ ] Social Media preview per page
 - [ ] Add top-left decoration to the `PostCard` for each category
 - [ ] Rounded or Squared Flags
 - [ ] CV download button
@@ -37,10 +20,8 @@
 
 ## Features
 
-- [ ] Filter for topics on the blog's page.
+- [ ] Add language configuration per user account.
 - [ ] Language should be automatically identified by localization.
-- [ ] User login
-- [ ] Comments
 - [ ] Dark Theme
 
 ## Code Improvements

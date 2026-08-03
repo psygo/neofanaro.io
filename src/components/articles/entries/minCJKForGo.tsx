@@ -8,6 +8,7 @@ import {
   ArticleSection,
   ArticleUnorderedList,
 } from "../articleContent"
+import { ArticleRuby } from "../articleRuby"
 import {
   ArticleTable,
   ArticleTableBody,
@@ -55,30 +56,90 @@ export function MinCJKForGo({ article }: ArticleProps) {
             <ArticleTableRow>
               <ArticleTableCell>Black</ArticleTableCell>
               {/* <ArticleTableCell>Preto</ArticleTableCell> */}
-              <ArticleTableCell>黑</ArticleTableCell>
-              <ArticleTableCell>黒</ArticleTableCell>
-              <ArticleTableCell>흑</ArticleTableCell>
+              <ArticleTableCell>
+                <ArticleRuby
+                  base="黑"
+                  pronunciation="hēi"
+                />
+              </ArticleTableCell>
+              <ArticleTableCell>
+                <ArticleRuby
+                  base="黒"
+                  pronunciation="くろ or kuro"
+                />
+              </ArticleTableCell>
+              <ArticleTableCell>
+                <ArticleRuby
+                  base="흑"
+                  pronunciation="heuk"
+                />
+              </ArticleTableCell>
             </ArticleTableRow>
             <ArticleTableRow>
               <ArticleTableCell>White</ArticleTableCell>
               {/* <ArticleTableCell>Branco</ArticleTableCell> */}
-              <ArticleTableCell>白</ArticleTableCell>
-              <ArticleTableCell>白</ArticleTableCell>
-              <ArticleTableCell>백</ArticleTableCell>
+              <ArticleTableCell>
+                <ArticleRuby
+                  base="白"
+                  pronunciation="bái"
+                />
+              </ArticleTableCell>
+              <ArticleTableCell>
+                <ArticleRuby
+                  base="白"
+                  pronunciation="しろ or shiro"
+                />
+              </ArticleTableCell>
+              <ArticleTableCell>
+                <ArticleRuby
+                  base="백"
+                  pronunciation="baek"
+                />
+              </ArticleTableCell>
             </ArticleTableRow>
             <ArticleTableRow>
               <ArticleTableCell>Correct</ArticleTableCell>
               {/* <ArticleTableCell>Correto</ArticleTableCell> */}
-              <ArticleTableCell>正</ArticleTableCell>
-              <ArticleTableCell>正</ArticleTableCell>
-              <ArticleTableCell>정</ArticleTableCell>
+              <ArticleTableCell>
+                <ArticleRuby
+                  base="正"
+                  pronunciation="zhèng"
+                />
+              </ArticleTableCell>
+              <ArticleTableCell>
+                <ArticleRuby
+                  base="正"
+                  pronunciation="せい or sei"
+                />
+              </ArticleTableCell>
+              <ArticleTableCell>
+                <ArticleRuby
+                  base="정"
+                  pronunciation="jeong"
+                />
+              </ArticleTableCell>
             </ArticleTableRow>
             <ArticleTableRow>
               <ArticleTableCell>Incorrect</ArticleTableCell>
               {/* <ArticleTableCell>Incorreto</ArticleTableCell> */}
-              <ArticleTableCell>失</ArticleTableCell>
-              <ArticleTableCell>失</ArticleTableCell>
-              <ArticleTableCell>실패</ArticleTableCell>
+              <ArticleTableCell>
+                <ArticleRuby
+                  base="失"
+                  pronunciation="shī"
+                />
+              </ArticleTableCell>
+              <ArticleTableCell>
+                <ArticleRuby
+                  base="失"
+                  pronunciation="しつ or shitsu"
+                />
+              </ArticleTableCell>
+              <ArticleTableCell>
+                <ArticleRuby
+                  base="실패"
+                  pronunciation="silpae"
+                />
+              </ArticleTableCell>
             </ArticleTableRow>
           </ArticleTableBody>
         </ArticleTable>

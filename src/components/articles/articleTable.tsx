@@ -63,9 +63,7 @@ type ArticleTableCellProps = WithReactChildren & {
 
 export function ArticleTableCell({
   children,
-  className = "",
+  className = "px-3 py-4",
 }: ArticleTableCellProps) {
-  return (
-    <td className={`px-3 py-2 ${className}`}>{children}</td>
-  )
+  return <td className={`${className}`}>{children}</td>
 }
