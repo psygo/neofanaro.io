@@ -202,7 +202,7 @@ export function Haengma3({ article }: ArticleProps) {
         </ArticleSectionTitle>
         <ArticleParagraph>
           <ArticleLink href="https://joyschooledu.com/shop/item.php?it_id=1751265282">
-            Joyschool&apos;s Haengma 3
+            Joy School&apos;s Haengma 3
           </ArticleLink>{" "}
           might be the best volume in the series, with most
           students experiencing a sharp increase in their Go

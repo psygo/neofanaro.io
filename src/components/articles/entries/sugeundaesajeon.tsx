@@ -22,13 +22,20 @@ export function Sugeundaesajeon({ article }: ArticleProps) {
         <ArticleSection>
           <ArticleParagraph>
             A Enciclopédia de Tesujis (手筋大事典) da Nihon
-            Kiin (日本棋院), a Associação de Go Japonesa,
+            Kiin (日本棋院), a Associação Japonesa de Go,
             foi o livro que mais me marcou na minha estadia
-            de um ano na Ásia, entre 2025 e 2026. Conhecida
-            como Sugeundaesajeon (수근대사전) na Coreia do
-            Sul, ela é utilizada para treinar inseis há mais
-            de 50 anos tanto no Japão quanto na Coreia do
-            Sul e na China.
+            de um ano na Ásia, entre 2025 e 2026 &mdash;
+            confira o vídeo{" "}
+            <ArticleLink
+              internal
+              href="/articles/one-year-in-asia"
+            >
+              One Year in Asia Studying Go
+            </ArticleLink>
+            . Conhecida como Sugeundaesajeon (수근대사전) na
+            Coreia do Sul, ela é utilizada para treinar
+            inseis há mais de 50 anos tanto no Japão quanto
+            na Coreia do Sul e na China.
           </ArticleParagraph>
           <ArticleBlockQuote>
             <ArticleParagraph>
@@ -64,10 +71,17 @@ export function Sugeundaesajeon({ article }: ArticleProps) {
             Nihon Kiin (日本棋院), the Japanese Go
             Association, was the book which impacted me the
             most during my one-year stay in Asia, between
-            2025 and 2026. Known as Sugeundaesajeon
-            (수근대사전) in South Korea, it has been used to
-            train inseis for more than 50 years in Japan, as
-            well as South Korea, and China.
+            2025 and 2026 &mdash; check out the{" "}
+            <ArticleLink
+              internal
+              href="/articles/one-year-in-asia"
+            >
+              One Year in Asia Studying Go
+            </ArticleLink>{" "}
+            video . Known as Sugeundaesajeon (수근대사전) in
+            South Korea, it has been used to train inseis
+            for more than 50 years in Japan, as well as
+            South Korea, and China.
           </ArticleParagraph>
           <ArticleBlockQuote>
             <ArticleParagraph>
@@ -85,7 +99,7 @@ export function Sugeundaesajeon({ article }: ArticleProps) {
           </ArticleBlockQuote>
           <ArticleParagraph>
             I recently got an SGF transcription of the
-            exercises, which I then programmatically put
+            exercises, which I then programmatically
             converted into PDF via LaTeX, with vector
             diagrams. The code is open-source:{" "}
             <ArticleLink href="https://github.com/psygo/tsumego_workbooks">
@@ -96,7 +110,7 @@ export function Sugeundaesajeon({ article }: ArticleProps) {
           <ArticleParagraph>
             I&apos;ve only created a Portuguese edition so
             far, but most of the book consists of problems
-            anyway:
+            anyway, which are language-agnostic:
           </ArticleParagraph>
           <ArticlePDFViewer src="/articles/sugeundaesajeon/sugeundaesajeon.pdf" />
         </ArticleSection>
