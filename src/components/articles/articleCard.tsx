@@ -1,10 +1,6 @@
 import { cardDecoration } from "@styles"
 
-import {
-  ArticleFromDb,
-  VoteSummary,
-  WithReactChildren,
-} from "@types"
+import { ArticleWithVotes, WithReactChildren } from "@types"
 
 import { useLang } from "@hooks/useLang"
 import { localizedText } from "@utils"
@@ -20,14 +16,10 @@ import {
 } from "./articleTitleSection"
 
 export type ArticleCardProps = {
-  post: ArticleFromDb
-  votes?: VoteSummary
+  post: ArticleWithVotes
 }
 
-export function ArticleCard({
-  post,
-  votes,
-}: ArticleCardProps) {
+export function ArticleCard({ post }: ArticleCardProps) {
   const lang = useLang()
 
   let borderColor = "oklch(21% 0.034 264.665)"
@@ -72,9 +64,9 @@ export function ArticleCard({
               className="text-sm font-semibold text-slate-500"
             />
             <VoteButtons
-              upvotes={votes?.upvotes ?? 0}
-              downvotes={votes?.downvotes ?? 0}
-              myVote={votes?.myVote ?? 0}
+              upvotes={post.upvotes}
+              downvotes={post.downvotes}
+              myVote={post.myVote}
               readOnly
             />
           </div>

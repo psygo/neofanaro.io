@@ -4,7 +4,7 @@ export function ArticleTable({
   children,
 }: WithReactChildren) {
   return (
-    <div className="not-prose mr-2 ml-2 overflow-x-auto rounded-lg border border-slate-200">
+    <div className="not-prose mr-4 ml-4 overflow-x-auto rounded-lg border border-slate-200">
       <table className="w-full border-collapse text-center text-sm">
         {children}
       </table>

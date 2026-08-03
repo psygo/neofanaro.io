@@ -8,12 +8,12 @@ import {
   type SetStateAction,
 } from "react"
 
-import { ArticleFromDb } from "../types/article"
+import { ArticleWithVotes } from "../types/article"
 import { WithReactChildren } from "../types/utils"
 
 type ArticlesContext = {
-  articles: ArticleFromDb[]
-  setArticles: Dispatch<SetStateAction<ArticleFromDb[]>>
+  articles: ArticleWithVotes[]
+  setArticles: Dispatch<SetStateAction<ArticleWithVotes[]>>
   allTags: string[]
 }
 
@@ -21,7 +21,7 @@ const ArticlesContext =
   createContext<ArticlesContext | null>(null)
 
 type ArticlesProviderProps = WithReactChildren & {
-  initialArticles: ArticleFromDb[]
+  initialArticles: ArticleWithVotes[]
 }
 
 export function ArticlesProvider({
@@ -29,7 +29,7 @@ export function ArticlesProvider({
   children,
 }: ArticlesProviderProps) {
   const [articles, setArticles] =
-    useState<ArticleFromDb[]>(initialArticles)
+    useState<ArticleWithVotes[]>(initialArticles)
 
   const allTags = Array.from(
     new Set(initialArticles.flatMap((a) => a.tags)),

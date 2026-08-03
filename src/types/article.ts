@@ -1,3 +1,5 @@
+import { VoteSummary } from "./vote"
+
 export type ArticleFromDb = {
   id: number
   path: string
@@ -11,6 +13,8 @@ export type ArticleFromDb = {
   tags: string[]
   draft: boolean
 }
+
+export type ArticleWithVotes = ArticleFromDb & VoteSummary
 
 export type ArticleProps = {
   article: ArticleFromDb

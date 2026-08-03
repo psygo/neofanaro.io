@@ -6,6 +6,7 @@ import {
   ArticleLink,
   ArticleParagraph,
   ArticleSection,
+  ArticleUnorderedList,
 } from "../articleContent"
 import {
   ArticleTable,
@@ -35,8 +36,11 @@ export function MinCJKForGo({ article }: ArticleProps) {
         <ArticleTable>
           <ArticleTableHead>
             <ArticleTableHeaderCell>
-              Word
+              English
             </ArticleTableHeaderCell>
+            {/* <ArticleTableHeaderCell>
+              Portuguese
+            </ArticleTableHeaderCell> */}
             <ArticleTableHeaderCell>
               Chinese
             </ArticleTableHeaderCell>
@@ -50,24 +54,28 @@ export function MinCJKForGo({ article }: ArticleProps) {
           <ArticleTableBody>
             <ArticleTableRow>
               <ArticleTableCell>Black</ArticleTableCell>
+              {/* <ArticleTableCell>Preto</ArticleTableCell> */}
               <ArticleTableCell>黑</ArticleTableCell>
               <ArticleTableCell>黒</ArticleTableCell>
               <ArticleTableCell>흑</ArticleTableCell>
             </ArticleTableRow>
             <ArticleTableRow>
               <ArticleTableCell>White</ArticleTableCell>
+              {/* <ArticleTableCell>Branco</ArticleTableCell> */}
               <ArticleTableCell>白</ArticleTableCell>
               <ArticleTableCell>白</ArticleTableCell>
               <ArticleTableCell>백</ArticleTableCell>
             </ArticleTableRow>
             <ArticleTableRow>
               <ArticleTableCell>Correct</ArticleTableCell>
+              {/* <ArticleTableCell>Correto</ArticleTableCell> */}
               <ArticleTableCell>正</ArticleTableCell>
               <ArticleTableCell>正</ArticleTableCell>
-              <ArticleTableCell>정수</ArticleTableCell>
+              <ArticleTableCell>정</ArticleTableCell>
             </ArticleTableRow>
             <ArticleTableRow>
               <ArticleTableCell>Incorrect</ArticleTableCell>
+              {/* <ArticleTableCell>Incorreto</ArticleTableCell> */}
               <ArticleTableCell>失</ArticleTableCell>
               <ArticleTableCell>失</ArticleTableCell>
               <ArticleTableCell>실패</ArticleTableCell>
@@ -124,6 +132,29 @@ export function MinCJKForGo({ article }: ArticleProps) {
             Japanese for Go players.
           </ArticleParagraph>
         </ArticleImageWithLegend>
+        <ArticleParagraph>
+          My knowledge of Japanese and Korean doesn&apos;t
+          go very far, and my Chinese is infinitesimal. Two
+          of the best resources I know for Japanese and
+          Korean are:
+        </ArticleParagraph>
+        <ArticleUnorderedList>
+          <li>
+            <ArticleLink href="https://jisho.org/">
+              Jisho
+            </ArticleLink>
+            , which actually means dictionary (辞典) in
+            Japanese.
+          </li>
+          <li>
+            <ArticleLink href="https://korean.dict.naver.com/">
+              Naver&apos;s Korean-English Dictionary
+            </ArticleLink>
+            , which also shows the Chinese characters
+            originating many of the Korean words or
+            compounds.
+          </li>
+        </ArticleUnorderedList>
         <ArticleParagraph>
           Some linguists and polyglots highly recommend
           learning multiple languages in parallel and
