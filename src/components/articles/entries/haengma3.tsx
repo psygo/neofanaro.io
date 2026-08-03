@@ -3,10 +3,11 @@ import { ArticleProps } from "@types"
 import { Article } from "@components/articles/article"
 import {
   ArticleBlockQuote,
-  ArticleDivider,
+  ArticleImageWithLegend,
   ArticleLink,
   ArticleParagraph,
   ArticleSection,
+  ArticleSectionTitle,
   ArticleYouTubeIframe,
 } from "../articleContent"
 import { ArticlePDFViewer } from "@components/articles/articlePDFViewer"
@@ -24,10 +25,24 @@ export function Haengma3({ article }: ArticleProps) {
           >
             Tesuji Encyclopedia
           </ArticleLink>{" "}
-          was the book with the most impact on my during my
+          was the book with the most impact on me during my
           one-year stay in Asia between 2025 and 2026, the
           Haengma series is definitely a close second.
         </ArticleParagraph>
+        <ArticleImageWithLegend
+          src="/articles/haengma3/haengma_3_book_cover.png"
+          height={100}
+          width={225}
+          className="rounded-lg"
+        >
+          <ArticleParagraph>
+            Haengma 행마 3, from{" "}
+            <ArticleLink href="https://joyschooledu.com/shop/item.php?it_id=1751265282">
+              Joy School
+            </ArticleLink>
+            .
+          </ArticleParagraph>
+        </ArticleImageWithLegend>
         <ArticleParagraph>
           Haengma 행마 is the Korean equivalent to{" "}
           <em>suji</em>&nbsp;筋 in Japanese, and is usually
@@ -39,11 +54,13 @@ export function Haengma3({ article }: ArticleProps) {
         </ArticleParagraph>
         <ArticleParagraph>
           A friend of mine from Romania, Petru Oancea 4d
-          EGF, centered his masters thesis around the idea
-          that haengma might be analogous to Nicholas Nassim
-          Taleb&apos;s concept of{" "}
+          EGF, centered his masters thesis &mdash; for the
+          Department of Baduk Studies at Myongji University
+          &mdash; around the idea that haengma might be
+          analogous to Nicholas Nassim Taleb&apos;s concept
+          of{" "}
           <ArticleLink href="https://en.wikipedia.org/wiki/Antifragility">
-            <em>antifragility</em>
+            antifragility
           </ArticleLink>
           , which describes things that gain or learn from
           adversity, improving from challenges.
@@ -63,7 +80,7 @@ export function Haengma3({ article }: ArticleProps) {
           itself.
         </ArticleParagraph>
         <ArticleParagraph>
-          One of the best examples of that concept is the
+          One of the best examples of that dynamic is the
           first exercise in the book:
         </ArticleParagraph>
         <GoDiagram
@@ -83,8 +100,8 @@ export function Haengma3({ article }: ArticleProps) {
         </ArticleParagraph>
         <ArticleParagraph>
           That position could be a result of a joseki, and
-          most positions in the book come from realistic
-          scenarios:
+          most positions in the Haengma series come from
+          realistic scenarios:
         </ArticleParagraph>
         <GoDiagram
           src="/articles/haengma3/2.svg"
@@ -113,8 +130,9 @@ export function Haengma3({ article }: ArticleProps) {
           </ArticleParagraph>
         </GoDiagram>
         <ArticleParagraph>
-          If White tries to cut Black, the end result is
-          damage on the outside stone:
+          If White tries to cut Black, the end result is a
+          clean Black wall on the outside, and damage to the
+          outside stone:
         </ArticleParagraph>
         <GoDiagram
           src="/articles/haengma3/4.svg"
@@ -123,13 +141,13 @@ export function Haengma3({ article }: ArticleProps) {
           diaNumber={4}
         >
           <ArticleParagraph>
-            White fails to cut while weakening the A stone.
+            White fails to cut, while weakening the A stone.
           </ArticleParagraph>
         </GoDiagram>
         <ArticleParagraph>
           From dia. 4, White doesn&apos;t accomplish much,
           and Black can choose how to reinforce the outside,
-          from B to E.
+          from B to E &mdash; D is best in this case.
         </ArticleParagraph>
         <ArticleParagraph>
           Interestingly, though, at the beginning of the
@@ -150,14 +168,14 @@ export function Haengma3({ article }: ArticleProps) {
         <ArticleParagraph>
           In Korea, the Haengma series is not only an
           exercise book. It&apos;s used as a way to inspect
-          the student&apos;s techniques. At{" "}
+          and develop the student&apos;s techniques. At{" "}
           <ArticleLink internal href="dowon-pairgo">
             Flower Baduk
           </ArticleLink>
-          , students debate answers with their pro teachers.
-          AI doesn&apos;t evaluate this specific technique
-          to be worth it for this joseki context, but
-          it&apos;s still a useful haengma.
+          , for example, students debate answers with their
+          pro teachers. AI doesn&apos;t evaluate this
+          specific technique to be worth it for this joseki
+          context, but it&apos;s still a useful haengma.
         </ArticleParagraph>
         <ArticleParagraph>
           AI would be satisfied with the dumpling in dia. 6,
@@ -176,9 +194,12 @@ export function Haengma3({ article }: ArticleProps) {
             despite the dumpling shape.
           </ArticleParagraph>
         </GoDiagram>
+      </ArticleSection>
 
-        <ArticleDivider />
-
+      <ArticleSection>
+        <ArticleSectionTitle>
+          Haengma 3 in PDF
+        </ArticleSectionTitle>
         <ArticleParagraph>
           <ArticleLink href="https://joyschooledu.com/shop/item.php?it_id=1751265282">
             Joyschool&apos;s Haengma 3
