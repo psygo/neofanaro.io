@@ -18,6 +18,7 @@ import {
   LatexShogi,
   LittleKnifeGodBooks,
   Magi,
+  MinCJKForGo,
   OkaoigoAiArticles,
   OneYearInAsia,
   PostAiOpeningHierarchy,
@@ -84,6 +85,8 @@ function whichArticle(path: string, post: ArticleFromDb) {
       return <LittleKnifeGodBooks article={post} />
     case "magi":
       return <Magi article={post} />
+    case "min-cjk-for-go":
+      return <MinCJKForGo article={post} />
     case "okaoigo-ai-articles":
       return <OkaoigoAiArticles article={post} />
     case "one-year-in-asia":
