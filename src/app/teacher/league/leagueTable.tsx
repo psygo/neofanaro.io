@@ -58,6 +58,42 @@ function findLatestGame(
   )
 }
 
+function playerWonAgainst(
+  games: DivisionGame[],
+  playerId: number,
+  opponentId: number,
+): boolean {
+  const latestGame = findLatestGame(
+    games,
+    playerId,
+    opponentId,
+  )
+  if (!latestGame) return false
+
+  const winner = winnerFromResult(latestGame.result)
+  return (
+    (winner === "B" && latestGame.blackId === playerId) ||
+    (winner === "W" && latestGame.whiteId === playerId)
+  )
+}
+
+// One point per win, mirroring the latest-result-per-opponent
+// shown in the matrix cells.
+function countPoints(
+  players: LeaguePlayerRow[],
+  games: DivisionGame[],
+  playerId: number,
+): number {
+  return players.reduce(
+    (points, opponent) =>
+      opponent.playerId !== playerId &&
+      playerWonAgainst(games, playerId, opponent.playerId)
+        ? points + 1
+        : points,
+    0,
+  )
+}
+
 export function LeagueTable({
   players,
   isModerator = false,
@@ -94,6 +130,9 @@ export function LeagueTable({
                 {player.code}
               </th>
             ))}
+            {/* <th className="border-b border-slate-200 px-3 py-2">
+              {lang === "pt" ? "Pontos" : "Points"}
+            </th> */}
           </tr>
         </thead>
         <tbody>
@@ -121,7 +160,7 @@ export function LeagueTable({
                 </td>
               )}
               <td className="px-3 py-2 text-left font-semibold">
-                <span className="inline-flex items-center gap-1.5">
+                <span className="inline-flex items-center gap-1.5 text-nowrap">
                   {row.name}
                   <CountryFlag
                     countryCode={row.country}
@@ -170,16 +209,11 @@ export function LeagueTable({
                   row.playerId,
                   column.playerId,
                 )
-                const winner = latestGame
-                  ? winnerFromResult(latestGame.result)
-                  : null
-                const rowWon = latestGame
-                  ? (winner === "B" &&
-                      latestGame.blackId ===
-                        row.playerId) ||
-                    (winner === "W" &&
-                      latestGame.whiteId === row.playerId)
-                  : false
+                const rowWon = playerWonAgainst(
+                  games,
+                  row.playerId,
+                  column.playerId,
+                )
 
                 if (!isModerator) {
                   if (!latestGame) {
@@ -201,7 +235,7 @@ export function LeagueTable({
                         className={`flex h-full w-full items-center justify-center px-3 py-2 font-bold transition duration-300 ${
                           rowWon
                             ? "text-green-600 hover:bg-green-50"
-                            : "text-red-600 hover:bg-red-50"
+                            : "text-red-500 hover:bg-red-50"
                         }`}
                       >
                         {rowWon ? winLabel : lossLabel}
@@ -229,7 +263,7 @@ export function LeagueTable({
                         latestGame
                           ? rowWon
                             ? "text-green-600"
-                            : "text-red-600"
+                            : "text-red-500"
                           : "text-slate-300 hover:text-slate-600"
                       }`}
                     >
@@ -242,6 +276,9 @@ export function LeagueTable({
                   </td>
                 )
               })}
+              {/* <td className="px-3 py-2 font-semibold text-slate-700">
+                {countPoints(players, games, row.playerId)}
+              </td> */}
             </tr>
           ))}
         </tbody>
