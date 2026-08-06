@@ -76,6 +76,16 @@ export function LatexBackgammon({ article }: ArticleProps) {
           file provides a pretty nice example of how to use
           the package.
         </ArticleParagraph>
+        <ArticleImageWithLegend
+          src="/articles/latex-backgammon/latex_backgammon_github.png"
+          height={100}
+          width={390}
+          className="rounded-lg"
+        >
+          <ArticleParagraph>
+            The project on Github.
+          </ArticleParagraph>
+        </ArticleImageWithLegend>
         <ArticleParagraph>
           After generating the PDF, you could also generate
           an SVG through either opening up a graphical
