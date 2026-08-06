@@ -1,3 +1,6 @@
+import type { Player } from "@server/auth/session"
+
+import { CommentWithAuthor } from "./comment"
 import { VoteSummary } from "./vote"
 
 export type ArticleFromDb = {
@@ -16,6 +19,11 @@ export type ArticleFromDb = {
 
 export type ArticleWithVotes = ArticleFromDb & VoteSummary
 
+export type ArticleWithComments = ArticleFromDb & {
+  comments: CommentWithAuthor[]
+  currentPlayer: Player | null
+}
+
 export type ArticleProps = {
-  article: ArticleFromDb
+  article: ArticleWithComments
 }

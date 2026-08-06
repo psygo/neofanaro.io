@@ -1,9 +1,9 @@
 import { Metadata } from "next"
 
-import { ArticleFromDb } from "@types"
+import { ArticleWithComments } from "@types"
 
 import { generateArticleMetadataHelper } from "@server"
-import { get_article } from "@actions"
+import { get_article_with_comments } from "@actions"
 
 import { Main } from "@components/common/main"
 import { CpiSuspense } from "@components/common/cpiSuspense"
@@ -50,7 +50,9 @@ export default async function ArticlePage({
 }: ArticlePageProps) {
   const { article_id } = await params
 
-  const article = await get_article(article_id)
+  const article = await get_article_with_comments(
+    article_id,
+  )
 
   return (
     <Main>
@@ -65,7 +67,10 @@ export default async function ArticlePage({
   )
 }
 
-function whichArticle(path: string, post: ArticleFromDb) {
+function whichArticle(
+  path: string,
+  post: ArticleWithComments,
+) {
   switch (path) {
     case "dowon-pairgo":
       return <DowonPairGo article={post} />

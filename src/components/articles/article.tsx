@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 
-import { ArticleFromDb } from "@types"
+import { ArticleWithComments } from "@types"
 
 import { useLang } from "@hooks"
 
@@ -21,7 +21,7 @@ import {
 } from "./articleTitleSection"
 
 type ArticleProps = {
-  article: ArticleFromDb
+  article: ArticleWithComments
   children: React.ReactNode
 }
 
@@ -75,6 +75,8 @@ export function Article({
       <ArticleComments
         articleId={article.id}
         articlePath={article.path}
+        initialComments={article.comments}
+        initialCurrentPlayer={article.currentPlayer}
       />
     </article>
   )

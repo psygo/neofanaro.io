@@ -15,7 +15,6 @@ import { formatDate } from "@utils"
 
 import {
   add_comment,
-  get_article_comments,
   update_comment,
   vote_comment,
   type AddCommentState,
@@ -32,34 +31,21 @@ const inputClasses =
 type ArticleCommentsProps = {
   articleId: number
   articlePath: string
+  initialComments: CommentWithAuthor[]
+  initialCurrentPlayer: Player | null
 }
 
 export function ArticleComments({
   articleId,
   articlePath,
+  initialComments,
+  initialCurrentPlayer,
 }: ArticleCommentsProps) {
   const lang = useLang()
   const [comments, setComments] = useState<
     CommentWithAuthor[]
-  >([])
-  const [currentPlayer, setCurrentPlayer] =
-    useState<Player | null>(null)
-  const [loaded, setLoaded] = useState(false)
-
-  useEffect(() => {
-    let cancelled = false
-
-    get_article_comments(articleId).then((data) => {
-      if (cancelled) return
-      setComments(data.comments)
-      setCurrentPlayer(data.currentPlayer)
-      setLoaded(true)
-    })
-
-    return () => {
-      cancelled = true
-    }
-  }, [articleId])
+  >(initialComments)
+  const currentPlayer = initialCurrentPlayer
 
   function handleNewComment(comment: CommentWithAuthor) {
     setComments((prev) => [comment, ...prev])
@@ -89,7 +75,7 @@ export function ArticleComments({
       <h2 className="text-lg font-bold">
         {lang === "pt" ? "Comentários" : "Comments"}
       </h2>
-      {loaded && !currentPlayer && (
+      {!currentPlayer && (
         <p className="text-sm text-slate-600">
           {lang === "pt" ? (
             <>
@@ -123,7 +109,7 @@ export function ArticleComments({
           onSuccess={handleNewComment}
         />
       )}
-      {loaded && comments.length === 0 && (
+      {comments.length === 0 && (
         <p className="text-sm text-slate-600">
           {lang === "pt"
             ? "Ainda não há comentários."

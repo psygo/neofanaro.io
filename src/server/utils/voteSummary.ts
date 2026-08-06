@@ -1,4 +1,4 @@
-import { eq, inArray } from "drizzle-orm"
+import { eq } from "drizzle-orm"
 
 import { VoteSummary } from "@types"
 
@@ -52,40 +52,4 @@ export async function getCommentVoteSummary(
     .where(eq(commentVotesTable.commentId, commentId))
 
   return summarizeVotes(rows, currentPlayerId)
-}
-
-export async function getCommentVoteSummaries(
-  commentIds: number[],
-  currentPlayerId?: number,
-): Promise<Map<number, VoteSummary>> {
-  if (commentIds.length === 0) return new Map()
-
-  const rows = await db
-    .select({
-      commentId: commentVotesTable.commentId,
-      playerId: commentVotesTable.playerId,
-      value: commentVotesTable.value,
-    })
-    .from(commentVotesTable)
-    .where(inArray(commentVotesTable.commentId, commentIds))
-
-  const byComment = new Map<
-    number,
-    { playerId: number; value: number }[]
-  >()
-  for (const row of rows) {
-    const list = byComment.get(row.commentId) ?? []
-    list.push({ playerId: row.playerId, value: row.value })
-    byComment.set(row.commentId, list)
-  }
-
-  return new Map(
-    commentIds.map((id) => [
-      id,
-      summarizeVotes(
-        byComment.get(id) ?? [],
-        currentPlayerId,
-      ),
-    ]),
-  )
 }

@@ -40,11 +40,11 @@ export function LatexBackgammon({ article }: ArticleProps) {
         </ArticleImageWithLegend>
         <ArticleParagraph>
           This time though, I did 99% of the project with
-          AI, more especifically, with Claude AI. The only
-          thing I didn&apos;t create with AI was the
-          specific scaffolding with TikZ and its{" "}
-          <ArticleCode>\pic</ArticleCode> API, in an attempt
-          to have the code more organized and readable.
+          AI, more especifically, Claude AI. The only thing
+          I didn&apos;t create with AI was the scaffolding
+          with TikZ and its <ArticleCode>\pic</ArticleCode>{" "}
+          API, in an attempt to have the code more organized
+          and readable.
         </ArticleParagraph>
         <ArticleBlockQuote>
           <ArticleParagraph>
@@ -63,7 +63,7 @@ export function LatexBackgammon({ article }: ArticleProps) {
           If you&apos;re interested in the project, I
           suggest you check out{" "}
           <ArticleLink href="https://github.com/psygo/latex_shogi">
-            LaTeX Shogi on Github
+            LaTeX Shogi on Github (@psygo/latex_shogi)
           </ArticleLink>{" "}
           and{" "}
           <ArticleLink href="/articles/latex-shogi">
