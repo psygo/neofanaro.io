@@ -1,3 +1,5 @@
+"use client"
+
 import { ArticleProps } from "@types"
 
 import { Article } from "@components/articles/article"
