@@ -17,3 +17,4 @@ declare module "mathjax" {
 
 declare module "mathjax/input/tex.js" {}
 declare module "mathjax/output/svg.js" {}
+declare module "@mathjax/mathjax-newcm-font/svg.js" {}
