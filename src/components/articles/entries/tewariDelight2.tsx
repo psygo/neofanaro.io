@@ -20,30 +20,30 @@ export function TewariDelight2({ article }: ArticleProps) {
             Tewari
           </ArticleLink>{" "}
           (手割り) has been one of my favorite concepts in
-          Go for a long time, not only for its inherent
-          beauty but also for its usefulness in helping us
-          avoid mistakes and inefficient moves.
+          Go for a long time, especially due to its
+          usefulness in helping us avoid mistakes and
+          inefficient moves.
         </ArticleParagraph>
         <ArticleBlockQuote>
           <ArticleParagraph>
             In case you&apos;re wondering, Tewari Delight #1
-            doesn&apos;t exist as a post here, it was
+            doesn&apos;t exist as an article yet, it was
             actually a{" "}
             <ArticleLink href="https://youtu.be/c3GU2td0To8">
               video
-            </ArticleLink>
-            .
+            </ArticleLink>{" "}
+            originally .
           </ArticleParagraph>
         </ArticleBlockQuote>
         <ArticleParagraph>
           As a teaching aid, about a year and a half ago, I
           found myself wanting an example of how not to do
           it though. After a bit of searching through the
-          web, I got to the{" "}
+          web, I ended up on the{" "}
           <ArticleLink href="https://senseis.xmp.net/?HowToLieWithTewari">
             How to lie with tewari
           </ArticleLink>{" "}
-          page on Sensei&apos;s Library.
+          page, on Sensei&apos;s Library.
         </ArticleParagraph>
         <ArticleParagraph>
           In it, a discussion about the following shape
@@ -72,8 +72,9 @@ export function TewariDelight2({ article }: ArticleProps) {
         </ArticleParagraph>
         <ArticleParagraph>
           Anyway, it&apos;s much more common for us to see
-          that shape as the peep on the tiger&apos;s move
-          with the solid connection at 2.
+          that shape as the peep on the tiger&apos;s mouth,
+          with the solid connection at 2 as a supposedly
+          inevitable follow-up.
         </ArticleParagraph>
         <ArticleParagraph>
           If that sequence were to happen as in Dia. 1, what
@@ -96,8 +97,8 @@ export function TewariDelight2({ article }: ArticleProps) {
           </ArticleParagraph>
         </GoDiagram>
         <ArticleParagraph>
-          However, it&apos;s also true that Black ends up
-          with an empty triangle:
+          However, it&apos;s also true that Black arrives at
+          an empty triangle:
         </ArticleParagraph>
         <GoDiagram
           src="/articles/tewari_delight_2/3.svg"
@@ -106,7 +107,7 @@ export function TewariDelight2({ article }: ArticleProps) {
           diaNumber={3}
         >
           <ArticleParagraph>
-            Black ends up with an empty triangle.
+            Black arrives at an empty triangle.
           </ArticleParagraph>
         </GoDiagram>
         <ArticleParagraph>
@@ -118,8 +119,9 @@ export function TewariDelight2({ article }: ArticleProps) {
           here, Black incurred a near-point loss.
         </ArticleParagraph>
         <ArticleParagraph>
-          Shifting this pattern to the 4-4 will make things
-          clearer for now:
+          Let&apos;s analyze this a bit further. Shifting
+          this pattern to the 4-4 will make things clearer
+          for now:
         </ArticleParagraph>
         <GoDiagram
           src="/articles/tewari_delight_2/4.svg"
@@ -136,8 +138,8 @@ export function TewariDelight2({ article }: ArticleProps) {
           If we apply tewari to the similar position in Dia.
           4, we can easily see that move number 6 should
           have been B instead. White 5 is clear nonsense;
-          the post-AI, modern joseki is for White to play at
-          A instead.
+          and the post-AI, modern joseki is for White to
+          play at A instead.
         </ArticleParagraph>
         <ArticleParagraph>
           Similarly, if Black were to connect from the
@@ -152,7 +154,7 @@ export function TewariDelight2({ article }: ArticleProps) {
         >
           <ArticleParagraph>
             White tries to get back to the subpar version of
-            the joseki.
+            the post-AI joseki.
           </ArticleParagraph>
         </GoDiagram>
         <ArticleParagraph>
@@ -165,7 +167,8 @@ export function TewariDelight2({ article }: ArticleProps) {
           correct punishment, AI&apos;s evaluation is B+1.5
           only. Black connecting at 2 gets us back to an
           even game, at B+0.5. Apparently, a broken keima
-          evens out with the empty triangle in this context.
+          evens out with the empty triangle at the beginning
+          of the game.
         </ArticleParagraph>
         <ArticleParagraph>
           Black should then strive for a more efficient
@@ -185,8 +188,8 @@ export function TewariDelight2({ article }: ArticleProps) {
         <ArticleParagraph>
           White shouldn&apos;t give Black a clean ponnuki
           here, but it is nonetheless a surprising move to
-          descend at 3 here, cnosidering that we will end up
-          with the broken keima shape from 1 to A. From
+          descend at 3, considering that we will eventually
+          arrive at the broken keima shape from 1 to A. From
           Black&apos;s perspective, it is finally
           satisfactory to connect at 4, since White invested
           another stone at 3.
@@ -199,8 +202,8 @@ export function TewariDelight2({ article }: ArticleProps) {
           increased a lot.
         </ArticleParagraph>
         <ArticleParagraph>
-          What happens if we move this pattern to the center
-          of the board?
+          What happens if we move this pattern back to the
+          center of the board?
         </ArticleParagraph>
         <GoDiagram
           src="/articles/tewari_delight_2/7.svg"
@@ -236,8 +239,8 @@ export function TewariDelight2({ article }: ArticleProps) {
           Towards the end of the video, unfortunately, I
           accidentally mixed some things up, and said that,
           in the case of a broken keima in the center, if
-          the corners are open, both players should go for
-          them, instead of completing or preventing the
+          the corners are open, both players should still go
+          for them, instead of completing or preventing the
           broken shape.
         </ArticleParagraph>
         <GoDiagram
@@ -263,7 +266,7 @@ export function TewariDelight2({ article }: ArticleProps) {
           broken keima. But by how much?
         </ArticleParagraph>
         <GoDiagram
-          src="/articles/tewari_delight_2/8.svg"
+          src="/articles/tewari_delight_2/9.svg"
           width={250}
           height={250}
           diaNumber={9}
@@ -273,8 +276,9 @@ export function TewariDelight2({ article }: ArticleProps) {
           </ArticleParagraph>
         </GoDiagram>
         <ArticleParagraph>
-          If Black plays for a corner now, instead of a
-          2-point loss, we get into a near 6-point deficit.
+          If Black plays for a corner this time, instead of
+          a 2-point loss, we get into a near 6-point
+          deficit.
         </ArticleParagraph>
         <ArticleParagraph>
           So there you go:
