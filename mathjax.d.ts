@@ -14,3 +14,6 @@ declare module "mathjax" {
 
   function init(config?: Record<string, unknown>): Promise<MathJaxInstance>
 }
+
+declare module "mathjax/input/tex.js" {}
+declare module "mathjax/output/svg.js" {}
