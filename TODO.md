@@ -2,6 +2,7 @@
 
 ## Priorities
 
+- [ ] Try out a LaTeX font for the articles.
 - [ ] Run my posts through Grammarly or some other autocorrect.
 - [ ] Go diagram numbering should be automatically increasing (but overrideable)
 - [ ] Create a staging/branching environment for the project.
