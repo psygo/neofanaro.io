@@ -19,7 +19,7 @@ export function GoDiagram({
   children,
 }: GoDiagramProps) {
   return (
-    <div className="flex flex-col items-center gap-3 px-4 pb-3 hyphens-auto">
+    <div className="flex flex-col items-center gap-3 px-4 py-3 hyphens-auto">
       <Image
         src={src}
         width={width}

@@ -24,6 +24,7 @@ export function SoftwareWorkSection() {
       </div>
       <div className="flex w-full flex-col gap-4">
         <CpiSuspense>
+          <Lang101 />
           <Aquarifolio />
           <Magi />
           <Fic />
@@ -192,6 +193,55 @@ function Aquarifolio() {
         src="https://aquarifolio.vercel.app/"
       ></iframe>
     </Link>
+  )
+}
+
+function Lang101() {
+  const lang = useLang()
+
+  return (
+    <Link
+      href="/articles/lang101"
+      target="_blank"
+      rel="noreferrer noopener"
+      // className={`${containerOutline} bg-gray-0 flex flex-col gap-3 px-4.5 py-3 pb-4.5`}
+      className={`${containerOutline} bg-gray-0 flex w-full flex-row items-center gap-5 px-4.5 py-3`}
+    >
+      <Image
+        loading="eager"
+        src="/software_work/lang101.png"
+        alt="Github Repo"
+        width={50}
+        height={50}
+        className="rounded-lg sm:block"
+      />
+      <div className="flex flex-col gap-3">
+        <GithubRepoCardTitleAndDescription
+          title="Lang101"
+          description={
+            lang === "pt"
+              ? "Um aplicativo de aprendizado de línguas por flashcards e Elo"
+              : "A language learning app with flashcards and Elo"
+          }
+        />
+        <Tags
+          tags={["react native", "app", "typescript", "ai"]}
+        />
+      </div>
+    </Link>
+    // <GithubRepoCard
+    //   href="/articles/lang101"
+    //   imageSrc="/software_work/lang101.png"
+    //   imageSize={60}
+    //   title="Lang101"
+    //   description={
+    //     lang === "pt"
+    //       ? "Um aplicativo de aprendizado de línguas por flashcards e Elo"
+    //       : "A language learning app with flashcards and Elo"
+    //   }
+    //   tags={["react native", "app", "typescript", "ai"]}
+    //   starTotal={20}
+    // />
   )
 }
 
