@@ -89,7 +89,7 @@ export function TennozanLeague({ article }: ArticleProps) {
             O formato da liga consistirá de os 2 primeiros
             de cada divisão sendo promovidos, e os 2
             últimos, demovidos. E a configuração de tempo
-            será Fischer 20min + 20s.
+            será provavelmente Fischer 20min + 20s.
           </ArticleParagraph>
           <ArticleParagraph>
             Todos são bem-vindos, você não precisa ser
@@ -108,7 +108,8 @@ export function TennozanLeague({ article }: ArticleProps) {
             reunificação do Japão em 1582. Esse termo pode
             ser usado de forma parecida com o meme
             &quot;Anakin, eu tenho a vantagem do terreno
-            elevado&quot;, de Star Wars.
+            elevado&quot;, no terceiro filme da saga Star
+            Wars.
           </ArticleParagraph>
           <ArticleImageWithLegend
             src="/articles/tennozan-league/high_ground.jpg"
@@ -160,7 +161,7 @@ export function TennozanLeague({ article }: ArticleProps) {
             <ArticleLink href="https://fanaroengineering.github.io/dogemp_build/">
               DOGemP
             </ArticleLink>{" "}
-            or &quot;Go Online Dojo in Portuguese&quot;,
+            or &quot;Online Go Dojo in Portuguese&quot;,
             which also featured reviews, and lectures on
             various topics &mdash; and which was managed
             through{" "}
@@ -203,15 +204,15 @@ export function TennozanLeague({ article }: ArticleProps) {
           <ArticleParagraph>
             The league format is gonna be the top 2 players
             in each division get promoted, and the bottom 2,
-            demoted . And the time settings will be 20 min +
-            20s Fischer.
+            demoted. And the time settings will probably be
+            20 min + 20s Fischer.
           </ArticleParagraph>
           <ArticleParagraph>
             Everyone is welcome, you don&apos;t need to be
-            Brazilian or speak Portuguese to join. Most
-            Brazilians know at least a bit of English, so
-            that helps a lot in communicating with
-            foreigners.
+            Brazilian or be able to speak Portuguese to
+            join. Most Brazilians know at least a bit of
+            English, so that helps a lot in communicating
+            with foreigners.
           </ArticleParagraph>
           <ArticleParagraph>
             <ArticleLink href="https://senseis.xmp.net/?Tennozan">
