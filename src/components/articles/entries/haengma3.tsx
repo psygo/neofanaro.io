@@ -93,7 +93,7 @@ export function Haengma3({ article }: ArticleProps) {
           width={375}
           height={375}
           diaNumber={1}
-          className="-mt-5"
+          className="-mt-3"
         >
           <ArticleParagraph>
             Should you connect at A?
@@ -114,7 +114,7 @@ export function Haengma3({ article }: ArticleProps) {
           width={375}
           height={375}
           diaNumber={2}
-          className="-mt-5"
+          className="-mt-3"
         >
           <ArticleParagraph>
             A joseki originating the same position.
@@ -131,7 +131,7 @@ export function Haengma3({ article }: ArticleProps) {
           width={375}
           height={375}
           diaNumber={3}
-          className="-mt-5"
+          className="-mt-3"
         >
           <ArticleParagraph>
             How the tiger&apos;s mouth changes things.
@@ -148,7 +148,7 @@ export function Haengma3({ article }: ArticleProps) {
           width={375}
           height={375}
           diaNumber={4}
-          className="-mt-5"
+          className="-mt-3"
         >
           <ArticleParagraph>
             Black 3 locks White in.
@@ -164,7 +164,7 @@ export function Haengma3({ article }: ArticleProps) {
           width={375}
           height={375}
           diaNumber={5}
-          className="-mt-5"
+          className="-mt-3"
         >
           <ArticleParagraph>
             White fails to cut, while weakening the A stone.
@@ -216,7 +216,7 @@ export function Haengma3({ article }: ArticleProps) {
           width={375}
           height={375}
           diaNumber={7}
-          className="-mt-5"
+          className="-mt-3"
         >
           <ArticleParagraph>
             AI is satisfied with poking a little bit,
@@ -232,7 +232,7 @@ export function Haengma3({ article }: ArticleProps) {
           width={375}
           height={375}
           diaNumber={8}
-          className="-mt-5"
+          className="-mt-3"
         >
           <ArticleParagraph>
             White escalates the fight.
