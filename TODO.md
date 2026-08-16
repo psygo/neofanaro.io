@@ -2,6 +2,8 @@
 
 ## Priorities
 
+- [ ] Kifu Book Article
+- [ ] Best of fanaro.io Article
 - [ ] Try out a LaTeX font for the articles.
 - [ ] Run my posts through Grammarly or some other autocorrect.
 - [ ] Go diagram numbering should be automatically increasing (but overrideable)

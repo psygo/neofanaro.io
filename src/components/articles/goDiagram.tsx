@@ -7,6 +7,7 @@ type GoDiagramProps = WithReactChildren & {
   alt?: string
   height?: number
   width?: number
+  className?: string
   diaNumber: number
 }
 
@@ -17,9 +18,12 @@ export function GoDiagram({
   width = 400,
   diaNumber,
   children,
+  className = "",
 }: GoDiagramProps) {
   return (
-    <div className="flex flex-col items-center gap-3 px-4 py-3 hyphens-auto">
+    <div
+      className={`${className} flex flex-col items-center gap-3 px-4 py-3 hyphens-auto`}
+    >
       <Image
         src={src}
         width={width}
