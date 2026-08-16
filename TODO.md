@@ -3,6 +3,7 @@
 ## Priorities
 
 - [ ] ArticleParagraph on legends should not be justified on small screens.
+- [ ] Improve the top and bottom margins for the Go Diagrams
 - [ ] Kifu Book Article
 - [ ] Best of fanaro.io Article
 - [ ] Try out a LaTeX font for the articles.

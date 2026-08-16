@@ -200,15 +200,16 @@ export function Haengma3({ article }: ArticleProps) {
             Flower Baduk
           </ArticleLink>
           , for example, students debate answers with their
-          pro teachers. AI doesn&apos;t evaluate this
-          specific technique to be worth it for this joseki
-          context, but it&apos;s still a useful haengma.
+          pro teachers.
         </ArticleParagraph>
         <ArticleParagraph>
-          If Black tried the counter-atari, AI would be
-          satisfied with the dumpling in dia. 7, considering
-          the whole sequence a 2-point loss for Black,
-          probably because the A stone is then hanging.
+          AI doesn&apos;t evaluate this specific technique
+          to be worth it for this joseki context though, but
+          it&apos;s still a useful haengma. If Black tried
+          the counter-atari, AI would be satisfied with the
+          dumpling in dia. 7, considering the whole sequence
+          a 2-point loss for Black, probably because the A
+          stone is then hanging.
         </ArticleParagraph>
         <GoDiagram
           src="/articles/haengma3/6.svg"
@@ -254,7 +255,12 @@ export function Haengma3({ article }: ArticleProps) {
           I wish there were more than 4 volumes! Haengma 4
           goes up to Fox 7d only, skill-wise &mdash;, but
           here&apos;s Haengma 3 in PDF, with vector
-          diagrams.
+          diagrams. The open source code used to generate
+          this book can be inspected here:{" "}
+          <ArticleLink href="https://github.com/psygo/tsumego_workbooks">
+            @psygo/tsumego_workbooks
+          </ArticleLink>
+          .
         </ArticleParagraph>
         <ArticleBlockQuote>
           <ArticleParagraph>
