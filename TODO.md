@@ -2,6 +2,7 @@
 
 ## Priorities
 
+- [ ] ArticleParagraph on legends should not be justified on small screens.
 - [ ] Kifu Book Article
 - [ ] Best of fanaro.io Article
 - [ ] Try out a LaTeX font for the articles.

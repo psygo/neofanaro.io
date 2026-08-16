@@ -186,7 +186,7 @@ export function Haengma3({ article }: ArticleProps) {
           width={375}
           height={375}
           diaNumber={6}
-          className="-mt-5"
+          className="-mt-3"
         >
           <ArticleParagraph>
             AI prefers the empty triangle.
