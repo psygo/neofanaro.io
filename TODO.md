@@ -2,8 +2,14 @@
 
 ## Priorities
 
+- [ ] Buy a domain
+  - Probably [neofanaro.io](https://neofanaro.io)
+- [ ] Add Discord/Canva Tennozan logo to the OG preview for the league
+
 - [ ] ArticleParagraph on legends should not be justified on small screens.
 - [ ] Improve the top and bottom margins for the Go Diagrams
+- [ ] The clipboard doesn't seem to be working for the website?
+- [ ] Aquarifolio Article
 - [ ] Kifu Book Article
 - [ ] Best of fanaro.io Article
 - [ ] Try out a LaTeX font for the articles.

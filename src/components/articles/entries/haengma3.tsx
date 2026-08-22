@@ -238,6 +238,17 @@ export function Haengma3({ article }: ArticleProps) {
             White escalates the fight.
           </ArticleParagraph>
         </GoDiagram>
+        <ArticleParagraph>
+          Much like other workbook series, the Haengma books
+          don&apos;t come with answers. You could buy the
+          answer book separately, but the idea is to have
+          the student think past just the answer, discussing
+          the many possibilities and implications of
+          different moves. And, as we&apos;ve seen with
+          AI&apos;s sequence for the first problem, new,
+          updated answers to these problems are popping up
+          everyday.
+        </ArticleParagraph>
       </ArticleSection>
 
       <ArticleSection>

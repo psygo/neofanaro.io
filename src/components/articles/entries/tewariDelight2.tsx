@@ -11,6 +11,7 @@ import {
 } from "../articleContent"
 // import { ArticleMath } from "@components/articles/articleMath"
 import { GoDiagram } from "../goDiagram"
+import { ArticleMath } from "../articleMath"
 
 export function TewariDelight2({ article }: ArticleProps) {
   return (
@@ -284,12 +285,12 @@ export function TewariDelight2({ article }: ArticleProps) {
         <ArticleParagraph>
           So there you go:
         </ArticleParagraph>
-        <ArticleUnorderedList>
+        {/* <ArticleUnorderedList>
           <li>Broken Keima = Empty Triangle</li>
           <li>Broken Jump = Broken Keima - 4</li>
           <li>Broken Jump = Empty Triangle - 4</li>
-        </ArticleUnorderedList>
-        {/* <ArticleMath display>
+        </ArticleUnorderedList> */}
+        <ArticleMath display>
           {String.raw`
             \begin{array}{l@{\;}l}
               Broken\ Keima &= Empty\ Triangle \\
@@ -300,7 +301,7 @@ export function TewariDelight2({ article }: ArticleProps) {
               Broken\ Jump &= Empty\ Triangle - 4
             \end{array}
           `}
-        </ArticleMath> */}
+        </ArticleMath>
         <ArticleParagraph>
           That&apos;s simple math for you. Relatively true.
           Absolute nonsense.
