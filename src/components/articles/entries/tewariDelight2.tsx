@@ -292,14 +292,13 @@ export function TewariDelight2({ article }: ArticleProps) {
         </ArticleUnorderedList> */}
         <ArticleMath display>
           {String.raw`
-            \begin{array}{l@{\;}l}
-              Broken\ Keima &= Empty\ Triangle \\
-              Broken\ Jump &= Broken\ Keima - 4
+            \begin{aligned}
+              &Broken\ Keima = Empty\ Triangle \\
+              &Broken\ Jump \ \ = Broken\ Keima - 4 \\
+              &\therefore
               \\
-              \therefore
-              \\
-              Broken\ Jump &= Empty\ Triangle - 4
-            \end{array}
+              &Broken\ Jump \ \ = Empty\ Triangle - 4
+            \end{aligned}
           `}
         </ArticleMath>
         <ArticleParagraph>

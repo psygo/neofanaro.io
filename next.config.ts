@@ -1,10 +1,5 @@
 import type { NextConfig } from "next"
 
-const nextConfig: NextConfig = {
-  serverExternalPackages: [
-    "mathjax",
-    "@mathjax/mathjax-newcm-font",
-  ],
-}
+const nextConfig: NextConfig = {}
 
 export default nextConfig
