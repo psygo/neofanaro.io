@@ -93,7 +93,6 @@ export function Haengma3({ article }: ArticleProps) {
           src="/articles/haengma3/1.svg"
           width={375}
           height={375}
-          diaNumber={1}
         >
           <GoDiagramLegend>
             Should you connect at A?
@@ -113,7 +112,6 @@ export function Haengma3({ article }: ArticleProps) {
           src="/articles/haengma3/2.svg"
           width={375}
           height={375}
-          diaNumber={2}
         >
           <GoDiagramLegend>
             A joseki originating the same position.
@@ -129,7 +127,6 @@ export function Haengma3({ article }: ArticleProps) {
           src="/articles/haengma3/2.1.svg"
           width={375}
           height={375}
-          diaNumber={3}
         >
           <GoDiagramLegend>
             How the tiger&apos;s mouth changes things.
@@ -145,7 +142,6 @@ export function Haengma3({ article }: ArticleProps) {
           src="/articles/haengma3/3.svg"
           width={375}
           height={375}
-          diaNumber={4}
         >
           <GoDiagramLegend>
             Black 3 locks White in.
@@ -160,7 +156,6 @@ export function Haengma3({ article }: ArticleProps) {
           src="/articles/haengma3/4.svg"
           width={375}
           height={375}
-          diaNumber={5}
         >
           <GoDiagramLegend>
             White fails to cut, while weakening the A stone.
@@ -181,7 +176,6 @@ export function Haengma3({ article }: ArticleProps) {
           src="/articles/haengma3/5.svg"
           width={375}
           height={375}
-          diaNumber={6}
         >
           <GoDiagramLegend>
             AI prefers the empty triangle.
@@ -210,7 +204,6 @@ export function Haengma3({ article }: ArticleProps) {
           src="/articles/haengma3/6.svg"
           width={375}
           height={375}
-          diaNumber={7}
         >
           <GoDiagramLegend>
             AI is satisfied with poking a little bit,
@@ -225,7 +218,6 @@ export function Haengma3({ article }: ArticleProps) {
           src="/articles/haengma3/6.1.svg"
           width={375}
           height={375}
-          diaNumber={8}
         >
           <GoDiagramLegend>
             White escalates the fight.

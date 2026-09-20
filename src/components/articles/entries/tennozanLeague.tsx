@@ -127,7 +127,6 @@ export function TennozanLeague({ article }: ArticleProps) {
             src="/articles/tennozan-league/1.svg"
             width={400}
             height={400}
-            diaNumber={1}
           >
             <GoDiagramLegend>
               Um exemplo de &quot;tennozan&quot; no Go, na
@@ -241,7 +240,6 @@ export function TennozanLeague({ article }: ArticleProps) {
             src="/articles/tennozan-league/1.svg"
             width={400}
             height={400}
-            diaNumber={1}
           >
             <GoDiagramLegend>
               An example of a &quot;tennozan&quot; in Go,

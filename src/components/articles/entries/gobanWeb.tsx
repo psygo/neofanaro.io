@@ -184,10 +184,7 @@ export function GobanWeb({ article }: ArticleProps) {
           </ArticleLink>
           . Here&apos;s an example:
         </ArticleParagraph>
-        <GoDiagram
-          src="/articles/dowon-pairgo/dowon_pairgo_1.svg"
-          diaNumber={1}
-        >
+        <GoDiagram src="/articles/dowon-pairgo/dowon_pairgo_1.svg">
           <GoDiagramLegend>
             A mistaken, unexpected cut (8), with surprising
             results afterwards. For more info, check out{" "}

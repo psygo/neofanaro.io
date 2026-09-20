@@ -5,10 +5,11 @@
 - [ ] Buy a domain
   - Probably [neofanaro.io](https://neofanaro.io)
 - [ ] Try out a LaTeX font for the articles.
-- [ ] Run my posts through Grammarly or some other autocorrect.
 - [ ] Go diagram numbering should be automatically increasing (but overrideable)
 - [ ] Create a staging/branching environment for the project.
 - [ ] The initial page layout once I get the blog going should probably have the top article on top, with the website's title above it.
+- [ ] User settings for the blog viewing:
+  - [ ] font settings.
 
 ## Articles
 

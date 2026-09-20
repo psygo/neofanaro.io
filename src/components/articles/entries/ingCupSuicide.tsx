@@ -70,7 +70,6 @@ export function IngCupSuicide({ article }: ArticleProps) {
           src="/articles/ing-cup-suicide/ing_cup_rules_1.svg"
           width={200}
           height={200}
-          diaNumber={1}
         >
           <GoDiagramLegend>
             Who wins the capturing race inside? Is it a
@@ -85,7 +84,6 @@ export function IngCupSuicide({ article }: ArticleProps) {
           src="/articles/ing-cup-suicide/ing_cup_rules_2.svg"
           width={200}
           height={200}
-          diaNumber={2}
         >
           <GoDiagramLegend>
             Black 2 and 4 are played elsewhere.
@@ -95,7 +93,6 @@ export function IngCupSuicide({ article }: ArticleProps) {
           src="/articles/ing-cup-suicide/ing_cup_rules_3.svg"
           width={200}
           height={200}
-          diaNumber={3}
         >
           <GoDiagramLegend>
             Since Black cannot play at A, the triangle
@@ -119,7 +116,6 @@ export function IngCupSuicide({ article }: ArticleProps) {
           src="/articles/ing-cup-suicide/ing_cup_rules_4.svg"
           width={200}
           height={200}
-          diaNumber={4}
         >
           <GoDiagramLegend>
             Black can now race with White more freely.

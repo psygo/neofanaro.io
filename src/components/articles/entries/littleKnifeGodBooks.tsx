@@ -49,10 +49,7 @@ export function LittleKnifeGodBooks({
           </ArticleLink>
           , where should Black play?
         </ArticleParagraph>
-        <GoDiagram
-          src="/articles/little-knife-god-books/kato_chie_vs_yoshihiro_koike.svg"
-          diaNumber={1}
-        >
+        <GoDiagram src="/articles/little-knife-god-books/kato_chie_vs_yoshihiro_koike.svg">
           <GoDiagramLegend>
             Kato Chie 3p (White) vs Yoshihiro Koike 7p
             (Black). Black to play.
@@ -63,10 +60,7 @@ export function LittleKnifeGodBooks({
           will get fixed on the outside, and the cut at 4
           will likely be triggered:
         </ArticleParagraph>
-        <GoDiagram
-          src="/articles/little-knife-god-books/kato_chie_vs_yoshihiro_koike_p1.svg"
-          diaNumber={2}
-        >
+        <GoDiagram src="/articles/little-knife-god-books/kato_chie_vs_yoshihiro_koike_p1.svg">
           <GoDiagramLegend>
             Lukewarm. And White gets to exploit a cut.
           </GoDiagramLegend>
@@ -83,7 +77,6 @@ export function LittleKnifeGodBooks({
           src="/articles/little-knife-god-books/101_weiqi_p1.svg"
           height={240}
           width={240}
-          diaNumber={3}
         >
           <GoDiagramLegend>
             Problem 128242 from 101weiqi.
@@ -96,7 +89,6 @@ export function LittleKnifeGodBooks({
           src="/articles/little-knife-god-books/101_weiqi_p3.svg"
           height={240}
           width={240}
-          diaNumber={4}
         >
           <GoDiagramLegend>
             Black&apos;s marked stones have more liberties
@@ -110,10 +102,7 @@ export function LittleKnifeGodBooks({
           By doing so, we can create many cutting points on
           White&apos;s shape:
         </ArticleParagraph>
-        <GoDiagram
-          src="/articles/little-knife-god-books/kato_chie_vs_yoshihiro_koike_p2.svg"
-          diaNumber={5}
-        >
+        <GoDiagram src="/articles/little-knife-god-books/kato_chie_vs_yoshihiro_koike_p2.svg">
           <GoDiagramLegend>
             Applying pressure and creating cutting points on
             White&apos;s shape.
@@ -123,10 +112,7 @@ export function LittleKnifeGodBooks({
           If White goes for a capturing race, Black is the
           one ahead actually.
         </ArticleParagraph>
-        <GoDiagram
-          src="/articles/little-knife-god-books/kato_chie_vs_yoshihiro_koike_p3.svg"
-          diaNumber={6}
-        >
+        <GoDiagram src="/articles/little-knife-god-books/kato_chie_vs_yoshihiro_koike_p3.svg">
           <GoDiagramLegend>
             Black wins most semeais.
           </GoDiagramLegend>

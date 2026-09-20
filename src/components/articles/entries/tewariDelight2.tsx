@@ -53,7 +53,6 @@ export function TewariDelight2({ article }: ArticleProps) {
           src="/articles/tewari_delight_2/1.svg"
           width={250}
           height={250}
-          diaNumber={1}
         >
           <GoDiagramLegend>
             An adaptation of the board position on the
@@ -90,7 +89,6 @@ export function TewariDelight2({ article }: ArticleProps) {
           src="/articles/tewari_delight_2/2.svg"
           width={250}
           height={250}
-          diaNumber={2}
         >
           <GoDiagramLegend>
             White ends up with a broken keima.
@@ -104,7 +102,6 @@ export function TewariDelight2({ article }: ArticleProps) {
           src="/articles/tewari_delight_2/3.svg"
           width={250}
           height={250}
-          diaNumber={3}
         >
           <GoDiagramLegend>
             Black arrives at an empty triangle.
@@ -127,7 +124,6 @@ export function TewariDelight2({ article }: ArticleProps) {
           src="/articles/tewari_delight_2/4.svg"
           width={350}
           height={350}
-          diaNumber={4}
         >
           <GoDiagramLegend>
             The same problem, but transposed to a modern,
@@ -150,7 +146,6 @@ export function TewariDelight2({ article }: ArticleProps) {
           src="/articles/tewari_delight_2/5.svg"
           width={350}
           height={350}
-          diaNumber={5}
         >
           <GoDiagramLegend>
             White tries to get back to the subpar version of
@@ -179,7 +174,6 @@ export function TewariDelight2({ article }: ArticleProps) {
           src="/articles/tewari_delight_2/6.svg"
           width={350}
           height={350}
-          diaNumber={6}
         >
           <GoDiagramLegend>
             Black tries to justify connecting at 4.
@@ -209,7 +203,6 @@ export function TewariDelight2({ article }: ArticleProps) {
           src="/articles/tewari_delight_2/7.svg"
           width={250}
           height={250}
-          diaNumber={7}
         >
           <GoDiagramLegend>
             The same pattern, but now in the center of the
@@ -247,7 +240,6 @@ export function TewariDelight2({ article }: ArticleProps) {
           src="/articles/tewari_delight_2/8.svg"
           width={250}
           height={250}
-          diaNumber={8}
         >
           <GoDiagramLegend>
             Should we play at A or go for open corners?
@@ -269,7 +261,6 @@ export function TewariDelight2({ article }: ArticleProps) {
           src="/articles/tewari_delight_2/9.svg"
           width={250}
           height={250}
-          diaNumber={9}
         >
           <GoDiagramLegend>
             What&apos;s the cost of not playing at A?

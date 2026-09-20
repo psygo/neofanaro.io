@@ -283,9 +283,6 @@ export function LeagueTable({
                   </td>
                 )
               })}
-              {/* <td className="px-3 py-2 font-semibold text-slate-700">
-                {countPoints(players, games, row.playerId)}
-              </td> */}
             </tr>
           ))}
         </tbody>

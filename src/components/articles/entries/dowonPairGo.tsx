@@ -126,10 +126,7 @@ export function DowonPairGo({ article }: ArticleProps) {
           pattern, my partner played the mistaken,
           unexpected cut at 8:
         </ArticleParagraph>
-        <GoDiagram
-          src="/articles/dowon-pairgo/dowon_pairgo_1.svg"
-          diaNumber={1}
-        >
+        <GoDiagram src="/articles/dowon-pairgo/dowon_pairgo_1.svg">
           <GoDiagramLegend>
             A mistaken, unexpected cut (8) from my pair Go
             partner. White should have crawled with 8 at 9.
@@ -158,10 +155,7 @@ export function DowonPairGo({ article }: ArticleProps) {
           White gets a ton of squeezing power from the
           outside:
         </ArticleParagraph>
-        <GoDiagram
-          src="/articles/dowon-pairgo/dowon_pairgo_3.svg"
-          diaNumber={2}
-        >
+        <GoDiagram src="/articles/dowon-pairgo/dowon_pairgo_3.svg">
           <GoDiagramLegend>
             Black&apos;s groups surrounding White&apos;s
             captured stones are bound to get squeezed.
@@ -177,10 +171,7 @@ export function DowonPairGo({ article }: ArticleProps) {
           This is AI&apos;s recommended sequence, after
           Black captures White&apos;s group on the side:
         </ArticleParagraph>
-        <GoDiagram
-          src="/articles/dowon-pairgo/dowon_pairgo_2.svg"
-          diaNumber={3}
-        >
+        <GoDiagram src="/articles/dowon-pairgo/dowon_pairgo_2.svg">
           <GoDiagramLegend>
             Black get&apos;s squeezed from the bottom-left
             and the bottom-right.
@@ -199,10 +190,7 @@ export function DowonPairGo({ article }: ArticleProps) {
           instead play what my opponent pair opted for, to
           capture the cutting stone:
         </ArticleParagraph>
-        <GoDiagram
-          src="/articles/dowon-pairgo/dowon_pairgo_4.svg"
-          diaNumber={4}
-        >
+        <GoDiagram src="/articles/dowon-pairgo/dowon_pairgo_4.svg">
           <GoDiagramLegend>
             Black&apos;s thickness and outside trump
             capturing a sizeable chunk on the side.

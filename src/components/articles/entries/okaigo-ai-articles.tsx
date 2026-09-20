@@ -95,10 +95,7 @@ export function OkaoigoAiArticles({
           </ArticleLink>{" "}
           post:
         </ArticleParagraph>
-        <GoDiagram
-          src="/articles/okaigo-ai-articles/okaigo_1.1.svg"
-          diaNumber={1}
-        >
+        <GoDiagram src="/articles/okaigo-ai-articles/okaigo_1.1.svg">
           <GoDiagramLegend>
             How should you deal with Black&apos;s cut?
           </GoDiagramLegend>
@@ -114,10 +111,7 @@ export function OkaoigoAiArticles({
           FineArt refutes the cut with a beautiful driving
           technique:
         </ArticleParagraph>
-        <GoDiagram
-          src="/articles/okaigo-ai-articles/okaigo_1.2.svg"
-          diaNumber={2}
-        >
+        <GoDiagram src="/articles/okaigo-ai-articles/okaigo_1.2.svg">
           <GoDiagramLegend>
             This requires reading, but it&apos;s mostly
             technique at its core.
@@ -133,10 +127,7 @@ export function OkaoigoAiArticles({
           overconcentration in the bottom-left corner, while
           White reaps all the benefits on the outside:
         </ArticleParagraph>
-        <GoDiagram
-          src="/articles/okaigo-ai-articles/okaigo_1.3.svg"
-          diaNumber={3}
-        >
+        <GoDiagram src="/articles/okaigo-ai-articles/okaigo_1.3.svg">
           <GoDiagramLegend>
             White even gets to capture the original cutting
             stone, A.
@@ -151,10 +142,7 @@ export function OkaoigoAiArticles({
           And here&apos;s another exquisite example of
           AI&apos;s next-level skills:
         </ArticleParagraph>
-        <GoDiagram
-          src="/articles/okaigo-ai-articles/okaigo_3.1.svg"
-          diaNumber={4}
-        >
+        <GoDiagram src="/articles/okaigo-ai-articles/okaigo_3.1.svg">
           <GoDiagramLegend>
             How can White survive or escape?
           </GoDiagramLegend>
@@ -164,10 +152,7 @@ export function OkaoigoAiArticles({
           still, it looks difficult to live inside that
           area, or to get out. What can White do?
         </ArticleParagraph>
-        <GoDiagram
-          src="/articles/okaigo-ai-articles/okaigo_3.2.svg"
-          diaNumber={5}
-        >
+        <GoDiagram src="/articles/okaigo-ai-articles/okaigo_3.2.svg">
           <GoDiagramLegend>
             Through a sacrifice and a tesuji, White exposes
             Black&apos;s shortage of liberties on the left,

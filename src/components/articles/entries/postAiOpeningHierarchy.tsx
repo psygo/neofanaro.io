@@ -42,7 +42,6 @@ export function PostAiOpeningHierarchy({
             src="/articles/post-ai-opening-hierarchy/sanrensei_fuseki.svg"
             height={120}
             width={120}
-            diaNumber={1}
           >
             <GoDiagramLegend>
               The Sanrensei Fuseki
@@ -52,7 +51,6 @@ export function PostAiOpeningHierarchy({
             src="/articles/post-ai-opening-hierarchy/chinese_fuseki.svg"
             height={120}
             width={120}
-            diaNumber={2}
           >
             <GoDiagramLegend>
               The Chinese Fuseki

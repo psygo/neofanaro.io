@@ -5,3 +5,15 @@
   background-color: #0f0f0f;
   color: white;
 }
+
+.go-diagram-scope {
+  counter-reset: dia-diagram;
+}
+
+.go-diagram {
+  counter-increment: dia-diagram;
+}
+
+.go-diagram-number::before {
+  content: "Dia. " counter(dia-diagram) ".";
+}
