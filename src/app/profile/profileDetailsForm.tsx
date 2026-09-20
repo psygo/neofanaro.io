@@ -1,6 +1,11 @@
 "use client"
 
-import { useActionState, useMemo, useState } from "react"
+import {
+  useActionState,
+  useMemo,
+  useState,
+  useSyncExternalStore,
+} from "react"
 
 import { update_profile_details } from "@actions"
 
@@ -12,6 +17,14 @@ import { CountryFlag } from "@components/common/countryFlag"
 const inputClasses =
   "rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-slate-700 focus:outline-2 focus:outline-slate-400"
 const labelClasses = "font-semibold text-slate-700"
+
+function useIsClient() {
+  return useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false,
+  )
+}
 
 type ProfileDetailsFormProps = {
   country: string | null
@@ -32,6 +45,12 @@ export function ProfileDetailsForm({
   const [selectedCountry, setSelectedCountry] = useState(
     country ?? "",
   )
+
+  // `countries` names come from `Intl.DisplayNames`, which server (Node)
+  // and browser ICU data can disagree on for some regions (e.g. the
+  // Falklands) — rendering the options only after mount keeps SSR output
+  // and first hydration pass in sync instead of mismatching on text.
+  const mounted = useIsClient()
 
   const sortedCountries = useMemo(
     () =>
@@ -71,20 +90,26 @@ export function ProfileDetailsForm({
                 ? "Selecione um país"
                 : "Select a country"}
             </option>
-            {sortedCountries.map((option) => (
-              <option key={option.code} value={option.code}>
-                {lang === "pt"
-                  ? option.namePt
-                  : option.nameEn}
-              </option>
-            ))}
+            {mounted &&
+              sortedCountries.map((option) => (
+                <option
+                  key={option.code}
+                  value={option.code}
+                >
+                  {lang === "pt"
+                    ? option.namePt
+                    : option.nameEn}
+                </option>
+              ))}
           </select>
         </div>
       </div>
 
       <div className="flex flex-col gap-1">
         <label htmlFor="nick" className={labelClasses}>
-          {lang === "pt" ? "Usuário do OGS" : "OGS Username"}
+          {lang === "pt"
+            ? "Usuário do OGS"
+            : "OGS Username"}
         </label>
         <input
           id="nick"

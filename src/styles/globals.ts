@@ -1,4 +1,5 @@
 import { Geist, Geist_Mono } from "next/font/google"
+import localFont from "next/font/local"
 
 // ---------------------------------------------------------
 // Fonts
@@ -11,6 +12,35 @@ export const geistSans = Geist({
 export const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+})
+
+// KaTeX's own text font (Latin Modern, the classic LaTeX
+// typeface), reused here so the "LaTeX" article font option
+// doesn't need a separate webfont dependency.
+export const latexFont = localFont({
+  variable: "--font-latex",
+  src: [
+    {
+      path: "../../node_modules/katex/dist/fonts/KaTeX_Main-Regular.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../../node_modules/katex/dist/fonts/KaTeX_Main-Bold.woff2",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "../../node_modules/katex/dist/fonts/KaTeX_Main-Italic.woff2",
+      weight: "400",
+      style: "italic",
+    },
+    {
+      path: "../../node_modules/katex/dist/fonts/KaTeX_Main-BoldItalic.woff2",
+      weight: "700",
+      style: "italic",
+    },
+  ],
 })
 
 // ---------------------------------------------------------

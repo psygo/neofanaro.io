@@ -56,9 +56,7 @@ export function MultiSelect({
       >
         <span className="flex flex-wrap gap-1">
           {selected.length === 0 ? (
-            <span className="font-normal text-gray-700">
-              {placeholder}
-            </span>
+            <span>{placeholder}</span>
           ) : selected.length <= MAX_BADGES ? (
             selected.map((s) => (
               <span

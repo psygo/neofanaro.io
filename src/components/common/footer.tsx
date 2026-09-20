@@ -24,6 +24,7 @@ export function GithubLogo() {
       alt="GitHub"
       href="https://github.com/psygo/neofanaro.io"
       size={28}
+      className="h-7 w-7"
     />
   )
 }

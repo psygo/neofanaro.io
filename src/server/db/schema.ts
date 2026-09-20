@@ -57,6 +57,9 @@ export const players = pgTable("players", {
   description: text(),
   rating: integer().default(0).notNull(),
   passwordHash: text("password_hash"),
+  articleFont: text("article_font")
+    .default("geist")
+    .notNull(),
 })
 
 export const playersRelations = relations(
@@ -196,9 +199,7 @@ export const commentsTable = pgTable("comments", {
   articleId: integer("article_id").notNull(),
   playerId: integer("player_id").notNull(),
   content: text().notNull(),
-  createdAt: timestamp("created_at")
-    .notNull()
-    .defaultNow(),
+  createdAt: timestamp("created_at").notNull().defaultNow(),
   editedAt: timestamp("edited_at"),
 })
 

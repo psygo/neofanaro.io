@@ -1,11 +1,18 @@
 "use client"
 
+import Image from "next/image"
+
 import type { get_game } from "@actions"
 
 import { useLang } from "@hooks"
-import { winnerFromResult } from "@utils"
+import {
+  ogsPreviewImageUrl,
+  winnerFromResult,
+} from "@utils"
 
-type Game = NonNullable<Awaited<ReturnType<typeof get_game>>>
+type Game = NonNullable<
+  Awaited<ReturnType<typeof get_game>>
+>
 
 function signed(n: number) {
   return n >= 0 ? `+${n}` : `${n}`
@@ -14,6 +21,7 @@ function signed(n: number) {
 export function GameDetails({ game }: { game: Game }) {
   const lang = useLang()
   const winner = winnerFromResult(game.result)
+  const previewSrc = ogsPreviewImageUrl(game.ogsLink)
 
   return (
     <div className="flex flex-col gap-6">
@@ -21,6 +29,17 @@ export function GameDetails({ game }: { game: Game }) {
         {game.black?.name ?? "?"} vs{" "}
         {game.white?.name ?? "?"}
       </h1>
+      {previewSrc && (
+        <Image
+          unoptimized
+          src={previewSrc}
+          alt=""
+          width={220}
+          height={220}
+          style={{ width: 220, height: 220 }}
+          className="mx-auto rounded-lg border border-slate-200"
+        />
+      )}
       <p className="text-center text-slate-600">
         {game.date}
       </p>

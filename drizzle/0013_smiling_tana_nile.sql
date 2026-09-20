@@ -1,0 +1,1 @@
+ALTER TABLE "players" ALTER COLUMN "article_font" SET DEFAULT 'geist';

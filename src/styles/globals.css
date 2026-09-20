@@ -17,3 +17,29 @@
 .go-diagram-number::before {
   content: "Dia. " counter(dia-diagram) ".";
 }
+
+/* Only the container needs the rule: font-family inherits, so
+   descendants that set their own (code blocks, KaTeX math)
+   are left alone. */
+.font-geist {
+  font-family:
+    var(--font-geist-sans), ui-sans-serif, system-ui,
+    sans-serif;
+}
+
+.font-latex {
+  font-family:
+    var(--font-latex), "Latin Modern Roman", Georgia, serif;
+}
+
+/* Tailwind's preflight sets `height: auto` on every <img> but
+   leaves width alone, so next/image's own dev warning ("width
+   or height modified, but not the other") fires on any Image
+   that doesn't pin both sides itself. Applied only to images
+   meant to scale responsively with their container (article
+   content images) — fixed-size icons pin their own size
+   instead, since width: 100% here would blow them up. */
+.responsive-image {
+  width: 100%;
+  height: auto;
+}

@@ -33,7 +33,9 @@ export function GoDiagram({
         src={src}
         width={width}
         height={height}
-        className={`mt-0 mb-0`}
+        sizes="100vw"
+        style={{ maxWidth: `${width}px` }}
+        className="responsive-image mt-0 mb-0"
         alt={alt}
       />
       <div className="grid grid-cols-[auto_1fr] gap-2 px-12 text-sm sm:text-base [&>p]:mt-0 [&>p]:mb-0">

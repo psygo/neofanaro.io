@@ -1,6 +1,7 @@
 "use client"
 
 import type { Player } from "@server"
+import type { PlayerGame } from "@actions"
 
 import { CommentWithArticle } from "@types"
 
@@ -8,17 +9,21 @@ import { useLang } from "@hooks"
 
 import { LangLink } from "@components/common/langLink"
 
+import { ArticleFontForm } from "./articleFontForm"
 import { DescriptionForm } from "./descriptionForm"
 import { MyComments } from "./myComments"
+import { MyGames } from "./myGames"
 import { ProfileDetailsForm } from "./profileDetailsForm"
 import { SignOutButton } from "./signOutButton"
 
 export function ProfileSection({
   player,
   comments,
+  games,
 }: {
   player: Player | null
   comments: CommentWithArticle[]
+  games: PlayerGame[]
 }) {
   const lang = useLang()
 
@@ -65,8 +70,10 @@ export function ProfileSection({
           ogsLink={player.ogsLink}
         />
         <DescriptionForm description={player.description} />
+        <ArticleFontForm articleFont={player.articleFont} />
       </div>
       <hr className="border-0.75 w-full border-gray-200" />
+      <MyGames games={games} lang={lang} />
       <MyComments comments={comments} lang={lang} />
       <hr className="border-0.75 w-full border-gray-200" />
       <SignOutButton />

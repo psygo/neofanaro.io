@@ -8,3 +8,7 @@ export enum OrderBy {
   date,
   views,
 }
+
+export type SortDirection = "asc" | "desc"
+
+export type ArticleFont = "geist" | "latex"

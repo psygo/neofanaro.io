@@ -1,8 +1,13 @@
 "use server"
 
-import { and, desc, eq, sql } from "drizzle-orm"
+import { and, asc, desc, eq, sql } from "drizzle-orm"
 
-import { ArticleFromDb, ArticleWithVotes, OrderBy } from "@types"
+import {
+  ArticleFromDb,
+  ArticleWithVotes,
+  OrderBy,
+  SortDirection,
+} from "@types"
 
 import { getCurrentPlayer } from "@server/auth/session"
 import { db, articlesTable, articleVotesTable } from "@db"
@@ -25,6 +30,7 @@ export async function get_articles(
   orderBy: OrderBy = OrderBy.date,
   includeDrafts = false,
   tags?: string[],
+  direction: SortDirection = "desc",
 ): Promise<ArticleWithVotes[] | undefined> {
   try {
     const draftCondition = includeDrafts
@@ -43,15 +49,23 @@ export async function get_articles(
 
     const player = await getCurrentPlayer()
 
-    const upvotes = sql<number>`count(*) filter (where ${articleVotesTable.value} = 1)`.mapWith(
-      Number,
-    )
-    const downvotes = sql<number>`count(*) filter (where ${articleVotesTable.value} = -1)`.mapWith(
-      Number,
-    )
-    const myVote = sql<number>`coalesce(max(${articleVotesTable.value}) filter (where ${articleVotesTable.playerId} = ${player?.id ?? -1}), 0)`.mapWith(
-      Number,
-    )
+    const sortColumn =
+      orderBy === OrderBy.date
+        ? articlesTable.date
+        : articlesTable.views
+
+    const upvotes =
+      sql<number>`count(*) filter (where ${articleVotesTable.value} = 1)`.mapWith(
+        Number,
+      )
+    const downvotes =
+      sql<number>`count(*) filter (where ${articleVotesTable.value} = -1)`.mapWith(
+        Number,
+      )
+    const myVote =
+      sql<number>`coalesce(max(${articleVotesTable.value}) filter (where ${articleVotesTable.playerId} = ${player?.id ?? -1}), 0)`.mapWith(
+        Number,
+      )
 
     const articles = await db
       .select({
@@ -78,9 +92,9 @@ export async function get_articles(
       .where(condition)
       .groupBy(articlesTable.id)
       .orderBy(
-        orderBy === OrderBy.date
-          ? desc(articlesTable.date)
-          : desc(articlesTable.views),
+        direction === "asc"
+          ? asc(sortColumn)
+          : desc(sortColumn),
       )
 
     return articles as ArticleWithVotes[]

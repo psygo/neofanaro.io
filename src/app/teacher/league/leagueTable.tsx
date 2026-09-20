@@ -122,7 +122,7 @@ export function LeagueTable({
             <th className="w-32 border-b border-slate-200 px-3 py-2 text-left">
               {lang === "pt" ? "OGS" : "OGS"}
             </th>
-            <th className="w-14 border-b border-slate-200 px-3 py-2">
+            <th className="w-20 border-b border-slate-200 px-3 py-2">
               {lang === "pt" ? "Pontos" : "Points"}
             </th>
             {players.map((player) => (

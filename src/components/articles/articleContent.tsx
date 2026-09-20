@@ -116,8 +116,9 @@ export function ArticleImageWithLegend({
         height={height}
         width={width}
         sizes="100vw"
+        style={{ maxWidth: `${width}px` }}
         alt={alt}
-        className={`mt-0 mb-0 ${className}`}
+        className={`responsive-image mt-0 mb-0 ${className}`}
       />
       <div className="px-10 text-sm text-slate-600 sm:text-base [&>p]:mt-0 [&>p]:mb-0">
         {children}

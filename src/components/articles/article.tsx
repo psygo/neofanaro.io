@@ -42,10 +42,15 @@ export function Article({
       ? "pt-br"
       : "en-us"
 
+  const fontClass =
+    article.currentPlayer?.articleFont === "latex"
+      ? "font-latex"
+      : "font-geist"
+
   return (
     <article
       lang={articleLang}
-      className={`prose go-diagram-scope min-w-0 border-r-2 transition-colors duration-150 sm:px-2 ${isDragging ? "border-r-slate-300" : "border-r-transparent"}`}
+      className={`prose go-diagram-scope min-w-0 border-r-2 transition-colors duration-150 sm:px-2 ${fontClass} ${isDragging ? "border-r-slate-300" : "border-r-transparent"}`}
       style={{ maxWidth: `${maxWidth}rem` }}
     >
       <ArticleViewTracker path={article.path} />
