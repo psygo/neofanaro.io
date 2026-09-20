@@ -22,4 +22,12 @@ export const containerOutline =
 export const cardDecoration =
   "rounded-xl border-2 border-gray-300 px-4 pt-3 pb-3.5 shadow-md transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:bg-gray-100 hover:shadow-xl hover:duration-200"
 
+export function articleCategoryColor(tags: string[]) {
+  if (tags.includes("baduk"))
+    return "oklch(79.5% 0.184 86.047)"
+  if (tags.includes("software"))
+    return "oklch(66.6% 0.179 58.318)"
+  return "oklch(21% 0.034 264.665)"
+}
+
 // ---------------------------------------------------------

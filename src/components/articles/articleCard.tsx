@@ -1,4 +1,7 @@
-import { cardDecoration } from "@styles"
+import {
+  articleCategoryColor,
+  cardDecoration,
+} from "@styles"
 
 import { ArticleWithVotes, WithReactChildren } from "@types"
 
@@ -22,13 +25,7 @@ export type ArticleCardProps = {
 export function ArticleCard({ post }: ArticleCardProps) {
   const lang = useLang()
 
-  let borderColor = "oklch(21% 0.034 264.665)"
-
-  if (post.tags.includes("baduk")) {
-    borderColor = "oklch(79.5% 0.184 86.047)"
-  } else if (post.tags.includes("software")) {
-    borderColor = "oklch(66.6% 0.179 58.318)"
-  }
+  const borderColor = articleCategoryColor(post.tags)
 
   return (
     <div className="flex flex-col gap-1.5">

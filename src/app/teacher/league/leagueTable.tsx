@@ -107,28 +107,29 @@ export function LeagueTable({
 
   return (
     <div className="overflow-x-auto rounded-lg border border-slate-200">
-      <table className="w-full border-collapse text-center text-sm">
+      <table className="w-full table-fixed border-collapse text-center text-sm">
         <thead>
           <tr className="divide-x divide-slate-200 bg-slate-100">
             {isModerator && (
-              <th className="border-b border-slate-200 px-2 py-2" />
+              <th className="w-10 border-b border-slate-200 px-2 py-2" />
             )}
-            <th className="border-b border-slate-200 px-3 py-2 text-left">
+            <th className="w-44 border-b border-slate-200 px-3 py-2 text-left">
               {lang === "pt" ? "Nome" : "Name"}
             </th>
-            <th className="border-b border-slate-200 px-3 py-2">
+            <th className="w-24 border-b border-slate-200 px-3 py-2">
               Rating
             </th>
-            <th className="border-b border-slate-200 px-3 py-2 text-left">
+            <th className="w-32 border-b border-slate-200 px-3 py-2 text-left">
               {lang === "pt" ? "OGS" : "OGS"}
             </th>
-            <th className="border-b border-slate-200 px-3 py-2">
+            <th className="w-14 border-b border-slate-200 px-3 py-2">
               {lang === "pt" ? "Pontos" : "Points"}
             </th>
             {players.map((player) => (
               <th
                 key={player.playerId}
-                className="border-b border-slate-200 px-3 py-2"
+                title={player.name}
+                className="w-12 border-b border-slate-200 px-3 py-2"
               >
                 {player.code}
               </th>

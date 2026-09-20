@@ -42,9 +42,8 @@ export function ArticleComments({
   initialCurrentPlayer,
 }: ArticleCommentsProps) {
   const lang = useLang()
-  const [comments, setComments] = useState<
-    CommentWithAuthor[]
-  >(initialComments)
+  const [comments, setComments] =
+    useState<CommentWithAuthor[]>(initialComments)
   const currentPlayer = initialCurrentPlayer
 
   function handleNewComment(comment: CommentWithAuthor) {
@@ -82,7 +81,7 @@ export function ArticleComments({
               Você precisa{" "}
               <LangLink
                 href="/sign-in"
-                className="underline"
+                className="underline underline-offset-4"
               >
                 entrar na sua conta
               </LangLink>{" "}
@@ -93,7 +92,7 @@ export function ArticleComments({
               You need to{" "}
               <LangLink
                 href="/sign-in"
-                className="underline"
+                className="underline underline-offset-4"
               >
                 sign in
               </LangLink>{" "}
@@ -188,7 +187,7 @@ function Comment({
             <button
               type="button"
               onClick={() => setIsEditing(true)}
-              className="cursor-pointer text-xs text-slate-500 underline"
+              className="cursor-pointer text-xs text-slate-500 underline underline-offset-4"
             >
               {lang === "pt" ? "Editar" : "Edit"}
             </button>

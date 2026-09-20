@@ -32,7 +32,10 @@ export function ProfileSection({
           {lang === "pt"
             ? "Você precisa entrar na sua conta para ver seu perfil."
             : "You need to sign in to view your profile."}{" "}
-          <LangLink href="/sign-in" className="underline">
+          <LangLink
+            href="/sign-in"
+            className="underline underline-offset-4"
+          >
             {lang === "pt" ? "Entrar" : "Sign in"}
           </LangLink>
           .

@@ -19,7 +19,10 @@ export function SignUpSection() {
         {lang === "pt"
           ? "Já tem uma conta?"
           : "Already have an account?"}{" "}
-        <LangLink href="/sign-in" className="underline">
+        <LangLink
+          href="/sign-in"
+          className="underline underline-offset-4"
+        >
           {lang === "pt" ? "Entrar" : "Sign in"}
         </LangLink>
         .
