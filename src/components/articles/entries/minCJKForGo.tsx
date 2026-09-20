@@ -7,6 +7,7 @@ import {
   ArticleParagraph,
   ArticleSection,
   ArticleUnorderedList,
+  ImageLegend,
 } from "../articleContent"
 import { ArticleRuby } from "../articleRuby"
 import {
@@ -158,9 +159,9 @@ export function MinCJKForGo({ article }: ArticleProps) {
           width={350}
           className="rounded-lg"
         >
-          <ArticleParagraph>
+          <ImageLegend>
             My article on this topic for Go Magic.
-          </ArticleParagraph>
+          </ImageLegend>
         </ArticleImageWithLegend>
         <ArticleParagraph>
           If you&apos;re interested in learning Japanese
@@ -188,10 +189,10 @@ export function MinCJKForGo({ article }: ArticleProps) {
           width={225}
           className="rounded-lg"
         >
-          <ArticleParagraph>
+          <ImageLegend>
             Richard Hunter&apos;s introductory book on
             Japanese for Go players.
-          </ArticleParagraph>
+          </ImageLegend>
         </ArticleImageWithLegend>
         <ArticleParagraph>
           My knowledge of Japanese and Korean doesn&apos;t

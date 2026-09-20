@@ -8,6 +8,7 @@ import {
   ArticleSectionTitle,
   ArticleImageWithLegend,
   NoWrap,
+  ImageLegend,
 } from "../articleContent"
 import { GoDiagram, GoDiagramLegend } from "../goDiagram"
 
@@ -29,9 +30,9 @@ export function IngCupSuicide({ article }: ArticleProps) {
           src="/articles/ing-cup-suicide/psygo_corner_1.jpeg"
           className="rounded-xl"
         >
-          <ArticleParagraph>
+          <ImageLegend>
             psygo&apos;s Corner&apos;s first article.
-          </ArticleParagraph>
+          </ImageLegend>
         </ArticleImageWithLegend>
         <ArticleParagraph>
           My opinion remains the same. Let&apos;s now take a

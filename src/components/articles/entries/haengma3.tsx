@@ -9,6 +9,7 @@ import {
   ArticleSection,
   ArticleSectionTitle,
   ArticleYouTubeIframe,
+  ImageLegend,
 } from "../articleContent"
 import { ArticlePDFViewer } from "@components/articles/articlePDFViewer"
 import { GoDiagram, GoDiagramLegend } from "../goDiagram"
@@ -40,13 +41,13 @@ export function Haengma3({ article }: ArticleProps) {
           width={225}
           className="rounded-lg"
         >
-          <ArticleParagraph>
+          <ImageLegend>
             Haengma 행마 3, from{" "}
             <ArticleLink href="https://joyschooledu.com/shop/item.php?it_id=1751265282">
               Joy School
             </ArticleLink>
             .
-          </ArticleParagraph>
+          </ImageLegend>
         </ArticleImageWithLegend>
         <ArticleParagraph>
           Haengma 행마 is the Korean equivalent to{" "}

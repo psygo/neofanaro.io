@@ -10,6 +10,7 @@ import {
   ArticleUnorderedList,
   ArticleSectionTitle,
   ArticleYouTubeIframe,
+  ImageLegend,
 } from "../articleContent"
 
 export function Lang101({ article }: ArticleProps) {
@@ -54,9 +55,9 @@ export function Lang101({ article }: ArticleProps) {
           width={250}
           className="rounded-lg"
         >
-          <ArticleParagraph>
+          <ImageLegend>
             The &quot;Exercises&quot; page on Lang101.
-          </ArticleParagraph>
+          </ImageLegend>
         </ArticleImageWithLegend>
         <ArticleParagraph>
           <ArticleLink href="https://expo.dev/accounts/psygo/projects/lang101/builds/7e036e2f-8647-42b7-8062-0313b29aba27">
@@ -96,10 +97,10 @@ export function Lang101({ article }: ArticleProps) {
           width={250}
           className="rounded-lg border border-gray-200"
         >
-          <ArticleParagraph>
+          <ImageLegend>
             Lang101&apos;s landing page. For now, I&apos;m
             using this website&apos;s logo as a placeholder.
-          </ArticleParagraph>
+          </ImageLegend>
         </ArticleImageWithLegend>
         <ArticleParagraph>
           A statistical rating system is self-adjusting,
@@ -125,13 +126,13 @@ export function Lang101({ article }: ArticleProps) {
           width={250}
           className="rounded-lg"
         >
-          <ArticleParagraph>
+          <ImageLegend>
             The student loses 19 points for solving a
             problem incorrectly. The 19 points are based on
             his Elo rating prior to the question, if that
             rating had been higher, an even bigger penalty
             would be applied.
-          </ArticleParagraph>
+          </ImageLegend>
         </ArticleImageWithLegend>
         <ArticleParagraph>
           Anki does feature a rating system, typically based
@@ -165,10 +166,10 @@ export function Lang101({ article }: ArticleProps) {
           width={250}
           className="rounded-lg"
         >
-          <ArticleParagraph>
+          <ImageLegend>
             Lang101&apos;s &quot;History&quot; page, on dark
             mode.
-          </ArticleParagraph>
+          </ImageLegend>
         </ArticleImageWithLegend>
         <ArticleParagraph>
           The current version of the app also offer exercise
@@ -205,13 +206,13 @@ export function Lang101({ article }: ArticleProps) {
           width={250}
           className="rounded-lg"
         >
-          <ArticleParagraph>
+          <ImageLegend>
             For languages such as Chinese and Japanese, even
             for native speakers, it&apos;s very common for
             text to have a top row guiding the pronunciation
             of a symbol. That feature is already present in
             Lang101.
-          </ArticleParagraph>
+          </ImageLegend>
         </ArticleImageWithLegend>
         <ArticleParagraph>
           Anki (暗記) means &quot;learning by heart&quot; or
@@ -238,11 +239,11 @@ export function Lang101({ article }: ArticleProps) {
           width={250}
           className="rounded-lg"
         >
-          <ArticleParagraph>
+          <ImageLegend>
             The profile page features a &quot;Send
             feedback&quot; button. Do share your thoughts
             and suggestions with me!
-          </ArticleParagraph>
+          </ImageLegend>
         </ArticleImageWithLegend>
       </ArticleSection>
 

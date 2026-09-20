@@ -126,6 +126,21 @@ export function ArticleImageWithLegend({
   )
 }
 
+type ImageLegendProps = WithReactChildren & {
+  textAlign?: React.CSSProperties["textAlign"]
+}
+
+export function ImageLegend({
+  children,
+  textAlign = "left",
+}: ImageLegendProps) {
+  return (
+    <p className="hyphens-auto" style={{ textAlign }}>
+      {children}
+    </p>
+  )
+}
+
 export function ArticleCode({
   children,
 }: WithReactChildren) {

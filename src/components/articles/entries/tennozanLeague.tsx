@@ -12,6 +12,7 @@ import {
   ArticleYouTubeIframe,
   ArticleBlockQuote,
   ArticleImageWithLegend,
+  ImageLegend,
 } from "../articleContent"
 import { GoDiagram, GoDiagramLegend } from "../goDiagram"
 
@@ -33,9 +34,9 @@ export function TennozanLeague({ article }: ArticleProps) {
             width={350}
             className="rounded-xl"
           >
-            <ArticleParagraph>
+            <ImageLegend>
               Os primeiros participantes da liga.
-            </ArticleParagraph>
+            </ImageLegend>
           </ArticleImageWithLegend>
           <ArticleParagraph>
             Há alguns anos, administrei uma liga online
@@ -117,10 +118,10 @@ export function TennozanLeague({ article }: ArticleProps) {
             width={350}
             className="rounded-xl"
           >
-            <ArticleParagraph>
+            <ImageLegend>
               O icônico &quot;Acabou, Anakin, eu tenho a
               vantagem do terreno elevado&quot;, de Obi-Wan.
-            </ArticleParagraph>
+            </ImageLegend>
           </ArticleImageWithLegend>
           <GoDiagram
             src="/articles/tennozan-league/1.svg"
@@ -150,9 +151,9 @@ export function TennozanLeague({ article }: ArticleProps) {
             width={350}
             className="rounded-xl"
           >
-            <ArticleParagraph>
+            <ImageLegend>
               The first league participants.
-            </ArticleParagraph>
+            </ImageLegend>
           </ArticleImageWithLegend>
 
           <ArticleParagraph>
@@ -231,10 +232,10 @@ export function TennozanLeague({ article }: ArticleProps) {
             width={350}
             className="rounded-xl"
           >
-            <ArticleParagraph>
+            <ImageLegend>
               Obi-Wan&apos;s iconic &quot;It&apos;s over,
               Anakin, I have the high ground&quot;.
-            </ArticleParagraph>
+            </ImageLegend>
           </ArticleImageWithLegend>
           <GoDiagram
             src="/articles/tennozan-league/1.svg"

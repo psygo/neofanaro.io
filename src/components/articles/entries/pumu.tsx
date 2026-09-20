@@ -12,6 +12,7 @@ import {
   ArticleUnorderedList,
   ArticleYouTubeIframe,
   ArticleBlockQuote,
+  ImageLegend,
 } from "../articleContent"
 import { ArticlePre } from "@components/articles/articlePre"
 
@@ -60,9 +61,7 @@ export function Pumu({ article }: ArticleProps) {
           height={100}
           width={425}
         >
-          <ArticleParagraph>
-            PUMU 璞木 on Patreon
-          </ArticleParagraph>
+          <ImageLegend>PUMU 璞木 on Patreon</ImageLegend>
         </ArticleImageWithLegend>
         <ArticleParagraph>
           I was quite surprised by not only the fact that he
@@ -76,9 +75,9 @@ export function Pumu({ article }: ArticleProps) {
           height={100}
           width={400}
         >
-          <ArticleParagraph>
+          <ImageLegend>
             PUMU&apos;s &quot;Glass Kiri&quot; theme
-          </ArticleParagraph>
+          </ImageLegend>
         </ArticleImageWithLegend>
         <ArticleImageWithLegend
           src="/articles/pumu/pumu_kaya_1.png"
@@ -86,9 +85,9 @@ export function Pumu({ article }: ArticleProps) {
           height={100}
           width={400}
         >
-          <ArticleParagraph>
+          <ImageLegend>
             PUMU&apos;s &quot;Kaya 01&quot; theme
-          </ArticleParagraph>
+          </ImageLegend>
         </ArticleImageWithLegend>
       </ArticleSection>
       <ArticleSection>
@@ -152,10 +151,10 @@ export function Pumu({ article }: ArticleProps) {
           height={100}
           width={400}
         >
-          <ArticleParagraph>
+          <ImageLegend>
             My &quot;Bluish Purple Square&quot; Sabaki theme
             from the code above.
-          </ArticleParagraph>
+          </ImageLegend>
         </ArticleImageWithLegend>
         <ArticleImageWithLegend
           src="/articles/pumu/fire_and_ice.png"
@@ -163,9 +162,9 @@ export function Pumu({ article }: ArticleProps) {
           height={100}
           width={400}
         >
-          <ArticleParagraph>
+          <ImageLegend>
             My &quot;Fire and Ice&quot; theme.
-          </ArticleParagraph>
+          </ImageLegend>
         </ArticleImageWithLegend>
       </ArticleSection>
       <ArticleSection>
@@ -190,9 +189,9 @@ export function Pumu({ article }: ArticleProps) {
           height={100}
           width={400}
         >
-          <ArticleParagraph>
+          <ImageLegend>
             My OGS &quot;Desert&quot; theme.
-          </ArticleParagraph>
+          </ImageLegend>
         </ArticleImageWithLegend>
         <ArticleImageWithLegend
           src="/articles/pumu/ogs_pistacchio_theme.png"
@@ -200,9 +199,9 @@ export function Pumu({ article }: ArticleProps) {
           height={100}
           width={400}
         >
-          <ArticleParagraph>
+          <ImageLegend>
             My OGS &quot;Pistacchio&quot; theme.
-          </ArticleParagraph>
+          </ImageLegend>
         </ArticleImageWithLegend>
         <ArticleParagraph>
           My two favorite OGS themes in the past 5 years

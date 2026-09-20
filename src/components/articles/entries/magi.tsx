@@ -10,6 +10,7 @@ import {
   ArticleBlockQuote,
   ArticleSectionTitle,
   ArticleIframe,
+  ImageLegend,
 } from "../articleContent"
 
 export function Magi({ article }: ArticleProps) {
@@ -94,7 +95,7 @@ export function Magi({ article }: ArticleProps) {
           className="rounded-sm"
           alt="Excalidraw"
         >
-          <ArticleParagraph>Excalidraw</ArticleParagraph>
+          <ImageLegend>Excalidraw</ImageLegend>
         </ArticleImageWithLegend>
         <ArticleParagraph>
           In the end, the app&apos;s structure consists of

@@ -10,6 +10,7 @@ import {
   ArticleDivider,
   NoWrap,
   ArticleImageWithLegend,
+  ImageLegend,
 } from "../articleContent"
 
 export function WhatIsGoAbout({ article }: ArticleProps) {
@@ -42,9 +43,9 @@ export function WhatIsGoAbout({ article }: ArticleProps) {
           width={325}
           className="rounded-xl"
         >
-          <ArticleParagraph>
+          <ImageLegend>
             Lee Woojoo <NoWrap>이우주</NoWrap> 1p
-          </ArticleParagraph>
+          </ImageLegend>
         </ArticleImageWithLegend>
         <ArticleParagraph>
           Her answer was <em>efficiency</em>. However, the

@@ -10,6 +10,7 @@ import {
   ArticleUnorderedList,
   ArticleImageWithLegend,
   NoWrap,
+  ImageLegend,
 } from "../articleContent"
 import { GoDiagram, GoDiagramLegend } from "../goDiagram"
 
@@ -50,9 +51,9 @@ export function OkaoigoAiArticles({
           width={425}
           className="rounded-xl"
         >
-          <ArticleParagraph>
+          <ImageLegend>
             okaoigo&apos;s Articles on note.com
-          </ArticleParagraph>
+          </ImageLegend>
         </ArticleImageWithLegend>
         <ArticleParagraph>
           To me, this teacher&apos;s biggest differentiator

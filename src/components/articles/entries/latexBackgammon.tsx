@@ -8,6 +8,7 @@ import {
   ArticleBlockQuote,
   ArticleCode,
   ArticleImageWithLegend,
+  ImageLegend,
 } from "../articleContent"
 import { ArticlePre } from "@components/articles/articlePre"
 
@@ -34,9 +35,9 @@ export function LatexBackgammon({ article }: ArticleProps) {
           height={100}
           width={390}
         >
-          <ArticleParagraph>
+          <ImageLegend>
             A vector diagram for the game of backgammon.
-          </ArticleParagraph>
+          </ImageLegend>
         </ArticleImageWithLegend>
         <ArticleParagraph>
           This time though, I did 99% of the project with
@@ -82,9 +83,7 @@ export function LatexBackgammon({ article }: ArticleProps) {
           width={390}
           className="rounded-lg"
         >
-          <ArticleParagraph>
-            The project on Github.
-          </ArticleParagraph>
+          <ImageLegend>The project on Github.</ImageLegend>
         </ArticleImageWithLegend>
         <ArticleParagraph>
           After generating the PDF, you could also generate

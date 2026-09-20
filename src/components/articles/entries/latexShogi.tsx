@@ -8,6 +8,7 @@ import {
   ArticleSectionTitle,
   ArticleBlockQuote,
   ArticleImageWithLegend,
+  ImageLegend,
 } from "../articleContent"
 import { ArticlePDFViewer } from "@components/articles/articlePDFViewer"
 import { ArticlePre } from "@components/articles/articlePre"
@@ -62,9 +63,9 @@ export function LatexShogi({ article }: ArticleProps) {
           diagrams for Japanese chess, or shogi, with LaTeX.
         </ArticleParagraph>
         <ArticleImageWithLegend src="/articles/latex-shogi/sample_1.svg">
-          <ArticleParagraph>
+          <ImageLegend>
             An example diagram using all the pieces.
-          </ArticleParagraph>
+          </ImageLegend>
         </ArticleImageWithLegend>
         <ArticleParagraph>
           That project started as an adaptation of the
@@ -81,10 +82,10 @@ export function LatexShogi({ article }: ArticleProps) {
           .
         </ArticleParagraph>
         <ArticleImageWithLegend src="/articles/latex-shogi/shogi_problema_1.svg">
-          <ArticleParagraph>
+          <ImageLegend>
             Another example diagram, this time with
             coordinates.
-          </ArticleParagraph>
+          </ImageLegend>
         </ArticleImageWithLegend>
         <ArticleParagraph>
           Through code that&apos;s as simple as{" "}
@@ -103,12 +104,12 @@ export function LatexShogi({ article }: ArticleProps) {
           books:
         </ArticleParagraph>
         <ArticleImageWithLegend src="/articles/latex-shogi/shogi_diagram_export.svg">
-          <ArticleParagraph>
+          <ImageLegend>
             A square diagram example, the more common format
             in shogi books. Note that we do have the
             &quot;mochigoma&quot; feature, that is, the
             captured pieces on the side of the board.
-          </ArticleParagraph>
+          </ImageLegend>
         </ArticleImageWithLegend>
         <ArticleParagraph>
           Here&apos;s a{" "}

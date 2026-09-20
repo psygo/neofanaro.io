@@ -9,6 +9,7 @@ import {
   ArticleSectionTitle,
   ArticleImageWithLegend,
   NoWrap,
+  ImageLegend,
 } from "../articleContent"
 import { GoDiagram, GoDiagramLegend } from "../goDiagram"
 
@@ -49,9 +50,9 @@ export function DowonPairGo({ article }: ArticleProps) {
           width={225}
           className="rounded-xl"
         >
-          <ArticleParagraph>
+          <ImageLegend>
             Moon Dowon <NoWrap>문도원</NoWrap> 3p
-          </ArticleParagraph>
+          </ImageLegend>
         </ArticleImageWithLegend>
         <ArticleImageWithLegend
           src="/articles/dowon-pairgo/flower_baduk_founders.jpg"
@@ -59,13 +60,13 @@ export function DowonPairGo({ article }: ArticleProps) {
           width={325}
           className="rounded-xl"
         >
-          <ArticleParagraph>
+          <ImageLegend>
             Flower Baduk&apos;s founders, from left to
             right: Lee Dahye <NoWrap>이다혜</NoWrap> 4p, Kim
             Hyerim <NoWrap>김혜림</NoWrap> 2p, Bae Yunjin{" "}
             <NoWrap>배윤진</NoWrap> 3p and Moon Dowon{" "}
             <NoWrap>문도원</NoWrap> 3p.
-          </ArticleParagraph>
+          </ImageLegend>
         </ArticleImageWithLegend>
         <ArticleImageWithLegend
           src="/articles/dowon-pairgo/Flower_Baduk_2.jpg"
@@ -73,14 +74,14 @@ export function DowonPairGo({ article }: ArticleProps) {
           width={325}
           className="rounded-xl"
         >
-          <ArticleParagraph>
+          <ImageLegend>
             A panel of Flower Baduk&apos;s founders, from
             left to right: Lee Dahye <NoWrap>이다혜</NoWrap>{" "}
             4p, Bae Yunjin
             <NoWrap>배윤진</NoWrap> 3p, Moon Dowon{" "}
             <NoWrap>문도원</NoWrap> 3p and Kim Hyerim{" "}
             <NoWrap>김혜림</NoWrap> 2p.
-          </ArticleParagraph>
+          </ImageLegend>
         </ArticleImageWithLegend>
         <ArticleParagraph>
           The ambiance is always pleasant at Flower Baduk,
@@ -94,7 +95,7 @@ export function DowonPairGo({ article }: ArticleProps) {
           width={325}
           className="rounded-xl"
         >
-          <ArticleParagraph>Flower Baduk</ArticleParagraph>
+          <ImageLegend>Flower Baduk</ImageLegend>
         </ArticleImageWithLegend>
         <ArticleBlockQuote>
           <ArticleParagraph>
