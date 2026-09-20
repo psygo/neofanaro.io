@@ -34,7 +34,8 @@ export function MinCJKForGo({ article }: ArticleProps) {
           With just &quot;black&quot;, &quot;white&quot;,
           &quot;correct&quot; and &quot;incorrect&quot;,
           you&apos;re already able to read most problem
-          books, which is perhaps most of Go literature.
+          books, which covers a lot of all Go literature has
+          to offer.
         </ArticleParagraph>
         <ArticleTable>
           <ArticleTableHead>
@@ -150,7 +151,7 @@ export function MinCJKForGo({ article }: ArticleProps) {
           table, let me know!
         </ArticleBlockQuote>
         <ArticleParagraph>
-          As per any language, there are nuances to
+          As with any language, there are nuances to
           different contexts, for example, the terms for
           &quot;incorrect&quot; that I listed above are
           closer to &quot;failure&quot; usually. And
