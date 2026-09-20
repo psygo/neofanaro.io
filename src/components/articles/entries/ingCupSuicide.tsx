@@ -137,7 +137,7 @@ export function IngCupSuicide({ article }: ArticleProps) {
           advantages for White.
         </ArticleParagraph>
         <ArticleParagraph>
-          In the end, we have that the asbence of a suicide
+          In the end, we have that the absence of a suicide
           rule grants the &quot;big eye vs small eye&quot;
           liberty race type more possibilities. Instead of
           it being a straight win for the bigger eye&apos;d

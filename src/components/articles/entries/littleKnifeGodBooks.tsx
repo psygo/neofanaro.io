@@ -107,8 +107,8 @@ export function LittleKnifeGodBooks({
         <ArticleParagraph>
           The correct move in the game was to apply pressure
           based on Black&apos;s cutting stone in the center.
-          By doing so, we can create cutting many cutting
-          points on White&apos;s shape:
+          By doing so, we can create many cutting points on
+          White&apos;s shape:
         </ArticleParagraph>
         <GoDiagram
           src="/articles/little-knife-god-books/kato_chie_vs_yoshihiro_koike_p2.svg"

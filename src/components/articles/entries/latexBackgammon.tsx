@@ -21,7 +21,7 @@ export function LatexBackgammon({ article }: ArticleProps) {
           <ArticleLink href="/articles/latex-shogi">
             LaTeX Shogi
           </ArticleLink>{" "}
-          project , I got an itch for doing something
+          project, I got an itch for doing something
           analogous but to another game, one that I believe
           is only second to Go in terms of strategy and
           beauty. The resulting code is here:{" "}

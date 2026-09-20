@@ -73,7 +73,7 @@ export function Lang101({ article }: ArticleProps) {
             &mdash; a flashcard app
           </li>
           <li>
-            A Statistical Rating Sytem &mdash; more
+            A Statistical Rating System &mdash; more
             specifically,{" "}
             <ArticleLink href="https://en.wikipedia.org/wiki/Elo_rating_system">
               Elo
@@ -172,8 +172,9 @@ export function Lang101({ article }: ArticleProps) {
           </ImageLegend>
         </ArticleImageWithLegend>
         <ArticleParagraph>
-          The current version of the app also offer exercise
-          variety, which will only increase over time:
+          The current version of the app also offers
+          exercise variety, which will only increase over
+          time:
         </ArticleParagraph>
         <ArticleUnorderedList>
           <li>Multiple choice</li>
@@ -252,7 +253,7 @@ export function Lang101({ article }: ArticleProps) {
           On Developing Lang101 (with AI)
         </ArticleSectionTitle>
         <ArticleParagraph>
-          Lang101 was almost entirely develped with{" "}
+          Lang101 was almost entirely developed with{" "}
           <ArticleLink href="https://claude.com/product/claude-code">
             Claude Code
           </ArticleLink>

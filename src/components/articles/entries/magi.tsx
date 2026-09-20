@@ -62,9 +62,9 @@ export function Magi({ article }: ArticleProps) {
         />
         <ArticleParagraph>
           Visualizing the web as a graph is nothing new, but
-          having but having a tool which lets you do it with
-          other users is something I had never seen and
-          wanted to have become a reality.
+          having a tool which lets you do it with other
+          users is something I had never seen and wanted to
+          have become a reality.
         </ArticleParagraph>
       </ArticleSection>
       <ArticleSection>

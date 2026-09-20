@@ -168,10 +168,10 @@ export function DowonPairGo({ article }: ArticleProps) {
           </GoDiagramLegend>
         </GoDiagram>
         <ArticleParagraph>
-          Black has three directions from which to squeezed,
-          from A to C, there&apos;s no way to protect them
-          all. According to AI, capturing White on the side
-          is a 3-point loss.
+          Black has three directions from which to be
+          squeezed, from A to C, there&apos;s no way to
+          protect them all. According to AI, capturing White
+          on the side is a 3-point loss.
         </ArticleParagraph>
         <ArticleParagraph>
           This is AI&apos;s recommended sequence, after
@@ -182,8 +182,8 @@ export function DowonPairGo({ article }: ArticleProps) {
           diaNumber={3}
         >
           <GoDiagramLegend>
-            Black&apos;s groups surrounding White&apos;s
-            captured stones are bound to get squeezed.
+            Black get&apos;s squeezed from the bottom-left
+            and the bottom-right.
           </GoDiagramLegend>
         </GoDiagram>
         <ArticleParagraph>

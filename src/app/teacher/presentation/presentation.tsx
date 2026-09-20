@@ -116,7 +116,7 @@ function LessonTypes() {
   return (
     <div className="mt-2 flex flex-col gap-2.5 px-3.5 text-sm text-gray-800">
       {lang === "pt" ? (
-        <p>Os tipos de aula incluem, dentre outos:</p>
+        <p>Os tipos de aula incluem, dentre outros:</p>
       ) : (
         <p>Lesson types include, among others:</p>
       )}

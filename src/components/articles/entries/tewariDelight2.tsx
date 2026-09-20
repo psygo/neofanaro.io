@@ -32,7 +32,7 @@ export function TewariDelight2({ article }: ArticleProps) {
             <ArticleLink href="https://youtu.be/c3GU2td0To8">
               video
             </ArticleLink>{" "}
-            originally .
+            originally.
           </ArticleParagraph>
         </ArticleBlockQuote>
         <ArticleParagraph>

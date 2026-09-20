@@ -4,7 +4,6 @@
 
 - [ ] Buy a domain
   - Probably [neofanaro.io](https://neofanaro.io)
-- [ ] Improve the top and bottom margins for the Go Diagrams
 - [ ] Try out a LaTeX font for the articles.
 - [ ] Run my posts through Grammarly or some other autocorrect.
 - [ ] Go diagram numbering should be automatically increasing (but overrideable)

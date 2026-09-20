@@ -159,7 +159,7 @@ export function GobanWeb({ article }: ArticleProps) {
           <ArticleLink href="https://developer.mozilla.org/en-US/docs/Web/SVG">
             SVG
           </ArticleLink>
-          s . For videogames or complex drawings, with lots
+          s. For videogames or complex drawings, with lots
           of animations, the canvas component is much more
           performant. For simpler drawings, I would rather
           go with SVGs, since then each visual component is

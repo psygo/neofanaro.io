@@ -46,13 +46,13 @@ export function Pumu({ article }: ArticleProps) {
           <ArticleLink href="https://sabaki.yichuanshen.de/">
             Sabaki
           </ArticleLink>
-          . After posting a comment about what that repo,
-          the user behind the Patreon creator{" "}
+          . After posting a comment about that repo, the
+          user behind the Patreon creator{" "}
           <ArticleLink href="https://www.patreon.com/c/GoSkins/home">
             PUMU 璞木
           </ArticleLink>{" "}
           reached out to me to share his work and ask me for
-          reccommendations about how to port his themes to
+          recommendations about how to port his themes to
           Sabaki.
         </ArticleParagraph>
         <ArticleImageWithLegend
