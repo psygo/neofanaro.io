@@ -22,7 +22,7 @@ export function GoDiagram({
 }: GoDiagramProps) {
   return (
     <div
-      className={`${className} flex flex-col items-center gap-3 px-4 py-3 hyphens-auto`}
+      className={`${className} my-8 flex flex-col items-center gap-3 px-4 hyphens-auto`}
     >
       <Image
         src={src}

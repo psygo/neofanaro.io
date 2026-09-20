@@ -94,7 +94,6 @@ export function Haengma3({ article }: ArticleProps) {
           width={375}
           height={375}
           diaNumber={1}
-          className="-mt-3"
         >
           <GoDiagramLegend>
             Should you connect at A?
@@ -115,7 +114,6 @@ export function Haengma3({ article }: ArticleProps) {
           width={375}
           height={375}
           diaNumber={2}
-          className="-mt-3"
         >
           <GoDiagramLegend>
             A joseki originating the same position.
@@ -132,7 +130,6 @@ export function Haengma3({ article }: ArticleProps) {
           width={375}
           height={375}
           diaNumber={3}
-          className="-mt-3"
         >
           <GoDiagramLegend>
             How the tiger&apos;s mouth changes things.
@@ -149,7 +146,6 @@ export function Haengma3({ article }: ArticleProps) {
           width={375}
           height={375}
           diaNumber={4}
-          className="-mt-3"
         >
           <GoDiagramLegend>
             Black 3 locks White in.
@@ -165,7 +161,6 @@ export function Haengma3({ article }: ArticleProps) {
           width={375}
           height={375}
           diaNumber={5}
-          className="-mt-3"
         >
           <GoDiagramLegend>
             White fails to cut, while weakening the A stone.
@@ -187,7 +182,6 @@ export function Haengma3({ article }: ArticleProps) {
           width={375}
           height={375}
           diaNumber={6}
-          className="-mt-3"
         >
           <GoDiagramLegend>
             AI prefers the empty triangle.
@@ -217,7 +211,6 @@ export function Haengma3({ article }: ArticleProps) {
           width={375}
           height={375}
           diaNumber={7}
-          className="-mt-3"
         >
           <GoDiagramLegend>
             AI is satisfied with poking a little bit,
@@ -233,7 +226,6 @@ export function Haengma3({ article }: ArticleProps) {
           width={375}
           height={375}
           diaNumber={8}
-          className="-mt-3"
         >
           <GoDiagramLegend>
             White escalates the fight.

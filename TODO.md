@@ -4,18 +4,19 @@
 
 - [ ] Buy a domain
   - Probably [neofanaro.io](https://neofanaro.io)
-- [ ] Add Discord/Canva Tennozan logo to the OG preview for the league
-- [ ] [36% dos jogadores 8d no Fox sao IA, e 22% dos 7d tb](https://www.bilibili.com/video/BV1iHo6BSESd/?bvid=BV1iHo6BSESd)
 - [ ] Improve the top and bottom margins for the Go Diagrams
-- [ ] The clipboard doesn't seem to be working for the website?
-- [ ] Aquarifolio Article
-- [ ] Kifu Book Article
-- [ ] Best of fanaro.io Article
 - [ ] Try out a LaTeX font for the articles.
 - [ ] Run my posts through Grammarly or some other autocorrect.
 - [ ] Go diagram numbering should be automatically increasing (but overrideable)
 - [ ] Create a staging/branching environment for the project.
 - [ ] The initial page layout once I get the blog going should probably have the top article on top, with the website's title above it.
+
+## Articles
+
+- [ ] [36% dos jogadores 8d no Fox sao IA, e 22% dos 7d tb](https://www.bilibili.com/video/BV1iHo6BSESd/?bvid=BV1iHo6BSESd)
+- [ ] Aquarifolio Article
+- [ ] Kifu Book Article
+- [ ] Best of fanaro.io Article
 
 ## Bugs
 
