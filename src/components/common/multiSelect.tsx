@@ -52,7 +52,7 @@ export function MultiSelect({
     <div ref={ref} className="relative">
       <button
         onClick={() => setOpen((o) => !o)}
-        className="flex min-w-40 items-center justify-between gap-2 rounded-lg border border-gray-300 bg-gray-50 px-3 py-1.5 text-sm font-semibold text-gray-600 hover:bg-gray-100"
+        className="flex min-w-40 cursor-pointer items-center justify-between gap-2 rounded-lg border border-gray-300 bg-gray-50 px-3 py-1.5 text-sm font-semibold text-gray-600 hover:bg-gray-100"
       >
         <span className="flex flex-wrap gap-1">
           {selected.length === 0 ? (
@@ -96,7 +96,7 @@ export function MultiSelect({
               <button
                 key={option}
                 onClick={() => toggle(option)}
-                className="flex w-full items-center gap-2 px-3 py-1.5 text-sm text-gray-700 hover:bg-gray-50"
+                className="flex w-full cursor-pointer items-center gap-2 px-3 py-1.5 text-sm text-gray-700 hover:bg-gray-50"
               >
                 <span
                   className={`flex size-4 shrink-0 items-center justify-center rounded border transition-colors ${

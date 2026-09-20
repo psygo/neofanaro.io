@@ -122,6 +122,9 @@ export function LeagueTable({
             <th className="border-b border-slate-200 px-3 py-2 text-left">
               {lang === "pt" ? "OGS" : "OGS"}
             </th>
+            <th className="border-b border-slate-200 px-3 py-2">
+              {lang === "pt" ? "Pontos" : "Points"}
+            </th>
             {players.map((player) => (
               <th
                 key={player.playerId}
@@ -130,9 +133,6 @@ export function LeagueTable({
                 {player.code}
               </th>
             ))}
-            {/* <th className="border-b border-slate-200 px-3 py-2">
-              {lang === "pt" ? "Pontos" : "Points"}
-            </th> */}
           </tr>
         </thead>
         <tbody>
@@ -195,6 +195,9 @@ export function LeagueTable({
                 ) : (
                   row.nick
                 )}
+              </td>
+              <td className="px-3 py-2 font-semibold text-slate-900 tabular-nums">
+                {countPoints(players, games, row.playerId)}
               </td>
               {players.map((column) => {
                 if (column.playerId === row.playerId) {
