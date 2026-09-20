@@ -11,6 +11,12 @@ import {
   winnerFromResult,
 } from "@utils"
 
+import {
+  AiSenseiIcon,
+  OgsIcon,
+  YouTubeIcon,
+} from "./gameLinkIcons"
+
 export function MyGameCard({
   game,
   lang,
@@ -24,12 +30,25 @@ export function MyGameCard({
   const previewSrc = ogsPreviewImageUrl(game.ogsLink)
 
   const links = [
-    { label: "OGS", href: game.ogsLink },
-    { label: "AI Sensei", href: game.aiSenseiLink },
-    { label: "YouTube", href: game.youtubeLink },
+    { label: "OGS", href: game.ogsLink, Icon: OgsIcon },
+    {
+      label: "AI Sensei",
+      href: game.aiSenseiLink,
+      Icon: AiSenseiIcon,
+    },
+    {
+      label: "YouTube",
+      href: game.youtubeLink,
+      Icon: YouTubeIcon,
+    },
   ].filter(
-    (link): link is { label: string; href: string } =>
-      Boolean(link.href),
+    (
+      link,
+    ): link is {
+      label: string
+      href: string
+      Icon: typeof OgsIcon
+    } => Boolean(link.href),
   )
 
   return (
@@ -87,9 +106,10 @@ export function MyGameCard({
                 href={link.href}
                 target="_blank"
                 rel="noreferrer"
-                className="rounded-full bg-slate-100 px-2.5 py-1 text-xs ring-1 ring-slate-200 transition duration-300 hover:bg-slate-200"
+                title={link.label}
+                className="flex items-center justify-center rounded-full bg-slate-100 p-1.5 text-slate-700 ring-1 ring-slate-200 transition duration-300 hover:bg-slate-200"
               >
-                {link.label}
+                <link.Icon />
               </a>
             ))}
           </div>

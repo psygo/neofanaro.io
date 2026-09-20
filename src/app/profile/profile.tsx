@@ -54,28 +54,47 @@ export function ProfileSection({
       <h1 className="text-center text-2xl font-bold">
         {lang === "pt" ? "Perfil" : "Profile"}
       </h1>
-      <div className="flex w-full flex-col gap-6">
-        <div className="w-full">
-          <p className="text-lg font-semibold">
-            {player.name}
-          </p>
-        </div>
+
+      <div className="flex w-full flex-col gap-3">
+        <p className="text-lg font-semibold">
+          {player.name}
+        </p>
         <ul className="text-slate-700">
           <li>Rating: {player.rating}</li>
           {player.email && <li>Email: {player.email}</li>}
         </ul>
+      </div>
+
+      <hr className="border-0.75 w-full border-gray-200" />
+
+      <div className="flex w-full flex-col gap-6">
+        <h2 className="text-lg font-bold">
+          {lang === "pt" ? "Detalhes" : "Details"}
+        </h2>
         <ProfileDetailsForm
           country={player.country}
           nick={player.nick}
           ogsLink={player.ogsLink}
         />
         <DescriptionForm description={player.description} />
+      </div>
+
+      <hr className="border-0.75 w-full border-gray-200" />
+
+      <div className="flex w-full flex-col gap-6">
+        <h2 className="text-lg font-bold">
+          {lang === "pt" ? "Preferências" : "Preferences"}
+        </h2>
         <ArticleFontForm articleFont={player.articleFont} />
       </div>
+
       <hr className="border-0.75 w-full border-gray-200" />
+
       <MyGames games={games} lang={lang} />
       <MyComments comments={comments} lang={lang} />
+
       <hr className="border-0.75 w-full border-gray-200" />
+
       <SignOutButton />
     </div>
   )

@@ -8,9 +8,9 @@ export function ArticleRuby({
   pronunciation,
 }: ArticleRubyProps) {
   return (
-    <ruby>
+    <ruby className="text-[1rem]">
       {base}
-      <rt className="pb-0.75 text-slate-500 select-none">
+      <rt className="pb-0.75 text-[0.5rem] text-slate-500 select-none">
         {pronunciation}
       </rt>
     </ruby>

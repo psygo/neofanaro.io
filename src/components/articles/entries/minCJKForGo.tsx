@@ -2,6 +2,7 @@ import { ArticleProps } from "@types"
 
 import { Article } from "@components/articles/article"
 import {
+  ArticleBlockQuote,
   ArticleImageWithLegend,
   ArticleLink,
   ArticleParagraph,
@@ -26,14 +27,14 @@ export function MinCJKForGo({ article }: ArticleProps) {
         <ArticleParagraph>
           It&apos;s surprising how knowing just a few words
           can give us so much access to what&apos;s shared
-          in the main Asian languages for the Go, which are
-          Chinese, Japanese and Korean.
+          in the main Asian languages for Go, i.e., Chinese,
+          Japanese and Korean.
         </ArticleParagraph>
         <ArticleParagraph>
           With just &quot;black&quot;, &quot;white&quot;,
-          &quot;correct&quot; and &quot;incorrect&quot;, and
-          you&apos;re able to read most problem books, which
-          is already a ton of modern Go literature.
+          &quot;correct&quot; and &quot;incorrect&quot;,
+          you&apos;re already able to read most problem
+          books, which is perhaps most of Go literature.
         </ArticleParagraph>
         <ArticleTable>
           <ArticleTableHead>
@@ -144,14 +145,19 @@ export function MinCJKForGo({ article }: ArticleProps) {
             </ArticleTableRow>
           </ArticleTableBody>
         </ArticleTable>
+        <ArticleBlockQuote>
+          If you have any addition suggestions to this
+          table, let me know!
+        </ArticleBlockQuote>
         <ArticleParagraph>
           As per any language, there are nuances to
           different contexts, for example, the terms for
           &quot;incorrect&quot; that I listed above are
-          closer to &quot;failure&quot; usually. It&apos;s
-          not always that the different terms above will be
-          the correct ones. Nonetheless, those are the ones
-          which will cover more than 90% of all usage.
+          closer to &quot;failure&quot; usually. And
+          it&apos;s not always that the different terms
+          listed above will be the correct ones.
+          Nonetheless, those likely cover more than 90% of
+          all usage.
         </ArticleParagraph>
         <ArticleImageWithLegend
           src="/articles/min-cjk-for-go/psygo_corner_1.jpeg"
@@ -174,14 +180,18 @@ export function MinCJKForGo({ article }: ArticleProps) {
           <ArticleLink href="https://gomagic.org/">
             Go Magic
           </ArticleLink>
-          , I recommended Richard Hunter&apos;s books on an
-          intro to that language, all from the point of view
-          of a Go player. He is the author of two series:{" "}
+          , I recommended Richard Hunter&apos;s books as an
+          intro to that language. His two main series are:{" "}
           <em>Just Enough Japanese</em> and{" "}
-          <em>The Road to Understanding Japanese</em>. I
-          highly recommended all Go players to try out the
+          <em>The Road to Understanding Japanese</em>, both
+          available on{" "}
+          <ArticleLink href="https://gobooks.com/">
+            Go Books
+          </ArticleLink>
+          . I highly recommend all Go players to try out the
           first volume of JEJ, as it opens the door to a new
-          language in a very short amount of time.
+          language &mdash; and a new way of thinking!
+          &mdash; in a very short amount of time.
         </ArticleParagraph>
         <ArticleImageWithLegend
           src="/articles/min-cjk-for-go/just_enough_japanese_cover.jpg"
@@ -196,9 +206,9 @@ export function MinCJKForGo({ article }: ArticleProps) {
         </ArticleImageWithLegend>
         <ArticleParagraph>
           My knowledge of Japanese and Korean doesn&apos;t
-          go very far, and my Chinese is infinitesimal. Two
-          of the best resources I know for Japanese and
-          Korean are:
+          go that far unfortunately, and my Chinese is
+          infinitesimal. However, two of the best resources
+          I know for Japanese and Korean are:
         </ArticleParagraph>
         <ArticleUnorderedList>
           <li>
@@ -222,12 +232,13 @@ export function MinCJKForGo({ article }: ArticleProps) {
           learning multiple languages in parallel and
           comparing them to each other. That might veer
           towards their inherent interest in languages as a
-          whole, but overall, I find that method to be much
-          more engaging than learning only one language. Of
-          course, you&apos;re perhaps stretching yourself
-          too thin, but we&apos;re not robots, we need to
-          feel motivated, if it works for you, then it might
-          just be the <em>correct</em> approach after all.
+          whole, but, overall, I find that method to be much
+          more engaging than learning only one language at a
+          time. Of course, you&apos;re perhaps stretching
+          yourself too thin, but we&apos;re not robots, we
+          need to feel motivated, if it works for you, then
+          it might just be the <em>correct</em> approach
+          after all.
         </ArticleParagraph>
       </ArticleSection>
     </Article>
