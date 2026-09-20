@@ -29,6 +29,13 @@ export async function generateMetadata({
     title,
     openGraph: {
       title,
+      images: [
+        {
+          url: "/league/league_logo_128.png",
+          width: 128,
+          height: 128,
+        },
+      ],
     },
   }
 }

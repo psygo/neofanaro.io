@@ -2,12 +2,9 @@
 
 ## Priorities
 
-- [ ] Add a point column to the league table
 - [ ] Buy a domain
   - Probably [neofanaro.io](https://neofanaro.io)
 - [ ] Add Discord/Canva Tennozan logo to the OG preview for the league
-
-- [ ] ArticleParagraph on legends should not be justified on small screens.
 - [ ] [36% dos jogadores 8d no Fox sao IA, e 22% dos 7d tb](https://www.bilibili.com/video/BV1iHo6BSESd/?bvid=BV1iHo6BSESd)
 - [ ] Improve the top and bottom margins for the Go Diagrams
 - [ ] The clipboard doesn't seem to be working for the website?
