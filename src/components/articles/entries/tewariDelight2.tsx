@@ -8,7 +8,7 @@ import {
   ArticleYouTubeIframe,
   ArticleBlockQuote,
 } from "../articleContent"
-import { GoDiagram } from "../goDiagram"
+import { GoDiagram, GoDiagramLegend } from "../goDiagram"
 import { ArticleMath } from "../articleMath"
 
 export function TewariDelight2({ article }: ArticleProps) {
@@ -55,11 +55,11 @@ export function TewariDelight2({ article }: ArticleProps) {
           height={250}
           diaNumber={1}
         >
-          <ArticleParagraph>
+          <GoDiagramLegend>
             An adaptation of the board position on the
             &quot;How to lie with tewari&quot; page, causing
             a heated discussion on Sensei&apos;s Library.
-          </ArticleParagraph>
+          </GoDiagramLegend>
         </GoDiagram>
         <ArticleParagraph>
           The original diagram had move 2 at B, the stone at
@@ -92,9 +92,9 @@ export function TewariDelight2({ article }: ArticleProps) {
           height={250}
           diaNumber={2}
         >
-          <ArticleParagraph>
+          <GoDiagramLegend>
             White ends up with a broken keima.
-          </ArticleParagraph>
+          </GoDiagramLegend>
         </GoDiagram>
         <ArticleParagraph>
           However, it&apos;s also true that Black arrives at
@@ -106,9 +106,9 @@ export function TewariDelight2({ article }: ArticleProps) {
           height={250}
           diaNumber={3}
         >
-          <ArticleParagraph>
+          <GoDiagramLegend>
             Black arrives at an empty triangle.
-          </ArticleParagraph>
+          </GoDiagramLegend>
         </GoDiagram>
         <ArticleParagraph>
           In this case, two things are true at the same
@@ -129,10 +129,10 @@ export function TewariDelight2({ article }: ArticleProps) {
           height={350}
           diaNumber={4}
         >
-          <ArticleParagraph>
+          <GoDiagramLegend>
             The same problem, but transposed to a modern,
             post-AI joseki.
-          </ArticleParagraph>
+          </GoDiagramLegend>
         </GoDiagram>
         <ArticleParagraph>
           If we apply tewari to the similar position in Dia.
@@ -152,10 +152,10 @@ export function TewariDelight2({ article }: ArticleProps) {
           height={350}
           diaNumber={5}
         >
-          <ArticleParagraph>
+          <GoDiagramLegend>
             White tries to get back to the subpar version of
             the post-AI joseki.
-          </ArticleParagraph>
+          </GoDiagramLegend>
         </GoDiagram>
         <ArticleParagraph>
           Through that joseki analysis, it&apos;s more
@@ -181,9 +181,9 @@ export function TewariDelight2({ article }: ArticleProps) {
           height={350}
           diaNumber={6}
         >
-          <ArticleParagraph>
+          <GoDiagramLegend>
             Black tries to justify connecting at 4.
-          </ArticleParagraph>
+          </GoDiagramLegend>
         </GoDiagram>
         <ArticleParagraph>
           White shouldn&apos;t give Black a clean ponnuki
@@ -211,10 +211,10 @@ export function TewariDelight2({ article }: ArticleProps) {
           height={250}
           diaNumber={7}
         >
-          <ArticleParagraph>
+          <GoDiagramLegend>
             The same pattern, but now in the center of the
             board. Black should now atari at 2 instead of 3.
-          </ArticleParagraph>
+          </GoDiagramLegend>
         </GoDiagram>
         <ArticleParagraph>
           The same rationale still applies. However, AI now
@@ -249,9 +249,9 @@ export function TewariDelight2({ article }: ArticleProps) {
           height={250}
           diaNumber={8}
         >
-          <ArticleParagraph>
+          <GoDiagramLegend>
             Should we play at A or go for open corners?
-          </ArticleParagraph>
+          </GoDiagramLegend>
         </GoDiagram>
         <ArticleParagraph>
           Black should absolutely complete the broken keima
@@ -271,9 +271,9 @@ export function TewariDelight2({ article }: ArticleProps) {
           height={250}
           diaNumber={9}
         >
-          <ArticleParagraph>
+          <GoDiagramLegend>
             What&apos;s the cost of not playing at A?
-          </ArticleParagraph>
+          </GoDiagramLegend>
         </GoDiagram>
         <ArticleParagraph>
           If Black plays for a corner this time, instead of

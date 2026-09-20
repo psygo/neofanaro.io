@@ -13,7 +13,7 @@ import {
   ArticleBlockQuote,
   ArticleImageWithLegend,
 } from "../articleContent"
-import { GoDiagram } from "../goDiagram"
+import { GoDiagram, GoDiagramLegend } from "../goDiagram"
 
 export function TennozanLeague({ article }: ArticleProps) {
   const lang = useLang()
@@ -128,13 +128,13 @@ export function TennozanLeague({ article }: ArticleProps) {
             height={400}
             diaNumber={1}
           >
-            <ArticleParagraph>
+            <GoDiagramLegend>
               Um exemplo de &quot;tennozan&quot; no Go, na
               Sensei&apos;s Library. Preto 1 controla o
               quadrante superior direito do tabuleiro
               &quot;de cima&quot;, pressionando o oponente
               ao mesmo tempo.
-            </ArticleParagraph>
+            </GoDiagramLegend>
           </GoDiagram>
         </ArticleSection>
       ) : (
@@ -242,13 +242,13 @@ export function TennozanLeague({ article }: ArticleProps) {
             height={400}
             diaNumber={1}
           >
-            <ArticleParagraph>
+            <GoDiagramLegend>
               An example of a &quot;tennozan&quot; in Go,
               from Sensei&apos;s Library. Black&apos;s 1
               controls the top-right quadrant of the board
               from &quot;above&quot;, pressuring the
               opponent at the same time.
-            </ArticleParagraph>
+            </GoDiagramLegend>
           </GoDiagram>
         </ArticleSection>
       )}

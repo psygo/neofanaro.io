@@ -10,7 +10,7 @@ import {
   ArticleImageWithLegend,
   NoWrap,
 } from "../articleContent"
-import { GoDiagram } from "../goDiagram"
+import { GoDiagram, GoDiagramLegend } from "../goDiagram"
 
 export function DowonPairGo({ article }: ArticleProps) {
   return (
@@ -129,10 +129,10 @@ export function DowonPairGo({ article }: ArticleProps) {
           src="/articles/dowon-pairgo/dowon_pairgo_1.svg"
           diaNumber={1}
         >
-          <ArticleParagraph>
+          <GoDiagramLegend>
             A mistaken, unexpected cut (8) from my pair Go
             partner. White should have crawled with 8 at 9.
-          </ArticleParagraph>
+          </GoDiagramLegend>
         </GoDiagram>
         <ArticleParagraph>
           Where should Black play next?
@@ -161,10 +161,10 @@ export function DowonPairGo({ article }: ArticleProps) {
           src="/articles/dowon-pairgo/dowon_pairgo_3.svg"
           diaNumber={2}
         >
-          <ArticleParagraph>
+          <GoDiagramLegend>
             Black&apos;s groups surrounding White&apos;s
             captured stones are bound to get squeezed.
-          </ArticleParagraph>
+          </GoDiagramLegend>
         </GoDiagram>
         <ArticleParagraph>
           Black has three directions from which to squeezed,
@@ -180,10 +180,10 @@ export function DowonPairGo({ article }: ArticleProps) {
           src="/articles/dowon-pairgo/dowon_pairgo_2.svg"
           diaNumber={3}
         >
-          <ArticleParagraph>
+          <GoDiagramLegend>
             Black&apos;s groups surrounding White&apos;s
             captured stones are bound to get squeezed.
-          </ArticleParagraph>
+          </GoDiagramLegend>
         </GoDiagram>
         <ArticleParagraph>
           Black gets sente to play 19; but White gets thick
@@ -202,10 +202,10 @@ export function DowonPairGo({ article }: ArticleProps) {
           src="/articles/dowon-pairgo/dowon_pairgo_4.svg"
           diaNumber={4}
         >
-          <ArticleParagraph>
+          <GoDiagramLegend>
             Black&apos;s thickness and outside trump
             capturing a sizeable chunk on the side.
-          </ArticleParagraph>
+          </GoDiagramLegend>
         </GoDiagram>
         <ArticleParagraph>
           Black 1 damages the A stone while thickening out

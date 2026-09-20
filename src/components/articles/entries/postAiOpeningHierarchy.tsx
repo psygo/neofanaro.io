@@ -8,7 +8,10 @@ import {
   ArticleUnorderedList,
   ArticleOrderedList,
 } from "../articleContent"
-import { GoDiagram } from "@components/articles/goDiagram"
+import {
+  GoDiagram,
+  GoDiagramLegend,
+} from "@components/articles/goDiagram"
 
 export function PostAiOpeningHierarchy({
   article,
@@ -41,9 +44,9 @@ export function PostAiOpeningHierarchy({
             width={120}
             diaNumber={1}
           >
-            <ArticleParagraph>
+            <GoDiagramLegend>
               The Sanrensei Fuseki
-            </ArticleParagraph>
+            </GoDiagramLegend>
           </GoDiagram>
           <GoDiagram
             src="/articles/post-ai-opening-hierarchy/chinese_fuseki.svg"
@@ -51,9 +54,9 @@ export function PostAiOpeningHierarchy({
             width={120}
             diaNumber={2}
           >
-            <ArticleParagraph>
+            <GoDiagramLegend>
               The Chinese Fuseki
-            </ArticleParagraph>
+            </GoDiagramLegend>
           </GoDiagram>
         </div>
         <ArticleParagraph>

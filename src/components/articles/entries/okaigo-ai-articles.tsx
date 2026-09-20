@@ -11,7 +11,7 @@ import {
   ArticleImageWithLegend,
   NoWrap,
 } from "../articleContent"
-import { GoDiagram } from "../goDiagram"
+import { GoDiagram, GoDiagramLegend } from "../goDiagram"
 
 export function OkaoigoAiArticles({
   article,
@@ -98,9 +98,9 @@ export function OkaoigoAiArticles({
           src="/articles/okaigo-ai-articles/okaigo_1.1.svg"
           diaNumber={1}
         >
-          <ArticleParagraph>
+          <GoDiagramLegend>
             How should you deal with Black&apos;s cut?
-          </ArticleParagraph>
+          </GoDiagramLegend>
         </GoDiagram>
         <ArticleBlockQuote>
           <ArticleParagraph>
@@ -117,10 +117,10 @@ export function OkaoigoAiArticles({
           src="/articles/okaigo-ai-articles/okaigo_1.2.svg"
           diaNumber={2}
         >
-          <ArticleParagraph>
+          <GoDiagramLegend>
             This requires reading, but it&apos;s mostly
             technique at its core.
-          </ArticleParagraph>
+          </GoDiagramLegend>
         </GoDiagram>
         <ArticleParagraph>
           If Black A, White B threatens the left Black
@@ -136,10 +136,10 @@ export function OkaoigoAiArticles({
           src="/articles/okaigo-ai-articles/okaigo_1.3.svg"
           diaNumber={3}
         >
-          <ArticleParagraph>
+          <GoDiagramLegend>
             White even gets to capture the original cutting
             stone, A.
-          </ArticleParagraph>
+          </GoDiagramLegend>
         </GoDiagram>
       </ArticleSection>
       <ArticleSection>
@@ -154,9 +154,9 @@ export function OkaoigoAiArticles({
           src="/articles/okaigo-ai-articles/okaigo_3.1.svg"
           diaNumber={4}
         >
-          <ArticleParagraph>
+          <GoDiagramLegend>
             How can White survive or escape?
-          </ArticleParagraph>
+          </GoDiagramLegend>
         </GoDiagram>
         <ArticleParagraph>
           Black doesn&apos;t have the best shape, but,
@@ -167,12 +167,12 @@ export function OkaoigoAiArticles({
           src="/articles/okaigo-ai-articles/okaigo_3.2.svg"
           diaNumber={5}
         >
-          <ArticleParagraph>
+          <GoDiagramLegend>
             Through a sacrifice and a tesuji, White exposes
             Black&apos;s shortage of liberties on the left,
             and the cutting point at C, all at the same
             time.
-          </ArticleParagraph>
+          </GoDiagramLegend>
         </GoDiagram>
         <ArticleParagraph>
           If Black plays at A, White B is sente for rescuing

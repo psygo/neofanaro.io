@@ -9,7 +9,7 @@ import {
   ArticleImageWithLegend,
   NoWrap,
 } from "../articleContent"
-import { GoDiagram } from "../goDiagram"
+import { GoDiagram, GoDiagramLegend } from "../goDiagram"
 
 export function IngCupSuicide({ article }: ArticleProps) {
   return (
@@ -71,10 +71,10 @@ export function IngCupSuicide({ article }: ArticleProps) {
           height={200}
           diaNumber={1}
         >
-          <ArticleParagraph>
+          <GoDiagramLegend>
             Who wins the capturing race inside? Is it a
             seki?
-          </ArticleParagraph>
+          </GoDiagramLegend>
         </GoDiagram>
         <ArticleParagraph>
           That capturing race is an example of the &quot;big
@@ -86,9 +86,9 @@ export function IngCupSuicide({ article }: ArticleProps) {
           height={200}
           diaNumber={2}
         >
-          <ArticleParagraph>
+          <GoDiagramLegend>
             Black 2 and 4 are played elsewhere.
-          </ArticleParagraph>
+          </GoDiagramLegend>
         </GoDiagram>
         <GoDiagram
           src="/articles/ing-cup-suicide/ing_cup_rules_3.svg"
@@ -96,11 +96,11 @@ export function IngCupSuicide({ article }: ArticleProps) {
           height={200}
           diaNumber={3}
         >
-          <ArticleParagraph>
+          <GoDiagramLegend>
             Since Black cannot play at A, the triangle
             points are a privilege of the group with the
             bigger eye.
-          </ArticleParagraph>
+          </GoDiagramLegend>
         </GoDiagram>
         <ArticleParagraph>
           However, something very unexpected happens when we
@@ -120,9 +120,9 @@ export function IngCupSuicide({ article }: ArticleProps) {
           height={200}
           diaNumber={4}
         >
-          <ArticleParagraph>
+          <GoDiagramLegend>
             Black can now race with White more freely.
-          </ArticleParagraph>
+          </GoDiagramLegend>
         </GoDiagram>
         <ArticleParagraph>
           After the inner liberties are freed, Black is able

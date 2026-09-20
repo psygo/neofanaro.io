@@ -15,7 +15,7 @@ import {
 } from "../articleContent"
 import { WgoPlayer } from "@components/articles/wgoPlayer"
 import { ArticlePre } from "@components/articles/articlePre"
-import { GoDiagram } from "../goDiagram"
+import { GoDiagram, GoDiagramLegend } from "../goDiagram"
 
 const GoBoardPlayer = dynamic(
   () =>
@@ -188,7 +188,7 @@ export function GobanWeb({ article }: ArticleProps) {
           src="/articles/dowon-pairgo/dowon_pairgo_1.svg"
           diaNumber={1}
         >
-          <ArticleParagraph>
+          <GoDiagramLegend>
             A mistaken, unexpected cut (8), with surprising
             results afterwards. For more info, check out{" "}
             <ArticleLink
@@ -198,7 +198,7 @@ export function GobanWeb({ article }: ArticleProps) {
               this article
             </ArticleLink>
             .
-          </ArticleParagraph>
+          </GoDiagramLegend>
         </GoDiagram>
         <ArticleParagraph>
           Comparatively, <ArticleCode>wgo.js</ArticleCode>
@@ -227,14 +227,14 @@ export function GobanWeb({ article }: ArticleProps) {
           height={200}
           diaNumber={1}
         >
-          <ArticleParagraph>
+          <GoDiagramLegend>
             This capturing race yields a different result if
             we take away the suicide rule. Check{" "}
             <ArticleLink href="/articles/ing-cup-suicide">
               this article
             </ArticleLink>{" "}
             for more.
-          </ArticleParagraph>
+          </GoDiagramLegend>
         </GoDiagram>
         <ArticleParagraph>
           With the Goban Web project, we can now cover all

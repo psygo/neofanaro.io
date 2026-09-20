@@ -2,9 +2,9 @@
 
 ## Priorities
 
+- [ ] Add a point column to the league table
 - [ ] Buy a domain
   - Probably [neofanaro.io](https://neofanaro.io)
-- [ ] Fix padding on the league table.
 - [ ] Add Discord/Canva Tennozan logo to the OG preview for the league
 
 - [ ] ArticleParagraph on legends should not be justified on small screens.

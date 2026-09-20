@@ -40,3 +40,18 @@ export function GoDiagram({
     </div>
   )
 }
+
+type GoDiagramLegendProps = WithReactChildren & {
+  textAlign?: React.CSSProperties["textAlign"]
+}
+
+export function GoDiagramLegend({
+  children,
+  textAlign = "left",
+}: GoDiagramLegendProps) {
+  return (
+    <p className="hyphens-auto" style={{ textAlign }}>
+      {children}
+    </p>
+  )
+}

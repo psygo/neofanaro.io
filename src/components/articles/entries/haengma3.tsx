@@ -11,7 +11,7 @@ import {
   ArticleYouTubeIframe,
 } from "../articleContent"
 import { ArticlePDFViewer } from "@components/articles/articlePDFViewer"
-import { GoDiagram } from "../goDiagram"
+import { GoDiagram, GoDiagramLegend } from "../goDiagram"
 
 export function Haengma3({ article }: ArticleProps) {
   return (
@@ -95,9 +95,9 @@ export function Haengma3({ article }: ArticleProps) {
           diaNumber={1}
           className="-mt-3"
         >
-          <ArticleParagraph>
+          <GoDiagramLegend>
             Should you connect at A?
-          </ArticleParagraph>
+          </GoDiagramLegend>
         </GoDiagram>
         <ArticleParagraph>
           Typically, we should strive for something better
@@ -116,9 +116,9 @@ export function Haengma3({ article }: ArticleProps) {
           diaNumber={2}
           className="-mt-3"
         >
-          <ArticleParagraph>
+          <GoDiagramLegend>
             A joseki originating the same position.
-          </ArticleParagraph>
+          </GoDiagramLegend>
         </GoDiagram>
         <ArticleParagraph>
           White only tries to cut because of the
@@ -133,9 +133,9 @@ export function Haengma3({ article }: ArticleProps) {
           diaNumber={3}
           className="-mt-3"
         >
-          <ArticleParagraph>
+          <GoDiagramLegend>
             How the tiger&apos;s mouth changes things.
-          </ArticleParagraph>
+          </GoDiagramLegend>
         </GoDiagram>
         <ArticleParagraph>
           Counter-ataring here is the correct solution.
@@ -150,9 +150,9 @@ export function Haengma3({ article }: ArticleProps) {
           diaNumber={4}
           className="-mt-3"
         >
-          <ArticleParagraph>
+          <GoDiagramLegend>
             Black 3 locks White in.
-          </ArticleParagraph>
+          </GoDiagramLegend>
         </GoDiagram>
         <ArticleParagraph>
           If White tries to cut Black, the end result is a
@@ -166,9 +166,9 @@ export function Haengma3({ article }: ArticleProps) {
           diaNumber={5}
           className="-mt-3"
         >
-          <ArticleParagraph>
+          <GoDiagramLegend>
             White fails to cut, while weakening the A stone.
-          </ArticleParagraph>
+          </GoDiagramLegend>
         </GoDiagram>
         <ArticleParagraph>
           From dia. 5, White doesn&apos;t accomplish much,
@@ -188,9 +188,9 @@ export function Haengma3({ article }: ArticleProps) {
           diaNumber={6}
           className="-mt-3"
         >
-          <ArticleParagraph>
+          <GoDiagramLegend>
             AI prefers the empty triangle.
-          </ArticleParagraph>
+          </GoDiagramLegend>
         </GoDiagram>
         <ArticleParagraph>
           In Korea, the Haengma series is not only an
@@ -218,10 +218,10 @@ export function Haengma3({ article }: ArticleProps) {
           diaNumber={7}
           className="-mt-3"
         >
-          <ArticleParagraph>
+          <GoDiagramLegend>
             AI is satisfied with poking a little bit,
             despite the dumpling shape.
-          </ArticleParagraph>
+          </GoDiagramLegend>
         </GoDiagram>
         <ArticleParagraph>
           If Black tries something more ambitious, it leaves
@@ -234,9 +234,9 @@ export function Haengma3({ article }: ArticleProps) {
           diaNumber={8}
           className="-mt-3"
         >
-          <ArticleParagraph>
+          <GoDiagramLegend>
             White escalates the fight.
-          </ArticleParagraph>
+          </GoDiagramLegend>
         </GoDiagram>
         <ArticleParagraph>
           Much like other workbook series, the Haengma books
