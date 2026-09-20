@@ -7,9 +7,7 @@ import {
   ArticleLink,
   ArticleYouTubeIframe,
   ArticleBlockQuote,
-  ArticleUnorderedList,
 } from "../articleContent"
-// import { ArticleMath } from "@components/articles/articleMath"
 import { GoDiagram } from "../goDiagram"
 import { ArticleMath } from "../articleMath"
 
@@ -285,11 +283,6 @@ export function TewariDelight2({ article }: ArticleProps) {
         <ArticleParagraph>
           So there you go:
         </ArticleParagraph>
-        {/* <ArticleUnorderedList>
-          <li>Broken Keima = Empty Triangle</li>
-          <li>Broken Jump = Broken Keima - 4</li>
-          <li>Broken Jump = Empty Triangle - 4</li>
-        </ArticleUnorderedList> */}
         <ArticleMath display>
           {String.raw`
             \begin{aligned}

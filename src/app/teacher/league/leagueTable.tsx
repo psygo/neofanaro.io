@@ -169,12 +169,16 @@ export function LeagueTable({
                   />
                 </span>
               </td>
-              <td className="px-3 py-2 text-slate-600">
-                <span className="-mr-0.5 -ml-3 grid grid-cols-2 gap-2">
-                  <span className="text-right font-semibold text-slate-900">
+              <td className="px-2.5 py-2 text-slate-600">
+                {/* Fixed `ch` widths keep the rank/rating split on
+                    the same axis in every row, so the pair can be
+                    centred as a unit without stealing the cell's
+                    padding. Widest cases: "20k" and a 4-digit rating. */}
+                <span className="flex items-baseline justify-center gap-2 tabular-nums">
+                  <span className="min-w-[3ch] text-right font-semibold text-slate-900">
                     {ratingToRank(row.rating)}
-                  </span>{" "}
-                  <span className="text-left text-slate-500">
+                  </span>
+                  <span className="min-w-[4ch] text-left text-slate-500">
                     {row.rating}
                   </span>
                 </span>
