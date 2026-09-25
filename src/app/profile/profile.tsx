@@ -30,7 +30,7 @@ export function ProfileSection({
 
   if (!player) {
     return (
-      <div className="flex w-110 flex-col gap-3">
+      <div className="flex w-full max-w-110 flex-col gap-3">
         <h1 className="text-2xl font-bold">
           {lang === "pt" ? "Perfil" : "Profile"}
         </h1>

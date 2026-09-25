@@ -27,7 +27,11 @@ export function ThemeToggle() {
         type="button"
         title="Toggle dark mode"
         onClick={toggle}
-        className="flex size-10 cursor-pointer items-center justify-center rounded-full text-slate-700 transition duration-300 hover:bg-slate-200 dark:text-slate-300 dark:hover:bg-slate-800"
+        className="flex cursor-pointer items-center justify-center rounded-full text-slate-700 transition duration-300 hover:bg-slate-200 dark:text-slate-300 dark:hover:bg-slate-800"
+        style={{
+          width: "var(--nav-slot-size)",
+          height: "var(--nav-slot-size)",
+        }}
       >
         {mounted && resolvedTheme === "dark" ? (
           <SunIcon />
@@ -42,7 +46,10 @@ export function ThemeToggle() {
 function SunIcon() {
   return (
     <svg
-      className="size-5"
+      style={{
+        width: "var(--nav-toggle-icon-size)",
+        height: "var(--nav-toggle-icon-size)",
+      }}
       viewBox="0 0 24 24"
       fill="currentColor"
     >
@@ -55,7 +62,10 @@ function SunIcon() {
 function MoonIcon() {
   return (
     <svg
-      className="size-5"
+      style={{
+        width: "var(--nav-toggle-icon-size)",
+        height: "var(--nav-toggle-icon-size)",
+      }}
       viewBox="0 0 24 24"
       fill="currentColor"
     >

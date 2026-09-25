@@ -20,8 +20,17 @@ type NavProps = {
 
 export function Nav({ player }: NavProps) {
   return (
-    <nav className="mx-auto rounded-full bg-slate-100 px-5.5 pt-2.5 pb-2.5 ring-1 ring-slate-200 dark:bg-slate-900 dark:ring-slate-800">
-      <ul className="flex flex-wrap items-center justify-center gap-1.5">
+    <nav
+      className="mx-auto rounded-full bg-slate-100 pt-2.5 pb-2.5 ring-1 ring-slate-200 dark:bg-slate-900 dark:ring-slate-800"
+      style={{
+        paddingLeft: "var(--nav-padding-x)",
+        paddingRight: "var(--nav-padding-x)",
+      }}
+    >
+      <ul
+        className="flex flex-nowrap items-center justify-center"
+        style={{ gap: "var(--nav-gap)" }}
+      >
         <FanaroIcon />
         <SoftwareLogo />
         <TeacherLogo />
@@ -123,7 +132,11 @@ function NavIcon({
   return (
     <LangLink href={href}>
       <li
-        className={`${isActive} flex size-10 items-center justify-center rounded-full transition duration-300 hover:bg-slate-200 dark:hover:bg-slate-800`}
+        className={`${isActive} flex items-center justify-center rounded-full transition duration-300 hover:bg-slate-200 dark:hover:bg-slate-800`}
+        style={{
+          width: "var(--nav-slot-size)",
+          height: "var(--nav-slot-size)",
+        }}
       >
         <Image
           loading="eager"
@@ -132,6 +145,10 @@ function NavIcon({
           width={size}
           height={size}
           className={className}
+          style={{
+            width: "var(--nav-icon-size)",
+            height: "var(--nav-icon-size)",
+          }}
         />
       </li>
     </LangLink>
@@ -149,13 +166,20 @@ function CountryFlagLogo({
   href: string
 }) {
   return (
-    <li className="flex size-10 items-center justify-center">
-      <Link href={href}>
+    <li>
+      <Link
+        href={href}
+        className="flex items-center justify-center rounded-full transition duration-300 hover:bg-slate-200 dark:hover:bg-slate-800"
+        style={{
+          width: "var(--nav-slot-size)",
+          height: "var(--nav-slot-size)",
+        }}
+      >
         <span
           className={`fi fi-${countryCode} rounded-xl`}
           style={{
-            width: "25.5px",
-            height: "25.5px",
+            width: "var(--nav-flag-size)",
+            height: "var(--nav-flag-size)",
           }}
         ></span>
       </Link>

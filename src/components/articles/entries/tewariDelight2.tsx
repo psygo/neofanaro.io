@@ -52,7 +52,7 @@ export function TewariDelight2({ article }: ArticleProps) {
         <GoDiagram
           src="/articles/tewari_delight_2/1.svg"
           width={250}
-          height={250}
+          height={235}
         >
           <GoDiagramLegend>
             An adaptation of the board position on the
@@ -88,7 +88,7 @@ export function TewariDelight2({ article }: ArticleProps) {
         <GoDiagram
           src="/articles/tewari_delight_2/2.svg"
           width={250}
-          height={250}
+          height={235}
         >
           <GoDiagramLegend>
             White ends up with a broken keima.
@@ -101,7 +101,7 @@ export function TewariDelight2({ article }: ArticleProps) {
         <GoDiagram
           src="/articles/tewari_delight_2/3.svg"
           width={250}
-          height={250}
+          height={235}
         >
           <GoDiagramLegend>
             Black arrives at an empty triangle.
@@ -239,7 +239,7 @@ export function TewariDelight2({ article }: ArticleProps) {
         <GoDiagram
           src="/articles/tewari_delight_2/8.svg"
           width={250}
-          height={250}
+          height={235}
         >
           <GoDiagramLegend>
             Should we play at A or go for open corners?
@@ -260,7 +260,7 @@ export function TewariDelight2({ article }: ArticleProps) {
         <GoDiagram
           src="/articles/tewari_delight_2/9.svg"
           width={250}
-          height={250}
+          height={235}
         >
           <GoDiagramLegend>
             What&apos;s the cost of not playing at A?

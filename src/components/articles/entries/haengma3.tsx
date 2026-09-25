@@ -92,7 +92,7 @@ export function Haengma3({ article }: ArticleProps) {
         <GoDiagram
           src="/articles/haengma3/1.svg"
           width={375}
-          height={375}
+          height={315}
         >
           <GoDiagramLegend>
             Should you connect at A?
@@ -111,7 +111,7 @@ export function Haengma3({ article }: ArticleProps) {
         <GoDiagram
           src="/articles/haengma3/2.svg"
           width={375}
-          height={375}
+          height={315}
         >
           <GoDiagramLegend>
             A joseki originating the same position.
@@ -126,7 +126,7 @@ export function Haengma3({ article }: ArticleProps) {
         <GoDiagram
           src="/articles/haengma3/2.1.svg"
           width={375}
-          height={375}
+          height={315}
         >
           <GoDiagramLegend>
             How the tiger&apos;s mouth changes things.
@@ -141,7 +141,7 @@ export function Haengma3({ article }: ArticleProps) {
         <GoDiagram
           src="/articles/haengma3/3.svg"
           width={375}
-          height={375}
+          height={315}
         >
           <GoDiagramLegend>
             Black 3 locks White in.
@@ -155,7 +155,7 @@ export function Haengma3({ article }: ArticleProps) {
         <GoDiagram
           src="/articles/haengma3/4.svg"
           width={375}
-          height={375}
+          height={315}
         >
           <GoDiagramLegend>
             White fails to cut, while weakening the A stone.
@@ -175,7 +175,7 @@ export function Haengma3({ article }: ArticleProps) {
         <GoDiagram
           src="/articles/haengma3/5.svg"
           width={375}
-          height={375}
+          height={315}
         >
           <GoDiagramLegend>
             AI prefers the empty triangle.
@@ -203,7 +203,7 @@ export function Haengma3({ article }: ArticleProps) {
         <GoDiagram
           src="/articles/haengma3/6.svg"
           width={375}
-          height={375}
+          height={315}
         >
           <GoDiagramLegend>
             AI is satisfied with poking a little bit,
@@ -217,7 +217,7 @@ export function Haengma3({ article }: ArticleProps) {
         <GoDiagram
           src="/articles/haengma3/6.1.svg"
           width={375}
-          height={375}
+          height={315}
         >
           <GoDiagramLegend>
             White escalates the fight.

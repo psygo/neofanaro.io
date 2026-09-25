@@ -3,6 +3,7 @@
 ## Priorities
 
 - [Next Gen Shapes: The Mammoth's Jump](https://youtu.be/1OtxBf-EQJ8?t=1651)
+  - Worth mentioning what Alexandre emphasized: these shapes with vague benefits are typically not AI choices.
 - Analytics Dashboard
 
 - Player names on the league table should be clickable and leading to the user page for others to see.
@@ -16,6 +17,7 @@
 - Aquarifolio
 - Kifu Book
 - Best of fanaro.io
+- The Exercises on my cover of the tesuji encyclopedia
 
 ## Bugs
 

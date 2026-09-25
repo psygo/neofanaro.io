@@ -20,7 +20,7 @@ export function ArticleMath({
 
   return (
     <span
-      className={`not-prose ${display ? "flex justify-center py-2" : "inline"}`}
+      className={`not-prose ${display ? "flex justify-center overflow-x-auto py-2" : "inline"}`}
       dangerouslySetInnerHTML={{ __html: html }}
     />
   )

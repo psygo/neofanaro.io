@@ -4,6 +4,26 @@
 
 :root {
   color-scheme: light dark;
+  --article-category-other: oklch(21% 0.034 264.665);
+
+  /* Nav icons scale continuously with viewport width instead of
+     jumping at a breakpoint, bottoming out at their mobile size
+     around 247px wide and topping out at their desktop size from
+     640px wide on — the values this used to switch between. */
+  --nav-padding-x: clamp(8px, -0.8px + 3.562vw, 22px);
+  --nav-gap: clamp(2px, -0.514px + 1.018vw, 6px);
+  --nav-slot-size: clamp(24px, 13.944px + 4.071vw, 40px);
+  --nav-icon-size: clamp(16px, 10.972px + 2.036vw, 24px);
+  --nav-flag-size: clamp(16px, 10.029px + 2.417vw, 25.5px);
+  --nav-toggle-icon-size: clamp(
+    14px,
+    10.229px + 1.527vw,
+    20px
+  );
+}
+
+.dark {
+  --article-category-other: oklch(65% 0.02 264.665);
 }
 
 ::selection {

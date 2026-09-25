@@ -30,17 +30,22 @@ export function GoDiagram({
       className={`${className} go-diagram my-8 flex flex-col items-center gap-3 px-4 hyphens-auto`}
     >
       <div
-        className="rounded-md bg-white p-4 pb-0"
+        className="rounded-md bg-white p-4"
         style={{ width: "100%", maxWidth: `${width}px` }}
       >
-        <Image
-          src={src}
-          width={width}
-          height={height}
-          sizes="100vw"
-          className="responsive-image mt-0 mb-0"
-          alt={alt}
-        />
+        <div
+          className="relative w-full"
+          style={{ aspectRatio: `${width} / ${height}` }}
+        >
+          <Image
+            src={src}
+            fill
+            sizes="100vw"
+            className="object-contain"
+            style={{ margin: 0 }}
+            alt={alt}
+          />
+        </div>
       </div>
       <div className="grid grid-cols-[auto_1fr] gap-2 px-12 text-sm sm:text-base [&>p]:mt-0 [&>p]:mb-0">
         {diaNumber !== undefined ? (

@@ -51,14 +51,14 @@ export function GoProfPresentationSection() {
             </>
           )}
         </div>
-        <div className="mx-auto mt-1 flex gap-2">
+        <div className="mx-auto mt-1 flex flex-wrap justify-center gap-2">
           <FanaroInstagram />
           <FooterLogo
             src="/footer/book_2.svg"
             alt="Como Jogar Go - Uma Introdução Concisa"
             href="https://github.com/psygo/traducao_como_jogar_go"
             size={24}
-            className="h-6 w-6 dark:invert"
+            className="h-5 w-5 sm:h-6 sm:w-6 dark:invert"
           />
           {lang === "pt" ? (
             <FanaroYouTube />
@@ -70,7 +70,7 @@ export function GoProfPresentationSection() {
             alt="Técnicas de Go"
             href="https://github.com/psygo/tecnicas_de_go/releases/tag/1.0"
             size={24}
-            className="h-6 w-6 dark:invert"
+            className="h-5 w-5 sm:h-6 sm:w-6 dark:invert"
           />
           <FanaroFacebook />
         </div>

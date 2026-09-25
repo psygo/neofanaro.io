@@ -221,7 +221,7 @@ export function GobanWeb({ article }: ArticleProps) {
         <GoDiagram
           src="/articles/ing-cup-suicide/ing_cup_rules_1.svg"
           width={200}
-          height={200}
+          height={228}
           diaNumber={1}
         >
           <GoDiagramLegend>

@@ -57,7 +57,7 @@ export function articleCategoryColor(tags: string[]) {
     return "oklch(79.5% 0.184 86.047)"
   if (tags.includes("software"))
     return "oklch(66.6% 0.179 58.318)"
-  return "oklch(21% 0.034 264.665)"
+  return "var(--article-category-other)"
 }
 
 // ---------------------------------------------------------

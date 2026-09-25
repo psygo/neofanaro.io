@@ -15,7 +15,11 @@ export function ArticleTitleSection({
 export function ArticleTitle({
   children,
 }: WithReactChildren) {
-  return <h1 className="mb-0 font-black">{children}</h1>
+  return (
+    <h1 className="mb-0 min-w-0 font-black wrap-break-word">
+      {children}
+    </h1>
+  )
 }
 
 type ArticleViewsProps = {

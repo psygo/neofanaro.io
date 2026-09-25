@@ -40,7 +40,7 @@ export function PostAiOpeningHierarchy({
         <div className="flex flex-col items-center justify-center px-8 sm:flex-row">
           <GoDiagram
             src="/articles/post-ai-opening-hierarchy/sanrensei_fuseki.svg"
-            height={120}
+            height={332}
             width={120}
           >
             <GoDiagramLegend>
@@ -49,7 +49,7 @@ export function PostAiOpeningHierarchy({
           </GoDiagram>
           <GoDiagram
             src="/articles/post-ai-opening-hierarchy/chinese_fuseki.svg"
-            height={120}
+            height={332}
             width={120}
           >
             <GoDiagramLegend>

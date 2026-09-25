@@ -75,7 +75,7 @@ export function LittleKnifeGodBooks({
         </ArticleParagraph>
         <GoDiagram
           src="/articles/little-knife-god-books/101_weiqi_p1.svg"
-          height={240}
+          height={285}
           width={240}
         >
           <GoDiagramLegend>
@@ -87,7 +87,7 @@ export function LittleKnifeGodBooks({
         </ArticleParagraph>
         <GoDiagram
           src="/articles/little-knife-god-books/101_weiqi_p3.svg"
-          height={240}
+          height={285}
           width={240}
         >
           <GoDiagramLegend>
