@@ -13,6 +13,8 @@ import {
 import { ArticlePDFViewer } from "@components/articles/articlePDFViewer"
 import { ArticlePre } from "@components/articles/articlePre"
 
+import { SITE_URL } from "@utils"
+
 const latexCode = String.raw`
 \documentclass[12pt]{standalone}
 
@@ -176,7 +178,7 @@ export function LatexShogi({ article }: ArticleProps) {
           the{" "}
           <ArticleLink
             internal
-            href="https://neofanaroio.vercel.app/articles/okaoigo-ai-articles"
+            href={`${SITE_URL}/articles/okaoigo-ai-articles`}
           >
             okaoigo&apos;s one
           </ArticleLink>

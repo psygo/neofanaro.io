@@ -14,6 +14,8 @@ import {
 } from "../articleContent"
 import { GoDiagram, GoDiagramLegend } from "../goDiagram"
 
+import { SITE_URL } from "@utils"
+
 export function OkaoigoAiArticles({
   article,
 }: ArticleProps) {
@@ -25,7 +27,7 @@ export function OkaoigoAiArticles({
           Vieira 4d EGF &mdash; see{" "}
           <ArticleLink
             internal
-            href="https://neofanaroio.vercel.app/articles/little-knife-god-go-books"
+            href={`${SITE_URL}/articles/little-knife-god-go-books`}
           >
             this post about Little Knife God&apos;s Go Books
           </ArticleLink>{" "}

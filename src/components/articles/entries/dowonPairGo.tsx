@@ -13,6 +13,8 @@ import {
 } from "../articleContent"
 import { GoDiagram, GoDiagramLegend } from "../goDiagram"
 
+import { SITE_URL } from "@utils"
+
 export function DowonPairGo({ article }: ArticleProps) {
   return (
     <Article article={article}>
@@ -105,7 +107,7 @@ export function DowonPairGo({ article }: ArticleProps) {
             more, do check my{" "}
             <ArticleLink
               internal
-              href="https://neofanaroio.vercel.app/articles/one-year-in-asia"
+              href={`${SITE_URL}/articles/one-year-in-asia`}
             >
               video summary
             </ArticleLink>{" "}

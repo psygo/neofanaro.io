@@ -1,18 +1,18 @@
 import type { Metadata } from "next"
 
-import { localizedText } from "@utils"
+import { localizedText, SITE_URL } from "@utils"
 
 import { get_article } from "../actions/articles/get_articles"
 
 export const topLevelMetadata: Metadata = {
-  metadataBase: new URL("https://neofanaroio.vercel.app"),
+  metadataBase: new URL(SITE_URL),
   title: "neofanaro.io",
   description: "neofanaro.io",
   alternates: {
-    canonical: "https://neofanaroio.vercel.app",
+    canonical: SITE_URL,
     languages: {
-      en: "https://neofanaroio.vercel.app",
-      pt: "https://neofanaroio.vercel.app/?lang=pt",
+      en: SITE_URL,
+      pt: `${SITE_URL}/?lang=pt`,
     },
   },
   icons: [
@@ -24,7 +24,7 @@ export const topLevelMetadata: Metadata = {
   openGraph: {
     title: "neofanaro.io",
     description: "Philippe Fanaro's Blog",
-    url: "neofanaroio.vercel.app",
+    url: SITE_URL,
     siteName: "neofanaro.io",
     images: [
       {
