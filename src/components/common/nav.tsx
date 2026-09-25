@@ -12,6 +12,7 @@ import { useLang } from "@hooks/useLang"
 
 import { LangLink } from "./langLink"
 import { CpiSuspense } from "./cpiSuspense"
+import { ThemeToggle } from "./themeToggle"
 
 type NavProps = {
   player: Player | null
@@ -19,7 +20,7 @@ type NavProps = {
 
 export function Nav({ player }: NavProps) {
   return (
-    <nav className="mx-auto rounded-full bg-slate-100 px-5.5 pt-2.5 pb-2.5 ring-1 ring-slate-200">
+    <nav className="mx-auto rounded-full bg-slate-100 px-5.5 pt-2.5 pb-2.5 ring-1 ring-slate-200 dark:bg-slate-900 dark:ring-slate-800">
       <ul className="flex flex-wrap items-center justify-center gap-1.5">
         <FanaroIcon />
         <SoftwareLogo />
@@ -28,6 +29,7 @@ export function Nav({ player }: NavProps) {
         <CpiSuspense>
           <LanguageIcon />
         </CpiSuspense>
+        <ThemeToggle />
         <UserIcon player={player} />
       </ul>
     </nav>
@@ -55,6 +57,7 @@ function TeacherLogo() {
       alt="Teacher"
       href="/teacher"
       size={23.5}
+      className="dark:invert"
     />
   )
 }
@@ -66,6 +69,7 @@ function SoftwareLogo() {
       alt="Software"
       href="/software"
       size={24}
+      className="dark:invert"
     />
   )
 }
@@ -77,6 +81,7 @@ function BlogLogo() {
       alt="Blog"
       href="/articles"
       size={23.5}
+      className="dark:invert"
     />
   )
 }
@@ -89,8 +94,10 @@ type NavLogoProps = {
   className?: string
 }
 
-const activeLinkClasses = "bg-slate-950/5 text-slate-950"
-const inactiveLinkClasses = "bg-transparent text-slate-700"
+const activeLinkClasses =
+  "bg-slate-950/5 text-slate-950 dark:bg-white/10 dark:text-white"
+const inactiveLinkClasses =
+  "bg-transparent text-slate-700 dark:text-slate-300"
 
 function NavIcon({
   src,
@@ -116,7 +123,7 @@ function NavIcon({
   return (
     <LangLink href={href}>
       <li
-        className={`${isActive} flex items-center justify-center rounded-full p-2 transition duration-300 hover:bg-slate-200`}
+        className={`${isActive} flex size-10 items-center justify-center rounded-full transition duration-300 hover:bg-slate-200 dark:hover:bg-slate-800`}
       >
         <Image
           loading="eager"
@@ -142,14 +149,13 @@ function CountryFlagLogo({
   href: string
 }) {
   return (
-    <li>
+    <li className="flex size-10 items-center justify-center">
       <Link href={href}>
         <span
-          className={`fi fi-${countryCode} mr-1.5 ml-2.5 rounded-xl`}
+          className={`fi fi-${countryCode} rounded-xl`}
           style={{
             width: "25.5px",
             height: "25.5px",
-            marginBottom: "2px",
           }}
         ></span>
       </Link>
@@ -188,6 +194,7 @@ function UserIcon({ player }: { player: Player | null }) {
         alt="Sign in"
         href="/sign-in"
         size={23.5}
+        className="dark:invert"
       />
     )
   }
@@ -198,6 +205,7 @@ function UserIcon({ player }: { player: Player | null }) {
       alt={player.nick || player.name}
       href="/profile"
       size={21}
+      className="dark:invert"
     />
   )
 }

@@ -38,7 +38,9 @@ export function ArticleLink({
   return (
     <Link
       className={`${
-        internal ? "text-red-700" : "text-purple-700"
+        internal
+          ? "text-red-700 dark:text-red-400"
+          : "text-purple-700 dark:text-purple-400"
       } underline underline-offset-4 [&:has(>_code)]:decoration-gray-700 [&:has(>_code)]:underline-offset-8`}
       href={href}
       target="_blank"
@@ -63,7 +65,7 @@ export function ArticleUnorderedList({
   children,
 }: WithReactChildren) {
   return (
-    <ul className="mt-0 mb-0 pl-12 text-justify hyphens-auto [&>li]:my-1 [&>li]:pl-0.5 [&>li]:marker:text-slate-700">
+    <ul className="mt-0 mb-0 pl-12 text-justify hyphens-auto [&>li]:my-1 [&>li]:pl-0.5 [&>li]:marker:text-slate-700 dark:[&>li]:marker:text-slate-400">
       {children}
     </ul>
   )
@@ -120,7 +122,7 @@ export function ArticleImageWithLegend({
         alt={alt}
         className={`responsive-image mt-0 mb-0 ${className}`}
       />
-      <div className="px-10 text-sm text-slate-600 sm:text-base [&>p]:mt-0 [&>p]:mb-0">
+      <div className="px-10 text-sm text-slate-600 sm:text-base dark:text-slate-400 [&>p]:mt-0 [&>p]:mb-0">
         {children}
       </div>
     </div>
@@ -162,7 +164,7 @@ export function ArticleBlockQuote({
   children,
 }: WithReactChildren) {
   return (
-    <blockquote className="mr-8 ml-8 border-gray-300 pl-2.5 font-normal text-slate-600 not-italic [&_p:first-of-type]:before:content-[''] [&_p:last-of-type]:after:content-['']">
+    <blockquote className="mr-8 ml-8 border-gray-300 pl-2.5 font-normal text-slate-600 not-italic dark:border-slate-700 dark:text-slate-400 [&_p:first-of-type]:before:content-[''] [&_p:last-of-type]:after:content-['']">
       {children}
     </blockquote>
   )
@@ -197,7 +199,7 @@ export function ArticleYouTubeIframe({
 }: ArticleIframeProps) {
   return (
     <div className="flex justify-center">
-      <div className="mx-6 mb-0.5 flex aspect-video w-full max-w-lg items-center overflow-hidden rounded-2xl border border-slate-200 shadow-lg">
+      <div className="mx-6 mb-0.5 flex aspect-video w-full max-w-lg items-center overflow-hidden rounded-2xl border border-slate-200 shadow-lg dark:border-slate-700">
         <iframe
           className="h-full w-full"
           src={src}
@@ -211,7 +213,9 @@ export function ArticleYouTubeIframe({
 }
 
 export function ArticleDivider() {
-  return <hr className="mt-6 mb-6 border border-gray-300" />
+  return (
+    <hr className="mt-6 mb-6 border border-gray-300 dark:border-slate-700" />
+  )
 }
 
 type NoWrapProps = WithReactChildren

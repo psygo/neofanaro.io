@@ -3,7 +3,7 @@ import Image from "next/image"
 
 export function Footer() {
   return (
-    <footer className="mx-auto mt-10 flex max-w-lg justify-center border-t border-gray-200 px-8 pt-3">
+    <footer className="mx-auto mt-10 flex max-w-lg justify-center border-t border-gray-200 px-8 pt-3 dark:border-slate-800">
       <div className="flex flex-wrap items-center justify-center gap-3">
         <GithubLogo />
         <FanaroYouTube />
@@ -24,7 +24,7 @@ export function GithubLogo() {
       alt="GitHub"
       href="https://github.com/psygo/neofanaro.io"
       size={28}
-      className="h-7 w-7"
+      className="h-7 w-7 dark:invert"
     />
   )
 }
@@ -60,7 +60,7 @@ export function FanaroInstagram() {
       alt="Philippe Fanaro's Instagram"
       href="https://www.instagram.com/fanaro009/"
       size={24}
-      className="h-6 w-6"
+      className="h-6 w-6 dark:invert"
     />
   )
 }
@@ -72,7 +72,7 @@ export function FanaroFacebook() {
       alt="Philippe Fanaro's Facebook"
       href="https://facebook.com/philippe.fanaro/"
       size={24}
-      className="h-6 w-6"
+      className="h-6 w-6 dark:invert"
     />
   )
 }
@@ -90,7 +90,7 @@ export function FanaroEmail() {
         alt="Email"
         width={24}
         height={24}
-        className="h-6 w-6"
+        className="h-6 w-6 dark:invert"
         loading="eager"
       />
     </Link>
@@ -104,7 +104,7 @@ export function FanaroLinkedIn() {
       alt="Philippe Fanaro's LinkedIn"
       href="https://www.linkedin.com/in/philippe-fanaro/"
       size={24}
-      className="h-6.5 w-6.5"
+      className="h-6.5 w-6.5 dark:invert"
     />
   )
 }
@@ -118,7 +118,7 @@ type FooterLogoProps = {
 }
 
 const footerLogoStyling =
-  "inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-950 shadow-sm transition hover:bg-slate-50"
+  "inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-950 shadow-sm transition hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-900 dark:text-white dark:hover:bg-slate-800"
 
 export function FooterLogo({
   src,

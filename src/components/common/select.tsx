@@ -49,7 +49,7 @@ export function Select({
     <div ref={ref} className="relative">
       <button
         onClick={() => setOpen((o) => !o)}
-        className="flex min-w-32 cursor-pointer items-center justify-between gap-2 rounded-lg border border-gray-300 bg-gray-50 px-3 py-1.5 text-sm font-semibold text-gray-600 hover:bg-gray-100"
+        className="flex min-w-32 cursor-pointer items-center justify-between gap-2 rounded-lg border border-gray-300 bg-gray-50 px-3 py-1.5 text-sm font-semibold text-gray-600 hover:bg-gray-100 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700"
       >
         <span>{selectedLabel}</span>
         <svg
@@ -64,7 +64,7 @@ export function Select({
       </button>
 
       {open && (
-        <div className="absolute top-full right-0 z-10 mt-1 min-w-full overflow-y-auto rounded-lg border border-gray-200 bg-white py-1 shadow-lg">
+        <div className="absolute top-full right-0 z-10 mt-1 min-w-full overflow-y-auto rounded-lg border border-gray-200 bg-white py-1 shadow-lg dark:border-slate-700 dark:bg-slate-800">
           {options.map((option) => (
             <button
               key={option.value}
@@ -72,10 +72,10 @@ export function Select({
                 onChange(option.value)
                 setOpen(false)
               }}
-              className={`flex w-full cursor-pointer items-center px-3 py-1.5 text-sm hover:bg-gray-50 ${
+              className={`flex w-full cursor-pointer items-center px-3 py-1.5 text-sm hover:bg-gray-50 dark:hover:bg-slate-700 ${
                 option.value === value
-                  ? "font-semibold text-gray-900"
-                  : "text-gray-700"
+                  ? "font-semibold text-gray-900 dark:text-white"
+                  : "text-gray-700 dark:text-slate-300"
               }`}
             >
               {option.label}

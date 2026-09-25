@@ -327,7 +327,7 @@ function GithubRepoCard({
             className="h-full w-6 sm:hidden"
           />
         </div>
-        <p className="-mt-2 text-sm text-slate-950">
+        <p className="-mt-2 text-sm text-slate-950 dark:text-slate-300">
           {description}
         </p>
         <div className="flex flex-col gap-2.5">
@@ -374,7 +374,7 @@ function GithubRepoCardTitleAndDescription({
       <h3 className="text-md font-bold sm:text-lg">
         {title}
       </h3>
-      <p className="-mt-2 text-sm text-slate-950">
+      <p className="-mt-2 text-sm text-slate-950 dark:text-slate-300">
         {description}
       </p>
     </>
@@ -387,7 +387,7 @@ type TagProps = {
 
 function Tag({ text }: TagProps) {
   return (
-    <span className="rounded-2xl border border-gray-300 bg-gray-100 px-2 py-0.5 text-xs font-semibold text-gray-700">
+    <span className="rounded-2xl border border-gray-300 bg-gray-100 px-2 py-0.5 text-xs font-semibold text-gray-700 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300">
       {text}
     </span>
   )

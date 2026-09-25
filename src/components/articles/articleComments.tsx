@@ -23,10 +23,11 @@ import {
 import type { Player } from "@server"
 
 import { LangLink } from "@components/common/langLink"
+import { CommentMarkdown } from "./commentMarkdown"
 import { VoteButtons } from "./voteButtons"
 
 const inputClasses =
-  "rounded-lg border border-slate-300 bg-slate-50 px-3 py-2 text-slate-700 focus:outline-2 focus:outline-slate-400"
+  "rounded-lg border border-slate-300 bg-slate-50 px-3 py-2 text-slate-700 focus:outline-2 focus:outline-slate-400 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200"
 
 type ArticleCommentsProps = {
   articleId: number
@@ -70,12 +71,12 @@ export function ArticleComments({
   }
 
   return (
-    <section className="mt-10 flex flex-col gap-4 border-t border-slate-200 pt-6">
+    <section className="mt-10 flex flex-col gap-4 border-t border-slate-200 pt-6 dark:border-slate-800">
       <h2 className="text-lg font-bold">
         {lang === "pt" ? "Comentários" : "Comments"}
       </h2>
       {!currentPlayer && (
-        <p className="text-sm text-slate-600">
+        <p className="text-sm text-slate-600 dark:text-slate-400">
           {lang === "pt" ? (
             <>
               Você precisa{" "}
@@ -109,7 +110,7 @@ export function ArticleComments({
         />
       )}
       {comments.length === 0 && (
-        <p className="text-sm text-slate-600">
+        <p className="text-sm text-slate-600 dark:text-slate-400">
           {lang === "pt"
             ? "Ainda não há comentários."
             : "No comments yet."}
@@ -172,13 +173,16 @@ function Comment({
   }
 
   return (
-    <div className="flex flex-col gap-2 rounded-lg border border-slate-300 px-4.25 pt-2.5 pb-2.5 hover:bg-slate-100">
+    <div className="flex flex-col gap-2 rounded-lg border border-slate-300 px-4.25 pt-2.5 pb-2.5 hover:bg-slate-100 dark:border-slate-700 dark:hover:bg-slate-800">
       <div className="flex items-baseline justify-between gap-2">
-        <span className="font-semibold">
+        <LangLink
+          href={`/player/${comment.playerId}`}
+          className="font-semibold hover:underline"
+        >
           {comment.playerName}
-        </span>
+        </LangLink>
         <div className="flex items-center gap-2">
-          <span className="text-xs text-slate-500">
+          <span className="text-xs text-slate-500 dark:text-slate-400">
             {formatDate(comment.createdAt, lang)}
             {comment.editedAt &&
               ` (${lang === "pt" ? "editado" : "edited"})`}
@@ -187,16 +191,14 @@ function Comment({
             <button
               type="button"
               onClick={() => setIsEditing(true)}
-              className="cursor-pointer text-xs text-slate-500 underline underline-offset-4"
+              className="cursor-pointer text-xs text-slate-500 underline underline-offset-4 dark:text-slate-400"
             >
               {lang === "pt" ? "Editar" : "Edit"}
             </button>
           )}
         </div>
       </div>
-      <p className="mt-0 mb-0 text-sm hyphens-auto whitespace-pre-wrap text-slate-700">
-        {comment.content}
-      </p>
+      <CommentMarkdown content={comment.content} />
       <div className="self-end">
         <VoteButtons
           upvotes={comment.upvotes}
@@ -234,7 +236,7 @@ function EditCommentForm({
   return (
     <form
       action={formAction}
-      className="flex flex-col gap-2 rounded-lg border border-slate-200 px-3 pt-1 pb-2.5"
+      className="flex flex-col gap-2 rounded-lg border border-slate-200 px-3 pt-1 pb-2.5 dark:border-slate-700"
     >
       <input
         type="hidden"
@@ -257,14 +259,14 @@ function EditCommentForm({
         <button
           type="button"
           onClick={onCancel}
-          className="cursor-pointer rounded-lg px-3 py-1 text-sm text-slate-600 hover:bg-slate-100"
+          className="cursor-pointer rounded-lg px-3 py-1 text-sm text-slate-600 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-800"
         >
           {lang === "pt" ? "Cancelar" : "Cancel"}
         </button>
         <button
           type="submit"
           disabled={isPending}
-          className="cursor-pointer rounded-lg bg-slate-100 px-4 py-1 text-sm ring-1 ring-slate-200 transition duration-300 hover:bg-slate-200 disabled:cursor-not-allowed disabled:opacity-60"
+          className="cursor-pointer rounded-lg bg-slate-100 px-4 py-1 text-sm ring-1 ring-slate-200 transition duration-300 hover:bg-slate-200 disabled:cursor-not-allowed disabled:opacity-60 dark:bg-slate-800 dark:ring-slate-700 dark:hover:bg-slate-700"
         >
           {isPending
             ? lang === "pt"
@@ -276,14 +278,14 @@ function EditCommentForm({
         </button>
       </div>
       {state.errorCode === "empty" && (
-        <p className="text-sm text-red-600">
+        <p className="text-sm text-red-600 dark:text-red-400">
           {lang === "pt"
             ? "O comentário não pode estar vazio."
             : "The comment can't be empty."}
         </p>
       )}
       {state.errorCode === "not_authorized" && (
-        <p className="text-sm text-red-600">
+        <p className="text-sm text-red-600 dark:text-red-400">
           {lang === "pt"
             ? "Você não pode editar esse comentário."
             : "You can't edit that comment."}
@@ -347,7 +349,7 @@ function CommentForm({
       <button
         type="submit"
         disabled={isPending}
-        className="cursor-pointer self-end rounded-lg bg-slate-100 px-3 py-1 text-sm ring-1 ring-slate-300 transition duration-300 hover:bg-slate-200 disabled:cursor-not-allowed disabled:opacity-60"
+        className="cursor-pointer self-end rounded-lg bg-slate-100 px-3 py-1 text-sm ring-1 ring-slate-300 transition duration-300 hover:bg-slate-200 disabled:cursor-not-allowed disabled:opacity-60 dark:bg-slate-800 dark:ring-slate-700 dark:hover:bg-slate-700"
       >
         {isPending
           ? lang === "pt"
@@ -358,14 +360,14 @@ function CommentForm({
             : "Comment"}
       </button>
       {state.errorCode === "empty" && (
-        <p className="text-sm text-red-600">
+        <p className="text-sm text-red-600 dark:text-red-400">
           {lang === "pt"
             ? "O comentário não pode estar vazio."
             : "The comment can't be empty."}
         </p>
       )}
       {state.errorCode === "not_signed_in" && (
-        <p className="text-sm text-red-600">
+        <p className="text-sm text-red-600 dark:text-red-400">
           {lang === "pt"
             ? "Você precisa entrar na sua conta."
             : "You need to sign in."}

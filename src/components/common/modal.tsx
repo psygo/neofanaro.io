@@ -36,7 +36,7 @@ export function Modal({
       onClick={onClose}
     >
       <div
-        className="flex w-full max-w-sm flex-col gap-4 rounded-xl bg-white p-5 shadow-xl"
+        className="flex w-full max-w-sm flex-col gap-4 rounded-xl bg-white p-5 shadow-xl dark:bg-slate-900"
         onClick={(e) => e.stopPropagation()}
       >
         {title && (
@@ -45,7 +45,7 @@ export function Modal({
             <button
               type="button"
               onClick={onClose}
-              className="cursor-pointer rounded-full p-1 text-gray-500 hover:bg-gray-100"
+              className="cursor-pointer rounded-full p-1 text-gray-500 hover:bg-gray-100 dark:text-slate-400 dark:hover:bg-slate-800"
             >
               <svg
                 className="size-5"

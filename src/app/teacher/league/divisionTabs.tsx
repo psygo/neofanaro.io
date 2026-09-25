@@ -12,7 +12,7 @@ export function DivisionTabs({
   onSelect,
 }: DivisionTabsProps) {
   return (
-    <div className="flex gap-6 overflow-x-auto border-b border-slate-200">
+    <div className="flex gap-6 overflow-x-auto border-b border-slate-200 dark:border-slate-800">
       {divisions.map((division) => {
         const isActive = division.id === activeDivisionId
         return (
@@ -22,8 +22,8 @@ export function DivisionTabs({
             onClick={() => onSelect(division.id)}
             className={`cursor-pointer border-b-2 px-1 pb-2 text-sm font-semibold whitespace-nowrap transition duration-300 ${
               isActive
-                ? "border-slate-900 text-slate-900"
-                : "border-transparent text-slate-500 hover:text-slate-700"
+                ? "border-slate-900 text-slate-900 dark:border-white dark:text-white"
+                : "border-transparent text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200"
             }`}
           >
             {division.title}

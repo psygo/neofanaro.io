@@ -25,7 +25,7 @@ type ArticleViewsProps = {
 
 export function ArticleViews({
   views,
-  className = "flex gap-1 text-base font-bold text-slate-600",
+  className = "flex gap-1 text-base font-bold text-slate-600 dark:text-slate-300",
 }: ArticleViewsProps) {
   return (
     <h6 className={className}>
@@ -41,7 +41,7 @@ type ArticleDateProps = {
 
 export function ArticleDate({
   date,
-  className = "pb-1 text-slate-500",
+  className = "pb-1 text-slate-500 dark:text-slate-400",
 }: ArticleDateProps) {
   const lang = useLang()
 
@@ -61,7 +61,7 @@ export function ArticleTag({
   children,
 }: WithReactChildren) {
   return (
-    <span className="rounded-2xl border border-gray-300 bg-gray-50 px-2 py-0.5 text-xs font-semibold text-gray-600">
+    <span className="rounded-2xl border border-gray-300 bg-gray-50 px-2 py-0.5 text-xs font-semibold text-gray-600 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300">
       {children}
     </span>
   )

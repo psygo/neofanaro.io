@@ -69,7 +69,7 @@ export function ArticlesSection() {
           type="button"
           onClick={() => setFiltersOpen(true)}
           title={lang === "pt" ? "Filtros" : "Filters"}
-          className="flex cursor-pointer items-center justify-center rounded-lg border border-gray-300 bg-gray-50 p-2 text-gray-600 hover:bg-gray-100"
+          className="flex cursor-pointer items-center justify-center rounded-lg border border-gray-300 bg-gray-50 p-2 text-gray-600 hover:bg-gray-100 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700"
         >
           <svg
             className="size-4"

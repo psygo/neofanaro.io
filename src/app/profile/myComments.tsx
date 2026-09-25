@@ -15,7 +15,7 @@ export function MyComments({
         {lang === "pt" ? "Meus comentários" : "My comments"}
       </h2>
       {comments.length === 0 ? (
-        <p className="text-sm text-slate-600">
+        <p className="text-sm text-slate-600 dark:text-slate-400">
           {lang === "pt"
             ? "Você ainda não fez nenhum comentário."
             : "You haven't made any comments yet."}

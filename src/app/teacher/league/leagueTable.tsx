@@ -106,30 +106,30 @@ export function LeagueTable({
   const lossLabel = lang === "pt" ? "D" : "L"
 
   return (
-    <div className="overflow-x-auto rounded-lg border border-slate-200">
+    <div className="overflow-x-auto rounded-lg border border-slate-200 dark:border-slate-700">
       <table className="w-full table-fixed border-collapse text-center text-sm">
         <thead>
-          <tr className="divide-x divide-slate-200 bg-slate-100">
+          <tr className="divide-x divide-slate-200 bg-slate-100 dark:divide-slate-700 dark:bg-slate-800">
             {isModerator && (
-              <th className="w-10 border-b border-slate-200 px-2 py-2" />
+              <th className="w-10 border-b border-slate-200 px-2 py-2 dark:border-slate-700" />
             )}
-            <th className="w-44 border-b border-slate-200 px-3 py-2 text-left">
+            <th className="w-44 border-b border-slate-200 px-3 py-2 text-left dark:border-slate-700">
               {lang === "pt" ? "Nome" : "Name"}
             </th>
-            <th className="w-24 border-b border-slate-200 px-3 py-2">
+            <th className="w-24 border-b border-slate-200 px-3 py-2 dark:border-slate-700">
               Rating
             </th>
-            <th className="w-32 border-b border-slate-200 px-3 py-2 text-left">
+            <th className="w-32 border-b border-slate-200 px-3 py-2 text-left dark:border-slate-700">
               {lang === "pt" ? "OGS" : "OGS"}
             </th>
-            <th className="w-20 border-b border-slate-200 px-3 py-2">
+            <th className="w-20 border-b border-slate-200 px-3 py-2 dark:border-slate-700">
               {lang === "pt" ? "Pontos" : "Points"}
             </th>
             {players.map((player) => (
               <th
                 key={player.playerId}
                 title={player.name}
-                className="w-12 border-b border-slate-200 px-3 py-2"
+                className="w-12 border-b border-slate-200 px-3 py-2 dark:border-slate-700"
               >
                 {player.code}
               </th>
@@ -140,7 +140,7 @@ export function LeagueTable({
           {players.map((row) => (
             <tr
               key={row.playerId}
-              className="divide-x divide-slate-200 odd:bg-white even:bg-slate-50"
+              className="divide-x divide-slate-200 odd:bg-white even:bg-slate-50 dark:divide-slate-700 dark:odd:bg-slate-900 dark:even:bg-slate-800"
             >
               {isModerator && (
                 <td className="px-2 py-2">
@@ -154,37 +154,40 @@ export function LeagueTable({
                     onClick={() =>
                       onRemovePlayer?.(row.playerId)
                     }
-                    className="mx-auto flex size-5 cursor-pointer items-center justify-center rounded-full border border-red-300 text-red-600 transition duration-300 hover:bg-red-100"
+                    className="mx-auto flex size-5 cursor-pointer items-center justify-center rounded-full border border-red-300 text-red-600 transition duration-300 hover:bg-red-100 dark:border-red-800 dark:text-red-400 dark:hover:bg-red-900/40"
                   >
                     −
                   </button>
                 </td>
               )}
               <td className="px-3 py-2 text-left font-semibold">
-                <span className="inline-flex items-center gap-1.5 text-nowrap">
+                <Link
+                  href={`/player/${row.playerId}`}
+                  className="inline-flex items-center gap-1.5 text-nowrap hover:underline"
+                >
                   {row.name}
                   <CountryFlag
                     countryCode={row.country}
                     title={countryName(row.country, lang)}
                     className="h-2.75 w-5 shrink-0 rounded-xs"
                   />
-                </span>
+                </Link>
               </td>
-              <td className="px-2.5 py-2 text-slate-600">
+              <td className="px-2.5 py-2 text-slate-600 dark:text-slate-400">
                 {/* Fixed `ch` widths keep the rank/rating split on
                     the same axis in every row, so the pair can be
                     centred as a unit without stealing the cell's
                     padding. Widest cases: "20k" and a 4-digit rating. */}
                 <span className="flex items-baseline justify-center gap-2 tabular-nums">
-                  <span className="min-w-[3ch] text-right font-semibold text-slate-900">
+                  <span className="min-w-[3ch] text-right font-semibold text-slate-900 dark:text-slate-100">
                     {ratingToRank(row.rating)}
                   </span>
-                  <span className="min-w-[4ch] text-left text-slate-500">
+                  <span className="min-w-[4ch] text-left text-slate-500 dark:text-slate-400">
                     {row.rating}
                   </span>
                 </span>
               </td>
-              <td className="px-3 py-2 text-left text-green-700">
+              <td className="px-3 py-2 text-left text-green-700 dark:text-green-400">
                 {row.ogsLink ? (
                   <Link
                     href={row.ogsLink}
@@ -197,7 +200,7 @@ export function LeagueTable({
                   row.nick
                 )}
               </td>
-              <td className="px-3 py-2 font-semibold text-slate-900 tabular-nums">
+              <td className="px-3 py-2 font-semibold text-slate-900 tabular-nums dark:text-slate-100">
                 {countPoints(players, games, row.playerId)}
               </td>
               {players.map((column) => {
@@ -205,7 +208,7 @@ export function LeagueTable({
                   return (
                     <td
                       key={column.playerId}
-                      className="px-3 py-2 text-slate-300"
+                      className="px-3 py-2 text-slate-300 dark:text-slate-700"
                     >
                       X
                     </td>
@@ -242,8 +245,8 @@ export function LeagueTable({
                         href={`/game/${latestGame.id}`}
                         className={`flex h-full w-full items-center justify-center px-3 py-2 font-bold transition duration-300 ${
                           rowWon
-                            ? "text-green-600 hover:bg-green-50"
-                            : "text-red-500 hover:bg-red-50"
+                            ? "text-green-600 hover:bg-green-50 dark:text-green-400 dark:hover:bg-green-900/30"
+                            : "text-red-500 hover:bg-red-50 dark:text-red-400 dark:hover:bg-red-900/30"
                         }`}
                       >
                         {rowWon ? winLabel : lossLabel}
@@ -267,12 +270,12 @@ export function LeagueTable({
                           column.playerId,
                         )
                       }
-                      className={`h-full w-full cursor-pointer px-3 py-2 font-bold transition duration-300 hover:bg-slate-200 ${
+                      className={`h-full w-full cursor-pointer px-3 py-2 font-bold transition duration-300 hover:bg-slate-200 dark:hover:bg-slate-700 ${
                         latestGame
                           ? rowWon
-                            ? "text-green-600"
-                            : "text-red-500"
-                          : "text-slate-300 hover:text-slate-600"
+                            ? "text-green-600 dark:text-green-400"
+                            : "text-red-500 dark:text-red-400"
+                          : "text-slate-300 hover:text-slate-600 dark:text-slate-700 dark:hover:text-slate-400"
                       }`}
                     >
                       {latestGame

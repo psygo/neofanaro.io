@@ -4,7 +4,7 @@ export function ArticleTable({
   children,
 }: WithReactChildren) {
   return (
-    <div className="not-prose mr-4 ml-4 overflow-x-auto rounded-lg border border-slate-200">
+    <div className="not-prose mr-4 ml-4 overflow-x-auto rounded-lg border border-slate-200 dark:border-slate-700">
       <table className="w-full border-collapse text-center text-sm">
         {children}
       </table>
@@ -17,7 +17,7 @@ export function ArticleTableHead({
 }: WithReactChildren) {
   return (
     <thead>
-      <tr className="divide-x divide-slate-200 bg-slate-100">
+      <tr className="divide-x divide-slate-200 bg-slate-100 dark:divide-slate-700 dark:bg-slate-800">
         {children}
       </tr>
     </thead>
@@ -34,7 +34,7 @@ export function ArticleTableHeaderCell({
 }: ArticleTableHeaderCellProps) {
   return (
     <th
-      className={`border-b border-slate-200 px-3 py-2 ${className}`}
+      className={`border-b border-slate-200 px-3 py-2 dark:border-slate-700 ${className}`}
     >
       {children}
     </th>
@@ -51,7 +51,7 @@ export function ArticleTableRow({
   children,
 }: WithReactChildren) {
   return (
-    <tr className="divide-x divide-slate-200 odd:bg-white even:bg-slate-50">
+    <tr className="divide-x divide-slate-200 odd:bg-white even:bg-slate-50 dark:divide-slate-700 dark:odd:bg-slate-900 dark:even:bg-slate-800">
       {children}
     </tr>
   )

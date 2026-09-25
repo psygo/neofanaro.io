@@ -2,7 +2,10 @@
 
 import { useActionState, useState } from "react"
 
-import { get_games_between, update_game_links } from "@actions"
+import {
+  get_games_between,
+  update_game_links,
+} from "@actions"
 import type { UpdateGameLinksState } from "@server"
 
 import { useLang } from "@hooks"
@@ -26,10 +29,7 @@ type GamePickerProps = {
   onAddNewGame: () => void
 }
 
-function playerLabel(
-  players: PlayerOption[],
-  id: number,
-) {
+function playerLabel(players: PlayerOption[], id: number) {
   const player = players.find((p) => p.id === id)
   return player ? `${player.name} (${player.nick})` : "?"
 }
@@ -48,20 +48,20 @@ export function GamePicker({
   >(null)
 
   return (
-    <div className="flex flex-col gap-3 rounded-xl border border-slate-200 p-4">
+    <div className="flex flex-col gap-3 rounded-xl border border-slate-200 p-4 dark:border-slate-700">
       <h2 className="text-lg font-bold">
         {playerLabel(players, playerAId)} vs{" "}
         {playerLabel(players, playerBId)}
       </h2>
 
       {loading && (
-        <p className="text-sm text-slate-500">
+        <p className="text-sm text-slate-500 dark:text-slate-400">
           {lang === "pt" ? "Carregando..." : "Loading..."}
         </p>
       )}
 
       {!loading && games.length === 0 && (
-        <p className="text-sm text-slate-500">
+        <p className="text-sm text-slate-500 dark:text-slate-400">
           {lang === "pt"
             ? "Nenhuma partida encontrada entre esses jogadores."
             : "No games found between these players."}
@@ -73,7 +73,7 @@ export function GamePicker({
           {games.map((game) => (
             <li
               key={game.id}
-              className="rounded-lg border border-slate-200"
+              className="rounded-lg border border-slate-200 dark:border-slate-700"
             >
               <button
                 type="button"
@@ -82,7 +82,7 @@ export function GamePicker({
                     current === game.id ? null : game.id,
                   )
                 }
-                className="flex w-full cursor-pointer items-center justify-between px-3 py-2 text-left text-sm transition duration-300 hover:bg-slate-100"
+                className="flex w-full cursor-pointer items-center justify-between px-3 py-2 text-left text-sm transition duration-300 hover:bg-slate-100 dark:hover:bg-slate-800"
               >
                 <span>
                   {game.date} &middot;{" "}
@@ -94,7 +94,7 @@ export function GamePicker({
                 </span>
               </button>
               {expandedGameId === game.id && (
-                <div className="border-t border-slate-200 p-3">
+                <div className="border-t border-slate-200 p-3 dark:border-slate-700">
                   <GameLinksForm game={game} />
                 </div>
               )}
@@ -106,7 +106,7 @@ export function GamePicker({
       <button
         type="button"
         onClick={onAddNewGame}
-        className="cursor-pointer self-start rounded-full bg-slate-100 px-4 py-2 text-sm ring-1 ring-slate-200 transition duration-300 hover:bg-slate-200"
+        className="cursor-pointer self-start rounded-full bg-slate-100 px-4 py-2 text-sm ring-1 ring-slate-200 transition duration-300 hover:bg-slate-200 dark:bg-slate-800 dark:ring-slate-700 dark:hover:bg-slate-700"
       >
         {lang === "pt"
           ? "+ Nova partida entre eles"
@@ -117,8 +117,9 @@ export function GamePicker({
 }
 
 const inputClasses =
-  "rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-slate-700 focus:outline-2 focus:outline-slate-400"
-const labelClasses = "text-sm font-semibold text-slate-700"
+  "rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-slate-700 focus:outline-2 focus:outline-slate-400 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200"
+const labelClasses =
+  "text-sm font-semibold text-slate-700 dark:text-slate-300"
 
 function linksErrorMessage(
   errorCode: UpdateGameLinksState["errorCode"],
@@ -190,14 +191,14 @@ function GameLinksForm({ game }: { game: GameRow }) {
         </label>
       </div>
       {linksErrorMessage(state.errorCode, lang) && (
-        <p className="text-sm text-red-600">
+        <p className="text-sm text-red-600 dark:text-red-400">
           {linksErrorMessage(state.errorCode, lang)}
         </p>
       )}
       <button
         type="submit"
         disabled={isPending}
-        className="cursor-pointer self-start rounded-full bg-slate-100 px-4 py-2 text-sm ring-1 ring-slate-200 transition duration-300 hover:bg-slate-200 disabled:cursor-not-allowed disabled:opacity-60"
+        className="cursor-pointer self-start rounded-full bg-slate-100 px-4 py-2 text-sm ring-1 ring-slate-200 transition duration-300 hover:bg-slate-200 disabled:cursor-not-allowed disabled:opacity-60 dark:bg-slate-800 dark:ring-slate-700 dark:hover:bg-slate-700"
       >
         {isPending
           ? lang === "pt"

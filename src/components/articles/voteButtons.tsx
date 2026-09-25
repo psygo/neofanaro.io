@@ -27,8 +27,8 @@ export function VoteButtons({
         <span
           className={`flex items-center gap-1 rounded-full px-2 py-0.5 text-sm ${
             myVote === 1
-              ? "bg-emerald-100 text-emerald-700"
-              : "text-slate-500"
+              ? "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300"
+              : "text-slate-500 dark:text-slate-400"
           }`}
         >
           <span aria-hidden>▲</span>
@@ -37,8 +37,8 @@ export function VoteButtons({
         <span
           className={`flex items-center gap-1 rounded-full px-2 py-0.5 text-sm ${
             myVote === -1
-              ? "bg-red-100 text-red-700"
-              : "text-slate-500"
+              ? "bg-red-100 text-red-700 dark:bg-red-900/40 dark:text-red-300"
+              : "text-slate-500 dark:text-slate-400"
           }`}
         >
           <span aria-hidden>▼</span>
@@ -61,8 +61,8 @@ export function VoteButtons({
         aria-label="Upvote"
         className={`flex cursor-pointer items-center gap-1 rounded-full px-2 py-0.5 text-sm transition duration-300 ${
           myVote === 1
-            ? "bg-emerald-100 text-emerald-700"
-            : "text-slate-500 hover:bg-slate-200"
+            ? "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300"
+            : "text-slate-500 hover:bg-slate-200 dark:text-slate-400 dark:hover:bg-slate-800"
         }`}
       >
         <span aria-hidden>▲</span>
@@ -77,8 +77,8 @@ export function VoteButtons({
         aria-label="Downvote"
         className={`flex cursor-pointer items-center gap-1 rounded-full px-2 py-0.5 text-sm transition duration-300 ${
           myVote === -1
-            ? "bg-red-100 text-red-700"
-            : "text-slate-500 hover:bg-slate-200"
+            ? "bg-red-100 text-red-700 dark:bg-red-900/40 dark:text-red-300"
+            : "text-slate-500 hover:bg-slate-200 dark:text-slate-400 dark:hover:bg-slate-800"
         }`}
       >
         <span aria-hidden>▼</span>

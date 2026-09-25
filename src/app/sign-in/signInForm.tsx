@@ -10,7 +10,7 @@ import { useLang } from "@hooks"
 import { LangLink } from "@components/common/langLink"
 
 const inputClasses =
-  "rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-slate-700 focus:outline-2 focus:outline-slate-400"
+  "rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-slate-700 focus:outline-2 focus:outline-slate-400 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200"
 
 function errorMessage(
   errorCode: AuthErrorCode | undefined,
@@ -57,21 +57,21 @@ export function SignInForm() {
         className={inputClasses}
       />
       {errorMessage(state.errorCode, lang) && (
-        <p className="text-sm text-red-600">
+        <p className="text-sm text-red-600 dark:text-red-400">
           {errorMessage(state.errorCode, lang)}
         </p>
       )}
       <div className="flex justify-between">
         <LangLink
           href="/sign-up"
-          className="cursor-pointer rounded-lg bg-slate-50 px-4 py-2 ring-1 ring-slate-200 transition duration-300 hover:bg-slate-200 disabled:cursor-not-allowed disabled:opacity-60"
+          className="cursor-pointer rounded-lg bg-slate-50 px-4 py-2 ring-1 ring-slate-200 transition duration-300 hover:bg-slate-200 disabled:cursor-not-allowed disabled:opacity-60 dark:bg-slate-800 dark:ring-slate-700 dark:hover:bg-slate-700"
         >
           {lang === "pt" ? "Cadastrar" : "Sign Up"}
         </LangLink>
         <button
           type="submit"
           disabled={isPending}
-          className="cursor-pointer rounded-lg bg-slate-100 px-4 py-2 ring-1 ring-slate-200 transition duration-300 hover:bg-slate-200 disabled:cursor-not-allowed disabled:opacity-60"
+          className="cursor-pointer rounded-lg bg-slate-100 px-4 py-2 ring-1 ring-slate-200 transition duration-300 hover:bg-slate-200 disabled:cursor-not-allowed disabled:opacity-60 dark:bg-slate-800 dark:ring-slate-700 dark:hover:bg-slate-700"
         >
           {isPending
             ? lang === "pt"

@@ -52,7 +52,7 @@ export function MultiSelect({
     <div ref={ref} className="relative">
       <button
         onClick={() => setOpen((o) => !o)}
-        className="flex min-w-40 cursor-pointer items-center justify-between gap-2 rounded-lg border border-gray-300 bg-gray-50 px-3 py-1.5 text-sm font-semibold text-gray-600 hover:bg-gray-100"
+        className="flex min-w-40 cursor-pointer items-center justify-between gap-2 rounded-lg border border-gray-300 bg-gray-50 px-3 py-1.5 text-sm font-semibold text-gray-600 hover:bg-gray-100 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700"
       >
         <span className="flex flex-wrap gap-1">
           {selected.length === 0 ? (
@@ -61,13 +61,13 @@ export function MultiSelect({
             selected.map((s) => (
               <span
                 key={s}
-                className="rounded-full bg-gray-200 px-2 py-0.5 text-xs text-gray-700"
+                className="rounded-full bg-gray-200 px-2 py-0.5 text-xs text-gray-700 dark:bg-slate-700 dark:text-slate-200"
               >
                 {s}
               </span>
             ))
           ) : (
-            <span className="rounded-full bg-gray-200 px-2 py-0.5 text-xs text-gray-700">
+            <span className="rounded-full bg-gray-200 px-2 py-0.5 text-xs text-gray-700 dark:bg-slate-700 dark:text-slate-200">
               {selected.length} selected
             </span>
           )}
@@ -85,7 +85,7 @@ export function MultiSelect({
 
       {open && (
         <div
-          className="absolute top-full right-0 z-10 mt-1 min-w-full overflow-y-auto rounded-lg border border-gray-200 bg-white py-1 shadow-lg"
+          className="absolute top-full right-0 z-10 mt-1 min-w-full overflow-y-auto rounded-lg border border-gray-200 bg-white py-1 shadow-lg dark:border-slate-700 dark:bg-slate-800"
           style={{ maxHeight: "16.5rem" }}
         >
           {options.map((option) => {
@@ -94,13 +94,13 @@ export function MultiSelect({
               <button
                 key={option}
                 onClick={() => toggle(option)}
-                className="flex w-full cursor-pointer items-center gap-2 px-3 py-1.5 text-sm text-gray-700 hover:bg-gray-50"
+                className="flex w-full cursor-pointer items-center gap-2 px-3 py-1.5 text-sm text-gray-700 hover:bg-gray-50 dark:text-slate-300 dark:hover:bg-slate-700"
               >
                 <span
                   className={`flex size-4 shrink-0 items-center justify-center rounded border transition-colors ${
                     checked
-                      ? "border-gray-700 bg-gray-700 text-white"
-                      : "border-gray-300"
+                      ? "border-gray-700 bg-gray-700 text-white dark:border-slate-300 dark:bg-slate-300 dark:text-slate-900"
+                      : "border-gray-300 dark:border-slate-600"
                   }`}
                 >
                   {checked && (

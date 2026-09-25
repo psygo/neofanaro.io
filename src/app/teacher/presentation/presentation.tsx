@@ -58,7 +58,7 @@ export function GoProfPresentationSection() {
             alt="Como Jogar Go - Uma Introdução Concisa"
             href="https://github.com/psygo/traducao_como_jogar_go"
             size={24}
-            className="h-6 w-6"
+            className="h-6 w-6 dark:invert"
           />
           {lang === "pt" ? (
             <FanaroYouTube />
@@ -70,7 +70,7 @@ export function GoProfPresentationSection() {
             alt="Técnicas de Go"
             href="https://github.com/psygo/tecnicas_de_go/releases/tag/1.0"
             size={24}
-            className="h-6 w-6"
+            className="h-6 w-6 dark:invert"
           />
           <FanaroFacebook />
         </div>
@@ -80,7 +80,7 @@ export function GoProfPresentationSection() {
           <PricePerHourCard />
           <PricePerPackCard />
         </div>
-        <div className="flex gap-1 px-3 text-sm text-gray-600">
+        <div className="flex gap-1 px-3 text-sm text-gray-600 dark:text-slate-400">
           <span className="text-base">*</span>
           {lang === "pt" ? (
             <p>
@@ -114,7 +114,7 @@ function LessonTypes() {
   const lang = useLang()
 
   return (
-    <div className="mt-2 flex flex-col gap-2.5 px-3.5 text-sm text-gray-800">
+    <div className="mt-2 flex flex-col gap-2.5 px-3.5 text-sm text-gray-800 dark:text-slate-300">
       {lang === "pt" ? (
         <p>Os tipos de aula incluem, dentre outros:</p>
       ) : (
@@ -160,7 +160,7 @@ type PriceContainerProps = WithReactChildren
 function PriceContainer({ children }: PriceContainerProps) {
   return (
     <div
-      className={`${containerOutline} flex w-full flex-col gap-0.5 bg-gray-50 shadow-sm`}
+      className={`${containerOutline} flex w-full flex-col gap-0.5 bg-gray-50 shadow-sm dark:bg-slate-800`}
     >
       {children}
     </div>
@@ -175,7 +175,7 @@ function PricePerHourCard() {
       <p className="text-xl font-black">
         {lang === "pt" ? "R$ 75" : "US$ 18"}
       </p>
-      <p className="text-gray-700">
+      <p className="text-gray-700 dark:text-slate-300">
         {lang === "pt" ? "por aula*" : "per lesson*"}
       </p>
     </PriceContainer>
@@ -190,7 +190,7 @@ function PricePerPackCard() {
       <p className="text-xl font-black">
         {lang === "pt" ? "R$ 275" : "US$ 60"}
       </p>
-      <p className="text-gray-700">
+      <p className="text-gray-700 dark:text-slate-300">
         {lang === "pt"
           ? "pacote de 4 aulas*"
           : "4-lesson pack*"}
@@ -225,7 +225,7 @@ export function CourseSection() {
           description="Um curso do zero que aborda os princípios básicos da abertura do Go, além de movimentos de canto, josekis básicos e algumas das aberturas mais famosas."
           url="https://www.youtube.com/embed/7zpef07ei5U?list=PLLWr-AWriURE"
         />
-        <div className="my-1 border-t border-slate-200" />
+        <div className="my-1 border-t border-slate-200 dark:border-slate-800" />
       </div>
     </section>
   ) : (
@@ -271,7 +271,7 @@ export function CourseVideo({
   title,
 }: CourseVideoProps) {
   return (
-    <div className="aspect-video overflow-hidden rounded-2xl border border-slate-200 shadow-lg">
+    <div className="aspect-video overflow-hidden rounded-2xl border border-slate-200 shadow-lg dark:border-slate-700">
       <iframe
         className="h-full w-full"
         src={url}
@@ -290,11 +290,11 @@ type CourseNumberProps = {
 function CourseNumber({ index }: CourseNumberProps) {
   return (
     <div className="flex items-center gap-4">
-      <div className="flex-1 border-t border-slate-200" />
-      <span className="rounded-full bg-white px-4 py-1 text-sm font-semibold text-slate-950 shadow-sm md:text-lg">
+      <div className="flex-1 border-t border-slate-200 dark:border-slate-700" />
+      <span className="rounded-full bg-white px-4 py-1 text-sm font-semibold text-slate-950 shadow-sm md:text-lg dark:bg-slate-800 dark:text-white">
         {index}
       </span>
-      <div className="flex-1 border-t border-slate-200" />
+      <div className="flex-1 border-t border-slate-200 dark:border-slate-700" />
     </div>
   )
 }
@@ -311,7 +311,7 @@ function CourseTitleAndDescription({
   return (
     <div className="flex flex-col gap-2">
       <h1 className="text-4xl font-bold">{title}</h1>
-      <p className="max-w-3xl text-lg text-slate-600">
+      <p className="max-w-3xl text-lg text-slate-600 dark:text-slate-400">
         {description}
       </p>
     </div>

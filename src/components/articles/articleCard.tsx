@@ -46,7 +46,7 @@ export function ArticleCard({ post }: ArticleCardProps) {
           <div className="flex flex-wrap items-center gap-3 sm:items-end-safe">
             <ArticleViews
               views={post.views}
-              className="flex gap-1 text-sm font-bold text-slate-700"
+              className="flex gap-1 text-sm font-bold text-slate-700 dark:text-slate-300"
             />
             <ArticleTags tags={post.tags} />
             <div className="flex gap-2">
@@ -58,7 +58,7 @@ export function ArticleCard({ post }: ArticleCardProps) {
           <div className="flex items-center gap-2">
             <ArticleDate
               date={new Date(post.date)}
-              className="text-sm font-semibold text-slate-500"
+              className="text-sm font-semibold text-slate-500 dark:text-slate-400"
             />
             <VoteButtons
               upvotes={post.upvotes}
@@ -92,7 +92,9 @@ function ArticleDescription({
   children,
 }: WithReactChildren) {
   return (
-    <p className="text-sm text-slate-700">{children}</p>
+    <p className="text-sm text-slate-700 dark:text-slate-300">
+      {children}
+    </p>
   )
 }
 

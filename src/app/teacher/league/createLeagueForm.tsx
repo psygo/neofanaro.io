@@ -8,8 +8,9 @@ import type { CreateLeagueState } from "@server"
 import { useLang } from "@hooks"
 
 const inputClasses =
-  "rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-slate-700 focus:outline-2 focus:outline-slate-400"
-const labelClasses = "text-sm font-semibold text-slate-700"
+  "rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-slate-700 focus:outline-2 focus:outline-slate-400 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200"
+const labelClasses =
+  "text-sm font-semibold text-slate-700 dark:text-slate-300"
 
 function errorMessage(
   errorCode: CreateLeagueState["errorCode"],
@@ -39,12 +40,10 @@ export function CreateLeagueForm() {
   return (
     <form
       action={formAction}
-      className="flex flex-col gap-4 rounded-xl border border-slate-200 p-4"
+      className="flex flex-col gap-4 rounded-xl border border-slate-200 p-4 dark:border-slate-700"
     >
       <h2 className="text-lg font-bold">
-        {lang === "pt"
-          ? "Criar liga"
-          : "Create a league"}
+        {lang === "pt" ? "Criar liga" : "Create a league"}
       </h2>
       <div className="grid grid-cols-3 gap-3">
         <label className="flex flex-col gap-1">
@@ -87,14 +86,14 @@ export function CreateLeagueForm() {
         </label>
       </div>
       {errorMessage(state.errorCode, lang) && (
-        <p className="text-sm text-red-600">
+        <p className="text-sm text-red-600 dark:text-red-400">
           {errorMessage(state.errorCode, lang)}
         </p>
       )}
       <button
         type="submit"
         disabled={isPending}
-        className="cursor-pointer self-start rounded-full bg-slate-100 px-4 py-2 ring-1 ring-slate-200 transition duration-300 hover:bg-slate-200 disabled:cursor-not-allowed disabled:opacity-60"
+        className="cursor-pointer self-start rounded-full bg-slate-100 px-4 py-2 ring-1 ring-slate-200 transition duration-300 hover:bg-slate-200 disabled:cursor-not-allowed disabled:opacity-60 dark:bg-slate-800 dark:ring-slate-700 dark:hover:bg-slate-700"
       >
         {isPending
           ? lang === "pt"

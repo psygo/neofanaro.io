@@ -52,7 +52,7 @@ export function MyGameCard({
   )
 
   return (
-    <div className="flex items-center gap-3 rounded-lg border border-slate-200 p-3 hover:bg-gray-100">
+    <div className="flex items-center gap-3 rounded-lg border border-slate-200 p-3 hover:bg-gray-100 dark:border-slate-700 dark:hover:bg-slate-800">
       {previewSrc && !previewFailed && (
         <Image
           unoptimized
@@ -61,7 +61,7 @@ export function MyGameCard({
           width={120}
           height={120}
           style={{ width: 120, height: 120 }}
-          className="shrink-0 rounded border border-slate-200 object-cover"
+          className="shrink-0 rounded border border-slate-200 object-cover dark:border-slate-700"
           onError={() => setPreviewFailed(true)}
         />
       )}
@@ -71,11 +71,11 @@ export function MyGameCard({
             <div className="font-semibold">
               vs {game.opponentName} ({game.opponentNick})
             </div>
-            <span className="text-xs text-slate-500">
+            <span className="text-xs text-slate-500 dark:text-slate-400">
               {formatDate(game.date, lang)}
             </span>
           </div>
-          <p className="mt-1 text-sm text-slate-700">
+          <p className="mt-1 text-sm text-slate-700 dark:text-slate-300">
             {game.leagueTitleEn && lang !== "pt"
               ? game.leagueTitleEn
               : game.leagueTitlePt}{" "}
@@ -85,7 +85,7 @@ export function MyGameCard({
             {game.result}
             {winner && (
               <span
-                className={`ml-2 text-xs font-bold ${won ? "text-green-600" : "text-red-600"}`}
+                className={`ml-2 text-xs font-bold ${won ? "text-green-600 dark:text-green-400" : "text-red-600 dark:text-red-400"}`}
               >
                 {won
                   ? lang === "pt"
@@ -107,7 +107,7 @@ export function MyGameCard({
                 target="_blank"
                 rel="noreferrer"
                 title={link.label}
-                className="flex items-center justify-center rounded-full bg-slate-100 p-1.5 text-slate-700 ring-1 ring-slate-200 transition duration-300 hover:bg-slate-200"
+                className="flex items-center justify-center rounded-full bg-slate-100 p-1.5 text-slate-700 ring-1 ring-slate-200 transition duration-300 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:ring-slate-700 dark:hover:bg-slate-700"
               >
                 <link.Icon />
               </a>

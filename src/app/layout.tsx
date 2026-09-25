@@ -12,6 +12,7 @@ import { getCurrentPlayer, topLevelMetadata } from "@server"
 import { Nav } from "@components/common/nav"
 import { Footer } from "@components/common/footer"
 import { CpiSuspense } from "@components/common/cpiSuspense"
+import { ThemeProvider } from "@components/common/themeProvider"
 
 export const metadata: Metadata = topLevelMetadata
 
@@ -23,14 +24,17 @@ export default async function RootLayout({
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} ${latexFont.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col gap-16 bg-gray-50 px-4 py-5.5 sm:gap-10">
-        <CpiSuspense>
-          <Nav player={player} />
-          {children}
-          <Footer />
-        </CpiSuspense>
+      <body className="flex min-h-full flex-col gap-16 bg-gray-50 px-4 py-5.5 text-slate-950 sm:gap-10 dark:bg-slate-950 dark:text-slate-50">
+        <ThemeProvider>
+          <CpiSuspense>
+            <Nav player={player} />
+            {children}
+            <Footer />
+          </CpiSuspense>
+        </ThemeProvider>
       </body>
     </html>
   )

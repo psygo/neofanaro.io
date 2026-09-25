@@ -14,7 +14,7 @@ export function MyCommentCard({
   return (
     <Link
       href={`/articles/${comment.articlePath}`}
-      className="rounded-lg border border-slate-200 p-3 hover:bg-gray-100"
+      className="rounded-lg border border-slate-200 p-3 hover:bg-gray-100 dark:border-slate-700 dark:hover:bg-slate-800"
     >
       <div className="flex items-baseline justify-between gap-2">
         <div className="font-semibold">
@@ -24,13 +24,13 @@ export function MyCommentCard({
             lang,
           )}
         </div>
-        <span className="text-xs text-slate-500">
+        <span className="text-xs text-slate-500 dark:text-slate-400">
           {formatDate(comment.createdAt, lang)}
           {comment.editedAt &&
             ` (${lang === "pt" ? "editado" : "edited"})`}
         </span>
       </div>
-      <p className="mt-1 text-sm hyphens-auto text-slate-700">
+      <p className="mt-1 text-sm hyphens-auto text-slate-700 dark:text-slate-300">
         {comment.content}
       </p>
     </Link>
