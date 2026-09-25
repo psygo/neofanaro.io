@@ -15,6 +15,7 @@ import { MyComments } from "./myComments"
 import { MyGames } from "./myGames"
 import { ProfileDetailsForm } from "./profileDetailsForm"
 import { SignOutButton } from "./signOutButton"
+import { ThemeForm } from "./themeForm"
 
 export function ProfileSection({
   player,
@@ -86,6 +87,7 @@ export function ProfileSection({
           {lang === "pt" ? "Preferências" : "Preferences"}
         </h2>
         <ArticleFontForm articleFont={player.articleFont} />
+        <ThemeForm />
       </div>
 
       <hr className="border-0.75 w-full border-gray-200 dark:border-slate-800" />

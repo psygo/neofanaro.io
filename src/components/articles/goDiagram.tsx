@@ -29,22 +29,26 @@ export function GoDiagram({
     <div
       className={`${className} go-diagram my-8 flex flex-col items-center gap-3 px-4 hyphens-auto`}
     >
-      <Image
-        src={src}
-        width={width}
-        height={height}
-        sizes="100vw"
-        style={{ maxWidth: `${width}px` }}
-        className="responsive-image mt-0 mb-0"
-        alt={alt}
-      />
+      <div
+        className="rounded-md bg-white p-4 pb-0"
+        style={{ width: "100%", maxWidth: `${width}px` }}
+      >
+        <Image
+          src={src}
+          width={width}
+          height={height}
+          sizes="100vw"
+          className="responsive-image mt-0 mb-0"
+          alt={alt}
+        />
+      </div>
       <div className="grid grid-cols-[auto_1fr] gap-2 px-12 text-sm sm:text-base [&>p]:mt-0 [&>p]:mb-0">
         {diaNumber !== undefined ? (
-          <p className="whitespace-nowrap text-gray-500">
+          <p className="whitespace-nowrap text-gray-500 dark:text-slate-400">
             Dia. {diaNumber}.
           </p>
         ) : (
-          <p className="go-diagram-number whitespace-nowrap text-gray-500" />
+          <p className="go-diagram-number whitespace-nowrap text-gray-500 dark:text-slate-400" />
         )}
         {children}
       </div>

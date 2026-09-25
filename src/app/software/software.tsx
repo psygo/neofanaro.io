@@ -135,6 +135,7 @@ function TecnicasDeGo() {
       href="https://github.com/psygo/tecnicas_de_go"
       imageSrc="/software_work/tecnicas_de_go_capa.svg"
       imageSize={90}
+      imageClassName="rounded bg-white"
       title="Técnicas de Go"
       description={
         lang === "pt"
@@ -278,6 +279,7 @@ type GithubRepoCardProps = {
   href: string
   imageSrc: string
   imageSize: number
+  imageClassName?: string
   title: string
   description: string
   tags: string[]
@@ -288,6 +290,7 @@ function GithubRepoCard({
   href,
   imageSrc,
   imageSize,
+  imageClassName = "",
   title,
   description,
   tags,
@@ -306,7 +309,7 @@ function GithubRepoCard({
         alt="Github Repo"
         width={imageSize}
         height={imageSize}
-        className="hidden sm:block"
+        className={`hidden sm:block ${imageClassName}`}
       />
       <div className="flex flex-col gap-3">
         {/* <GithubRepoCardTitleAndDescription
@@ -324,7 +327,7 @@ function GithubRepoCard({
             width={0}
             height={0}
             sizes="100vw"
-            className="h-full w-6 sm:hidden"
+            className={`h-full w-6 sm:hidden ${imageClassName}`}
           />
         </div>
         <p className="-mt-2 text-sm text-slate-950 dark:text-slate-300">

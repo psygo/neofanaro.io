@@ -110,7 +110,7 @@ export function LeagueSection({
             <button
               type="button"
               onClick={() => setShowCreateLeagueForm(true)}
-              className="cursor-pointer rounded-full bg-slate-100 px-4 py-2 ring-1 ring-slate-200 transition duration-300 hover:bg-slate-200"
+              className="cursor-pointer rounded-full bg-slate-100 px-4 py-2 ring-1 ring-slate-200 transition duration-300 hover:bg-slate-200 dark:bg-slate-800 dark:ring-slate-700 dark:hover:bg-slate-700"
             >
               {lang === "pt"
                 ? "+ Criar liga"
@@ -118,7 +118,7 @@ export function LeagueSection({
             </button>
           )
         ) : (
-          <p className="text-center text-slate-500">
+          <p className="text-center text-slate-500 dark:text-slate-400">
             {lang === "pt"
               ? "Ainda não há uma liga criada."
               : "There's no league yet."}
@@ -151,9 +151,10 @@ function LeagueContent({
 }) {
   const lang = useLang()
 
-  const [selectedDivisionId, setSelectedDivisionId] = useState<
-    number | null
-  >(divisions[0]?.division.id ?? null)
+  const [selectedDivisionId, setSelectedDivisionId] =
+    useState<number | null>(
+      divisions[0]?.division.id ?? null,
+    )
   const [picker, setPicker] = useState<Picker | null>(null)
   const [prefill, setPrefill] = useState<{
     divisionId: number
@@ -162,8 +163,10 @@ function LeagueContent({
   } | null>(null)
   const [showAddPlayerForm, setShowAddPlayerForm] =
     useState(false)
-  const [showCreateDivisionForm, setShowCreateDivisionForm] =
-    useState(false)
+  const [
+    showCreateDivisionForm,
+    setShowCreateDivisionForm,
+  ] = useState(false)
   const [showCreateLeagueForm, setShowCreateLeagueForm] =
     useState(false)
 
@@ -248,7 +251,7 @@ function LeagueContent({
       </h1>
 
       {divisions.length === 0 && (
-        <p className="text-center text-slate-500">
+        <p className="text-center text-slate-500 dark:text-slate-400">
           {lang === "pt"
             ? "Ainda não há divisões nesta liga."
             : "There are no divisions in this league yet."}
@@ -300,7 +303,7 @@ function LeagueContent({
             <button
               type="button"
               onClick={() => setShowAddPlayerForm(true)}
-              className="cursor-pointer self-start rounded-full bg-slate-100 px-4 py-2 ring-1 ring-slate-200 transition duration-300 hover:bg-slate-200"
+              className="cursor-pointer self-start rounded-full bg-slate-100 px-4 py-2 ring-1 ring-slate-200 transition duration-300 hover:bg-slate-200 dark:bg-slate-800 dark:ring-slate-700 dark:hover:bg-slate-700"
             >
               {lang === "pt"
                 ? "+ Adicionar jogador"
@@ -312,8 +315,10 @@ function LeagueContent({
           ) : (
             <button
               type="button"
-              onClick={() => setShowCreateDivisionForm(true)}
-              className="cursor-pointer self-start rounded-full bg-slate-100 px-4 py-2 ring-1 ring-slate-200 transition duration-300 hover:bg-slate-200"
+              onClick={() =>
+                setShowCreateDivisionForm(true)
+              }
+              className="cursor-pointer self-start rounded-full bg-slate-100 px-4 py-2 ring-1 ring-slate-200 transition duration-300 hover:bg-slate-200 dark:bg-slate-800 dark:ring-slate-700 dark:hover:bg-slate-700"
             >
               {lang === "pt"
                 ? "+ Criar divisão"
@@ -354,7 +359,7 @@ function LeagueContent({
           <button
             type="button"
             onClick={() => setShowCreateLeagueForm(true)}
-            className="cursor-pointer self-start rounded-full bg-slate-100 px-4 py-2 ring-1 ring-slate-200 transition duration-300 hover:bg-slate-200"
+            className="cursor-pointer self-start rounded-full bg-slate-100 px-4 py-2 ring-1 ring-slate-200 transition duration-300 hover:bg-slate-200 dark:bg-slate-800 dark:ring-slate-700 dark:hover:bg-slate-700"
           >
             {lang === "pt"
               ? "+ Criar liga"

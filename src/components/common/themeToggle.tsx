@@ -1,23 +1,32 @@
 "use client"
 
+import { useTransition } from "react"
+
 import { useTheme } from "next-themes"
+
+import { update_theme } from "@actions"
 
 import { useIsClient } from "@hooks"
 
 export function ThemeToggle() {
   const { resolvedTheme, setTheme } = useTheme()
   const mounted = useIsClient()
+  const [, startTransition] = useTransition()
+
+  function toggle() {
+    const next = resolvedTheme === "dark" ? "light" : "dark"
+    setTheme(next)
+    startTransition(() => {
+      update_theme(next)
+    })
+  }
 
   return (
     <li>
       <button
         type="button"
         title="Toggle dark mode"
-        onClick={() =>
-          setTheme(
-            resolvedTheme === "dark" ? "light" : "dark",
-          )
-        }
+        onClick={toggle}
         className="flex size-10 cursor-pointer items-center justify-center rounded-full text-slate-700 transition duration-300 hover:bg-slate-200 dark:text-slate-300 dark:hover:bg-slate-800"
       >
         {mounted && resolvedTheme === "dark" ? (

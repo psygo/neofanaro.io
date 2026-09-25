@@ -12,9 +12,12 @@ import { useArticles } from "@providers/articlesProvider"
 
 import { Modal } from "@components/common/modal"
 import { MultiSelect } from "@components/common/multiSelect"
+import { Pagination } from "@components/common/pagination"
 import { Select } from "@components/common/select"
 
 import { ArticleCard } from "./articleCard"
+
+const ARTICLES_PER_PAGE = 10
 
 export function ArticlesSection() {
   const lang = useLang()
@@ -26,6 +29,7 @@ export function ArticlesSection() {
   const [direction, setDirection] =
     useState<SortDirection>("desc")
   const [filtersOpen, setFiltersOpen] = useState(false)
+  const [page, setPage] = useState(1)
 
   async function refetch(
     tags: string[],
@@ -39,6 +43,7 @@ export function ArticlesSection() {
       newDirection,
     )
     if (filtered) setArticles(filtered)
+    setPage(1)
   }
 
   function handleTagsChange(tags: string[]) {
@@ -58,6 +63,15 @@ export function ArticlesSection() {
     setDirection(newDirection)
     refetch(selectedTags, orderBy, newDirection)
   }
+
+  const pageCount = Math.max(
+    Math.ceil(articles.length / ARTICLES_PER_PAGE),
+    1,
+  )
+  const visibleArticles = articles.slice(
+    (page - 1) * ARTICLES_PER_PAGE,
+    page * ARTICLES_PER_PAGE,
+  )
 
   return (
     <section className="flex flex-col items-center gap-3">
@@ -136,10 +150,15 @@ export function ArticlesSection() {
         />
       </Modal>
       <div className="flex flex-col gap-3">
-        {articles.map((post) => (
+        {visibleArticles.map((post) => (
           <ArticleCard key={post.id} post={post} />
         ))}
       </div>
+      <Pagination
+        page={page}
+        pageCount={pageCount}
+        onPageChange={setPage}
+      />
     </section>
   )
 }

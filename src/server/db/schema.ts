@@ -60,6 +60,7 @@ export const players = pgTable("players", {
   articleFont: text("article_font")
     .default("geist")
     .notNull(),
+  theme: text("theme").default("system").notNull(),
 })
 
 export const playersRelations = relations(

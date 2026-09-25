@@ -57,7 +57,7 @@ function TeacherLogo() {
       alt="Teacher"
       href="/teacher"
       size={23.5}
-      className="dark:invert"
+      className="opacity-70 dark:opacity-80 dark:invert"
     />
   )
 }
@@ -69,7 +69,7 @@ function SoftwareLogo() {
       alt="Software"
       href="/software"
       size={24}
-      className="dark:invert"
+      className="opacity-70 dark:opacity-80 dark:invert"
     />
   )
 }
@@ -81,7 +81,7 @@ function BlogLogo() {
       alt="Blog"
       href="/articles"
       size={23.5}
-      className="dark:invert"
+      className="opacity-70 dark:opacity-80 dark:invert"
     />
   )
 }
@@ -194,7 +194,7 @@ function UserIcon({ player }: { player: Player | null }) {
         alt="Sign in"
         href="/sign-in"
         size={23.5}
-        className="dark:invert"
+        className="opacity-70 dark:opacity-80 dark:invert"
       />
     )
   }
@@ -205,7 +205,7 @@ function UserIcon({ player }: { player: Player | null }) {
       alt={player.nick || player.name}
       href="/profile"
       size={21}
-      className="dark:invert"
+      className="opacity-70 dark:opacity-80 dark:invert"
     />
   )
 }

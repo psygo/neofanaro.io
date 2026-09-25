@@ -2,8 +2,7 @@
 
 ## Priorities
 
-- Next Gen Shapes: The Mammoth's Jump
-- Mention that Dowon is the #1 caster on BadukTV
+- [Next Gen Shapes: The Mammoth's Jump](https://youtu.be/1OtxBf-EQJ8?t=1651)
 - Analytics Dashboard
 
 - Player names on the league table should be clickable and leading to the user page for others to see.
