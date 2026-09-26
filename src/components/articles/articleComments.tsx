@@ -297,7 +297,7 @@ function Comment({
   }
 
   return (
-    <div className="flex flex-col gap-2 rounded-lg border border-slate-300 px-4.25 pt-2.5 pb-2.5 hover:bg-slate-100 dark:border-slate-700 dark:hover:bg-slate-800">
+    <div className="flex flex-col gap-2 rounded-lg border border-slate-300 px-4.25 pt-2.5 pb-2.5 hover:bg-slate-100 dark:border-slate-700 dark:bg-slate-900 dark:hover:bg-slate-800">
       <div className="flex items-baseline justify-between gap-2">
         <LangLink
           href={`/player/${comment.playerId}`}
