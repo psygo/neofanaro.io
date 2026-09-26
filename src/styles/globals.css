@@ -6,20 +6,22 @@
   color-scheme: light dark;
   --article-category-other: oklch(21% 0.034 264.665);
 
-  /* Nav icons scale continuously with viewport width instead of
-     jumping at a breakpoint, bottoming out at their mobile size
-     around 247px wide and topping out at their desktop size from
-     640px wide on — the values this used to switch between. */
-  --nav-padding-x: clamp(8px, -0.8px + 3.562vw, 22px);
-  --nav-gap: clamp(2px, -0.514px + 1.018vw, 6px);
-  --nav-slot-size: clamp(24px, 13.944px + 4.071vw, 40px);
-  --nav-icon-size: clamp(16px, 10.972px + 2.036vw, 24px);
-  --nav-flag-size: clamp(16px, 10.029px + 2.417vw, 25.5px);
-  --nav-toggle-icon-size: clamp(
-    14px,
-    10.229px + 1.527vw,
-    20px
-  );
+  /* The nav's own max width (all slots at full size, tightly
+     packed) is exactly 360px, which combined with the page's 16px
+     side padding fits down to a 392px viewport. Above that, the
+     nav just sits at its natural size — nothing shrinks. Below it,
+     --nav-slot-size drops at exactly 1px of total nav width per 1px
+     of viewport width, so the nav's rendered width tracks the
+     <main> column's width exactly (same as any other full-width
+     content) instead of floating as an oversized, clipped pill.
+     Icon/flag/toggle sizes are derived from the slot size so they
+     keep the same proportions they have at full size. */
+  --nav-padding-x: 22px;
+  --nav-gap: 6px;
+  --nav-slot-size: clamp(16px, -16px + 14.286vw, 40px);
+  --nav-icon-size: calc(var(--nav-slot-size) * 0.6);
+  --nav-flag-size: calc(var(--nav-slot-size) * 0.6375);
+  --nav-toggle-icon-size: calc(var(--nav-slot-size) * 0.5);
 }
 
 .dark {

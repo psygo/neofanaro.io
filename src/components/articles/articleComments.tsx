@@ -177,7 +177,7 @@ function Comment({
       <div className="flex items-baseline justify-between gap-2">
         <LangLink
           href={`/player/${comment.playerId}`}
-          className="font-semibold hover:underline"
+          className="font-semibold no-underline hover:underline"
         >
           {comment.playerName}
         </LangLink>

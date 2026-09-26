@@ -2,7 +2,10 @@
 
 ## Priorities
 
+- Comment replies
+
 - [Next Gen Shapes: The Mammoth's Jump](https://youtu.be/1OtxBf-EQJ8?t=1651)
+  - [On AI Sensei](https://ai-sensei.com/game/wCbiGfZSh7TjX5eXM8TDgvMzi5u2/46aa4a9d-8754-40e0-8320-39e85bcc6696)
   - Worth mentioning what Alexandre emphasized: these shapes with vague benefits are typically not AI choices.
 - Analytics Dashboard
 

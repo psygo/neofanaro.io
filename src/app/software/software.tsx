@@ -61,6 +61,7 @@ function SoftwareStackLogos() {
           alt="repo"
           width={40}
           height={40}
+          className="dark:invert"
         />
       </Link>
       <Link
@@ -74,6 +75,7 @@ function SoftwareStackLogos() {
           alt="repo"
           width={40}
           height={40}
+          className="dark:invert"
         />
       </Link>
       <Link
@@ -88,6 +90,7 @@ function SoftwareStackLogos() {
           alt="repo"
           width={32}
           height={32}
+          className="dark:invert"
         />
       </Link>
       <Link
@@ -101,6 +104,7 @@ function SoftwareStackLogos() {
           alt="repo"
           width={40}
           height={40}
+          className="dark:invert"
         />
       </Link>
     </div>

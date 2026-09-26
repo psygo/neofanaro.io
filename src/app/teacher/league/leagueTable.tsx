@@ -94,6 +94,31 @@ function countPoints(
   )
 }
 
+function countLosses(
+  players: LeaguePlayerRow[],
+  games: DivisionGame[],
+  playerId: number,
+): number {
+  return players.reduce((losses, opponent) => {
+    if (opponent.playerId === playerId) return losses
+
+    const latestGame = findLatestGame(
+      games,
+      playerId,
+      opponent.playerId,
+    )
+    if (!latestGame) return losses
+
+    return playerWonAgainst(
+      games,
+      playerId,
+      opponent.playerId,
+    )
+      ? losses
+      : losses + 1
+  }, 0)
+}
+
 export function LeagueTable({
   players,
   isModerator = false,
@@ -202,6 +227,15 @@ export function LeagueTable({
               </td>
               <td className="px-3 py-2 font-semibold text-slate-900 tabular-nums dark:text-slate-100">
                 {countPoints(players, games, row.playerId)}
+                <span className="text-slate-400 dark:text-slate-500">
+                  {" "}
+                  :{" "}
+                  {countLosses(
+                    players,
+                    games,
+                    row.playerId,
+                  )}
+                </span>
               </td>
               {players.map((column) => {
                 if (column.playerId === row.playerId) {

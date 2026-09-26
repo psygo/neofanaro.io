@@ -6,7 +6,7 @@ export function LeagueHeader() {
   const lang = useLang()
 
   return (
-    <div className="flex flex-col items-center gap-4">
+    <div className="flex flex-col items-center gap-4 text-center">
       <h1 className="gap-4 text-3xl font-black">
         {lang === "pt"
           ? "Liga Tennozan 天王山"
