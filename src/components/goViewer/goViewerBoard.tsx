@@ -16,12 +16,6 @@ const defaultWhiteStoneBorderColor = "#161616"
 // Standard Go column lettering skips "I" (too easily confused with
 // "1"/"J" historically) — A..H, then J..
 const columnLetters = "ABCDEFGHJKLMNOPQRSTUVWXYZ"
-// The site's own LaTeX/Latin Modern stack (see .font-latex in
-// globals.css) — offered as a convenient preset so a diagram styled
-// to match the LaTeX-rendered SVG diagrams elsewhere on the site
-// doesn't need to repeat this string.
-export const goViewerLatexFont =
-  'var(--font-latex), "Latin Modern Roman", Georgia, serif'
 
 function hoshiPoints(
   size: number,
@@ -94,6 +88,12 @@ export type GoViewerBoardProps = {
   // from this module) to match the site's LaTeX-styled SVG diagrams.
   fontFamily?: string
   showMoveNumbers?: boolean
+  // Keeps captured stones drawn on the board (in their last color,
+  // with their move number if they had one) instead of removing
+  // them — the way a book diagram sometimes leaves a doomed stone
+  // on the board to emphasize a capture, akin to SGF edit-mode
+  // (AE) markup, rather than showing the post-capture position.
+  showCapturedStones?: boolean
   className?: string
 }
 
@@ -119,6 +119,7 @@ export function GoViewerBoard({
   gridColor = defaultGridColor,
   fontFamily,
   showMoveNumbers = false,
+  showCapturedStones = false,
   className = "",
 }: GoViewerBoardProps) {
   const {
@@ -128,6 +129,7 @@ export function GoViewerBoard({
     lastMove,
     koPoint,
     moveNumberAt,
+    capturedStones,
     labels,
     placeStone,
   } = useGoViewer()
@@ -252,6 +254,13 @@ export function GoViewerBoard({
 
   const stoneRadius = cellSize * 0.46
 
+  const capturedStoneAt = new Map(
+    capturedStones.map((captured) => [
+      `${captured.row},${captured.col}`,
+      captured,
+    ]),
+  )
+
   function handlePointClick(row: number, col: number) {
     if (!interactive) return
     placeStone(row, col)
@@ -266,7 +275,7 @@ export function GoViewerBoard({
 
   const horizontalSegments = rows.flatMap((row) => {
     const strokeWidth =
-      row === 0 || row === boardSize - 1 ? 1.5 : 1
+      row === 0 || row === boardSize - 1 ? 3 : 1
     const segments: {
       key: string
       x1: number
@@ -311,13 +320,14 @@ export function GoViewerBoard({
         y2={pixelY(row)}
         stroke={gridColor}
         strokeWidth={strokeWidth}
+        strokeLinecap="square"
       />
     ))
   })
 
   const verticalSegments = cols.flatMap((col) => {
     const strokeWidth =
-      col === 0 || col === boardSize - 1 ? 1.5 : 1
+      col === 0 || col === boardSize - 1 ? 3 : 1
     const segments: {
       key: string
       y1: number
@@ -362,6 +372,7 @@ export function GoViewerBoard({
         y2={segment.y2}
         stroke={gridColor}
         strokeWidth={strokeWidth}
+        strokeLinecap="square"
       />
     ))
   })
@@ -412,7 +423,7 @@ export function GoViewerBoard({
             textAnchor="middle"
             dominantBaseline="central"
             fontFamily={fontFamily}
-            fontSize={cellSize * 0.35}
+            fontSize={cellSize * 0.56}
             fill={gridColor}
           >
             {colLabel(col)}
@@ -427,7 +438,7 @@ export function GoViewerBoard({
             textAnchor="middle"
             dominantBaseline="central"
             fontFamily={fontFamily}
-            fontSize={cellSize * 0.35}
+            fontSize={cellSize * 0.56}
             fill={gridColor}
           >
             {rowLabel(row)}
@@ -442,6 +453,13 @@ export function GoViewerBoard({
           const isKoPoint =
             koPoint?.row === row && koPoint?.col === col
           const moveNumber = moveNumberAt[`${row},${col}`]
+          const captured = showCapturedStones
+            ? capturedStoneAt.get(`${row},${col}`)
+            : undefined
+          const displayStone =
+            stone ?? captured?.color ?? null
+          const displayMoveNumber =
+            moveNumber ?? captured?.moveNumber
           const label = labels.find(
             (candidate) =>
               candidate.row === row &&
@@ -450,7 +468,7 @@ export function GoViewerBoard({
 
           return (
             <g key={`point-${row}-${col}`}>
-              {stone === "B" &&
+              {displayStone === "B" &&
                 (blackStoneImage ? (
                   <image
                     href={blackStoneImage}
@@ -467,11 +485,11 @@ export function GoViewerBoard({
                     fill={blackStoneColor}
                     stroke={blackStoneBorderColor}
                     strokeWidth={
-                      blackStoneBorderColor ? 0.75 : 0
+                      blackStoneBorderColor ? 1 : 0
                     }
                   />
                 ))}
-              {stone === "W" &&
+              {displayStone === "W" &&
                 (whiteStoneImage ? (
                   <image
                     href={whiteStoneImage}
@@ -488,25 +506,28 @@ export function GoViewerBoard({
                     fill={whiteStoneColor}
                     stroke={whiteStoneBorderColor}
                     strokeWidth={
-                      whiteStoneBorderColor ? 0.75 : 0
+                      whiteStoneBorderColor ? 1 : 0
                     }
                   />
                 ))}
-              {showMoveNumbers && stone && moveNumber ? (
+              {showMoveNumbers &&
+              displayStone &&
+              displayMoveNumber ? (
                 <text
                   x={pixelX(col)}
                   y={pixelY(row)}
                   textAnchor="middle"
                   dominantBaseline="central"
                   fontFamily={fontFamily}
-                  fontSize={stoneRadius * 0.95}
+                  fontSize={stoneRadius * 1.15}
+                  fontWeight="bold"
                   fill={
-                    stone === "B"
+                    displayStone === "B"
                       ? whiteStoneColor
                       : blackStoneColor
                   }
                 >
-                  {moveNumber}
+                  {displayMoveNumber}
                 </text>
               ) : (
                 isLastMove && (
@@ -540,7 +561,6 @@ export function GoViewerBoard({
                     cy={pixelY(row)}
                     r={cellSize * 0.32}
                     fill={backgroundColor}
-                    opacity={0.8}
                   />
                   <text
                     x={pixelX(col)}
@@ -548,7 +568,8 @@ export function GoViewerBoard({
                     textAnchor="middle"
                     dominantBaseline="central"
                     fontFamily={fontFamily}
-                    fontSize={cellSize * 0.4}
+                    fontSize={cellSize * 0.56}
+                    fontWeight="bold"
                     fill={gridColor}
                   >
                     {label.text}

@@ -1,0 +1,1 @@
+ALTER TABLE "players" ADD COLUMN "article_font_size" text DEFAULT 'medium' NOT NULL;

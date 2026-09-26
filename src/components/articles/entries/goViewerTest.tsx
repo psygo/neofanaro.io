@@ -5,13 +5,20 @@ import {
   ArticleSection,
   ArticleParagraph,
 } from "../articleContent"
+import { GoDiagram, GoDiagramLegend } from "../goDiagram"
 import {
   GoViewer,
   GoViewerBoard,
   GoViewerControls,
   GoViewerInfo,
+  GoViewerKey,
   GoViewerLegend,
+  goViewerBookishTheme,
   goViewerLatexFont,
+  goViewerMonoFont,
+  goViewerSansFont,
+  goViewerSerifFont,
+  readSgfFile,
 } from "@components/goViewer/exports"
 
 export function GoViewerTest({ article }: ArticleProps) {
@@ -36,7 +43,7 @@ export function GoViewerTest({ article }: ArticleProps) {
           <GoViewerBoard />
           <GoViewerControls />
           <GoViewerInfo />
-          <GoViewerLegend />
+          <GoViewerKey />
         </GoViewer>
       </ArticleSection>
 
@@ -184,21 +191,76 @@ export function GoViewerTest({ article }: ArticleProps) {
           thicker black outline for white stones — it&apos;s
           the white <code>GoDiagram</code> card background
           showing through that gives them their &quot;on
-          paper&quot; look. Reproduced here with a plain
+          paper&quot; look. Reproduced here via the exported{" "}
+          <code>goViewerBookishTheme</code> preset (plain
           white background, black grid, black stones with no
           border, white stones with a black border, and{" "}
-          <code>goViewerLatexFont</code>:
+          <code>goViewerLatexFont</code>):
+        </ArticleParagraph>
+        <GoViewer sgf={sampleSgf} startAt="end">
+          <GoViewerBoard
+            {...goViewerBookishTheme}
+            showMoveNumbers
+            interactive={false}
+          />
+        </GoViewer>
+      </ArticleSection>
+
+      <ArticleSection>
+        <ArticleParagraph textAlign="left">
+          Other <code>fontFamily</code> presets, for
+          reference — <code>goViewerSansFont</code> (the
+          site&apos;s UI sans-serif),{" "}
+          <code>goViewerMonoFont</code>, and{" "}
+          <code>goViewerSerifFont</code> (a generic serif
+          fallback that doesn&apos;t pull in the LaTeX
+          webfont):
         </ArticleParagraph>
         <GoViewer sgf={sampleSgf} startAt="end">
           <GoViewerBoard
             showMoveNumbers
             interactive={false}
-            backgroundColor="#ffffff"
-            gridColor="#000000"
-            blackStoneColor="#000000"
-            whiteStoneColor="#ffffff"
-            whiteStoneBorderColor="#000000"
-            fontFamily={goViewerLatexFont}
+            fontFamily={goViewerSansFont}
+          />
+        </GoViewer>
+        <GoViewer sgf={sampleSgf} startAt="end">
+          <GoViewerBoard
+            showMoveNumbers
+            interactive={false}
+            fontFamily={goViewerMonoFont}
+          />
+        </GoViewer>
+        <GoViewer sgf={sampleSgf} startAt="end">
+          <GoViewerBoard
+            showMoveNumbers
+            interactive={false}
+            fontFamily={goViewerSerifFont}
+          />
+        </GoViewer>
+      </ArticleSection>
+
+      <ArticleSection>
+        <ArticleParagraph textAlign="left">
+          <code>showCapturedStones</code> keeps a captured
+          stone drawn on the board (in its last color, with
+          its move number) instead of removing it — the way
+          a book diagram sometimes leaves a doomed stone in
+          place to emphasize the capture rather than jumping
+          straight to the post-capture position. White 2
+          here gets captured by Black 3; compare the two
+          boards below:
+        </ArticleParagraph>
+        <GoViewer sgf={captureEmphasisSgf} startAt="end">
+          <GoViewerBoard
+            showMoveNumbers
+            interactive={false}
+          />
+        </GoViewer>
+        <GoViewer sgf={captureEmphasisSgf} startAt="end">
+          <GoViewerBoard
+            showMoveNumbers
+            interactive={false}
+            showCapturedStones
           />
         </GoViewer>
       </ArticleSection>
@@ -259,20 +321,36 @@ export function GoViewerTest({ article }: ArticleProps) {
 
       <ArticleSection>
         <ArticleParagraph textAlign="left">
-          From <code>haengma3</code>, the book&apos;s first
-          exercise: should Black connect at A? A black wall,
-          a cutting white stone (move 1), and a lone white
-          stone off to the side:
+          The full set of diagrams from the{" "}
+          <code>haengma3</code> article, each paired with
+          its static <code>GoDiagram</code> original —
+          copied here from that article&apos;s own working
+          state (kept out of the published article itself,
+          which stays static-only):
         </ArticleParagraph>
-        <GoViewer sgf={haengma1Sgf} startAt="end">
+        <GoDiagram
+          src="/articles/haengma3/1.svg"
+          width={375}
+          height={315}
+        >
+          <GoDiagramLegend>
+            Should you connect at A?
+          </GoDiagramLegend>
+        </GoDiagram>
+        <GoViewer
+          sgf={readSgfFile("/articles/haengma3/1.sgf")}
+          startAt="end"
+        >
           <GoViewerBoard
+            {...goViewerBookishTheme}
             region={{
               minRow: 0,
-              maxRow: 8,
+              maxRow: 10,
               minCol: 0,
-              maxCol: 10,
+              maxCol: 12,
             }}
             cellSize={20}
+            size={375}
             showMoveNumbers
             interactive={false}
           />
@@ -280,22 +358,29 @@ export function GoViewerTest({ article }: ArticleProps) {
       </ArticleSection>
 
       <ArticleSection>
-        <ArticleParagraph textAlign="left">
-          The same position reached by an ordinary joseki —
-          11 moves, alternating, ending in the same shape as
-          the previous diagram. Starts at the final
-          position; use the controls to step back through
-          it:
-        </ArticleParagraph>
-        <GoViewer sgf={haengma2Sgf} startAt="end">
+        <GoDiagram
+          src="/articles/haengma3/2.svg"
+          width={375}
+          height={315}
+        >
+          <GoDiagramLegend>
+            A joseki originating the same position.
+          </GoDiagramLegend>
+        </GoDiagram>
+        <GoViewer
+          sgf={readSgfFile("/articles/haengma3/2.sgf")}
+          startAt="end"
+        >
           <GoViewerBoard
+            {...goViewerBookishTheme}
             region={{
               minRow: 0,
-              maxRow: 8,
+              maxRow: 10,
               minCol: 0,
-              maxCol: 10,
+              maxCol: 12,
             }}
             cellSize={20}
+            size={375}
             showMoveNumbers
           />
           <GoViewerControls />
@@ -303,25 +388,183 @@ export function GoViewerTest({ article }: ArticleProps) {
       </ArticleSection>
 
       <ArticleSection>
-        <ArticleParagraph textAlign="left">
-          How the tiger&apos;s mouth changes things: move 6
-          plays the tiger&apos;s-mouth point instead of
-          extending directly, leaving A open, and move 12
-          follows up. Also starts at the final position:
-        </ArticleParagraph>
-        <GoViewer sgf={haengma21Sgf} startAt="end">
+        <GoDiagram
+          src="/articles/haengma3/2.1.svg"
+          width={375}
+          height={315}
+        >
+          <GoDiagramLegend>
+            How the tiger&apos;s mouth changes things.
+          </GoDiagramLegend>
+        </GoDiagram>
+        <GoViewer
+          sgf={readSgfFile("/articles/haengma3/2.1.sgf")}
+          startAt="end"
+        >
           <GoViewerBoard
+            {...goViewerBookishTheme}
             region={{
               minRow: 0,
-              maxRow: 8,
+              maxRow: 10,
               minCol: 0,
-              maxCol: 10,
+              maxCol: 12,
             }}
             cellSize={20}
+            size={375}
             showMoveNumbers
-            // height={400}
-            // width={500}
-            size={400}
+          />
+          <GoViewerControls />
+        </GoViewer>
+      </ArticleSection>
+
+      <ArticleSection>
+        <GoDiagram
+          src="/articles/haengma3/3.svg"
+          width={375}
+          height={315}
+        >
+          <GoDiagramLegend>
+            Black 3 locks White in.
+          </GoDiagramLegend>
+        </GoDiagram>
+        <GoViewer
+          sgf={readSgfFile("/articles/haengma3/3.sgf")}
+          startAt="end"
+        >
+          <GoViewerBoard
+            {...goViewerBookishTheme}
+            region={{
+              minRow: 0,
+              maxRow: 10,
+              minCol: 0,
+              maxCol: 12,
+            }}
+            cellSize={20}
+            size={375}
+            showMoveNumbers
+          />
+          <GoViewerControls />
+        </GoViewer>
+      </ArticleSection>
+
+      <ArticleSection>
+        <GoDiagram
+          src="/articles/haengma3/4.svg"
+          width={375}
+          height={315}
+        >
+          <GoDiagramLegend>
+            White fails to cut, while weakening the A stone.
+          </GoDiagramLegend>
+        </GoDiagram>
+        <GoViewer
+          sgf={readSgfFile("/articles/haengma3/4.sgf")}
+          startAt="end"
+        >
+          <GoViewerBoard
+            {...goViewerBookishTheme}
+            region={{
+              minRow: 0,
+              maxRow: 10,
+              minCol: 0,
+              maxCol: 12,
+            }}
+            cellSize={20}
+            size={375}
+            showMoveNumbers
+            showCapturedStones
+          />
+          <GoViewerControls />
+        </GoViewer>
+      </ArticleSection>
+
+      <ArticleSection>
+        <GoDiagram
+          src="/articles/haengma3/5.svg"
+          width={375}
+          height={315}
+        >
+          <GoDiagramLegend>
+            AI prefers the empty triangle.
+          </GoDiagramLegend>
+        </GoDiagram>
+        <GoViewer
+          sgf={readSgfFile("/articles/haengma3/5.sgf")}
+          startAt="end"
+        >
+          <GoViewerBoard
+            {...goViewerBookishTheme}
+            region={{
+              minRow: 0,
+              maxRow: 10,
+              minCol: 0,
+              maxCol: 12,
+            }}
+            cellSize={20}
+            size={375}
+            showMoveNumbers
+          />
+          <GoViewerControls />
+        </GoViewer>
+      </ArticleSection>
+
+      <ArticleSection>
+        <GoDiagram
+          src="/articles/haengma3/6.svg"
+          width={375}
+          height={315}
+        >
+          <GoDiagramLegend>
+            AI is satisfied with poking a little bit,
+            despite the dumpling shape.
+          </GoDiagramLegend>
+        </GoDiagram>
+        <GoViewer
+          sgf={readSgfFile("/articles/haengma3/6.sgf")}
+          startAt="end"
+        >
+          <GoViewerBoard
+            {...goViewerBookishTheme}
+            region={{
+              minRow: 0,
+              maxRow: 10,
+              minCol: 0,
+              maxCol: 12,
+            }}
+            cellSize={20}
+            size={375}
+            showMoveNumbers
+            showCapturedStones
+          />
+          <GoViewerControls />
+        </GoViewer>
+      </ArticleSection>
+
+      <ArticleSection>
+        <GoDiagram
+          src="/articles/haengma3/6.1.svg"
+          width={375}
+          height={315}
+        >
+          <GoDiagramLegend>
+            White escalates the fight.
+          </GoDiagramLegend>
+        </GoDiagram>
+        <GoViewer
+          sgf={readSgfFile("/articles/haengma3/6.1.sgf")}
+          startAt="end"
+        >
+          <GoViewerBoard
+            {...goViewerBookishTheme}
+            region={{
+              minRow: 0,
+              maxRow: 10,
+              minCol: 0,
+              maxCol: 12,
+            }}
+            cellSize={20}
+            size={375}
+            showMoveNumbers
           />
           <GoViewerControls />
         </GoViewer>
@@ -387,6 +630,31 @@ export function GoViewerTest({ article }: ArticleProps) {
           />
         </GoViewer>
       </ArticleSection>
+
+      <ArticleSection>
+        <ArticleParagraph textAlign="left">
+          <code>GoViewerLegend</code> mirrors{" "}
+          <code>GoDiagramLegend</code>&apos;s own dynamics —
+          an auto-incrementing &quot;Dia. N.&quot; caption
+          sharing the same counter as the article&apos;s{" "}
+          <code>GoDiagram</code>s (via the{" "}
+          <code>.go-diagram-scope</code>/
+          <code>.go-diagram</code> CSS counter), so the two
+          can be numbered together. Drop it in as a{" "}
+          <code>&lt;GoViewer&gt;</code> child, right after
+          the board:
+        </ArticleParagraph>
+        <GoViewer sgf={sampleSgf} startAt="end">
+          <GoViewerBoard
+            {...goViewerBookishTheme}
+            interactive={false}
+          />
+          <GoViewerLegend>
+            An auto-numbered caption, just like a{" "}
+            <code>GoDiagram</code>&apos;s.
+          </GoViewerLegend>
+        </GoViewer>
+      </ArticleSection>
     </Article>
   )
 }
@@ -435,23 +703,4 @@ const dowonPairGo3Sgf = `(;GM[1]FF[4]SZ[19]AB[dc][fc][ic][qc][cd][qd][ie][rf][qg
 // SGF, not something introduced by this transcription.
 const dowonPairGo2Sgf = `(;GM[1]FF[4]SZ[19]AB[qc][qd][rf][qg][ph][oh][nh][ic][ie][fc][dc][cd][dp][fq][hp][gp][iq][jq][hr][qo][qk]AW[pc][pd][pe][pg][og][mg][kd][ce][de][di][cn][hq][gq][gr][ir][pq][op][qm][om][fn];B[jr];W[ep];B[dq];W[do];B[hn];W[ip];B[eq];W[cp];B[cq];W[bp];B[io];W[lp];B[mq];W[lq];B[lr];W[mp];B[nq];W[np];B[ch])`
 
-// Haengma 3, dia. 1 ("Should you connect at A?"), transcribed from
-// public/articles/haengma3/1.svg — the black wall and white cutting
-// group are the pre-existing setup, White's single numbered stone is
-// move 1, and A marks the connection point between Black's two
-// separated stones.
-const haengma1Sgf = `(;GM[1]FF[4]SZ[19]AB[fc][ed][gd][de][df]AW[dc][ec][cd][dd][jd]LB[fd:A];W[ee])`
-
-// Haengma 3, dia. 2 ("A joseki originating the same position"),
-// transcribed from public/articles/haengma3/2.svg — an 11-move
-// joseki sequence that lands on the exact same 11-stone shape as
-// dia. 1 above (verified: same stone count and colors at the same
-// points).
-const haengma2Sgf = `(;GM[1]FF[4]SZ[19];W[cd];B[ed];W[ec];B[fc];W[dc];B[gd];W[jd];B[df];W[ee];B[de];W[dd])`
-
-// Haengma 3, dia. 2.1 ("How the tiger's mouth changes things"),
-// transcribed from public/articles/haengma3/2.1.svg — the same
-// joseki as dia. 2, except move 6 plays the tiger's-mouth point
-// instead of extending directly (leaving the old move-6 point open,
-// labeled A), followed by move 12.
-const haengma21Sgf = `(;GM[1]FF[4]SZ[19]LB[gd:A];W[cd];B[ed];W[ec];B[fc];W[dc];B[fd];W[jd];B[df];W[ee];B[de];W[dd];B[ff])`
+const captureEmphasisSgf = `(;GM[1]FF[4]SZ[9]AB[dc][cd][ed];W[dd];B[de])`

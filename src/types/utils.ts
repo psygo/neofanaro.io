@@ -11,6 +11,12 @@ export enum OrderBy {
 
 export type SortDirection = "asc" | "desc"
 
-export type ArticleFont = "geist" | "latex"
+export type ArticleFont =
+  | "geist"
+  | "latex"
+  | "newcm"
+  | "garamond"
+
+export type ArticleFontSize = "small" | "medium" | "large"
 
 export type ThemePreference = "light" | "dark" | "system"

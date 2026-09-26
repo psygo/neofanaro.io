@@ -16,8 +16,16 @@ export function ArticleFontForm({
   articleFont: string
 }) {
   const lang = useLang()
+  const knownFonts: ArticleFont[] = [
+    "geist",
+    "latex",
+    "newcm",
+    "garamond",
+  ]
   const [value, setValue] = useState<ArticleFont>(
-    articleFont === "latex" ? "latex" : "geist",
+    knownFonts.includes(articleFont as ArticleFont)
+      ? (articleFont as ArticleFont)
+      : "geist",
   )
   const [, startTransition] = useTransition()
 
@@ -47,6 +55,14 @@ export function ArticleFontForm({
           {
             value: "latex",
             label: "LaTeX",
+          },
+          {
+            value: "newcm",
+            label: "New Computer Modern",
+          },
+          {
+            value: "garamond",
+            label: "Adobe Garamond Pro",
           },
         ]}
       />

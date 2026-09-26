@@ -42,15 +42,28 @@ export function Article({
       ? "pt-br"
       : "en-us"
 
+  const fontClasses: Record<string, string> = {
+    latex: "font-latex",
+    newcm: "font-new-computer-modern",
+    garamond: "font-garamond",
+  }
   const fontClass =
-    article.currentPlayer?.articleFont === "latex"
-      ? "font-latex"
-      : "font-geist"
+    fontClasses[article.currentPlayer?.articleFont ?? ""] ??
+    "font-geist"
+
+  const fontSizeClasses: Record<string, string> = {
+    small: "prose-sm",
+    large: "prose-lg",
+  }
+  const fontSizeClass =
+    fontSizeClasses[
+      article.currentPlayer?.articleFontSize ?? ""
+    ] ?? ""
 
   return (
     <article
       lang={articleLang}
-      className={`prose dark:prose-invert go-diagram-scope min-w-0 border-r-2 transition-colors duration-150 sm:px-2 ${fontClass} ${isDragging ? "border-r-slate-300 dark:border-r-slate-600" : "border-r-transparent"}`}
+      className={`prose dark:prose-invert go-diagram-scope min-w-0 border-r-2 transition-colors duration-150 sm:px-2 ${fontClass} ${fontSizeClass} ${isDragging ? "border-r-slate-300 dark:border-r-slate-600" : "border-r-transparent"}`}
       style={{ maxWidth: `${maxWidth}rem` }}
     >
       <ArticleViewTracker path={article.path} />

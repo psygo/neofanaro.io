@@ -30,7 +30,7 @@ export function GoDiagram({
       className={`${className} go-diagram my-8 flex flex-col items-center gap-3 px-4 hyphens-auto`}
     >
       <div
-        className="rounded-md bg-white p-4"
+        className="rounded-md p-4 dark:bg-white"
         style={{ width: "100%", maxWidth: `${width}px` }}
       >
         <div

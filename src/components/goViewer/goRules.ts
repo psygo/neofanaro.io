@@ -219,6 +219,13 @@ export type RecordedMove =
     }
   | { type: "pass"; color: Stone }
 
+export type CapturedStone = {
+  row: number
+  col: number
+  color: Stone
+  moveNumber?: number
+}
+
 export type ReplayResult = {
   board: Board
   toMove: Stone
@@ -230,6 +237,13 @@ export type ReplayResult = {
   // was placed by a move (keyed "row,col") — absent for setup
   // stones (AB/AW) and for points no longer occupied (captured).
   moveNumberAt: Record<string, number>
+  // Stones removed by capture, keyed by their last point — kept
+  // around (rather than discarded like moveNumberAt's entries) so a
+  // diagram can optionally still render them, the way a book
+  // sometimes leaves a doomed stone on the board to emphasize a
+  // capture rather than showing the post-capture position. Cleared
+  // for a point once something is played there again.
+  capturedStones: CapturedStone[]
 }
 
 // Replays `moves[0..upTo)` on top of `setupBoard`, used to derive the
@@ -251,6 +265,7 @@ export function replayMoves(
   let lastMove: BoardPosition | null = null
   let trailingPasses = 0
   const moveNumberAt: Record<string, number> = {}
+  const capturedStoneAt: Record<string, CapturedStone> = {}
 
   const limit = Math.min(upTo, moves.length)
   for (let index = 0; index < limit; index++) {
@@ -281,8 +296,16 @@ export function replayMoves(
     trailingPasses = 0
 
     for (const captured of outcome.captured) {
-      delete moveNumberAt[`${captured.row},${captured.col}`]
+      const key = `${captured.row},${captured.col}`
+      capturedStoneAt[key] = {
+        row: captured.row,
+        col: captured.col,
+        color: otherStone(move.color),
+        moveNumber: moveNumberAt[key],
+      }
+      delete moveNumberAt[key]
     }
+    delete capturedStoneAt[`${move.row},${move.col}`]
     moveNumberAt[`${move.row},${move.col}`] = index + 1
   }
 
@@ -294,5 +317,6 @@ export function replayMoves(
     lastMove,
     trailingPasses,
     moveNumberAt,
+    capturedStones: Object.values(capturedStoneAt),
   }
 }

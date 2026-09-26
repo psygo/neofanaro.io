@@ -68,6 +68,18 @@
     var(--font-latex), "Latin Modern Roman", Georgia, serif;
 }
 
+.font-new-computer-modern {
+  font-family:
+    var(--font-new-computer-modern), "Latin Modern Roman",
+    Georgia, serif;
+}
+
+.font-garamond {
+  font-family:
+    "Adobe Garamond Pro", "EB Garamond", Garamond, Georgia,
+    serif;
+}
+
 /* Tailwind's preflight sets `height: auto` on every <img> but
    leaves width alone, so next/image's own dev warning ("width
    or height modified, but not the other") fires on any Image

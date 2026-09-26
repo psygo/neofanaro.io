@@ -11,6 +11,7 @@ import {
 import {
   Board,
   BoardPosition,
+  CapturedStone,
   IllegalReason,
   RecordedMove,
   Stone,
@@ -231,6 +232,7 @@ export type GoViewerContextValue = {
   moveNumber: number
   totalMoves: number
   moveNumberAt: Record<string, number>
+  capturedStones: CapturedStone[]
   labels: SgfLabel[]
   lastIllegalReason: IllegalReason | null
   placeStone: (row: number, col: number) => void
@@ -358,6 +360,7 @@ export function GoViewerProvider({
       moveNumber: state.viewIndex,
       totalMoves: state.moves.length,
       moveNumberAt: view.moveNumberAt,
+      capturedStones: view.capturedStones,
       labels: state.labels,
       lastIllegalReason: state.lastIllegalReason,
       placeStone,

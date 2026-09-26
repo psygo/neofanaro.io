@@ -10,6 +10,7 @@ import { useLang } from "@hooks"
 import { LangLink } from "@components/common/langLink"
 
 import { ArticleFontForm } from "./articleFontForm"
+import { ArticleFontSizeForm } from "./articleFontSizeForm"
 import { DescriptionForm } from "./descriptionForm"
 import { MyComments } from "./myComments"
 import { MyGames } from "./myGames"
@@ -87,6 +88,9 @@ export function ProfileSection({
           {lang === "pt" ? "Preferências" : "Preferences"}
         </h2>
         <ArticleFontForm articleFont={player.articleFont} />
+        <ArticleFontSizeForm
+          articleFontSize={player.articleFontSize}
+        />
         <ThemeForm />
       </div>
 

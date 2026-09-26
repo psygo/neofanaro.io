@@ -43,6 +43,45 @@ export const latexFont = localFont({
   ],
 })
 
+// New Computer Modern (Book weight) — the font Philippe's own
+// tsumego_workbooks LaTeX project uses for problem numbering, and a
+// heavier-looking relative of the KaTeX/Latin Modern face above.
+// Licensed under the GUST Font License (LPPL-based, free to embed —
+// see the bundled LICENSE.txt).
+export const newComputerModernFont = localFont({
+  variable: "--font-new-computer-modern",
+  src: [
+    {
+      path: "./fonts/new-computer-modern/NewCM10-Book.otf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "./fonts/new-computer-modern/NewCM10-Bold.otf",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "./fonts/new-computer-modern/NewCM10-BookItalic.otf",
+      weight: "400",
+      style: "italic",
+    },
+    {
+      path: "./fonts/new-computer-modern/NewCM10-BoldItalic.otf",
+      weight: "700",
+      style: "italic",
+    },
+  ],
+})
+
+// Adobe Garamond Pro is a commercial Adobe font (also used, as the
+// main body font, by tsumego_workbooks) — it can't be bundled as a
+// webfont here, so this just references it by name for machines
+// that already have it installed (e.g. via Creative Cloud), falling
+// back to a free Garamond-alike and then a generic serif elsewhere.
+export const garamondFontStack =
+  '"Adobe Garamond Pro", "EB Garamond", Garamond, Georgia, serif'
+
 // ---------------------------------------------------------
 // Global Styles
 

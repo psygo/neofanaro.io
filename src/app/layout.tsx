@@ -4,7 +4,12 @@ import "@utils"
 
 import { ThemePreference, WithReactChildren } from "@types"
 
-import { geistMono, geistSans, latexFont } from "@styles"
+import {
+  geistMono,
+  geistSans,
+  latexFont,
+  newComputerModernFont,
+} from "@styles"
 import "@styles"
 
 import { getCurrentPlayer, topLevelMetadata } from "@server"
@@ -38,7 +43,7 @@ export default async function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${geistSans.variable} ${geistMono.variable} ${latexFont.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${latexFont.variable} ${newComputerModernFont.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col gap-16 bg-gray-50 px-4 py-5.5 text-slate-950 sm:gap-10 dark:bg-slate-950 dark:text-slate-50">
         <ThemeProvider

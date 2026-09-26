@@ -60,6 +60,9 @@ export const players = pgTable("players", {
   articleFont: text("article_font")
     .default("geist")
     .notNull(),
+  articleFontSize: text("article_font_size")
+    .default("medium")
+    .notNull(),
   theme: text("theme").default("system").notNull(),
 })
 

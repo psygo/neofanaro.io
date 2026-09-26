@@ -26,9 +26,11 @@ export type GoViewerProps = {
 
 // The top-level container only provides game state — it renders no
 // board, controls, or info itself. <GoViewerBoard>, <GoViewerControls>,
-// <GoViewerInfo>, and <GoViewerLegend> are meant to be composed as
-// children wherever the layout needs them (side by side, stacked,
-// controls detached into a sidebar, etc.), all sharing this context.
+// <GoViewerInfo>, <GoViewerKey> (the black/white/last-move/ko color
+// key), and <GoViewerLegend> (a numbered "Dia. N." caption, mirroring
+// <GoDiagramLegend>) are meant to be composed as children wherever
+// the layout needs them (side by side, stacked, controls detached
+// into a sidebar, etc.), all sharing this context.
 export function GoViewer({
   boardSize = 19,
   sgf,
