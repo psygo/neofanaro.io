@@ -12,6 +12,7 @@ import { getCurrentPlayer, topLevelMetadata } from "@server"
 import { Nav } from "@components/common/nav"
 import { Footer } from "@components/common/footer"
 import { CpiSuspense } from "@components/common/cpiSuspense"
+import { PageViewTracker } from "@components/common/pageViewTracker"
 import { ThemeProvider } from "@components/common/themeProvider"
 
 export const metadata: Metadata = topLevelMetadata
@@ -47,6 +48,7 @@ export default async function RootLayout({
               : undefined
           }
         >
+          <PageViewTracker />
           <CpiSuspense>
             <Nav player={player} />
             {children}

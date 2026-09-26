@@ -274,6 +274,50 @@ export const commentVotesTable = pgTable(
   ],
 )
 
+export const dailyViewsTable = pgTable(
+  "daily_views",
+  {
+    id: serial().primaryKey(),
+    date: date().notNull(),
+    views: integer().notNull().default(0),
+  },
+  (table) => [
+    uniqueIndex("daily_views_date_idx").on(table.date),
+  ],
+)
+
+// Every page view anywhere on the site, one row per day.
+export const dailySiteViewsTable = pgTable(
+  "daily_site_views",
+  {
+    id: serial().primaryKey(),
+    date: date().notNull(),
+    views: integer().notNull().default(0),
+  },
+  (table) => [
+    uniqueIndex("daily_site_views_date_idx").on(table.date),
+  ],
+)
+
+// Every page view outside individual article pages, one row per
+// day. A path counts here unless it starts with "/articles/"
+// (an individual article) — the articles list page itself
+// ("/articles") is not an individual article, so it counts as
+// non-article here.
+export const dailyNonArticleViewsTable = pgTable(
+  "daily_non_article_views",
+  {
+    id: serial().primaryKey(),
+    date: date().notNull(),
+    views: integer().notNull().default(0),
+  },
+  (table) => [
+    uniqueIndex("daily_non_article_views_date_idx").on(
+      table.date,
+    ),
+  ],
+)
+
 export const commentVotesRelations = relations(
   commentVotesTable,
   ({ one }) => ({

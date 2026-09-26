@@ -7,18 +7,22 @@
   --article-category-other: oklch(21% 0.034 264.665);
 
   /* The nav's own max width (all slots at full size, tightly
-     packed) is exactly 360px, which combined with the page's 16px
-     side padding fits down to a 392px viewport. Above that, the
+     packed) is sized for the worst case of 8 slots — the 7 icons
+     everyone sees plus the analytics icon shown to moderators —
+     which comes out to exactly 406px, fitting down to a 438px
+     viewport (plus the page's 16px side padding). Above that, the
      nav just sits at its natural size — nothing shrinks. Below it,
      --nav-slot-size drops at exactly 1px of total nav width per 1px
      of viewport width, so the nav's rendered width tracks the
      <main> column's width exactly (same as any other full-width
      content) instead of floating as an oversized, clipped pill.
+     Non-moderators only ever render 7 slots, so this undershoots
+     their nav slightly at narrow widths rather than overflowing.
      Icon/flag/toggle sizes are derived from the slot size so they
      keep the same proportions they have at full size. */
   --nav-padding-x: 22px;
   --nav-gap: 6px;
-  --nav-slot-size: clamp(16px, -16px + 14.286vw, 40px);
+  --nav-slot-size: clamp(16px, -14.75px + 12.5vw, 40px);
   --nav-icon-size: calc(var(--nav-slot-size) * 0.6);
   --nav-flag-size: calc(var(--nav-slot-size) * 0.6375);
   --nav-toggle-icon-size: calc(var(--nav-slot-size) * 0.5);
@@ -31,6 +35,11 @@
 ::selection {
   background-color: #0f0f0f;
   color: white;
+}
+
+.dark ::selection {
+  background-color: white;
+  color: #0f0f0f;
 }
 
 .go-diagram-scope {

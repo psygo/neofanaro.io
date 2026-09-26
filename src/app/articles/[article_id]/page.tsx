@@ -11,6 +11,7 @@ import { CpiSuspense } from "@components/common/cpiSuspense"
 import {
   DowonPairGo,
   GobanWeb,
+  GoViewerTest,
   Haengma3,
   IngCupSuicide,
   Lang101,
@@ -50,9 +51,8 @@ export default async function ArticlePage({
 }: ArticlePageProps) {
   const { article_id } = await params
 
-  const article = await get_article_with_comments(
-    article_id,
-  )
+  const article =
+    await get_article_with_comments(article_id)
 
   return (
     <Main>
@@ -76,6 +76,8 @@ function whichArticle(
       return <DowonPairGo article={post} />
     case "goban-web":
       return <GobanWeb article={post} />
+    case "go-viewer-test":
+      return <GoViewerTest article={post} />
     case "haengma3":
       return <Haengma3 article={post} />
     case "ing-cup-suicide":

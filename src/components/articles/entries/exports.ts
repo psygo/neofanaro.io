@@ -1,5 +1,6 @@
 export * from "./dowonPairGo"
 export * from "./gobanWeb"
+export * from "./goViewerTest"
 export * from "./haengma3"
 export * from "./ingCupSuicide"
 export * from "./lang101"

@@ -35,6 +35,7 @@ export function Nav({ player }: NavProps) {
         <SoftwareLogo />
         <TeacherLogo />
         <BlogLogo />
+        {player?.moderator && <AnalyticsLogo />}
         <CpiSuspense>
           <LanguageIcon />
         </CpiSuspense>
@@ -89,6 +90,18 @@ function BlogLogo() {
       src="/nav/book.svg"
       alt="Blog"
       href="/articles"
+      size={23.5}
+      className="opacity-70 dark:opacity-80 dark:invert"
+    />
+  )
+}
+
+function AnalyticsLogo() {
+  return (
+    <NavIcon
+      src="/nav/analytics.svg"
+      alt="Analytics"
+      href="/analytics"
       size={23.5}
       className="opacity-70 dark:opacity-80 dark:invert"
     />
