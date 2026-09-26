@@ -29,6 +29,11 @@ import { VoteButtons } from "./voteButtons"
 const inputClasses =
   "rounded-lg border border-slate-300 bg-slate-50 px-3 py-2 text-slate-700 focus:outline-2 focus:outline-slate-400 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200"
 
+// Each level nests a bit further right, capped so a long reply
+// chain doesn't push comments off the edge on narrow screens.
+const maxIndentDepth = 4
+const indentPerDepth = 20
+
 type ArticleCommentsProps = {
   articleId: number
   articlePath: string
@@ -45,10 +50,14 @@ export function ArticleComments({
   const lang = useLang()
   const [comments, setComments] =
     useState<CommentWithAuthor[]>(initialComments)
+  const [replyingToId, setReplyingToId] = useState<
+    number | null
+  >(null)
   const currentPlayer = initialCurrentPlayer
 
   function handleNewComment(comment: CommentWithAuthor) {
     setComments((prev) => [comment, ...prev])
+    setReplyingToId(null)
   }
 
   function handleCommentUpdated(
@@ -68,6 +77,21 @@ export function ArticleComments({
         c.id === commentId ? { ...c, ...summary } : c,
       ),
     )
+  }
+
+  const topLevelComments = comments.filter(
+    (comment) => !comment.parentId,
+  )
+
+  function repliesTo(
+    parentId: number,
+  ): CommentWithAuthor[] {
+    return comments
+      .filter((comment) => comment.parentId === parentId)
+      .sort(
+        (a, b) =>
+          a.createdAt.getTime() - b.createdAt.getTime(),
+      )
   }
 
   return (
@@ -117,14 +141,22 @@ export function ArticleComments({
         </p>
       )}
       <div className="flex flex-col gap-4">
-        {comments.map((comment) => (
-          <Comment
+        {topLevelComments.map((comment) => (
+          <CommentThread
             key={comment.id}
             comment={comment}
+            depth={0}
+            articleId={articleId}
             articlePath={articlePath}
+            isSignedIn={!!currentPlayer}
             isAuthor={
               currentPlayer?.id === comment.playerId
             }
+            replyingToId={replyingToId}
+            onReplyToggle={setReplyingToId}
+            repliesTo={repliesTo}
+            currentPlayerId={currentPlayer?.id ?? null}
+            onNewComment={handleNewComment}
             onUpdated={handleCommentUpdated}
             onVoted={handleCommentVoted}
           />
@@ -134,10 +166,100 @@ export function ArticleComments({
   )
 }
 
+type CommentThreadProps = {
+  comment: CommentWithAuthor
+  depth: number
+  articleId: number
+  articlePath: string
+  isSignedIn: boolean
+  isAuthor: boolean
+  replyingToId: number | null
+  onReplyToggle: (id: number | null) => void
+  repliesTo: (parentId: number) => CommentWithAuthor[]
+  currentPlayerId: number | null
+  onNewComment: (comment: CommentWithAuthor) => void
+  onUpdated: (comment: CommentWithAuthor) => void
+  onVoted: (commentId: number, summary: VoteSummary) => void
+}
+
+function CommentThread({
+  comment,
+  depth,
+  articleId,
+  articlePath,
+  isSignedIn,
+  isAuthor,
+  replyingToId,
+  onReplyToggle,
+  repliesTo,
+  currentPlayerId,
+  onNewComment,
+  onUpdated,
+  onVoted,
+}: CommentThreadProps) {
+  const isReplying = replyingToId === comment.id
+  const replies = repliesTo(comment.id)
+
+  return (
+    <div
+      className="flex flex-col gap-3"
+      style={{
+        marginLeft:
+          Math.min(depth, maxIndentDepth) * indentPerDepth,
+      }}
+    >
+      <Comment
+        comment={comment}
+        articlePath={articlePath}
+        isAuthor={isAuthor}
+        canReply={isSignedIn}
+        onReplyClick={() =>
+          onReplyToggle(isReplying ? null : comment.id)
+        }
+        onUpdated={onUpdated}
+        onVoted={onVoted}
+      />
+      {isReplying && (
+        <CommentForm
+          articleId={articleId}
+          articlePath={articlePath}
+          parentId={comment.id}
+          onSuccess={onNewComment}
+          onCancel={() => onReplyToggle(null)}
+        />
+      )}
+      {replies.length > 0 && (
+        <div className="flex flex-col gap-4">
+          {replies.map((reply) => (
+            <CommentThread
+              key={reply.id}
+              comment={reply}
+              depth={depth + 1}
+              articleId={articleId}
+              articlePath={articlePath}
+              isSignedIn={isSignedIn}
+              isAuthor={currentPlayerId === reply.playerId}
+              replyingToId={replyingToId}
+              onReplyToggle={onReplyToggle}
+              repliesTo={repliesTo}
+              currentPlayerId={currentPlayerId}
+              onNewComment={onNewComment}
+              onUpdated={onUpdated}
+              onVoted={onVoted}
+            />
+          ))}
+        </div>
+      )}
+    </div>
+  )
+}
+
 type CommentProps = {
   comment: CommentWithAuthor
   articlePath: string
   isAuthor: boolean
+  canReply: boolean
+  onReplyClick: () => void
   onUpdated: (comment: CommentWithAuthor) => void
   onVoted: (commentId: number, summary: VoteSummary) => void
 }
@@ -146,6 +268,8 @@ function Comment({
   comment,
   articlePath,
   isAuthor,
+  canReply,
+  onReplyClick,
   onUpdated,
   onVoted,
 }: CommentProps) {
@@ -199,7 +323,18 @@ function Comment({
         </div>
       </div>
       <CommentMarkdown content={comment.content} />
-      <div className="self-end">
+      <div className="flex items-center justify-between">
+        {canReply ? (
+          <button
+            type="button"
+            onClick={onReplyClick}
+            className="cursor-pointer text-xs text-slate-500 underline underline-offset-4 dark:text-slate-400"
+          >
+            {lang === "pt" ? "Responder" : "Reply"}
+          </button>
+        ) : (
+          <span />
+        )}
         <VoteButtons
           upvotes={comment.upvotes}
           downvotes={comment.downvotes}
@@ -298,11 +433,15 @@ function EditCommentForm({
 function CommentForm({
   articleId,
   articlePath,
+  parentId,
   onSuccess,
+  onCancel,
 }: {
   articleId: number
   articlePath: string
+  parentId?: number
   onSuccess: (comment: CommentWithAuthor) => void
+  onCancel?: () => void
 }) {
   const lang = useLang()
   const formRef = useRef<HTMLFormElement>(null)
@@ -335,30 +474,57 @@ function CommentForm({
         name="articlePath"
         value={articlePath}
       />
+      {parentId && (
+        <input
+          type="hidden"
+          name="parentId"
+          value={parentId}
+        />
+      )}
       <textarea
         name="content"
         required
         rows={3}
+        autoFocus={!!parentId}
         placeholder={
-          lang === "pt"
-            ? "Escreva um comentário..."
-            : "Write a comment..."
+          parentId
+            ? lang === "pt"
+              ? "Escreva uma resposta..."
+              : "Write a reply..."
+            : lang === "pt"
+              ? "Escreva um comentário..."
+              : "Write a comment..."
         }
         className={inputClasses}
       />
-      <button
-        type="submit"
-        disabled={isPending}
-        className="cursor-pointer self-end rounded-lg bg-slate-100 px-3 py-1 text-sm ring-1 ring-slate-300 transition duration-300 hover:bg-slate-200 disabled:cursor-not-allowed disabled:opacity-60 dark:bg-slate-800 dark:ring-slate-700 dark:hover:bg-slate-700"
-      >
-        {isPending
-          ? lang === "pt"
-            ? "Enviando..."
-            : "Sending..."
-          : lang === "pt"
-            ? "Comentar"
-            : "Comment"}
-      </button>
+      <div className="flex justify-end gap-2">
+        {onCancel && (
+          <button
+            type="button"
+            onClick={onCancel}
+            className="cursor-pointer rounded-lg px-3 py-1 text-sm text-slate-600 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-800"
+          >
+            {lang === "pt" ? "Cancelar" : "Cancel"}
+          </button>
+        )}
+        <button
+          type="submit"
+          disabled={isPending}
+          className="cursor-pointer rounded-lg bg-slate-100 px-3 py-1 text-sm ring-1 ring-slate-300 transition duration-300 hover:bg-slate-200 disabled:cursor-not-allowed disabled:opacity-60 dark:bg-slate-800 dark:ring-slate-700 dark:hover:bg-slate-700"
+        >
+          {isPending
+            ? lang === "pt"
+              ? "Enviando..."
+              : "Sending..."
+            : parentId
+              ? lang === "pt"
+                ? "Responder"
+                : "Reply"
+              : lang === "pt"
+                ? "Comentar"
+                : "Comment"}
+        </button>
+      </div>
       {state.errorCode === "empty" && (
         <p className="text-sm text-red-600 dark:text-red-400">
           {lang === "pt"

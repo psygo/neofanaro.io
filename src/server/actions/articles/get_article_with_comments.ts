@@ -2,7 +2,10 @@
 
 import { desc, eq, sql } from "drizzle-orm"
 
-import { ArticleWithComments, CommentWithAuthor } from "@types"
+import {
+  ArticleWithComments,
+  CommentWithAuthor,
+} from "@types"
 
 import { getCurrentPlayer } from "@server/auth/session"
 import {
@@ -27,21 +30,25 @@ export async function get_article_with_comments(
 
     const currentPlayer = await getCurrentPlayer()
 
-    const upvotes = sql<number>`count(*) filter (where ${commentVotesTable.value} = 1)`.mapWith(
-      Number,
-    )
-    const downvotes = sql<number>`count(*) filter (where ${commentVotesTable.value} = -1)`.mapWith(
-      Number,
-    )
-    const myVote = sql<number>`coalesce(max(${commentVotesTable.value}) filter (where ${commentVotesTable.playerId} = ${currentPlayer?.id ?? -1}), 0)`.mapWith(
-      Number,
-    )
+    const upvotes =
+      sql<number>`count(*) filter (where ${commentVotesTable.value} = 1)`.mapWith(
+        Number,
+      )
+    const downvotes =
+      sql<number>`count(*) filter (where ${commentVotesTable.value} = -1)`.mapWith(
+        Number,
+      )
+    const myVote =
+      sql<number>`coalesce(max(${commentVotesTable.value}) filter (where ${commentVotesTable.playerId} = ${currentPlayer?.id ?? -1}), 0)`.mapWith(
+        Number,
+      )
 
     const comments = await db
       .select({
         id: commentsTable.id,
         articleId: commentsTable.articleId,
         playerId: commentsTable.playerId,
+        parentId: commentsTable.parentId,
         content: commentsTable.content,
         createdAt: commentsTable.createdAt,
         editedAt: commentsTable.editedAt,

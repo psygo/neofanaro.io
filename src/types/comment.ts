@@ -4,6 +4,7 @@ export type CommentFromDb = {
   id: number
   articleId: number
   playerId: number
+  parentId: number | null
   content: string
   createdAt: Date
   editedAt: Date | null

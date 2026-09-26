@@ -199,6 +199,7 @@ export const commentsTable = pgTable("comments", {
   id: serial().primaryKey(),
   articleId: integer("article_id").notNull(),
   playerId: integer("player_id").notNull(),
+  parentId: integer("parent_id"),
   content: text().notNull(),
   createdAt: timestamp("created_at").notNull().defaultNow(),
   editedAt: timestamp("edited_at"),
@@ -214,6 +215,14 @@ export const commentsRelations = relations(
     player: one(players, {
       fields: [commentsTable.playerId],
       references: [players.id],
+    }),
+    parent: one(commentsTable, {
+      fields: [commentsTable.parentId],
+      references: [commentsTable.id],
+      relationName: "commentReplies",
+    }),
+    replies: many(commentsTable, {
+      relationName: "commentReplies",
     }),
     votes: many(commentVotesTable),
   }),

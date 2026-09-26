@@ -14,6 +14,7 @@ export async function get_player_comments(
       id: commentsTable.id,
       articleId: commentsTable.articleId,
       playerId: commentsTable.playerId,
+      parentId: commentsTable.parentId,
       content: commentsTable.content,
       createdAt: commentsTable.createdAt,
       editedAt: commentsTable.editedAt,

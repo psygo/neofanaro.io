@@ -28,12 +28,21 @@ export async function add_comment(
   ).trim()
   if (!content) return { errorCode: "empty" }
 
+  const parentIdRaw = formData.get("parentId")
+  const parentId = parentIdRaw ? Number(parentIdRaw) : null
+
   const [inserted] = await db
     .insert(commentsTable)
-    .values({ articleId, playerId: player.id, content })
+    .values({
+      articleId,
+      playerId: player.id,
+      parentId,
+      content,
+    })
     .returning()
 
-  if (articlePath) revalidatePath(`/articles/${articlePath}`)
+  if (articlePath)
+    revalidatePath(`/articles/${articlePath}`)
   revalidatePath("/profile")
 
   return {
