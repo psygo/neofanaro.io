@@ -54,7 +54,7 @@ export function ArticlesStatsHeader({
               ? "Média por artigo"
               : "Average views per article"
           }
-          value={averageViews.toFixed(1)}
+          value={Math.round(averageViews).toString()}
         />
       </div>
       <ArticlesViewsChartSection />

@@ -81,6 +81,12 @@ export function ViewsLineChart({
     dailyViews,
     dailyPageViews,
   )
+  // Page-view tracking only started recently — dates before its
+  // first real row are defaulted to 0 by mergeSeriesByDate for axis
+  // alignment, but drawing the blue line across all of them would
+  // read as "zero views" rather than "not tracked yet", so the line
+  // (and its dots) only start at that first real date.
+  const firstPageViewDate = dailyPageViews[0]?.date
 
   if (merged.length < 2) {
     return (
@@ -136,11 +142,18 @@ export function ViewsLineChart({
     y: yForViews(row.articleViews),
     row,
   }))
-  const pagePoints = merged.map((row, index) => ({
-    x: xForIndex(index),
-    y: yForViews(row.pageViews),
-    row,
-  }))
+  const pagePoints = merged
+    .map((row, index) => ({
+      x: xForIndex(index),
+      y: yForViews(row.pageViews),
+      row,
+      index,
+    }))
+    .filter(
+      (point) =>
+        firstPageViewDate !== undefined &&
+        point.row.date >= firstPageViewDate,
+    )
 
   const linePathFor = (
     points: { x: number; y: number }[],
@@ -187,6 +200,10 @@ export function ViewsLineChart({
 
   const hoveredRow =
     hoveredIndex !== null ? merged[hoveredIndex] : null
+  const hoveredHasPageViews =
+    hoveredRow !== null &&
+    firstPageViewDate !== undefined &&
+    hoveredRow.date >= firstPageViewDate
   const hoveredX =
     hoveredIndex !== null ? xForIndex(hoveredIndex) : 0
   const tooltipWidth = 120
@@ -198,10 +215,12 @@ export function ViewsLineChart({
       )
     : 0
   const hoveredTopY = hoveredRow
-    ? Math.min(
-        yForViews(hoveredRow.articleViews),
-        yForViews(hoveredRow.pageViews),
-      )
+    ? hoveredHasPageViews
+      ? Math.min(
+          yForViews(hoveredRow.articleViews),
+          yForViews(hoveredRow.pageViews),
+        )
+      : yForViews(hoveredRow.articleViews)
     : 0
   // Always above the point (never below, where it would sit on top
   // of the chart itself) — clamped so it can't render off the top
@@ -212,7 +231,7 @@ export function ViewsLineChart({
 
   return (
     <div className="flex w-full flex-col gap-2">
-      <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-slate-500 dark:text-slate-400">
+      <div className="flex flex-wrap items-center justify-end gap-x-4 gap-y-1 text-xs text-slate-500 dark:text-slate-400">
         <span className="flex items-center gap-1.5">
           <span className="inline-block h-2.5 w-2.5 rounded-full bg-slate-700 dark:bg-slate-300" />
           {lang === "pt"
@@ -226,7 +245,7 @@ export function ViewsLineChart({
             : "Non-article pages"}
         </span>
       </div>
-      <div className="w-full overflow-x-auto rounded-lg border border-slate-200 p-3 dark:border-slate-700">
+      <div className="w-full overflow-x-auto rounded-lg border border-slate-200 bg-white p-3 dark:border-slate-700 dark:bg-slate-900">
         <svg
           viewBox={`0 0 ${CHART_WIDTH} ${CHART_HEIGHT}`}
           className="h-auto w-full min-w-70"
@@ -266,8 +285,12 @@ export function ViewsLineChart({
           <path
             d={pageLinePath}
             fill="none"
-            strokeWidth={2}
-            className="stroke-sky-600 dark:stroke-sky-400"
+            strokeWidth={hoveredHasPageViews ? 3 : 2}
+            className={`transition-[stroke-width] duration-150 ${
+              hoveredHasPageViews
+                ? "stroke-sky-700 dark:stroke-sky-300"
+                : "stroke-sky-600 dark:stroke-sky-400"
+            }`}
           />
           <path
             d={articleLinePath}
@@ -284,8 +307,12 @@ export function ViewsLineChart({
               key={`page-${point.row.date}`}
               cx={point.x}
               cy={point.y}
-              r={2.5}
-              className="fill-sky-600 dark:fill-sky-400"
+              r={hoveredIndex === point.index ? 4.5 : 2.5}
+              className={`transition-[r] duration-150 ${
+                hoveredIndex === point.index
+                  ? "fill-sky-700 dark:fill-sky-300"
+                  : "fill-sky-600 dark:fill-sky-400"
+              }`}
             />
           ))}
           {articlePoints.map((point, index) => (
@@ -373,15 +400,19 @@ export function ViewsLineChart({
                 {hoveredRow.articleViews.toLocaleString()}{" "}
                 {lang === "pt" ? "artigos" : "articles"}
               </text>
-              <text
-                x={tooltipX + tooltipWidth / 2}
-                y={tooltipY + 39}
-                textAnchor="middle"
-                className="fill-sky-600 text-[11px] font-semibold tabular-nums dark:fill-sky-400"
-              >
-                {hoveredRow.pageViews.toLocaleString()}{" "}
-                {lang === "pt" ? "outras páginas" : "other"}
-              </text>
+              {hoveredHasPageViews && (
+                <text
+                  x={tooltipX + tooltipWidth / 2}
+                  y={tooltipY + 39}
+                  textAnchor="middle"
+                  className="fill-sky-600 text-[11px] font-semibold tabular-nums dark:fill-sky-400"
+                >
+                  {hoveredRow.pageViews.toLocaleString()}{" "}
+                  {lang === "pt"
+                    ? "outras páginas"
+                    : "other"}
+                </text>
+              )}
             </g>
           )}
         </svg>

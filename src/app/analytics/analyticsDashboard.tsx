@@ -107,7 +107,9 @@ export function AnalyticsDashboard({
                 : "Average views per article"
             }
             value={averageViewsPerArticle}
-            formatted={averageViewsPerArticle.toFixed(1)}
+            formatted={Math.round(
+              averageViewsPerArticle,
+            ).toString()}
           />
           <StatCard
             label={lang === "pt" ? "Rascunhos" : "Drafts"}
