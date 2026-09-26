@@ -331,7 +331,7 @@ function GithubRepoCard({
             width={0}
             height={0}
             sizes="100vw"
-            className={`h-full w-6 sm:hidden ${imageClassName}`}
+            className={`h-6 w-6 object-contain sm:hidden ${imageClassName}`}
           />
         </div>
         <p className="-mt-2 text-sm text-slate-950 dark:text-slate-300">

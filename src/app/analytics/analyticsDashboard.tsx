@@ -87,10 +87,29 @@ export function AnalyticsDashboard({
           <StatCard
             label={
               lang === "pt"
-                ? "Visualizações totais"
+                ? "Visualizações de artigos"
                 : "Total article views"
             }
             value={overview.totalArticleViews}
+          />
+          <StatCard
+            label={
+              lang === "pt"
+                ? "Visualizações de outras páginas"
+                : "Total non-article views"
+            }
+            value={overview.totalNonArticleViews}
+          />
+          <StatCard
+            label={
+              lang === "pt"
+                ? "Visualizações totais"
+                : "Total views"
+            }
+            value={
+              overview.totalArticleViews +
+              overview.totalNonArticleViews
+            }
           />
           <StatCard
             label={

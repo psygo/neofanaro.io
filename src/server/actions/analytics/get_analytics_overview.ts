@@ -8,6 +8,7 @@ import {
   articleVotesTable,
   commentsTable,
   commentVotesTable,
+  dailyNonArticleViewsTable,
   gamesTable,
   leaguesTable,
   players,
@@ -33,6 +34,7 @@ export type TopCommenterRow = {
 
 export type AnalyticsOverview = {
   totalArticleViews: number
+  totalNonArticleViews: number
   publishedArticleCount: number
   draftArticleCount: number
   topArticlesByViews: TopArticleRow[]
@@ -133,6 +135,7 @@ export async function get_analytics_overview(): Promise<AnalyticsOverview> {
     { topByViews, topByComments },
     topCommenters,
     [articleStats],
+    [nonArticleViewStats],
     [playerStats],
     [commentStats],
     [commentStats7],
@@ -160,6 +163,14 @@ export async function get_analytics_overview(): Promise<AnalyticsOverview> {
           ),
       })
       .from(articlesTable),
+    db
+      .select({
+        totalViews:
+          sql<number>`coalesce(sum(${dailyNonArticleViewsTable.views}), 0)`.mapWith(
+            Number,
+          ),
+      })
+      .from(dailyNonArticleViewsTable),
     db
       .select({
         total: sql<number>`count(*)`.mapWith(Number),
@@ -210,6 +221,7 @@ export async function get_analytics_overview(): Promise<AnalyticsOverview> {
 
   return {
     totalArticleViews: articleStats.totalViews,
+    totalNonArticleViews: nonArticleViewStats.totalViews,
     publishedArticleCount: articleStats.published,
     draftArticleCount: articleStats.drafts,
     topArticlesByViews: topByViews,

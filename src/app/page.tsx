@@ -1,6 +1,7 @@
 import { get_popular_articles_by_category } from "@actions"
 
 import { Main } from "@components/common/main"
+import { ArticlesStatsHeader } from "@components/articles/articlesStatsHeader"
 import { PopularArticlesSection } from "@components/home/popularArticlesSection"
 import { PresentationSection } from "@components/home/presentationSection"
 import { CpiSuspense } from "@components/common/cpiSuspense"
@@ -18,6 +19,7 @@ export default async function Home() {
         <PresentationSection />
         <SoftwareWorkSection />
         <GoProfPresentationSection />
+        <ArticlesStatsHeader />
         <PopularArticlesSection
           articles={popularArticles}
         />

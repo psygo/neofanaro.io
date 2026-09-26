@@ -45,7 +45,7 @@ export default async function RootLayout({
       suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} ${latexFont.variable} ${newComputerModernFont.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col gap-16 bg-gray-50 px-4 py-5.5 text-slate-950 sm:gap-10 dark:bg-slate-950 dark:text-slate-50">
+      <body className="flex min-h-full flex-col gap-12 bg-gray-50 px-4 py-5.5 text-slate-950 sm:gap-10 dark:bg-slate-950 dark:text-slate-50">
         <ThemeProvider
           initialTheme={
             player

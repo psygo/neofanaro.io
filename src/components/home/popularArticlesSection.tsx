@@ -21,7 +21,7 @@ export function PopularArticlesSection({
 
   return (
     <section className="flex flex-col items-center gap-6">
-      <h2 className="text-2xl font-black">
+      <h2 className="mb-4 text-3xl font-black">
         {lang === "pt"
           ? "Artigos Populares"
           : "Popular Articles"}
