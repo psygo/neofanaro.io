@@ -4,6 +4,8 @@ import { useLayoutEffect, useRef, useState } from "react"
 
 import { useTheme } from "next-themes"
 
+import { useIsClient } from "@hooks"
+
 import { BoardRegion } from "./goRules"
 import { useGoViewer } from "./goViewerContext"
 import { useGoViewerPreferences } from "./goViewerPreferencesContext"
@@ -186,9 +188,16 @@ export function GoViewerBoard({
   // component's own hardcoded defaults.
   const goViewerPreferences = useGoViewerPreferences()
   const { resolvedTheme } = useTheme()
+  // `resolvedTheme` is only known client-side (it can depend on
+  // localStorage/system preference), so using it during the very
+  // first client render would render different style attributes
+  // than the server did, producing a hydration mismatch — stay on
+  // "light" (matching the server's own always-undefined resolvedTheme)
+  // until after mount, then let the real theme take over.
+  const isClient = useIsClient()
   const preferenceTheme = resolveGoViewerTheme(
     goViewerPreferences,
-    resolvedTheme === "dark" ? "dark" : "light",
+    isClient && resolvedTheme === "dark" ? "dark" : "light",
   )
   const blackStoneImage =
     blackStoneImageProp ?? preferenceTheme.blackStoneImage

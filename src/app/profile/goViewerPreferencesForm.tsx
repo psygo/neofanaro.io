@@ -24,6 +24,7 @@ import {
 
 const backgroundOptions: SelectOption[] = [
   { value: "auto", label: "Default" },
+  { value: "transparent", label: "Transparent" },
   { value: "bookish", label: "Bookish" },
   { value: "desert", label: "Desert" },
   { value: "hikaru", label: "Hikaru" },

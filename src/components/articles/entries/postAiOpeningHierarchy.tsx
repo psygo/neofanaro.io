@@ -12,6 +12,12 @@ import {
   GoDiagram,
   GoDiagramLegend,
 } from "@components/articles/goDiagram"
+import {
+  GoViewer,
+  GoViewerBoard,
+  GoViewerLegend,
+  readSgfFile,
+} from "@components/goViewer/exports"
 
 export function PostAiOpeningHierarchy({
   article,
@@ -37,7 +43,7 @@ export function PostAiOpeningHierarchy({
           </ArticleLink>{" "}
           and its variants.
         </ArticleParagraph>
-        <div className="flex flex-col items-center justify-center px-8 sm:flex-row">
+        {/* <div className="flex flex-col items-center justify-center px-8 sm:flex-row">
           <GoDiagram
             src="/articles/post-ai-opening-hierarchy/sanrensei_fuseki.svg"
             height={332}
@@ -56,6 +62,48 @@ export function PostAiOpeningHierarchy({
               The Chinese Fuseki
             </GoDiagramLegend>
           </GoDiagram>
+        </div> */}
+        <div className="flex flex-col items-center justify-center gap-6 px-8 sm:flex-row">
+          <GoViewer
+            sgf={readSgfFile(
+              "/articles/post-ai-opening-hierarchy/sanrensei.sgf",
+            )}
+            startAt="end"
+          >
+            <GoViewerBoard
+              region={{
+                minRow: 0,
+                maxRow: 18,
+                minCol: 12,
+                maxCol: 18,
+              }}
+              interactive={false}
+              size={330}
+            />
+            <GoViewerLegend>
+              The Sanrensei Fuseki
+            </GoViewerLegend>
+          </GoViewer>
+          <GoViewer
+            sgf={readSgfFile(
+              "/articles/post-ai-opening-hierarchy/chinese.sgf",
+            )}
+            startAt="end"
+          >
+            <GoViewerBoard
+              region={{
+                minRow: 0,
+                maxRow: 18,
+                minCol: 12,
+                maxCol: 18,
+              }}
+              interactive={false}
+              size={330}
+            />
+            <GoViewerLegend>
+              The Chinese Fuseki
+            </GoViewerLegend>
+          </GoViewer>
         </div>
         <ArticleParagraph>
           Now, with AI, things have become much clearer. The

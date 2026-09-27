@@ -100,7 +100,8 @@ export const goViewerKayaTheme = {
 // independently against the presets above (so e.g. Kaya stones on a
 // Desert background is a valid combination), and each defaults to
 // "auto", which follows the site's light/dark theme: the bookish
-// look (see goViewerBookishTheme) in light mode, and the default
+// look (see goViewerBookishTheme) — but with a transparent rather
+// than a painted-white background — in light mode, and the default
 // plain-circle stones on a Kaya wood background in dark mode.
 
 export type GoViewerPreferences = {
@@ -123,7 +124,14 @@ export type GoViewerResolvedTheme = {
 }
 
 const backgroundPreferences: GoViewerBackgroundPreference[] =
-  ["auto", "bookish", "desert", "hikaru", "kaya"]
+  [
+    "auto",
+    "transparent",
+    "bookish",
+    "desert",
+    "hikaru",
+    "kaya",
+  ]
 const stonePreferences: GoViewerStonePreference[] = [
   "auto",
   "bookish",
@@ -187,11 +195,21 @@ function resolveBackground(
   const resolved =
     preference === "auto"
       ? siteTheme === "light"
-        ? "bookish"
+        ? "transparent"
         : "kaya"
       : preference
 
   switch (resolved) {
+    case "transparent":
+      // No fill at all, rather than an explicit white rectangle —
+      // the site's own light-mode page background already reads as
+      // white, so this looks identical there without painting
+      // anything, and still uses the bookish look's black grid
+      // (this is also light mode's "auto" background default).
+      return {
+        backgroundColor: "transparent",
+        gridColor: goViewerBookishTheme.gridColor,
+      }
     case "bookish":
       return {
         backgroundColor:

@@ -25,6 +25,7 @@ export type ThemePreference = "light" | "dark" | "system"
 // see resolveGoViewerTheme in @components/goViewer/exports.
 export type GoViewerBackgroundPreference =
   | "auto"
+  | "transparent"
   | "bookish"
   | "desert"
   | "hikaru"
