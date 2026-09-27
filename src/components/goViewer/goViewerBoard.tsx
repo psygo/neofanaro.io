@@ -233,6 +233,11 @@ export type GoViewerBoardProps = {
   // from this module) to match the site's LaTeX-styled SVG diagrams.
   fontFamily?: string
   showMoveNumbers?: boolean
+  // With `showMoveNumbers`, only numbers this move or later are
+  // drawn — earlier ones render as plain, unlabeled stones. Useful
+  // for a diagram continuing a sequence whose opening moves were
+  // already numbered in an earlier diagram and don't need repeating.
+  fromNumber?: number
   // Keeps captured stones drawn on the board (in their last color,
   // with their move number if they had one) instead of removing
   // them — the way a book diagram sometimes leaves a doomed stone
@@ -264,6 +269,7 @@ export function GoViewerBoard({
   gridColor: gridColorProp,
   fontFamily: fontFamilyProp,
   showMoveNumbers = false,
+  fromNumber = 1,
   showCapturedStones = false,
   className = "",
 }: GoViewerBoardProps) {
@@ -819,7 +825,8 @@ export function GoViewerBoard({
                 )
               ) : showMoveNumbers &&
                 displayStone &&
-                displayMoveNumber ? (
+                displayMoveNumber &&
+                displayMoveNumber >= fromNumber ? (
                 <CenteredText
                   x={pixelX(col)}
                   y={pixelY(row)}

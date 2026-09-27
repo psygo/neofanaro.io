@@ -12,7 +12,14 @@ import {
   NoWrap,
   ImageLegend,
 } from "../articleContent"
-import { GoDiagram, GoDiagramLegend } from "../goDiagram"
+// import { GoDiagram, GoDiagramLegend } from "../goDiagram"
+import {
+  GoViewer,
+  GoViewerBoard,
+  GoViewerControls,
+  GoViewerLegend,
+  readSgfFile,
+} from "@components/goViewer/exports"
 
 import { SITE_URL } from "@utils"
 
@@ -97,11 +104,26 @@ export function OkaoigoAiArticles({
           </ArticleLink>{" "}
           post:
         </ArticleParagraph>
-        <GoDiagram src="/articles/okaigo-ai-articles/okaigo_1.1.svg">
+        {/* <GoDiagram src="/articles/okaigo-ai-articles/okaigo_1.1.svg">
           <GoDiagramLegend>
             How should you deal with Black&apos;s cut?
           </GoDiagramLegend>
-        </GoDiagram>
+        </GoDiagram> */}
+        <GoViewer
+          sgf={readSgfFile(
+            "/articles/okaigo-ai-articles/1.sgf",
+          )}
+          startAt="end"
+        >
+          <GoViewerBoard
+            interactive={false}
+            showMoveNumbers
+          />
+          <GoViewerControls />
+          <GoViewerLegend>
+            How should you deal with Black&apos;s cut?
+          </GoViewerLegend>
+        </GoViewer>
         <ArticleBlockQuote>
           <ArticleParagraph>
             You can use Google Translate, or any other
@@ -113,12 +135,28 @@ export function OkaoigoAiArticles({
           FineArt refutes the cut with a beautiful driving
           technique:
         </ArticleParagraph>
-        <GoDiagram src="/articles/okaigo-ai-articles/okaigo_1.2.svg">
+        {/* <GoDiagram src="/articles/okaigo-ai-articles/okaigo_1.2.svg">
           <GoDiagramLegend>
             This requires reading, but it&apos;s mostly
             technique at its core.
           </GoDiagramLegend>
-        </GoDiagram>
+        </GoDiagram> */}
+        <GoViewer
+          sgf={readSgfFile(
+            "/articles/okaigo-ai-articles/2.sgf",
+          )}
+          startAt="end"
+        >
+          <GoViewerBoard
+            interactive={false}
+            showMoveNumbers
+          />
+          <GoViewerControls />
+          <GoViewerLegend>
+            This requires reading, but it&apos;s mostly
+            technique at its core.
+          </GoViewerLegend>
+        </GoViewer>
         <ArticleParagraph>
           If Black A, White B threatens the left Black
           group&apos;s capture while also being an atari on
@@ -129,12 +167,29 @@ export function OkaoigoAiArticles({
           overconcentration in the bottom-left corner, while
           White reaps all the benefits on the outside:
         </ArticleParagraph>
-        <GoDiagram src="/articles/okaigo-ai-articles/okaigo_1.3.svg">
+        {/* <GoDiagram src="/articles/okaigo-ai-articles/okaigo_1.3.svg">
           <GoDiagramLegend>
             White even gets to capture the original cutting
             stone, A.
           </GoDiagramLegend>
-        </GoDiagram>
+        </GoDiagram> */}
+        <GoViewer
+          sgf={readSgfFile(
+            "/articles/okaigo-ai-articles/3.sgf",
+          )}
+          startAt="end"
+        >
+          <GoViewerBoard
+            interactive={false}
+            showMoveNumbers
+            fromNumber={8}
+          />
+          <GoViewerControls />
+          <GoViewerLegend>
+            White even gets to capture the original cutting
+            stone, A.
+          </GoViewerLegend>
+        </GoViewer>
       </ArticleSection>
       <ArticleSection>
         <ArticleSectionTitle>
@@ -144,24 +199,53 @@ export function OkaoigoAiArticles({
           And here&apos;s another exquisite example of
           AI&apos;s next-level skills:
         </ArticleParagraph>
-        <GoDiagram src="/articles/okaigo-ai-articles/okaigo_3.1.svg">
+        {/* <GoDiagram src="/articles/okaigo-ai-articles/okaigo_3.1.svg">
           <GoDiagramLegend>
             How can White survive or escape?
           </GoDiagramLegend>
-        </GoDiagram>
+        </GoDiagram> */}
+        <GoViewer
+          sgf={readSgfFile(
+            "/articles/okaigo-ai-articles/4.sgf",
+          )}
+          startAt="end"
+        >
+          <GoViewerBoard
+            interactive={false}
+            showMoveNumbers
+          />
+          <GoViewerControls />
+          <GoViewerLegend>
+            How can White survive or escape?
+          </GoViewerLegend>
+        </GoViewer>
         <ArticleParagraph>
           Black doesn&apos;t have the best shape, but,
           still, it looks difficult to live inside that
           area, or to get out. What can White do?
         </ArticleParagraph>
-        <GoDiagram src="/articles/okaigo-ai-articles/okaigo_3.2.svg">
+        {/* <GoDiagram src="/articles/okaigo-ai-articles/okaigo_3.2.svg">
           <GoDiagramLegend>
             Through a sacrifice and a tesuji, White exposes
             Black&apos;s shortage of liberties on the left,
             and the cutting point at C, all at the same
             time.
           </GoDiagramLegend>
-        </GoDiagram>
+        </GoDiagram> */}
+        <GoViewer
+          sgf={readSgfFile(
+            "/articles/okaigo-ai-articles/5.sgf",
+          )}
+          startAt="end"
+        >
+          <GoViewerBoard interactive={false} />
+          <GoViewerLegend>
+            Through a sacrifice and a tesuji, White exposes
+            Black&apos;s shortage of liberties on the left,
+            and the cutting point at C, all at the same
+            time.
+          </GoViewerLegend>
+        </GoViewer>
         <ArticleParagraph>
           If Black plays at A, White B is sente for rescuing
           White&apos;s 3 stone. If Black then fixes, the C
