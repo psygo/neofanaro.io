@@ -10,7 +10,13 @@ import {
   NoWrap,
   ImageLegend,
 } from "../articleContent"
-import { GoDiagram, GoDiagramLegend } from "../goDiagram"
+// import { GoDiagram, GoDiagramLegend } from "../goDiagram"
+import {
+  GoViewer,
+  GoViewerBoard,
+  GoViewerLegend,
+  readSgfFile,
+} from "@components/goViewer/exports"
 
 export function IngCupSuicide({ article }: ArticleProps) {
   return (
@@ -66,7 +72,7 @@ export function IngCupSuicide({ article }: ArticleProps) {
           changes the game. That day, he mainly discussed
           this situation:
         </ArticleParagraph>
-        <GoDiagram
+        {/* <GoDiagram
           src="/articles/ing-cup-suicide/ing_cup_rules_1.svg"
           width={200}
           height={228}
@@ -75,12 +81,33 @@ export function IngCupSuicide({ article }: ArticleProps) {
             Who wins the capturing race inside? Is it a
             seki?
           </GoDiagramLegend>
-        </GoDiagram>
+        </GoDiagram> */}
+        <GoViewer
+          sgf={readSgfFile(
+            "/articles/ing-cup-suicide/1.sgf",
+          )}
+          startAt="end"
+        >
+          <GoViewerBoard
+            interactive={false}
+            size={330}
+            region={{
+              minRow: 0,
+              maxRow: 7,
+              minCol: 12,
+              maxCol: 18,
+            }}
+          />
+          <GoViewerLegend>
+            Who wins the capturing race inside? Is it a
+            seki?
+          </GoViewerLegend>
+        </GoViewer>
         <ArticleParagraph>
           That capturing race is an example of the &quot;big
           eye kills small eye&quot; principle:
         </ArticleParagraph>
-        <GoDiagram
+        {/* <GoDiagram
           src="/articles/ing-cup-suicide/ing_cup_rules_2.svg"
           width={200}
           height={228}
@@ -88,8 +115,28 @@ export function IngCupSuicide({ article }: ArticleProps) {
           <GoDiagramLegend>
             Black 2 and 4 are played elsewhere.
           </GoDiagramLegend>
-        </GoDiagram>
-        <GoDiagram
+        </GoDiagram> */}
+        <GoViewer
+          sgf={readSgfFile(
+            "/articles/ing-cup-suicide/2.sgf",
+          )}
+          startAt="end"
+        >
+          <GoViewerBoard
+            interactive={false}
+            size={330}
+            region={{
+              minRow: 0,
+              maxRow: 7,
+              minCol: 12,
+              maxCol: 18,
+            }}
+          />
+          <GoViewerLegend>
+            Black 2 and 4 are played elsewhere.
+          </GoViewerLegend>
+        </GoViewer>
+        {/* <GoDiagram
           src="/articles/ing-cup-suicide/ing_cup_rules_3.svg"
           width={200}
           height={228}
@@ -99,7 +146,29 @@ export function IngCupSuicide({ article }: ArticleProps) {
             points are a privilege of the group with the
             bigger eye.
           </GoDiagramLegend>
-        </GoDiagram>
+        </GoDiagram> */}
+        <GoViewer
+          sgf={readSgfFile(
+            "/articles/ing-cup-suicide/3.sgf",
+          )}
+          startAt="end"
+        >
+          <GoViewerBoard
+            interactive={false}
+            size={330}
+            region={{
+              minRow: 0,
+              maxRow: 7,
+              minCol: 12,
+              maxCol: 18,
+            }}
+          />
+          <GoViewerLegend>
+            Since Black cannot play at A, the triangle
+            points are a privilege of the group with the
+            bigger eye.
+          </GoViewerLegend>
+        </GoViewer>
         <ArticleParagraph>
           However, something very unexpected happens when we
           take away the Suicide Rule, which is one of the
@@ -112,7 +181,7 @@ export function IngCupSuicide({ article }: ArticleProps) {
           every four years. What then is the outcome if
           Black is able to play at A in diagram 3?
         </ArticleParagraph>
-        <GoDiagram
+        {/* <GoDiagram
           src="/articles/ing-cup-suicide/ing_cup_rules_4.svg"
           width={200}
           height={228}
@@ -120,7 +189,27 @@ export function IngCupSuicide({ article }: ArticleProps) {
           <GoDiagramLegend>
             Black can now race with White more freely.
           </GoDiagramLegend>
-        </GoDiagram>
+        </GoDiagram> */}
+        <GoViewer
+          sgf={readSgfFile(
+            "/articles/ing-cup-suicide/4.sgf",
+          )}
+          startAt="end"
+        >
+          <GoViewerBoard
+            interactive={false}
+            size={330}
+            region={{
+              minRow: 0,
+              maxRow: 7,
+              minCol: 12,
+              maxCol: 18,
+            }}
+          />
+          <GoViewerLegend>
+            Black can now race with White more freely.
+          </GoViewerLegend>
+        </GoViewer>
         <ArticleParagraph>
           After the inner liberties are freed, Black is able
           to turn the intersections between both groups into

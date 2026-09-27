@@ -129,6 +129,7 @@ export function LittleKnifeGodBooks({
               minCol: 10,
               maxCol: 18,
             }}
+            size={330}
             interactive={false}
           />
           <GoViewerLegend>
@@ -162,6 +163,7 @@ export function LittleKnifeGodBooks({
               minCol: 10,
               maxCol: 18,
             }}
+            size={330}
             interactive={false}
             showMoveNumbers
           />

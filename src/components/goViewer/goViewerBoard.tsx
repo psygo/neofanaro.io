@@ -135,12 +135,23 @@ function PointMark({
   radius,
   stroke,
   shape,
+  centerInBackdrop = false,
 }: {
   x: number
   y: number
   radius: number
   stroke: string
   shape: "triangle" | "square" | "circle"
+  // A triangle's own centroid sits below its circumcenter (the
+  // apex reaches the full radius above center, the base only half
+  // that below it) — drawn at `y` as-is, it reads off-center inside
+  // a symmetric backdrop (its own gap in the grid, or the space
+  // reserved on a stone), sitting closer to the top than the
+  // bottom. This nudges it down by a quarter of its own radius,
+  // exactly enough to equalize the gap above the apex and below the
+  // base against a backdrop centered on `y`. Only meaningful for
+  // the triangle shape; ignored otherwise.
+  centerInBackdrop?: boolean
 }) {
   const strokeWidth = radius * 0.27
 
@@ -171,10 +182,22 @@ function PointMark({
     )
   }
 
+  // A touch smaller than the square/circle marks' own radius — an
+  // equilateral triangle drawn at the exact same circumradius reads
+  // visually larger than either of them, since its vertices are the
+  // only points that reach that radius (most of its area sits well
+  // inside it), unlike a circle (uniformly at the radius) or a
+  // square (whose flatter sides make it read closer to its true
+  // size).
+  const triangleRadius = radius * 0.82
+  const triangleStrokeWidth = triangleRadius * 0.27
+  const triangleY = centerInBackdrop
+    ? y + triangleRadius * 0.25
+    : y
   const points = [-90, 30, 150]
     .map((deg) => {
       const rad = (deg * Math.PI) / 180
-      return `${x + radius * Math.cos(rad)},${y + radius * Math.sin(rad)}`
+      return `${x + triangleRadius * Math.cos(rad)},${triangleY + triangleRadius * Math.sin(rad)}`
     })
     .join(" ")
   return (
@@ -182,7 +205,7 @@ function PointMark({
       points={points}
       fill="none"
       stroke={stroke}
-      strokeWidth={strokeWidth}
+      strokeWidth={triangleStrokeWidth}
       strokeLinejoin="miter"
       strokeMiterlimit={10}
     />
@@ -500,30 +523,31 @@ export function GoViewerBoard({
     return columnLetters[col] ?? "?"
   }
 
-  // A text label (not a TR/SQ/CR mark, which is meant to sit right
-  // on the line, same as any Go diagram) needs the grid genuinely
-  // absent under it, not just visually covered — see labelGapRadius
-  // below, which trims the line segments approaching this point
-  // short rather than painting anything over them. That keeps the
-  // "backdrop" transparent by construction: whatever's behind the
-  // board (its own background color/image, nothing more) just shows
-  // through, correct for every theme without special-casing any of
-  // them.
-  function hasTextLabelGap(row: number, col: number) {
+  // An off-stone label or mark (TR/SQ/CR included) needs the grid
+  // genuinely absent under it, not just visually covered — see
+  // labelGapRadius below, which trims the line segments approaching
+  // this point short rather than painting anything over them. That
+  // keeps the "backdrop" transparent by construction: whatever's
+  // behind the board (its own background color/image, nothing more)
+  // just shows through, correct for every theme without special-
+  // casing any of them.
+  function hasLabelGap(row: number, col: number) {
     if (board[row][col]) return false
-    const found = labels.find(
+    return labels.some(
       (candidate) =>
         candidate.row === row &&
         candidate.col === col &&
         candidate.moveIndex === viewIndex,
     )
-    return !!found && !markShapes[found.text]
   }
-  // Shared by the text-label gap above and the off-stone TR/SQ/CR
-  // mark below, so both read as the same size "reserved" for an
-  // off-stone annotation.
-  const offStonePointRadius = cellSize * 0.34
-  const labelGapRadius = offStonePointRadius
+  // The gap trimmed into the grid is deliberately bigger than the
+  // off-stone TR/SQ/CR mark drawn inside it (offStoneMarkRadius,
+  // below) — a mark sized to exactly fill its own backdrop reads as
+  // cramped, touching the grid right at its own edge. Keeping the
+  // backdrop a size up gives it breathing room without changing the
+  // mark's own drawn size.
+  const labelGapRadius = stoneRadius * 0.86
+  const offStoneMarkRadius = cellSize * 0.34
 
   const horizontalSegments = rows.flatMap((row) => {
     const strokeWidth =
@@ -540,9 +564,7 @@ export function GoViewerBoard({
         x1: lineLeft,
         x2:
           pixelX(cols[0]) -
-          (hasTextLabelGap(row, cols[0])
-            ? labelGapRadius
-            : 0),
+          (hasLabelGap(row, cols[0]) ? labelGapRadius : 0),
       })
     }
     for (let i = 0; i < cols.length - 1; i++) {
@@ -557,10 +579,10 @@ export function GoViewerBoard({
         key: `h-${row}-${colA}`,
         x1:
           pixelX(colA) +
-          (hasTextLabelGap(row, colA) ? labelGapRadius : 0),
+          (hasLabelGap(row, colA) ? labelGapRadius : 0),
         x2:
           pixelX(colB) -
-          (hasTextLabelGap(row, colB) ? labelGapRadius : 0),
+          (hasLabelGap(row, colB) ? labelGapRadius : 0),
       })
     }
     if (hasCutRight) {
@@ -568,7 +590,7 @@ export function GoViewerBoard({
         key: `h-${row}-right`,
         x1:
           pixelX(cols[cols.length - 1]) +
-          (hasTextLabelGap(row, cols[cols.length - 1])
+          (hasLabelGap(row, cols[cols.length - 1])
             ? labelGapRadius
             : 0),
         x2: lineRight,
@@ -604,9 +626,7 @@ export function GoViewerBoard({
         y1: lineTop,
         y2:
           pixelY(rows[0]) -
-          (hasTextLabelGap(rows[0], col)
-            ? labelGapRadius
-            : 0),
+          (hasLabelGap(rows[0], col) ? labelGapRadius : 0),
       })
     }
     for (let i = 0; i < rows.length - 1; i++) {
@@ -621,10 +641,10 @@ export function GoViewerBoard({
         key: `v-${col}-${rowA}`,
         y1:
           pixelY(rowA) +
-          (hasTextLabelGap(rowA, col) ? labelGapRadius : 0),
+          (hasLabelGap(rowA, col) ? labelGapRadius : 0),
         y2:
           pixelY(rowB) -
-          (hasTextLabelGap(rowB, col) ? labelGapRadius : 0),
+          (hasLabelGap(rowB, col) ? labelGapRadius : 0),
       })
     }
     if (hasCutBottom) {
@@ -632,7 +652,7 @@ export function GoViewerBoard({
         key: `v-${col}-bottom`,
         y1:
           pixelY(rows[rows.length - 1]) +
-          (hasTextLabelGap(rows[rows.length - 1], col)
+          (hasLabelGap(rows[rows.length - 1], col)
             ? labelGapRadius
             : 0),
         y2: lineBottom,
@@ -689,7 +709,7 @@ export function GoViewerBoard({
             point.row <= visibleRegion.maxRow &&
             point.col >= visibleRegion.minCol &&
             point.col <= visibleRegion.maxCol &&
-            !hasTextLabelGap(point.row, point.col),
+            !hasLabelGap(point.row, point.col),
         )
         .map((point) => (
           <circle
@@ -799,7 +819,7 @@ export function GoViewerBoard({
                   <PointMark
                     x={pixelX(col)}
                     y={pixelY(row)}
-                    radius={stoneRadius * 0.58}
+                    radius={stoneRadius * 0.66}
                     stroke={
                       displayStone === "B"
                         ? whiteStoneColor
@@ -872,9 +892,10 @@ export function GoViewerBoard({
                   <PointMark
                     x={pixelX(col)}
                     y={pixelY(row)}
-                    radius={offStonePointRadius}
+                    radius={offStoneMarkRadius}
                     stroke={blackStoneColor}
                     shape={markShapes[label.text]}
+                    centerInBackdrop
                   />
                 ) : (
                   <CenteredText
