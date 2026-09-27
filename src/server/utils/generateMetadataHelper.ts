@@ -18,7 +18,13 @@ export const topLevelMetadata: Metadata = {
   icons: [
     {
       rel: "icon",
+      url: "/logos/fanaro.io.svg",
+      type: "image/svg+xml",
+    },
+    {
+      rel: "icon",
       url: "/logos/favicon.png",
+      type: "image/png",
     },
   ],
   openGraph: {
