@@ -12,6 +12,7 @@ import { LangLink } from "@components/common/langLink"
 import { ArticleFontForm } from "./articleFontForm"
 import { ArticleFontSizeForm } from "./articleFontSizeForm"
 import { DescriptionForm } from "./descriptionForm"
+import { GoViewerPreferencesForm } from "./goViewerPreferencesForm"
 import { MyComments } from "./myComments"
 import { MyGames } from "./myGames"
 import { ProfileDetailsForm } from "./profileDetailsForm"
@@ -87,11 +88,28 @@ export function ProfileSection({
         <h2 className="text-lg font-bold">
           {lang === "pt" ? "Preferências" : "Preferences"}
         </h2>
-        <ArticleFontForm articleFont={player.articleFont} />
-        <ArticleFontSizeForm
-          articleFontSize={player.articleFontSize}
-        />
-        <ThemeForm />
+        <div className="flex w-full flex-col gap-4 rounded-lg border border-slate-200 bg-white p-4 dark:border-slate-700 dark:bg-slate-900">
+          <ArticleFontForm
+            articleFont={player.articleFont}
+          />
+          <ArticleFontSizeForm
+            articleFontSize={player.articleFontSize}
+          />
+          <ThemeForm />
+        </div>
+        <div className="flex w-full flex-col gap-4 rounded-lg border border-slate-200 bg-white p-4 dark:border-slate-700 dark:bg-slate-900">
+          <h3 className="font-bold text-slate-700 dark:text-slate-300">
+            {lang === "pt"
+              ? "Tabuleiro de Go"
+              : "Go viewer board"}
+          </h3>
+          <GoViewerPreferencesForm
+            goViewerBackground={player.goViewerBackground}
+            goViewerBlackStone={player.goViewerBlackStone}
+            goViewerWhiteStone={player.goViewerWhiteStone}
+            goViewerFont={player.goViewerFont}
+          />
+        </div>
       </div>
 
       <hr className="border-0.75 w-full border-gray-200 dark:border-slate-800" />

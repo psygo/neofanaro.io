@@ -64,6 +64,18 @@ export const players = pgTable("players", {
     .default("medium")
     .notNull(),
   theme: text("theme").default("system").notNull(),
+  goViewerBackground: text("go_viewer_background")
+    .default("auto")
+    .notNull(),
+  goViewerBlackStone: text("go_viewer_black_stone")
+    .default("auto")
+    .notNull(),
+  goViewerWhiteStone: text("go_viewer_white_stone")
+    .default("auto")
+    .notNull(),
+  goViewerFont: text("go_viewer_font")
+    .default("auto")
+    .notNull(),
 })
 
 export const playersRelations = relations(

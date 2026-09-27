@@ -4,8 +4,10 @@ import {
   createContext,
   useCallback,
   useContext,
+  useEffect,
   useMemo,
   useReducer,
+  useRef,
 } from "react"
 
 import {
@@ -43,6 +45,13 @@ type Action =
   | { type: "jumpBack"; steps: number }
   | { type: "jumpForward"; steps: number }
   | { type: "loadSgf"; parsed: ParsedSgf }
+  | {
+      type: "reinit"
+      boardSize: number
+      sgf?: string
+      labels: SgfLabel[]
+      startAt: "start" | "end"
+    }
 
 function toRecordedMoves(
   parsed: ParsedSgf,
@@ -199,6 +208,13 @@ function reducer(
       }
     case "loadSgf":
       return fromParsedSgf(action.parsed)
+    case "reinit":
+      return initialState(
+        action.boardSize,
+        action.sgf,
+        action.labels,
+        action.startAt,
+      )
   }
 }
 
@@ -284,6 +300,31 @@ export function GoViewerProvider({
         init.startAt,
       ),
   )
+
+  // The reducer's lazy initializer above only runs once, on mount —
+  // it won't pick up a `sgf`/`boardSize`/`startAt` prop that changes
+  // afterwards (e.g. a parent swapping which problem is shown, or a
+  // dev Fast Refresh re-rendering this already-mounted client
+  // component with corrected props: React preserves its hook state
+  // across that, so the reducer would otherwise keep showing
+  // whatever position was parsed on the very first mount). Skipped
+  // on the initial run since the lazy initializer above already
+  // covers it.
+  const isFirstRender = useRef(true)
+  useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false
+      return
+    }
+    dispatch({
+      type: "reinit",
+      boardSize,
+      sgf,
+      labels: labels ?? [],
+      startAt,
+    })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [sgf, boardSize, startAt])
 
   const placeStone = useCallback(
     (row: number, col: number) =>

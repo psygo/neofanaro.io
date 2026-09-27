@@ -14,6 +14,9 @@ import {
   GoViewerKey,
   GoViewerLegend,
   goViewerBookishTheme,
+  goViewerDesertTheme,
+  goViewerHikaruTheme,
+  goViewerKayaTheme,
   goViewerLatexFont,
   goViewerMonoFont,
   goViewerSansFont,
@@ -194,8 +197,8 @@ export function GoViewerTest({ article }: ArticleProps) {
           paper&quot; look. Reproduced here via the exported{" "}
           <code>goViewerBookishTheme</code> preset (plain
           white background, black grid, black stones with no
-          border, white stones with a black border, and{" "}
-          <code>goViewerLatexFont</code>):
+          border, white stones with a black border, and the
+          site&apos;s sans-serif font):
         </ArticleParagraph>
         <GoViewer sgf={sampleSgf} startAt="end">
           <GoViewerBoard
@@ -653,6 +656,52 @@ export function GoViewerTest({ article }: ArticleProps) {
             An auto-numbered caption, just like a{" "}
             <code>GoDiagram</code>&apos;s.
           </GoViewerLegend>
+        </GoViewer>
+      </ArticleSection>
+      <ArticleSection>
+        <ArticleParagraph textAlign="left">
+          Image-based board skins, built from the assets in{" "}
+          <code>/public/board_themes</code> — each pairs a
+          background with matching stone renders via the{" "}
+          <code>backgroundImage</code>/
+          <code>blackStoneImage</code>/
+          <code>whiteStoneImage</code> props, wired up here
+          as three presets: <code>goViewerDesertTheme</code>
+          , <code>goViewerHikaruTheme</code>, and{" "}
+          <code>goViewerKayaTheme</code>.
+        </ArticleParagraph>
+        <ArticleParagraph textAlign="left">
+          Desert — an illustrated sunset board, sharing its
+          glossy stone renders with the Hikaru theme below:
+        </ArticleParagraph>
+        <GoViewer sgf={sampleSgf} startAt="end">
+          <GoViewerBoard
+            {...goViewerDesertTheme}
+            showMoveNumbers
+            interactive={false}
+          />
+        </GoViewer>
+        <ArticleParagraph textAlign="left">
+          Hikaru — the same glossy, dark-outlined stones on
+          a plain warm wood color:
+        </ArticleParagraph>
+        <GoViewer sgf={sampleSgf} startAt="end">
+          <GoViewerBoard
+            {...goViewerHikaruTheme}
+            showMoveNumbers
+            interactive={false}
+          />
+        </GoViewer>
+        <ArticleParagraph textAlign="left">
+          Kaya — a classic photographic wood board with
+          slate/shell stone renders:
+        </ArticleParagraph>
+        <GoViewer sgf={sampleSgf} startAt="end">
+          <GoViewerBoard
+            {...goViewerKayaTheme}
+            showMoveNumbers
+            interactive={false}
+          />
         </GoViewer>
       </ArticleSection>
     </Article>

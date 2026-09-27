@@ -1,9 +1,13 @@
 "use client"
 
-import { useState } from "react"
+import { useLayoutEffect, useRef, useState } from "react"
+
+import { useTheme } from "next-themes"
 
 import { BoardRegion } from "./goRules"
 import { useGoViewer } from "./goViewerContext"
+import { useGoViewerPreferences } from "./goViewerPreferencesContext"
+import { resolveGoViewerTheme } from "./goViewerTheme"
 
 const defaultCellSize = 32
 const defaultPadding = 20
@@ -42,6 +46,60 @@ function hoshiPoints(
     ]
   }
   return []
+}
+
+// `dominant-baseline: central` alone doesn't land in the same place
+// across fonts/browsers/OSes (it centers on the font's own vertical
+// metrics, not the rendered glyph's ink) — a fixed `dy` fudge factor
+// tuned against one browser looks off in another. This instead
+// measures the actual rendered glyph after paint and nudges it by
+// exactly the gap between its true ink center and the target `y`, so
+// it's correct regardless of which font ends up rendering it.
+function CenteredText({
+  x,
+  y,
+  fontFamily,
+  fontSize,
+  fontWeight,
+  fill,
+  children,
+}: {
+  x: number
+  y: number
+  fontFamily?: string
+  fontSize: number
+  fontWeight?: string
+  fill: string
+  children: string | number
+}) {
+  const ref = useRef<SVGTextElement>(null)
+  const [dy, setDy] = useState(0)
+
+  useLayoutEffect(() => {
+    const el = ref.current
+    if (!el) return
+    el.setAttribute("dy", "0")
+    const box = el.getBBox()
+    const inkCenter = box.y + box.height / 2
+    el.setAttribute("dy", `${y - inkCenter}`)
+    setDy(y - inkCenter)
+  }, [children, fontFamily, fontSize, fontWeight, x, y])
+
+  return (
+    <text
+      ref={ref}
+      x={x}
+      y={y}
+      dy={dy}
+      textAnchor="middle"
+      fontFamily={fontFamily}
+      fontSize={fontSize}
+      fontWeight={fontWeight}
+      fill={fill}
+    >
+      {children}
+    </text>
+  )
 }
 
 export type GoViewerBoardProps = {
@@ -107,21 +165,60 @@ export function GoViewerBoard({
   coordinatePadding = defaultCoordinatePadding,
   showCoordinates = false,
   interactive = true,
-  blackStoneImage,
-  whiteStoneImage,
-  blackStoneColor = defaultBlackStoneColor,
-  whiteStoneColor = defaultWhiteStoneColor,
+  blackStoneImage: blackStoneImageProp,
+  whiteStoneImage: whiteStoneImageProp,
+  blackStoneColor: blackStoneColorProp,
+  whiteStoneColor: whiteStoneColorProp,
   blackStoneBorderColor,
-  whiteStoneBorderColor = defaultWhiteStoneBorderColor,
+  whiteStoneBorderColor: whiteStoneBorderColorProp,
   hideLinesBetweenStones = true,
-  backgroundImage,
-  backgroundColor = defaultBackgroundColor,
-  gridColor = defaultGridColor,
-  fontFamily,
+  backgroundImage: backgroundImageProp,
+  backgroundColor: backgroundColorProp,
+  gridColor: gridColorProp,
+  fontFamily: fontFamilyProp,
   showMoveNumbers = false,
   showCapturedStones = false,
   className = "",
 }: GoViewerBoardProps) {
+  // Explicit props always win; otherwise fall back to the signed-in
+  // player's board-appearance preferences (resolved against the
+  // current light/dark site theme), and only then to this
+  // component's own hardcoded defaults.
+  const goViewerPreferences = useGoViewerPreferences()
+  const { resolvedTheme } = useTheme()
+  const preferenceTheme = resolveGoViewerTheme(
+    goViewerPreferences,
+    resolvedTheme === "dark" ? "dark" : "light",
+  )
+  const blackStoneImage =
+    blackStoneImageProp ?? preferenceTheme.blackStoneImage
+  const whiteStoneImage =
+    whiteStoneImageProp ?? preferenceTheme.whiteStoneImage
+  const blackStoneColor =
+    blackStoneColorProp ??
+    preferenceTheme.blackStoneColor ??
+    defaultBlackStoneColor
+  const whiteStoneColor =
+    whiteStoneColorProp ??
+    preferenceTheme.whiteStoneColor ??
+    defaultWhiteStoneColor
+  const whiteStoneBorderColor =
+    whiteStoneBorderColorProp ??
+    preferenceTheme.whiteStoneBorderColor ??
+    defaultWhiteStoneBorderColor
+  const backgroundImage =
+    backgroundImageProp ?? preferenceTheme.backgroundImage
+  const backgroundColor =
+    backgroundColorProp ??
+    preferenceTheme.backgroundColor ??
+    defaultBackgroundColor
+  const gridColor =
+    gridColorProp ??
+    preferenceTheme.gridColor ??
+    defaultGridColor
+  const fontFamily =
+    fontFamilyProp ?? preferenceTheme.fontFamily
+
   const {
     board,
     boardSize,
@@ -131,6 +228,7 @@ export function GoViewerBoard({
     moveNumberAt,
     capturedStones,
     labels,
+    moveNumber: viewIndex,
     placeStone,
   } = useGoViewer()
   const [hoveredPoint, setHoveredPoint] = useState<{
@@ -391,6 +489,14 @@ export function GoViewerBoard({
           ? `url(${backgroundImage})`
           : undefined,
         backgroundSize: "cover",
+        // `width`/`height`/`size` set the board's max render size,
+        // not a fixed one — same convention as <GoDiagram>'s own
+        // `width`/`height` props — so it still shrinks to fit a
+        // viewport narrower than that, rather than overflowing or
+        // forcing horizontal scroll.
+        width: "100%",
+        height: "auto",
+        maxWidth: `${svgWidth}px`,
       }}
     >
       {horizontalSegments}
@@ -416,33 +522,29 @@ export function GoViewerBoard({
 
       {showCoordinates &&
         cols.map((col) => (
-          <text
+          <CenteredText
             key={`coord-col-${col}`}
             x={pixelX(col)}
             y={lineBottom + coordinatePadding}
-            textAnchor="middle"
-            dominantBaseline="central"
             fontFamily={fontFamily}
             fontSize={cellSize * 0.56}
             fill={gridColor}
           >
             {colLabel(col)}
-          </text>
+          </CenteredText>
         ))}
       {showCoordinates &&
         rows.map((row) => (
-          <text
+          <CenteredText
             key={`coord-row-${row}`}
             x={lineLeft - coordinatePadding}
             y={pixelY(row)}
-            textAnchor="middle"
-            dominantBaseline="central"
             fontFamily={fontFamily}
             fontSize={cellSize * 0.56}
             fill={gridColor}
           >
             {rowLabel(row)}
-          </text>
+          </CenteredText>
         ))}
 
       {rows.map((row) =>
@@ -463,7 +565,8 @@ export function GoViewerBoard({
           const label = labels.find(
             (candidate) =>
               candidate.row === row &&
-              candidate.col === col,
+              candidate.col === col &&
+              candidate.moveIndex === viewIndex,
           )
 
           return (
@@ -510,14 +613,23 @@ export function GoViewerBoard({
                     }
                   />
                 ))}
-              {showMoveNumbers &&
-              displayStone &&
-              displayMoveNumber ? (
-                <text
+              {displayStone && label ? (
+                <CenteredText
                   x={pixelX(col)}
                   y={pixelY(row)}
-                  textAnchor="middle"
-                  dominantBaseline="central"
+                  fontFamily={fontFamily}
+                  fontSize={stoneRadius * 1.15}
+                  fontWeight="bold"
+                  fill="currentColor"
+                >
+                  {label.text}
+                </CenteredText>
+              ) : showMoveNumbers &&
+                displayStone &&
+                displayMoveNumber ? (
+                <CenteredText
+                  x={pixelX(col)}
+                  y={pixelY(row)}
                   fontFamily={fontFamily}
                   fontSize={stoneRadius * 1.15}
                   fontWeight="bold"
@@ -528,7 +640,7 @@ export function GoViewerBoard({
                   }
                 >
                   {displayMoveNumber}
-                </text>
+                </CenteredText>
               ) : (
                 isLastMove && (
                   <circle
@@ -554,7 +666,7 @@ export function GoViewerBoard({
                   opacity={0.5}
                 />
               )}
-              {label && !stone && (
+              {label && !displayStone && (
                 <>
                   <circle
                     cx={pixelX(col)}
@@ -562,18 +674,16 @@ export function GoViewerBoard({
                     r={cellSize * 0.32}
                     fill={backgroundColor}
                   />
-                  <text
+                  <CenteredText
                     x={pixelX(col)}
                     y={pixelY(row)}
-                    textAnchor="middle"
-                    dominantBaseline="central"
                     fontFamily={fontFamily}
                     fontSize={cellSize * 0.56}
                     fontWeight="bold"
-                    fill={gridColor}
+                    fill="currentColor"
                   >
                     {label.text}
-                  </text>
+                  </CenteredText>
                 </>
               )}
               {interactive &&

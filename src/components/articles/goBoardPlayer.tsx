@@ -14,6 +14,7 @@ type GoBoardPlayerProps = {
   interactive?: boolean
   showMetadata?: boolean
   theme?: string
+  backgroundImage?: string
 }
 
 export function GoBoardPlayer({
@@ -23,6 +24,7 @@ export function GoBoardPlayer({
   interactive = true,
   showMetadata = true,
   theme = "wood",
+  backgroundImage,
 }: GoBoardPlayerProps) {
   return (
     <div className="not-prose">
@@ -34,6 +36,7 @@ export function GoBoardPlayer({
           height={height}
           interactive={interactive}
           theme={theme}
+          backgroundImage={backgroundImage}
         />
         <GoBoardControls />
       </GoBoardContainer>

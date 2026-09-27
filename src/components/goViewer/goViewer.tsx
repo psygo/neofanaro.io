@@ -47,7 +47,7 @@ export function GoViewer({
       startAt={startAt}
     >
       <div
-        className={`not-prose flex flex-col items-center gap-4 ${className}`}
+        className={`not-prose flex flex-col items-center gap-4 py-4 ${className}`}
       >
         {children}
       </div>

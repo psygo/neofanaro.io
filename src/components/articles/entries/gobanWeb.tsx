@@ -237,7 +237,10 @@ export function GobanWeb({ article }: ArticleProps) {
           With the Goban Web project, we can now cover all
           of the basic Go viewer features:
         </ArticleParagraph>
-        <GoBoardPlayer sgf="/articles/goban-web/fukuoka_vs_ichiriki_honinbo_4.sgf" />
+        <GoBoardPlayer
+          sgf="/articles/goban-web/fukuoka_vs_ichiriki_honinbo_4.sgf"
+          backgroundImage="/board_themes/kaya/kaya_bg.png"
+        />
         <ArticleParagraph>
           With code as simple as this, we&apos;re able to
           use the Goban Web project:

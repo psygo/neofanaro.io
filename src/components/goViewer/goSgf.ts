@@ -18,7 +18,14 @@ export type SgfSetup = {
   empty: BoardPosition[]
 }
 
-export type SgfLabel = BoardPosition & { text: string }
+// `moveIndex` is how many moves had been played by the node this
+// label was declared on (0 = the setup/start position) — labels are
+// node-local annotations in SGF, not persistent markup, so a viewer
+// should only show a label while looking at that exact position.
+export type SgfLabel = BoardPosition & {
+  text: string
+  moveIndex: number
+}
 
 export type SgfGameInfo = {
   playerBlack?: string
@@ -106,6 +113,7 @@ export function parseSgf(source: string): ParsedSgf {
     if (char === ";") {
       i++
       skipWhitespace()
+      const nodeLabelsStart = labels.length
       while (i < text.length && /[A-Za-z]/.test(text[i])) {
         const [key, values] = parseProperty()
         skipWhitespace()
@@ -143,6 +151,10 @@ export function parseSgf(source: string): ParsedSgf {
                   value.slice(0, separator),
                 ),
                 text: value.slice(separator + 1),
+                // Backfilled below once this node's move (if any)
+                // has been parsed too — LB can appear before or
+                // after the node's own B/W property.
+                moveIndex: 0,
               })
             }
             break
@@ -182,6 +194,8 @@ export function parseSgf(source: string): ParsedSgf {
             break
         }
       }
+      for (let j = nodeLabelsStart; j < labels.length; j++)
+        labels[j].moveIndex = moves.length
       continue
     }
 

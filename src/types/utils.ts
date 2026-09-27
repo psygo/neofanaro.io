@@ -20,3 +20,28 @@ export type ArticleFont =
 export type ArticleFontSize = "small" | "medium" | "large"
 
 export type ThemePreference = "light" | "dark" | "system"
+
+// "auto" resolves differently depending on light/dark site theme —
+// see resolveGoViewerTheme in @components/goViewer/exports.
+export type GoViewerBackgroundPreference =
+  | "auto"
+  | "bookish"
+  | "desert"
+  | "hikaru"
+  | "kaya"
+
+export type GoViewerStonePreference =
+  | "auto"
+  | "bookish"
+  | "desert"
+  | "hikaru"
+  | "kaya"
+
+export type GoViewerFontPreference =
+  | "auto"
+  | "sans"
+  | "mono"
+  | "serif"
+  | "latex"
+  | "newcm"
+  | "garamond"

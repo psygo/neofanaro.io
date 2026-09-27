@@ -9,6 +9,9 @@
   - But let's also add a public stats page.
 - GerentIA article
 
+- Table of Contents for articles
+- Footnotes for articles
+
 - Player names on the league table should be clickable and leading to the user page for others to see.
 - Dark Theme
 

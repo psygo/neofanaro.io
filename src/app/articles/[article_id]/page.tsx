@@ -19,6 +19,7 @@ import {
   LatexShogi,
   LittleKnifeGodBooks,
   Magi,
+  MammothsJump,
   MinCJKForGo,
   OkaoigoAiArticles,
   OneYearInAsia,
@@ -92,6 +93,8 @@ function whichArticle(
       return <LittleKnifeGodBooks article={post} />
     case "magi":
       return <Magi article={post} />
+    case "mammoths-jump":
+      return <MammothsJump article={post} />
     case "min-cjk-for-go":
       return <MinCJKForGo article={post} />
     case "okaoigo-ai-articles":

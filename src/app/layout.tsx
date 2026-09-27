@@ -19,6 +19,10 @@ import { Footer } from "@components/common/footer"
 import { CpiSuspense } from "@components/common/cpiSuspense"
 import { PageViewTracker } from "@components/common/pageViewTracker"
 import { ThemeProvider } from "@components/common/themeProvider"
+import {
+  GoViewerPreferencesProvider,
+  toGoViewerPreferences,
+} from "@components/goViewer/exports"
 
 export const metadata: Metadata = topLevelMetadata
 
@@ -54,11 +58,24 @@ export default async function RootLayout({
           }
         >
           <PageViewTracker />
-          <CpiSuspense>
-            <Nav player={player} />
-            {children}
-            <Footer />
-          </CpiSuspense>
+          <GoViewerPreferencesProvider
+            preferences={
+              player
+                ? toGoViewerPreferences({
+                    background: player.goViewerBackground,
+                    blackStone: player.goViewerBlackStone,
+                    whiteStone: player.goViewerWhiteStone,
+                    font: player.goViewerFont,
+                  })
+                : undefined
+            }
+          >
+            <CpiSuspense>
+              <Nav player={player} />
+              {children}
+              <Footer />
+            </CpiSuspense>
+          </GoViewerPreferencesProvider>
         </ThemeProvider>
       </body>
     </html>

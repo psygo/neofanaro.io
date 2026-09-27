@@ -19,7 +19,7 @@ export default async function Home() {
         <PresentationSection />
         <SoftwareWorkSection />
         <GoProfPresentationSection />
-        <ArticlesStatsHeader />
+        {/* <ArticlesStatsHeader /> */}
         <PopularArticlesSection
           articles={popularArticles}
         />
