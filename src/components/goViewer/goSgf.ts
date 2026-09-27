@@ -27,6 +27,15 @@ export type SgfLabel = BoardPosition & {
   moveIndex: number
 }
 
+// SGF's TR/SQ/CR markup (triangle/square/circle point marks) isn't
+// tracked as its own concept here — it's folded into the same
+// SgfLabel list as LB text labels, using these glyphs as the label
+// text. GoViewerBoard special-cases them to draw an outline shape
+// instead of rendering the glyph as text (see goViewerBoard.tsx).
+export const sgfTriangleGlyph = "△"
+export const sgfSquareGlyph = "□"
+export const sgfCircleGlyph = "○"
+
 export type SgfGameInfo = {
   playerBlack?: string
   playerWhite?: string
@@ -158,6 +167,23 @@ export function parseSgf(source: string): ParsedSgf {
               })
             }
             break
+          case "TR":
+          case "SQ":
+          case "CR": {
+            const text =
+              key === "TR"
+                ? sgfTriangleGlyph
+                : key === "SQ"
+                  ? sgfSquareGlyph
+                  : sgfCircleGlyph
+            for (const value of values)
+              labels.push({
+                ...pointFromSgfValue(value),
+                text,
+                moveIndex: 0,
+              })
+            break
+          }
           case "B":
           case "W": {
             const color = key as Stone

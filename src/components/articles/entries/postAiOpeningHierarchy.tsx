@@ -8,10 +8,10 @@ import {
   ArticleUnorderedList,
   ArticleOrderedList,
 } from "../articleContent"
-import {
-  GoDiagram,
-  GoDiagramLegend,
-} from "@components/articles/goDiagram"
+// import {
+//   GoDiagram,
+//   GoDiagramLegend,
+// } from "@components/articles/goDiagram"
 import {
   GoViewer,
   GoViewerBoard,

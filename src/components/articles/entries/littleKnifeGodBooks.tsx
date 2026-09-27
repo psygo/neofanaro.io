@@ -8,10 +8,17 @@ import {
   NoWrap,
   ArticleImageWithLegend,
 } from "../articleContent"
+// import {
+//   GoDiagram,
+//   GoDiagramLegend,
+// } from "@components/articles/goDiagram"
 import {
-  GoDiagram,
-  GoDiagramLegend,
-} from "@components/articles/goDiagram"
+  GoViewer,
+  GoViewerBoard,
+  GoViewerControls,
+  GoViewerLegend,
+  readSgfFile,
+} from "@components/goViewer/exports"
 
 export function LittleKnifeGodBooks({
   article,
@@ -49,22 +56,50 @@ export function LittleKnifeGodBooks({
           </ArticleLink>
           , where should Black play?
         </ArticleParagraph>
-        <GoDiagram src="/articles/little-knife-god-books/kato_chie_vs_yoshihiro_koike.svg">
+        {/* <GoDiagram src="/articles/little-knife-god-books/kato_chie_vs_yoshihiro_koike.svg">
           <GoDiagramLegend>
             Kato Chie 3p (White) vs Yoshihiro Koike 7p
             (Black). Black to play.
           </GoDiagramLegend>
-        </GoDiagram>
+        </GoDiagram> */}
+        <GoViewer
+          sgf={readSgfFile(
+            "/articles/little-knife-god-books/1.sgf",
+          )}
+          startAt="end"
+        >
+          <GoViewerBoard interactive={false} size={400} />
+          <GoViewerLegend>
+            Kato Chie 3p (White) vs Yoshihiro Koike 7p
+            (Black). Black to play.
+          </GoViewerLegend>
+        </GoViewer>
         <ArticleParagraph>
           Going for a keima is lukewarm, White&apos;s shape
           will get fixed on the outside, and the cut at 4
           will likely be triggered:
         </ArticleParagraph>
-        <GoDiagram src="/articles/little-knife-god-books/kato_chie_vs_yoshihiro_koike_p1.svg">
+        {/* <GoDiagram src="/articles/little-knife-god-books/kato_chie_vs_yoshihiro_koike_p1.svg">
           <GoDiagramLegend>
             Lukewarm. And White gets to exploit a cut.
           </GoDiagramLegend>
-        </GoDiagram>
+        </GoDiagram> */}
+        <GoViewer
+          sgf={readSgfFile(
+            "/articles/little-knife-god-books/2.sgf",
+          )}
+          startAt="end"
+        >
+          <GoViewerBoard
+            interactive={false}
+            showMoveNumbers
+            size={400}
+          />
+          <GoViewerControls />
+          <GoViewerLegend>
+            Lukewarm. And White gets to exploit a cut.
+          </GoViewerLegend>
+        </GoViewer>
         <ArticleParagraph>
           As a hint, the correct move is very similar to the
           solution to{" "}
@@ -73,19 +108,39 @@ export function LittleKnifeGodBooks({
           </ArticleLink>
           :
         </ArticleParagraph>
-        <GoDiagram
+        {/* <GoDiagram
           src="/articles/little-knife-god-books/101_weiqi_p1.svg"
           height={285}
           width={240}
         >
           <GoDiagramLegend>
-            Problem 128242 from 101weiqi.
+            Problem 128,242 from 101weiqi.
           </GoDiagramLegend>
-        </GoDiagram>
+        </GoDiagram> */}
+        <GoViewer
+          sgf={readSgfFile(
+            "/articles/little-knife-god-books/3.sgf",
+          )}
+          startAt="end"
+        >
+          <GoViewerBoard
+            region={{
+              minRow: 0,
+              maxRow: 9,
+              minCol: 10,
+              maxCol: 18,
+            }}
+            interactive={false}
+            size={300}
+          />
+          <GoViewerLegend>
+            Problem 128,242 from 101weiqi.
+          </GoViewerLegend>
+        </GoViewer>
         <ArticleParagraph>
           Here&apos;s that problem&apos;s solution:
         </ArticleParagraph>
-        <GoDiagram
+        {/* <GoDiagram
           src="/articles/little-knife-god-books/101_weiqi_p3.svg"
           height={285}
           width={240}
@@ -95,28 +150,84 @@ export function LittleKnifeGodBooks({
             than it seems. And, with 1, we can contain White
             while shortening the group&apos;s liberties.
           </GoDiagramLegend>
-        </GoDiagram>
+        </GoDiagram> */}
+        <GoViewer
+          sgf={readSgfFile(
+            "/articles/little-knife-god-books/4.sgf",
+          )}
+          startAt="end"
+        >
+          <GoViewerBoard
+            region={{
+              minRow: 0,
+              maxRow: 9,
+              minCol: 10,
+              maxCol: 18,
+            }}
+            interactive={false}
+            showMoveNumbers
+            size={300}
+          />
+          <GoViewerLegend>
+            Black&apos;s marked stones have more liberties
+            than it seems. And, with 1, we can contain White
+            while shortening the group&apos;s liberties.
+          </GoViewerLegend>
+        </GoViewer>
         <ArticleParagraph>
           The correct move in the game was to apply pressure
           based on Black&apos;s cutting stone in the center.
           By doing so, we can create many cutting points on
           White&apos;s shape:
         </ArticleParagraph>
-        <GoDiagram src="/articles/little-knife-god-books/kato_chie_vs_yoshihiro_koike_p2.svg">
+        {/* <GoDiagram src="/articles/little-knife-god-books/kato_chie_vs_yoshihiro_koike_p2.svg">
           <GoDiagramLegend>
             Applying pressure and creating cutting points on
             White&apos;s shape.
           </GoDiagramLegend>
-        </GoDiagram>
+        </GoDiagram> */}
+        <GoViewer
+          sgf={readSgfFile(
+            "/articles/little-knife-god-books/5.sgf",
+          )}
+          startAt="end"
+        >
+          <GoViewerBoard
+            interactive={false}
+            showMoveNumbers
+            size={400}
+          />
+          <GoViewerControls />
+          <GoViewerLegend>
+            Applying pressure and creating cutting points on
+            White&apos;s shape.
+          </GoViewerLegend>
+        </GoViewer>
         <ArticleParagraph>
           If White goes for a capturing race, Black is the
           one ahead actually.
         </ArticleParagraph>
-        <GoDiagram src="/articles/little-knife-god-books/kato_chie_vs_yoshihiro_koike_p3.svg">
+        {/* <GoDiagram src="/articles/little-knife-god-books/kato_chie_vs_yoshihiro_koike_p3.svg">
           <GoDiagramLegend>
             Black wins most semeais.
           </GoDiagramLegend>
-        </GoDiagram>
+        </GoDiagram> */}
+        <GoViewer
+          sgf={readSgfFile(
+            "/articles/little-knife-god-books/6.sgf",
+          )}
+          startAt="end"
+        >
+          <GoViewerBoard
+            interactive={false}
+            showMoveNumbers
+            size={400}
+          />
+          <GoViewerControls />
+          <GoViewerLegend>
+            Black wins most semeais.
+          </GoViewerLegend>
+        </GoViewer>
         <ArticleParagraph>
           The book shows plenty more diagrams, but I&apos;ll
           leave a link to{" "}

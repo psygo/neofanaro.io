@@ -1,15 +1,24 @@
 "use client"
 
 import { useLayoutEffect, useRef, useState } from "react"
+import { preload } from "react-dom"
 
 import { useTheme } from "next-themes"
 
 import { useIsClient } from "@hooks"
 
 import { BoardRegion } from "./goRules"
+import {
+  sgfCircleGlyph,
+  sgfSquareGlyph,
+  sgfTriangleGlyph,
+} from "./goSgf"
 import { useGoViewer } from "./goViewerContext"
 import { useGoViewerPreferences } from "./goViewerPreferencesContext"
-import { resolveGoViewerTheme } from "./goViewerTheme"
+import {
+  goViewerKayaTheme,
+  resolveGoViewerTheme,
+} from "./goViewerTheme"
 
 const defaultCellSize = 32
 const defaultPadding = 20
@@ -101,6 +110,82 @@ function CenteredText({
     >
       {children}
     </text>
+  )
+}
+
+// SGF's TR/SQ/CR point marks (see goSgf.ts, which folds them into
+// SgfLabel using these glyphs as the label text) — an outline shape
+// instead of a rendered glyph, matching the reference SVG diagrams'
+// own marks. All three are sized against the same circumradius `R`
+// (the `radius` prop) so they read as a matched set: the triangle's
+// and square's vertices sit on that circle, and the circle mark uses
+// it directly as its own radius.
+const markShapes: Record<
+  string,
+  "triangle" | "square" | "circle"
+> = {
+  [sgfTriangleGlyph]: "triangle",
+  [sgfSquareGlyph]: "square",
+  [sgfCircleGlyph]: "circle",
+}
+
+function PointMark({
+  x,
+  y,
+  radius,
+  stroke,
+  shape,
+}: {
+  x: number
+  y: number
+  radius: number
+  stroke: string
+  shape: "triangle" | "square" | "circle"
+}) {
+  const strokeWidth = radius * 0.27
+
+  if (shape === "circle")
+    return (
+      <circle
+        cx={x}
+        cy={y}
+        r={radius}
+        fill="none"
+        stroke={stroke}
+        strokeWidth={strokeWidth}
+      />
+    )
+
+  if (shape === "square") {
+    const half = radius * Math.SQRT1_2
+    return (
+      <rect
+        x={x - half}
+        y={y - half}
+        width={half * 2}
+        height={half * 2}
+        fill="none"
+        stroke={stroke}
+        strokeWidth={strokeWidth}
+      />
+    )
+  }
+
+  const points = [-90, 30, 150]
+    .map((deg) => {
+      const rad = (deg * Math.PI) / 180
+      return `${x + radius * Math.cos(rad)},${y + radius * Math.sin(rad)}`
+    })
+    .join(" ")
+  return (
+    <polygon
+      points={points}
+      fill="none"
+      stroke={stroke}
+      strokeWidth={strokeWidth}
+      strokeLinejoin="miter"
+      strokeMiterlimit={10}
+    />
   )
 }
 
@@ -217,6 +302,22 @@ export function GoViewerBoard({
     defaultWhiteStoneBorderColor
   const backgroundImage =
     backgroundImageProp ?? preferenceTheme.backgroundImage
+  // Fetching a board's (potentially large, photographic) background
+  // image only starts once its CSS is applied post-hydration, unlike
+  // an <img>, which the browser's preload scanner picks up straight
+  // from the raw HTML — this resource hint closes that gap. When the
+  // background preference is "auto" (the default), the eventual
+  // image can't be known for certain during the light-mode-assumed
+  // first render (see the `isClient` guard above) — Kaya is what
+  // "auto" resolves to in dark mode, so it's preloaded speculatively
+  // too in that case; an unused preload just goes unused, but a
+  // missing one means a visible pop-in once dark mode is confirmed.
+  if (backgroundImage)
+    preload(backgroundImage, { as: "image" })
+  if (goViewerPreferences.background === "auto")
+    preload(goViewerKayaTheme.backgroundImage, {
+      as: "image",
+    })
   const backgroundColor =
     backgroundColorProp ??
     preferenceTheme.backgroundColor ??
@@ -272,13 +373,17 @@ export function GoViewerBoard({
   )
     cols.push(col)
 
-  // A cut (non-board-edge) side gets a bit of extra room: its grid
-  // lines run half a cell past the last intersection before
-  // stopping, so the crop visibly falls *between* two intersections
-  // rather than exactly on the last one (see how a real book diagram
-  // crops a corner — no decoration, the lines just end mid-cell).
+  // A cut (non-board-edge) side gets extra room for its grid lines
+  // to run half a cell past the last intersection before stopping,
+  // so the crop visibly falls *between* two intersections rather
+  // than exactly on the last one (see how a real book diagram crops
+  // a corner — no decoration, the lines just end mid-cell). That
+  // overhang is carved out of the cut side's own margin — not added
+  // on top of it — so the empty space past the very end of the grid
+  // lines (the overhang's tip on a cut side, the board border on a
+  // true edge) is the same `padding` all the way around.
   const cutOverhang = cellSize / 2
-  const cutMargin = cutOverhang + 6
+  const cutMargin = cutOverhang
   // Coordinates only ever sit on the true bottom/left sides (this
   // board's own crop, not the absolute board edge), so they stack
   // with whatever cut margin those sides already have.
@@ -623,16 +728,30 @@ export function GoViewerBoard({
                   />
                 ))}
               {displayStone && label ? (
-                <CenteredText
-                  x={pixelX(col)}
-                  y={pixelY(row)}
-                  fontFamily={fontFamily}
-                  fontSize={stoneRadius * 1.15}
-                  fontWeight="bold"
-                  fill="currentColor"
-                >
-                  {label.text}
-                </CenteredText>
+                markShapes[label.text] ? (
+                  <PointMark
+                    x={pixelX(col)}
+                    y={pixelY(row)}
+                    radius={stoneRadius * 0.58}
+                    stroke={
+                      displayStone === "B"
+                        ? whiteStoneColor
+                        : blackStoneColor
+                    }
+                    shape={markShapes[label.text]}
+                  />
+                ) : (
+                  <CenteredText
+                    x={pixelX(col)}
+                    y={pixelY(row)}
+                    fontFamily={fontFamily}
+                    fontSize={stoneRadius * 1.15}
+                    fontWeight="bold"
+                    fill="currentColor"
+                  >
+                    {label.text}
+                  </CenteredText>
+                )
               ) : showMoveNumbers &&
                 displayStone &&
                 displayMoveNumber ? (
@@ -675,26 +794,36 @@ export function GoViewerBoard({
                   opacity={0.5}
                 />
               )}
-              {label && !displayStone && (
-                <>
-                  <circle
-                    cx={pixelX(col)}
-                    cy={pixelY(row)}
-                    r={cellSize * 0.32}
-                    fill={backgroundColor}
-                  />
-                  <CenteredText
+              {label &&
+                !displayStone &&
+                (markShapes[label.text] ? (
+                  <PointMark
                     x={pixelX(col)}
                     y={pixelY(row)}
-                    fontFamily={fontFamily}
-                    fontSize={cellSize * 0.56}
-                    fontWeight="bold"
-                    fill="currentColor"
-                  >
-                    {label.text}
-                  </CenteredText>
-                </>
-              )}
+                    radius={cellSize * 0.32}
+                    stroke="currentColor"
+                    shape={markShapes[label.text]}
+                  />
+                ) : (
+                  <>
+                    <circle
+                      cx={pixelX(col)}
+                      cy={pixelY(row)}
+                      r={cellSize * 0.32}
+                      fill={backgroundColor}
+                    />
+                    <CenteredText
+                      x={pixelX(col)}
+                      y={pixelY(row)}
+                      fontFamily={fontFamily}
+                      fontSize={cellSize * 0.56}
+                      fontWeight="bold"
+                      fill="currentColor"
+                    >
+                      {label.text}
+                    </CenteredText>
+                  </>
+                ))}
               {interactive &&
                 !stone &&
                 hoveredPoint?.row === row &&
