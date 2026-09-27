@@ -11,7 +11,14 @@ import {
   NoWrap,
   ImageLegend,
 } from "../articleContent"
-import { GoDiagram, GoDiagramLegend } from "../goDiagram"
+// import { GoDiagram, GoDiagramLegend } from "../goDiagram"
+import {
+  GoViewer,
+  GoViewerBoard,
+  GoViewerControls,
+  GoViewerLegend,
+  readSgfFile,
+} from "@components/goViewer/exports"
 
 import { SITE_URL } from "@utils"
 
@@ -128,12 +135,26 @@ export function DowonPairGo({ article }: ArticleProps) {
           pattern, my partner played the mistaken,
           unexpected cut at 8:
         </ArticleParagraph>
-        <GoDiagram src="/articles/dowon-pairgo/dowon_pairgo_1.svg">
+        {/* <GoDiagram src="/articles/dowon-pairgo/dowon_pairgo_1.svg">
           <GoDiagramLegend>
             A mistaken, unexpected cut (8) from my pair Go
             partner. White should have crawled with 8 at 9.
           </GoDiagramLegend>
-        </GoDiagram>
+        </GoDiagram> */}
+        <GoViewer
+          sgf={readSgfFile("/articles/dowon-pairgo/1.sgf")}
+          startAt="end"
+        >
+          <GoViewerBoard
+            interactive={false}
+            showMoveNumbers
+          />
+          <GoViewerControls />
+          <GoViewerLegend>
+            A mistaken, unexpected cut (8) from my pair Go
+            partner. White should have crawled with 8 at 9.
+          </GoViewerLegend>
+        </GoViewer>
         <ArticleParagraph>
           Where should Black play next?
         </ArticleParagraph>
@@ -157,12 +178,26 @@ export function DowonPairGo({ article }: ArticleProps) {
           White gets a ton of squeezing power from the
           outside:
         </ArticleParagraph>
-        <GoDiagram src="/articles/dowon-pairgo/dowon_pairgo_3.svg">
+        {/* <GoDiagram src="/articles/dowon-pairgo/dowon_pairgo_3.svg">
           <GoDiagramLegend>
             Black&apos;s groups surrounding White&apos;s
             captured stones are bound to get squeezed.
           </GoDiagramLegend>
-        </GoDiagram>
+        </GoDiagram> */}
+        <GoViewer
+          sgf={readSgfFile("/articles/dowon-pairgo/2.sgf")}
+          startAt="end"
+        >
+          <GoViewerBoard
+            interactive={false}
+            showMoveNumbers
+          />
+          <GoViewerControls />
+          <GoViewerLegend>
+            Black&apos;s groups surrounding White&apos;s
+            captured stones are bound to get squeezed.
+          </GoViewerLegend>
+        </GoViewer>
         <ArticleParagraph>
           Black has three directions from which to be
           squeezed, from A to C, there&apos;s no way to
@@ -173,12 +208,26 @@ export function DowonPairGo({ article }: ArticleProps) {
           This is AI&apos;s recommended sequence, after
           Black captures White&apos;s group on the side:
         </ArticleParagraph>
-        <GoDiagram src="/articles/dowon-pairgo/dowon_pairgo_2.svg">
+        {/* <GoDiagram src="/articles/dowon-pairgo/dowon_pairgo_2.svg">
           <GoDiagramLegend>
             Black get&apos;s squeezed from the bottom-left
             and the bottom-right.
           </GoDiagramLegend>
-        </GoDiagram>
+        </GoDiagram> */}
+        <GoViewer
+          sgf={readSgfFile("/articles/dowon-pairgo/3.sgf")}
+          startAt="end"
+        >
+          <GoViewerBoard
+            interactive={false}
+            showMoveNumbers
+          />
+          <GoViewerControls />
+          <GoViewerLegend>
+            Black get&apos;s squeezed from the bottom-left
+            and the bottom-right.
+          </GoViewerLegend>
+        </GoViewer>
         <ArticleParagraph>
           Black gets sente to play 19; but White gets thick
           on the left and bottom-right, the aji in the
@@ -192,12 +241,26 @@ export function DowonPairGo({ article }: ArticleProps) {
           instead play what my opponent pair opted for, to
           capture the cutting stone:
         </ArticleParagraph>
-        <GoDiagram src="/articles/dowon-pairgo/dowon_pairgo_4.svg">
+        {/* <GoDiagram src="/articles/dowon-pairgo/dowon_pairgo_4.svg">
           <GoDiagramLegend>
             Black&apos;s thickness and outside trump
             capturing a sizeable chunk on the side.
           </GoDiagramLegend>
-        </GoDiagram>
+        </GoDiagram> */}
+        <GoViewer
+          sgf={readSgfFile("/articles/dowon-pairgo/4.sgf")}
+          startAt="end"
+        >
+          <GoViewerBoard
+            interactive={false}
+            showMoveNumbers
+          />
+          <GoViewerControls />
+          <GoViewerLegend>
+            Black&apos;s thickness and outside trump
+            capturing a sizeable chunk on the side.
+          </GoViewerLegend>
+        </GoViewer>
         <ArticleParagraph>
           Black 1 damages the A stone while thickening out
           Black&apos;s corner and outside, which grants

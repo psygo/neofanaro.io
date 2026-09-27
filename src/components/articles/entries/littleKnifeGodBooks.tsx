@@ -68,7 +68,7 @@ export function LittleKnifeGodBooks({
           )}
           startAt="end"
         >
-          <GoViewerBoard interactive={false} size={400} />
+          <GoViewerBoard interactive={false} />
           <GoViewerLegend>
             Kato Chie 3p (White) vs Yoshihiro Koike 7p
             (Black). Black to play.
@@ -93,7 +93,6 @@ export function LittleKnifeGodBooks({
           <GoViewerBoard
             interactive={false}
             showMoveNumbers
-            size={400}
           />
           <GoViewerControls />
           <GoViewerLegend>
@@ -131,7 +130,6 @@ export function LittleKnifeGodBooks({
               maxCol: 18,
             }}
             interactive={false}
-            size={300}
           />
           <GoViewerLegend>
             Problem 128,242 from 101weiqi.
@@ -166,7 +164,6 @@ export function LittleKnifeGodBooks({
             }}
             interactive={false}
             showMoveNumbers
-            size={300}
           />
           <GoViewerLegend>
             Black&apos;s marked stones have more liberties
@@ -195,7 +192,6 @@ export function LittleKnifeGodBooks({
           <GoViewerBoard
             interactive={false}
             showMoveNumbers
-            size={400}
           />
           <GoViewerControls />
           <GoViewerLegend>
@@ -221,7 +217,6 @@ export function LittleKnifeGodBooks({
           <GoViewerBoard
             interactive={false}
             showMoveNumbers
-            size={400}
           />
           <GoViewerControls />
           <GoViewerLegend>

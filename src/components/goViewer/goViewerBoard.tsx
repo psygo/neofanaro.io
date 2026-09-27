@@ -452,6 +452,15 @@ export function GoViewerBoard({
     svgWidth = naturalWidth
     svgHeight = naturalHeight
   }
+  // With none of `size`/`width`/`height` given, the board stretches
+  // to fill its container (an article's own width, typically) rather
+  // than capping at its own intrinsic pixel size — the container is
+  // what's meant to bound it in that case, same as an <img> with no
+  // width/height attributes of its own.
+  const hasExplicitSize =
+    size !== undefined ||
+    widthOverride !== undefined ||
+    heightOverride !== undefined
 
   const lineLeft =
     pixelX(cols[0]) - (hasCutLeft ? cutOverhang : 0)
@@ -485,6 +494,31 @@ export function GoViewerBoard({
     return columnLetters[col] ?? "?"
   }
 
+  // A text label (not a TR/SQ/CR mark, which is meant to sit right
+  // on the line, same as any Go diagram) needs the grid genuinely
+  // absent under it, not just visually covered — see labelGapRadius
+  // below, which trims the line segments approaching this point
+  // short rather than painting anything over them. That keeps the
+  // "backdrop" transparent by construction: whatever's behind the
+  // board (its own background color/image, nothing more) just shows
+  // through, correct for every theme without special-casing any of
+  // them.
+  function hasTextLabelGap(row: number, col: number) {
+    if (board[row][col]) return false
+    const found = labels.find(
+      (candidate) =>
+        candidate.row === row &&
+        candidate.col === col &&
+        candidate.moveIndex === viewIndex,
+    )
+    return !!found && !markShapes[found.text]
+  }
+  // Shared by the text-label gap above and the off-stone TR/SQ/CR
+  // mark below, so both read as the same size "reserved" for an
+  // off-stone annotation.
+  const offStonePointRadius = cellSize * 0.34
+  const labelGapRadius = offStonePointRadius
+
   const horizontalSegments = rows.flatMap((row) => {
     const strokeWidth =
       row === 0 || row === boardSize - 1 ? 3 : 1
@@ -498,7 +532,11 @@ export function GoViewerBoard({
       segments.push({
         key: `h-${row}-left`,
         x1: lineLeft,
-        x2: pixelX(cols[0]),
+        x2:
+          pixelX(cols[0]) -
+          (hasTextLabelGap(row, cols[0])
+            ? labelGapRadius
+            : 0),
       })
     }
     for (let i = 0; i < cols.length - 1; i++) {
@@ -511,14 +549,22 @@ export function GoViewerBoard({
       if (skip) continue
       segments.push({
         key: `h-${row}-${colA}`,
-        x1: pixelX(colA),
-        x2: pixelX(colB),
+        x1:
+          pixelX(colA) +
+          (hasTextLabelGap(row, colA) ? labelGapRadius : 0),
+        x2:
+          pixelX(colB) -
+          (hasTextLabelGap(row, colB) ? labelGapRadius : 0),
       })
     }
     if (hasCutRight) {
       segments.push({
         key: `h-${row}-right`,
-        x1: pixelX(cols[cols.length - 1]),
+        x1:
+          pixelX(cols[cols.length - 1]) +
+          (hasTextLabelGap(row, cols[cols.length - 1])
+            ? labelGapRadius
+            : 0),
         x2: lineRight,
       })
     }
@@ -550,7 +596,11 @@ export function GoViewerBoard({
       segments.push({
         key: `v-${col}-top`,
         y1: lineTop,
-        y2: pixelY(rows[0]),
+        y2:
+          pixelY(rows[0]) -
+          (hasTextLabelGap(rows[0], col)
+            ? labelGapRadius
+            : 0),
       })
     }
     for (let i = 0; i < rows.length - 1; i++) {
@@ -563,14 +613,22 @@ export function GoViewerBoard({
       if (skip) continue
       segments.push({
         key: `v-${col}-${rowA}`,
-        y1: pixelY(rowA),
-        y2: pixelY(rowB),
+        y1:
+          pixelY(rowA) +
+          (hasTextLabelGap(rowA, col) ? labelGapRadius : 0),
+        y2:
+          pixelY(rowB) -
+          (hasTextLabelGap(rowB, col) ? labelGapRadius : 0),
       })
     }
     if (hasCutBottom) {
       segments.push({
         key: `v-${col}-bottom`,
-        y1: pixelY(rows[rows.length - 1]),
+        y1:
+          pixelY(rows[rows.length - 1]) +
+          (hasTextLabelGap(rows[rows.length - 1], col)
+            ? labelGapRadius
+            : 0),
         y2: lineBottom,
       })
     }
@@ -610,7 +668,9 @@ export function GoViewerBoard({
         // forcing horizontal scroll.
         width: "100%",
         height: "auto",
-        maxWidth: `${svgWidth}px`,
+        maxWidth: hasExplicitSize
+          ? `${svgWidth}px`
+          : "100%",
       }}
     >
       {horizontalSegments}
@@ -622,7 +682,8 @@ export function GoViewerBoard({
             point.row >= visibleRegion.minRow &&
             point.row <= visibleRegion.maxRow &&
             point.col >= visibleRegion.minCol &&
-            point.col <= visibleRegion.maxCol,
+            point.col <= visibleRegion.maxCol &&
+            !hasTextLabelGap(point.row, point.col),
         )
         .map((point) => (
           <circle
@@ -747,7 +808,11 @@ export function GoViewerBoard({
                     fontFamily={fontFamily}
                     fontSize={stoneRadius * 1.15}
                     fontWeight="bold"
-                    fill="currentColor"
+                    fill={
+                      displayStone === "B"
+                        ? whiteStoneColor
+                        : blackStoneColor
+                    }
                   >
                     {label.text}
                   </CenteredText>
@@ -800,29 +865,21 @@ export function GoViewerBoard({
                   <PointMark
                     x={pixelX(col)}
                     y={pixelY(row)}
-                    radius={cellSize * 0.32}
-                    stroke="currentColor"
+                    radius={offStonePointRadius}
+                    stroke={blackStoneColor}
                     shape={markShapes[label.text]}
                   />
                 ) : (
-                  <>
-                    <circle
-                      cx={pixelX(col)}
-                      cy={pixelY(row)}
-                      r={cellSize * 0.32}
-                      fill={backgroundColor}
-                    />
-                    <CenteredText
-                      x={pixelX(col)}
-                      y={pixelY(row)}
-                      fontFamily={fontFamily}
-                      fontSize={cellSize * 0.56}
-                      fontWeight="bold"
-                      fill="currentColor"
-                    >
-                      {label.text}
-                    </CenteredText>
-                  </>
+                  <CenteredText
+                    x={pixelX(col)}
+                    y={pixelY(row)}
+                    fontFamily={fontFamily}
+                    fontSize={cellSize * 0.56}
+                    fontWeight="bold"
+                    fill={blackStoneColor}
+                  >
+                    {label.text}
+                  </CenteredText>
                 ))}
               {interactive &&
                 !stone &&
