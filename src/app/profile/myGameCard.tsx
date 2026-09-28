@@ -52,7 +52,7 @@ export function MyGameCard({
   )
 
   return (
-    <div className="flex items-center gap-3 rounded-lg border border-slate-200 p-3 hover:bg-gray-100 dark:border-slate-700 dark:bg-slate-900 dark:hover:bg-slate-800">
+    <div className="flex items-center gap-3 rounded-lg border border-slate-200 bg-white p-3 hover:bg-gray-100 dark:border-slate-700 dark:bg-slate-900 dark:hover:bg-slate-800">
       {previewSrc && !previewFailed && (
         <Image
           unoptimized

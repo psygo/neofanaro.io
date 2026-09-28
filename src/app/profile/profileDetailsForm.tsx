@@ -59,10 +59,10 @@ export function ProfileDetailsForm({
         <label htmlFor="country" className={labelClasses}>
           {lang === "pt" ? "País" : "Country"}
         </label>
-        <div className="flex items-center gap-2">
+        <div className="relative flex items-center">
           <CountryFlag
             countryCode={selectedCountry || null}
-            className="h-5 w-7 shrink-0 rounded-sm"
+            className="pointer-events-none absolute left-3 h-5 w-7 shrink-0 rounded-sm"
           />
           <select
             id="country"
@@ -71,7 +71,7 @@ export function ProfileDetailsForm({
             onChange={(e) =>
               setSelectedCountry(e.target.value)
             }
-            className={`min-w-0 flex-1 ${inputClasses}`}
+            className={`w-full ${selectedCountry ? "pl-12" : ""} ${inputClasses}`}
           >
             <option value="">
               {lang === "pt"

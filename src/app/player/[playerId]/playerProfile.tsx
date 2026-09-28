@@ -25,11 +25,25 @@ export function PlayerProfile({
         {player.name}
       </h1>
 
-      <div className="flex w-full flex-col gap-3">
+      <div className="flex w-full flex-col gap-3 rounded-lg border border-slate-200 bg-white p-4 dark:border-slate-700 dark:bg-slate-900">
+        <p className="text-lg font-semibold">
+          {player.name}
+        </p>
         <span className="inline-flex items-center gap-1.5">
-          <p className="text-lg font-semibold">
-            {player.nick}
-          </p>
+          {player.ogsLink ? (
+            <a
+              href={player.ogsLink}
+              target="_blank"
+              rel="noreferrer"
+              className="text-lg font-semibold hover:underline"
+            >
+              {player.nick}
+            </a>
+          ) : (
+            <p className="text-lg font-semibold">
+              {player.nick}
+            </p>
+          )}
           <CountryFlag
             countryCode={player.country}
             title={countryName(player.country, lang)}
