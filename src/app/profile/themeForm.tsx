@@ -28,7 +28,7 @@ export function ThemeForm() {
   return (
     <div className="flex w-full flex-col gap-1">
       <label className="font-semibold text-slate-700 dark:text-slate-300">
-        {lang === "pt" ? "Tema" : "Theme"}
+        {lang === "pt" ? "Modo do Tema" : "Theme Mode"}
       </label>
       <Select
         value={theme ?? "system"}

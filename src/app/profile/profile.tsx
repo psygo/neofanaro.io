@@ -17,6 +17,7 @@ import { MyComments } from "./myComments"
 import { MyGames } from "./myGames"
 import { ProfileDetailsForm } from "./profileDetailsForm"
 import { SignOutButton } from "./signOutButton"
+import { SiteThemeForm } from "./siteThemeForm"
 import { ThemeForm } from "./themeForm"
 
 export function ProfileSection({
@@ -103,6 +104,7 @@ export function ProfileSection({
             articleFontSize={player.articleFontSize}
           />
           <ThemeForm />
+          <SiteThemeForm />
         </div>
         <div className="flex w-full flex-col gap-4 rounded-lg border border-slate-200 bg-white p-4 dark:border-slate-700 dark:bg-slate-900">
           <h3 className="font-bold text-slate-700 dark:text-slate-300">

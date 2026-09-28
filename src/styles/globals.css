@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 @custom-variant dark (&:where(.dark, .dark *));
+@custom-variant neo (&:where(.theme-neobrutalist, .theme-neobrutalist *));
 
 :root {
   color-scheme: light dark;

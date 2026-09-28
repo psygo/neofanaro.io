@@ -64,6 +64,9 @@ export const players = pgTable("players", {
     .default("medium")
     .notNull(),
   theme: text("theme").default("system").notNull(),
+  siteTheme: text("site_theme")
+    .default("default")
+    .notNull(),
   goViewerBackground: text("go_viewer_background")
     .default("auto")
     .notNull(),

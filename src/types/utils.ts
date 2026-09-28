@@ -21,6 +21,10 @@ export type ArticleFontSize = "small" | "medium" | "large"
 
 export type ThemePreference = "light" | "dark" | "system"
 
+// The site's visual theme (colors, borders, shapes) — orthogonal to
+// ThemePreference, which is the light/dark mode it renders in.
+export type SiteTheme = "default" | "neobrutalist"
+
 // "auto" resolves differently depending on light/dark site theme —
 // see resolveGoViewerTheme in @components/goViewer/exports.
 export type GoViewerBackgroundPreference =

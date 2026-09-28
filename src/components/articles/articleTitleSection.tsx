@@ -65,7 +65,7 @@ export function ArticleTag({
   children,
 }: WithReactChildren) {
   return (
-    <span className="rounded-2xl border border-gray-300 bg-gray-50 px-2 py-0.5 text-xs font-semibold text-gray-600 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300">
+    <span className="neo:rounded-none neo:border-2 neo:border-black neo:bg-white neo:text-black neo:uppercase neo:dark:border-white neo:dark:bg-slate-950 neo:dark:text-white rounded-2xl border border-gray-300 bg-gray-50 px-2 py-0.5 text-xs font-semibold text-gray-600 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300">
       {children}
     </span>
   )

@@ -34,7 +34,7 @@ export function ArticleCard({ post }: ArticleCardProps) {
           style={{
             borderLeftColor: borderColor,
           }}
-          className={`flex flex-col gap-3 border-l-[7px] ${cardDecoration}`}
+          className={`neo:rounded-none neo:border-[3px] neo:border-l-10 neo:border-black neo:bg-white neo:shadow-[6px_6px_0_0_#000] neo:transition-[transform,box-shadow] neo:duration-150 neo:ease-linear neo:hover:translate-x-0.75 neo:hover:translate-y-0.75 neo:hover:bg-white neo:hover:shadow-[2px_2px_0_0_#000] neo:dark:border-white neo:dark:bg-slate-900 neo:dark:shadow-[6px_6px_0_0_#fff] neo:dark:hover:bg-slate-900 neo:dark:hover:shadow-[2px_2px_0_0_#fff] flex flex-col gap-3 border-l-[7px] ${cardDecoration}`}
         >
           <ArticleTitle>
             {localizedText(
@@ -82,7 +82,7 @@ export function ArticleCard({ post }: ArticleCardProps) {
 
 function ArticleTitle({ children }: WithReactChildren) {
   return (
-    <h2 className="text-2xl font-extrabold tracking-wide">
+    <h2 className="neo:uppercase neo:tracking-normal text-2xl font-extrabold tracking-wide">
       {children}
     </h2>
   )

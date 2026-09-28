@@ -113,6 +113,19 @@ function CenteredText({
   )
 }
 
+// A number/label two or more digits wide reads as visually larger
+// than a single digit at the same font size (it fills more of the
+// available width), so it gets a modest size reduction to keep it
+// comfortably inside its stone or backing gap.
+function shrinkForMultiDigit(
+  fontSize: number,
+  text: string | number,
+): number {
+  return String(text).length > 1
+    ? fontSize * 0.83
+    : fontSize
+}
+
 // SGF's TR/SQ/CR point marks (see goSgf.ts, which folds them into
 // SgfLabel using these glyphs as the label text) — an outline shape
 // instead of a rendered glyph, matching the reference SVG diagrams'
@@ -833,7 +846,10 @@ export function GoViewerBoard({
                     x={pixelX(col)}
                     y={pixelY(row)}
                     fontFamily={fontFamily}
-                    fontSize={stoneRadius * 1.15}
+                    fontSize={shrinkForMultiDigit(
+                      stoneRadius * 1.15,
+                      label.text,
+                    )}
                     fontWeight="bold"
                     fill={
                       displayStone === "B"
@@ -852,7 +868,10 @@ export function GoViewerBoard({
                   x={pixelX(col)}
                   y={pixelY(row)}
                   fontFamily={fontFamily}
-                  fontSize={stoneRadius * 1.15}
+                  fontSize={shrinkForMultiDigit(
+                    stoneRadius * 1.15,
+                    displayMoveNumber,
+                  )}
                   fontWeight="bold"
                   fill={
                     displayStone === "B"
@@ -903,7 +922,10 @@ export function GoViewerBoard({
                     x={pixelX(col)}
                     y={pixelY(row)}
                     fontFamily={fontFamily}
-                    fontSize={cellSize * 0.56}
+                    fontSize={shrinkForMultiDigit(
+                      cellSize * 0.56,
+                      label.text,
+                    )}
                     fontWeight="bold"
                     fill={blackStoneColor}
                   >
