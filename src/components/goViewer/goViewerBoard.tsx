@@ -168,7 +168,8 @@ function PointMark({
     )
 
   if (shape === "square") {
-    const half = radius * Math.SQRT1_2
+    const squareRadius = radius * 0.85
+    const half = squareRadius * Math.SQRT1_2
     return (
       <rect
         x={x - half}
@@ -177,7 +178,7 @@ function PointMark({
         height={half * 2}
         fill="none"
         stroke={stroke}
-        strokeWidth={strokeWidth}
+        strokeWidth={squareRadius * 0.27}
       />
     )
   }

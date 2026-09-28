@@ -8,8 +8,15 @@ import {
   ArticleYouTubeIframe,
   ArticleBlockQuote,
 } from "../articleContent"
-import { GoDiagram, GoDiagramLegend } from "../goDiagram"
+// import { GoDiagram, GoDiagramLegend } from "../goDiagram"
 import { ArticleMath } from "../articleMath"
+import {
+  GoViewer,
+  GoViewerBoard,
+  GoViewerControls,
+  GoViewerLegend,
+  readSgfFile,
+} from "@components/goViewer/exports"
 
 export function TewariDelight2({ article }: ArticleProps) {
   return (
@@ -49,7 +56,7 @@ export function TewariDelight2({ article }: ArticleProps) {
           In it, a discussion about the following shape
           popped up:
         </ArticleParagraph>
-        <GoDiagram
+        {/* <GoDiagram
           src="/articles/tewari_delight_2/1.svg"
           width={250}
           height={235}
@@ -59,7 +66,29 @@ export function TewariDelight2({ article }: ArticleProps) {
             &quot;How to lie with tewari&quot; page, causing
             a heated discussion on Sensei&apos;s Library.
           </GoDiagramLegend>
-        </GoDiagram>
+        </GoDiagram> */}
+        <GoViewer
+          sgf={readSgfFile(
+            "/articles/tewari_delight_2/1.sgf",
+          )}
+          startAt="end"
+        >
+          <GoViewerBoard
+            interactive={false}
+            size={275}
+            region={{
+              minRow: 6,
+              maxRow: 12,
+              minCol: 6,
+              maxCol: 12,
+            }}
+          />
+          <GoViewerLegend>
+            An adaptation of the board position on the
+            &quot;How to lie with tewari&quot; page, causing
+            a heated discussion on Sensei&apos;s Library.
+          </GoViewerLegend>
+        </GoViewer>
         <ArticleParagraph>
           The original diagram had move 2 at B, the stone at
           2 would already be in place. One of the first
@@ -85,7 +114,7 @@ export function TewariDelight2({ article }: ArticleProps) {
           with a broken keima shape, evidenced by the square
           stones cutting through the triangle keima:
         </ArticleParagraph>
-        <GoDiagram
+        {/* <GoDiagram
           src="/articles/tewari_delight_2/2.svg"
           width={250}
           height={235}
@@ -93,12 +122,32 @@ export function TewariDelight2({ article }: ArticleProps) {
           <GoDiagramLegend>
             White ends up with a broken keima.
           </GoDiagramLegend>
-        </GoDiagram>
+        </GoDiagram> */}
+        <GoViewer
+          sgf={readSgfFile(
+            "/articles/tewari_delight_2/2.sgf",
+          )}
+          startAt="end"
+        >
+          <GoViewerBoard
+            interactive={false}
+            size={275}
+            region={{
+              minRow: 6,
+              maxRow: 12,
+              minCol: 6,
+              maxCol: 12,
+            }}
+          />
+          <GoViewerLegend>
+            White ends up with a broken keima.
+          </GoViewerLegend>
+        </GoViewer>
         <ArticleParagraph>
           However, it&apos;s also true that Black arrives at
           an empty triangle:
         </ArticleParagraph>
-        <GoDiagram
+        {/* <GoDiagram
           src="/articles/tewari_delight_2/3.svg"
           width={250}
           height={235}
@@ -106,7 +155,27 @@ export function TewariDelight2({ article }: ArticleProps) {
           <GoDiagramLegend>
             Black arrives at an empty triangle.
           </GoDiagramLegend>
-        </GoDiagram>
+        </GoDiagram> */}
+        <GoViewer
+          sgf={readSgfFile(
+            "/articles/tewari_delight_2/3.sgf",
+          )}
+          startAt="end"
+        >
+          <GoViewerBoard
+            interactive={false}
+            size={275}
+            region={{
+              minRow: 6,
+              maxRow: 12,
+              minCol: 6,
+              maxCol: 12,
+            }}
+          />
+          <GoViewerLegend>
+            Black arrives at an empty triangle.
+          </GoViewerLegend>
+        </GoViewer>
         <ArticleParagraph>
           In this case, two things are true at the same
           time. The local board position is still slightly
@@ -120,7 +189,7 @@ export function TewariDelight2({ article }: ArticleProps) {
           this pattern to the 4-4 will make things clearer
           for now:
         </ArticleParagraph>
-        <GoDiagram
+        {/* <GoDiagram
           src="/articles/tewari_delight_2/4.svg"
           width={350}
           height={350}
@@ -129,7 +198,29 @@ export function TewariDelight2({ article }: ArticleProps) {
             The same problem, but transposed to a modern,
             post-AI joseki.
           </GoDiagramLegend>
-        </GoDiagram>
+        </GoDiagram> */}
+        <GoViewer
+          sgf={readSgfFile(
+            "/articles/tewari_delight_2/4.sgf",
+          )}
+          startAt="end"
+        >
+          <GoViewerBoard
+            size={330}
+            showMoveNumbers
+            region={{
+              minRow: 9,
+              maxRow: 18,
+              minCol: 9,
+              maxCol: 18,
+            }}
+          />
+          {/* <GoViewerControls /> */}
+          <GoViewerLegend>
+            The same problem, but transposed to a modern,
+            post-AI joseki.
+          </GoViewerLegend>
+        </GoViewer>
         <ArticleParagraph>
           If we apply tewari to the similar position in Dia.
           4, we can easily see that move number 6 should
@@ -142,7 +233,7 @@ export function TewariDelight2({ article }: ArticleProps) {
           direct peep, White would try to revert back to
           Dia. 4:
         </ArticleParagraph>
-        <GoDiagram
+        {/* <GoDiagram
           src="/articles/tewari_delight_2/5.svg"
           width={350}
           height={350}
@@ -151,7 +242,28 @@ export function TewariDelight2({ article }: ArticleProps) {
             White tries to get back to the subpar version of
             the post-AI joseki.
           </GoDiagramLegend>
-        </GoDiagram>
+        </GoDiagram> */}
+        <GoViewer
+          sgf={readSgfFile(
+            "/articles/tewari_delight_2/5.sgf",
+          )}
+          startAt="end"
+        >
+          <GoViewerBoard
+            interactive={false}
+            size={330}
+            region={{
+              minRow: 9,
+              maxRow: 18,
+              minCol: 9,
+              maxCol: 18,
+            }}
+          />
+          <GoViewerLegend>
+            White tries to get back to the subpar version of
+            the post-AI joseki.
+          </GoViewerLegend>
+        </GoViewer>
         <ArticleParagraph>
           Through that joseki analysis, it&apos;s more
           obvious that the end result isn&apos;t ideal for
@@ -170,7 +282,7 @@ export function TewariDelight2({ article }: ArticleProps) {
           shape. Instead of connecting at 4, maybe we could
           try capturing the A stone directly:
         </ArticleParagraph>
-        <GoDiagram
+        {/* <GoDiagram
           src="/articles/tewari_delight_2/6.svg"
           width={350}
           height={350}
@@ -178,7 +290,27 @@ export function TewariDelight2({ article }: ArticleProps) {
           <GoDiagramLegend>
             Black tries to justify connecting at 4.
           </GoDiagramLegend>
-        </GoDiagram>
+        </GoDiagram> */}
+        <GoViewer
+          sgf={readSgfFile(
+            "/articles/tewari_delight_2/6.sgf",
+          )}
+          startAt="end"
+        >
+          <GoViewerBoard
+            interactive={false}
+            size={330}
+            region={{
+              minRow: 9,
+              maxRow: 18,
+              minCol: 9,
+              maxCol: 18,
+            }}
+          />
+          <GoViewerLegend>
+            Black tries to justify connecting at 4.
+          </GoViewerLegend>
+        </GoViewer>
         <ArticleParagraph>
           White shouldn&apos;t give Black a clean ponnuki
           here, but it is nonetheless a surprising move to
@@ -199,7 +331,7 @@ export function TewariDelight2({ article }: ArticleProps) {
           What happens if we move this pattern back to the
           center of the board?
         </ArticleParagraph>
-        <GoDiagram
+        {/* <GoDiagram
           src="/articles/tewari_delight_2/7.svg"
           width={250}
           height={250}
@@ -208,7 +340,28 @@ export function TewariDelight2({ article }: ArticleProps) {
             The same pattern, but now in the center of the
             board. Black should now atari at 2 instead of 3.
           </GoDiagramLegend>
-        </GoDiagram>
+        </GoDiagram> */}
+        <GoViewer
+          sgf={readSgfFile(
+            "/articles/tewari_delight_2/7.sgf",
+          )}
+          startAt="end"
+        >
+          <GoViewerBoard
+            interactive={false}
+            size={275}
+            region={{
+              minRow: 6,
+              maxRow: 13,
+              minCol: 5,
+              maxCol: 13,
+            }}
+          />
+          <GoViewerLegend>
+            The same pattern, but now in the center of the
+            board. Black should now atari at 2 instead of 3.
+          </GoViewerLegend>
+        </GoViewer>
         <ArticleParagraph>
           The same rationale still applies. However, AI now
           recommends ataring from 2 instead of 3. Both Black
@@ -236,7 +389,7 @@ export function TewariDelight2({ article }: ArticleProps) {
           for them, instead of completing or preventing the
           broken shape.
         </ArticleParagraph>
-        <GoDiagram
+        {/* <GoDiagram
           src="/articles/tewari_delight_2/8.svg"
           width={250}
           height={235}
@@ -244,7 +397,27 @@ export function TewariDelight2({ article }: ArticleProps) {
           <GoDiagramLegend>
             Should we play at A or go for open corners?
           </GoDiagramLegend>
-        </GoDiagram>
+        </GoDiagram> */}
+        <GoViewer
+          sgf={readSgfFile(
+            "/articles/tewari_delight_2/8.sgf",
+          )}
+          startAt="end"
+        >
+          <GoViewerBoard
+            interactive={false}
+            size={275}
+            region={{
+              minRow: 6,
+              maxRow: 12,
+              minCol: 6,
+              maxCol: 12,
+            }}
+          />
+          <GoViewerLegend>
+            Should we play at A or go for open corners?
+          </GoViewerLegend>
+        </GoViewer>
         <ArticleParagraph>
           Black should absolutely complete the broken keima
           at A. It is a bit surprising that not doing so is
@@ -257,7 +430,7 @@ export function TewariDelight2({ article }: ArticleProps) {
           Comparatively, a broken jump is much worse than a
           broken keima. But by how much?
         </ArticleParagraph>
-        <GoDiagram
+        {/* <GoDiagram
           src="/articles/tewari_delight_2/9.svg"
           width={250}
           height={235}
@@ -265,7 +438,27 @@ export function TewariDelight2({ article }: ArticleProps) {
           <GoDiagramLegend>
             What&apos;s the cost of not playing at A?
           </GoDiagramLegend>
-        </GoDiagram>
+        </GoDiagram> */}
+        <GoViewer
+          sgf={readSgfFile(
+            "/articles/tewari_delight_2/9.sgf",
+          )}
+          startAt="end"
+        >
+          <GoViewerBoard
+            interactive={false}
+            size={275}
+            region={{
+              minRow: 6,
+              maxRow: 12,
+              minCol: 6,
+              maxCol: 12,
+            }}
+          />
+          <GoViewerLegend>
+            What&apos;s the cost of not playing at A?
+          </GoViewerLegend>
+        </GoViewer>
         <ArticleParagraph>
           If Black plays for a corner this time, instead of
           a 2-point loss, we get into a near 6-point
