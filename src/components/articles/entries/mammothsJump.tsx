@@ -40,6 +40,13 @@ export function MammothsJump({ article }: ArticleProps) {
           have briefly commented about them to friends and
           colleagues of similar rank.
         </ArticleParagraph>
+        <ArticleParagraph>
+          So bear with me through the future improvements
+          this article will inevitably need. And, if you
+          feel like you have something to add, please do so
+          in the comments below or through direct messages
+          with me.
+        </ArticleParagraph>
       </ArticleSection>
       <ArticleSection>
         <ArticleSectionTitle>
@@ -71,11 +78,13 @@ export function MammothsJump({ article }: ArticleProps) {
           title="Kim Eunji 9p vs Lee Jihyeon 9p - Mammoth's Jump"
         />
         <ArticleParagraph>
-          The shape between 1 and A is similar to the
+          The shape between 1 and A is similar to the{" "}
           <ArticleLink href="https://senseis.xmp.net/?Elephant">
             &quot;Elephant&apos;s Jump&quot;
           </ArticleLink>
-          , hence the overly creative name for it:
+          , hence the overly creative name for it. Do people
+          prefer &quot;Big Elephant&apos;s Jump&quot;
+          instead? An <em>ohazama tobi</em> perhaps?
         </ArticleParagraph>
         <GoViewer
           sgf={readSgfFile("/articles/mammoths-jump/2.sgf")}
@@ -285,6 +294,16 @@ export function MammothsJump({ article }: ArticleProps) {
             flexibly not insist on saving the A stone.
           </GoViewerLegend>
         </GoViewer>
+      </ArticleSection>
+      <ArticleSection>
+        <ArticleSectionTitle>
+          The Mammoth&apos;s Jump for Moyo Development
+        </ArticleSectionTitle>
+        <ArticleParagraph>
+          Another context in which the Mammoth&apos;s Jump
+          shows itself, even more so as a new move, is in
+          moyo development.
+        </ArticleParagraph>
       </ArticleSection>
     </Article>
   )
