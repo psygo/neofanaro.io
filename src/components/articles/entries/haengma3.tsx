@@ -12,7 +12,14 @@ import {
   ImageLegend,
 } from "../articleContent"
 import { ArticlePDFViewer } from "@components/articles/articlePDFViewer"
-import { GoDiagram, GoDiagramLegend } from "../goDiagram"
+// import { GoDiagram, GoDiagramLegend } from "../goDiagram"
+import {
+  GoViewer,
+  GoViewerBoard,
+  GoViewerControls,
+  GoViewerLegend,
+  readSgfFile,
+} from "@components/goViewer/exports"
 
 export function Haengma3({ article }: ArticleProps) {
   return (
@@ -89,7 +96,7 @@ export function Haengma3({ article }: ArticleProps) {
           One of the best examples of that dynamic is the
           first exercise in the Haengma 3 book:
         </ArticleParagraph>
-        <GoDiagram
+        {/* <GoDiagram
           src="/articles/haengma3/1.svg"
           width={375}
           height={315}
@@ -97,7 +104,26 @@ export function Haengma3({ article }: ArticleProps) {
           <GoDiagramLegend>
             Should you connect at A?
           </GoDiagramLegend>
-        </GoDiagram>
+        </GoDiagram> */}
+        <GoViewer
+          sgf={readSgfFile("/articles/haengma3/1.sgf")}
+          startAt="end"
+        >
+          <GoViewerBoard
+            size={370}
+            showMoveNumbers
+            region={{
+              minRow: 0,
+              maxRow: 9,
+              minCol: 0,
+              maxCol: 11,
+            }}
+          />
+          <GoViewerControls />
+          <GoViewerLegend>
+            Should you connect at A?
+          </GoViewerLegend>
+        </GoViewer>
         <ArticleParagraph>
           Typically, we should strive for something better
           than simply connecting at A and accepting the
@@ -108,7 +134,7 @@ export function Haengma3({ article }: ArticleProps) {
           most positions in the Haengma series come from
           realistic scenarios:
         </ArticleParagraph>
-        <GoDiagram
+        {/* <GoDiagram
           src="/articles/haengma3/2.svg"
           width={375}
           height={315}
@@ -116,14 +142,33 @@ export function Haengma3({ article }: ArticleProps) {
           <GoDiagramLegend>
             A joseki originating the same position.
           </GoDiagramLegend>
-        </GoDiagram>
+        </GoDiagram> */}
+        <GoViewer
+          sgf={readSgfFile("/articles/haengma3/2.sgf")}
+          startAt="end"
+        >
+          <GoViewerBoard
+            size={370}
+            showMoveNumbers
+            region={{
+              minRow: 0,
+              maxRow: 9,
+              minCol: 0,
+              maxCol: 11,
+            }}
+          />
+          <GoViewerControls />
+          <GoViewerLegend>
+            A joseki originating the same position.
+          </GoViewerLegend>
+        </GoViewer>
         <ArticleParagraph>
           White only tries to cut because of the
           tiger&apos;s mouth. Otherwise, Black can simply
           capture the cutting stone, instead of seemingly
           playing at A in dia. 3.
         </ArticleParagraph>
-        <GoDiagram
+        {/* <GoDiagram
           src="/articles/haengma3/2.1.svg"
           width={375}
           height={315}
@@ -131,14 +176,33 @@ export function Haengma3({ article }: ArticleProps) {
           <GoDiagramLegend>
             How the tiger&apos;s mouth changes things.
           </GoDiagramLegend>
-        </GoDiagram>
+        </GoDiagram> */}
+        <GoViewer
+          sgf={readSgfFile("/articles/haengma3/2.1.sgf")}
+          startAt="end"
+        >
+          <GoViewerBoard
+            size={370}
+            showMoveNumbers
+            region={{
+              minRow: 0,
+              maxRow: 9,
+              minCol: 0,
+              maxCol: 11,
+            }}
+          />
+          <GoViewerControls />
+          <GoViewerLegend>
+            How the tiger&apos;s mouth changes things.
+          </GoViewerLegend>
+        </GoViewer>
         <ArticleParagraph>
           Counter-ataring here is the correct solution.
           Black&apos;s shape might look too fragile, but it
           is actually much more resilient than it seems. The
           key move to remember is Black 3 in dia. 4.
         </ArticleParagraph>
-        <GoDiagram
+        {/* <GoDiagram
           src="/articles/haengma3/3.svg"
           width={375}
           height={315}
@@ -146,13 +210,32 @@ export function Haengma3({ article }: ArticleProps) {
           <GoDiagramLegend>
             Black 3 locks White in.
           </GoDiagramLegend>
-        </GoDiagram>
+        </GoDiagram> */}
+        <GoViewer
+          sgf={readSgfFile("/articles/haengma3/3.sgf")}
+          startAt="end"
+        >
+          <GoViewerBoard
+            size={370}
+            showMoveNumbers
+            region={{
+              minRow: 0,
+              maxRow: 9,
+              minCol: 0,
+              maxCol: 11,
+            }}
+          />
+          <GoViewerControls />
+          <GoViewerLegend>
+            Black 3 locks White in.
+          </GoViewerLegend>
+        </GoViewer>
         <ArticleParagraph>
           If White tries to cut Black, the end result is a
           clean Black wall on the outside, and damage to the
           outside stone at A:
         </ArticleParagraph>
-        <GoDiagram
+        {/* <GoDiagram
           src="/articles/haengma3/4.svg"
           width={375}
           height={315}
@@ -160,7 +243,26 @@ export function Haengma3({ article }: ArticleProps) {
           <GoDiagramLegend>
             White fails to cut, while weakening the A stone.
           </GoDiagramLegend>
-        </GoDiagram>
+        </GoDiagram> */}
+        <GoViewer
+          sgf={readSgfFile("/articles/haengma3/4.sgf")}
+          startAt="end"
+        >
+          <GoViewerBoard
+            size={370}
+            showMoveNumbers
+            region={{
+              minRow: 0,
+              maxRow: 9,
+              minCol: 0,
+              maxCol: 11,
+            }}
+          />
+          {/* <GoViewerControls /> */}
+          <GoViewerLegend>
+            White fails to cut, while weakening the A stone.
+          </GoViewerLegend>
+        </GoViewer>
         <ArticleParagraph>
           From dia. 5, White doesn&apos;t accomplish much,
           and Black can choose how to reinforce the outside,
@@ -172,7 +274,7 @@ export function Haengma3({ article }: ArticleProps) {
           stylish a sequence, preferring the empty triangle
           connection:
         </ArticleParagraph>
-        <GoDiagram
+        {/* <GoDiagram
           src="/articles/haengma3/5.svg"
           width={375}
           height={315}
@@ -180,7 +282,26 @@ export function Haengma3({ article }: ArticleProps) {
           <GoDiagramLegend>
             AI prefers the empty triangle.
           </GoDiagramLegend>
-        </GoDiagram>
+        </GoDiagram> */}
+        <GoViewer
+          sgf={readSgfFile("/articles/haengma3/5.sgf")}
+          startAt="end"
+        >
+          <GoViewerBoard
+            size={370}
+            showMoveNumbers
+            region={{
+              minRow: 0,
+              maxRow: 9,
+              minCol: 0,
+              maxCol: 11,
+            }}
+          />
+          <GoViewerControls />
+          <GoViewerLegend>
+            AI prefers the empty triangle.
+          </GoViewerLegend>
+        </GoViewer>
         <ArticleParagraph>
           In Korea, the Haengma series is not only an
           exercise book. It&apos;s used as a way to inspect
@@ -200,7 +321,7 @@ export function Haengma3({ article }: ArticleProps) {
           a 2-point loss for Black, probably because the A
           stone is then hanging.
         </ArticleParagraph>
-        <GoDiagram
+        {/* <GoDiagram
           src="/articles/haengma3/6.svg"
           width={375}
           height={315}
@@ -209,12 +330,32 @@ export function Haengma3({ article }: ArticleProps) {
             AI is satisfied with poking a little bit,
             despite the dumpling shape.
           </GoDiagramLegend>
-        </GoDiagram>
+        </GoDiagram> */}
+        <GoViewer
+          sgf={readSgfFile("/articles/haengma3/6.sgf")}
+          startAt="end"
+        >
+          <GoViewerBoard
+            size={370}
+            showMoveNumbers
+            region={{
+              minRow: 0,
+              maxRow: 9,
+              minCol: 0,
+              maxCol: 11,
+            }}
+          />
+          <GoViewerControls />
+          <GoViewerLegend>
+            AI is satisfied with poking a little bit,
+            despite the dumpling shape.
+          </GoViewerLegend>
+        </GoViewer>
         <ArticleParagraph>
           If Black tries something more ambitious, it leaves
           White with no choice but to escalate the fight:
         </ArticleParagraph>
-        <GoDiagram
+        {/* <GoDiagram
           src="/articles/haengma3/6.1.svg"
           width={375}
           height={315}
@@ -222,7 +363,26 @@ export function Haengma3({ article }: ArticleProps) {
           <GoDiagramLegend>
             White escalates the fight.
           </GoDiagramLegend>
-        </GoDiagram>
+        </GoDiagram> */}
+        <GoViewer
+          sgf={readSgfFile("/articles/haengma3/6.1.sgf")}
+          startAt="end"
+        >
+          <GoViewerBoard
+            size={370}
+            showMoveNumbers
+            region={{
+              minRow: 0,
+              maxRow: 9,
+              minCol: 0,
+              maxCol: 11,
+            }}
+          />
+          <GoViewerControls />
+          <GoViewerLegend>
+            White escalates the fight.
+          </GoViewerLegend>
+        </GoViewer>
         <ArticleParagraph>
           Much like other workbook series, the Haengma books
           don&apos;t come with answers. You could buy the
