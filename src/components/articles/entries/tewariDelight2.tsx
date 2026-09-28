@@ -13,7 +13,6 @@ import { ArticleMath } from "../articleMath"
 import {
   GoViewer,
   GoViewerBoard,
-  GoViewerControls,
   GoViewerLegend,
   readSgfFile,
 } from "@components/goViewer/exports"
