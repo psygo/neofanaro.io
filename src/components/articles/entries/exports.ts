@@ -1,4 +1,5 @@
 export * from "./dowonPairGo"
+export * from "./gerentia"
 export * from "./gobanWeb"
 export * from "./goViewerTest"
 export * from "./haengma3"

@@ -2,15 +2,12 @@
 
 ## Priorities
 
-- [Next Gen Shapes: The Mammoth's Jump](https://youtu.be/1OtxBf-EQJ8?t=1651)
-  - [On AI Sensei](https://ai-sensei.com/game/wCbiGfZSh7TjX5eXM8TDgvMzi5u2/46aa4a9d-8754-40e0-8320-39e85bcc6696)
-  - Worth mentioning what Alexandre emphasized: these shapes with vague benefits are typically not AI choices.
-- Analytics Dashboard
-  - But let's also add a public stats page.
+- The Go viewer legend on small viewports is super narrow. Check if that's happening for image legends as well.
 - GerentIA article
 
 - Table of Contents for articles
 - Footnotes for articles
+- Create features around article series
 
 - Player names on the league table should be clickable and leading to the user page for others to see.
 - Dark Theme

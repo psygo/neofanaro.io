@@ -10,6 +10,7 @@ import { CpiSuspense } from "@components/common/cpiSuspense"
 
 import {
   DowonPairGo,
+  Gerentia,
   GobanWeb,
   GoViewerTest,
   Haengma3,
@@ -75,6 +76,8 @@ function whichArticle(
   switch (path) {
     case "dowon-pairgo":
       return <DowonPairGo article={post} />
+    case "gerentia":
+      return <Gerentia article={post} />
     case "goban-web":
       return <GobanWeb article={post} />
     case "go-viewer-test":
