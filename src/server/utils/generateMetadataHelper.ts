@@ -4,20 +4,6 @@ import { localizedText, SITE_URL } from "@utils"
 
 import { get_article } from "../actions/articles/get_articles"
 
-// Articles with their own real preview image — a share card built
-// from these looks better than the generic site logo used as a
-// fallback below. No `previewImage` column exists on the article
-// table (nor a consistent on-disk naming convention across
-// articles to detect one automatically), so this is hand-curated;
-// add an entry here for any future article with its own cover art.
-const previewImageOverrides: Record<string, string> = {
-  "little-knife-god-books":
-    "/articles/little-knife-god-books/little_knife_god_cover_1.png",
-  "min-cjk-for-go":
-    "/articles/min-cjk-for-go/just_enough_japanese_cover.jpg",
-  haengma3: "/articles/haengma3/haengma_3_book_cover.png",
-}
-
 export const topLevelMetadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: "neofanaro.io",
@@ -72,9 +58,6 @@ export async function generateArticleMetadataHelper(
     lang ?? "en",
   )
 
-  const previewImage =
-    previewImageOverrides[path] ?? "/logos/favicon_500.png"
-
   return {
     title,
     description,
@@ -83,7 +66,7 @@ export async function generateArticleMetadataHelper(
       description,
       images: [
         {
-          url: previewImage,
+          url: "/logos/fanaro.io_64.png",
         },
       ],
     },
