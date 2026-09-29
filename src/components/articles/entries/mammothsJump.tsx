@@ -20,6 +20,9 @@ export function MammothsJump({ article }: ArticleProps) {
   return (
     <Article article={article}>
       <ArticleSection>
+        <ArticleSectionTitle>
+          The Next Gen Shapes Series
+        </ArticleSectionTitle>
         <ArticleParagraph>
           There&apos;s nothing new under the sun. But, at
           the same time, the post-AI era seems to emphasize
@@ -269,7 +272,7 @@ export function MammothsJump({ article }: ArticleProps) {
           course, and Kim Eunji 9p (Black) probably chose it
           anyway because it fits her fierce style of play.
           To the AI acolytes out there, as Alexandre Amaro
-          Fox 7d would say, A feels like a gamble.
+          Fox 7-8d would say, A feels like a gamble.
         </ArticleParagraph>
         <ArticleParagraph>
           AI would rather kick White&apos;s stone in the
