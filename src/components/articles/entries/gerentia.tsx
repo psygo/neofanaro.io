@@ -1,23 +1,49 @@
 "use client"
 
+import { useTheme } from "next-themes"
+
 import { ArticleProps } from "@types"
 
-import { useLang } from "@hooks"
+import { useIsClient, useLang } from "@hooks"
 
 import { Article } from "@components/articles/article"
 import {
+  ArticleImageWithLegend,
+  ArticleLink,
   ArticleParagraph,
   ArticleSection,
   ArticleUnorderedList,
+  ImageLegend,
 } from "../articleContent"
 
 export function Gerentia({ article }: ArticleProps) {
   const lang = useLang()
+  const { resolvedTheme } = useTheme()
+  const mounted = useIsClient()
+
+  const landingPageSrc =
+    mounted && resolvedTheme === "dark"
+      ? "/articles/gerentia/landing_page_dark.png"
+      : "/articles/gerentia/landing_page_light.png"
 
   return (
     <Article article={article}>
       {lang === "pt" ? (
         <ArticleSection>
+          <ArticleImageWithLegend
+            src={landingPageSrc}
+            height={100}
+            width={450}
+            className="rounded"
+          >
+            <ImageLegend>
+              A página inicial da{" "}
+              <ArticleLink href="https://gerent.app">
+                GerentIA
+              </ArticleLink>
+              .
+            </ImageLegend>
+          </ArticleImageWithLegend>
           <ArticleParagraph>
             Nos últimos anos, duas melhorias às IAs fizeram
             com que essa tecnologia mudasse de natureza, ou
@@ -68,7 +94,9 @@ export function Gerentia({ article }: ArticleProps) {
             administrar os recursos do negócio, geralmente
             feito por sistemas de ERP (
             <em>Enterprise Resource Planning</em>), agora
-            passam a se integrar em uma plataforma só.
+            passam a se integrar em uma plataforma só, com a
+            IA servindo de ponte automatizada para ações
+            somente seriam possíveis por humanos no passado.
           </ArticleParagraph>
         </ArticleSection>
       ) : (

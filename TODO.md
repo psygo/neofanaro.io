@@ -2,6 +2,8 @@
 
 ## Priorities
 
+- Better country flags
+
 - The Go viewer legend on small viewports is super narrow. Check if that's happening for image legends as well.
 - GerentIA article
 
