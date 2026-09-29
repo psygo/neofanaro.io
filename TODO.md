@@ -2,13 +2,17 @@
 
 ## Priorities
 
+- The Mammoth's Jump is also the shape in an unusual shimari.
+  - [A book on the 3-5 6-3, or tiger shimari](https://amzn.asia/d/0i1Ik9mC)
+  - [Sensei's Library on the 3-5 6-3 shimari](https://senseis.xmp.net/?3563Enclosure)
+  - [Meienism](https://senseis.xmp.net/?Meienism)
+
 - Better country flags
 - Add a basic example of attacking with the Elephant's Jump to the Mammoth's Jump article.
 - Multi-category article-cards (with more than one color on the left border).
 - Progress bar for articles.
 - OG preview images per article.
 
-- The Go viewer legend on small viewports is super narrow. Check if that's happening for image legends as well.
 - GerentIA article
 
 - Table of Contents for articles

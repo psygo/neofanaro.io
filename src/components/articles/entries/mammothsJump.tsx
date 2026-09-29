@@ -105,12 +105,15 @@ export function MammothsJump({ article }: ArticleProps) {
           />
           <GoViewerControls />
           <GoViewerLegend>
-            The &quot;Elephant&apos;s Jump&quot;, or{" "}
-            <em>hazama tobi</em>&nbsp; in Japanese, the
-            shape from A to B. This shape&apos;s name comes
-            from the elephant piece in the game of xiangqi,
-            or Chinese chess, in which the elephant jumps
-            over one space diagonally.
+            The &quot;Elephant&apos;s Jump&quot;, diagonal
+            jump or <em>hazama tobi</em>&nbsp; in Japanese,
+            the shape from A to B. This shape&apos;s name
+            comes from the elephant piece in the game of
+            xiangqi &mdash; <em>xiàng</em>&nbsp; means
+            elephant in Chinese, so xiangqi is quite
+            literally &quot;Elephant Board/Strategy
+            Game&quot; &mdash;, in which the elephant piece
+            jumps over one space diagonally.
           </GoViewerLegend>
         </GoViewer>
         <ArticleParagraph>
@@ -307,6 +310,12 @@ export function MammothsJump({ article }: ArticleProps) {
           shows itself, even more so as a new move, is in
           moyo development.
         </ArticleParagraph>
+      </ArticleSection>
+      <ArticleSection>
+        <ArticleSectionTitle>
+          The Mammoth&apos;s Jump & The Tiger Shimari
+        </ArticleSectionTitle>
+        <ArticleParagraph>T</ArticleParagraph>
       </ArticleSection>
     </Article>
   )
