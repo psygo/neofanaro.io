@@ -4,6 +4,9 @@
 
 - Better country flags
 - Add a basic example of attacking with the Elephant's Jump to the Mammoth's Jump article.
+- Multi-category article-cards (with more than one color on the left border).
+- Progress bar for articles.
+- OG preview images per article.
 
 - The Go viewer legend on small viewports is super narrow. Check if that's happening for image legends as well.
 - GerentIA article

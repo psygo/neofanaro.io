@@ -21,6 +21,7 @@ import { getCurrentPlayer, topLevelMetadata } from "@server"
 import { Nav } from "@components/common/nav"
 import { Footer } from "@components/common/footer"
 import { CpiSuspense } from "@components/common/cpiSuspense"
+import { HtmlLangSync } from "@components/common/htmlLangSync"
 import { PageViewTracker } from "@components/common/pageViewTracker"
 import { ThemeProvider } from "@components/common/themeProvider"
 import { SiteThemeProvider } from "@components/common/siteThemeProvider"
@@ -87,6 +88,9 @@ export default async function RootLayout({
           <SiteThemeProvider
             initialSiteTheme={initialSiteTheme}
           >
+            <CpiSuspense>
+              <HtmlLangSync />
+            </CpiSuspense>
             <PageViewTracker />
             <GoViewerPreferencesProvider
               preferences={
