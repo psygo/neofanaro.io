@@ -57,7 +57,7 @@ export function Pumu({ article }: ArticleProps) {
         </ArticleParagraph>
         <ArticleImageWithLegend
           src="/articles/pumu/pumu_patreon.png"
-          className="rounded-xl"
+          // className="rounded-xl"
           height={100}
           width={425}
         >
@@ -147,7 +147,7 @@ export function Pumu({ article }: ArticleProps) {
         </ArticleParagraph>
         <ArticleImageWithLegend
           src="/articles/pumu/bluish_purple_squared.png"
-          className="rounded-xl"
+          // className="rounded-xl"
           height={100}
           width={400}
         >
@@ -158,7 +158,7 @@ export function Pumu({ article }: ArticleProps) {
         </ArticleImageWithLegend>
         <ArticleImageWithLegend
           src="/articles/pumu/fire_and_ice.png"
-          className="rounded-xl"
+          // className="rounded-xl"
           height={100}
           width={400}
         >
@@ -185,7 +185,7 @@ export function Pumu({ article }: ArticleProps) {
         </ArticleParagraph>
         <ArticleImageWithLegend
           src="/articles/pumu/ogs_desert_theme.png"
-          className="rounded-xl"
+          // className="rounded-xl"
           height={100}
           width={400}
         >
@@ -195,7 +195,7 @@ export function Pumu({ article }: ArticleProps) {
         </ArticleImageWithLegend>
         <ArticleImageWithLegend
           src="/articles/pumu/ogs_pistacchio_theme.png"
-          className="rounded-xl"
+          // className="rounded-xl"
           height={100}
           width={400}
         >

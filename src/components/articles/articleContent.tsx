@@ -107,21 +107,42 @@ export function ArticleImageWithLegend({
   alt = "",
   height = 300,
   width = 300,
-  className = "",
+  className = "rounded-lg",
   children,
 }: ArticleImageWithLegendProps) {
   return (
     <div className="flex flex-col items-center gap-2 pt-4 pb-2.5">
-      <Image
-        loading="eager"
-        src={src}
-        height={height}
-        width={width}
-        sizes="100vw"
+      <div
+        className="w-full px-4"
         style={{ maxWidth: `${width}px` }}
-        alt={alt}
-        className={`responsive-image mt-0 mb-0 px-4 ${className}`}
-      />
+      >
+        {/* Clipping via an ancestor's `overflow-hidden`, rather than
+            relying on the <img> to clip its own raster content with
+            its own `border-radius`, sidesteps a real Chromium
+            GPU-compositor bug where a large photographic image's
+            corners fail to round under hardware-accelerated
+            rendering — reproduces in real Chrome, not in headless/
+            software-rendered testing, so it's easy to miss. */}
+        <div
+          className={`block overflow-hidden ${className}`}
+        >
+          <Image
+            loading="eager"
+            src={src}
+            height={height}
+            width={width}
+            // Mirrors the `maxWidth` above: the image renders at
+            // `width`px once the viewport is that wide, and shrinks
+            // to fill it (via .responsive-image's width:100%) below
+            // that. Without this, the default "100vw" hint has
+            // Next.js request (and downscale) a much bigger image
+            // than what's ever actually displayed.
+            sizes={`(min-width: ${width}px) ${width}px, 100vw`}
+            alt={alt}
+            className="responsive-image mt-0 mb-0 block"
+          />
+        </div>
+      </div>
       <div className="px-10 text-sm text-slate-600 sm:text-base dark:text-slate-400 [&>p]:mt-0 [&>p]:mb-0">
         {children}
       </div>

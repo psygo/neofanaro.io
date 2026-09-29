@@ -57,7 +57,7 @@ export function DowonPairGo({ article }: ArticleProps) {
           src="/articles/dowon-pairgo/moon_dowon.webp"
           height={100}
           width={225}
-          className="rounded-xl"
+          // className="rounded-lg"
         >
           <ImageLegend>
             Moon Dowon <NoWrap>문도원</NoWrap> 3p
@@ -67,7 +67,7 @@ export function DowonPairGo({ article }: ArticleProps) {
           src="/articles/dowon-pairgo/flower_baduk_founders.jpg"
           height={100}
           width={325}
-          className="rounded-xl"
+          className="rounded-lg"
         >
           <ImageLegend>
             Flower Baduk&apos;s founders, from left to
@@ -81,7 +81,7 @@ export function DowonPairGo({ article }: ArticleProps) {
           src="/articles/dowon-pairgo/Flower_Baduk_2.jpg"
           height={100}
           width={325}
-          className="rounded-xl"
+          // className="rounded-xl"
         >
           <ImageLegend>
             A panel of Flower Baduk&apos;s founders, from
@@ -102,7 +102,7 @@ export function DowonPairGo({ article }: ArticleProps) {
           src="/articles/dowon-pairgo/Flower_Baduk_4.jpg"
           height={100}
           width={325}
-          className="rounded-xl"
+          // className="rounded-xl"
         >
           <ImageLegend>Flower Baduk</ImageLegend>
         </ArticleImageWithLegend>

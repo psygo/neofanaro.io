@@ -213,7 +213,7 @@ export function Gerentia({ article }: ArticleProps) {
               src={extensionsSrc}
               height={100}
               width={425}
-              className="rounded"
+              //   className="rounded"
             >
               <ImageLegend>
                 A GerentIA é decomposta em extensões, o que
@@ -231,7 +231,6 @@ export function Gerentia({ article }: ArticleProps) {
               src="/articles/gerentia/gia_logo_256.png"
               height={100}
               width={150}
-              className="rounded"
             >
               <ImageLegend>O logo da GerentIA.</ImageLegend>
             </ArticleImageWithLegend>

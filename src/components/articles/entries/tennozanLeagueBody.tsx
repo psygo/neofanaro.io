@@ -41,7 +41,7 @@ export function TennozanLeagueBody({
             src="/articles/tennozan-league/first_participants.png"
             height={350}
             width={350}
-            className="rounded-xl"
+            // className="rounded-xl"
           >
             <ImageLegend>
               Os primeiros participantes da liga.
@@ -125,7 +125,7 @@ export function TennozanLeagueBody({
             src="/articles/tennozan-league/high_ground.jpg"
             height={350}
             width={350}
-            className="rounded-xl"
+            // className="rounded-xl"
           >
             <ImageLegend>
               O icônico &quot;Acabou, Anakin, eu tenho a
@@ -167,7 +167,7 @@ export function TennozanLeagueBody({
             src="/articles/tennozan-league/first_participants.png"
             height={350}
             width={350}
-            className="rounded-xl"
+            // className="rounded-xl"
           >
             <ImageLegend>
               The first league participants.
@@ -248,7 +248,7 @@ export function TennozanLeagueBody({
             src="/articles/tennozan-league/high_ground.jpg"
             height={350}
             width={350}
-            className="rounded-xl"
+            // className="rounded-xl"
           >
             <ImageLegend>
               Obi-Wan&apos;s iconic &quot;It&apos;s over,

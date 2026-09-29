@@ -41,7 +41,7 @@ export function WhatIsGoAbout({ article }: ArticleProps) {
           src="/articles/what-is-go-about/lee_uju.jpeg"
           height={325}
           width={325}
-          className="rounded-xl"
+          // className="rounded-xl"
         >
           <ImageLegend>
             Lee Woojoo <NoWrap>이우주</NoWrap> 1p

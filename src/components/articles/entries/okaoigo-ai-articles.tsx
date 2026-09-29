@@ -58,7 +58,7 @@ export function OkaoigoAiArticles({
           src="/articles/okaigo-ai-articles/okaigo_on_note.png"
           height={425}
           width={425}
-          className="rounded-xl"
+          // className="rounded-xl"
         >
           <ImageLegend>
             okaoigo&apos;s Articles on note.com

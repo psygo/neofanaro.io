@@ -4,6 +4,8 @@
 
 - Better country flags
 - GerentIA repo card (have it unpublished for now)
+- Add a basic example of attacking with the Elephant's Jump to the Mammoth's Jump article.
+- Investigate WhatsApp Business Agent.
 
 - The Go viewer legend on small viewports is super narrow. Check if that's happening for image legends as well.
 - GerentIA article

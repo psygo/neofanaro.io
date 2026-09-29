@@ -24,6 +24,7 @@ export function SoftwareWorkSection() {
       </div>
       <div className="flex w-full flex-col gap-4">
         <CpiSuspense>
+          {/* <Gia /> */}
           <Lang101 />
           <Aquarifolio />
           <Magi />
@@ -246,6 +247,51 @@ function Lang101() {
     //   }
     //   tags={["react native", "app", "typescript", "ai"]}
     //   starTotal={20}
+    // />
+  )
+}
+
+function Gia() {
+  const lang = useLang()
+
+  return (
+    <Link
+      href="/articles/lang101"
+      target="_blank"
+      rel="noreferrer noopener"
+      // className={`${containerOutline} bg-gray-0 flex flex-col gap-3 px-4.5 py-3 pb-4.5`}
+      className={`${containerOutline} bg-gray-0 flex w-full flex-row items-center gap-5 px-4.5 py-3`}
+    >
+      <Image
+        loading="eager"
+        src="/articles/gerentia/gia.svg"
+        alt="GerentIA"
+        width={50}
+        height={50}
+        className="sm:block"
+      />
+      <div className="flex flex-col gap-3">
+        <GithubRepoCardTitleAndDescription
+          title="GerentIA"
+          description={
+            lang === "pt"
+              ? "IA + CRM + ERP"
+              : "AI + CRM + ERP"
+          }
+        />
+        <Tags tags={["ai", "react native", "app"]} />
+      </div>
+    </Link>
+    // <GithubRepoCard
+    //   href="/articles/gerentia"
+    //   imageSrc="/articles/gerentia/gia.svg"
+    //   imageSize={90}
+    //   title="GerentIA"
+    //   description={
+    //     lang === "pt" ? "IA + CRM + ERP" : "AI + CRM + ERP"
+    //   }
+    //   tags={["ai", "crm", "erp"]}
+    //   starTotal={200}
     // />
   )
 }

@@ -34,7 +34,7 @@ export function IngCupSuicide({ article }: ArticleProps) {
         </ArticleParagraph>
         <ArticleImageWithLegend
           src="/articles/ing-cup-suicide/psygo_corner_1.jpeg"
-          className="rounded-xl"
+          // className="rounded-xl"
         >
           <ImageLegend>
             psygo&apos;s Corner&apos;s first article.
