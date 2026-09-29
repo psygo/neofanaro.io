@@ -62,7 +62,7 @@ export function Gerentia({ article }: ArticleProps) {
               <ImageLegend>
                 A página inicial da{" "}
                 <ArticleLink href="https://gerent.app">
-                  GerentIA
+                  GerentIA (gerent.app)
                 </ArticleLink>
                 .
               </ImageLegend>
@@ -105,10 +105,11 @@ export function Gerentia({ article }: ArticleProps) {
 
             <ArticleParagraph>
               Com um trabalho certificado por diversos
-              órgãos de segurança, as maiores empresas de IA
-              agora oferecem agentes com proteções que nos
-              deixam confiantes o suficiente para
-              utilizá-los no dia a dia de nossos negócios.
+              órgãos internacionais de segurança, as maiores
+              empresas de IA agora oferecem agentes com
+              proteções que nos deixam confiantes o
+              suficiente para utilizá-los no dia a dia dos
+              nossos negócios.
             </ArticleParagraph>
             <ArticleParagraph>
               E é nessa intersecção que entra a{" "}
@@ -127,7 +128,7 @@ export function Gerentia({ article }: ArticleProps) {
               administrar os recursos do negócio, geralmente
               feito por sistemas de ERP (
               <em>Enterprise Resource Planning</em>), agora
-              passam a se integrar em uma plataforma só, com
+              passam a se integrar a uma plataforma só, com
               a IA servindo de ponte automatizada para ações
               que somente seriam possíveis por humanos no
               passado.
@@ -140,9 +141,10 @@ export function Gerentia({ article }: ArticleProps) {
             <ArticleParagraph>
               Na GerentIA, a IA é capaz de não só
               inteligente e humanamente conversar com o
-              cliente, mas também efetuar reservas no banco
-              de dados, com aprovação pendente por um
-              usuário humano ou não:
+              cliente, mas também efetuar as ações
+              respectivamente necessárias no banco de dados,
+              com aprovação pendente por um usuário humano
+              ou não:
             </ArticleParagraph>
             <ArticleImageWithLegend
               src={chat1Src}
@@ -175,8 +177,8 @@ export function Gerentia({ article }: ArticleProps) {
               className="rounded"
             >
               <ImageLegend>
-                A IA cria automaticamente um evento no
-                calendário da GerentIA.
+                O agente IA cria automaticamente um evento
+                no calendário da GerentIA.
               </ImageLegend>
             </ArticleImageWithLegend>
             <ArticleParagraph>
@@ -194,8 +196,8 @@ export function Gerentia({ article }: ArticleProps) {
               className="rounded"
             >
               <ImageLegend>
-                Diagrama de atendimento que a IA deverá
-                seguir.
+                Um exemplo de diagrama de atendimento que a
+                IA deverá seguir.
               </ImageLegend>
             </ArticleImageWithLegend>
             <ArticleParagraph>
@@ -218,7 +220,7 @@ export function Gerentia({ article }: ArticleProps) {
               <ImageLegend>
                 A GerentIA é decomposta em extensões, o que
                 oferece versatilidade para configurá-la para
-                as necessidades do negócio.
+                as necessidades específicas de cada negócio.
               </ImageLegend>
             </ArticleImageWithLegend>
             <ArticleParagraph>
@@ -231,6 +233,7 @@ export function Gerentia({ article }: ArticleProps) {
               src="/articles/gerentia/gia_logo_256.png"
               height={100}
               width={150}
+              className=""
             >
               <ImageLegend>O logo da GerentIA.</ImageLegend>
             </ArticleImageWithLegend>

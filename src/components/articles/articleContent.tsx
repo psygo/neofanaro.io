@@ -220,7 +220,7 @@ export function ArticleYouTubeIframe({
 }: ArticleIframeProps) {
   return (
     <div className="mt-5 mb-5 flex justify-center">
-      <div className="mx-6 flex aspect-video w-full max-w-lg items-center overflow-hidden rounded-2xl border border-slate-200 shadow-lg dark:border-slate-700">
+      <div className="mx-6 flex aspect-video w-full max-w-lg items-center overflow-hidden rounded-xl border border-slate-200 shadow-lg dark:border-slate-700">
         <iframe
           className="h-full w-full"
           src={src}

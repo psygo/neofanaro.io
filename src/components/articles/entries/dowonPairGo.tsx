@@ -67,7 +67,7 @@ export function DowonPairGo({ article }: ArticleProps) {
           src="/articles/dowon-pairgo/flower_baduk_founders.jpg"
           height={100}
           width={325}
-          className="rounded-lg"
+          // className="rounded-lg"
         >
           <ImageLegend>
             Flower Baduk&apos;s founders, from left to
