@@ -82,9 +82,9 @@ export function Gerentia({ article }: ArticleProps) {
               algo que transparece para qualquer um. Até
               alguns anos atrás, chamaríamos conversas
               pré-programadas em plataformas de suporte como
-              algo inteligente, o que parece cômico face às
-              conversas detalhadíssimas e cheias de nuances
-              que temos regularmente com elas.
+              algo inteligente, o que parece um tanto cômico
+              face às conversas detalhadíssimas e cheias de
+              nuances que temos regularmente com elas.
             </ArticleParagraph>
             <ArticleParagraph>
               Por si só, essa mudança já foi capaz de gerar
@@ -106,10 +106,10 @@ export function Gerentia({ article }: ArticleProps) {
             <ArticleParagraph>
               Com um trabalho certificado por diversos
               órgãos internacionais de segurança, as maiores
-              empresas de IA agora oferecem agentes com
-              proteções que nos deixam confiantes o
-              suficiente para utilizá-los no dia a dia dos
-              nossos negócios.
+              empresas de IA, como a Anthropic e a OpenAI,
+              agora oferecem agentes com proteções que nos
+              deixam confiantes o suficiente para
+              utilizá-los no dia a dia dos nossos negócios.
             </ArticleParagraph>
             <ArticleParagraph>
               E é nessa intersecção que entra a{" "}
@@ -122,16 +122,16 @@ export function Gerentia({ article }: ArticleProps) {
               dissociadas.
             </ArticleParagraph>
             <ArticleParagraph>
-              Lidar com clientes, algo tradicionalmente
-              feito através de sistemas de CRM (
-              <em>Customer Relationship Management</em>), e
-              administrar os recursos do negócio, geralmente
-              feito por sistemas de ERP (
-              <em>Enterprise Resource Planning</em>), agora
-              passam a se integrar a uma plataforma só, com
-              a IA servindo de ponte automatizada para ações
-              que somente seriam possíveis por humanos no
-              passado.
+              Lidar com clientes &mdash; algo
+              tradicionalmente feito através de sistemas de
+              CRM (<em>Customer Relationship Management</em>
+              ) &mdash; e administrar os recursos do negócio
+              &mdash; geralmente feito por sistemas de ERP (
+              <em>Enterprise Resource Planning</em>) &mdash;
+              agora passam a se integrar a uma plataforma
+              só, com a IA servindo de ponte automatizada
+              para ações que somente seriam possíveis por
+              humanos no passado.
             </ArticleParagraph>
           </ArticleSection>
           <ArticleSection>
@@ -167,7 +167,7 @@ export function Gerentia({ article }: ArticleProps) {
               <ImageLegend>
                 A IA já é capaz de fazer um atendimento
                 completo, encaminhando formas de pagamento e
-                fazendo mudanças no banco de dados.
+                realizando mudanças no banco de dados.
               </ImageLegend>
             </ArticleImageWithLegend>
             <ArticleImageWithLegend
@@ -202,14 +202,13 @@ export function Gerentia({ article }: ArticleProps) {
             </ArticleImageWithLegend>
             <ArticleParagraph>
               A GerentIA é uma plataforma que visa atender
-              qualquer tipo de empresa, e, para tal, ela
-              utiliza da versatilidade de um sistema de
-              extensões de funcionalidades, isto é, o
-              usuário configura quais funcionalidades quer
-              adicionar ao seu gerenciamento de negócios. A
-              longo prazo, pretende-se também expor a
-              capacidade de programação de extensões por
-              terceiros.
+              qualquer tipo de empresa, e, para tal, utiliza
+              da versatilidade de um sistema de extensões de
+              funcionalidades, isto é, o usuário configura
+              quais funcionalidades quer adicionar ao seu
+              gerenciamento de negócios. A longo prazo,
+              pretende-se também expor a capacidade de
+              programação de extensões por terceiros.
             </ArticleParagraph>
             <ArticleImageWithLegend
               src={extensionsSrc}
@@ -219,8 +218,8 @@ export function Gerentia({ article }: ArticleProps) {
             >
               <ImageLegend>
                 A GerentIA é decomposta em extensões, o que
-                oferece versatilidade para configurá-la para
-                as necessidades específicas de cada negócio.
+                oferece versatilidade para configurá-la às
+                necessidades específicas de cada negócio.
               </ImageLegend>
             </ArticleImageWithLegend>
             <ArticleParagraph>

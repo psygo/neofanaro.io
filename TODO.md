@@ -2,13 +2,14 @@
 
 ## Priorities
 
+- Add a mention to the next shapes in the series, such as the [_scorpion_](https://senseis.xmp.net/?ScorpionShape) and.
+- Add a basic example of attacking with the Elephant's Jump to the Mammoth's Jump article.
 - The Mammoth's Jump is also the shape in an unusual shimari.
   - [A book on the 3-5 6-3, or tiger shimari](https://amzn.asia/d/0i1Ik9mC)
   - [Sensei's Library on the 3-5 6-3 shimari](https://senseis.xmp.net/?3563Enclosure)
   - [Meienism](https://senseis.xmp.net/?Meienism)
 
 - Better country flags
-- Add a basic example of attacking with the Elephant's Jump to the Mammoth's Jump article.
 - Multi-category article-cards (with more than one color on the left border).
 - Progress bar for articles.
 - OG preview images per article.
@@ -31,6 +32,7 @@
 - Kifu Book
 - Best of fanaro.io
 - The Exercises on my cover of the tesuji encyclopedia
+- [Tewari Delight #1](https://youtu.be/c3GU2td0To8)
 
 ## Bugs
 
