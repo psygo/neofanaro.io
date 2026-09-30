@@ -226,7 +226,7 @@ export function Gerentia({ article }: ArticleProps) {
               Como desenvolvedor principal da plataforma,
               estou sempre aberto a sugestões e críticas. Se
               você tiver alguma, é só deixar nos
-              comentários! Eu e a equipe GIA agradecemos!
+              comentários! A equipe GIA agradece!
             </ArticleParagraph>
             <ArticleImageWithLegend
               src="/articles/gerentia/gia_logo_256.png"
@@ -239,9 +239,192 @@ export function Gerentia({ article }: ArticleProps) {
           </ArticleSection>
         </>
       ) : (
-        <ArticleSection>
-          <ArticleParagraph>G</ArticleParagraph>
-        </ArticleSection>
+        <>
+          <ArticleSection>
+            <ArticleImageWithLegend
+              src={landingPageSrc}
+              height={100}
+              width={450}
+              className="rounded"
+            >
+              <ImageLegend>
+                <ArticleLink href="https://gerent.app">
+                  GerentIA (gerent.app)
+                </ArticleLink>
+                &apos;s landing page. .
+              </ImageLegend>
+            </ArticleImageWithLegend>
+            <ArticleParagraph>
+              Over the last few years, two improvements to
+              AI have changed the nature of this technology,
+              or at least changed how we should treat it:
+            </ArticleParagraph>
+            <ArticleUnorderedList>
+              <li>Naturalness of Conversation</li>
+              <li>Agency</li>
+            </ArticleUnorderedList>
+            <ArticleParagraph>
+              The naturalness of today&apos;s AI
+              conversations is something that&apos;s obvious
+              to anyone. Up until just a few years ago, we
+              would&apos;ve called pre-programmed
+              conversations on support platforms
+              &quot;intelligent&quot;, which seems a bit
+              comical compared to the highly detailed and
+              exceedingly nuanced conversations we now have
+              with them regularly.
+            </ArticleParagraph>
+            <ArticleParagraph>
+              On its own, this shift was already able to
+              spawn new categories of tools. However, an
+              assistant which is only able to chat is quite
+              limiting. Ideally, we&apos;d want it to also
+              act in the real world.
+            </ArticleParagraph>
+            <ArticleParagraph>
+              And that&apos;s exactly the new paradigm which
+              became available in the most recent AI
+              iterations. And safely so.
+            </ArticleParagraph>
+            <ArticleYouTubeIframe
+              src="https://www.youtube.com/embed/BFLiy258ljg"
+              title="GerentIA — Tutorial"
+            />
+
+            <ArticleParagraph>
+              With work certified by several international
+              security bodies, the biggest AI companies,
+              such as Anthropic and OpenAI, now offer agents
+              with enough guard-rails to grant us confidence
+              to use them in our daily business operations.
+            </ArticleParagraph>
+            <ArticleParagraph>
+              And it&apos;s at that intersection that{" "}
+              <ArticleLink href="https://gerent.app">
+                GerentIA
+              </ArticleLink>{" "}
+              comes in, a platform aiming at merging and
+              automating two facets of business activity
+              that, in the past and still today, were and
+              are dissociated from one another.
+            </ArticleParagraph>
+            <ArticleParagraph>
+              Dealing with customers &mdash; traditionally
+              done through CRM (
+              <em>Customer Relationship Management</em>)
+              systems &mdash; and managing business
+              resources &mdash; usually done by ERP (
+              <em>Enterprise Resource Planning</em>) systems
+              &mdash; now integrate a single platform, with
+              AI serving as an automated bridge for actions
+              which used to be only possible through human
+              intervention in the past.
+            </ArticleParagraph>
+          </ArticleSection>
+          <ArticleSection>
+            <ArticleSectionTitle>
+              GerentIA&apos;s Main Features
+            </ArticleSectionTitle>
+            <ArticleParagraph>
+              On GerentIA, AI is capable not only of
+              intelligently and humanly chatting with the
+              customer, but also of carrying out the
+              respectively necessary actions on the
+              database, pending human approval or not:
+            </ArticleParagraph>
+            <ArticleImageWithLegend
+              src={chat1Src}
+              height={100}
+              width={425}
+              className="rounded"
+            >
+              <ImageLegend>
+                An example of AI talking to a customer about
+                booking resources in a coworking space.
+              </ImageLegend>
+            </ArticleImageWithLegend>
+            <ArticleImageWithLegend
+              src={reservationSrc}
+              height={100}
+              width={425}
+              className="rounded"
+            >
+              <ImageLegend>
+                AI is already capable of handling a full
+                interaction, forwarding payment methods and
+                making changes to the database.
+              </ImageLegend>
+            </ArticleImageWithLegend>
+            <ArticleImageWithLegend
+              src={reservationCalendarSrc}
+              height={100}
+              width={425}
+              className="rounded"
+            >
+              <ImageLegend>
+                The AI agent automatically creates an event
+                on GerentIA&apos;s calendar.
+              </ImageLegend>
+            </ArticleImageWithLegend>
+            <ArticleParagraph>
+              Our platform offers multiple ways to customize
+              its AI agent. The most basic would be through
+              the &quot;AI Specialization&quot; extension,
+              but the more visually appealing interface is
+              the &quot;Flowchart&quot; extension:
+            </ArticleParagraph>
+            <ArticleImageWithLegend
+              src={flowchartSrc}
+              height={100}
+              width={425}
+              className="rounded"
+            >
+              <ImageLegend>
+                An example of a flowchart the AI is
+                specified to follow.
+              </ImageLegend>
+            </ArticleImageWithLegend>
+            <ArticleParagraph>
+              GerentIA is built to be able to manage any
+              type of business, and, to that end, it makes
+              use of a versatile feature-extension system,
+              i.e., the user configures which features they
+              would like to add to their business
+              management. In the long run, we also intend to
+              offer the ability for third parties to develop
+              their own extensions.
+            </ArticleParagraph>
+            <ArticleImageWithLegend
+              src={extensionsSrc}
+              height={100}
+              width={425}
+              //   className="rounded"
+            >
+              <ImageLegend>
+                GerentIA is broken down into extensions,
+                which offers total flexibility to
+                configuring it to each business&apos;
+                specific needs.
+              </ImageLegend>
+            </ArticleImageWithLegend>
+            <ArticleParagraph>
+              As the platform&apos;s lead developer,
+              I&apos;m always open to suggestions and
+              criticism. If you have any, leave them in the
+              comments! The GIA team would be very thankful!
+            </ArticleParagraph>
+            <ArticleImageWithLegend
+              src="/articles/gerentia/gia_logo_256.png"
+              height={100}
+              width={150}
+              className=""
+            >
+              <ImageLegend>
+                GerentIA&apos;s logo.
+              </ImageLegend>
+            </ArticleImageWithLegend>
+          </ArticleSection>
+        </>
       )}
     </Article>
   )
