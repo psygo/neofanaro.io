@@ -44,14 +44,21 @@
 }
 
 .go-diagram-scope {
+  counter-reset: dia-diagram;
+}
+
+/* .article-has-toc is added by <ArticleTableOfContents> itself, so
+   section numbers only show up where an article actually opted into
+   a TOC to navigate by them — otherwise they're clutter. */
+.go-diagram-scope.article-has-toc {
   counter-reset: dia-diagram article-section;
 }
 
-.article-section-title {
+.article-has-toc .article-section-title {
   counter-increment: article-section;
 }
 
-.article-section-title::before {
+.article-has-toc .article-section-title::before {
   content: counter(article-section) ". ";
 }
 

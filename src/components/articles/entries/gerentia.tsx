@@ -84,7 +84,8 @@ export function Gerentia({ article }: ArticleProps) {
               pré-programadas em plataformas de suporte como
               algo inteligente, o que parece um tanto cômico
               face às conversas detalhadíssimas e cheias de
-              nuances que temos regularmente com elas.
+              nuances que temos regularmente com elas hoje
+              em dia.
             </ArticleParagraph>
             <ArticleParagraph>
               Por si só, essa mudança já foi capaz de gerar
@@ -109,16 +110,21 @@ export function Gerentia({ article }: ArticleProps) {
               empresas de IA, como a Anthropic e a OpenAI,
               agora oferecem agentes com proteções que nos
               deixam confiantes o suficiente para
-              utilizá-los no dia a dia dos nossos negócios.
+              utilizá-los no dia a dia dos nossos negócios,
+              com garantias de que dados de clientes ou de
+              nossas empresas não vazem para outros agentes
+              de IA.
             </ArticleParagraph>
             <ArticleParagraph>
-              E é nessa intersecção que entra a{" "}
+              A partir desses avanços de naturalidade,
+              agência e segurança, fez-se possível a criação
+              de uma nova ferramenta, a{" "}
               <ArticleLink href="https://gerent.app">
                 GerentIA
               </ArticleLink>
               , uma plataforma que visa fundir e automatizar
               duas faces da atividade empresarial que, no
-              passado e ainda atualmente, estariam e estão
+              passado e atualmente, estariam e ainda estão
               dissociadas.
             </ArticleParagraph>
             <ArticleParagraph>
@@ -139,7 +145,7 @@ export function Gerentia({ article }: ArticleProps) {
               As Funcionalidades Principais da GerentIA
             </ArticleSectionTitle>
             <ArticleParagraph>
-              Na GerentIA, a IA é capaz de não só
+              Na GerentIA, a IA é capaz de não apenas
               inteligente e humanamente conversar com o
               cliente, mas também efetuar as ações
               respectivamente necessárias no banco de dados,
@@ -154,8 +160,8 @@ export function Gerentia({ article }: ArticleProps) {
             >
               <ImageLegend>
                 Exemplo de IA conversando com o cliente
-                sobre os recursos de reserva em um ambiente
-                de <em>coworking</em>.
+                sobre os recursos de reservas, em um
+                ambiente de <em>coworking</em>.
               </ImageLegend>
             </ArticleImageWithLegend>
             <ArticleImageWithLegend
@@ -222,11 +228,22 @@ export function Gerentia({ article }: ArticleProps) {
                 necessidades específicas de cada negócio.
               </ImageLegend>
             </ArticleImageWithLegend>
+          </ArticleSection>
+          <ArticleSection>
+            <ArticleSectionTitle>
+              Um Convite
+            </ArticleSectionTitle>
             <ArticleParagraph>
-              Como desenvolvedor principal da plataforma,
-              estou sempre aberto a sugestões e críticas. Se
-              você tiver alguma, é só deixar nos
-              comentários! A equipe GIA agradece!
+              Há muitas mais funcionalidades disponíveis e
+              muitas outras virão! Acesse a GerentIA
+              gratuitamente e comece a automatizar o seu
+              negócio na nova era de IA!
+            </ArticleParagraph>
+            <ArticleParagraph>
+              Para finalizar, estamos sempre abertos a
+              sugestões e críticas. Se você tiver alguma, é
+              só deixar nos comentários! A equipe GIA
+              agradece!
             </ArticleParagraph>
             <ArticleImageWithLegend
               src="/articles/gerentia/gia_logo_256.png"
@@ -234,7 +251,8 @@ export function Gerentia({ article }: ArticleProps) {
               width={150}
               className=""
             >
-              <ImageLegend>O logo da GerentIA.</ImageLegend>
+              {/* <ImageLegend>O logo da GerentIA.</ImageLegend> */}
+              <ImageLegend> </ImageLegend>
             </ArticleImageWithLegend>
           </ArticleSection>
         </>
@@ -251,28 +269,31 @@ export function Gerentia({ article }: ArticleProps) {
                 <ArticleLink href="https://gerent.app">
                   GerentIA (gerent.app)
                 </ArticleLink>
-                &apos;s landing page. .
+                &apos;s landing page.
               </ImageLegend>
             </ArticleImageWithLegend>
             <ArticleParagraph>
               Over the last few years, two improvements to
-              AI have changed the nature of this technology,
+              AI have changed the nature of that technology,
               or at least changed how we should treat it:
             </ArticleParagraph>
             <ArticleUnorderedList>
               <li>Naturalness of Conversation</li>
               <li>Agency</li>
             </ArticleUnorderedList>
+            {/* The zero-width space before the closing quote
+            on "intelligent" keeps it hyphenatable — some
+            browsers won't auto-hyphenate a word glued
+            directly to trailing punctuation. */}
             <ArticleParagraph>
               The naturalness of today&apos;s AI
-              conversations is something that&apos;s obvious
-              to anyone. Up until just a few years ago, we
-              would&apos;ve called pre-programmed
-              conversations on support platforms
-              &quot;intelligent&quot;, which seems a bit
-              comical compared to the highly detailed and
-              exceedingly nuanced conversations we now have
-              with them regularly.
+              conversations is evident to anyone. Up until
+              just a few years ago, we would&apos;ve called
+              pre-programmed conversations on support
+              platforms &quot;intelligent&quot;, which seems
+              a bit comical compared to the highly detailed
+              and exceedingly nuanced conversations we
+              regularly have with them these days.
             </ArticleParagraph>
             <ArticleParagraph>
               On its own, this shift was already able to
@@ -292,21 +313,25 @@ export function Gerentia({ article }: ArticleProps) {
             />
 
             <ArticleParagraph>
-              With work certified by several international
-              security bodies, the biggest AI companies,
-              such as Anthropic and OpenAI, now offer agents
-              with enough guard-rails to grant us confidence
-              to use them in our daily business operations.
+              Certified by several international security
+              institutions, the biggest AI companies, such
+              as Anthropic and OpenAI, now offer agents with
+              enough guard-rails to grant us confidence to
+              use them in our daily business operations,
+              with guarantees that neither our
+              customers&apos; nor our own companies&apos;
+              data will leak to other AI agents.
             </ArticleParagraph>
             <ArticleParagraph>
-              And it&apos;s at that intersection that{" "}
+              From these advances in naturalness, agency,
+              and safety, a new tool was made possible,{" "}
               <ArticleLink href="https://gerent.app">
                 GerentIA
-              </ArticleLink>{" "}
-              comes in, a platform aiming at merging and
-              automating two facets of business activity
-              that, in the past and still today, were and
-              are dissociated from one another.
+              </ArticleLink>
+              , a platform aiming at merging and automating
+              two facets of business activity which, in the
+              past and still today, remain dissociated from
+              one another.
             </ArticleParagraph>
             <ArticleParagraph>
               Dealing with customers &mdash; traditionally
@@ -318,7 +343,7 @@ export function Gerentia({ article }: ArticleProps) {
               &mdash; now integrate a single platform, with
               AI serving as an automated bridge for actions
               which used to be only possible through human
-              intervention in the past.
+              intervention.
             </ArticleParagraph>
           </ArticleSection>
           <ArticleSection>
@@ -407,11 +432,22 @@ export function Gerentia({ article }: ArticleProps) {
                 specific needs.
               </ImageLegend>
             </ArticleImageWithLegend>
+          </ArticleSection>
+          <ArticleSection>
+            <ArticleSectionTitle>
+              An Invitation
+            </ArticleSectionTitle>
             <ArticleParagraph>
-              As the platform&apos;s lead developer,
-              I&apos;m always open to suggestions and
-              criticism. If you have any, leave them in the
-              comments! The GIA team would be very thankful!
+              There are many more features already
+              available, and many others are on their way!
+              Access GerentIA for free and start automating
+              your business in the new AI era!
+            </ArticleParagraph>
+            <ArticleParagraph>
+              To wrap up, we&apos;re always open to
+              suggestions and criticism. If you have any,
+              just leave them in the comments! The GIA team
+              thanks you!
             </ArticleParagraph>
             <ArticleImageWithLegend
               src="/articles/gerentia/gia_logo_256.png"
@@ -419,9 +455,8 @@ export function Gerentia({ article }: ArticleProps) {
               width={150}
               className=""
             >
-              <ImageLegend>
-                GerentIA&apos;s logo.
-              </ImageLegend>
+              {/* <ImageLegend>GerentIA&apos;s logo.</ImageLegend> */}
+              <ImageLegend> </ImageLegend>
             </ArticleImageWithLegend>
           </ArticleSection>
         </>

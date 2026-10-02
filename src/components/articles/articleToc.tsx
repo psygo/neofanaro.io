@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
+import { useLayoutEffect, useRef, useState } from "react"
 
 import { useLang } from "@hooks"
 
@@ -23,8 +23,10 @@ export function ArticleTableOfContents() {
     ArticleTocSection[]
   >([])
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const article = ref.current?.closest("article")
+    article?.classList.add("article-has-toc")
+
     const headings = Array.from(
       article?.querySelectorAll<HTMLHeadingElement>(
         ".article-section-title",
@@ -37,6 +39,10 @@ export function ArticleTableOfContents() {
         title: heading.textContent ?? "",
       })),
     )
+
+    return () => {
+      article?.classList.remove("article-has-toc")
+    }
   }, [lang])
 
   return (
