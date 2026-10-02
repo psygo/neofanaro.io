@@ -25,10 +25,10 @@ export function SoftwareWorkSection() {
       <div className="flex w-full flex-col gap-4">
         <CpiSuspense>
           {/* <Gia /> */}
-          <Lang101 />
           <Aquarifolio />
           <Magi />
           <Fic />
+          <Lang101 />
           <TecnicasDeGo />
           <YouTubeKbdNav />
         </CpiSuspense>

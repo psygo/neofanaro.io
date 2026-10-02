@@ -1,7 +1,6 @@
 export * from "./goRules"
 export * from "./goSgf"
 export * from "./goViewerTheme"
-export * from "./readSgfFile"
 export * from "./goViewer"
 export * from "./goViewerContext"
 export * from "./goViewerPreferencesContext"

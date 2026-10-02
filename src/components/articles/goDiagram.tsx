@@ -14,6 +14,13 @@ type GoDiagramProps = WithReactChildren & {
   width?: number
   className?: string
   diaNumber?: number
+  // A stable, author-chosen key (unrelated to the diagram's
+  // position) that a <DiagramRef label="..."/> elsewhere in the
+  // article can point at to print this diagram's current number —
+  // TeX's \label/\ref, basically, so reordering or inserting
+  // diagrams doesn't mean hunting down every "Dia. N" mention in
+  // the article text to fix by hand.
+  label?: string
 }
 
 export function GoDiagram({
@@ -22,11 +29,13 @@ export function GoDiagram({
   height = 400,
   width = 400,
   diaNumber,
+  label,
   children,
   className = "",
 }: GoDiagramProps) {
   return (
     <div
+      data-dia-key={label}
       className={`${className} go-diagram my-8 flex flex-col items-center gap-3 px-4 hyphens-auto`}
     >
       <div

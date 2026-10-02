@@ -2,6 +2,8 @@
 
 ## Priorities
 
+- Mention the diagram which revers back to the regular 4-4 post-AI joseki.
+
 - Reference Go viewer diagrams programmatically.
 
 - Add a mention to the next shapes in the series, such as the [_scorpion_](https://senseis.xmp.net/?ScorpionShape) and.

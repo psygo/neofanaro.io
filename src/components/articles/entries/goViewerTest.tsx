@@ -4,6 +4,7 @@ import { Article } from "@components/articles/article"
 import {
   ArticleSection,
   ArticleParagraph,
+  DiagramRef,
 } from "../articleContent"
 import { GoDiagram, GoDiagramLegend } from "../goDiagram"
 import {
@@ -21,7 +22,6 @@ import {
   goViewerMonoFont,
   goViewerSansFont,
   goViewerSerifFont,
-  readSgfFile,
 } from "@components/goViewer/exports"
 
 export function GoViewerTest({ article }: ArticleProps) {
@@ -60,6 +60,34 @@ export function GoViewerTest({ article }: ArticleProps) {
           <GoViewerBoard />
           <GoViewerInfo />
         </GoViewer>
+      </ArticleSection>
+
+      <ArticleSection>
+        <ArticleParagraph textAlign="left">
+          <code>label</code> on a <code>GoDiagram</code>{" "}
+          lets a <code>DiagramRef</code> elsewhere print its
+          current number — see{" "}
+          <DiagramRef label="dr-test-second" /> below, which
+          should read 2 (matching the second diagram&apos;s
+          own printed number), and keep reading 2 even after
+          reordering these two:
+        </ArticleParagraph>
+        <GoDiagram
+          src="/articles/haengma3/1.svg"
+          width={200}
+          height={168}
+          label="dr-test-first"
+        >
+          <GoDiagramLegend>First diagram.</GoDiagramLegend>
+        </GoDiagram>
+        <GoDiagram
+          src="/articles/haengma3/2.svg"
+          width={200}
+          height={168}
+          label="dr-test-second"
+        >
+          <GoDiagramLegend>Second diagram.</GoDiagramLegend>
+        </GoDiagram>
       </ArticleSection>
 
       <ArticleSection>
@@ -353,7 +381,7 @@ export function GoViewerTest({ article }: ArticleProps) {
           </GoDiagramLegend>
         </GoDiagram>
         <GoViewer
-          sgf={readSgfFile("/articles/haengma3/1.sgf")}
+          sgf="/articles/haengma3/1.sgf"
           startAt="end"
         >
           <GoViewerBoard
@@ -383,7 +411,7 @@ export function GoViewerTest({ article }: ArticleProps) {
           </GoDiagramLegend>
         </GoDiagram>
         <GoViewer
-          sgf={readSgfFile("/articles/haengma3/2.sgf")}
+          sgf="/articles/haengma3/2.sgf"
           startAt="end"
         >
           <GoViewerBoard
@@ -413,7 +441,7 @@ export function GoViewerTest({ article }: ArticleProps) {
           </GoDiagramLegend>
         </GoDiagram>
         <GoViewer
-          sgf={readSgfFile("/articles/haengma3/2.1.sgf")}
+          sgf="/articles/haengma3/2.1.sgf"
           startAt="end"
         >
           <GoViewerBoard
@@ -443,7 +471,7 @@ export function GoViewerTest({ article }: ArticleProps) {
           </GoDiagramLegend>
         </GoDiagram>
         <GoViewer
-          sgf={readSgfFile("/articles/haengma3/3.sgf")}
+          sgf="/articles/haengma3/3.sgf"
           startAt="end"
         >
           <GoViewerBoard
@@ -473,7 +501,7 @@ export function GoViewerTest({ article }: ArticleProps) {
           </GoDiagramLegend>
         </GoDiagram>
         <GoViewer
-          sgf={readSgfFile("/articles/haengma3/4.sgf")}
+          sgf="/articles/haengma3/4.sgf"
           startAt="end"
         >
           <GoViewerBoard
@@ -504,7 +532,7 @@ export function GoViewerTest({ article }: ArticleProps) {
           </GoDiagramLegend>
         </GoDiagram>
         <GoViewer
-          sgf={readSgfFile("/articles/haengma3/5.sgf")}
+          sgf="/articles/haengma3/5.sgf"
           startAt="end"
         >
           <GoViewerBoard
@@ -535,7 +563,7 @@ export function GoViewerTest({ article }: ArticleProps) {
           </GoDiagramLegend>
         </GoDiagram>
         <GoViewer
-          sgf={readSgfFile("/articles/haengma3/6.sgf")}
+          sgf="/articles/haengma3/6.sgf"
           startAt="end"
         >
           <GoViewerBoard
@@ -566,7 +594,7 @@ export function GoViewerTest({ article }: ArticleProps) {
           </GoDiagramLegend>
         </GoDiagram>
         <GoViewer
-          sgf={readSgfFile("/articles/haengma3/6.1.sgf")}
+          sgf="/articles/haengma3/6.1.sgf"
           startAt="end"
         >
           <GoViewerBoard

@@ -18,7 +18,6 @@ import {
   GoViewerBoard,
   GoViewerControls,
   GoViewerLegend,
-  readSgfFile,
 } from "@components/goViewer/exports"
 
 import { SITE_URL } from "@utils"
@@ -110,9 +109,7 @@ export function OkaoigoAiArticles({
           </GoDiagramLegend>
         </GoDiagram> */}
         <GoViewer
-          sgf={readSgfFile(
-            "/articles/okaigo-ai-articles/1.sgf",
-          )}
+          sgf="/articles/okaigo-ai-articles/1.sgf"
           startAt="end"
         >
           <GoViewerBoard
@@ -142,9 +139,7 @@ export function OkaoigoAiArticles({
           </GoDiagramLegend>
         </GoDiagram> */}
         <GoViewer
-          sgf={readSgfFile(
-            "/articles/okaigo-ai-articles/2.sgf",
-          )}
+          sgf="/articles/okaigo-ai-articles/2.sgf"
           startAt="end"
         >
           <GoViewerBoard
@@ -174,9 +169,7 @@ export function OkaoigoAiArticles({
           </GoDiagramLegend>
         </GoDiagram> */}
         <GoViewer
-          sgf={readSgfFile(
-            "/articles/okaigo-ai-articles/3.sgf",
-          )}
+          sgf="/articles/okaigo-ai-articles/3.sgf"
           startAt="end"
         >
           <GoViewerBoard
@@ -205,9 +198,7 @@ export function OkaoigoAiArticles({
           </GoDiagramLegend>
         </GoDiagram> */}
         <GoViewer
-          sgf={readSgfFile(
-            "/articles/okaigo-ai-articles/4.sgf",
-          )}
+          sgf="/articles/okaigo-ai-articles/4.sgf"
           startAt="end"
         >
           <GoViewerBoard
@@ -233,9 +224,7 @@ export function OkaoigoAiArticles({
           </GoDiagramLegend>
         </GoDiagram> */}
         <GoViewer
-          sgf={readSgfFile(
-            "/articles/okaigo-ai-articles/5.sgf",
-          )}
+          sgf="/articles/okaigo-ai-articles/5.sgf"
           startAt="end"
         >
           <GoViewerBoard interactive={false} />

@@ -15,7 +15,6 @@ import {
   GoViewer,
   GoViewerBoard,
   GoViewerLegend,
-  readSgfFile,
 } from "@components/goViewer/exports"
 
 export function IngCupSuicide({ article }: ArticleProps) {
@@ -83,9 +82,7 @@ export function IngCupSuicide({ article }: ArticleProps) {
           </GoDiagramLegend>
         </GoDiagram> */}
         <GoViewer
-          sgf={readSgfFile(
-            "/articles/ing-cup-suicide/1.sgf",
-          )}
+          sgf="/articles/ing-cup-suicide/1.sgf"
           startAt="end"
         >
           <GoViewerBoard
@@ -117,9 +114,7 @@ export function IngCupSuicide({ article }: ArticleProps) {
           </GoDiagramLegend>
         </GoDiagram> */}
         <GoViewer
-          sgf={readSgfFile(
-            "/articles/ing-cup-suicide/2.sgf",
-          )}
+          sgf="/articles/ing-cup-suicide/2.sgf"
           startAt="end"
         >
           <GoViewerBoard
@@ -148,9 +143,7 @@ export function IngCupSuicide({ article }: ArticleProps) {
           </GoDiagramLegend>
         </GoDiagram> */}
         <GoViewer
-          sgf={readSgfFile(
-            "/articles/ing-cup-suicide/3.sgf",
-          )}
+          sgf="/articles/ing-cup-suicide/3.sgf"
           startAt="end"
         >
           <GoViewerBoard
@@ -191,9 +184,7 @@ export function IngCupSuicide({ article }: ArticleProps) {
           </GoDiagramLegend>
         </GoDiagram> */}
         <GoViewer
-          sgf={readSgfFile(
-            "/articles/ing-cup-suicide/4.sgf",
-          )}
+          sgf="/articles/ing-cup-suicide/4.sgf"
           startAt="end"
         >
           <GoViewerBoard

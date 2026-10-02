@@ -16,7 +16,6 @@ import {
   GoViewer,
   GoViewerBoard,
   GoViewerLegend,
-  readSgfFile,
 } from "@components/goViewer/exports"
 
 export function PostAiOpeningHierarchy({
@@ -65,9 +64,7 @@ export function PostAiOpeningHierarchy({
         </div> */}
         <div className="flex flex-col items-center justify-center gap-6 px-8 sm:flex-row">
           <GoViewer
-            sgf={readSgfFile(
-              "/articles/post-ai-opening-hierarchy/sanrensei.sgf",
-            )}
+            sgf="/articles/post-ai-opening-hierarchy/sanrensei.sgf"
             startAt="end"
           >
             <GoViewerBoard
@@ -85,9 +82,7 @@ export function PostAiOpeningHierarchy({
             </GoViewerLegend>
           </GoViewer>
           <GoViewer
-            sgf={readSgfFile(
-              "/articles/post-ai-opening-hierarchy/chinese.sgf",
-            )}
+            sgf="/articles/post-ai-opening-hierarchy/chinese.sgf"
             startAt="end"
           >
             <GoViewerBoard

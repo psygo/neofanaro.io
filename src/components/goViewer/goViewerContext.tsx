@@ -8,6 +8,7 @@ import {
   useMemo,
   useReducer,
   useRef,
+  useState,
 } from "react"
 
 import {
@@ -263,6 +264,8 @@ export type GoViewerContextValue = {
   capturedStones: CapturedStone[]
   labels: SgfLabel[]
   lastIllegalReason: IllegalReason | null
+  // See GoViewerProviderProps' own doc.
+  label?: string
   placeStone: (row: number, col: number) => void
   pass: () => void
   reset: () => void
@@ -280,6 +283,13 @@ const GoViewerContext =
 
 export type GoViewerProviderProps = {
   boardSize?: number
+  // Either raw SGF text (starting with "(", the game tree's own
+  // opening paren) or a path under /public (starting with "/", e.g.
+  // "/articles/foo/1.sgf") to fetch that text from client-side. The
+  // path form means an article never needs its own readSgfFile()
+  // call — which needs node:fs, and so previously forced any
+  // article using useLang() (a Client Component) into a Server/
+  // Client component split just to read one file on its behalf.
   sgf?: string
   // Static point labels, for boards not loaded from an SGF's own LB
   // property (ignored when `sgf` is given — its LB labels win).
@@ -296,6 +306,12 @@ export type GoViewerProviderProps = {
   // given, or to Black otherwise — set this to override either,
   // without having to edit the SGF text itself.
   firstToMove?: Stone
+  // A stable key a <DiagramRef label="..."/> elsewhere in the
+  // article can point at — handed down to whichever <GoViewerLegend>
+  // child actually ends up carrying the diagram's "Dia. N" number
+  // (if any), so authors set this once on <GoViewer> itself rather
+  // than on the legend.
+  label?: string
   children: React.ReactNode
 }
 
@@ -305,11 +321,43 @@ export function GoViewerProvider({
   labels,
   startAt = "start",
   firstToMove,
+  label,
   children,
 }: GoViewerProviderProps) {
+  const isPath = sgf?.startsWith("/")
+
+  // Only used for the path form — fetched client-side since
+  // node:fs (what a direct file read would need) can't be bundled
+  // into this "use client" module. Stays undefined for raw-text
+  // `sgf`, so that form keeps working exactly as before: resolved
+  // synchronously, with no fetch and no loading flash.
+  const [fetchedSgf, setFetchedSgf] = useState<
+    string | undefined
+  >(undefined)
+  useEffect(() => {
+    if (!isPath || !sgf) return
+    let cancelled = false
+    fetch(sgf)
+      .then((response) => response.text())
+      .then((text) => {
+        if (!cancelled) setFetchedSgf(text)
+      })
+    return () => {
+      cancelled = true
+    }
+  }, [isPath, sgf])
+
+  const resolvedSgf = isPath ? fetchedSgf : sgf
+
   const [state, dispatch] = useReducer(
     reducer,
-    { boardSize, sgf, labels, startAt, firstToMove },
+    {
+      boardSize,
+      sgf: resolvedSgf,
+      labels,
+      startAt,
+      firstToMove,
+    },
     (init) =>
       initialState(
         init.boardSize,
@@ -338,13 +386,13 @@ export function GoViewerProvider({
     dispatch({
       type: "reinit",
       boardSize,
-      sgf,
+      sgf: resolvedSgf,
       labels: labels ?? [],
       startAt,
       firstToMove,
     })
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [sgf, boardSize, startAt, firstToMove])
+  }, [resolvedSgf, boardSize, startAt, firstToMove])
 
   const placeStone = useCallback(
     (row: number, col: number) =>
@@ -424,6 +472,7 @@ export function GoViewerProvider({
       capturedStones: view.capturedStones,
       labels: state.labels,
       lastIllegalReason: state.lastIllegalReason,
+      label,
       placeStone,
       pass,
       reset,
@@ -441,6 +490,7 @@ export function GoViewerProvider({
       state.moves.length,
       state.labels,
       state.lastIllegalReason,
+      label,
       view,
       placeStone,
       pass,

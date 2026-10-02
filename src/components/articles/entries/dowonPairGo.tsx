@@ -17,7 +17,6 @@ import {
   GoViewerBoard,
   GoViewerControls,
   GoViewerLegend,
-  readSgfFile,
 } from "@components/goViewer/exports"
 
 import { SITE_URL } from "@utils"
@@ -142,7 +141,7 @@ export function DowonPairGo({ article }: ArticleProps) {
           </GoDiagramLegend>
         </GoDiagram> */}
         <GoViewer
-          sgf={readSgfFile("/articles/dowon-pairgo/1.sgf")}
+          sgf="/articles/dowon-pairgo/1.sgf"
           startAt="end"
         >
           <GoViewerBoard
@@ -185,7 +184,7 @@ export function DowonPairGo({ article }: ArticleProps) {
           </GoDiagramLegend>
         </GoDiagram> */}
         <GoViewer
-          sgf={readSgfFile("/articles/dowon-pairgo/2.sgf")}
+          sgf="/articles/dowon-pairgo/2.sgf"
           startAt="end"
         >
           <GoViewerBoard
@@ -215,7 +214,7 @@ export function DowonPairGo({ article }: ArticleProps) {
           </GoDiagramLegend>
         </GoDiagram> */}
         <GoViewer
-          sgf={readSgfFile("/articles/dowon-pairgo/3.sgf")}
+          sgf="/articles/dowon-pairgo/3.sgf"
           startAt="end"
         >
           <GoViewerBoard
@@ -248,7 +247,7 @@ export function DowonPairGo({ article }: ArticleProps) {
           </GoDiagramLegend>
         </GoDiagram> */}
         <GoViewer
-          sgf={readSgfFile("/articles/dowon-pairgo/4.sgf")}
+          sgf="/articles/dowon-pairgo/4.sgf"
           startAt="end"
         >
           <GoViewerBoard

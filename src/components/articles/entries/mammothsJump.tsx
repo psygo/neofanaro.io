@@ -2,6 +2,7 @@ import { ArticleProps } from "@types"
 
 import { Article } from "@components/articles/article"
 import {
+  ArticleImageWithLegend,
   ArticleLink,
   ArticleParagraph,
   ArticleQuote,
@@ -9,6 +10,8 @@ import {
   ArticleSectionTitle,
   ArticleTableOfContents,
   ArticleYouTubeIframe,
+  DiagramRef,
+  ImageLegend,
   NoWrap,
 } from "../articleContent"
 import {
@@ -16,7 +19,6 @@ import {
   GoViewerBoard,
   GoViewerControls,
   GoViewerLegend,
-  readSgfFile,
 } from "@components/goViewer/exports"
 
 export function MammothsJump({ article }: ArticleProps) {
@@ -61,7 +63,7 @@ export function MammothsJump({ article }: ArticleProps) {
         </ArticleSectionTitle>
         <ArticleParagraph>
           The &quot;Mammoth&apos;s Jump&quot; is exemplified
-          in Dia. 1, in a{" "}
+          in Dia. <DiagramRef label="game-example" />, in a{" "}
           <ArticleLink href="https://ai-sensei.com/game/wCbiGfZSh7TjX5eXM8TDgvMzi5u2/46aa4a9d-8754-40e0-8320-39e85bcc6696">
             game between Kim Eunji <NoWrap>김은지</NoWrap>{" "}
             9p (Black) and Lee Jihyeon{" "}
@@ -70,7 +72,8 @@ export function MammothsJump({ article }: ArticleProps) {
           , played on September 20th, 2026:
         </ArticleParagraph>
         <GoViewer
-          sgf={readSgfFile("/articles/mammoths-jump/1.sgf")}
+          label="game-example"
+          sgf="/articles/mammoths-jump/1.sgf"
           startAt="end"
         >
           <GoViewerBoard interactive={true} size={425} />
@@ -95,7 +98,8 @@ export function MammothsJump({ article }: ArticleProps) {
           instead? An <em>ohazama tobi</em> perhaps?
         </ArticleParagraph>
         <GoViewer
-          sgf={readSgfFile("/articles/mammoths-jump/2.sgf")}
+          label="elephants-jump"
+          sgf="/articles/mammoths-jump/2.sgf"
           startAt="end"
         >
           <GoViewerBoard
@@ -122,13 +126,14 @@ export function MammothsJump({ article }: ArticleProps) {
           </GoViewerLegend>
         </GoViewer>
         <ArticleParagraph>
-          The middle point between A and B in Dia. 2 is
-          called the &quot;Elephant&apos;s Eye&quot;, and is
-          usually a major weakness, since it splits the A
-          from B. However, with proper setup and good
-          direction, White 1 could backfire into a less
-          meaningful, slow, or even dangerous poke. After
-          all, it&apos;s a move in-between two outside
+          The middle point between A and B in Dia.{" "}
+          <DiagramRef label="elephants-jump" />
+          &nbsp;is called the &quot;Elephant&apos;s
+          Eye&quot;, and is usually a major weakness, since
+          it splits the A from B. However, with proper setup
+          and good direction, White 1 could backfire into a
+          less meaningful, slow, or even dangerous poke.
+          After all, it&apos;s a move in between two outside
           opposing stones, not generating any shape or
           points by itself.
         </ArticleParagraph>
@@ -139,7 +144,8 @@ export function MammothsJump({ article }: ArticleProps) {
           creates a broken keima between 1 and A:
         </ArticleParagraph>
         <GoViewer
-          sgf={readSgfFile("/articles/mammoths-jump/3.sgf")}
+          label="broken-keima"
+          sgf="/articles/mammoths-jump/3.sgf"
           startAt="end"
         >
           <GoViewerBoard
@@ -160,14 +166,16 @@ export function MammothsJump({ article }: ArticleProps) {
           </GoViewerLegend>
         </GoViewer>
         <ArticleParagraph>
-          In general, it&apos;s better technique to jump
-          ahead with a keima, as in Dia. 4, staying ahead of
-          the opponent, which allows us to then spend our
+          In general, it&apos;s a better technique to jump
+          ahead with a keima, as in Dia.{" "}
+          <DiagramRef label="jump-ahead" />, staying ahead
+          of the opponent, which allows us to then spend our
           turn to defend the A stone with B, or perhaps try
           fights or compromises with C.
         </ArticleParagraph>
         <GoViewer
-          sgf={readSgfFile("/articles/mammoths-jump/4.sgf")}
+          label="jump-ahead"
+          sgf="/articles/mammoths-jump/4.sgf"
           startAt="end"
         >
           <GoViewerBoard
@@ -193,12 +201,14 @@ export function MammothsJump({ article }: ArticleProps) {
           was able to investigate.
         </ArticleParagraph>
         <ArticleParagraph>
-          But with A a little bit further away, as in Dia.
-          5, when playing moves such as 2, there&apos;s less
-          direct damage to A when White breaks through.
+          But with A a little bit further away, as in Dia.{" "}
+          <DiagramRef label="jump-further" />, when playing
+          moves such as 2, there&apos;s less direct damage
+          to A when White breaks through.
         </ArticleParagraph>
         <GoViewer
-          sgf={readSgfFile("/articles/mammoths-jump/5.sgf")}
+          label="jump-further"
+          sgf="/articles/mammoths-jump/5.sgf"
           startAt="end"
         >
           <GoViewerBoard
@@ -233,7 +243,8 @@ export function MammothsJump({ article }: ArticleProps) {
           be even more relevant here:
         </ArticleParagraph>
         <GoViewer
-          sgf={readSgfFile("/articles/mammoths-jump/6.sgf")}
+          label="switch-bottom-right"
+          sgf="/articles/mammoths-jump/6.sgf"
           startAt="end"
         >
           <GoViewerBoard
@@ -250,7 +261,7 @@ export function MammothsJump({ article }: ArticleProps) {
           </GoViewerLegend>
         </GoViewer>
         <ArticleParagraph>
-          Black is willing the sacrifice the A stone in the
+          Black is willing to sacrifice the A stone in the
           center, the stone which originated the
           Mammoth&apos;s Jump in the first place, in order
           to take strength and potential profits against
@@ -261,18 +272,21 @@ export function MammothsJump({ article }: ArticleProps) {
           not available to me, nonetheless I suppose he
           didn&apos;t poke through because, not only does it
           damage B, it&apos;s a slow move in the center
-          &mdash; a kosumi is typically a very slow in
-          general as well, not only in this context. In the
-          game, he chose to make a pretty shape with C.
+          &mdash; a kosumi is typically very slow in general
+          as well, not only in this context. In the game, he
+          chose to make a pretty shape with C.
         </ArticleParagraph>
         <ArticleParagraph>
-          Unexpectedly, though, 32 in Dia. 6 is AI&apos;s
-          recommendation for White still, with C losing
-          almost a point, or around 11% of win ratio.
+          Unexpectedly, though, 32 in Dia.{" "}
+          <DiagramRef label="switch-bottom-right" />
+          &nbsp;is AI&apos;s recommendation for White still,
+          with C losing almost a point, or around an 11% in
+          win rate.
         </ArticleParagraph>
         <ArticleParagraph>
           Circling back to the appropriate context theme,
-          the &quot;feels-good&quot; A cap in Dia. 6, in the
+          the &quot;feels-good&quot; A cap in Dia.{" "}
+          <DiagramRef label="switch-bottom-right" />, in the
           middle, in the beginning of the game is typically
           too vague for AI. White&apos;s group on the left
           is not weak enough to justify a center move at
@@ -289,7 +303,8 @@ export function MammothsJump({ article }: ArticleProps) {
           way:
         </ArticleParagraph>
         <GoViewer
-          sgf={readSgfFile("/articles/mammoths-jump/7.sgf")}
+          label="ai-recommended"
+          sgf="/articles/mammoths-jump/7.sgf"
           startAt="end"
         >
           <GoViewerBoard
@@ -325,9 +340,8 @@ export function MammothsJump({ article }: ArticleProps) {
           for defending moyos:
         </ArticleParagraph>
         <GoViewer
-          sgf={readSgfFile(
-            "/articles/mammoths-jump/eleph_1.sgf",
-          )}
+          label="moyo-defend"
+          sgf="/articles/mammoths-jump/eleph_1.sgf"
           startAt="end"
         >
           <GoViewerBoard
@@ -345,11 +359,12 @@ export function MammothsJump({ article }: ArticleProps) {
         <ArticleParagraph>
           Both Black and White are trying to expand their
           moyos, with the influence-collision area being
-          around A. With 1 on Dia. 8, Black aims at skipping
-          one step further than A, while also reserving the
-          possibility of turning that move into more of an
-          invasion or reduction, rather than a moyo
-          expansion.
+          around A. With 1 on Dia.{" "}
+          <DiagramRef label="moyo-defend" />, Black aims at
+          skipping one step further than A, while also
+          reserving the possibility of turning that move
+          into more of an invasion or reduction, rather than
+          a moyo expansion.
         </ArticleParagraph>
         <ArticleParagraph>
           If White tries to get in, Black will switch to
@@ -359,9 +374,8 @@ export function MammothsJump({ article }: ArticleProps) {
           the 2-4-6 shape:
         </ArticleParagraph>
         <GoViewer
-          sgf={readSgfFile(
-            "/articles/mammoths-jump/eleph_2.sgf",
-          )}
+          label="moyo-switch"
+          sgf="/articles/mammoths-jump/eleph_2.sgf"
           startAt="end"
         >
           <GoViewerBoard
@@ -385,9 +399,8 @@ export function MammothsJump({ article }: ArticleProps) {
           (White):
         </ArticleParagraph>
         <GoViewer
-          sgf={readSgfFile(
-            "/articles/mammoths-jump/nec_1.sgf",
-          )}
+          label="nec-match"
+          sgf="/articles/mammoths-jump/nec_1.sgf"
           startAt="end"
         >
           <GoViewerBoard
@@ -404,12 +417,11 @@ export function MammothsJump({ article }: ArticleProps) {
         </GoViewer>
         <ArticleParagraph>
           Curiously, Black 1 happens to be a Mammoth&apos;s
-          Jump from A, and an Elephant&apos;s Jump from from
-          B.
+          Jump from A, and an Elephant&apos;s Jump from B.
         </ArticleParagraph>
         <ArticleParagraph>
           If you would like to know how Black should deal
-          with White&apos; pokes, check out{" "}
+          with White&apos;s pokes, check out{" "}
           <ArticleLink href="https://youtu.be/FqiSshkeXKM?t=2218">
             Go Game Series&apos;s{" "}
             <em>China Japan Super Go Match</em> series
@@ -429,17 +441,16 @@ export function MammothsJump({ article }: ArticleProps) {
         </ArticleSectionTitle>
         <ArticleParagraph>
           The Mammoth&apos;s Jump, when placed in the
-          corner, with the 5-3 first probably, has even
-          received a its own moniker, the{" "}
+          corner, with the <NoWrap>5-3</NoWrap> first
+          probably, has even received its own moniker, the{" "}
           <ArticleLink href="https://senseis.xmp.net/?3563Enclosure">
             Tiger Shimari
           </ArticleLink>
           :
         </ArticleParagraph>
         <GoViewer
-          sgf={readSgfFile(
-            "/articles/mammoths-jump/tiger_1.sgf",
-          )}
+          label="tiger-shimari"
+          sgf="/articles/mammoths-jump/tiger_1.sgf"
           startAt="end"
         >
           <GoViewerBoard
@@ -474,28 +485,44 @@ export function MammothsJump({ article }: ArticleProps) {
           But he also added:
         </ArticleParagraph>
         <ArticleQuote>
-          If Black is able to play A next (Dia. 11), it
-          would be quite the nice shape for Black. However,
-          there are no such good moves available for White.
+          If Black is able to play A next (Dia.{" "}
+          <DiagramRef label="tiger-shimari" />
+          ), it would be quite the nice shape for Black.
+          However, there are no such good moves available
+          for White.
         </ArticleQuote>
         <ArticleParagraph>
           The Tiger Shimari seems to even have been played
           by the legendary Huang Longshi{" "}
           <NoWrap>黄龍士</NoWrap> (1651 - 1700) and Takemiya
           Masaki <NoWrap>武宮正樹</NoWrap> 9p, according to
-          John Fairbairn.
+          John Fairbairn. And, on Amazon Japan, it also has
+          <ArticleLink href="https://amzn.asia/d/04LDkwOj">
+            its own book
+          </ArticleLink>{" "}
+          .
         </ArticleParagraph>
+        <ArticleImageWithLegend
+          src="/articles/mammoths-jump/tiger_shimari_book.jpg"
+          height={100}
+          width={300}
+        >
+          <ImageLegend>
+            A whole book on the Tiger Shimari.
+          </ImageLegend>
+        </ArticleImageWithLegend>
         <ArticleParagraph>
           Even though that curious pattern is mostly used
           out of boredom, or to get a competitive edge over
           the opponent, it does have its place as a possible
-          best move. For example, in Dia. 12, AI gives A, B
-          and C as White&apos;s best options, in that order:
+          best move. For example, in Dia.{" "}
+          <DiagramRef label="tiger-best-moves" />, AI gives
+          A, B and C as White&apos;s best options, in that
+          order:
         </ArticleParagraph>
         <GoViewer
-          sgf={readSgfFile(
-            "/articles/mammoths-jump/tiger_2.sgf",
-          )}
+          label="tiger-best-moves"
+          sgf="/articles/mammoths-jump/tiger_2.sgf"
           startAt="end"
         >
           <GoViewerBoard
@@ -511,14 +538,14 @@ export function MammothsJump({ article }: ArticleProps) {
         </GoViewer>
         <ArticleParagraph>
           The main idea behind the Tiger Shimari is to
-          invite White into either A or B in Dia. 13, in
-          order to attack the splitting group from both
-          sides, building territory from the attack.
+          invite White into either A or B in Dia.{" "}
+          <DiagramRef label="tiger-attack" />, in order to
+          attack the splitting group from both sides,
+          building territory from the attack.
         </ArticleParagraph>
         <GoViewer
-          sgf={readSgfFile(
-            "/articles/mammoths-jump/tiger_3.sgf",
-          )}
+          label="tiger-attack"
+          sgf="/articles/mammoths-jump/tiger_3.sgf"
           startAt="end"
         >
           <GoViewerBoard
@@ -538,15 +565,14 @@ export function MammothsJump({ article }: ArticleProps) {
         <ArticleParagraph>
           As usual in the post-AI era, refuting non-standard
           strategies is as simple as playing standard,
-          reasonable moves. The A shoulder hit in Dia. 13 is
-          a simple first idea, all White needs to avoid is
-          falling for the shortage of liberties trap after
-          11:
+          reasonable moves. The A shoulder hit in Dia.{" "}
+          <DiagramRef label="tiger-attack" /> is a simple
+          first idea, all White needs to avoid is falling
+          for the shortage of liberties trap after 11:
         </ArticleParagraph>
         <GoViewer
-          sgf={readSgfFile(
-            "/articles/mammoths-jump/tiger_4.sgf",
-          )}
+          label="tiger-shoulder-hit-1"
+          sgf="/articles/mammoths-jump/tiger_4.sgf"
           startAt="end"
         >
           <GoViewerBoard
@@ -559,6 +585,7 @@ export function MammothsJump({ article }: ArticleProps) {
               maxCol: 18,
             }}
           />
+          <GoViewerControls />
           <GoViewerLegend>
             The first way to deal with the Tiger Shimari,
             according to AI.
@@ -573,9 +600,8 @@ export function MammothsJump({ article }: ArticleProps) {
           AI suggests:
         </ArticleParagraph>
         <GoViewer
-          sgf={readSgfFile(
-            "/articles/mammoths-jump/tiger_5.sgf",
-          )}
+          label="tiger-shoulder-hit-2"
+          sgf="/articles/mammoths-jump/tiger_5.sgf"
           startAt="end"
         >
           <GoViewerBoard
@@ -588,6 +614,7 @@ export function MammothsJump({ article }: ArticleProps) {
               maxCol: 18,
             }}
           />
+          <GoViewerControls />
           <GoViewerLegend>
             The second shoulder hit way of dealing with the
             Tiger Shimari, according to AI.
@@ -595,13 +622,12 @@ export function MammothsJump({ article }: ArticleProps) {
         </GoViewer>
         <ArticleParagraph>
           Locally, White could continue with A. And, if
-          Black chooses B instead 8, this is the final
+          Black chooses B instead of 8, this is the final
           result:
         </ArticleParagraph>
         <GoViewer
-          sgf={readSgfFile(
-            "/articles/mammoths-jump/tiger_6.sgf",
-          )}
+          label="tiger-result"
+          sgf="/articles/mammoths-jump/tiger_6.sgf"
           startAt="end"
         >
           <GoViewerBoard
@@ -614,26 +640,65 @@ export function MammothsJump({ article }: ArticleProps) {
               maxCol: 18,
             }}
           />
+          <GoViewerControls />
           <GoViewerLegend>
             A fierce battle ending in a peaceful exchange.
           </GoViewerLegend>
         </GoViewer>
         <ArticleParagraph>
-          At least to me, Dia. 16 is most surprising, since
-          giving Black such nice influence on the right with
-          a healthy corner as well, while only getting a
-          stable group on the left doesn&apos;t seem like a
-          good trade. However, we have to add that the
-          typicaly post-AI invasion pattern from A has its
-          power severely diminished by the atari at B.
+          At least to me, Dia.{" "}
+          <DiagramRef label="tiger-result" />
+          &nbsp;is most surprising, since giving Black such
+          nice influence on the right with a healthy corner
+          as well, while only getting a stable group on the
+          left doesn&apos;t seem like a good trade. However,
+          we have to add that the typically post-AI invasion
+          pattern from A has its power severely diminished
+          by the ataris of B and C.
         </ArticleParagraph>
         <ArticleParagraph>
-          According to AI, playing the Tiger Shimari and its
-          sequences fall within a 1- to 2-point loss, which
-          is largely irrelevant when compared to any battle
-          in the middle-game. No human can claim to have
-          lost a game to any other non-AI entity by taking
-          only a max 2-point loss at the beginning.
+          Lastly, one of the sequences with the most
+          human-understandable techniques is in Dia.{" "}
+          <DiagramRef label="tiger-cool" />:
+        </ArticleParagraph>
+        <GoViewer
+          label="tiger-cool"
+          sgf="/articles/mammoths-jump/tiger_7.sgf"
+          startAt="end"
+        >
+          <GoViewerBoard
+            size={330}
+            showMoveNumbers
+            showCapturedStones
+            region={{
+              minRow: 9,
+              maxRow: 18,
+              minCol: 7,
+              maxCol: 18,
+            }}
+          />
+          <GoViewerControls />
+          <GoViewerLegend>
+            White uses a forcing moves against Black&apos;s
+            corner in order to obtain a cleaner outside
+            shape.
+          </GoViewerLegend>
+        </GoViewer>
+        <ArticleParagraph>
+          With 4, Black aims at forcing White into an empty
+          triangle on 6. 15 is a skillful technique
+          typically used in the endgame, but, in this case,
+          it guarantees a connection underneath with the
+          atari at A, in case Black 12 ever tries to escape.
+        </ArticleParagraph>
+        <ArticleParagraph>
+          Wrapping this article up, according to AI, playing
+          the Tiger Shimari and its sequences falls within a
+          1- to 2-point loss, which is largely irrelevant
+          when compared to any battle in the middle-game. No
+          human can claim to have lost a game to any other
+          non-AI entity by taking only a max 2-point loss at
+          the beginning.
         </ArticleParagraph>
       </ArticleSection>
     </Article>

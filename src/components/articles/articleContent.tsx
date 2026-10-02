@@ -8,6 +8,7 @@ import Link from "next/link"
 import { WithReactChildren } from "@types"
 
 export { ArticleTableOfContents } from "./articleToc"
+export { DiagramRef } from "./diagramRef"
 
 export function ArticleSection({
   children,

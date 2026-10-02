@@ -6,11 +6,14 @@ import type { Stone } from "./goRules"
 
 export type GoViewerProps = {
   boardSize?: number
-  // Raw SGF text to load as the initial position/move sequence —
-  // supports AB/AW/AE "edited stones" for the starting setup, plus
-  // the main line of B/W moves for the arrow controls to step
-  // through. Takes precedence over `boardSize` when given (the
-  // board size comes from the SGF's own SZ property).
+  // Either raw SGF text to load as the initial position/move
+  // sequence (supports AB/AW/AE "edited stones" for the starting
+  // setup, plus the main line of B/W moves for the arrow controls
+  // to step through), or a path under /public (e.g.
+  // "/articles/foo/1.sgf") to fetch that text from — see
+  // GoViewerProvider's own doc for how the two are told apart.
+  // Takes precedence over `boardSize` when given (the board size
+  // comes from the SGF's own SZ property).
   sgf?: string
   // Static point labels (e.g. "A", "1") for boards not loaded from
   // an SGF — ignored when `sgf` is given, since its own LB labels
@@ -25,6 +28,8 @@ export type GoViewerProps = {
   // SGF's PL property (or Black-first default) without needing to
   // edit the SGF text itself.
   firstToMove?: Stone
+  // See GoViewerProvider's own doc.
+  label?: string
   className?: string
   children: React.ReactNode
 }
@@ -42,6 +47,7 @@ export function GoViewer({
   labels,
   startAt,
   firstToMove,
+  label,
   className = "",
   children,
 }: GoViewerProps) {
@@ -52,6 +58,7 @@ export function GoViewer({
       labels={labels}
       startAt={startAt}
       firstToMove={firstToMove}
+      label={label}
     >
       <div
         className={`not-prose flex flex-col items-center gap-4 px-4 py-4 ${className}`}

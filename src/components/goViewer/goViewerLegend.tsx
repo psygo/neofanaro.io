@@ -1,4 +1,8 @@
+"use client"
+
 import { WithReactChildren } from "@types"
+
+import { useGoViewer } from "./goViewerContext"
 
 // Mirrors <GoDiagram>'s own numbering + caption grid (see
 // go-diagram/go-diagram-number/go-diagram-scope in globals.css) —
@@ -18,8 +22,16 @@ export function GoViewerLegend({
   className = "",
   children,
 }: GoViewerLegendProps) {
+  // The `label` for a <DiagramRef label="..."/> to point at lives on
+  // <GoViewer> itself, not here — it has to reach whichever element
+  // actually carries the "go-diagram" counter (this one), but
+  // belongs with the other game-level props (sgf, boardSize, ...)
+  // rather than on a child that may not even be rendered.
+  const { label } = useGoViewer()
+
   return (
     <div
+      data-dia-key={label}
       className={`go-diagram grid max-w-100 grid-cols-[auto_1fr] gap-2 px-8 text-sm sm:text-base [&>p]:mt-0 [&>p]:mb-0 ${className}`}
     >
       {diaNumber !== undefined ? (

@@ -17,7 +17,6 @@ import {
   GoViewerBoard,
   GoViewerControls,
   GoViewerLegend,
-  readSgfFile,
 } from "@components/goViewer/exports"
 
 export function LittleKnifeGodBooks({
@@ -63,9 +62,7 @@ export function LittleKnifeGodBooks({
           </GoDiagramLegend>
         </GoDiagram> */}
         <GoViewer
-          sgf={readSgfFile(
-            "/articles/little-knife-god-books/1.sgf",
-          )}
+          sgf="/articles/little-knife-god-books/1.sgf"
           startAt="end"
         >
           <GoViewerBoard interactive={false} />
@@ -85,9 +82,7 @@ export function LittleKnifeGodBooks({
           </GoDiagramLegend>
         </GoDiagram> */}
         <GoViewer
-          sgf={readSgfFile(
-            "/articles/little-knife-god-books/2.sgf",
-          )}
+          sgf="/articles/little-knife-god-books/2.sgf"
           startAt="end"
         >
           <GoViewerBoard
@@ -117,9 +112,7 @@ export function LittleKnifeGodBooks({
           </GoDiagramLegend>
         </GoDiagram> */}
         <GoViewer
-          sgf={readSgfFile(
-            "/articles/little-knife-god-books/3.sgf",
-          )}
+          sgf="/articles/little-knife-god-books/3.sgf"
           startAt="end"
         >
           <GoViewerBoard
@@ -151,9 +144,7 @@ export function LittleKnifeGodBooks({
           </GoDiagramLegend>
         </GoDiagram> */}
         <GoViewer
-          sgf={readSgfFile(
-            "/articles/little-knife-god-books/4.sgf",
-          )}
+          sgf="/articles/little-knife-god-books/4.sgf"
           startAt="end"
         >
           <GoViewerBoard
@@ -186,9 +177,7 @@ export function LittleKnifeGodBooks({
           </GoDiagramLegend>
         </GoDiagram> */}
         <GoViewer
-          sgf={readSgfFile(
-            "/articles/little-knife-god-books/5.sgf",
-          )}
+          sgf="/articles/little-knife-god-books/5.sgf"
           startAt="end"
         >
           <GoViewerBoard
@@ -211,9 +200,7 @@ export function LittleKnifeGodBooks({
           </GoDiagramLegend>
         </GoDiagram> */}
         <GoViewer
-          sgf={readSgfFile(
-            "/articles/little-knife-god-books/6.sgf",
-          )}
+          sgf="/articles/little-knife-god-books/6.sgf"
           startAt="end"
         >
           <GoViewerBoard

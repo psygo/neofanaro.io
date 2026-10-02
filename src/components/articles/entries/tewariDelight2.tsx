@@ -14,7 +14,6 @@ import {
   GoViewer,
   GoViewerBoard,
   GoViewerLegend,
-  readSgfFile,
 } from "@components/goViewer/exports"
 
 export function TewariDelight2({ article }: ArticleProps) {
@@ -67,9 +66,7 @@ export function TewariDelight2({ article }: ArticleProps) {
           </GoDiagramLegend>
         </GoDiagram> */}
         <GoViewer
-          sgf={readSgfFile(
-            "/articles/tewari_delight_2/1.sgf",
-          )}
+          sgf="/articles/tewari_delight_2/1.sgf"
           startAt="end"
         >
           <GoViewerBoard
@@ -123,9 +120,7 @@ export function TewariDelight2({ article }: ArticleProps) {
           </GoDiagramLegend>
         </GoDiagram> */}
         <GoViewer
-          sgf={readSgfFile(
-            "/articles/tewari_delight_2/2.sgf",
-          )}
+          sgf="/articles/tewari_delight_2/2.sgf"
           startAt="end"
         >
           <GoViewerBoard
@@ -156,9 +151,7 @@ export function TewariDelight2({ article }: ArticleProps) {
           </GoDiagramLegend>
         </GoDiagram> */}
         <GoViewer
-          sgf={readSgfFile(
-            "/articles/tewari_delight_2/3.sgf",
-          )}
+          sgf="/articles/tewari_delight_2/3.sgf"
           startAt="end"
         >
           <GoViewerBoard
@@ -199,9 +192,7 @@ export function TewariDelight2({ article }: ArticleProps) {
           </GoDiagramLegend>
         </GoDiagram> */}
         <GoViewer
-          sgf={readSgfFile(
-            "/articles/tewari_delight_2/4.sgf",
-          )}
+          sgf="/articles/tewari_delight_2/4.sgf"
           startAt="end"
         >
           <GoViewerBoard
@@ -243,9 +234,7 @@ export function TewariDelight2({ article }: ArticleProps) {
           </GoDiagramLegend>
         </GoDiagram> */}
         <GoViewer
-          sgf={readSgfFile(
-            "/articles/tewari_delight_2/5.sgf",
-          )}
+          sgf="/articles/tewari_delight_2/5.sgf"
           startAt="end"
         >
           <GoViewerBoard
@@ -291,9 +280,7 @@ export function TewariDelight2({ article }: ArticleProps) {
           </GoDiagramLegend>
         </GoDiagram> */}
         <GoViewer
-          sgf={readSgfFile(
-            "/articles/tewari_delight_2/6.sgf",
-          )}
+          sgf="/articles/tewari_delight_2/6.sgf"
           startAt="end"
         >
           <GoViewerBoard
@@ -341,9 +328,7 @@ export function TewariDelight2({ article }: ArticleProps) {
           </GoDiagramLegend>
         </GoDiagram> */}
         <GoViewer
-          sgf={readSgfFile(
-            "/articles/tewari_delight_2/7.sgf",
-          )}
+          sgf="/articles/tewari_delight_2/7.sgf"
           startAt="end"
         >
           <GoViewerBoard
@@ -398,9 +383,7 @@ export function TewariDelight2({ article }: ArticleProps) {
           </GoDiagramLegend>
         </GoDiagram> */}
         <GoViewer
-          sgf={readSgfFile(
-            "/articles/tewari_delight_2/8.sgf",
-          )}
+          sgf="/articles/tewari_delight_2/8.sgf"
           startAt="end"
         >
           <GoViewerBoard
@@ -439,9 +422,7 @@ export function TewariDelight2({ article }: ArticleProps) {
           </GoDiagramLegend>
         </GoDiagram> */}
         <GoViewer
-          sgf={readSgfFile(
-            "/articles/tewari_delight_2/9.sgf",
-          )}
+          sgf="/articles/tewari_delight_2/9.sgf"
           startAt="end"
         >
           <GoViewerBoard

@@ -565,7 +565,7 @@ export function GoViewerBoard({
 
   const horizontalSegments = rows.flatMap((row) => {
     const strokeWidth =
-      row === 0 || row === boardSize - 1 ? 3 : 1
+      row === 0 || row === boardSize - 1 ? 2.5 : 1
     const segments: {
       key: string
       x1: number
@@ -627,7 +627,7 @@ export function GoViewerBoard({
 
   const verticalSegments = cols.flatMap((col) => {
     const strokeWidth =
-      col === 0 || col === boardSize - 1 ? 3 : 1
+      col === 0 || col === boardSize - 1 ? 2.5 : 1
     const segments: {
       key: string
       y1: number

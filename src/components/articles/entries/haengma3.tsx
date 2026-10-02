@@ -18,7 +18,6 @@ import {
   GoViewerBoard,
   GoViewerControls,
   GoViewerLegend,
-  readSgfFile,
 } from "@components/goViewer/exports"
 
 export function Haengma3({ article }: ArticleProps) {
@@ -106,7 +105,7 @@ export function Haengma3({ article }: ArticleProps) {
           </GoDiagramLegend>
         </GoDiagram> */}
         <GoViewer
-          sgf={readSgfFile("/articles/haengma3/1.sgf")}
+          sgf="/articles/haengma3/1.sgf"
           startAt="end"
         >
           <GoViewerBoard
@@ -144,7 +143,7 @@ export function Haengma3({ article }: ArticleProps) {
           </GoDiagramLegend>
         </GoDiagram> */}
         <GoViewer
-          sgf={readSgfFile("/articles/haengma3/2.sgf")}
+          sgf="/articles/haengma3/2.sgf"
           startAt="end"
         >
           <GoViewerBoard
@@ -178,7 +177,7 @@ export function Haengma3({ article }: ArticleProps) {
           </GoDiagramLegend>
         </GoDiagram> */}
         <GoViewer
-          sgf={readSgfFile("/articles/haengma3/2.1.sgf")}
+          sgf="/articles/haengma3/2.1.sgf"
           startAt="end"
         >
           <GoViewerBoard
@@ -212,7 +211,7 @@ export function Haengma3({ article }: ArticleProps) {
           </GoDiagramLegend>
         </GoDiagram> */}
         <GoViewer
-          sgf={readSgfFile("/articles/haengma3/3.sgf")}
+          sgf="/articles/haengma3/3.sgf"
           startAt="end"
         >
           <GoViewerBoard
@@ -245,7 +244,7 @@ export function Haengma3({ article }: ArticleProps) {
           </GoDiagramLegend>
         </GoDiagram> */}
         <GoViewer
-          sgf={readSgfFile("/articles/haengma3/4.sgf")}
+          sgf="/articles/haengma3/4.sgf"
           startAt="end"
         >
           <GoViewerBoard
@@ -284,7 +283,7 @@ export function Haengma3({ article }: ArticleProps) {
           </GoDiagramLegend>
         </GoDiagram> */}
         <GoViewer
-          sgf={readSgfFile("/articles/haengma3/5.sgf")}
+          sgf="/articles/haengma3/5.sgf"
           startAt="end"
         >
           <GoViewerBoard
@@ -332,7 +331,7 @@ export function Haengma3({ article }: ArticleProps) {
           </GoDiagramLegend>
         </GoDiagram> */}
         <GoViewer
-          sgf={readSgfFile("/articles/haengma3/6.sgf")}
+          sgf="/articles/haengma3/6.sgf"
           startAt="end"
         >
           <GoViewerBoard
@@ -365,7 +364,7 @@ export function Haengma3({ article }: ArticleProps) {
           </GoDiagramLegend>
         </GoDiagram> */}
         <GoViewer
-          sgf={readSgfFile("/articles/haengma3/6.1.sgf")}
+          sgf="/articles/haengma3/6.1.sgf"
           startAt="end"
         >
           <GoViewerBoard
