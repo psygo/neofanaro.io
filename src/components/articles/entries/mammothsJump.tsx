@@ -6,6 +6,7 @@ import {
   ArticleParagraph,
   ArticleSection,
   ArticleSectionTitle,
+  ArticleTableOfContents,
   ArticleYouTubeIframe,
 } from "../articleContent"
 import {
@@ -19,6 +20,7 @@ import {
 export function MammothsJump({ article }: ArticleProps) {
   return (
     <Article article={article}>
+      <ArticleTableOfContents />
       <ArticleSection>
         <ArticleSectionTitle>
           The Next Gen Shapes Series
@@ -121,7 +123,7 @@ export function MammothsJump({ article }: ArticleProps) {
           called the &quot;Elephant&apos;s Eye&quot;, and is
           usually a major weakness, since it splits the A
           from B. However, with proper setup and good
-          direction, White 1 could backfire into less
+          direction, White 1 could backfire into a less
           meaningful, slow, or even dangerous poke. After
           all, it&apos;s a move in-between two outside
           opposing stones, not generating any shape or
@@ -313,7 +315,7 @@ export function MammothsJump({ article }: ArticleProps) {
       </ArticleSection>
       <ArticleSection>
         <ArticleSectionTitle>
-          The Mammoth&apos;s Jump & The Tiger Shimari
+          The Mammoth&apos;s Jump and The Tiger Shimari
         </ArticleSectionTitle>
         <ArticleParagraph>T</ArticleParagraph>
       </ArticleSection>

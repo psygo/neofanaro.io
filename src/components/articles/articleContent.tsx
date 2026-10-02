@@ -1,7 +1,13 @@
+"use client"
+
+import { useId } from "react"
+
 import Image from "next/image"
 import Link from "next/link"
 
 import { WithReactChildren } from "@types"
+
+export { ArticleTableOfContents } from "./articleToc"
 
 export function ArticleSection({
   children,
@@ -178,7 +184,20 @@ export function ArticleCode({
 export function ArticleSectionTitle({
   children,
 }: WithReactChildren) {
-  return <h2 className="font-extrabold">{children}</h2>
+  const id = useId()
+
+  // The visible number is a CSS counter (see .article-section-title
+  // in globals.css), not React state — it has to stay in sync with
+  // however many of these render, and a counter can't desync the way
+  // a second, independently-maintained number could.
+  return (
+    <h2
+      id={id}
+      className="article-section-title font-extrabold"
+    >
+      {children}
+    </h2>
+  )
 }
 
 export function ArticleBlockQuote({

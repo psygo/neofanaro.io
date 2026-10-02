@@ -14,6 +14,7 @@ import { LangLink } from "../common/langLink"
 import { VoteButtons } from "./voteButtons"
 import {
   ArticleDate,
+  ArticleLangs,
   ArticleTags,
   ArticleViews,
 } from "./articleTitleSection"
@@ -49,11 +50,7 @@ export function ArticleCard({ post }: ArticleCardProps) {
               className="flex gap-1 text-sm font-bold text-slate-700 dark:text-slate-300"
             />
             <ArticleTags tags={post.tags} />
-            <div className="flex gap-2">
-              {post.langs.map((l, i) => (
-                <ArticleLang key={i} lang={l} />
-              ))}
-            </div>
+            <ArticleLangs langs={post.langs} />
           </div>
           <div className="flex items-center gap-2">
             <ArticleDate
@@ -95,22 +92,5 @@ function ArticleDescription({
     <p className="text-sm text-slate-700 dark:text-slate-300">
       {children}
     </p>
-  )
-}
-
-type ArticleLangProps = {
-  lang: string
-}
-
-function ArticleLang({ lang }: ArticleLangProps) {
-  return (
-    <span
-      className={`fi rounded-xl fi-${lang === "pt" ? "br" : "us"}`}
-      style={{
-        width: "20px",
-        height: "20px",
-        // marginBottom: "2px",
-      }}
-    ></span>
   )
 }

@@ -8,6 +8,7 @@
   - [A book on the 3-5 6-3, or tiger shimari](https://amzn.asia/d/0i1Ik9mC)
   - [Sensei's Library on the 3-5 6-3 shimari](https://senseis.xmp.net/?3563Enclosure)
   - [Meienism](https://senseis.xmp.net/?Meienism)
+  - [An example of an mammoth's jump being used to defend a moyo](https://youtu.be/FqiSshkeXKM?t=2210)
 
 - Better country flags
 - Multi-category article-cards (with more than one color on the left border).
@@ -27,6 +28,10 @@
 
 ## Articles
 
+- Layers of thought in Go as a much better way of assessing progress.
+  - Dealing with the rules, then ataris, then second line basic patterns, etc.
+  - Dealing with the clock is also another layer, I suppose.
+  - Where am I in the layers?
 - [36% dos jogadores 8d no Fox sao IA, e 22% dos 7d tb](https://www.bilibili.com/video/BV1iHo6BSESd/?bvid=BV1iHo6BSESd)
 - Aquarifolio
 - Kifu Book

@@ -44,7 +44,15 @@
 }
 
 .go-diagram-scope {
-  counter-reset: dia-diagram;
+  counter-reset: dia-diagram article-section;
+}
+
+.article-section-title {
+  counter-increment: article-section;
+}
+
+.article-section-title::before {
+  content: counter(article-section) ". ";
 }
 
 .go-diagram {

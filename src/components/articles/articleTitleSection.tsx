@@ -84,3 +84,30 @@ export function ArticleTags({ tags }: ArticleTagsProps) {
     </div>
   )
 }
+
+type ArticleLangsProps = {
+  langs: string[]
+}
+
+export function ArticleLangs({ langs }: ArticleLangsProps) {
+  return (
+    <div className="flex gap-2">
+      {langs.map((lang, i) => (
+        <ArticleLangFlag key={i} lang={lang} />
+      ))}
+    </div>
+  )
+}
+
+type ArticleLangFlagProps = {
+  lang: string
+}
+
+function ArticleLangFlag({ lang }: ArticleLangFlagProps) {
+  return (
+    <span
+      className={`fi rounded-xl fi-${lang === "pt" ? "br" : "us"}`}
+      style={{ width: "20px", height: "20px" }}
+    ></span>
+  )
+}

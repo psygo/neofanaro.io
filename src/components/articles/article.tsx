@@ -14,6 +14,7 @@ import { ArticleVoteWidget } from "./articleVoteWidget"
 import { ArticleWidthSlider } from "./articleWidthSlider"
 import {
   ArticleDate,
+  ArticleLangs,
   ArticleTags,
   ArticleTitle,
   ArticleTitleSection,
@@ -84,7 +85,10 @@ export function Article({
         </div>
         <ArticleViews views={article.views || 0} />
         <ArticleDate date={new Date(article.date)} />
-        <ArticleTags tags={article.tags} />
+        <div className="flex flex-wrap items-center gap-3">
+          <ArticleTags tags={article.tags} />
+          <ArticleLangs langs={article.langs} />
+        </div>
         <div className="mt-1">
           <ArticleVoteWidget articleId={article.id} />
         </div>
