@@ -2,6 +2,7 @@
 
 ## Priorities
 
+- For smaller viewports, ditch absolute width for the diagrams.
 - Mention the diagram which revers back to the regular 4-4 post-AI joseki.
 
 - Reference Go viewer diagrams programmatically.

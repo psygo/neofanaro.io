@@ -76,7 +76,7 @@ export function MammothsJump({ article }: ArticleProps) {
           sgf="/articles/mammoths-jump/1.sgf"
           startAt="end"
         >
-          <GoViewerBoard interactive={true} size={425} />
+          <GoViewerBoard interactive={true} />
           <GoViewerControls />
           <GoViewerLegend>
             A cap from a game between Kim Eunji 9p (Black)
@@ -251,7 +251,6 @@ export function MammothsJump({ article }: ArticleProps) {
             interactive={true}
             showMoveNumbers={true}
             fromNumber={32}
-            size={425}
           />
           <GoViewerControls />
           <GoViewerLegend>
@@ -311,7 +310,6 @@ export function MammothsJump({ article }: ArticleProps) {
             interactive={true}
             showMoveNumbers={true}
             fromNumber={31}
-            size={425}
           />
           <GoViewerControls />
           <GoViewerLegend>
@@ -348,7 +346,6 @@ export function MammothsJump({ article }: ArticleProps) {
             interactive={true}
             showMoveNumbers={true}
             // fromNumber={31}
-            size={425}
           />
           <GoViewerControls />
           <GoViewerLegend>
@@ -382,7 +379,6 @@ export function MammothsJump({ article }: ArticleProps) {
             interactive={true}
             showMoveNumbers={true}
             // fromNumber={31}
-            size={425}
           />
           <GoViewerControls />
           <GoViewerLegend>
@@ -407,7 +403,6 @@ export function MammothsJump({ article }: ArticleProps) {
             interactive={true}
             showMoveNumbers={true}
             // fromNumber={31}
-            size={425}
           />
           <GoViewerControls />
           <GoViewerLegend>
@@ -529,7 +524,6 @@ export function MammothsJump({ article }: ArticleProps) {
           <GoViewerBoard
             interactive={true}
             showMoveNumbers={true}
-            size={425}
           />
           <GoViewerControls />
           <GoViewerLegend>
