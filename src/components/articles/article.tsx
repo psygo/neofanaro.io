@@ -9,6 +9,7 @@ import { useLang } from "@hooks"
 import { localizedText } from "@utils"
 
 import { ArticleComments } from "./articleComments"
+// import { ArticleProgressBar } from "./articleProgressBar"
 import { ArticleViewTracker } from "./articleViewTracker"
 import { ArticleVoteWidget } from "./articleVoteWidget"
 import { ArticleWidthSlider } from "./articleWidthSlider"
@@ -68,6 +69,7 @@ export function Article({
       style={{ maxWidth: `${maxWidth}rem` }}
     >
       <ArticleViewTracker path={article.path} />
+      {/* <ArticleProgressBar /> */}
       <ArticleTitleSection>
         <div className="mb-5 flex items-center justify-between gap-20">
           <ArticleTitle>

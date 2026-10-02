@@ -48,7 +48,10 @@ export function ArticleTableOfContents() {
           </h2>
           <ol className="flex flex-col gap-0 pl-8 text-[11pt]">
             {sections.map((section) => (
-              <li key={section.id}>
+              <li
+                key={section.id}
+                className="mt-1.5 mb-1.5"
+              >
                 <a
                   href={`#${section.id}`}
                   className="text-slate-600 no-underline hover:underline dark:text-slate-400"
