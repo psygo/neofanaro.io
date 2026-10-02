@@ -30,6 +30,25 @@ export function ArticleParagraph({
   )
 }
 
+type ArticleQuoteProps = WithReactChildren & {
+  textAlign?: React.CSSProperties["textAlign"]
+}
+
+export function ArticleQuote({
+  children,
+  textAlign = "justify",
+}: ArticleQuoteProps) {
+  return (
+    <p
+      className="px-8 hyphens-auto italic"
+      // className="relative px-8 pt-2 hyphens-auto before:absolute before:top-0 before:left-3 before:font-serif before:text-4xl before:leading-none before:text-slate-400 before:content-['\201C'] after:absolute after:top-0 after:right-3 after:font-serif after:text-4xl after:leading-none after:text-slate-400 after:content-['\201D'] dark:before:text-slate-400 dark:after:text-slate-400"
+      style={{ textAlign }}
+    >
+      {children}
+    </p>
+  )
+}
+
 type ArticleLinkProps = {
   children: React.ReactNode
   href: string
@@ -242,7 +261,7 @@ export function ArticleYouTubeIframe({
 }: ArticleIframeProps) {
   return (
     <div className="mt-5 mb-5 flex justify-center">
-      <div className="mx-6 flex aspect-video w-full max-w-lg items-center overflow-hidden rounded-xl border border-slate-200 shadow-lg dark:border-slate-700">
+      <div className="mx-6 flex aspect-video w-full max-w-lg items-center overflow-hidden rounded-lg border border-slate-200 shadow-lg dark:border-slate-700">
         <iframe
           className="h-full w-full"
           src={src}

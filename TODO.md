@@ -2,6 +2,8 @@
 
 ## Priorities
 
+- Reference Go viewer diagrams programmatically.
+
 - Add a mention to the next shapes in the series, such as the [_scorpion_](https://senseis.xmp.net/?ScorpionShape) and.
 - Add a basic example of attacking with the Elephant's Jump to the Mammoth's Jump article.
 - The Mammoth's Jump is also the shape in an unusual shimari.

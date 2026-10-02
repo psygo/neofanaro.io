@@ -122,7 +122,7 @@ function shrinkForMultiDigit(
   text: string | number,
 ): number {
   return String(text).length > 1
-    ? fontSize * 0.83
+    ? fontSize * 0.88
     : fontSize
 }
 

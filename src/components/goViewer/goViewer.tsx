@@ -2,6 +2,7 @@
 
 import { GoViewerProvider } from "./goViewerContext"
 import type { SgfLabel } from "./goSgf"
+import type { Stone } from "./goRules"
 
 export type GoViewerProps = {
   boardSize?: number
@@ -20,6 +21,10 @@ export type GoViewerProps = {
   // for a finished position/problem solution, especially when this
   // board has no <GoViewerControls> to step forward with.
   startAt?: "start" | "end"
+  // Who moves first — see GoViewerProvider's own doc. Overrides the
+  // SGF's PL property (or Black-first default) without needing to
+  // edit the SGF text itself.
+  firstToMove?: Stone
   className?: string
   children: React.ReactNode
 }
@@ -36,6 +41,7 @@ export function GoViewer({
   sgf,
   labels,
   startAt,
+  firstToMove,
   className = "",
   children,
 }: GoViewerProps) {
@@ -45,6 +51,7 @@ export function GoViewer({
       sgf={sgf}
       labels={labels}
       startAt={startAt}
+      firstToMove={firstToMove}
     >
       <div
         className={`not-prose flex flex-col items-center gap-4 px-4 py-4 ${className}`}

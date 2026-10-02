@@ -4,10 +4,12 @@ import { Article } from "@components/articles/article"
 import {
   ArticleLink,
   ArticleParagraph,
+  ArticleQuote,
   ArticleSection,
   ArticleSectionTitle,
   ArticleTableOfContents,
   ArticleYouTubeIframe,
+  NoWrap,
 } from "../articleContent"
 import {
   GoViewer,
@@ -61,8 +63,9 @@ export function MammothsJump({ article }: ArticleProps) {
           The &quot;Mammoth&apos;s Jump&quot; is exemplified
           in Dia. 1, in a{" "}
           <ArticleLink href="https://ai-sensei.com/game/wCbiGfZSh7TjX5eXM8TDgvMzi5u2/46aa4a9d-8754-40e0-8320-39e85bcc6696">
-            game between Kim Eunji 9p (Black) and Lee
-            Jihyeon 9p (White)
+            game between Kim Eunji <NoWrap>김은지</NoWrap>{" "}
+            9p (Black) and Lee Jihyeon{" "}
+            <NoWrap>이지현</NoWrap> 9p (White)
           </ArticleLink>
           , played on September 20th, 2026:
         </ArticleParagraph>
@@ -350,7 +353,9 @@ export function MammothsJump({ article }: ArticleProps) {
         <ArticleParagraph>
           If White tries to get in, Black will switch to
           defending the right side, dealing with the lone
-          Black group in the center separately:
+          Black group in the center separately, while
+          forcing White into creating an empty triangle with
+          the 2-4-6 shape:
         </ArticleParagraph>
         <GoViewer
           sgf={readSgfFile(
@@ -372,10 +377,11 @@ export function MammothsJump({ article }: ArticleProps) {
         <ArticleParagraph>
           The Mammoth&apos;s Jump could serve similarly
           flexible purposes. For example, in the first NEC
-          China-Japan team super-match, in 1984, Yoda
-          Norimoto 5p unfortunately couldn&apos;t find the
-          key move in defending his moyo while also reducing
-          his opponent&apos;s, Jiang Zhujiu 7p:
+          Japan-China Super Go team match, in 1984, Yoda
+          Norimoto 5p (Black) unfortunately couldn&apos;t
+          find the key move in defending his moyo while also
+          reducing his opponent&apos;s, Jiang Zhujiu 7p
+          (White):
         </ArticleParagraph>
         <GoViewer
           sgf={readSgfFile(
@@ -408,8 +414,8 @@ export function MammothsJump({ article }: ArticleProps) {
             <em>China Japan Super Go Match</em> series
           </ArticleLink>{" "}
           &mdash; Go Game Series is, in my opinion, the best
-          Go YouTube channel at this point &mdash; , which
-          is where that example comes from:
+          Go YouTube channel at this point &mdash;, which is
+          where that example comes from:
         </ArticleParagraph>
         <ArticleYouTubeIframe
           src="https://www.youtube.com/embed/FqiSshkeXKM"
@@ -420,7 +426,88 @@ export function MammothsJump({ article }: ArticleProps) {
         <ArticleSectionTitle>
           The Mammoth&apos;s Jump and The Tiger Shimari
         </ArticleSectionTitle>
-        <ArticleParagraph>T</ArticleParagraph>
+        <ArticleParagraph>
+          The Mammoth&apos;s Jump, when placed in the
+          corner, with the 5-3 first probably, has even
+          received a its own moniker, the{" "}
+          <ArticleLink href="https://senseis.xmp.net/?3563Enclosure">
+            Tiger Shimari
+          </ArticleLink>
+          :
+        </ArticleParagraph>
+        <GoViewer
+          sgf={readSgfFile(
+            "/articles/mammoths-jump/tiger_1.sgf",
+          )}
+          startAt="end"
+        >
+          <GoViewerBoard
+            size={330}
+            region={{
+              minRow: 9,
+              maxRow: 18,
+              minCol: 9,
+              maxCol: 18,
+            }}
+          />
+          <GoViewerLegend>
+            The Tiger Shimari.
+          </GoViewerLegend>
+        </GoViewer>
+        <ArticleParagraph>
+          Kataoka Satoshi <NoWrap>片岡聡</NoWrap> 9p gave it
+          the following amusing commentary, during a game
+          between O Meien <NoWrap>王銘琬</NoWrap> 9p (Black)
+          and Takagi Shoichi <NoWrap>高木祥</NoWrap> 9p
+          (White), in 2001 &mdash; that enclosure was even
+          classed as a{" "}
+          <ArticleLink href="https://senseis.xmp.net/?Meienism">
+            Meienism
+          </ArticleLink>
+          :
+        </ArticleParagraph>
+        <ArticleQuote>
+          It is just like dislocating one&apos;s jaw.
+        </ArticleQuote>
+        <ArticleParagraph>
+          But he also added:
+        </ArticleParagraph>
+        <ArticleQuote>
+          If Black is able to play A next (Dia. 11), it
+          would be quite the nice shape for Black. However,
+          there are no such good moves available for White.
+        </ArticleQuote>
+        <ArticleParagraph>
+          The Tiger Shimari seems to even have been played
+          by the legendary Huang Longshi{" "}
+          <NoWrap>黄龍士</NoWrap> (1651 - 1700) and Takemiya
+          Masaki <NoWrap>武宮正樹</NoWrap> 9p, according to
+          John Fairbairn.
+        </ArticleParagraph>
+        <ArticleParagraph>
+          Even though that curious pattern is mostly used
+          out of boredom, or to get a competitive edge over
+          the opponent, it does have its place as a possible
+          best move. For example, in Dia. 12, AI gives A, B
+          and C as White&apos;s best options, in that order:
+        </ArticleParagraph>
+        <GoViewer
+          sgf={readSgfFile(
+            "/articles/mammoths-jump/tiger_2.sgf",
+          )}
+          startAt="end"
+        >
+          <GoViewerBoard
+            interactive={true}
+            showMoveNumbers={true}
+            size={425}
+          />
+          <GoViewerControls />
+          <GoViewerLegend>
+            A situation in which the Tiger Shimari is one of
+            the best moves.
+          </GoViewerLegend>
+        </GoViewer>
       </ArticleSection>
     </Article>
   )

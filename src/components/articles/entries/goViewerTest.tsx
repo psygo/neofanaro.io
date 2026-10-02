@@ -52,6 +52,18 @@ export function GoViewerTest({ article }: ArticleProps) {
 
       <ArticleSection>
         <ArticleParagraph textAlign="left">
+          <code>firstToMove=&quot;W&quot;</code> overrides
+          who opens — White here, despite no SGF/PL saying
+          so:
+        </ArticleParagraph>
+        <GoViewer boardSize={9} firstToMove="W">
+          <GoViewerBoard />
+          <GoViewerInfo />
+        </GoViewer>
+      </ArticleSection>
+
+      <ArticleSection>
+        <ArticleParagraph textAlign="left">
           Same rules engine, a cropped view of just the
           top-left corner of a 19x19 board — the
           &quot;partial board&quot; option, useful for

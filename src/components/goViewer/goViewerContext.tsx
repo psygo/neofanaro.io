@@ -51,6 +51,7 @@ type Action =
       sgf?: string
       labels: SgfLabel[]
       startAt: "start" | "end"
+      firstToMove?: Stone
     }
 
 function toRecordedMoves(
@@ -71,12 +72,16 @@ function toRecordedMoves(
 function fromParsedSgf(
   parsed: ParsedSgf,
   startAt: "start" | "end" = "start",
+  // Overrides the SGF's own PL property (or its B-moves-first
+  // default) when given — lets a caller force who opens without
+  // having to edit the SGF text itself.
+  firstToMove?: Stone,
 ): GoViewerState {
   const moves = toRecordedMoves(parsed)
   return {
     boardSize: parsed.boardSize,
     setupBoard: applySetup(parsed.boardSize, parsed.setup),
-    initialToMove: parsed.initialToMove,
+    initialToMove: firstToMove ?? parsed.initialToMove,
     moves,
     labels: parsed.labels,
     viewIndex: startAt === "end" ? moves.length : 0,
@@ -214,6 +219,7 @@ function reducer(
         action.sgf,
         action.labels,
         action.startAt,
+        action.firstToMove,
       )
   }
 }
@@ -223,13 +229,19 @@ function initialState(
   sgf?: string,
   labels: SgfLabel[] = [],
   startAt: "start" | "end" = "start",
+  firstToMove?: Stone,
 ): GoViewerState {
-  if (sgf) return fromParsedSgf(parseSgf(sgf), startAt)
+  if (sgf)
+    return fromParsedSgf(
+      parseSgf(sgf),
+      startAt,
+      firstToMove,
+    )
 
   return {
     boardSize,
     setupBoard: createEmptyBoard(boardSize),
-    initialToMove: "B",
+    initialToMove: firstToMove ?? "B",
     moves: [],
     labels,
     viewIndex: 0,
@@ -279,6 +291,11 @@ export type GoViewerProviderProps = {
   // displaying a finished position/problem solution, especially
   // when no <GoViewerControls> are rendered to step forward with).
   startAt?: "start" | "end"
+  // Who moves first. Defaults to the SGF's own PL property (and
+  // from there to Black, standard Go convention) when `sgf` is
+  // given, or to Black otherwise — set this to override either,
+  // without having to edit the SGF text itself.
+  firstToMove?: Stone
   children: React.ReactNode
 }
 
@@ -287,17 +304,19 @@ export function GoViewerProvider({
   sgf,
   labels,
   startAt = "start",
+  firstToMove,
   children,
 }: GoViewerProviderProps) {
   const [state, dispatch] = useReducer(
     reducer,
-    { boardSize, sgf, labels, startAt },
+    { boardSize, sgf, labels, startAt, firstToMove },
     (init) =>
       initialState(
         init.boardSize,
         init.sgf,
         init.labels,
         init.startAt,
+        init.firstToMove,
       ),
   )
 
@@ -322,9 +341,10 @@ export function GoViewerProvider({
       sgf,
       labels: labels ?? [],
       startAt,
+      firstToMove,
     })
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [sgf, boardSize, startAt])
+  }, [sgf, boardSize, startAt, firstToMove])
 
   const placeStone = useCallback(
     (row: number, col: number) =>
