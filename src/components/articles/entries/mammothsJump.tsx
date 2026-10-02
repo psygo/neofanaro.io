@@ -314,9 +314,10 @@ export function MammothsJump({ article }: ArticleProps) {
           The Mammoth&apos;s Jump is admittedly very niche.
           No wonder, this article is likely the longest
           essay on it to this day if not for a very long
-          time. But the point in studying it is to
-          generalize the underlying, related techniques to
-          other areas of the game.
+          time &mdash; or forever, although that&apos;s also
+          a very long time. But the point in studying it is
+          to generalize the underlying, related techniques
+          to other areas of the game.
         </ArticleParagraph>
         <ArticleParagraph>
           And one such area is related to moyos. Sometimes,
@@ -508,6 +509,132 @@ export function MammothsJump({ article }: ArticleProps) {
             the best moves.
           </GoViewerLegend>
         </GoViewer>
+        <ArticleParagraph>
+          The main idea behind the Tiger Shimari is to
+          invite White into either A or B in Dia. 13, in
+          order to attack the splitting group from both
+          sides, building territory from the attack.
+        </ArticleParagraph>
+        <GoViewer
+          sgf={readSgfFile(
+            "/articles/mammoths-jump/tiger_3.sgf",
+          )}
+          startAt="end"
+        >
+          <GoViewerBoard
+            size={330}
+            region={{
+              minRow: 9,
+              maxRow: 18,
+              minCol: 9,
+              maxCol: 18,
+            }}
+          />
+          <GoViewerLegend>
+            Black invites both A and B, in order to attack
+            it from both sides.
+          </GoViewerLegend>
+        </GoViewer>
+        <ArticleParagraph>
+          As usual in the post-AI era, refuting non-standard
+          strategies is as simple as playing standard,
+          reasonable moves. The A shoulder hit in Dia. 13 is
+          a simple first idea, all White needs to avoid is
+          falling for the shortage of liberties trap after
+          11:
+        </ArticleParagraph>
+        <GoViewer
+          sgf={readSgfFile(
+            "/articles/mammoths-jump/tiger_4.sgf",
+          )}
+          startAt="end"
+        >
+          <GoViewerBoard
+            size={330}
+            showMoveNumbers
+            region={{
+              minRow: 9,
+              maxRow: 18,
+              minCol: 7,
+              maxCol: 18,
+            }}
+          />
+          <GoViewerLegend>
+            The first way to deal with the Tiger Shimari,
+            according to AI.
+          </GoViewerLegend>
+        </GoViewer>
+        <ArticleParagraph>
+          Unexpectedly, a floating group while Black secures
+          the corner is enough for AI.
+        </ArticleParagraph>
+        <ArticleParagraph>
+          Starting from the other shoulder hit, this is what
+          AI suggests:
+        </ArticleParagraph>
+        <GoViewer
+          sgf={readSgfFile(
+            "/articles/mammoths-jump/tiger_5.sgf",
+          )}
+          startAt="end"
+        >
+          <GoViewerBoard
+            size={330}
+            showMoveNumbers
+            region={{
+              minRow: 9,
+              maxRow: 18,
+              minCol: 7,
+              maxCol: 18,
+            }}
+          />
+          <GoViewerLegend>
+            The second shoulder hit way of dealing with the
+            Tiger Shimari, according to AI.
+          </GoViewerLegend>
+        </GoViewer>
+        <ArticleParagraph>
+          Locally, White could continue with A. And, if
+          Black chooses B instead 8, this is the final
+          result:
+        </ArticleParagraph>
+        <GoViewer
+          sgf={readSgfFile(
+            "/articles/mammoths-jump/tiger_6.sgf",
+          )}
+          startAt="end"
+        >
+          <GoViewerBoard
+            size={330}
+            showMoveNumbers
+            region={{
+              minRow: 9,
+              maxRow: 18,
+              minCol: 7,
+              maxCol: 18,
+            }}
+          />
+          <GoViewerLegend>
+            A fierce battle ending in a peaceful exchange.
+          </GoViewerLegend>
+        </GoViewer>
+        <ArticleParagraph>
+          At least to me, Dia. 16 is most surprising, since
+          giving Black such nice influence on the right with
+          a healthy corner as well, while only getting a
+          stable group on the left doesn&apos;t seem like a
+          good trade. However, we have to add that the
+          typicaly post-AI invasion pattern from A has its
+          power severely diminished by the atari at B.
+        </ArticleParagraph>
+        <ArticleParagraph>
+          According to AI, playing the Tiger Shimari and its
+          sequences fall within a 1- to 2-point loss, which
+          is largely irrelevant when compared to any battle
+          in the middle-game. No human can claim to have
+          lost a game to any other non-AI entity by taking
+          only a max 2-point loss at the beginning.
+        </ArticleParagraph>
       </ArticleSection>
     </Article>
   )
