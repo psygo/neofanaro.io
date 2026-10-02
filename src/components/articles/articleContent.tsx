@@ -165,7 +165,10 @@ export function ImageLegend({
   textAlign = "left",
 }: ImageLegendProps) {
   return (
-    <p className="hyphens-auto" style={{ textAlign }}>
+    <p
+      className="mx-auto max-w-100 hyphens-auto"
+      style={{ textAlign }}
+    >
       {children}
     </p>
   )

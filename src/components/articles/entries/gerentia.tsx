@@ -296,7 +296,7 @@ export function Gerentia({ article }: ArticleProps) {
               regularly have with them these days.
             </ArticleParagraph>
             <ArticleParagraph>
-              On its own, this shift was already able to
+              On its own, that shift was already able to
               spawn new categories of tools. However, an
               assistant which is only able to chat is quite
               limiting. Ideally, we&apos;d want it to also
@@ -377,7 +377,8 @@ export function Gerentia({ article }: ArticleProps) {
               <ImageLegend>
                 AI is already capable of handling a full
                 interaction, forwarding payment methods and
-                making changes to the database.
+                making the respectively necessary changes to
+                the database.
               </ImageLegend>
             </ArticleImageWithLegend>
             <ArticleImageWithLegend
@@ -413,9 +414,9 @@ export function Gerentia({ article }: ArticleProps) {
               GerentIA is built to be able to manage any
               type of business, and, to that end, it makes
               use of a versatile feature-extension system,
-              i.e., the user configures which features they
-              would like to add to their business
-              management. In the long run, we also intend to
+              that is, the user configures which features
+              should be added to their business management
+              system. In the long run, we also intend to
               offer the ability for third parties to develop
               their own extensions.
             </ArticleParagraph>
@@ -427,9 +428,9 @@ export function Gerentia({ article }: ArticleProps) {
             >
               <ImageLegend>
                 GerentIA is broken down into extensions,
-                which offers total flexibility to
-                configuring it to each business&apos;
-                specific needs.
+                which offers much more flexibility to
+                configuring the platform to each
+                business&apos; specific needs.
               </ImageLegend>
             </ArticleImageWithLegend>
           </ArticleSection>
@@ -439,15 +440,15 @@ export function Gerentia({ article }: ArticleProps) {
             </ArticleSectionTitle>
             <ArticleParagraph>
               There are many more features already
-              available, and many others are on their way!
+              available, and plenty more are on their way!
               Access GerentIA for free and start automating
-              your business in the new AI era!
+              your business for the new AI era!
             </ArticleParagraph>
             <ArticleParagraph>
               To wrap up, we&apos;re always open to
               suggestions and criticism. If you have any,
               just leave them in the comments! The GIA team
-              thanks you!
+              would really appreciate it!
             </ArticleParagraph>
             <ArticleImageWithLegend
               src="/articles/gerentia/gia_logo_256.png"

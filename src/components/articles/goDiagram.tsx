@@ -70,7 +70,10 @@ export function GoDiagramLegend({
   textAlign = "left",
 }: GoDiagramLegendProps) {
   return (
-    <p className="hyphens-auto" style={{ textAlign }}>
+    <p
+      className="max-w-100 hyphens-auto"
+      style={{ textAlign }}
+    >
       {children}
     </p>
   )
