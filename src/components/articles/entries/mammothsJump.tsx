@@ -496,7 +496,7 @@ export function MammothsJump({ article }: ArticleProps) {
           by the legendary Huang Longshi{" "}
           <NoWrap>黄龍士</NoWrap> (1651 - 1700) and Takemiya
           Masaki <NoWrap>武宮正樹</NoWrap> 9p, according to
-          John Fairbairn. And, on Amazon Japan, it also has
+          John Fairbairn. And, on Amazon Japan, it also has{" "}
           <ArticleLink href="https://amzn.asia/d/04LDkwOj">
             its own book
           </ArticleLink>{" "}
@@ -508,7 +508,8 @@ export function MammothsJump({ article }: ArticleProps) {
           width={300}
         >
           <ImageLegend>
-            A whole book on the Tiger Shimari.
+            A whole book on the Tiger Shimari. It&apos;s
+            longer than this article!
           </ImageLegend>
         </ArticleImageWithLegend>
         <ArticleParagraph>
