@@ -308,10 +308,113 @@ export function MammothsJump({ article }: ArticleProps) {
           The Mammoth&apos;s Jump for Moyo Development
         </ArticleSectionTitle>
         <ArticleParagraph>
-          Another context in which the Mammoth&apos;s Jump
-          shows itself, even more so as a new move, is in
-          moyo development.
+          The Mammoth&apos;s Jump is admittedly very niche.
+          No wonder, this article is likely the longest
+          essay on it to this day if not for a very long
+          time. But the point in studying it is to
+          generalize the underlying, related techniques to
+          other areas of the game.
         </ArticleParagraph>
+        <ArticleParagraph>
+          And one such area is related to moyos. Sometimes,
+          the Elephant&apos;s Jump can be an amazing tool
+          for defending moyos:
+        </ArticleParagraph>
+        <GoViewer
+          sgf={readSgfFile(
+            "/articles/mammoths-jump/eleph_1.sgf",
+          )}
+          startAt="end"
+        >
+          <GoViewerBoard
+            interactive={true}
+            showMoveNumbers={true}
+            // fromNumber={31}
+            size={425}
+          />
+          <GoViewerControls />
+          <GoViewerLegend>
+            Black 1 goes one line beyond the
+            influence-collision area.
+          </GoViewerLegend>
+        </GoViewer>
+        <ArticleParagraph>
+          Both Black and White are trying to expand their
+          moyos, with the influence-collision area being
+          around A. With 1 on Dia. 8, Black aims at skipping
+          one step further than A, while also reserving the
+          possibility of turning that move into more of an
+          invasion or reduction, rather than a moyo
+          expansion.
+        </ArticleParagraph>
+        <ArticleParagraph>
+          If White tries to get in, Black will switch to
+          defending the right side, dealing with the lone
+          Black group in the center separately:
+        </ArticleParagraph>
+        <GoViewer
+          sgf={readSgfFile(
+            "/articles/mammoths-jump/eleph_2.sgf",
+          )}
+          startAt="end"
+        >
+          <GoViewerBoard
+            interactive={true}
+            showMoveNumbers={true}
+            // fromNumber={31}
+            size={425}
+          />
+          <GoViewerControls />
+          <GoViewerLegend>
+            Black deals with its center group separately.
+          </GoViewerLegend>
+        </GoViewer>
+        <ArticleParagraph>
+          The Mammoth&apos;s Jump could serve similarly
+          flexible purposes. For example, in the first NEC
+          China-Japan team super-match, in 1984, Yoda
+          Norimoto 5p unfortunately couldn&apos;t find the
+          key move in defending his moyo while also reducing
+          his opponent&apos;s, Jiang Zhujiu 7p:
+        </ArticleParagraph>
+        <GoViewer
+          sgf={readSgfFile(
+            "/articles/mammoths-jump/nec_1.sgf",
+          )}
+          startAt="end"
+        >
+          <GoViewerBoard
+            interactive={true}
+            showMoveNumbers={true}
+            // fromNumber={31}
+            size={425}
+          />
+          <GoViewerControls />
+          <GoViewerLegend>
+            Black 1, the key move to defend its moyo while
+            also reducing White&apos;s center.
+          </GoViewerLegend>
+        </GoViewer>
+        <ArticleParagraph>
+          Curiously, Black 1 happens to be a Mammoth&apos;s
+          Jump from A, and an Elephant&apos;s Jump from from
+          B.
+        </ArticleParagraph>
+        <ArticleParagraph>
+          If you would like to know how Black should deal
+          with White&apos; pokes, check out{" "}
+          <ArticleLink href="https://youtu.be/FqiSshkeXKM?t=2218">
+            Go Game Series&apos;s{" "}
+            <em>China Japan Super Go Match</em> series
+          </ArticleLink>{" "}
+          &mdash; Go Game Series is, in my opinion, the best
+          Go YouTube channel at this point &mdash; , which
+          is where that example comes from:
+        </ArticleParagraph>
+        <ArticleYouTubeIframe
+          src="https://www.youtube.com/embed/FqiSshkeXKM"
+          title="Go Game Series - TIGER'S TEETH! [China Japan Super Go Match] Season 1 Episode 3"
+        />
       </ArticleSection>
       <ArticleSection>
         <ArticleSectionTitle>
