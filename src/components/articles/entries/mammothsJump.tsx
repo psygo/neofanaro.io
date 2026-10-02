@@ -28,7 +28,7 @@ export function MammothsJump({ article }: ArticleProps) {
         <ArticleParagraph>
           There&apos;s nothing new under the sun. But, at
           the same time, the post-AI era seems to emphasize
-          different enough shapes for us to feel like
+          different enough shapes for us to maybe feel like
           they&apos;re new.
         </ArticleParagraph>
         <ArticleParagraph>

@@ -50,11 +50,11 @@ export function ArticleTableOfContents() {
             {sections.map((section) => (
               <li
                 key={section.id}
-                className="mt-1.5 mb-1.5"
+                className="mt-1.5 mb-1.5 marker:text-slate-900 dark:marker:text-slate-50"
               >
                 <a
                   href={`#${section.id}`}
-                  className="text-slate-600 no-underline hover:underline dark:text-slate-400"
+                  className="no-underline underline-offset-4 hover:underline hover:decoration-[1.5px]"
                 >
                   {section.title}
                 </a>
