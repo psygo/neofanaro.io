@@ -234,7 +234,10 @@ export type GoViewerBoardProps = {
   // individually for a non-square render. None of these change the
   // board's own intrinsic geometry (that's `cellSize`/`padding`) —
   // they just scale the final SVG output, the same way an <img>'s
-  // width/height would.
+  // width/height would. Defaults to 330 when `region` is set (a
+  // partial/cropped board), since those don't otherwise have a
+  // sensible intrinsic width to fill their container with; a full
+  // board stays fluid (fills its container) unless given explicitly.
   size?: number
   width?: number
   height?: number
@@ -287,7 +290,7 @@ export type GoViewerBoardProps = {
 export function GoViewerBoard({
   region,
   cellSize = defaultCellSize,
-  size,
+  size = region ? 330 : undefined,
   width: widthOverride,
   height: heightOverride,
   padding = defaultPadding,

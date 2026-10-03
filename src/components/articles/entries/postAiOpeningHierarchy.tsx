@@ -75,7 +75,6 @@ export function PostAiOpeningHierarchy({
                 maxCol: 18,
               }}
               interactive={false}
-              size={330}
             />
             <GoViewerLegend>
               The Sanrensei Fuseki
@@ -93,7 +92,6 @@ export function PostAiOpeningHierarchy({
                 maxCol: 18,
               }}
               interactive={false}
-              size={330}
             />
             <GoViewerLegend>
               The Chinese Fuseki

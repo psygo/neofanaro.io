@@ -71,7 +71,6 @@ export function TewariDelight2({ article }: ArticleProps) {
         >
           <GoViewerBoard
             interactive={false}
-            size={275}
             region={{
               minRow: 6,
               maxRow: 12,
@@ -125,7 +124,6 @@ export function TewariDelight2({ article }: ArticleProps) {
         >
           <GoViewerBoard
             interactive={false}
-            size={275}
             region={{
               minRow: 6,
               maxRow: 12,
@@ -156,7 +154,6 @@ export function TewariDelight2({ article }: ArticleProps) {
         >
           <GoViewerBoard
             interactive={false}
-            size={275}
             region={{
               minRow: 6,
               maxRow: 12,
@@ -196,7 +193,6 @@ export function TewariDelight2({ article }: ArticleProps) {
           startAt="end"
         >
           <GoViewerBoard
-            size={330}
             showMoveNumbers
             region={{
               minRow: 9,
@@ -239,7 +235,6 @@ export function TewariDelight2({ article }: ArticleProps) {
         >
           <GoViewerBoard
             interactive={false}
-            size={330}
             region={{
               minRow: 9,
               maxRow: 18,
@@ -285,7 +280,6 @@ export function TewariDelight2({ article }: ArticleProps) {
         >
           <GoViewerBoard
             interactive={false}
-            size={330}
             region={{
               minRow: 9,
               maxRow: 18,
@@ -333,7 +327,6 @@ export function TewariDelight2({ article }: ArticleProps) {
         >
           <GoViewerBoard
             interactive={false}
-            size={275}
             region={{
               minRow: 6,
               maxRow: 13,
@@ -388,7 +381,6 @@ export function TewariDelight2({ article }: ArticleProps) {
         >
           <GoViewerBoard
             interactive={false}
-            size={275}
             region={{
               minRow: 6,
               maxRow: 12,
@@ -427,7 +419,6 @@ export function TewariDelight2({ article }: ArticleProps) {
         >
           <GoViewerBoard
             interactive={false}
-            size={275}
             region={{
               minRow: 6,
               maxRow: 12,

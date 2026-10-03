@@ -145,7 +145,7 @@ export function TennozanLeague({ article }: ArticleProps) {
             sgf="/articles/tennozan-league/1.sgf"
             startAt="end"
           >
-            <GoViewerBoard size={400} />
+            <GoViewerBoard />
             <GoViewerLegend>
               Um exemplo de &quot;tennozan&quot; no Go, na
               Sensei&apos;s Library. Preto 1 controla o
@@ -271,7 +271,7 @@ export function TennozanLeague({ article }: ArticleProps) {
             sgf="/articles/tennozan-league/1.sgf"
             startAt="end"
           >
-            <GoViewerBoard size={400} />
+            <GoViewerBoard />
             <GoViewerLegend>
               An example of a &quot;tennozan&quot; in Go,
               from Sensei&apos;s Library. Black&apos;s 1

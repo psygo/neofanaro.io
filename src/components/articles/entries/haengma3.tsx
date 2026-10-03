@@ -109,7 +109,6 @@ export function Haengma3({ article }: ArticleProps) {
           startAt="end"
         >
           <GoViewerBoard
-            size={370}
             showMoveNumbers
             region={{
               minRow: 0,
@@ -147,7 +146,6 @@ export function Haengma3({ article }: ArticleProps) {
           startAt="end"
         >
           <GoViewerBoard
-            size={370}
             showMoveNumbers
             region={{
               minRow: 0,
@@ -181,7 +179,6 @@ export function Haengma3({ article }: ArticleProps) {
           startAt="end"
         >
           <GoViewerBoard
-            size={370}
             showMoveNumbers
             region={{
               minRow: 0,
@@ -215,7 +212,6 @@ export function Haengma3({ article }: ArticleProps) {
           startAt="end"
         >
           <GoViewerBoard
-            size={370}
             showMoveNumbers
             region={{
               minRow: 0,
@@ -248,7 +244,6 @@ export function Haengma3({ article }: ArticleProps) {
           startAt="end"
         >
           <GoViewerBoard
-            size={370}
             showMoveNumbers
             region={{
               minRow: 0,
@@ -287,7 +282,6 @@ export function Haengma3({ article }: ArticleProps) {
           startAt="end"
         >
           <GoViewerBoard
-            size={370}
             showMoveNumbers
             region={{
               minRow: 0,
@@ -335,7 +329,6 @@ export function Haengma3({ article }: ArticleProps) {
           startAt="end"
         >
           <GoViewerBoard
-            size={370}
             showMoveNumbers
             region={{
               minRow: 0,
@@ -368,7 +361,6 @@ export function Haengma3({ article }: ArticleProps) {
           startAt="end"
         >
           <GoViewerBoard
-            size={370}
             showMoveNumbers
             region={{
               minRow: 0,

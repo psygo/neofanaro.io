@@ -104,7 +104,6 @@ export function MammothsJump({ article }: ArticleProps) {
         >
           <GoViewerBoard
             interactive={true}
-            size={330}
             region={{
               minRow: 6,
               maxRow: 12,
@@ -151,7 +150,6 @@ export function MammothsJump({ article }: ArticleProps) {
           <GoViewerBoard
             interactive={true}
             showMoveNumbers={true}
-            size={330}
             region={{
               minRow: 6,
               maxRow: 12,
@@ -181,7 +179,6 @@ export function MammothsJump({ article }: ArticleProps) {
           <GoViewerBoard
             interactive={true}
             showMoveNumbers={true}
-            size={330}
             region={{
               minRow: 6,
               maxRow: 12,
@@ -214,7 +211,6 @@ export function MammothsJump({ article }: ArticleProps) {
           <GoViewerBoard
             interactive={true}
             showMoveNumbers={true}
-            size={330}
             region={{
               minRow: 6,
               maxRow: 13,
@@ -449,7 +445,6 @@ export function MammothsJump({ article }: ArticleProps) {
           startAt="end"
         >
           <GoViewerBoard
-            size={330}
             region={{
               minRow: 9,
               maxRow: 18,
@@ -544,7 +539,6 @@ export function MammothsJump({ article }: ArticleProps) {
           startAt="end"
         >
           <GoViewerBoard
-            size={330}
             region={{
               minRow: 9,
               maxRow: 18,
@@ -571,7 +565,6 @@ export function MammothsJump({ article }: ArticleProps) {
           startAt="end"
         >
           <GoViewerBoard
-            size={330}
             showMoveNumbers
             region={{
               minRow: 9,
@@ -600,7 +593,6 @@ export function MammothsJump({ article }: ArticleProps) {
           startAt="end"
         >
           <GoViewerBoard
-            size={330}
             showMoveNumbers
             region={{
               minRow: 9,
@@ -626,7 +618,6 @@ export function MammothsJump({ article }: ArticleProps) {
           startAt="end"
         >
           <GoViewerBoard
-            size={330}
             showMoveNumbers
             region={{
               minRow: 9,
@@ -662,7 +653,6 @@ export function MammothsJump({ article }: ArticleProps) {
           startAt="end"
         >
           <GoViewerBoard
-            size={330}
             showMoveNumbers
             showCapturedStones
             region={{

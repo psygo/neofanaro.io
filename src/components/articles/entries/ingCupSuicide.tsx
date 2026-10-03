@@ -87,7 +87,6 @@ export function IngCupSuicide({ article }: ArticleProps) {
         >
           <GoViewerBoard
             interactive={false}
-            size={330}
             region={{
               minRow: 0,
               maxRow: 7,
@@ -119,7 +118,6 @@ export function IngCupSuicide({ article }: ArticleProps) {
         >
           <GoViewerBoard
             interactive={false}
-            size={330}
             region={{
               minRow: 0,
               maxRow: 7,
@@ -148,7 +146,6 @@ export function IngCupSuicide({ article }: ArticleProps) {
         >
           <GoViewerBoard
             interactive={false}
-            size={330}
             region={{
               minRow: 0,
               maxRow: 7,
@@ -189,7 +186,6 @@ export function IngCupSuicide({ article }: ArticleProps) {
         >
           <GoViewerBoard
             interactive={false}
-            size={330}
             region={{
               minRow: 0,
               maxRow: 7,

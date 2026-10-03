@@ -1,6 +1,11 @@
 "use client"
 
 import { useState } from "react"
+import {
+  usePathname,
+  useRouter,
+  useSearchParams,
+} from "next/navigation"
 
 import { get_articles } from "@actions"
 
@@ -29,7 +34,28 @@ export function ArticlesSection() {
   const [direction, setDirection] =
     useState<SortDirection>("desc")
   const [filtersOpen, setFiltersOpen] = useState(false)
-  const [page, setPage] = useState(1)
+  const router = useRouter()
+  const pathname = usePathname()
+  const searchParams = useSearchParams()
+  const pageFromUrl = Number(searchParams.get("page"))
+  const [page, setPageState] = useState(
+    pageFromUrl > 0 ? pageFromUrl : 1,
+  )
+
+  function setPage(newPage: number) {
+    setPageState(newPage)
+    const params = new URLSearchParams(
+      searchParams.toString(),
+    )
+    if (newPage > 1) {
+      params.set("page", String(newPage))
+    } else {
+      params.delete("page")
+    }
+    router.replace(`${pathname}?${params.toString()}`, {
+      scroll: false,
+    })
+  }
 
   async function refetch(
     tags: string[],

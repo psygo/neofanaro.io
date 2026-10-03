@@ -8,6 +8,7 @@ import { useIsClient, useLang } from "@hooks"
 
 import { Article } from "@components/articles/article"
 import {
+  ArticleBlockQuote,
   ArticleImageWithLegend,
   ArticleLink,
   ArticleParagraph,
@@ -139,6 +140,10 @@ export function Gerentia({ article }: ArticleProps) {
               para ações que somente seriam possíveis por
               humanos no passado.
             </ArticleParagraph>
+            <ArticleBlockQuote>
+              A GerentIA é um <em>Meta Tech Provider</em>{" "}
+              autorizado.
+            </ArticleBlockQuote>
           </ArticleSection>
           <ArticleSection>
             <ArticleSectionTitle>
@@ -228,6 +233,12 @@ export function Gerentia({ article }: ArticleProps) {
                 necessidades específicas de cada negócio.
               </ImageLegend>
             </ArticleImageWithLegend>
+            <ArticleParagraph>
+              Nós oferecemos integrações com os aplicativos
+              de chat de mais populares: WhatsApp, Facebook
+              Messenger e Instagram, sendo um{" "}
+              <em>Meta Tech Provider</em> autorizado.
+            </ArticleParagraph>
           </ArticleSection>
           <ArticleSection>
             <ArticleSectionTitle>
@@ -345,6 +356,10 @@ export function Gerentia({ article }: ArticleProps) {
               which used to be only possible through human
               intervention.
             </ArticleParagraph>
+            <ArticleBlockQuote>
+              GerentIA is an authorized{" "}
+              <em>Meta Tech Provider</em>.
+            </ArticleBlockQuote>
           </ArticleSection>
           <ArticleSection>
             <ArticleSectionTitle>
@@ -433,6 +448,12 @@ export function Gerentia({ article }: ArticleProps) {
                 business&apos; specific needs.
               </ImageLegend>
             </ArticleImageWithLegend>
+            <ArticleParagraph>
+              We offer integrations with the most popular
+              chat apps: WhatsApp, Facebook Messenger and
+              Instagram, as an authorized{" "}
+              <em>Meta Tech Provider</em>.
+            </ArticleParagraph>
           </ArticleSection>
           <ArticleSection>
             <ArticleSectionTitle>
