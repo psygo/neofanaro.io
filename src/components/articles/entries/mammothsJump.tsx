@@ -704,12 +704,16 @@ export function MammothsJump({ article }: ArticleProps) {
           // className="rounded"
         >
           <ImageLegend>
-            By the way,{" "}
+            By the way, just so you know,{" "}
             <ArticleLink href="https://www.iflscience.com/agreeable-to-the-taste-like-a-sirloin-steak-the-people-who-ate-mammoth-meat-in-the-20th-century-81010">
-              humans have eaten fossilized mammoth meat in
-              the recent past
+              humans have eaten fossilized mammoth meat{" "}
             </ArticleLink>
-            . And we are starting to do it again,{" "}
+            , as well as{" "}
+            <ArticleLink href="https://www.nationalgeographic.com/history/article/mummy-eating-medical-cannibalism-gory-history">
+              mummy meat
+            </ArticleLink>
+            , in the recent past. And we are starting to do
+            it again,{" "}
             <ArticleLink href="https://www.theguardian.com/environment/2023/mar/28/meatball-mammoth-created-cultivated-meat-firm">
               this time from lab-grown meat, at scale
             </ArticleLink>

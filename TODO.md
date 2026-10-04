@@ -2,6 +2,8 @@
 
 ## Priorities
 
+- Add a React Three Fiber animation for my website.
+
 - Mention Alexandre's comments on influence on the Mammoth's Jump article.
 - Add the Petroleo theme.
 
