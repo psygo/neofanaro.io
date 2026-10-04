@@ -42,19 +42,19 @@ export function MammothsJump({ article }: ArticleProps) {
           haven&apos;t spotted anyone mentioning yet.
         </ArticleParagraph>
         <ArticleParagraph>
-          The following explanations haven&apos;t really
-          been checked by any professional players,
-          they&apos;ve mostly come from my experiences and
+          The following explanations haven&apos;t been
+          checked by any professional players, they&apos;ve
+          mostly come from my experiences and
           interpretation, as a Fox 6-7d player, at most I
           have briefly commented about them to friends and
           colleagues of similar rank.
         </ArticleParagraph>
         <ArticleParagraph>
           So bear with me through the future improvements
-          this article will inevitably need. And, if you
-          feel like you have something to add, please do so
-          in the comments below or through direct messages
-          with me.
+          this article will inevitably need and receive.
+          And, if you feel like you have something to add,
+          please do so in the comments below or through
+          direct messages with me.
         </ArticleParagraph>
       </ArticleSection>
       <ArticleSection>
@@ -93,9 +93,10 @@ export function MammothsJump({ article }: ArticleProps) {
           <ArticleLink href="https://senseis.xmp.net/?Elephant">
             &quot;Elephant&apos;s Jump&quot;
           </ArticleLink>
-          , hence the overly creative name for it. Do people
-          prefer &quot;Big Elephant&apos;s Jump&quot;
-          instead? An <em>ohazama tobi</em> perhaps?
+          , hence the overly creative name for the
+          &quot;new&quot; shape. Would people prefer
+          &quot;Big Elephant&apos;s Jump&quot; instead? An{" "}
+          <em>ohazama tobi</em> perhaps?
         </ArticleParagraph>
         <GoViewer
           label="elephants-jump"
@@ -117,9 +118,9 @@ export function MammothsJump({ article }: ArticleProps) {
             jump or <em>hazama tobi</em>&nbsp; in Japanese,
             the shape from A to B. This shape&apos;s name
             comes from the elephant piece in the game of
-            xiangqi &mdash; <em>xiàng</em>&nbsp; means
-            elephant in Chinese, so xiangqi is quite
-            literally &quot;Elephant Board/Strategy
+            <em>xiangqi</em> &mdash; <em>xiàng</em>&nbsp;
+            means elephant in Chinese, so <em>xiangqi</em>{" "}
+            is quite literally &quot;Elephant Board/Strategy
             Game&quot; &mdash;, in which the elephant piece
             jumps over one space diagonally.
           </GoViewerLegend>
@@ -127,14 +128,14 @@ export function MammothsJump({ article }: ArticleProps) {
         <ArticleParagraph>
           The middle point between A and B in Dia.{" "}
           <DiagramRef label="elephants-jump" />
-          &nbsp;is called the &quot;Elephant&apos;s
+          &nbsp;is known as the &quot;Elephant&apos;s
           Eye&quot;, and is usually a major weakness, since
-          it splits the A from B. However, with proper setup
-          and good direction, White 1 could backfire into a
-          less meaningful, slow, or even dangerous poke.
-          After all, it&apos;s a move in between two outside
-          opposing stones, not generating any shape or
-          points by itself.
+          it splits A from B. However, with proper setup and
+          good direction, White 1 could backfire into a less
+          meaningful, slow, or even dangerous poke. After
+          all, it&apos;s a move in between two outside
+          opposing stones, which doesn&apos;t generate any
+          shape or points by itself.
         </ArticleParagraph>
         <ArticleParagraph>
           In almost all cases, Black would like to avoid
@@ -164,10 +165,10 @@ export function MammothsJump({ article }: ArticleProps) {
           </GoViewerLegend>
         </GoViewer>
         <ArticleParagraph>
-          In general, it&apos;s a better technique to jump
+          In general, it&apos;s better technique to jump
           ahead with a keima, as in Dia.{" "}
           <DiagramRef label="jump-ahead" />, staying ahead
-          of the opponent, which allows us to then spend our
+          of the opponent, allowing us to then spend our
           turn to defend the A stone with B, or perhaps try
           fights or compromises with C.
         </ArticleParagraph>
@@ -193,12 +194,12 @@ export function MammothsJump({ article }: ArticleProps) {
           </GoViewerLegend>
         </GoViewer>
         <ArticleParagraph>
-          The Mammoth&apos;s Jump is just a variation on the
-          logic behind the Elephant&apos;s Jump, as far as I
-          was able to investigate.
+          The Mammoth&apos;s Jump, as I see it and as far as
+          I was able to investigate, is just a variation on
+          the logic behind the Elephant&apos;s Jump.
         </ArticleParagraph>
         <ArticleParagraph>
-          But with A a little bit further away, as in Dia.{" "}
+          With A a little bit further away, as in Dia.{" "}
           <DiagramRef label="jump-further" />, when playing
           moves such as 2, there&apos;s less direct damage
           to A when White breaks through.
@@ -236,7 +237,7 @@ export function MammothsJump({ article }: ArticleProps) {
           backing one side of the Mammoth&apos;s Jump, and
           that&apos;s not even mentioning that the
           bottom-right context of a lone White stone might
-          be even more relevant here:
+          be even more relevant:
         </ArticleParagraph>
         <GoViewer
           label="switch-bottom-right"
@@ -256,27 +257,28 @@ export function MammothsJump({ article }: ArticleProps) {
           </GoViewerLegend>
         </GoViewer>
         <ArticleParagraph>
-          Black is willing to sacrifice the A stone in the
-          center, the stone which originated the
-          Mammoth&apos;s Jump in the first place, in order
-          to take strength and potential profits against
-          White&apos;s B stone.
+          AI suggests that Black should be willing to
+          sacrifice the A stone in the center, the stone
+          which originated the Mammoth&apos;s Jump in the
+          first place, in order to take strength and
+          potential profits against White&apos;s B stone and
+          the right side.
         </ArticleParagraph>
         <ArticleParagraph>
           Lee Jihyeon 9p (White)&apos;s thought process is
           not available to me, nonetheless I suppose he
           didn&apos;t poke through because, not only does it
           damage B, it&apos;s a slow move in the center
-          &mdash; a kosumi is typically very slow in general
-          as well, not only in this context. In the game, he
-          chose to make a pretty shape with C.
+          &mdash; a kosumi is typically very slow in
+          general, not only in this context. In the game, he
+          opted for the pretty shape of C.
         </ArticleParagraph>
         <ArticleParagraph>
           Unexpectedly, though, 32 in Dia.{" "}
           <DiagramRef label="switch-bottom-right" />
           &nbsp;is AI&apos;s recommendation for White still,
-          with C losing almost a point, or around an 11% in
-          win rate.
+          with C losing almost a point, or around 11% in win
+          rate.
         </ArticleParagraph>
         <ArticleParagraph>
           Circling back to the appropriate context theme,
@@ -317,21 +319,21 @@ export function MammothsJump({ article }: ArticleProps) {
       </ArticleSection>
       <ArticleSection>
         <ArticleSectionTitle>
-          The Mammoth&apos;s Jump for Moyo Development
+          Moyo Development with The Mammoth&apos;s Jump
         </ArticleSectionTitle>
         <ArticleParagraph>
           The Mammoth&apos;s Jump is admittedly very niche.
           No wonder, this article is likely the longest
           essay on it to this day if not for a very long
-          time &mdash; or forever, although that&apos;s also
-          a very long time. But the point in studying it is
-          to generalize the underlying, related techniques
-          to other areas of the game.
+          time &mdash; or forever, though that&apos;s also a
+          very long time. But the point in studying it is to
+          generalize the underlying, related techniques to
+          other areas of the game.
         </ArticleParagraph>
         <ArticleParagraph>
-          And one such area is related to moyos. Sometimes,
-          the Elephant&apos;s Jump can be an amazing tool
-          for defending moyos:
+          And one such area is connected to moyos.
+          Sometimes, the Elephant&apos;s Jump can be an
+          amazing tool for defending moyos:
         </ArticleParagraph>
         <GoViewer
           label="moyo-defend"
@@ -362,9 +364,9 @@ export function MammothsJump({ article }: ArticleProps) {
         <ArticleParagraph>
           If White tries to get in, Black will switch to
           defending the right side, dealing with the lone
-          Black group in the center separately, while
-          forcing White into creating an empty triangle with
-          the 2-4-6 shape:
+          Black group in the center separately, and, at the
+          same time, forcing White into creating an empty
+          triangle with the 2-4-6 shape:
         </ArticleParagraph>
         <GoViewer
           label="moyo-switch"
@@ -385,10 +387,11 @@ export function MammothsJump({ article }: ArticleProps) {
           The Mammoth&apos;s Jump could serve similarly
           flexible purposes. For example, in the first NEC
           Japan-China Super Go team match, in 1984, Yoda
-          Norimoto 5p (Black) unfortunately couldn&apos;t
-          find the key move in defending his moyo while also
-          reducing his opponent&apos;s, Jiang Zhujiu 7p
-          (White):
+          Norimoto <NoWrap>依田紀基</NoWrap>&nbsp; 5p
+          (Black) unfortunately couldn&apos;t find the key
+          move in defending his moyo while also reducing his
+          opponent&apos;s, Jiang Zhujiu{" "}
+          <NoWrap>江鑄久</NoWrap>&nbsp;7p (White):
         </ArticleParagraph>
         <GoViewer
           label="nec-match"
@@ -428,7 +431,7 @@ export function MammothsJump({ article }: ArticleProps) {
       </ArticleSection>
       <ArticleSection>
         <ArticleSectionTitle>
-          The Mammoth&apos;s Jump and The Tiger Shimari
+          The Tiger Shimari
         </ArticleSectionTitle>
         <ArticleParagraph>
           The Mammoth&apos;s Jump, when placed in the
@@ -457,12 +460,12 @@ export function MammothsJump({ article }: ArticleProps) {
           </GoViewerLegend>
         </GoViewer>
         <ArticleParagraph>
-          Kataoka Satoshi <NoWrap>片岡聡</NoWrap> 9p gave it
-          the following amusing commentary, during a game
-          between O Meien <NoWrap>王銘琬</NoWrap> 9p (Black)
-          and Takagi Shoichi <NoWrap>高木祥</NoWrap> 9p
-          (White), in 2001 &mdash; that enclosure was even
-          classed as a{" "}
+          Kataoka Satoshi <NoWrap>片岡聡</NoWrap>&nbsp;9p
+          gave it the following amusing commentary, during a
+          game between O Meien <NoWrap>王銘琬</NoWrap>
+          &nbsp;9p (Black) and Takagi Shoichi{" "}
+          <NoWrap>高木祥</NoWrap>&nbsp;9p (White), in 2001
+          &mdash; that enclosure was even classed as a{" "}
           <ArticleLink href="https://senseis.xmp.net/?Meienism">
             Meienism
           </ArticleLink>
@@ -504,9 +507,9 @@ export function MammothsJump({ article }: ArticleProps) {
         </ArticleImageWithLegend>
         <ArticleParagraph>
           Even though that curious pattern is mostly used
-          out of boredom, or to get a competitive edge over
-          the opponent, it does have its place as a possible
-          best move. For example, in Dia.{" "}
+          out of boredom, or to exploit a competitive edge
+          over the opponent, it does have its place as a
+          possible best move. For example, in Dia.{" "}
           <DiagramRef label="tiger-best-moves" />, AI gives
           A, B and C as White&apos;s best options, in that
           order:
@@ -554,10 +557,11 @@ export function MammothsJump({ article }: ArticleProps) {
         <ArticleParagraph>
           As usual in the post-AI era, refuting non-standard
           strategies is as simple as playing standard,
-          reasonable moves. The A shoulder hit in Dia.{" "}
+          reasonable moves, there&apos;s no need for
+          anything fancy. The A shoulder hit in Dia.{" "}
           <DiagramRef label="tiger-attack" /> is a simple
           first idea, all White needs to avoid is falling
-          for the shortage of liberties trap after 11:
+          for the shortage of liberties trap after 8:
         </ArticleParagraph>
         <GoViewer
           label="tiger-shoulder-hit-1"
@@ -609,8 +613,9 @@ export function MammothsJump({ article }: ArticleProps) {
         </GoViewer>
         <ArticleParagraph>
           Locally, White could continue with A. And, if
-          Black chooses B instead of 8, this is the final
-          result:
+          Black chooses B instead of 8 on Dia.{" "}
+          <DiagramRef label="tiger-shoulder-hit-2" />, this
+          is the final result:
         </ArticleParagraph>
         <GoViewer
           label="tiger-result"
@@ -632,19 +637,26 @@ export function MammothsJump({ article }: ArticleProps) {
           </GoViewerLegend>
         </GoViewer>
         <ArticleParagraph>
-          At least to me, Dia.{" "}
-          <DiagramRef label="tiger-result" />
-          &nbsp;is most surprising, since giving Black such
-          nice influence on the right with a healthy corner
-          as well, while only getting a stable group on the
-          left doesn&apos;t seem like a good trade. However,
-          we have to add that the typically post-AI invasion
-          pattern from A has its power severely diminished
-          by the ataris of B and C.
+          Dia. <DiagramRef label="tiger-result" />
+          &nbsp;might look surprising at a first glance,
+          since Black gets nice influence on the right, with
+          a healthy corner as well; while White only gets a
+          stable group on the left.
+        </ArticleParagraph>
+        <ArticleParagraph>
+          However, we have to keep in mind that the typical
+          post-AI invasion pattern from A has its power
+          severely diminished by the ataris of B and C. And
+          Black already had two stones on that corner
+          anyway. Plus the fact that White is actually ahead
+          of Black&apos;s development on the right side,
+          with stones 9 and 13, likely relegating
+          Black&apos;s influence on that side to the 3rd
+          line.
         </ArticleParagraph>
         <ArticleParagraph>
           Lastly, one of the sequences with the most
-          human-understandable techniques is in Dia.{" "}
+          human-understandable techniques is on Dia.{" "}
           <DiagramRef label="tiger-cool" />:
         </ArticleParagraph>
         <GoViewer
@@ -685,6 +697,25 @@ export function MammothsJump({ article }: ArticleProps) {
           non-AI entity by taking only a max 2-point loss at
           the beginning.
         </ArticleParagraph>
+        <ArticleImageWithLegend
+          src="/articles/mammoths-jump/mammoth-illustration.jpg"
+          height={100}
+          width={425}
+          // className="rounded"
+        >
+          <ImageLegend>
+            By the way,{" "}
+            <ArticleLink href="https://www.iflscience.com/agreeable-to-the-taste-like-a-sirloin-steak-the-people-who-ate-mammoth-meat-in-the-20th-century-81010">
+              humans have eaten fossilized mammoth meat in
+              the recent past
+            </ArticleLink>
+            . And we are starting to do it again,{" "}
+            <ArticleLink href="https://www.theguardian.com/environment/2023/mar/28/meatball-mammoth-created-cultivated-meat-firm">
+              this time from lab-grown meat, at scale
+            </ArticleLink>
+            .
+          </ImageLegend>
+        </ArticleImageWithLegend>
       </ArticleSection>
     </Article>
   )
