@@ -26,28 +26,32 @@ export function Gerentia({ article }: ArticleProps) {
 
   const landingPageSrc =
     mounted && resolvedTheme === "dark"
-      ? "/articles/gerentia/landing_page_dark.png"
-      : "/articles/gerentia/landing_page_light.png"
+      ? "/articles/gerentia/landing_page_pet_dark.png"
+      : "/articles/gerentia/landing_page_pet_light.png"
   const chat1Src =
     mounted && resolvedTheme === "dark"
-      ? "/articles/gerentia/chat_1_dark.png"
-      : "/articles/gerentia/chat_1_light.png"
+      ? "/articles/gerentia/chat_1_pet_dark.png"
+      : "/articles/gerentia/chat_1_pet_light.png"
   const reservationSrc =
     mounted && resolvedTheme === "dark"
-      ? "/articles/gerentia/reservation_dark.png"
-      : "/articles/gerentia/reservation_light.png"
+      ? "/articles/gerentia/reservation_pet_dark.png"
+      : "/articles/gerentia/reservation_pet_light.png"
   const reservationCalendarSrc =
     mounted && resolvedTheme === "dark"
-      ? "/articles/gerentia/reservation_calendar_dark.png"
-      : "/articles/gerentia/reservation_calendar_light.png"
+      ? "/articles/gerentia/reservation_calendar_pet_dark.png"
+      : "/articles/gerentia/reservation_calendar_pet_light.png"
   const flowchartSrc =
     mounted && resolvedTheme === "dark"
-      ? "/articles/gerentia/flowchart_dark.png"
-      : "/articles/gerentia/flowchart_light.png"
+      ? "/articles/gerentia/flowchart_pet_dark.png"
+      : "/articles/gerentia/flowchart_pet_light.png"
   const extensionsSrc =
     mounted && resolvedTheme === "dark"
-      ? "/articles/gerentia/extensions_dark.png"
-      : "/articles/gerentia/extensions_light.png"
+      ? "/articles/gerentia/extensions_pet_dark.png"
+      : "/articles/gerentia/extensions_pet_light.png"
+  const giaLogoSrc =
+    mounted && resolvedTheme === "dark"
+      ? "/articles/gerentia/gia_logo_pet_dark_512.png"
+      : "/articles/gerentia/gia_logo_256.png"
 
   return (
     <Article article={article}>
@@ -119,14 +123,14 @@ export function Gerentia({ article }: ArticleProps) {
             <ArticleParagraph>
               A partir desses avanços de naturalidade,
               agência e segurança, fez-se possível a criação
-              de uma nova ferramenta, a{" "}
+              de uma nova plataforma, a{" "}
               <ArticleLink href="https://gerent.app">
                 GerentIA
               </ArticleLink>
-              , uma plataforma que visa fundir e automatizar
-              duas faces da atividade empresarial que, no
-              passado e atualmente, estariam e ainda estão
-              dissociadas.
+              , uma nova ferramenta que visa fundir e
+              automatizar duas faces da atividade
+              empresarial que, no passado e atualmente,
+              estariam e ainda estão dissociadas.
             </ArticleParagraph>
             <ArticleParagraph>
               Lidar com clientes &mdash; algo
@@ -335,14 +339,14 @@ export function Gerentia({ article }: ArticleProps) {
             </ArticleParagraph>
             <ArticleParagraph>
               From these advances in naturalness, agency,
-              and safety, a new tool was made possible,{" "}
+              and safety, a new platform was made possible,{" "}
               <ArticleLink href="https://gerent.app">
                 GerentIA
               </ArticleLink>
-              , a platform aiming at merging and automating
-              two facets of business activity which, in the
-              past and still today, remain dissociated from
-              one another.
+              , a tool aiming at merging and automating two
+              facets of business activity which, in the past
+              and still today, remain largely dissociated
+              from one another.
             </ArticleParagraph>
             <ArticleParagraph>
               Dealing with customers &mdash; traditionally
@@ -390,7 +394,7 @@ export function Gerentia({ article }: ArticleProps) {
               className="rounded"
             >
               <ImageLegend>
-                AI is already capable of handling a full
+                AI is already capable of handling a complete
                 interaction, forwarding payment methods and
                 making the respectively necessary changes to
                 the database.
@@ -408,11 +412,12 @@ export function Gerentia({ article }: ArticleProps) {
               </ImageLegend>
             </ArticleImageWithLegend>
             <ArticleParagraph>
-              Our platform offers multiple ways to customize
-              its AI agent. The most basic would be through
-              the &quot;AI Specialization&quot; extension,
-              but the more visually appealing interface is
-              the &quot;Flowchart&quot; extension:
+              Our platform offers multiple ways of
+              customizing its AI agent. The most basic would
+              be through the &quot;AI Specialization&quot;
+              extension, but the more visually appealing
+              interface is the &quot;Flowchart&quot;
+              extension:
             </ArticleParagraph>
             <ArticleImageWithLegend
               src={flowchartSrc}
@@ -472,7 +477,7 @@ export function Gerentia({ article }: ArticleProps) {
               would really appreciate it!
             </ArticleParagraph>
             <ArticleImageWithLegend
-              src="/articles/gerentia/gia_logo_256.png"
+              src={giaLogoSrc}
               height={100}
               width={150}
               className=""
