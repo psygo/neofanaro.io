@@ -13,12 +13,11 @@
 - Reference Go viewer diagrams programmatically.
 
 - Add a mention to the next shapes in the series, such as the [_scorpion_](https://senseis.xmp.net/?ScorpionShape) and.
-- Add a basic example of attacking with the Elephant's Jump to the Mammoth's Jump article.
-- The Mammoth's Jump is also the shape in an unusual shimari.
-  - [A book on the 3-5 6-3, or tiger shimari](https://amzn.asia/d/0i1Ik9mC)
-  - [Sensei's Library on the 3-5 6-3 shimari](https://senseis.xmp.net/?3563Enclosure)
-  - [Meienism](https://senseis.xmp.net/?Meienism)
-  - [An example of an mammoth's jump being used to defend a moyo](https://youtu.be/FqiSshkeXKM?t=2210)
+- Some other Mammoth's Jump examples:
+  - [From a game against Ariel (move 66)](https://online-go.com/game/91113672)
+  - [Two examples from one of Go Game Series videos](https://youtu.be/dM-riBSFGKI?t=113)
+    - 1:53
+    - 13:17
 
 - Better country flags
 - Multi-category article-cards (with more than one color on the left border).

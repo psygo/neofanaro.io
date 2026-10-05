@@ -35,6 +35,8 @@ export const topLevelMetadata: Metadata = {
     images: [
       {
         url: "/metadata/neofanaro.io_sample.png",
+        width: 1500,
+        height: 960,
       },
     ],
   },
@@ -66,7 +68,9 @@ export async function generateArticleMetadataHelper(
       description,
       images: [
         {
-          url: "/logos/fanaro.io_64.png",
+          url: "/logos/fanaro.io_200.png",
+          width: 200,
+          height: 200,
         },
       ],
     },
