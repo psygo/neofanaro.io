@@ -56,6 +56,10 @@ export function Gerentia({ article }: ArticleProps) {
     mounted && resolvedTheme === "dark"
       ? "/articles/gerentia/command_central_pet_dark.png"
       : "/articles/gerentia/command_central_pet_light.png"
+  const conversationsSrc =
+    mounted && resolvedTheme === "dark"
+      ? "/articles/gerentia/conversations_pet_dark.png"
+      : "/articles/gerentia/conversations_pet_light.png"
 
   return (
     <Article article={article}>
@@ -152,6 +156,16 @@ export function Gerentia({ article }: ArticleProps) {
               A GerentIA é um <em>Meta Tech Provider</em>{" "}
               autorizado.
             </ArticleBlockQuote>
+            <ArticleImageWithLegend
+              src={conversationsSrc}
+              height={100}
+              width={550}
+              className="rounded"
+            >
+              <ImageLegend>
+                O contêiner à la WhatsApp de conversas.
+              </ImageLegend>
+            </ArticleImageWithLegend>
           </ArticleSection>
           <ArticleSection>
             <ArticleSectionTitle>
@@ -380,6 +394,16 @@ export function Gerentia({ article }: ArticleProps) {
               GerentIA is an authorized{" "}
               <em>Meta Tech Provider</em>.
             </ArticleBlockQuote>
+            <ArticleImageWithLegend
+              src={conversationsSrc}
+              height={100}
+              width={550}
+              className="rounded"
+            >
+              <ImageLegend>
+                The WhatsApp-like conversations container.
+              </ImageLegend>
+            </ArticleImageWithLegend>
           </ArticleSection>
           <ArticleSection>
             <ArticleSectionTitle>
