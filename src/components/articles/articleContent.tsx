@@ -1,11 +1,13 @@
 "use client"
 
-import { useId } from "react"
+import { useId, useState } from "react"
 
 import Image from "next/image"
 import Link from "next/link"
 
 import { WithReactChildren } from "@types"
+
+import { ArticleImageLightbox } from "./articleImageLightbox"
 
 export { ArticleTableOfContents } from "./articleToc"
 export { DiagramRef } from "./diagramRef"
@@ -136,6 +138,8 @@ export function ArticleImageWithLegend({
   className = "rounded-lg",
   children,
 }: ArticleImageWithLegendProps) {
+  const [lightboxOpen, setLightboxOpen] = useState(false)
+
   return (
     <div className="flex flex-col items-center gap-2 pt-4 pb-2.5">
       <div
@@ -149,8 +153,10 @@ export function ArticleImageWithLegend({
             corners fail to round under hardware-accelerated
             rendering — reproduces in real Chrome, not in headless/
             software-rendered testing, so it's easy to miss. */}
-        <div
-          className={`block overflow-hidden ${className}`}
+        <button
+          type="button"
+          onClick={() => setLightboxOpen(true)}
+          className={`block w-full cursor-zoom-in overflow-hidden ${className}`}
         >
           <Image
             loading="eager"
@@ -167,11 +173,18 @@ export function ArticleImageWithLegend({
             alt={alt}
             className="responsive-image mt-0 mb-0 block"
           />
-        </div>
+        </button>
       </div>
       <div className="px-10 text-sm text-slate-600 sm:text-base dark:text-slate-400 [&>p]:mt-0 [&>p]:mb-0">
         {children}
       </div>
+      {lightboxOpen && (
+        <ArticleImageLightbox
+          src={src}
+          alt={alt}
+          onClose={() => setLightboxOpen(false)}
+        />
+      )}
     </div>
   )
 }

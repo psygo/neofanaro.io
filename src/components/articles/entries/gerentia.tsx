@@ -52,6 +52,10 @@ export function Gerentia({ article }: ArticleProps) {
     mounted && resolvedTheme === "dark"
       ? "/articles/gerentia/gia_logo_pet_dark_512.png"
       : "/articles/gerentia/gia_logo_256.png"
+  const commandCentralSrc =
+    mounted && resolvedTheme === "dark"
+      ? "/articles/gerentia/command_central_pet_dark.png"
+      : "/articles/gerentia/command_central_pet_light.png"
 
   return (
     <Article article={article}>
@@ -61,7 +65,7 @@ export function Gerentia({ article }: ArticleProps) {
             <ArticleImageWithLegend
               src={landingPageSrc}
               height={100}
-              width={450}
+              width={550}
               className="rounded"
             >
               <ImageLegend>
@@ -164,7 +168,7 @@ export function Gerentia({ article }: ArticleProps) {
             <ArticleImageWithLegend
               src={chat1Src}
               height={100}
-              width={425}
+              width={550}
               className="rounded"
             >
               <ImageLegend>
@@ -176,7 +180,7 @@ export function Gerentia({ article }: ArticleProps) {
             <ArticleImageWithLegend
               src={reservationSrc}
               height={100}
-              width={425}
+              width={550}
               className="rounded"
             >
               <ImageLegend>
@@ -188,7 +192,7 @@ export function Gerentia({ article }: ArticleProps) {
             <ArticleImageWithLegend
               src={reservationCalendarSrc}
               height={100}
-              width={425}
+              width={550}
               className="rounded"
             >
               <ImageLegend>
@@ -207,7 +211,7 @@ export function Gerentia({ article }: ArticleProps) {
             <ArticleImageWithLegend
               src={flowchartSrc}
               height={100}
-              width={425}
+              width={550}
               className="rounded"
             >
               <ImageLegend>
@@ -228,8 +232,8 @@ export function Gerentia({ article }: ArticleProps) {
             <ArticleImageWithLegend
               src={extensionsSrc}
               height={100}
-              width={425}
-              //   className="rounded"
+              width={550}
+              className="rounded"
             >
               <ImageLegend>
                 A GerentIA é decomposta em extensões, o que
@@ -269,6 +273,18 @@ export function Gerentia({ article }: ArticleProps) {
               {/* <ImageLegend>O logo da GerentIA.</ImageLegend> */}
               <ImageLegend> </ImageLegend>
             </ArticleImageWithLegend>
+            <ArticleImageWithLegend
+              src={commandCentralSrc}
+              height={100}
+              width={550}
+              //   className="rounded"
+            >
+              <ImageLegend>
+                Acabamos de adicionar uma extensão chamada
+                &quot;Central de Comando&quot;, com uma
+                animação no fundo!
+              </ImageLegend>
+            </ArticleImageWithLegend>
           </ArticleSection>
         </>
       ) : (
@@ -277,7 +293,7 @@ export function Gerentia({ article }: ArticleProps) {
             <ArticleImageWithLegend
               src={landingPageSrc}
               height={100}
-              width={450}
+              width={550}
               className="rounded"
             >
               <ImageLegend>
@@ -379,7 +395,7 @@ export function Gerentia({ article }: ArticleProps) {
             <ArticleImageWithLegend
               src={chat1Src}
               height={100}
-              width={425}
+              width={550}
               className="rounded"
             >
               <ImageLegend>
@@ -390,7 +406,7 @@ export function Gerentia({ article }: ArticleProps) {
             <ArticleImageWithLegend
               src={reservationSrc}
               height={100}
-              width={425}
+              width={550}
               className="rounded"
             >
               <ImageLegend>
@@ -403,7 +419,7 @@ export function Gerentia({ article }: ArticleProps) {
             <ArticleImageWithLegend
               src={reservationCalendarSrc}
               height={100}
-              width={425}
+              width={550}
               className="rounded"
             >
               <ImageLegend>
@@ -422,7 +438,7 @@ export function Gerentia({ article }: ArticleProps) {
             <ArticleImageWithLegend
               src={flowchartSrc}
               height={100}
-              width={425}
+              width={550}
               className="rounded"
             >
               <ImageLegend>
@@ -443,8 +459,8 @@ export function Gerentia({ article }: ArticleProps) {
             <ArticleImageWithLegend
               src={extensionsSrc}
               height={100}
-              width={425}
-              //   className="rounded"
+              width={550}
+              className="rounded"
             >
               <ImageLegend>
                 GerentIA is broken down into extensions,
@@ -484,6 +500,18 @@ export function Gerentia({ article }: ArticleProps) {
             >
               {/* <ImageLegend>GerentIA&apos;s logo.</ImageLegend> */}
               <ImageLegend> </ImageLegend>
+            </ArticleImageWithLegend>
+            <ArticleImageWithLegend
+              src={commandCentralSrc}
+              height={100}
+              width={550}
+              className="rounded"
+            >
+              <ImageLegend>
+                We&apos;ve just now added a &quot;Command
+                Central&quot; extension, with an animation
+                in the background!
+              </ImageLegend>
             </ArticleImageWithLegend>
           </ArticleSection>
         </>

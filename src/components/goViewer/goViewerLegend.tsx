@@ -32,7 +32,7 @@ export function GoViewerLegend({
   return (
     <div
       data-dia-key={label}
-      className={`go-diagram grid max-w-100 grid-cols-[auto_1fr] gap-2 px-8 text-sm sm:text-base [&>p]:mt-0 [&>p]:mb-0 ${className}`}
+      className={`go-diagram grid max-w-125 grid-cols-[auto_1fr] gap-2 px-8 text-sm sm:text-base [&>p]:mt-0 [&>p]:mb-0 ${className}`}
     >
       {diaNumber !== undefined ? (
         <p className="whitespace-nowrap text-gray-500 dark:text-slate-400">

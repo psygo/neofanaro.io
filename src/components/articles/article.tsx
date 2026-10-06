@@ -27,7 +27,9 @@ type ArticleProps = {
   children: React.ReactNode
 }
 
-const DEFAULT_MAX_WIDTH_REM = 29
+// Matches <Main>'s own sm:max-w-2xl, so an article defaults to filling
+// it exactly on larger viewports.
+const DEFAULT_MAX_WIDTH_REM = 42
 
 export function Article({
   article,
