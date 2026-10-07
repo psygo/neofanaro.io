@@ -18,6 +18,7 @@
   - [Two examples from one of Go Game Series videos](https://youtu.be/dM-riBSFGKI?t=113)
     - 1:53
     - 13:17
+  - [Choi Jeong's Attack against Yu Zhiying 8p](https://youtu.be/pdo5b_TrfwY?t=442)
 
 - Better country flags
 - Multi-category article-cards (with more than one color on the left border).

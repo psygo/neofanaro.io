@@ -1,11 +1,13 @@
 "use client"
 
+import { useTheme } from "next-themes"
+
 import Image from "next/image"
 import Link from "next/link"
 
 import { containerOutline } from "@styles"
 
-import { useLang } from "@hooks"
+import { useIsClient, useLang } from "@hooks"
 
 import {
   FanaroLinkedIn,
@@ -24,7 +26,7 @@ export function SoftwareWorkSection() {
       </div>
       <div className="flex w-full flex-col gap-4">
         <CpiSuspense>
-          {/* <Gia /> */}
+          <Gia />
           <Aquarifolio />
           <Magi />
           <Fic />
@@ -253,10 +255,17 @@ function Lang101() {
 
 function Gia() {
   const lang = useLang()
+  const { resolvedTheme } = useTheme()
+  const mounted = useIsClient()
+
+  const giaLogoSrc =
+    mounted && resolvedTheme === "dark"
+      ? "/articles/gerentia/gia_logo_pet_dark_512.png"
+      : "/articles/gerentia/gia.svg"
 
   return (
     <Link
-      href="/articles/lang101"
+      href="/articles/gerentia"
       target="_blank"
       rel="noreferrer noopener"
       // className={`${containerOutline} bg-gray-0 flex flex-col gap-3 px-4.5 py-3 pb-4.5`}
@@ -264,7 +273,7 @@ function Gia() {
     >
       <Image
         loading="eager"
-        src="/articles/gerentia/gia.svg"
+        src={giaLogoSrc}
         alt="GerentIA"
         width={50}
         height={50}
