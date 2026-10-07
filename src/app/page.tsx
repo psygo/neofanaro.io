@@ -1,4 +1,7 @@
-import { get_popular_articles_by_category } from "@actions"
+import {
+  get_popular_articles_by_category,
+  get_software_work_github_stars,
+} from "@actions"
 
 import { Main } from "@components/common/main"
 import { ArticlesStatsHeader } from "@components/articles/articlesStatsHeader"
@@ -12,12 +15,14 @@ import { SoftwareWorkSection } from "./software/software"
 export default async function Home() {
   const popularArticles =
     await get_popular_articles_by_category()
+  const softwareWorkStars =
+    await get_software_work_github_stars()
 
   return (
     <Main>
       <CpiSuspense>
         <PresentationSection />
-        <SoftwareWorkSection />
+        <SoftwareWorkSection stars={softwareWorkStars} />
         <GoProfPresentationSection />
         {/* <ArticlesStatsHeader /> */}
         <PopularArticlesSection

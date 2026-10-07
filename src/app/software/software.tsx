@@ -5,6 +5,8 @@ import { useTheme } from "next-themes"
 import Image from "next/image"
 import Link from "next/link"
 
+import type { SoftwareWorkGithubStars } from "@actions"
+
 import { containerOutline } from "@styles"
 
 import { useIsClient, useLang } from "@hooks"
@@ -15,7 +17,13 @@ import {
 } from "@components/common/footer"
 import { CpiSuspense } from "@components/common/cpiSuspense"
 
-export function SoftwareWorkSection() {
+type SoftwareWorkSectionProps = {
+  stars: SoftwareWorkGithubStars
+}
+
+export function SoftwareWorkSection({
+  stars,
+}: SoftwareWorkSectionProps) {
   return (
     <section className="mx-auto flex flex-col gap-6">
       <div className="flex flex-col gap-4 sm:gap-2">
@@ -29,10 +37,10 @@ export function SoftwareWorkSection() {
           <Gia />
           <Aquarifolio />
           <Magi />
-          <Fic />
+          <Fic starTotal={stars.fic} />
+          <TecnicasDeGo starTotal={stars.tecnicasDeGo} />
+          <YouTubeKbdNav starTotal={stars.youtubeKbdNav} />
           <Lang101 />
-          <TecnicasDeGo />
-          <YouTubeKbdNav />
         </CpiSuspense>
       </div>
       <SoftwareCvButtons />
@@ -114,7 +122,11 @@ function SoftwareStackLogos() {
   )
 }
 
-function Fic() {
+type RepoCardProps = {
+  starTotal: number | null
+}
+
+function Fic({ starTotal }: RepoCardProps) {
   const lang = useLang()
 
   return (
@@ -129,12 +141,13 @@ function Fic() {
           : "Immutable Data Structures for Dart"
       }
       tags={["dart", "flutter"]}
-      starTotal={200}
+      starTotal={starTotal ?? 200}
+      starsApproximate={starTotal === null}
     />
   )
 }
 
-function TecnicasDeGo() {
+function TecnicasDeGo({ starTotal }: RepoCardProps) {
   const lang = useLang()
 
   return (
@@ -150,12 +163,13 @@ function TecnicasDeGo() {
           : "A book and a complete LaTeX package for drawing Go (Baduk or Weiqi) vector diagrams"
       }
       tags={["latex", "svg"]}
-      starTotal={20}
+      starTotal={starTotal ?? 20}
+      starsApproximate={starTotal === null}
     />
   )
 }
 
-function YouTubeKbdNav() {
+function YouTubeKbdNav({ starTotal }: RepoCardProps) {
   const lang = useLang()
 
   return (
@@ -170,7 +184,8 @@ function YouTubeKbdNav() {
           : "A browser extension for controlling YouTube entirely through the keyboard"
       }
       tags={["typescript", "browser"]}
-      starTotal={20}
+      starTotal={starTotal ?? 20}
+      starsApproximate={starTotal === null}
     />
   )
 }
@@ -215,14 +230,16 @@ function Lang101() {
       // className={`${containerOutline} bg-gray-0 flex flex-col gap-3 px-4.5 py-3 pb-4.5`}
       className={`${containerOutline} bg-gray-0 flex w-full flex-row items-center gap-5 px-4.5 py-3`}
     >
-      <Image
-        loading="eager"
-        src="/software_work/lang101.png"
-        alt="Github Repo"
-        width={50}
-        height={50}
-        className="rounded-lg sm:block"
-      />
+      <div className="relative h-22.5 w-22.5 shrink-0">
+        <Image
+          loading="eager"
+          src="/software_work/lang101.png"
+          alt="Github Repo"
+          fill
+          sizes="90px"
+          className="rounded-lg object-contain sm:block"
+        />
+      </div>
       <div className="flex flex-col gap-3">
         <GithubRepoCardTitleAndDescription
           title="Lang101"
@@ -271,14 +288,16 @@ function Gia() {
       // className={`${containerOutline} bg-gray-0 flex flex-col gap-3 px-4.5 py-3 pb-4.5`}
       className={`${containerOutline} bg-gray-0 flex w-full flex-row items-center gap-5 px-4.5 py-3`}
     >
-      <Image
-        loading="eager"
-        src={giaLogoSrc}
-        alt="GerentIA"
-        width={50}
-        height={50}
-        className="sm:block"
-      />
+      <div className="flex h-22.5 w-22.5 shrink-0 items-center justify-center">
+        <Image
+          loading="eager"
+          src={giaLogoSrc}
+          alt="GerentIA"
+          width={65}
+          height={50}
+          className="sm:block"
+        />
+      </div>
       <div className="flex flex-col gap-3">
         <GithubRepoCardTitleAndDescription
           title="GerentIA"
@@ -343,6 +362,7 @@ type GithubRepoCardProps = {
   description: string
   tags: string[]
   starTotal: number
+  starsApproximate?: boolean
 }
 
 function GithubRepoCard({
@@ -354,6 +374,7 @@ function GithubRepoCard({
   description,
   tags,
   starTotal,
+  starsApproximate = false,
 }: GithubRepoCardProps) {
   return (
     <Link
@@ -394,7 +415,10 @@ function GithubRepoCard({
         </p>
         <div className="flex flex-col gap-2.5">
           <Tags tags={tags} />
-          <GithubStars total={starTotal} />
+          <GithubStars
+            total={starTotal}
+            approximate={starsApproximate}
+          />
         </div>
       </div>
     </Link>
@@ -403,9 +427,13 @@ function GithubRepoCard({
 
 type GithubStarsProps = {
   total: number
+  approximate?: boolean
 }
 
-function GithubStars({ total }: GithubStarsProps) {
+function GithubStars({
+  total,
+  approximate = false,
+}: GithubStarsProps) {
   return (
     <div className="flex items-center gap-1">
       <Image
@@ -417,7 +445,10 @@ function GithubStars({ total }: GithubStarsProps) {
         sizes="100vw"
         className="h-full"
       />
-      <p className="font-semibold">{total}+</p>
+      <p className="font-semibold">
+        {total}
+        {approximate ? "+" : ""}
+      </p>
     </div>
   )
 }
