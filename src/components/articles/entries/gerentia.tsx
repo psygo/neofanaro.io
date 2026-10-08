@@ -66,6 +66,21 @@ export function Gerentia({ article }: ArticleProps) {
       {lang === "pt" ? (
         <>
           <ArticleSection>
+            <ArticleBlockQuote>
+              Autores:{" "}
+              <ArticleLink href="https://www.linkedin.com/in/philippe-fanaro/">
+                Philippe Fanaro
+              </ArticleLink>
+              ,{" "}
+              <ArticleLink href="https://www.linkedin.com/in/matheus-cunha-459408235/">
+                Matheus Cunha
+              </ArticleLink>{" "}
+              e{" "}
+              <ArticleLink href="https://www.linkedin.com/in/pedro-augusto-neves/">
+                Pedro Neves
+              </ArticleLink>
+              .
+            </ArticleBlockQuote>
             <ArticleImageWithLegend
               src={landingPageSrc}
               height={100}
@@ -279,7 +294,7 @@ export function Gerentia({ article }: ArticleProps) {
               agradece!
             </ArticleParagraph>
             <ArticleImageWithLegend
-              src="/articles/gerentia/gia_logo_256.png"
+              src={giaLogoSrc}
               height={100}
               width={150}
               className=""
@@ -304,6 +319,21 @@ export function Gerentia({ article }: ArticleProps) {
       ) : (
         <>
           <ArticleSection>
+            <ArticleBlockQuote>
+              Authors:{" "}
+              <ArticleLink href="https://www.linkedin.com/in/philippe-fanaro/">
+                Philippe Fanaro
+              </ArticleLink>
+              ,{" "}
+              <ArticleLink href="https://www.linkedin.com/in/matheus-cunha-459408235/">
+                Matheus Cunha
+              </ArticleLink>{" "}
+              and{" "}
+              <ArticleLink href="https://www.linkedin.com/in/pedro-augusto-neves/">
+                Pedro Neves
+              </ArticleLink>
+              .
+            </ArticleBlockQuote>
             <ArticleImageWithLegend
               src={landingPageSrc}
               height={100}
