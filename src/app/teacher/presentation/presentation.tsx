@@ -188,7 +188,7 @@ function PricePerPackCard() {
   return (
     <PriceContainer>
       <p className="text-xl font-black">
-        {lang === "pt" ? "R$ 275" : "US$ 60"}
+        {lang === "pt" ? "R$ 275" : "US$ 65"}
       </p>
       <p className="text-gray-700 dark:text-slate-300">
         {lang === "pt"
