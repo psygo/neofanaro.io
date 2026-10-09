@@ -27,6 +27,7 @@ import {
   PostAiOpeningHierarchy,
   Pumu,
   SampleSizeAndCommonSense,
+  SecondBrazilOpen2026,
   Sugeundaesajeon,
   TennozanLeague,
   TewariDelight2,
@@ -108,6 +109,8 @@ function whichArticle(
       return <PostAiOpeningHierarchy article={post} />
     case "pumu":
       return <Pumu article={post} />
+    case "second-brazil-open-2026":
+      return <SecondBrazilOpen2026 article={post} />
     case "tennozan-league":
       return <TennozanLeague article={post} />
     case "tewari-delight-2":

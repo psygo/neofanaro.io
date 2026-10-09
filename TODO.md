@@ -2,6 +2,10 @@
 
 ## Priorities
 
+- The Best of Fanaro.io
+- Second Place at the Brazil Open
+- My Manga Recommendations
+
 - Add a React Three Fiber animation for my website.
 
 - Mention Alexandre's comments on influence on the Mammoth's Jump article.
