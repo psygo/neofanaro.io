@@ -14,6 +14,7 @@ import {
   GoViewerBoard,
   GoViewerControls,
   GoViewerLegend,
+  GoViewerPlayers,
 } from "../../goViewer/exports"
 
 export function SecondBrazilOpen2026({
@@ -136,6 +137,7 @@ export function SecondBrazilOpen2026({
             }}
           />
           <GoViewerControls />
+          <GoViewerPlayers />
           <GoViewerLegend>
             The fatal joseki in my against Uyama Hissao. I
             like pincering with 3, and, after White&apos;s
@@ -171,6 +173,7 @@ export function SecondBrazilOpen2026({
         >
           <GoViewerBoard interactive={true} />
           <GoViewerControls />
+          <GoViewerPlayers />
           <GoViewerLegend>
             The regular tournament game against Alexandre
             Amaro 7-8d Fox (Black). You can check the game
@@ -194,6 +197,7 @@ export function SecondBrazilOpen2026({
         >
           <GoViewerBoard interactive={true} />
           <GoViewerControls />
+          <GoViewerPlayers />
           <GoViewerLegend>
             After the ko ended, we played only about 10
             moves before I (White) lost on time. And

@@ -33,6 +33,9 @@ export type GoViewerState = {
   labels: SgfLabel[]
   viewIndex: number
   lastIllegalReason: IllegalReason | null
+  // From the SGF's own PB/PW, when loaded from one.
+  playerBlack?: string
+  playerWhite?: string
 }
 
 type Action =
@@ -87,6 +90,8 @@ function fromParsedSgf(
     labels: parsed.labels,
     viewIndex: startAt === "end" ? moves.length : 0,
     lastIllegalReason: null,
+    playerBlack: parsed.gameInfo.playerBlack,
+    playerWhite: parsed.gameInfo.playerWhite,
   }
 }
 
@@ -264,6 +269,9 @@ export type GoViewerContextValue = {
   capturedStones: CapturedStone[]
   labels: SgfLabel[]
   lastIllegalReason: IllegalReason | null
+  // From the SGF's own PB/PW, when loaded from one.
+  playerBlack?: string
+  playerWhite?: string
   // See GoViewerProviderProps' own doc.
   label?: string
   placeStone: (row: number, col: number) => void
@@ -472,6 +480,8 @@ export function GoViewerProvider({
       capturedStones: view.capturedStones,
       labels: state.labels,
       lastIllegalReason: state.lastIllegalReason,
+      playerBlack: state.playerBlack,
+      playerWhite: state.playerWhite,
       label,
       placeStone,
       pass,
@@ -490,6 +500,8 @@ export function GoViewerProvider({
       state.moves.length,
       state.labels,
       state.lastIllegalReason,
+      state.playerBlack,
+      state.playerWhite,
       label,
       view,
       placeStone,
