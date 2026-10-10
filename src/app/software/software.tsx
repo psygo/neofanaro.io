@@ -299,25 +299,35 @@ function Gia() {
       // className={`${containerOutline} bg-gray-0 flex flex-col gap-3 px-4.5 py-3 pb-4.5`}
       className={`${containerOutline} bg-gray-0 flex w-full flex-row items-center gap-5 px-4.5 py-3`}
     >
-      <div className="flex h-22.5 w-22.5 shrink-0 items-center justify-center">
+      <div className="hidden h-22.5 w-22.5 shrink-0 items-center justify-center sm:flex">
         <Image
           loading="eager"
           src={giaLogoSrc}
           alt="GerentIA"
           width={65}
           height={50}
-          className="sm:block"
         />
       </div>
       <div className="flex flex-col gap-3">
-        <GithubRepoCardTitleAndDescription
-          title="GerentIA"
-          description={
-            lang === "pt"
-              ? "IA + CRM + ERP"
-              : "AI + CRM + ERP"
-          }
-        />
+        <div className="flex items-center gap-2">
+          <h3 className="text-md font-bold sm:text-lg">
+            GerentIA
+          </h3>
+          <Image
+            loading="eager"
+            src={giaLogoSrc}
+            alt="GerentIA Logo"
+            width={0}
+            height={0}
+            sizes="100vw"
+            className="h-6 w-6 object-contain sm:hidden"
+          />
+        </div>
+        <p className="-mt-2 text-sm text-slate-950 dark:text-slate-300">
+          {lang === "pt"
+            ? "IA + CRM + ERP"
+            : "AI + CRM + ERP"}
+        </p>
         <Tags tags={["ai", "react native", "app"]} />
       </div>
     </Link>
