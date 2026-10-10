@@ -27,9 +27,10 @@ export function GoProfPresentationSection() {
           {lang === "pt" ? (
             <>
               <p className="text-center">
-                Olá! Através dos meus livros e conteúdo no
-                YouTube, procuro compartilhar o que sei
-                deste jogo milenar e de infinita riqueza.
+                Olá! Sou um jogador 6-7 dan Fox e, através
+                dos meus livros e conteúdo no YouTube,
+                procuro compartilhar o que sei deste jogo
+                milenar e de infinita riqueza.
               </p>
               <p className="text-center">
                 Caso você queira ter aulas, contate-me!
@@ -38,10 +39,10 @@ export function GoProfPresentationSection() {
           ) : (
             <>
               <p className="text-center">
-                Hi! I&apos;m a dan player from Brazil and
-                through my books and YouTube content, I try
-                to share what I know about this ancient game
-                of infinite richness.
+                Hi! I&apos;m a Fox 6-7 dan player from
+                Brazil and through my books and YouTube
+                content, I try to share what I know about
+                this ancient game of infinite richness.
               </p>
 
               <p className="text-center">
