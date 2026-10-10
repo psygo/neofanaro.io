@@ -212,7 +212,10 @@ export function SecondBrazilOpen2026({
         </GoViewer>
         <ArticleParagraph>
           As I mentioned on my{" "}
-          <ArticleLink href="/articles/one-year-in-asia">
+          <ArticleLink
+            internal
+            href="/articles/one-year-in-asia"
+          >
             One Year in Asia Studying Go
           </ArticleLink>{" "}
           article, I feel disappointed at myself that my

@@ -1,3 +1,4 @@
+export * from "./bestOfFanaroio"
 export * from "./dowonPairGo"
 export * from "./gerentia"
 export * from "./gobanWeb"

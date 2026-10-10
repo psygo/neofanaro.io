@@ -9,6 +9,7 @@ import { Main } from "@components/common/main"
 import { CpiSuspense } from "@components/common/cpiSuspense"
 
 import {
+  BestOfFanaroio,
   DowonPairGo,
   Gerentia,
   GobanWeb,
@@ -75,6 +76,8 @@ function whichArticle(
   post: ArticleWithComments,
 ) {
   switch (path) {
+    case "best-of-fanaroio":
+      return <BestOfFanaroio article={post} />
     case "dowon-pairgo":
       return <DowonPairGo article={post} />
     case "gerentia":
