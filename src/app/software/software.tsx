@@ -230,25 +230,36 @@ function Lang101() {
       // className={`${containerOutline} bg-gray-0 flex flex-col gap-3 px-4.5 py-3 pb-4.5`}
       className={`${containerOutline} bg-gray-0 flex w-full flex-row items-center gap-5 px-4.5 py-3`}
     >
-      <div className="relative h-22.5 w-22.5 shrink-0">
+      <div className="relative hidden h-22.5 w-22.5 shrink-0 sm:block">
         <Image
           loading="eager"
           src="/software_work/lang101.png"
           alt="Github Repo"
           fill
           sizes="90px"
-          className="rounded-lg object-contain sm:block"
+          className="rounded-lg object-contain"
         />
       </div>
       <div className="flex flex-col gap-3">
-        <GithubRepoCardTitleAndDescription
-          title="Lang101"
-          description={
-            lang === "pt"
-              ? "Um aplicativo de aprendizado de línguas por flashcards e Elo"
-              : "A language learning app with flashcards and Elo"
-          }
-        />
+        <div className="flex items-center gap-2">
+          <h3 className="text-md font-bold sm:text-lg">
+            Lang101
+          </h3>
+          <Image
+            loading="eager"
+            src="/software_work/lang101.png"
+            alt="Github Repo Logo"
+            width={0}
+            height={0}
+            sizes="100vw"
+            className="h-6 w-6 rounded object-contain sm:hidden"
+          />
+        </div>
+        <p className="-mt-2 text-sm text-slate-950 dark:text-slate-300">
+          {lang === "pt"
+            ? "Um aplicativo de aprendizado de línguas por flashcards e Elo"
+            : "A language learning app with flashcards and Elo"}
+        </p>
         <Tags
           tags={["react native", "app", "typescript", "ai"]}
         />
