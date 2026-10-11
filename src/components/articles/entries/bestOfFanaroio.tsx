@@ -67,7 +67,7 @@ export function BestOfFanaroio({ article }: ArticleProps) {
           I&apos;m nostalgic about 1990s web design, I
           believe the more modern UX you&apos;re using right
           here is much better &mdash; and I have plans to
-          turn this website into a 3D experience!{" "}
+          turn this website into a 3D experience!
         </ArticleParagraph>
         <ArticleParagraph>
           Back then, I also thought having no frameworks

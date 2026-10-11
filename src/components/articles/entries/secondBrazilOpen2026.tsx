@@ -76,8 +76,7 @@ export function SecondBrazilOpen2026({
           pronounce the countdown, so tracking the 10s was
           really difficult. And 10s on a real board is much
           less than 10s on a computer, since we have to take
-          the stones, place them and then tap the
-          clock.{" "}
+          the stones, place them and then tap the clock.
         </ArticleParagraph>
         <ArticleImageWithLegend
           src="/articles/second-brazil-open-2026/final_points.png"
@@ -122,9 +121,9 @@ export function SecondBrazilOpen2026({
         <ArticleParagraph>
           Also, Uyama keeps himself sharp at such an
           advanced age still. According to Alexandre Amaro,
-          on their past 4 most recent games against each
-          other, Uyama managed to average 7.5d Fox, an
-          estimate given by the AI platform{" "}
+          on their 4 most recent games against each other,
+          Uyama managed to average 7.5d Fox, an estimate
+          given by the AI platform{" "}
           <ArticleLink href="https://zhangqi.com.cn/">
             Zhangqi
           </ArticleLink>
@@ -153,16 +152,17 @@ export function SecondBrazilOpen2026({
             playerWhite="Philippe Fanaro"
           />
           <GoViewerLegend>
-            The fatal joseki in my against Uyama Hissao. I
-            like pincering with 3, and, after Black&apos;s
-            keima with 4, if Black simply captures in a
-            ladder with 8 at 9, I counter-atari at 8. Black
-            would then have an extra stone to the ponnuki
-            with 4, and White&apos;s corner would be big and
-            solid. I had never seen the extremely simple
-            follow-ups at 10 and 12, and I couldn&apos;t
-            find White 19 let alone 25, since Black seems to
-            easily break through.
+            The fatal joseki in my match against Uyama
+            Hissao. I like pincering with 3, and, after
+            Black&apos;s keima with 4, if Black simply
+            captures in a ladder with 8 at 9, I
+            counter-atari at 8. Black would then have an
+            extra stone to the ponnuki with 4, and
+            White&apos;s corner would be big and solid. I
+            had never seen the extremely simple follow-ups
+            at 10 and 12, and I couldn&apos;t find White 19
+            let alone 25, since Black seems to easily break
+            through.
           </GoViewerLegend>
         </GoViewer>
         <ArticleParagraph>
@@ -249,7 +249,7 @@ export function SecondBrazilOpen2026({
         </ArticleParagraph>
         <ArticleBlockQuote>
           This year, I&apos;ve been solving 10+ tsumegos and
-          playing at least one game everyday. Treating Go
+          playing at least one game every day. Treating Go
           just like gym work helps with maintaining good
           shape, and it creates a habit, which is much
           easier to manage in the long run, since we
