@@ -91,12 +91,51 @@ export const containerOutline =
 export const cardDecoration =
   "rounded-xl border-2 border-gray-300 px-4 pt-3 pb-3.5 shadow-md transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:bg-gray-100 hover:shadow-xl hover:duration-200 dark:border-slate-700 dark:bg-slate-900 dark:hover:bg-slate-800"
 
+const badukCategoryColor = "oklch(79.5% 0.184 86.047)"
+const softwareCategoryColor = "oklch(66.6% 0.179 58.318)"
+const otherCategoryColor = "var(--article-category-other)"
+
 export function articleCategoryColor(tags: string[]) {
-  if (tags.includes("baduk"))
-    return "oklch(79.5% 0.184 86.047)"
+  if (tags.includes("baduk")) return badukCategoryColor
   if (tags.includes("software"))
-    return "oklch(66.6% 0.179 58.318)"
-  return "var(--article-category-other)"
+    return softwareCategoryColor
+  return otherCategoryColor
+}
+
+// Every category color `tags` belongs to, unlike
+// articleCategoryColor's exclusionary first-match — an article
+// tagged "baduk", "software", and "others" all at once belongs to
+// all three. An article matching none of them still falls back to
+// "other", same as articleCategoryColor.
+export function articleCategoryColors(
+  tags: string[],
+): string[] {
+  const colors: string[] = []
+  if (tags.includes("baduk"))
+    colors.push(badukCategoryColor)
+  if (tags.includes("software"))
+    colors.push(softwareCategoryColor)
+  if (tags.includes("others") || tags.includes("other"))
+    colors.push(otherCategoryColor)
+  return colors.length > 0 ? colors : [otherCategoryColor]
+}
+
+// A `background` value for a left-border-style category strip: a
+// solid color for a single category, or a hard-stop gradient
+// banding each matching category's color top to bottom when an
+// article belongs to more than one. Always a `linear-gradient(...)`
+// (even for one color) so it's a valid `backgroundImage` value.
+export function articleCategoryBorderBackground(
+  tags: string[],
+): string {
+  const colors = articleCategoryColors(tags)
+  const bandSize = 100 / colors.length
+  const stops = colors.map((color, i) => {
+    const start = i * bandSize
+    const end = start + bandSize
+    return `${color} ${start}%, ${color} ${end}%`
+  })
+  return `linear-gradient(to bottom, ${stops.join(", ")})`
 }
 
 // ---------------------------------------------------------

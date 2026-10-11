@@ -4,6 +4,7 @@ import { Article } from "@components/articles/article"
 import {
   ArticleImageWithLegend,
   ArticleLink,
+  ArticleOrderedList,
   ArticleParagraph,
   ArticleSection,
   ArticleUnorderedList,
@@ -82,7 +83,7 @@ export function BestOfFanaroio({ article }: ArticleProps) {
           wrote on that blog is still quite useful and/or
           enjoyable, and I might transcribe it here someday.
           But, for now, I&apos;ll just list some of its best
-          entries:
+          entries, in alphabetical order:
         </ArticleParagraph>
         <ArticleUnorderedList>
           <FanaroioBadukArticles />
@@ -98,7 +99,7 @@ function FanaroioBadukArticles() {
   return (
     <li>
       Go | Baduk | Weiqi:
-      <ArticleUnorderedList>
+      <ArticleOrderedList>
         <li>
           <ArticleLink href="https://psygo.github.io/fanaro.io/articles/4_color_go/4_color_go.html">
             4-Color Go
@@ -418,7 +419,7 @@ function FanaroioBadukArticles() {
             Usual
           </ArticleLink>
         </li>
-      </ArticleUnorderedList>
+      </ArticleOrderedList>
     </li>
   )
 }
@@ -427,7 +428,7 @@ function FanaroioSoftwareArticles() {
   return (
     <li>
       Software:
-      <ArticleUnorderedList>
+      <ArticleOrderedList>
         <li>
           <ArticleLink href="https://psygo.github.io/fanaro.io/articles/dart_katas/dart_katas.html">
             (My) Dart Katas
@@ -509,7 +510,7 @@ function FanaroioSoftwareArticles() {
             YouTube&apos;s UI and Keyboard Shortcuts
           </ArticleLink>
         </li>
-      </ArticleUnorderedList>
+      </ArticleOrderedList>
     </li>
   )
 }
@@ -518,7 +519,7 @@ function FanaroioOthersArticles() {
   return (
     <li>
       Others:
-      <ArticleUnorderedList>
+      <ArticleOrderedList>
         <li>
           <ArticleLink href="https://psygo.github.io/fanaro.io/articles/qual_idade_capitao/qual_idade_capitao.html">
             26 Ovelhas e 10 Bodes: Qual a Idade do Capitão?
@@ -744,7 +745,7 @@ function FanaroioOthersArticles() {
             Socialism/Communism Is Wrong (Probably)
           </ArticleLink>
         </li>
-      </ArticleUnorderedList>
+      </ArticleOrderedList>
     </li>
   )
 }

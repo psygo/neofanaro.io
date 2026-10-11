@@ -1,5 +1,5 @@
 import {
-  articleCategoryColor,
+  articleCategoryBorderBackground,
   cardDecoration,
 } from "@styles"
 
@@ -10,6 +10,7 @@ import { localizedText } from "@utils"
 
 // import { CountryFlag } from "@components/common/countryFlag"
 
+import { useSiteTheme } from "../common/siteThemeProvider"
 import { LangLink } from "../common/langLink"
 import { VoteButtons } from "./voteButtons"
 import {
@@ -25,18 +26,27 @@ export type ArticleCardProps = {
 
 export function ArticleCard({ post }: ArticleCardProps) {
   const lang = useLang()
+  const { siteTheme } = useSiteTheme()
 
-  const borderColor = articleCategoryColor(post.tags)
+  const categoryBackground =
+    articleCategoryBorderBackground(post.tags)
+  const borderWidth = siteTheme === "neobrutalist" ? 10 : 7
 
   return (
     <div className="flex flex-col gap-1.5">
       <LangLink href={`/articles/${post.path}`}>
         <div
-          style={{
-            borderLeftColor: borderColor,
-          }}
-          className={`neo:rounded-none neo:border-[3px] neo:border-l-10 neo:border-black neo:bg-white neo:shadow-[6px_6px_0_0_#000] neo:transition-[transform,box-shadow] neo:duration-150 neo:ease-linear neo:hover:translate-x-0.75 neo:hover:translate-y-0.75 neo:hover:bg-white neo:hover:shadow-[2px_2px_0_0_#000] neo:dark:border-white neo:dark:bg-slate-900 neo:dark:shadow-[6px_6px_0_0_#fff] neo:dark:hover:bg-slate-900 neo:dark:hover:shadow-[2px_2px_0_0_#fff] flex flex-col gap-3 border-l-[7px] ${cardDecoration}`}
+          style={{ borderLeftWidth: 0 }}
+          className={`neo:rounded-none neo:border-[3px] neo:border-black neo:bg-white neo:shadow-[6px_6px_0_0_#000] neo:transition-[transform,box-shadow] neo:duration-150 neo:ease-linear neo:hover:translate-x-0.75 neo:hover:translate-y-0.75 neo:hover:bg-white neo:hover:shadow-[2px_2px_0_0_#000] neo:dark:border-white neo:dark:bg-slate-900 neo:dark:shadow-[6px_6px_0_0_#fff] neo:dark:hover:bg-slate-900 neo:dark:hover:shadow-[2px_2px_0_0_#fff] relative flex flex-col gap-3 overflow-hidden ${cardDecoration}`}
         >
+          <span
+            aria-hidden
+            className="pointer-events-none absolute inset-y-0 left-0"
+            style={{
+              width: borderWidth,
+              background: categoryBackground,
+            }}
+          />
           <ArticleTitle>
             {localizedText(
               post.titleEn,
