@@ -37,8 +37,7 @@ export function BestOfFanaroio({ article }: ArticleProps) {
           <ArticleLink href="https://developer.mozilla.org/en-US/docs/Web/API/Web_components">
             Web Components
           </ArticleLink>
-          . The results were the bare-bones website you see
-          on{" "}
+          . The result was the bare-bones website you see on{" "}
           <ArticleLink
             internal
             href="https://psygo.github.io/fanaro.io"
@@ -49,9 +48,9 @@ export function BestOfFanaroio({ article }: ArticleProps) {
           <ArticleLink href="https://github.com/psygo/fanaro.io">
             github.com/psygo/fanaro.io
           </ArticleLink>
-          . It used to be on fanaro.io, but I stopped paying
-          for that domain, and someone bought it to funnel
-          the traffic elsewhere.
+          . That used to be on fanaro.io, but I stopped
+          paying for that domain, and someone bought it to
+          funnel the traffic elsewhere.
         </ArticleParagraph>
         <ArticleImageWithLegend
           src="/articles/best-of-fanaroio/fanaroio_1.png"
@@ -67,8 +66,8 @@ export function BestOfFanaroio({ article }: ArticleProps) {
           lot of cringe about that project. Even though
           I&apos;m nostalgic about 1990s web design, I
           believe the more modern UX you&apos;re using right
-          here is much better &mdash; and I have plans of
-          turning this website into a 3D experience!{" "}
+          here is much better &mdash; and I have plans to
+          turn this website into a 3D experience!{" "}
         </ArticleParagraph>
         <ArticleParagraph>
           Back then, I also thought having no frameworks
@@ -81,8 +80,9 @@ export function BestOfFanaroio({ article }: ArticleProps) {
           Anyway, with 140+ articles &mdash; in Portuguese,
           English and French &mdash;, some of the content I
           wrote on that blog is still quite useful and/or
-          enjoyable, and I might copy it here someday. But,
-          for now, I&apos;ll just list some of the best:
+          enjoyable, and I might transcribe it here someday.
+          But, for now, I&apos;ll just list some of its best
+          entries:
         </ArticleParagraph>
         <ArticleUnorderedList>
           <FanaroioBadukArticles />
@@ -426,7 +426,7 @@ function FanaroioBadukArticles() {
 function FanaroioSoftwareArticles() {
   return (
     <li>
-      Software
+      Software:
       <ArticleUnorderedList>
         <li>
           <ArticleLink href="https://psygo.github.io/fanaro.io/articles/dart_katas/dart_katas.html">
@@ -517,7 +517,7 @@ function FanaroioSoftwareArticles() {
 function FanaroioOthersArticles() {
   return (
     <li>
-      Others
+      Others:
       <ArticleUnorderedList>
         <li>
           <ArticleLink href="https://psygo.github.io/fanaro.io/articles/qual_idade_capitao/qual_idade_capitao.html">

@@ -2,6 +2,8 @@
 
 ## Priorities
 
+- Add [this video](https://www.youtube.com/shorts/r9krLZkNRco) to the statistics article.
+
 - The Best of Fanaro.io
 - Second Place at the Brazil Open
 - My Manga Recommendations
