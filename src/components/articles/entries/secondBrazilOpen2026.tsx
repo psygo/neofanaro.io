@@ -168,19 +168,20 @@ export function SecondBrazilOpen2026({
         <ArticleParagraph>
           At the time of writing, I hop between 6-7d Fox,
           and so managing to beat Alexandre, who has been
-          between 7-8d for many years already, was very
-          unexpected to everybody, including me.
+          between 7-8d for many years already and a multiple
+          times Brazilian champion, was very unexpected to
+          everybody, including me.
         </ArticleParagraph>
         <ArticleParagraph>
           Our first game had me (White) in a tough position
           after the double-hane of 75 on the bottom. But it
-          also got him too comfortable, and he started
-          playing slack. The profits from attacking his two
-          center groups and invading the top-left corner
-          settled me in the lead for quite a while,
-          according to AI. Despite us both thinking Black
-          was winning, somehow I edged it out by 3.5 in the
-          end.
+          also got him too comfortable, and his moves might
+          have offered me some slack. The profits from
+          attacking his two center groups and invading the
+          top-left corner settled me in the lead for quite a
+          while, according to AI. Despite us both thinking
+          Black was winning, somehow I edged it out by 3.5
+          in the end.
         </ArticleParagraph>
         <GoViewer
           label="fatal-joseki"

@@ -2,6 +2,8 @@
 
 ## Priorities
 
+- Add some sort of reset button for the Go Viewer when the user clicks on the board and would like to go back to the original.
+
 - Add [this video](https://www.youtube.com/shorts/r9krLZkNRco) to the statistics article.
 
 - My Manga Recommendations
