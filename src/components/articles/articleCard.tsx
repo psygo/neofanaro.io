@@ -58,7 +58,7 @@ export function ArticleCard({ post }: ArticleCardProps) {
                 sizes="100vw"
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-white from-0% via-white via-50% to-transparent to-80% dark:from-slate-900 dark:via-slate-900" />
+              <div className="absolute inset-0 bg-gradient-to-r from-white from-0% via-white via-50% to-transparent to-85% dark:from-slate-900 dark:via-slate-900" />
             </div>
           )}
           <span

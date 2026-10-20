@@ -103,12 +103,14 @@ type ArticleImageProps = {
   src: string
   alt: string
   className?: string
+  backgroundColor?: string
 }
 
 export function ArticleImage({
   src,
   alt,
   className = "mx-auto h-full w-full px-3",
+  backgroundColor,
 }: ArticleImageProps) {
   return (
     <Image
@@ -117,6 +119,7 @@ export function ArticleImage({
       height={0}
       sizes="100vw"
       className={className}
+      style={{ backgroundColor }}
       alt={alt}
     />
   )
@@ -128,6 +131,7 @@ type ArticleImageWithLegendProps = WithReactChildren & {
   height?: number
   width?: number
   className?: string
+  backgroundColor?: string
 }
 
 export function ArticleImageWithLegend({
@@ -136,6 +140,7 @@ export function ArticleImageWithLegend({
   height = 300,
   width = 300,
   className = "rounded-lg",
+  backgroundColor,
   children,
 }: ArticleImageWithLegendProps) {
   const [lightboxOpen, setLightboxOpen] = useState(false)
@@ -157,6 +162,7 @@ export function ArticleImageWithLegend({
           type="button"
           onClick={() => setLightboxOpen(true)}
           className={`block w-full cursor-zoom-in overflow-hidden ${className}`}
+          style={{ backgroundColor }}
         >
           <Image
             loading="eager"
@@ -182,6 +188,7 @@ export function ArticleImageWithLegend({
         <ArticleImageLightbox
           src={src}
           alt={alt}
+          backgroundColor={backgroundColor}
           onClose={() => setLightboxOpen(false)}
         />
       )}

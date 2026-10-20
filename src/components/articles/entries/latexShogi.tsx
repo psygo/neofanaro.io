@@ -64,7 +64,10 @@ export function LatexShogi({ article }: ArticleProps) {
           , a package which allows writers to draw vector
           diagrams for Japanese chess, or shogi, with LaTeX.
         </ArticleParagraph>
-        <ArticleImageWithLegend src="/articles/latex-shogi/sample_1.svg">
+        <ArticleImageWithLegend
+          src="/articles/latex-shogi/sample_1.svg"
+          backgroundColor="white"
+        >
           <ImageLegend>
             An example diagram using all the pieces.
           </ImageLegend>
@@ -83,7 +86,10 @@ export function LatexShogi({ article }: ArticleProps) {
           </ArticleLink>
           .
         </ArticleParagraph>
-        <ArticleImageWithLegend src="/articles/latex-shogi/shogi_problema_1.svg">
+        <ArticleImageWithLegend
+          src="/articles/latex-shogi/shogi_problema_1.svg"
+          backgroundColor="white"
+        >
           <ImageLegend>
             Another example diagram, this time with
             coordinates.
@@ -105,7 +111,10 @@ export function LatexShogi({ article }: ArticleProps) {
           which is what you&apos;re gonna find in most shogi
           books:
         </ArticleParagraph>
-        <ArticleImageWithLegend src="/articles/latex-shogi/shogi_diagram_export.svg">
+        <ArticleImageWithLegend
+          src="/articles/latex-shogi/shogi_diagram_export.svg"
+          backgroundColor="white"
+        >
           <ImageLegend>
             A square diagram example, the more common format
             in shogi books. Note that we do have the

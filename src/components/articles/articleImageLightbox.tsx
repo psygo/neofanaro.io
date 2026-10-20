@@ -7,12 +7,14 @@ import Image from "next/image"
 type ArticleImageLightboxProps = {
   src: string
   alt: string
+  backgroundColor?: string
   onClose: () => void
 }
 
 export function ArticleImageLightbox({
   src,
   alt,
+  backgroundColor,
   onClose,
 }: ArticleImageLightboxProps) {
   useEffect(() => {
@@ -30,7 +32,10 @@ export function ArticleImageLightbox({
       className="not-prose fixed inset-0 z-50 flex cursor-zoom-out items-center justify-center bg-black/80 p-4"
       onClick={onClose}
     >
-      <div className="relative h-[90vh] w-[90vw]">
+      <div
+        className="relative h-[90vh] w-[90vw]"
+        style={{ backgroundColor }}
+      >
         <Image
           src={src}
           alt={alt}
