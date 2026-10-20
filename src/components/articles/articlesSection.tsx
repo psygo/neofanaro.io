@@ -38,12 +38,9 @@ export function ArticlesSection() {
   const pathname = usePathname()
   const searchParams = useSearchParams()
   const pageFromUrl = Number(searchParams.get("page"))
-  const [page, setPageState] = useState(
-    pageFromUrl > 0 ? pageFromUrl : 1,
-  )
+  const page = pageFromUrl > 0 ? pageFromUrl : 1
 
   function setPage(newPage: number) {
-    setPageState(newPage)
     const params = new URLSearchParams(
       searchParams.toString(),
     )
