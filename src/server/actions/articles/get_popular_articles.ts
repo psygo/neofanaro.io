@@ -40,6 +40,7 @@ async function get_most_viewed(
       langs: articlesTable.langs,
       titleEn: articlesTable.titleEn,
       titlePt: articlesTable.titlePt,
+      thumbnailSrc: articlesTable.thumbnailSrc,
       descriptionEn: articlesTable.descriptionEn,
       descriptionPt: articlesTable.descriptionPt,
       views: articlesTable.views,

@@ -75,6 +75,7 @@ export async function get_articles(
         langs: articlesTable.langs,
         titleEn: articlesTable.titleEn,
         titlePt: articlesTable.titlePt,
+        thumbnailSrc: articlesTable.thumbnailSrc,
         descriptionEn: articlesTable.descriptionEn,
         descriptionPt: articlesTable.descriptionPt,
         views: articlesTable.views,

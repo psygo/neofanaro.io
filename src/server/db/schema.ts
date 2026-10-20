@@ -25,6 +25,7 @@ export const articlesTable = pgTable(
     langs: json().notNull().default(["en"]),
     titleEn: text("title_en").notNull().default("Title"),
     titlePt: text("title_pt").notNull().default(""),
+    thumbnailSrc: text("thumbnail_src"),
     descriptionEn: text("description_en")
       .notNull()
       .default("Description"),

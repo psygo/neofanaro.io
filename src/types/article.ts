@@ -10,6 +10,7 @@ export type ArticleFromDb = {
   langs: string[]
   titleEn: string
   titlePt: string
+  thumbnailSrc: string | null
   descriptionEn: string
   descriptionPt: string
   views: number
