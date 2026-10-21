@@ -18,6 +18,7 @@ import {
   GoViewerBoard,
   GoViewerControls,
   GoViewerLegend,
+  GoViewerPlayers,
 } from "@components/goViewer/exports"
 
 import { SITE_URL } from "@utils"
@@ -117,6 +118,10 @@ export function OkaoigoAiArticles({
             showMoveNumbers
           />
           <GoViewerControls />
+          <GoViewerPlayers
+            playerBlack="Unknown Pro"
+            playerWhite="Fine Art 绝艺"
+          />
           <GoViewerLegend>
             How should you deal with Black&apos;s cut?
           </GoViewerLegend>
@@ -206,6 +211,10 @@ export function OkaoigoAiArticles({
             showMoveNumbers
           />
           <GoViewerControls />
+          <GoViewerPlayers
+            playerBlack="Unknown Pro"
+            playerWhite="Fine Art 绝艺"
+          />
           <GoViewerLegend>
             How can White survive or escape?
           </GoViewerLegend>

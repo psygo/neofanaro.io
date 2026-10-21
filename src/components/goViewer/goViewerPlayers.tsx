@@ -43,7 +43,7 @@ export function GoViewerPlayers({
       )}
       {playerWhite && (
         <li>
-          <span className="inline-block h-3.5 w-3.5 rounded-full border border-[#161616] bg-[#f5f5f5] dark:border-[0.5px]" />
+          <span className="inline-block h-3.5 w-3.5 rounded-full border border-[#161616] bg-[#f5f5f5] dark:border-[0.125px]" />
           <span className="font-semibold">
             {playerWhite}
           </span>

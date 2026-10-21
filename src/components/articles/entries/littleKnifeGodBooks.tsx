@@ -17,6 +17,7 @@ import {
   GoViewerBoard,
   GoViewerControls,
   GoViewerLegend,
+  GoViewerPlayers,
 } from "@components/goViewer/exports"
 
 export function LittleKnifeGodBooks({
@@ -50,7 +51,8 @@ export function LittleKnifeGodBooks({
           So far, I only own his sabaki book. Here&apos;s an
           example from a professional game between{" "}
           <ArticleLink href="https://kifudepot.net/kifucontents.php?id=s%2FfzvBdQObbE93Xj6SuZYg%3D%3D">
-            Kato Chie 3p (White) and Yoshihiro Koike 7p
+            Kato Chie <NoWrap>加藤千笑</NoWrap> 3p (White)
+            and Yoshihiro Koike <NoWrap>小池芳弘</NoWrap> 7p
             (Black)
           </ArticleLink>
           , where should Black play?
@@ -66,10 +68,11 @@ export function LittleKnifeGodBooks({
           startAt="end"
         >
           <GoViewerBoard interactive={false} />
-          <GoViewerLegend>
-            Kato Chie 3p (White) vs Yoshihiro Koike 7p
-            (Black). Black to play.
-          </GoViewerLegend>
+          <GoViewerPlayers
+            playerBlack="Yoshihiro Koike 小池芳弘 7p"
+            playerWhite="Kato Chie 加藤千笑 3p"
+          />
+          <GoViewerLegend>Black to play.</GoViewerLegend>
         </GoViewer>
         <ArticleParagraph>
           Going for a keima is lukewarm, White&apos;s shape
