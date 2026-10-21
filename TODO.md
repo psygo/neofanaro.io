@@ -2,10 +2,6 @@
 
 ## Priorities
 
-- Article thumbnails on the left of the article cards.
-  - More horizontal padding on those cards as well.
-  - Gradual opacity from the right side of the card to the left.
-
 - Tolkien's Despise for Allegory
 - The Global Problems from the Tesuji Encyclopedia
 

@@ -10,6 +10,7 @@ import {
   ArticleImageWithLegend,
   NoWrap,
   ImageLegend,
+  ArticleYouTubeIframe,
 } from "../articleContent"
 // import { GoDiagram, GoDiagramLegend } from "../goDiagram"
 import {
@@ -17,6 +18,7 @@ import {
   GoViewerBoard,
   GoViewerControls,
   GoViewerLegend,
+  GoViewerPlayers,
 } from "@components/goViewer/exports"
 
 import { SITE_URL } from "@utils"
@@ -274,6 +276,36 @@ export function DowonPairGo({ article }: ArticleProps) {
           she was suggesting to her students when I zoned
           out due to my lacking Korean abilities.
         </ArticleParagraph>
+        <ArticleBlockQuote>
+          A similar sort of squeeze should have happened in
+          a game between{" "}
+          <ArticleLink href="https://kifudepot.net/kifucontents.php?id=nFSYhi1zBdLtT3DALAiWpg%3D%3D">
+            Wang Xinghao 9p and Shibano Toramaru 9p, for the
+            2026 Kuksu Mountains world championship
+          </ArticleLink>
+          , seen on the video down below around the 7 minute
+          mark.
+        </ArticleBlockQuote>
+        <ArticleYouTubeIframe
+          src="https://www.youtube.com/embed/IkUQiqR9fGI"
+          title="Go Game Series - TIGER'S TEETH! [China Japan Super Go Match] Season 1 Episode 3"
+        />
+        <GoViewer
+          sgf="/articles/dowon-pairgo/shibano_vs_wang_xinghao.sgf"
+          startAt="end"
+        >
+          <GoViewerBoard
+            interactive={false}
+            showMoveNumbers
+            fromNumber={68}
+          />
+          <GoViewerControls />
+          <GoViewerPlayers />
+          <GoViewerLegend>
+            White should have sacrificed the top and
+            destroyed the top-right corner.
+          </GoViewerLegend>
+        </GoViewer>
       </ArticleSection>
     </Article>
   )
