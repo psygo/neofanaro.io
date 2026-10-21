@@ -30,6 +30,15 @@ export type GoViewerState = {
   setupBoard: Board
   initialToMove: Stone
   moves: RecordedMove[]
+  // The `moves`/`viewIndex` pair this diagram first loaded with —
+  // what "reset" restores, since a diagram can start mid-game
+  // (`startAt="end"`, or a non-zero `viewIndex`) and resetting
+  // should never just blank the board out from under it.
+  initialMoves: RecordedMove[]
+  initialViewIndex: number
+  // Whether the user has placed a stone or passed since the last
+  // load/reset — gates whether a "reset" control has anything to do.
+  hasUserMoves: boolean
   labels: SgfLabel[]
   viewIndex: number
   lastIllegalReason: IllegalReason | null
@@ -82,13 +91,17 @@ function fromParsedSgf(
   firstToMove?: Stone,
 ): GoViewerState {
   const moves = toRecordedMoves(parsed)
+  const viewIndex = startAt === "end" ? moves.length : 0
   return {
     boardSize: parsed.boardSize,
     setupBoard: applySetup(parsed.boardSize, parsed.setup),
     initialToMove: firstToMove ?? parsed.initialToMove,
     moves,
+    initialMoves: moves,
+    initialViewIndex: viewIndex,
+    hasUserMoves: false,
     labels: parsed.labels,
-    viewIndex: startAt === "end" ? moves.length : 0,
+    viewIndex,
     lastIllegalReason: null,
     playerBlack: parsed.gameInfo.playerBlack,
     playerWhite: parsed.gameInfo.playerWhite,
@@ -140,6 +153,7 @@ function reducer(
         ...state,
         moves,
         viewIndex: moves.length,
+        hasUserMoves: true,
         lastIllegalReason: null,
       }
     }
@@ -162,14 +176,16 @@ function reducer(
         ...state,
         moves,
         viewIndex: moves.length,
+        hasUserMoves: true,
         lastIllegalReason: null,
       }
     }
     case "reset":
       return {
         ...state,
-        moves: [],
-        viewIndex: 0,
+        moves: state.initialMoves,
+        viewIndex: state.initialViewIndex,
+        hasUserMoves: false,
         lastIllegalReason: null,
       }
     case "goToStart":
@@ -249,6 +265,9 @@ function initialState(
     setupBoard: createEmptyBoard(boardSize),
     initialToMove: firstToMove ?? "B",
     moves: [],
+    initialMoves: [],
+    initialViewIndex: 0,
+    hasUserMoves: false,
     labels,
     viewIndex: 0,
     lastIllegalReason: null,
@@ -265,6 +284,7 @@ export type GoViewerContextValue = {
   passCount: number
   moveNumber: number
   totalMoves: number
+  hasUserMoves: boolean
   moveNumberAt: Record<string, number>
   capturedStones: CapturedStone[]
   labels: SgfLabel[]
@@ -476,6 +496,7 @@ export function GoViewerProvider({
       passCount: view.trailingPasses,
       moveNumber: state.viewIndex,
       totalMoves: state.moves.length,
+      hasUserMoves: state.hasUserMoves,
       moveNumberAt: view.moveNumberAt,
       capturedStones: view.capturedStones,
       labels: state.labels,
@@ -498,6 +519,7 @@ export function GoViewerProvider({
       state.boardSize,
       state.viewIndex,
       state.moves.length,
+      state.hasUserMoves,
       state.labels,
       state.lastIllegalReason,
       state.playerBlack,

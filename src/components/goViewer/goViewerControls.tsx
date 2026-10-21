@@ -87,6 +87,24 @@ function SkipEndIcon() {
   )
 }
 
+function ResetIcon() {
+  return (
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 16 16"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.4"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M13.5 8A5.5 5.5 0 1 1 10.8 3.4" />
+      <path d="M11 1.5 11 4.5 8 4.5" />
+    </svg>
+  )
+}
+
 export type GoViewerControlsProps = {
   jumpSteps?: number
   className?: string
@@ -103,20 +121,26 @@ export function GoViewerControls({
   const {
     moveNumber,
     totalMoves,
+    hasUserMoves,
     goToStart,
     goToEnd,
     stepBack,
     stepForward,
     jumpBack,
     jumpForward,
+    reset,
   } = useGoViewer()
 
   const atStart = moveNumber === 0
   const atEnd = moveNumber === totalMoves
 
   return (
+    // `relative` lets the reset button below be positioned off to
+    // the side without taking up flex space of its own — appearing
+    // once the user has clicked a stone in would otherwise widen
+    // this row and re-center it, shifting every other button.
     <div
-      className={`flex items-center gap-1 rounded-lg p-1 dark:bg-slate-950 ${className}`}
+      className={`relative flex items-center gap-1 rounded-lg p-1 dark:bg-slate-950 ${className}`}
     >
       <button
         type="button"
@@ -175,6 +199,16 @@ export function GoViewerControls({
       >
         <SkipEndIcon />
       </button>
+      {hasUserMoves && (
+        <button
+          type="button"
+          title="Reset"
+          onClick={reset}
+          className={`absolute top-1/2 left-full ml-2 -translate-y-1/2 ${buttonClasses}`}
+        >
+          <ResetIcon />
+        </button>
+      )}
     </div>
   )
 }
