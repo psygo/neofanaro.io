@@ -23,6 +23,7 @@ import {
   Magi,
   MammothsJump,
   MinCJKForGo,
+  MyFavoriteManga,
   OkaoigoAiArticles,
   OneYearInAsia,
   PostAiOpeningHierarchy,
@@ -104,6 +105,8 @@ function whichArticle(
       return <MammothsJump article={post} />
     case "min-cjk-for-go":
       return <MinCJKForGo article={post} />
+    case "my-favorite-manga":
+      return <MyFavoriteManga article={post} />
     case "okaoigo-ai-articles":
       return <OkaoigoAiArticles article={post} />
     case "one-year-in-asia":

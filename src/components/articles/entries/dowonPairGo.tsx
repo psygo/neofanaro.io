@@ -276,7 +276,13 @@ export function DowonPairGo({ article }: ArticleProps) {
           she was suggesting to her students when I zoned
           out due to my lacking Korean abilities.
         </ArticleParagraph>
-        <ArticleBlockQuote>
+      </ArticleSection>
+      <ArticleSection>
+        <ArticleSectionTitle>
+          Appendix: A Pro Game Example of the Same Type of
+          Squeeze
+        </ArticleSectionTitle>
+        <ArticleParagraph>
           A similar sort of squeeze should have happened in
           a game between{" "}
           <ArticleLink href="https://kifudepot.net/kifucontents.php?id=nFSYhi1zBdLtT3DALAiWpg%3D%3D">
@@ -285,10 +291,10 @@ export function DowonPairGo({ article }: ArticleProps) {
           </ArticleLink>
           , seen on the video down below around the 7 minute
           mark.
-        </ArticleBlockQuote>
+        </ArticleParagraph>
         <ArticleYouTubeIframe
           src="https://www.youtube.com/embed/IkUQiqR9fGI"
-          title="Go Game Series - TIGER'S TEETH! [China Japan Super Go Match] Season 1 Episode 3"
+          title="Liberty Fight TESUJI Ultimate [Shibano Toramaru VS Wang Xinghao] Kuksu Championship Round of 8"
         />
         <GoViewer
           sgf="/articles/dowon-pairgo/shibano_vs_wang_xinghao.sgf"
