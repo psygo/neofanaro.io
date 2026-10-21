@@ -19,6 +19,7 @@ import {
   GoViewerBoard,
   GoViewerControls,
   GoViewerLegend,
+  GoViewerPlayers,
 } from "@components/goViewer/exports"
 
 export function MammothsJump({ article }: ArticleProps) {
@@ -78,6 +79,10 @@ export function MammothsJump({ article }: ArticleProps) {
         >
           <GoViewerBoard interactive={true} />
           <GoViewerControls />
+          <GoViewerPlayers
+            playerBlack="Kim Eunji 김은지 9p"
+            playerWhite="Lee Jihyeon 이지현 9p"
+          />
           <GoViewerLegend>
             A cap from a game between Kim Eunji 9p (Black)
             and Lee Jihyeon 9p (White), forming the
@@ -404,6 +409,10 @@ export function MammothsJump({ article }: ArticleProps) {
             // fromNumber={31}
           />
           <GoViewerControls />
+          <GoViewerPlayers
+            playerBlack="Yoda Norimoto 依田紀基 5p"
+            playerWhite="Jiang Zhujiu 江鑄久 7p"
+          />
           <GoViewerLegend>
             Black 1, the key move to defend its moyo while
             also reducing White&apos;s center.
@@ -489,9 +498,13 @@ export function MammothsJump({ article }: ArticleProps) {
           by the legendary Huang Longshi{" "}
           <NoWrap>黄龍士</NoWrap> (1651 - 1700) and Takemiya
           Masaki <NoWrap>武宮正樹</NoWrap> 9p, according to
-          John Fairbairn. And, on Amazon Japan, it also has{" "}
+          John Fairbairn. And, on Amazon Japan, it also has
+          its own book:{" "}
           <ArticleLink href="https://amzn.asia/d/04LDkwOj">
-            its own book
+            <NoWrap>
+              囲碁 定石研究　タイガーシマリ
+              (棋力向上シリーズ)
+            </NoWrap>
           </ArticleLink>{" "}
           .
         </ArticleParagraph>

@@ -5,9 +5,6 @@
 - Tolkien's Despise for Allegory
 - The Global Problems from the Tesuji Encyclopedia
 
-- Add player names to the Mammoth's Jump article.
-- Add the book's Japanese name to the Mammoth's article.
-
 - Add some sort of reset button for the Go Viewer when the user clicks on the board and would like to go back to the original.
 
 - Add [this video](https://www.youtube.com/shorts/r9krLZkNRco) to the statistics article.

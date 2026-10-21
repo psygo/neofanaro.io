@@ -300,7 +300,10 @@ export function DowonPairGo({ article }: ArticleProps) {
             fromNumber={68}
           />
           <GoViewerControls />
-          <GoViewerPlayers />
+          <GoViewerPlayers
+            playerBlack="Shibano Toramaru 芝野虎丸 9p"
+            playerWhite="Wang Xinghao 王星昊 9p"
+          />
           <GoViewerLegend>
             White should have sacrificed the top and
             destroyed the top-right corner.
