@@ -74,7 +74,13 @@ export async function get_popular_articles_by_category(): Promise<PopularArticle
 
   const isBaduk = sql`${articlesTable.tags}::jsonb @> '["baduk"]'::jsonb`
   const isSoftware = sql`${articlesTable.tags}::jsonb @> '["software"]'::jsonb`
-  const isOther = sql`not (${isBaduk}) and not (${isSoftware})`
+  // Mirrors articleCategoryColors: an article tagged "others"/"other"
+  // belongs here regardless of its other tags (an article can belong
+  // to multiple categories at once), and an article with neither
+  // baduk nor software falls back here too, same as the border-strip
+  // coloring's own catch-all.
+  const hasOthersTag = sql`(${articlesTable.tags}::jsonb @> '["others"]'::jsonb or ${articlesTable.tags}::jsonb @> '["other"]'::jsonb)`
+  const isOther = sql`(${hasOthersTag}) or (not (${isBaduk}) and not (${isSoftware}))`
 
   const [baduk, software, other] = await Promise.all([
     get_most_viewed(isBaduk, playerId),
