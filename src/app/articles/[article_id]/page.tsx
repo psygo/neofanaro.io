@@ -34,6 +34,7 @@ import {
   TennozanLeague,
   TewariDelight2,
   WhatIsGoAbout,
+  ZhangqiCheating,
 } from "@components/articles/entries/exports"
 
 type ArticlePageProps = {
@@ -127,6 +128,8 @@ function whichArticle(
       return <Sugeundaesajeon article={post} />
     case "what-is-go-about":
       return <WhatIsGoAbout article={post} />
+    case "zhangqi-cheating":
+      return <ZhangqiCheating article={post} />
     default:
       return <></>
   }

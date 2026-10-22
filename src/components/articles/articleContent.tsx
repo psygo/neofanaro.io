@@ -295,6 +295,26 @@ export function ArticleYouTubeIframe({
   )
 }
 
+export function ArticleBilibiliIframe({
+  src,
+  title,
+}: ArticleIframeProps) {
+  return (
+    <div className="mt-5 mb-5 flex justify-center">
+      <div className="mx-6 flex aspect-video w-full max-w-lg items-center overflow-hidden rounded-lg border border-slate-200 shadow-lg dark:border-slate-700">
+        <iframe
+          className="h-full w-full"
+          src={src}
+          title={title}
+          scrolling="no"
+          allow="autoplay; encrypted-media; fullscreen"
+          allowFullScreen
+        />
+      </div>
+    </div>
+  )
+}
+
 export function ArticleDivider() {
   return (
     <hr className="mt-6 mb-6 border border-gray-300 dark:border-slate-700" />
