@@ -305,7 +305,10 @@ export function MyFavoriteManga({ article }: ArticleProps) {
           cheesy and unwatchable. The original manhwa is
           still out of reach for non-Korean speakers, but I
           managed to take a look at it when I was in Korea,
-          and it seemed much more entertaining.
+          and it seemed much more entertaining. It&apos;s a
+          pity it might still take a while for non-Korean
+          speakers to be able to enjoy it, maybe AI
+          translation could speed that up.
         </ArticleParagraph>
       </ArticleSection>
     </Article>
