@@ -66,13 +66,15 @@ export async function generateArticleMetadataHelper(
     openGraph: {
       title,
       description,
-      images: [
-        {
-          url: "/logos/fanaro.io_200.png",
-          width: 200,
-          height: 200,
-        },
-      ],
+      images: article.thumbnailSrc
+        ? [{ url: article.thumbnailSrc }]
+        : [
+            {
+              url: "/logos/fanaro.io_200.png",
+              width: 200,
+              height: 200,
+            },
+          ],
     },
   }
 }
