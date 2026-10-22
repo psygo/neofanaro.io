@@ -4,6 +4,19 @@ import { localizedText, SITE_URL } from "@utils"
 
 import { get_article } from "../actions/articles/get_articles"
 
+// Article thumbnails are uploaded at full resolution (several MB,
+// well past what most link-unfurling crawlers will fetch before
+// giving up and showing no image at all) — routed through Next's
+// own image optimizer to serve a crawler-sized version instead of
+// the raw file. The optimizer only takes a target width (no height
+// param to crop against), so this caps height too on the assumption
+// every thumbnail is landscape/near-square, true of all of them today.
+const OG_IMAGE_WIDTH = 300
+
+function ogImageUrl(src: string): string {
+  return `/_next/image?url=${encodeURIComponent(src)}&w=${OG_IMAGE_WIDTH}&q=75`
+}
+
 export const topLevelMetadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: "neofanaro.io",
@@ -67,7 +80,13 @@ export async function generateArticleMetadataHelper(
       title,
       description,
       images: article.thumbnailSrc
-        ? [{ url: article.thumbnailSrc }]
+        ? [
+            {
+              url: ogImageUrl(article.thumbnailSrc),
+              width: OG_IMAGE_WIDTH,
+              height: OG_IMAGE_WIDTH,
+            },
+          ]
         : [
             {
               url: "/logos/fanaro.io_200.png",
