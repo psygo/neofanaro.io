@@ -307,7 +307,7 @@ export function ArticleBilibiliIframe({
           src={src}
           title={title}
           scrolling="no"
-          allow="autoplay; encrypted-media; fullscreen"
+          allow="encrypted-media; fullscreen"
           allowFullScreen
         />
       </div>
