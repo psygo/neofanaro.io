@@ -128,11 +128,12 @@ export function ZhangqiCheating({ article }: ArticleProps) {
           <ArticleLink href="https://www.bilibili.com/en/video/BV1iHo6BSESd/">
             According to their research
           </ArticleLink>
-          , it seems like:
+          , it seems like these are the percentages for AI
+          cheaters:
         </ArticleParagraph>
         <ArticleUnorderedList>
-          <li>36% of Fox 8d are AI cheaters</li>
-          <li>22% of Fox 7d are AI cheaters</li>
+          <li>36% of Fox 8d&apos;s</li>
+          <li>22% of Fox 7d&apos;s</li>
         </ArticleUnorderedList>
         <ArticleParagraph>
           So maybe around 1 in 3 Fox 8d&apos;s are cheaters,
