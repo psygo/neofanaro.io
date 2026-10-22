@@ -299,12 +299,19 @@ export function ArticleBilibiliIframe({
   src,
   title,
 }: ArticleIframeProps) {
+  // Unlike YouTube, bilibili's player autoplays (muted) purely from
+  // its own URL param, regardless of the iframe's `allow` list — so
+  // disabling autoplay has to happen here rather than via `allow`.
+  const autoplayDisabledSrc = src.includes("autoplay=")
+    ? src
+    : `${src}&autoplay=0`
+
   return (
     <div className="mt-5 mb-5 flex justify-center">
       <div className="mx-6 flex aspect-video w-full max-w-lg items-center overflow-hidden rounded-lg border border-slate-200 shadow-lg dark:border-slate-700">
         <iframe
           className="h-full w-full"
-          src={src}
+          src={autoplayDisabledSrc}
           title={title}
           scrolling="no"
           allow="encrypted-media; fullscreen"
