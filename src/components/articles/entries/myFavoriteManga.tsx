@@ -12,6 +12,7 @@ import {
   ArticleYouTubeIframe,
   ArticleOrderedList,
   ArticleTableOfContents,
+  NoWrap,
 } from "../articleContent"
 
 export function MyFavoriteManga({ article }: ArticleProps) {
@@ -20,28 +21,35 @@ export function MyFavoriteManga({ article }: ArticleProps) {
       <ArticleTableOfContents />
       <ArticleSection>
         <ArticleParagraph>
-          I&apos;m not a manga nor manhwa expert. If
+          I&apos;m not a manga (<NoWrap>漫画</NoWrap>) nor
+          manhwa (<NoWrap>만화</NoWrap>) expert. If
           you&apos;re looking for one, I would highly
           recommend{" "}
           <ArticleLink href="https://www.youtube.com/@mattwith4ts">
             matttt
           </ArticleLink>
-          &apos;s channels, which covers all graphic media
-          types in fact. In this article, I merely intend to
-          share my favorite picks, the ones which impacted
-          me the most, be it for entertainment or quality.
+          &apos;s channels, which cover all graphic media
+          types in fact. Through this article, I merely
+          intend to share my favorite picks, the ones which
+          impacted me the most, be it for entertainment or
+          quality.
         </ArticleParagraph>
         <ArticleYouTubeIframe
           src="https://www.youtube.com/embed/kCus8vFbwGw"
           title="matttt - The greatest manga artist you've never heard of"
         />
         <ArticleBlockQuote>
-          I track my reading on GoodReads,{" "}
+          I track my reading on Goodreads,{" "}
           <ArticleLink href="https://www.goodreads.com/user/show/45378010-philippe-fanaro">
             here&apos;s my profile
           </ArticleLink>
           .
         </ArticleBlockQuote>
+        <ArticleParagraph>
+          If you have any suggestions of manga or manhwa I
+          should read, leave them in the comments down
+          below!
+        </ArticleParagraph>
       </ArticleSection>
       <ArticleSection>
         <ArticleSectionTitle>
@@ -49,8 +57,8 @@ export function MyFavoriteManga({ article }: ArticleProps) {
         </ArticleSectionTitle>
         <ArticleParagraph>
           The ordering on my list is way less relevant than
-          making it to the list, I would say, but for sure
-          the number one pick on my list has got to be{" "}
+          making it to the list, but surely the number one
+          pick on my list has got to be{" "}
           <ArticleLink href="https://www.goodreads.com/book/show/32321.Blame_Vol_1">
             Blame!
           </ArticleLink>
@@ -69,7 +77,8 @@ export function MyFavoriteManga({ article }: ArticleProps) {
           Blame! is much more of an aesthetic experience
           than a real story. The setting feels sort of
           boilerplate dystopian, but Tsutomu weaves a world
-          which feels infinite.
+          which feels infinite, awing the reader on every
+          page.
         </ArticleParagraph>
         <ArticleImageWithLegend
           src="/articles/my-favorite-manga/blame_4.jpeg"
@@ -86,7 +95,7 @@ export function MyFavoriteManga({ article }: ArticleProps) {
           width={400}
         >
           <ImageLegend>
-            A panel on the manga Blame! (1)
+            A page from the manga Blame! (1)
           </ImageLegend>
         </ArticleImageWithLegend>
         <ArticleImageWithLegend
@@ -95,7 +104,7 @@ export function MyFavoriteManga({ article }: ArticleProps) {
           width={400}
         >
           <ImageLegend>
-            A panel on the manga Blame! (2)
+            A page from the manga Blame! (2)
           </ImageLegend>
         </ArticleImageWithLegend>
         <ArticleImageWithLegend
@@ -104,24 +113,26 @@ export function MyFavoriteManga({ article }: ArticleProps) {
           width={400}
         >
           <ImageLegend>
-            A panel on the manga Blame! (3)
+            A panel from the manga Blame! (3)
           </ImageLegend>
         </ArticleImageWithLegend>
         <ArticleParagraph>
-          I don&apos;t remember for sure where I first heard
-          of this manga, but I think it was during an{" "}
+          I don&apos;t remember where I first heard of this
+          manga, but I think it was during an{" "}
           <ArticleLink href="https://youtu.be/Zm5Ogh_c0Ig">
-            amazing video on Piranesi, by Jacob Geller
+            amazing video on Piranesi (the book), by Jacob
+            Geller
           </ArticleLink>
-          . Besides being on the title of the highly rated
-          and recommended eponymous novel by Susanna Clarke
-          (
+          . Besides lending his name to the title of the
+          highly rated and recommended eponymous novel by
+          Susanna Clarke (
           <ArticleLink href="https://www.goodreads.com/book/show/50202953-piranesi?ac=1&from_search=true&qid=igWWKez2kr&rank=1">
             Piranesi
           </ArticleLink>
-          ), Giovanni Piranesi (1720 - 1778) was a great
-          source of inspiration for M.C. Escher&apos;s.
-          Piranesi&apos;s drawings are just jaw-dropping.
+          ), Giovanni Piranesi (1720 - 1778) was also a
+          great source of inspiration for M.C. Escher&apos;s
+          surreal artwork. Piranesi&apos;s drawings are just
+          jaw-dropping.
         </ArticleParagraph>
         <ArticleYouTubeIframe
           src="https://www.youtube.com/embed/Zm5Ogh_c0Ig"
@@ -130,7 +141,7 @@ export function MyFavoriteManga({ article }: ArticleProps) {
         <ArticleImageWithLegend
           src="/articles/my-favorite-manga/piranesi_1.png"
           height={100}
-          width={475}
+          width={600}
         >
           <ImageLegend>
             Giovanni Battista Piranesi, <em>Appian Way</em>,
@@ -140,7 +151,7 @@ export function MyFavoriteManga({ article }: ArticleProps) {
         <ArticleImageWithLegend
           src="/articles/my-favorite-manga/piranesi_2.webp"
           height={100}
-          width={475}
+          width={600}
         >
           <ImageLegend>
             Giovanni Battista Piranesi,{" "}
@@ -150,7 +161,7 @@ export function MyFavoriteManga({ article }: ArticleProps) {
         <ArticleImageWithLegend
           src="/articles/my-favorite-manga/piranesi_3.webp"
           height={100}
-          width={475}
+          width={600}
         >
           <ImageLegend>
             Giovanni Battista Piranesi, <em>Carcere XIV</em>
@@ -186,7 +197,7 @@ export function MyFavoriteManga({ article }: ArticleProps) {
             </ArticleLink>
           </li>
           <li>
-            <ArticleLink href="Dragon Ball Z, Vol. 1: The World's Greatest Team (Dragon Ball Z, #1)">
+            <ArticleLink href="https://www.goodreads.com/book/show/18753983">
               Dragon Ball Z
             </ArticleLink>
           </li>
@@ -229,8 +240,9 @@ export function MyFavoriteManga({ article }: ArticleProps) {
         <ArticleBlockQuote>
           Did you know that Dragon Ball is heavily inspired
           by one of the founding stories of Chinese
-          mythology? Goku is basically Sun Wukong, the
-          monkey king, from <em>Journey to the West</em>.
+          mythology? Goku is basically Sun Wukong{" "}
+          <NoWrap>孫悟空</NoWrap>, the monkey king, from{" "}
+          <em>Journey to the West</em>.
         </ArticleBlockQuote>
       </ArticleSection>
       <ArticleSection>
@@ -238,10 +250,10 @@ export function MyFavoriteManga({ article }: ArticleProps) {
           My Favorite Manhwa
         </ArticleSectionTitle>
         <ArticleParagraph>
-          Manhwa are the Korean version of manga. Of course,
-          there are way less of these than there are manga,
+          Manhwa is the Korean version of manga. Of course,
+          there are way fewer of these than there are manga,
           and I know even less about them than I do about
-          manga, but I know of at least two outstanding
+          manga, but I can mention at least two outstanding
           ones:
         </ArticleParagraph>
         <ArticleOrderedList>
@@ -275,12 +287,25 @@ export function MyFavoriteManga({ article }: ArticleProps) {
           </ImageLegend>
         </ArticleImageWithLegend>
         <ArticleParagraph>
-          Manhwas seem to be even more focused at being
+          Manhwa seem to be even more focused on being
           page-turners than manga, and <em>Hellper</em>{" "}
-          certainly following that line. In Korea, you would
-          very often see people scrolling frantically
-          through manhwas on public transport, it&apos;s
-          almost scary how fast they can read them.
+          certainly toes that line. In Korea, you very often
+          see people scrolling frantically through manhwa on
+          public transport; it&apos;s almost scary how fast
+          they can read them.
+        </ArticleParagraph>
+        <ArticleParagraph>
+          If you&apos;re a Go player, you&apos;ve probably
+          heard of{" "}
+          <ArticleLink href="https://www.goodreads.com/book/show/24293539">
+            Misaeng
+          </ArticleLink>
+          , since it also received a Netflix adaptation.
+          Personally, I found the adaptation unbearably
+          cheesy and unwatchable. The original manhwa is
+          still out of reach for non-Korean speakers, but I
+          managed to take a look at it when I was in Korea,
+          and it seemed much more entertaining.
         </ArticleParagraph>
       </ArticleSection>
     </Article>

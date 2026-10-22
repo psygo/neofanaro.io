@@ -4,10 +4,12 @@
 
 - Tolkien's Despise for Allegory
 - The Global Problems from the Tesuji Encyclopedia
+- Biggest blunders in Go history.
 
 - Add some sort of reset button for the Go Viewer when the user clicks on the board and would like to go back to the original.
 
 - My Manga Recommendations
+  - Mention Misaeng
 
 - Add a React Three Fiber animation for my website.
 
