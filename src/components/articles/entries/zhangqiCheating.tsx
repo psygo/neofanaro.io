@@ -183,16 +183,17 @@ export function ZhangqiCheating({ article }: ArticleProps) {
       </ArticleSection>
       <ArticleSection>
         <ArticleSectionTitle>
-          Going More In-Depth on the Statistics
+          Going More In Depth on the Statistics
         </ArticleSectionTitle>
         <ArticleBlockQuote>
           The following information is all thanks to
           Alexandre Amaro 8d Fox, who translated the Chinese
-          content on the videos, and much more.
+          content in the videos, and much more.
         </ArticleBlockQuote>
         <ArticleParagraph>
-          Let&apos;s take a look at how exactly did Zhangqi
-          manage to get to those conclusions and statistics.
+          Let&apos;s take a look at how exactly Zhangqi
+          managed to get to those conclusions and
+          statistics.
         </ArticleParagraph>
         <ArticleParagraph>
           For both the 7d and 8d trials, they used 50
@@ -243,7 +244,7 @@ export function ZhangqiCheating({ article }: ArticleProps) {
           quite demanding on that range &mdash; you need to
           win 15 games in a 20-game window &mdash;, having
           3-4 games out of those 20 be virtually unwinnable
-          makes levelling up borderline impossible.
+          makes leveling up borderline impossible.
         </ArticleParagraph>
         <ArticleParagraph>
           Here&apos;s the full video for the 8d analysis:
@@ -256,7 +257,7 @@ export function ZhangqiCheating({ article }: ArticleProps) {
           Applying the same methods, for 7d&apos;s, they
           found that 22% of those are likely cheaters. And
           the bell curve does again register a considerable
-          amount of players beyond 9-10d.
+          number of players beyond 9-10d.
         </ArticleParagraph>
         <ArticleImageWithLegend
           src="/articles/zhangqi-cheating/zhangqi_7d_bell_curve.png"
@@ -271,29 +272,46 @@ export function ZhangqiCheating({ article }: ArticleProps) {
         <ArticleParagraph>
           The reason we also might have perceived strengths
           from 4d to 6d is likely because the account&apos;s
-          owner has lended it to a weaker player. Some
-          strong players follow the same pattern seen on
-          MMORPGs: rank up an account in order to sell it to
-          a weaker player. The buyer would then be able to
-          experience and train with very strong players, a
-          privilege would typically need to pay for.
+          owner has lent it to a weaker player. Some strong
+          players follow the same pattern seen in MMORPGs:
+          rank up an account in order to sell it to a weaker
+          player. The buyer would then be able to experience
+          and train with very strong players, a privilege
+          would typically need to pay for.
         </ArticleParagraph>
         <ArticleBlockQuote>
           Ashe Vazquez 7d EGF wrote an{" "}
           <ArticleLink href="https://www.lesswrong.com/posts/nR3DkyivzF4ve97oM/how-go-players-disempower-themselves-to-ai">
-            article
+            article on the Less Wrong website
           </ArticleLink>{" "}
           mostly about players cheating in European online
-          tournaments on the Less Wrong website.
+          tournaments.
         </ArticleBlockQuote>
         <ArticleParagraph>
-          The video for the 7d&apos;s is the one I shared on
+          The video for the 7d&apos;s is the one I shared in
           the previous section:
         </ArticleParagraph>
         <ArticleBilibiliIframe
           src="//player.bilibili.com/player.html?isOutside=true&aid=116474530367145&bvid=BV1iHo6BSESd&cid=37868012822&p=1"
-          title="Zhangqi's AI rank estimation and cheating detection"
+          title="Zhangqi's AI rank estimation and cheating detection for 7d's"
         />
+        <ArticleParagraph>
+          It&apos;s quite disappointing that Fox
+          doesn&apos;t put too much effort into preventing
+          or remedying AI cheating. Chess seems to be way
+          further ahead in AI detection, although they did
+          have more than two decades ahead of Go. And Fox is
+          a freemium platform, they could at least offer
+          their paid members AI detection plus nullification
+          of cheaters&apos; games &mdash; ideally, of
+          course, that should be done across all games
+          &mdash;, since that can be done in an automated
+          way. In chess, since so much of the game could be
+          memorized, players could argue they can play a
+          borderline perfect game, but in Go, playing more
+          than 200 moves at AI quality in the 7-8d range is
+          astronomically unlikely.
+        </ArticleParagraph>
       </ArticleSection>
     </Article>
   )
