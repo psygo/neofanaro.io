@@ -183,7 +183,7 @@ export function ZhangqiCheating({ article }: ArticleProps) {
       </ArticleSection>
       <ArticleSection>
         <ArticleSectionTitle>
-          Going More In Depth on the Statistics
+          Going More In Depth On The Statistics
         </ArticleSectionTitle>
         <ArticleBlockQuote>
           The following information is all thanks to
@@ -198,10 +198,9 @@ export function ZhangqiCheating({ article }: ArticleProps) {
         <ArticleParagraph>
           For both the 7d and 8d trials, they used 50
           accounts on 20 games each, totalling 1,000 games.
-          Admittedly, that isn&apos;t that much data. But
-          they did offer more than 1,000 games on their
-          distributions graphs, I don&apos;t know why or
-          how.
+          That generated 2,000 data points because each game
+          has 2 players. It isn&apos;t that much data, but
+          it&apos;s already something.
         </ArticleParagraph>
         <ArticleParagraph>
           On the 8d trial, they found that 18% of players
@@ -240,12 +239,31 @@ export function ZhangqiCheating({ article }: ArticleProps) {
           </ImageLegend>
         </ArticleImageWithLegend>
         <ArticleParagraph>
+          Their way of calculating the percentage of
+          cheaters doesn&apos;t come from the distribution
+          graph, they seem to have done it by labeling a
+          percentage of the accounts as cheaters from a
+          minimum number of cheated games.
+        </ArticleParagraph>
+        <ArticleParagraph>
           If you take into account that ranking up on Fox is
           quite demanding on that range &mdash; you need to
           win 15 games in a 20-game window &mdash;, having
           3-4 games out of those 20 be virtually unwinnable
           makes leveling up borderline impossible.
+          That&apos;s why you should check your
+          opponent&apos;s current window before continuing
+          the game past the first 10 moves &mdash; Fox
+          doesn&apos;t annul games with 10 or fewer moves.
         </ArticleParagraph>
+        <ArticleBlockQuote>
+          By the way, Fox&apos;s way of ranking up and down
+          is very harsh compared to typical Elo rating. In
+          typical Elo, a one-rank difference (100 points)
+          should mean a 65% win rate for the stronger
+          player, not 15/20 or 75%. A 3:4 rate would mean a
+          2-stone difference in Elo (200 points).
+        </ArticleBlockQuote>
         <ArticleParagraph>
           Here&apos;s the full video for the 8d analysis:
         </ArticleParagraph>
@@ -312,6 +330,21 @@ export function ZhangqiCheating({ article }: ArticleProps) {
           than 200 moves at AI quality in the 7-8d range is
           astronomically unlikely.
         </ArticleParagraph>
+        <ArticleImageWithLegend
+          src="/articles/zhangqi-cheating/zhangqi_top_pro.png"
+          height={100}
+          width={350}
+        >
+          <ImageLegend>
+            <ArticleLink href="https://www.bilibili.com/en/video/BV1mvAuzcEwV/">
+              Top pros are identified as
+              &quot;demigods&quot; or AI on Zhangqi 41.2% of
+              the time
+            </ArticleLink>
+            ; compared to 4.3% for regular pros; and 3.5%
+            for Chinese 6d&apos;s.
+          </ImageLegend>
+        </ArticleImageWithLegend>
       </ArticleSection>
     </Article>
   )
