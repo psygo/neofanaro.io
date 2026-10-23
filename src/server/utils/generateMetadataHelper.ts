@@ -11,11 +11,11 @@ import { get_article } from "../actions/articles/get_articles"
 // the raw file. The optimizer only takes a target width (no height
 // param to crop against), so this caps height too on the assumption
 // every thumbnail is landscape/near-square, true of all of them today.
-const OG_IMAGE_WIDTH = 200
+// const OG_IMAGE_WIDTH = 200
 
-function ogImageUrl(src: string): string {
-  return `/_next/image?url=${encodeURIComponent(src)}&w=${OG_IMAGE_WIDTH}&q=75`
-}
+// function ogImageUrl(src: string): string {
+//   return `/_next/image?url=${encodeURIComponent(src)}&w=${OG_IMAGE_WIDTH}&q=75`
+// }
 
 export const topLevelMetadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -82,9 +82,10 @@ export async function generateArticleMetadataHelper(
       images: article.thumbnailSrc
         ? [
             {
-              url: ogImageUrl(article.thumbnailSrc),
-              width: OG_IMAGE_WIDTH,
-              height: OG_IMAGE_WIDTH,
+              url: article.thumbnailSrc,
+              // url: ogImageUrl(article.thumbnailSrc),
+              // width: OG_IMAGE_WIDTH,
+              // height: OG_IMAGE_WIDTH,
             },
           ]
         : [
