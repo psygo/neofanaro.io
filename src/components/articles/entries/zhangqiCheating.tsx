@@ -204,11 +204,11 @@ export function ZhangqiCheating({ article }: ArticleProps) {
         </ArticleParagraph>
         <ArticleParagraph>
           On the 8d trial, they found that 18% of players
-          played beyond pro level, and 18% played just like
-          AIs. Playing beyond pro level might mean the
-          cheater is not following all the AI
-          recommendations, which would lead the average
-          evaluation down a bit.
+          played beyond top pro level (world champion
+          actually), and 18% played just like AIs. Playing
+          beyond pro level might mean the cheater is not
+          following all the AI recommendations, which would
+          lead the average evaluation down a bit.
         </ArticleParagraph>
         <ArticleImageWithLegend
           src="/articles/zhangqi-cheating/zhangqi_8d_pie_chart.png"
@@ -216,8 +216,8 @@ export function ZhangqiCheating({ article }: ArticleProps) {
           width={350}
         >
           <ImageLegend>
-            18% of 8d&apos;s are beyond pro; and 18% are
-            AIs.
+            18% of 8d&apos;s are beyond top pro (world
+            champion); and 18% are AIs.
           </ImageLegend>
         </ArticleImageWithLegend>
         <ArticleParagraph>
