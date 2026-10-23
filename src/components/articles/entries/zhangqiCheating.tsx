@@ -11,6 +11,8 @@ import {
   ArticleBilibiliIframe,
   NoWrap,
   ArticleYouTubeIframe,
+  ArticleSectionTitle,
+  ArticleBlockQuote,
 } from "../articleContent"
 
 export function ZhangqiCheating({ article }: ArticleProps) {
@@ -178,6 +180,120 @@ export function ZhangqiCheating({ article }: ArticleProps) {
             Shin Jinseo 9p&apos;s badge.
           </ImageLegend>
         </ArticleImageWithLegend>
+      </ArticleSection>
+      <ArticleSection>
+        <ArticleSectionTitle>
+          Going More In-Depth on the Statistics
+        </ArticleSectionTitle>
+        <ArticleBlockQuote>
+          The following information is all thanks to
+          Alexandre Amaro 8d Fox, who translated the Chinese
+          content on the videos, and much more.
+        </ArticleBlockQuote>
+        <ArticleParagraph>
+          Let&apos;s take a look at how exactly did Zhangqi
+          manage to get to those conclusions and statistics.
+        </ArticleParagraph>
+        <ArticleParagraph>
+          For both the 7d and 8d trials, they used 50
+          accounts on 20 games each, totalling 1,000 games.
+          Admittedly, that isn&apos;t that much data. But
+          they did offer more than 1,000 games on their
+          distributions graphs, I don&apos;t know why or
+          how.
+        </ArticleParagraph>
+        <ArticleParagraph>
+          On the 8d trial, they found that 18% of players
+          played beyond pro level, and 18% played just like
+          AIs. Playing beyond pro level might mean the
+          cheater is not following all the AI
+          recommendations, which would lead the average
+          evaluation down a bit.
+        </ArticleParagraph>
+        <ArticleImageWithLegend
+          src="/articles/zhangqi-cheating/zhangqi_8d_pie_chart.png"
+          height={100}
+          width={350}
+        >
+          <ImageLegend>
+            18% of 8d&apos;s are beyond pro; and 18% are
+            AIs.
+          </ImageLegend>
+        </ArticleImageWithLegend>
+        <ArticleParagraph>
+          The distribution follows a bell curve around 8d
+          but with a sharp spike at 12d, which is where
+          current AIs live. Also, a considerable number of
+          opponents accumulate past 10d.
+        </ArticleParagraph>
+        <ArticleImageWithLegend
+          src="/articles/zhangqi-cheating/zhangqi_8d_bell_curve.png"
+          height={100}
+          width={350}
+        >
+          <ImageLegend>
+            A sharp spike on the 8d distribution graph, at
+            12d. Note we have more than 1,000 games on the
+            graph, have they run the test more than once for
+            this graph?
+          </ImageLegend>
+        </ArticleImageWithLegend>
+        <ArticleParagraph>
+          If you take into account that ranking up on Fox is
+          quite demanding on that range &mdash; you need to
+          win 15 games in a 20-game window &mdash;, having
+          3-4 games out of those 20 be virtually unwinnable
+          makes levelling up borderline impossible.
+        </ArticleParagraph>
+        <ArticleParagraph>
+          Here&apos;s the full video for the 8d analysis:
+        </ArticleParagraph>
+        <ArticleBilibiliIframe
+          src="//player.bilibili.com/player.html?isOutside=true&aid=116366451412146&bvid=BV1DzDzBdErB&cid=37324589335&p=1"
+          title="Zhangqi's AI rank estimation and cheating detection for 8d's"
+        />
+        <ArticleParagraph>
+          Applying the same methods, for 7d&apos;s, they
+          found that 22% of those are likely cheaters. And
+          the bell curve does again register a considerable
+          amount of players beyond 9-10d.
+        </ArticleParagraph>
+        <ArticleImageWithLegend
+          src="/articles/zhangqi-cheating/zhangqi_7d_bell_curve.png"
+          height={100}
+          width={350}
+        >
+          <ImageLegend>
+            Another sharp spike at 12d. Again, we have more
+            than 1,000 games on the graph.
+          </ImageLegend>
+        </ArticleImageWithLegend>
+        <ArticleParagraph>
+          The reason we also might have perceived strengths
+          from 4d to 6d is likely because the account&apos;s
+          owner has lended it to a weaker player. Some
+          strong players follow the same pattern seen on
+          MMORPGs: rank up an account in order to sell it to
+          a weaker player. The buyer would then be able to
+          experience and train with very strong players, a
+          privilege would typically need to pay for.
+        </ArticleParagraph>
+        <ArticleBlockQuote>
+          Ashe Vazquez 7d EGF wrote an{" "}
+          <ArticleLink href="https://www.lesswrong.com/posts/nR3DkyivzF4ve97oM/how-go-players-disempower-themselves-to-ai">
+            article
+          </ArticleLink>{" "}
+          mostly about players cheating in European online
+          tournaments on the Less Wrong website.
+        </ArticleBlockQuote>
+        <ArticleParagraph>
+          The video for the 7d&apos;s is the one I shared on
+          the previous section:
+        </ArticleParagraph>
+        <ArticleBilibiliIframe
+          src="//player.bilibili.com/player.html?isOutside=true&aid=116474530367145&bvid=BV1iHo6BSESd&cid=37868012822&p=1"
+          title="Zhangqi's AI rank estimation and cheating detection"
+        />
       </ArticleSection>
     </Article>
   )

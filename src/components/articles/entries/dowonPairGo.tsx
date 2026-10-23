@@ -289,7 +289,7 @@ export function DowonPairGo({ article }: ArticleProps) {
             Wang Xinghao 9p and Shibano Toramaru 9p, for the
             2026 Kuksu Mountains world championship
           </ArticleLink>
-          , seen on the video down below around the 7 minute
+          , seen on the video down below around the 7-minute
           mark.
         </ArticleParagraph>
         <ArticleYouTubeIframe
