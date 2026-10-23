@@ -46,9 +46,7 @@ export const topLevelMetadata: Metadata = {
     siteName: "neofanaro.io",
     images: [
       {
-        url: "/metadata/neofanaro.io_sample.png",
-        width: 1500,
-        height: 960,
+        url: "/metadata/neofanaro.io_sample_dark.png",
       },
     ],
   },
