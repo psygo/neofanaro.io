@@ -8,14 +8,13 @@ import { get_article } from "../actions/articles/get_articles"
 // well past what most link-unfurling crawlers will fetch before
 // giving up and showing no image at all) — routed through Next's
 // own image optimizer to serve a crawler-sized version instead of
-// the raw file. The optimizer only takes a target width (no height
-// param to crop against), so this caps height too on the assumption
-// every thumbnail is landscape/near-square, true of all of them today.
-// const OG_IMAGE_WIDTH = 200
+// the raw file. 1200 is already in Next's default deviceSizes list,
+// so no next.config.ts changes are needed to allow this width.
+const OG_IMAGE_WIDTH = 1200
 
-// function ogImageUrl(src: string): string {
-//   return `/_next/image?url=${encodeURIComponent(src)}&w=${OG_IMAGE_WIDTH}&q=75`
-// }
+function ogImageUrl(src: string): string {
+  return `/_next/image?url=${encodeURIComponent(src)}&w=${OG_IMAGE_WIDTH}&q=75`
+}
 
 export const topLevelMetadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -82,10 +81,8 @@ export async function generateArticleMetadataHelper(
       images: article.thumbnailSrc
         ? [
             {
-              url: article.thumbnailSrc,
-              // url: ogImageUrl(article.thumbnailSrc),
-              // width: OG_IMAGE_WIDTH,
-              // height: OG_IMAGE_WIDTH,
+              url: ogImageUrl(article.thumbnailSrc),
+              width: OG_IMAGE_WIDTH,
             },
           ]
         : [
