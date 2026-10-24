@@ -149,7 +149,7 @@ export function MyFavoriteManga({ article }: ArticleProps) {
           </ImageLegend>
         </ArticleImageWithLegend>
         <ArticleImageWithLegend
-          src="/articles/my-favorite-manga/piranesi_2.webp"
+          src="/articles/my-favorite-manga/piranesi_2_downscaled.webp"
           height={100}
           width={600}
         >

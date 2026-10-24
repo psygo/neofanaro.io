@@ -24,7 +24,7 @@ export function SecondBrazilOpen2026({
     <Article article={article}>
       <ArticleSection>
         <ArticleImageWithLegend
-          src="/articles/second-brazil-open-2026/trophy.png"
+          src="/articles/second-brazil-open-2026/trophy_downscaled.png"
           height={300}
           width={400}
         >
