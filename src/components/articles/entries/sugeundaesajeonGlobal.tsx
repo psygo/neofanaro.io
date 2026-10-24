@@ -2,7 +2,6 @@ import { ArticleProps } from "@types"
 
 import { Article } from "@components/articles/article"
 import {
-  ArticleBlockQuote,
   ArticleImageWithLegend,
   ArticleLink,
   ArticleParagraph,
@@ -15,9 +14,7 @@ import {
 import {
   GoViewer,
   GoViewerBoard,
-  GoViewerControls,
   GoViewerLegend,
-  GoViewerPlayers,
 } from "../../goViewer/exports"
 
 export function SugeundaesajeonGlobal({
@@ -27,14 +24,15 @@ export function SugeundaesajeonGlobal({
     <Article article={article}>
       <ArticleTableOfContents />
       <ArticleSection>
+        <ArticleSectionTitle>Context</ArticleSectionTitle>
         <ArticleParagraph>
           On a previous post,{" "}
           <ArticleLink
             internal
             href="/articles/sugeundaesajeon"
           >
-            I shared the workbook for the Nihon Kiin&apos;s
-            Tesuji Encyclopedia
+            I shared the workbook for the Nihon Kiin&apos;s{" "}
+            <em>Tesuji Encyclopedia</em>
           </ArticleLink>
           . However, still, most people are probably unaware
           that problem collection features two parts: a
@@ -51,6 +49,16 @@ export function SugeundaesajeonGlobal({
           even truer mark of expert skill than solving the
           more standard problems.
         </ArticleParagraph>
+        <ArticleImageWithLegend
+          src="/articles/sugeundaesajeon-global/sugeundaesajeon.png"
+          height={100}
+          width={425}
+        >
+          <ImageLegend>
+            The cover for the Chinese edition of the Nihon
+            Kiin&apos;s <em>Tesuji Encyclopedia</em>.
+          </ImageLegend>
+        </ArticleImageWithLegend>
       </ArticleSection>
       <ArticleSection>
         <ArticleSectionTitle>
