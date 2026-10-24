@@ -31,6 +31,7 @@ import {
   SampleSizeAndCommonSense,
   SecondBrazilOpen2026,
   Sugeundaesajeon,
+  SugeundaesajeonGlobal,
   TennozanLeague,
   TewariDelight2,
   WhatIsGoAbout,
@@ -126,6 +127,8 @@ function whichArticle(
       return <SampleSizeAndCommonSense article={post} />
     case "sugeundaesajeon":
       return <Sugeundaesajeon article={post} />
+    case "sugeundaesajeon-global":
+      return <SugeundaesajeonGlobal article={post} />
     case "what-is-go-about":
       return <WhatIsGoAbout article={post} />
     case "zhangqi-cheating":

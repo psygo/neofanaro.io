@@ -2,6 +2,14 @@
 
 ## Priorities
 
+- For improving the Zhangqi article (add an appendix section):
+  - ⁠TelegraphGo's comment
+  - ⁠Mention that from 6d below, bots are almost inexistent.
+  - ⁠Players using bot moves sometimes are named "cyborg"s.
+  - ⁠It's much more difficult to identify and dodge the cyborgs. Their win/loss ratio is much more mixed, and it's much more difficult to prove the cheating in isolation.
+  - ⁠Analyzing games with AI at low playouts is very cheap.
+  - ⁠20min + 3x60s seems to have less cheaters.
+
 - Tolkien's Despise for Allegory
 - The Global Problems from the Tesuji Encyclopedia
 - Biggest blunders in Go history.
