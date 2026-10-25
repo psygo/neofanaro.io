@@ -4,10 +4,17 @@ import { useLayoutEffect, useRef, useState } from "react"
 
 import { useLang } from "@hooks"
 
+type ArticleTocSubsection = {
+  id: string
+  number: string
+  title: string
+}
+
 type ArticleTocSection = {
   id: string
   number: number
   title: string
+  subsections: ArticleTocSubsection[]
 }
 
 // An article opts into this by rendering it wherever it wants the
@@ -29,16 +36,35 @@ export function ArticleTableOfContents() {
 
     const headings = Array.from(
       article?.querySelectorAll<HTMLHeadingElement>(
-        ".article-section-title",
+        ".article-section-title, .article-subsection-title",
       ) ?? [],
     )
-    setSections(
-      headings.map((heading, index) => ({
-        id: heading.id,
-        number: index + 1,
-        title: heading.textContent ?? "",
-      })),
-    )
+
+    const built: ArticleTocSection[] = []
+    for (const heading of headings) {
+      if (
+        heading.classList.contains(
+          "article-subsection-title",
+        )
+      ) {
+        const parent = built[built.length - 1]
+        if (!parent) continue
+        parent.subsections.push({
+          id: heading.id,
+          number: `${parent.number}.${parent.subsections.length + 1}`,
+          title: heading.textContent ?? "",
+        })
+      } else {
+        built.push({
+          id: heading.id,
+          number: built.length + 1,
+          title: heading.textContent ?? "",
+          subsections: [],
+        })
+      }
+    }
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- syncing from an external system (the DOM's own headings), the sanctioned use case for this pattern
+    setSections(built)
 
     return () => {
       article?.classList.remove("article-has-toc")
@@ -56,7 +82,7 @@ export function ArticleTableOfContents() {
             {sections.map((section) => (
               <li
                 key={section.id}
-                className="mt-1.5 mb-1.5 marker:text-slate-900 dark:marker:text-slate-50"
+                className="mt-0 mb-0 marker:text-slate-900 dark:marker:text-slate-50"
               >
                 <a
                   href={`#${section.id}`}
@@ -64,6 +90,26 @@ export function ArticleTableOfContents() {
                 >
                   {section.title}
                 </a>
+                {section.subsections.length > 0 && (
+                  <ol className="mt-0.5 mb-0 flex list-none flex-col pl-5">
+                    {section.subsections.map(
+                      (subsection) => (
+                        <li
+                          key={subsection.id}
+                          className="mt-0 mb-0 marker:text-slate-900 dark:marker:text-slate-50"
+                        >
+                          <a
+                            href={`#${subsection.id}`}
+                            className="no-underline underline-offset-4 hover:underline hover:decoration-[1.5px]"
+                          >
+                            {subsection.number}.{" "}
+                            {subsection.title}
+                          </a>
+                        </li>
+                      ),
+                    )}
+                  </ol>
+                )}
               </li>
             ))}
           </ol>

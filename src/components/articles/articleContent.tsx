@@ -18,6 +18,12 @@ export function ArticleSection({
   return <section className="mt-10">{children}</section>
 }
 
+export function ArticleSubSection({
+  children,
+}: WithReactChildren) {
+  return <section className="mt-8">{children}</section>
+}
+
 type ArticleParagraphProps = WithReactChildren & {
   textAlign?: React.CSSProperties["textAlign"]
 }
@@ -240,6 +246,24 @@ export function ArticleSectionTitle({
     >
       {children}
     </h2>
+  )
+}
+
+// Numbered like "2.1." (section.subsection) via the same
+// CSS-counter approach as ArticleSectionTitle — see
+// .article-subsection-title in globals.css.
+export function ArticleSubSectionTitle({
+  children,
+}: WithReactChildren) {
+  const id = useId()
+
+  return (
+    <h3
+      id={id}
+      className="article-subsection-title font-bold"
+    >
+      {children}
+    </h3>
   )
 }
 

@@ -56,10 +56,20 @@
 
 .article-has-toc .article-section-title {
   counter-increment: article-section;
+  counter-reset: article-subsection;
 }
 
 .article-has-toc .article-section-title::before {
   content: counter(article-section) ". ";
+}
+
+.article-has-toc .article-subsection-title {
+  counter-increment: article-subsection;
+}
+
+.article-has-toc .article-subsection-title::before {
+  content: counter(article-section) "."
+    counter(article-subsection) ". ";
 }
 
 .go-diagram {
