@@ -9,6 +9,7 @@
   - ⁠It's much more difficult to identify and dodge the cyborgs. Their win/loss ratio is much more mixed, and it's much more difficult to prove the cheating in isolation.
   - ⁠Analyzing games with AI at low playouts is very cheap.
   - ⁠20min + 3x60s seems to have less cheaters.
+  - Don't forget to mention that, from the bell curve charts, the percentages would change (show the images).
 
 - Tolkien's Despise for Allegory
 - The Global Problems from the Tesuji Encyclopedia

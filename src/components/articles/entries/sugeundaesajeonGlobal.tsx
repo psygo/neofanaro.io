@@ -61,8 +61,9 @@ export function SugeundaesajeonGlobal({
             The cover for the{" "}
             <ArticleLink href="https://drive.google.com/file/d/1GE-ejbqXoILEsUC9vSdguuty-tZy72RH/view?usp=drive_link">
               Chinese edition of the Nihon Kiin&apos;s{" "}
-              <em>Tesuji Encyclopedia</em>.
+              <em>Tesuji Encyclopedia</em>
             </ArticleLink>
+            .
           </ImageLegend>
         </ArticleImageWithLegend>
       </ArticleSection>
@@ -275,8 +276,17 @@ export function SugeundaesajeonGlobal({
           </ArticleParagraph>
           <ArticleParagraph>
             AI recommends resisting with an interesting
-            technique which pops up in this joseki, with
-            White 19:
+            technique which pops up in this joseki &mdash;
+            and which appeared in my game against Uyama
+            Hissao during my{" "}
+            <ArticleLink
+              internal
+              href="second-brazil-open-2026"
+            >
+              2nd place run in the 2026 Brazilian Go
+              Congress
+            </ArticleLink>{" "}
+            &mdash;, with White 19:
           </ArticleParagraph>
           <GoViewer
             label="fatal-joseki"
@@ -345,8 +355,41 @@ export function SugeundaesajeonGlobal({
             />
             <GoViewerControls />
             <GoViewerLegend>
-              From 24, White creates a ko with 30 as a
-              sacrifice.
+              White creates a ko with 8 as a sacrifice.
+            </GoViewerLegend>
+          </GoViewer>
+        </ArticleSubSection>
+        <ArticleSubSection>
+          <ArticleSubSectionTitle>
+            Problem 2516
+          </ArticleSubSectionTitle>
+          <ArticleParagraph>
+            This one is more direct than most of the other
+            global problems:
+          </ArticleParagraph>
+          <GoViewer sgf="/articles/sugeundaesajeon-global/2516.sgf">
+            <GoViewerBoard interactive={true} />
+            <GoViewerControls />
+            <GoViewerLegend>
+              Problem 2516, Black to play.
+            </GoViewerLegend>
+          </GoViewer>
+          <ArticleParagraph>
+            Through a sacrifice, Black manages to find a way
+            out, potentially killing White&apos;s A group:
+          </ArticleParagraph>
+          <GoViewer sgf="/articles/sugeundaesajeon-global/2516_1.sgf">
+            <GoViewerBoard
+              startAt="end"
+              interactive={true}
+              showMoveNumbers
+              showCapturedStones
+            />
+            <GoViewerControls />
+            <GoViewerLegend>
+              As Black escapes, White&apos;s A is going to
+              suffer tremendously, if it doesn&apos;t
+              outright dies.
             </GoViewerLegend>
           </GoViewer>
         </ArticleSubSection>
