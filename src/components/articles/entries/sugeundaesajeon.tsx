@@ -20,6 +20,14 @@ export function Sugeundaesajeon({ article }: ArticleProps) {
     <Article article={article}>
       {lang === "pt" ? (
         <ArticleSection>
+          <ArticleBlockQuote>
+            Você pode baixar a edição chinesa da
+            Enciclopédia de Tesujis{" "}
+            <ArticleLink href="https://drive.google.com/file/d/1GE-ejbqXoILEsUC9vSdguuty-tZy72RH/view?usp=drive_link">
+              aqui
+            </ArticleLink>
+            .
+          </ArticleBlockQuote>
           <ArticleParagraph>
             A Enciclopédia de Tesujis (手筋大事典) da Nihon
             Kiin (日本棋院), a Associação Japonesa de Go,
@@ -66,6 +74,14 @@ export function Sugeundaesajeon({ article }: ArticleProps) {
         </ArticleSection>
       ) : (
         <ArticleSection>
+          <ArticleBlockQuote>
+            You can download the Chinese edition of the
+            Tesuji Encyclopedia{" "}
+            <ArticleLink href="https://drive.google.com/file/d/1GE-ejbqXoILEsUC9vSdguuty-tZy72RH/view?usp=drive_link">
+              here
+            </ArticleLink>
+            .
+          </ArticleBlockQuote>
           <ArticleParagraph>
             The Tesuji Encyclopedia (手筋大事典) from the
             Nihon Kiin (日本棋院), the Japanese Go
@@ -78,7 +94,7 @@ export function Sugeundaesajeon({ article }: ArticleProps) {
             >
               One Year in Asia Studying Go
             </ArticleLink>{" "}
-            video . Known as Sugeundaesajeon (수근대사전) in
+            video. Known as Sugeundaesajeon (수근대사전) in
             South Korea, it has been used to train inseis
             for more than 50 years in Japan, as well as
             South Korea, and China.
