@@ -14,9 +14,14 @@ export default async function Articles({
   searchParams,
 }: Props) {
   const { draft } = await searchParams
+  // "?draft" alone (no "=true") still means true — Next hands that
+  // through as an empty string, not undefined, so only an explicit
+  // "false" should actually disable it.
+  const includeDrafts =
+    draft !== undefined && draft !== "false"
   const articles = await get_articles(
     undefined,
-    draft === "true",
+    includeDrafts,
   )
 
   return (

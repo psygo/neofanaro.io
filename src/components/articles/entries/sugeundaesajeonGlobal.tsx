@@ -58,8 +58,11 @@ export function SugeundaesajeonGlobal({
           width={350}
         >
           <ImageLegend>
-            The cover for the Chinese edition of the Nihon
-            Kiin&apos;s <em>Tesuji Encyclopedia</em>.
+            The cover for the{" "}
+            <ArticleLink href="https://drive.google.com/file/d/1GE-ejbqXoILEsUC9vSdguuty-tZy72RH/view?usp=drive_link">
+              Chinese edition of the Nihon Kiin&apos;s{" "}
+              <em>Tesuji Encyclopedia</em>.
+            </ArticleLink>
           </ImageLegend>
         </ArticleImageWithLegend>
       </ArticleSection>
@@ -136,7 +139,7 @@ export function SugeundaesajeonGlobal({
             <ArticleLink href="https://ai-sensei.com/game/wCbiGfZSh7TjX5eXM8TDgvMzi5u2/57100eca-ce7a-4264-a70a-5cc112a4c448">
               neither can AI
             </ArticleLink>
-            , estimating the loss from move 1 on Dia.{" "}
+            , which estimates the loss from move 1 on Dia.{" "}
             <DiagramRef label="2478_1" /> to be around 2.3
             points.
           </ArticleParagraph>
@@ -204,10 +207,12 @@ export function SugeundaesajeonGlobal({
           </GoViewer>
           <ArticleParagraph>
             White uses a forcing move on the right with 1 to
-            then drive the A stones. Due to the shortage of
-            liberties, disconnecting White&apos;s group in
-            the B direction isn&apos;t possible. And Black 8
-            is necessary, given the C weakness.
+            then drive the A stones, on Dia.{" "}
+            <DiagramRef label="2482_1" />. Due to the
+            shortage of liberties, disconnecting
+            White&apos;s group in the B direction isn&apos;t
+            possible. And Black 8 is necessary, given the C
+            weakness.
           </ArticleParagraph>
           <GoViewer sgf="/articles/sugeundaesajeon-global/2482_1.sgf">
             <GoViewerBoard
@@ -219,6 +224,129 @@ export function SugeundaesajeonGlobal({
             <GoViewerControls />
             <GoViewerLegend>
               White pierces through on the right side.
+            </GoViewerLegend>
+          </GoViewer>
+        </ArticleSubSection>
+
+        <ArticleSubSection>
+          <ArticleSubSectionTitle>
+            Problem 2534
+          </ArticleSubSectionTitle>
+          <ArticleParagraph>
+            Here&apos;s another problem with great
+            techniques from both sides, at least when
+            considering the AI refutations.
+          </ArticleParagraph>
+          <GoViewer sgf="/articles/sugeundaesajeon-global/2534.sgf">
+            <GoViewerBoard interactive={true} />
+            <GoViewerControls />
+            <GoViewerLegend>
+              Problem 2534, Black to play.
+            </GoViewerLegend>
+          </GoViewer>
+          <ArticleParagraph>
+            The book recommends trying to squeeze White from
+            below, reinforcing the A group:
+          </ArticleParagraph>
+          <GoViewer sgf="/articles/sugeundaesajeon-global/2534_1.sgf">
+            <GoViewerBoard
+              startAt="end"
+              interactive={true}
+              showMoveNumbers
+              showCapturedStones
+            />
+            <GoViewerControls />
+            <GoViewerLegend>
+              White is squeezed while Black reinforces the A
+              group.
+            </GoViewerLegend>
+          </GoViewer>
+          <ArticleParagraph>
+            <ArticleLink href="https://ai-sensei.com/game/wCbiGfZSh7TjX5eXM8TDgvMzi5u2/4ec5a4cb-f1ea-4231-95c1-5ca00101eae5">
+              AI thinks White shouldn&apos;t follow
+              Black&apos;s plans
+            </ArticleLink>
+            . If you&apos;re gonna get squeezed at the
+            beginning of the game, and all you have to show
+            for it is second line territory, things did not
+            go so well. Also, on another topic, AI dislikes
+            the joseki on the top-left quite a bit; Black
+            should at least turn at B instead of 19.
+          </ArticleParagraph>
+          <ArticleParagraph>
+            AI recommends resisting with an interesting
+            technique which pops up in this joseki, with
+            White 19:
+          </ArticleParagraph>
+          <GoViewer
+            label="fatal-joseki"
+            sgf="/articles/sugeundaesajeon-global/joseki_uyama.sgf"
+          >
+            <GoViewerBoard
+              startAt="end"
+              interactive={true}
+              showMoveNumbers={true}
+              region={{
+                minRow: 9,
+                maxRow: 18,
+                minCol: 9,
+                maxCol: 18,
+              }}
+            />
+            <GoViewerControls />
+            <GoViewerLegend>
+              A joseki illustrating the key move to resist,
+              White 19.
+            </GoViewerLegend>
+          </GoViewer>
+          <ArticleParagraph>
+            Translating that technique to problem 2534, we
+            end up with this sequence, according to AI:
+          </ArticleParagraph>
+          <GoViewer sgf="/articles/sugeundaesajeon-global/2534_2.sgf">
+            <GoViewerBoard
+              startAt="end"
+              interactive={true}
+              showMoveNumbers
+              showCapturedStones
+            />
+            <GoViewerControls />
+            <GoViewerLegend>
+              White&apos;s AI resistance, after Black 1.
+            </GoViewerLegend>
+          </GoViewer>
+          <ArticleParagraph>
+            However, that&apos;s not the optimal sequence
+            for both sides. This is what AI recommends as
+            the optimal solution:
+          </ArticleParagraph>
+          <GoViewer sgf="/articles/sugeundaesajeon-global/2534_3.sgf">
+            <GoViewerBoard
+              startAt="end"
+              interactive={true}
+              showMoveNumbers
+              showCapturedStones
+            />
+            <GoViewerControls />
+            <GoViewerLegend>
+              AI&apos;s optimal solution for problem 2534.
+            </GoViewerLegend>
+          </GoViewer>
+          <ArticleParagraph>
+            If Black insists on trying to kill, Black has a
+            tesuji up its sleeve:
+          </ArticleParagraph>
+          <GoViewer sgf="/articles/sugeundaesajeon-global/2534_4.sgf">
+            <GoViewerBoard
+              startAt="end"
+              interactive={true}
+              showMoveNumbers
+              showCapturedStones
+            />
+            <GoViewerControls />
+            <GoViewerLegend>
+              From 24, White creates a ko with 30 as a
+              sacrifice.
             </GoViewerLegend>
           </GoViewer>
         </ArticleSubSection>
