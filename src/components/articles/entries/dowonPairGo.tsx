@@ -142,11 +142,9 @@ export function DowonPairGo({ article }: ArticleProps) {
             partner. White should have crawled with 8 at 9.
           </GoDiagramLegend>
         </GoDiagram> */}
-        <GoViewer
-          sgf="/articles/dowon-pairgo/1.sgf"
-          startAt="end"
-        >
+        <GoViewer sgf="/articles/dowon-pairgo/1.sgf">
           <GoViewerBoard
+            startAt="end"
             interactive={false}
             showMoveNumbers
           />
@@ -185,11 +183,9 @@ export function DowonPairGo({ article }: ArticleProps) {
             captured stones are bound to get squeezed.
           </GoDiagramLegend>
         </GoDiagram> */}
-        <GoViewer
-          sgf="/articles/dowon-pairgo/2.sgf"
-          startAt="end"
-        >
+        <GoViewer sgf="/articles/dowon-pairgo/2.sgf">
           <GoViewerBoard
+            startAt="end"
             interactive={false}
             showMoveNumbers
           />
@@ -215,11 +211,9 @@ export function DowonPairGo({ article }: ArticleProps) {
             and the bottom-right.
           </GoDiagramLegend>
         </GoDiagram> */}
-        <GoViewer
-          sgf="/articles/dowon-pairgo/3.sgf"
-          startAt="end"
-        >
+        <GoViewer sgf="/articles/dowon-pairgo/3.sgf">
           <GoViewerBoard
+            startAt="end"
             interactive={false}
             showMoveNumbers
           />
@@ -248,11 +242,9 @@ export function DowonPairGo({ article }: ArticleProps) {
             capturing a sizeable chunk on the side.
           </GoDiagramLegend>
         </GoDiagram> */}
-        <GoViewer
-          sgf="/articles/dowon-pairgo/4.sgf"
-          startAt="end"
-        >
+        <GoViewer sgf="/articles/dowon-pairgo/4.sgf">
           <GoViewerBoard
+            startAt="end"
             interactive={false}
             showMoveNumbers
           />
@@ -296,11 +288,9 @@ export function DowonPairGo({ article }: ArticleProps) {
           src="https://www.youtube.com/embed/IkUQiqR9fGI"
           title="Liberty Fight TESUJI Ultimate [Shibano Toramaru VS Wang Xinghao] Kuksu Championship Round of 8"
         />
-        <GoViewer
-          sgf="/articles/dowon-pairgo/shibano_vs_wang_xinghao.sgf"
-          startAt="end"
-        >
+        <GoViewer sgf="/articles/dowon-pairgo/shibano_vs_wang_xinghao.sgf">
           <GoViewerBoard
+            startAt="end"
             interactive={false}
             showMoveNumbers
             fromNumber={68}

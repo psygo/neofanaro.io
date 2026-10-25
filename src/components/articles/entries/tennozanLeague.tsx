@@ -141,11 +141,8 @@ export function TennozanLeague({ article }: ArticleProps) {
               ao mesmo tempo.
             </GoDiagramLegend>
           </GoDiagram> */}
-          <GoViewer
-            sgf="/articles/tennozan-league/1.sgf"
-            startAt="end"
-          >
-            <GoViewerBoard />
+          <GoViewer sgf="/articles/tennozan-league/1.sgf">
+            <GoViewerBoard startAt="end" />
             <GoViewerLegend>
               Um exemplo de &quot;tennozan&quot; no Go, na
               Sensei&apos;s Library. Preto 1 controla o
@@ -267,11 +264,8 @@ export function TennozanLeague({ article }: ArticleProps) {
               opponent at the same time.
             </GoDiagramLegend>
           </GoDiagram> */}
-          <GoViewer
-            sgf="/articles/tennozan-league/1.sgf"
-            startAt="end"
-          >
-            <GoViewerBoard />
+          <GoViewer sgf="/articles/tennozan-league/1.sgf">
+            <GoViewerBoard startAt="end" />
             <GoViewerLegend>
               An example of a &quot;tennozan&quot; in Go,
               from Sensei&apos;s Library. Black&apos;s 1

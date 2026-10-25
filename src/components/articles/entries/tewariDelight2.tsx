@@ -65,11 +65,9 @@ export function TewariDelight2({ article }: ArticleProps) {
             a heated discussion on Sensei&apos;s Library.
           </GoDiagramLegend>
         </GoDiagram> */}
-        <GoViewer
-          sgf="/articles/tewari_delight_2/1.sgf"
-          startAt="end"
-        >
+        <GoViewer sgf="/articles/tewari_delight_2/1.sgf">
           <GoViewerBoard
+            startAt="end"
             interactive={false}
             region={{
               minRow: 6,
@@ -118,11 +116,9 @@ export function TewariDelight2({ article }: ArticleProps) {
             White ends up with a broken keima.
           </GoDiagramLegend>
         </GoDiagram> */}
-        <GoViewer
-          sgf="/articles/tewari_delight_2/2.sgf"
-          startAt="end"
-        >
+        <GoViewer sgf="/articles/tewari_delight_2/2.sgf">
           <GoViewerBoard
+            startAt="end"
             interactive={false}
             region={{
               minRow: 6,
@@ -148,11 +144,9 @@ export function TewariDelight2({ article }: ArticleProps) {
             Black arrives at an empty triangle.
           </GoDiagramLegend>
         </GoDiagram> */}
-        <GoViewer
-          sgf="/articles/tewari_delight_2/3.sgf"
-          startAt="end"
-        >
+        <GoViewer sgf="/articles/tewari_delight_2/3.sgf">
           <GoViewerBoard
+            startAt="end"
             interactive={false}
             region={{
               minRow: 6,
@@ -188,11 +182,9 @@ export function TewariDelight2({ article }: ArticleProps) {
             post-AI joseki.
           </GoDiagramLegend>
         </GoDiagram> */}
-        <GoViewer
-          sgf="/articles/tewari_delight_2/4.sgf"
-          startAt="end"
-        >
+        <GoViewer sgf="/articles/tewari_delight_2/4.sgf">
           <GoViewerBoard
+            startAt="end"
             showMoveNumbers
             region={{
               minRow: 9,
@@ -229,11 +221,9 @@ export function TewariDelight2({ article }: ArticleProps) {
             the post-AI joseki.
           </GoDiagramLegend>
         </GoDiagram> */}
-        <GoViewer
-          sgf="/articles/tewari_delight_2/5.sgf"
-          startAt="end"
-        >
+        <GoViewer sgf="/articles/tewari_delight_2/5.sgf">
           <GoViewerBoard
+            startAt="end"
             interactive={false}
             region={{
               minRow: 9,
@@ -274,11 +264,9 @@ export function TewariDelight2({ article }: ArticleProps) {
             Black tries to justify connecting at 4.
           </GoDiagramLegend>
         </GoDiagram> */}
-        <GoViewer
-          sgf="/articles/tewari_delight_2/6.sgf"
-          startAt="end"
-        >
+        <GoViewer sgf="/articles/tewari_delight_2/6.sgf">
           <GoViewerBoard
+            startAt="end"
             interactive={false}
             region={{
               minRow: 9,
@@ -321,11 +309,9 @@ export function TewariDelight2({ article }: ArticleProps) {
             board. Black should now atari at 2 instead of 3.
           </GoDiagramLegend>
         </GoDiagram> */}
-        <GoViewer
-          sgf="/articles/tewari_delight_2/7.sgf"
-          startAt="end"
-        >
+        <GoViewer sgf="/articles/tewari_delight_2/7.sgf">
           <GoViewerBoard
+            startAt="end"
             interactive={false}
             region={{
               minRow: 6,
@@ -375,11 +361,9 @@ export function TewariDelight2({ article }: ArticleProps) {
             Should we play at A or go for open corners?
           </GoDiagramLegend>
         </GoDiagram> */}
-        <GoViewer
-          sgf="/articles/tewari_delight_2/8.sgf"
-          startAt="end"
-        >
+        <GoViewer sgf="/articles/tewari_delight_2/8.sgf">
           <GoViewerBoard
+            startAt="end"
             interactive={false}
             region={{
               minRow: 6,
@@ -413,11 +397,9 @@ export function TewariDelight2({ article }: ArticleProps) {
             What&apos;s the cost of not playing at A?
           </GoDiagramLegend>
         </GoDiagram> */}
-        <GoViewer
-          sgf="/articles/tewari_delight_2/9.sgf"
-          startAt="end"
-        >
+        <GoViewer sgf="/articles/tewari_delight_2/9.sgf">
           <GoViewerBoard
+            startAt="end"
             interactive={false}
             region={{
               minRow: 6,

@@ -75,9 +75,8 @@ export function MammothsJump({ article }: ArticleProps) {
         <GoViewer
           label="game-example"
           sgf="/articles/mammoths-jump/1.sgf"
-          startAt="end"
         >
-          <GoViewerBoard interactive={true} />
+          <GoViewerBoard startAt="end" interactive={true} />
           <GoViewerControls />
           <GoViewerPlayers
             playerBlack="Kim Eunji 김은지 9p"
@@ -106,9 +105,9 @@ export function MammothsJump({ article }: ArticleProps) {
         <GoViewer
           label="elephants-jump"
           sgf="/articles/mammoths-jump/2.sgf"
-          startAt="end"
         >
           <GoViewerBoard
+            startAt="end"
             interactive={true}
             region={{
               minRow: 6,
@@ -151,9 +150,9 @@ export function MammothsJump({ article }: ArticleProps) {
         <GoViewer
           label="broken-keima"
           sgf="/articles/mammoths-jump/3.sgf"
-          startAt="end"
         >
           <GoViewerBoard
+            startAt="end"
             interactive={true}
             showMoveNumbers={true}
             region={{
@@ -180,9 +179,9 @@ export function MammothsJump({ article }: ArticleProps) {
         <GoViewer
           label="jump-ahead"
           sgf="/articles/mammoths-jump/4.sgf"
-          startAt="end"
         >
           <GoViewerBoard
+            startAt="end"
             interactive={true}
             showMoveNumbers={true}
             region={{
@@ -212,9 +211,9 @@ export function MammothsJump({ article }: ArticleProps) {
         <GoViewer
           label="jump-further"
           sgf="/articles/mammoths-jump/5.sgf"
-          startAt="end"
         >
           <GoViewerBoard
+            startAt="end"
             interactive={true}
             showMoveNumbers={true}
             region={{
@@ -247,9 +246,9 @@ export function MammothsJump({ article }: ArticleProps) {
         <GoViewer
           label="switch-bottom-right"
           sgf="/articles/mammoths-jump/6.sgf"
-          startAt="end"
         >
           <GoViewerBoard
+            startAt="end"
             interactive={true}
             showMoveNumbers={true}
             fromNumber={32}
@@ -307,9 +306,9 @@ export function MammothsJump({ article }: ArticleProps) {
         <GoViewer
           label="ai-recommended"
           sgf="/articles/mammoths-jump/7.sgf"
-          startAt="end"
         >
           <GoViewerBoard
+            startAt="end"
             interactive={true}
             showMoveNumbers={true}
             fromNumber={31}
@@ -343,9 +342,9 @@ export function MammothsJump({ article }: ArticleProps) {
         <GoViewer
           label="moyo-defend"
           sgf="/articles/mammoths-jump/eleph_1.sgf"
-          startAt="end"
         >
           <GoViewerBoard
+            startAt="end"
             interactive={true}
             showMoveNumbers={true}
             // fromNumber={31}
@@ -376,9 +375,9 @@ export function MammothsJump({ article }: ArticleProps) {
         <GoViewer
           label="moyo-switch"
           sgf="/articles/mammoths-jump/eleph_2.sgf"
-          startAt="end"
         >
           <GoViewerBoard
+            startAt="end"
             interactive={true}
             showMoveNumbers={true}
             // fromNumber={31}
@@ -401,9 +400,9 @@ export function MammothsJump({ article }: ArticleProps) {
         <GoViewer
           label="nec-match"
           sgf="/articles/mammoths-jump/nec_1.sgf"
-          startAt="end"
         >
           <GoViewerBoard
+            startAt="end"
             interactive={true}
             showMoveNumbers={true}
             // fromNumber={31}
@@ -454,9 +453,9 @@ export function MammothsJump({ article }: ArticleProps) {
         <GoViewer
           label="tiger-shimari"
           sgf="/articles/mammoths-jump/tiger_1.sgf"
-          startAt="end"
         >
           <GoViewerBoard
+            startAt="end"
             region={{
               minRow: 9,
               maxRow: 18,
@@ -530,9 +529,9 @@ export function MammothsJump({ article }: ArticleProps) {
         <GoViewer
           label="tiger-best-moves"
           sgf="/articles/mammoths-jump/tiger_2.sgf"
-          startAt="end"
         >
           <GoViewerBoard
+            startAt="end"
             interactive={true}
             showMoveNumbers={true}
           />
@@ -552,9 +551,9 @@ export function MammothsJump({ article }: ArticleProps) {
         <GoViewer
           label="tiger-attack"
           sgf="/articles/mammoths-jump/tiger_3.sgf"
-          startAt="end"
         >
           <GoViewerBoard
+            startAt="end"
             region={{
               minRow: 9,
               maxRow: 18,
@@ -579,9 +578,9 @@ export function MammothsJump({ article }: ArticleProps) {
         <GoViewer
           label="tiger-shoulder-hit-1"
           sgf="/articles/mammoths-jump/tiger_4.sgf"
-          startAt="end"
         >
           <GoViewerBoard
+            startAt="end"
             showMoveNumbers
             region={{
               minRow: 9,
@@ -607,9 +606,9 @@ export function MammothsJump({ article }: ArticleProps) {
         <GoViewer
           label="tiger-shoulder-hit-2"
           sgf="/articles/mammoths-jump/tiger_5.sgf"
-          startAt="end"
         >
           <GoViewerBoard
+            startAt="end"
             showMoveNumbers
             region={{
               minRow: 9,
@@ -633,9 +632,9 @@ export function MammothsJump({ article }: ArticleProps) {
         <GoViewer
           label="tiger-result"
           sgf="/articles/mammoths-jump/tiger_6.sgf"
-          startAt="end"
         >
           <GoViewerBoard
+            startAt="end"
             showMoveNumbers
             region={{
               minRow: 9,
@@ -675,9 +674,9 @@ export function MammothsJump({ article }: ArticleProps) {
         <GoViewer
           label="tiger-cool"
           sgf="/articles/mammoths-jump/tiger_7.sgf"
-          startAt="end"
         >
           <GoViewerBoard
+            startAt="end"
             showMoveNumbers
             showCapturedStones
             region={{

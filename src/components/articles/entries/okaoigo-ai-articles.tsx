@@ -109,11 +109,9 @@ export function OkaoigoAiArticles({
             How should you deal with Black&apos;s cut?
           </GoDiagramLegend>
         </GoDiagram> */}
-        <GoViewer
-          sgf="/articles/okaigo-ai-articles/1.sgf"
-          startAt="end"
-        >
+        <GoViewer sgf="/articles/okaigo-ai-articles/1.sgf">
           <GoViewerBoard
+            startAt="end"
             interactive={false}
             showMoveNumbers
           />
@@ -143,11 +141,9 @@ export function OkaoigoAiArticles({
             technique at its core.
           </GoDiagramLegend>
         </GoDiagram> */}
-        <GoViewer
-          sgf="/articles/okaigo-ai-articles/2.sgf"
-          startAt="end"
-        >
+        <GoViewer sgf="/articles/okaigo-ai-articles/2.sgf">
           <GoViewerBoard
+            startAt="end"
             interactive={false}
             showMoveNumbers
           />
@@ -173,11 +169,9 @@ export function OkaoigoAiArticles({
             stone, A.
           </GoDiagramLegend>
         </GoDiagram> */}
-        <GoViewer
-          sgf="/articles/okaigo-ai-articles/3.sgf"
-          startAt="end"
-        >
+        <GoViewer sgf="/articles/okaigo-ai-articles/3.sgf">
           <GoViewerBoard
+            startAt="end"
             interactive={false}
             showMoveNumbers
             fromNumber={8}
@@ -202,11 +196,9 @@ export function OkaoigoAiArticles({
             How can White survive or escape?
           </GoDiagramLegend>
         </GoDiagram> */}
-        <GoViewer
-          sgf="/articles/okaigo-ai-articles/4.sgf"
-          startAt="end"
-        >
+        <GoViewer sgf="/articles/okaigo-ai-articles/4.sgf">
           <GoViewerBoard
+            startAt="end"
             interactive={false}
             showMoveNumbers
           />
@@ -232,11 +224,11 @@ export function OkaoigoAiArticles({
             time.
           </GoDiagramLegend>
         </GoDiagram> */}
-        <GoViewer
-          sgf="/articles/okaigo-ai-articles/5.sgf"
-          startAt="end"
-        >
-          <GoViewerBoard interactive={false} />
+        <GoViewer sgf="/articles/okaigo-ai-articles/5.sgf">
+          <GoViewerBoard
+            startAt="end"
+            interactive={false}
+          />
           <GoViewerLegend>
             Through a sacrifice and a tesuji, White exposes
             Black&apos;s shortage of liberties on the left,

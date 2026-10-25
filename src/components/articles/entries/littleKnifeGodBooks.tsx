@@ -63,11 +63,11 @@ export function LittleKnifeGodBooks({
             (Black). Black to play.
           </GoDiagramLegend>
         </GoDiagram> */}
-        <GoViewer
-          sgf="/articles/little-knife-god-books/1.sgf"
-          startAt="end"
-        >
-          <GoViewerBoard interactive={false} />
+        <GoViewer sgf="/articles/little-knife-god-books/1.sgf">
+          <GoViewerBoard
+            startAt="end"
+            interactive={false}
+          />
           <GoViewerPlayers
             playerBlack="Yoshihiro Koike 小池芳弘 7p"
             playerWhite="Kato Chie 加藤千笑 3p"
@@ -84,11 +84,9 @@ export function LittleKnifeGodBooks({
             Lukewarm. And White gets to exploit a cut.
           </GoDiagramLegend>
         </GoDiagram> */}
-        <GoViewer
-          sgf="/articles/little-knife-god-books/2.sgf"
-          startAt="end"
-        >
+        <GoViewer sgf="/articles/little-knife-god-books/2.sgf">
           <GoViewerBoard
+            startAt="end"
             interactive={false}
             showMoveNumbers
           />
@@ -114,11 +112,9 @@ export function LittleKnifeGodBooks({
             Problem 128,242 from 101weiqi.
           </GoDiagramLegend>
         </GoDiagram> */}
-        <GoViewer
-          sgf="/articles/little-knife-god-books/3.sgf"
-          startAt="end"
-        >
+        <GoViewer sgf="/articles/little-knife-god-books/3.sgf">
           <GoViewerBoard
+            startAt="end"
             region={{
               minRow: 0,
               maxRow: 9,
@@ -145,11 +141,9 @@ export function LittleKnifeGodBooks({
             while shortening the group&apos;s liberties.
           </GoDiagramLegend>
         </GoDiagram> */}
-        <GoViewer
-          sgf="/articles/little-knife-god-books/4.sgf"
-          startAt="end"
-        >
+        <GoViewer sgf="/articles/little-knife-god-books/4.sgf">
           <GoViewerBoard
+            startAt="end"
             region={{
               minRow: 0,
               maxRow: 9,
@@ -177,11 +171,9 @@ export function LittleKnifeGodBooks({
             White&apos;s shape.
           </GoDiagramLegend>
         </GoDiagram> */}
-        <GoViewer
-          sgf="/articles/little-knife-god-books/5.sgf"
-          startAt="end"
-        >
+        <GoViewer sgf="/articles/little-knife-god-books/5.sgf">
           <GoViewerBoard
+            startAt="end"
             interactive={false}
             showMoveNumbers
           />
@@ -200,11 +192,9 @@ export function LittleKnifeGodBooks({
             Black wins most semeais.
           </GoDiagramLegend>
         </GoDiagram> */}
-        <GoViewer
-          sgf="/articles/little-knife-god-books/6.sgf"
-          startAt="end"
-        >
+        <GoViewer sgf="/articles/little-knife-god-books/6.sgf">
           <GoViewerBoard
+            startAt="end"
             interactive={false}
             showMoveNumbers
           />

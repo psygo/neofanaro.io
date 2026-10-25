@@ -104,11 +104,9 @@ export function Haengma3({ article }: ArticleProps) {
             Should you connect at A?
           </GoDiagramLegend>
         </GoDiagram> */}
-        <GoViewer
-          sgf="/articles/haengma3/1.sgf"
-          startAt="end"
-        >
+        <GoViewer sgf="/articles/haengma3/1.sgf">
           <GoViewerBoard
+            startAt="end"
             showMoveNumbers
             region={{
               minRow: 0,
@@ -141,11 +139,9 @@ export function Haengma3({ article }: ArticleProps) {
             A joseki originating the same position.
           </GoDiagramLegend>
         </GoDiagram> */}
-        <GoViewer
-          sgf="/articles/haengma3/2.sgf"
-          startAt="end"
-        >
+        <GoViewer sgf="/articles/haengma3/2.sgf">
           <GoViewerBoard
+            startAt="end"
             showMoveNumbers
             region={{
               minRow: 0,
@@ -174,11 +170,9 @@ export function Haengma3({ article }: ArticleProps) {
             How the tiger&apos;s mouth changes things.
           </GoDiagramLegend>
         </GoDiagram> */}
-        <GoViewer
-          sgf="/articles/haengma3/2.1.sgf"
-          startAt="end"
-        >
+        <GoViewer sgf="/articles/haengma3/2.1.sgf">
           <GoViewerBoard
+            startAt="end"
             showMoveNumbers
             region={{
               minRow: 0,
@@ -207,11 +201,9 @@ export function Haengma3({ article }: ArticleProps) {
             Black 3 locks White in.
           </GoDiagramLegend>
         </GoDiagram> */}
-        <GoViewer
-          sgf="/articles/haengma3/3.sgf"
-          startAt="end"
-        >
+        <GoViewer sgf="/articles/haengma3/3.sgf">
           <GoViewerBoard
+            startAt="end"
             showMoveNumbers
             region={{
               minRow: 0,
@@ -239,11 +231,9 @@ export function Haengma3({ article }: ArticleProps) {
             White fails to cut, while weakening the A stone.
           </GoDiagramLegend>
         </GoDiagram> */}
-        <GoViewer
-          sgf="/articles/haengma3/4.sgf"
-          startAt="end"
-        >
+        <GoViewer sgf="/articles/haengma3/4.sgf">
           <GoViewerBoard
+            startAt="end"
             showMoveNumbers
             region={{
               minRow: 0,
@@ -277,11 +267,9 @@ export function Haengma3({ article }: ArticleProps) {
             AI prefers the empty triangle.
           </GoDiagramLegend>
         </GoDiagram> */}
-        <GoViewer
-          sgf="/articles/haengma3/5.sgf"
-          startAt="end"
-        >
+        <GoViewer sgf="/articles/haengma3/5.sgf">
           <GoViewerBoard
+            startAt="end"
             showMoveNumbers
             region={{
               minRow: 0,
@@ -324,11 +312,9 @@ export function Haengma3({ article }: ArticleProps) {
             despite the dumpling shape.
           </GoDiagramLegend>
         </GoDiagram> */}
-        <GoViewer
-          sgf="/articles/haengma3/6.sgf"
-          startAt="end"
-        >
+        <GoViewer sgf="/articles/haengma3/6.sgf">
           <GoViewerBoard
+            startAt="end"
             showMoveNumbers
             region={{
               minRow: 0,
@@ -356,11 +342,9 @@ export function Haengma3({ article }: ArticleProps) {
             White escalates the fight.
           </GoDiagramLegend>
         </GoDiagram> */}
-        <GoViewer
-          sgf="/articles/haengma3/6.1.sgf"
-          startAt="end"
-        >
+        <GoViewer sgf="/articles/haengma3/6.1.sgf">
           <GoViewerBoard
+            startAt="end"
             showMoveNumbers
             region={{
               minRow: 0,

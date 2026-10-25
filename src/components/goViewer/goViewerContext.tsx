@@ -39,6 +39,12 @@ export type GoViewerState = {
   // Whether the user has placed a stone or passed since the last
   // load/reset — gates whether a "reset" control has anything to do.
   hasUserMoves: boolean
+  // Bumped on every "reinit"/"loadSgf" — lets a consumer (currently
+  // just <GoViewerBoard>'s own `startAt` handling) detect a freshly
+  // loaded board distinctly from an in-place move, since `moves`/
+  // `viewIndex` alone can't tell "freshly reset to this exact state"
+  // apart from "coincidentally already here".
+  loadId: number
   labels: SgfLabel[]
   viewIndex: number
   lastIllegalReason: IllegalReason | null
@@ -51,6 +57,7 @@ type Action =
   | { type: "place"; row: number; col: number }
   | { type: "pass" }
   | { type: "reset" }
+  | { type: "applyStartAt"; startAt: "start" | "end" }
   | { type: "goToStart" }
   | { type: "goToEnd" }
   | { type: "stepBack" }
@@ -63,7 +70,6 @@ type Action =
       boardSize: number
       sgf?: string
       labels: SgfLabel[]
-      startAt: "start" | "end"
       firstToMove?: Stone
     }
 
@@ -84,24 +90,23 @@ function toRecordedMoves(
 
 function fromParsedSgf(
   parsed: ParsedSgf,
-  startAt: "start" | "end" = "start",
   // Overrides the SGF's own PL property (or its B-moves-first
   // default) when given — lets a caller force who opens without
   // having to edit the SGF text itself.
   firstToMove?: Stone,
 ): GoViewerState {
   const moves = toRecordedMoves(parsed)
-  const viewIndex = startAt === "end" ? moves.length : 0
   return {
     boardSize: parsed.boardSize,
     setupBoard: applySetup(parsed.boardSize, parsed.setup),
     initialToMove: firstToMove ?? parsed.initialToMove,
     moves,
     initialMoves: moves,
-    initialViewIndex: viewIndex,
+    initialViewIndex: 0,
     hasUserMoves: false,
+    loadId: 0,
     labels: parsed.labels,
-    viewIndex,
+    viewIndex: 0,
     lastIllegalReason: null,
     playerBlack: parsed.gameInfo.playerBlack,
     playerWhite: parsed.gameInfo.playerWhite,
@@ -188,6 +193,21 @@ function reducer(
         hasUserMoves: false,
         lastIllegalReason: null,
       }
+    // Dispatched by <GoViewerBoard> itself (which owns `startAt` —
+    // see its own doc) right after a fresh load — unlike goToEnd,
+    // this also rebases initialMoves/initialViewIndex, the baseline
+    // "reset" returns to, so a board that opens on the end position
+    // resets back to that same end position rather than to blank.
+    case "applyStartAt": {
+      const viewIndex =
+        action.startAt === "end" ? state.moves.length : 0
+      return {
+        ...state,
+        viewIndex,
+        initialViewIndex: viewIndex,
+        lastIllegalReason: null,
+      }
+    }
     case "goToStart":
       return {
         ...state,
@@ -234,15 +254,20 @@ function reducer(
         lastIllegalReason: null,
       }
     case "loadSgf":
-      return fromParsedSgf(action.parsed)
+      return {
+        ...fromParsedSgf(action.parsed),
+        loadId: state.loadId + 1,
+      }
     case "reinit":
-      return initialState(
-        action.boardSize,
-        action.sgf,
-        action.labels,
-        action.startAt,
-        action.firstToMove,
-      )
+      return {
+        ...initialState(
+          action.boardSize,
+          action.sgf,
+          action.labels,
+          action.firstToMove,
+        ),
+        loadId: state.loadId + 1,
+      }
   }
 }
 
@@ -250,15 +275,9 @@ function initialState(
   boardSize: number,
   sgf?: string,
   labels: SgfLabel[] = [],
-  startAt: "start" | "end" = "start",
   firstToMove?: Stone,
 ): GoViewerState {
-  if (sgf)
-    return fromParsedSgf(
-      parseSgf(sgf),
-      startAt,
-      firstToMove,
-    )
+  if (sgf) return fromParsedSgf(parseSgf(sgf), firstToMove)
 
   return {
     boardSize,
@@ -268,6 +287,7 @@ function initialState(
     initialMoves: [],
     initialViewIndex: 0,
     hasUserMoves: false,
+    loadId: 0,
     labels,
     viewIndex: 0,
     lastIllegalReason: null,
@@ -285,6 +305,7 @@ export type GoViewerContextValue = {
   moveNumber: number
   totalMoves: number
   hasUserMoves: boolean
+  loadId: number
   moveNumberAt: Record<string, number>
   capturedStones: CapturedStone[]
   labels: SgfLabel[]
@@ -297,6 +318,8 @@ export type GoViewerContextValue = {
   placeStone: (row: number, col: number) => void
   pass: () => void
   reset: () => void
+  // Dispatched by <GoViewerBoard> itself — see its own `startAt` doc.
+  applyStartAt: (startAt: "start" | "end") => void
   goToStart: () => void
   goToEnd: () => void
   stepBack: () => void
@@ -322,13 +345,6 @@ export type GoViewerProviderProps = {
   // Static point labels, for boards not loaded from an SGF's own LB
   // property (ignored when `sgf` is given — its LB labels win).
   labels?: SgfLabel[]
-  // Only relevant with `sgf`: whether the board initially shows the
-  // setup position with no moves applied ("start", the default —
-  // right for a game record meant to be stepped through) or the
-  // final position with every move applied ("end" — right for
-  // displaying a finished position/problem solution, especially
-  // when no <GoViewerControls> are rendered to step forward with).
-  startAt?: "start" | "end"
   // Who moves first. Defaults to the SGF's own PL property (and
   // from there to Black, standard Go convention) when `sgf` is
   // given, or to Black otherwise — set this to override either,
@@ -347,7 +363,6 @@ export function GoViewerProvider({
   boardSize = 19,
   sgf,
   labels,
-  startAt = "start",
   firstToMove,
   label,
   children,
@@ -383,7 +398,6 @@ export function GoViewerProvider({
       boardSize,
       sgf: resolvedSgf,
       labels,
-      startAt,
       firstToMove,
     },
     (init) =>
@@ -391,20 +405,18 @@ export function GoViewerProvider({
         init.boardSize,
         init.sgf,
         init.labels,
-        init.startAt,
         init.firstToMove,
       ),
   )
 
   // The reducer's lazy initializer above only runs once, on mount —
-  // it won't pick up a `sgf`/`boardSize`/`startAt` prop that changes
-  // afterwards (e.g. a parent swapping which problem is shown, or a
-  // dev Fast Refresh re-rendering this already-mounted client
-  // component with corrected props: React preserves its hook state
-  // across that, so the reducer would otherwise keep showing
-  // whatever position was parsed on the very first mount). Skipped
-  // on the initial run since the lazy initializer above already
-  // covers it.
+  // it won't pick up a `sgf`/`boardSize` prop that changes afterwards
+  // (e.g. a parent swapping which problem is shown, or a dev Fast
+  // Refresh re-rendering this already-mounted client component with
+  // corrected props: React preserves its hook state across that, so
+  // the reducer would otherwise keep showing whatever position was
+  // parsed on the very first mount). Skipped on the initial run since
+  // the lazy initializer above already covers it.
   const isFirstRender = useRef(true)
   useEffect(() => {
     if (isFirstRender.current) {
@@ -416,11 +428,10 @@ export function GoViewerProvider({
       boardSize,
       sgf: resolvedSgf,
       labels: labels ?? [],
-      startAt,
       firstToMove,
     })
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [resolvedSgf, boardSize, startAt, firstToMove])
+  }, [resolvedSgf, boardSize, firstToMove])
 
   const placeStone = useCallback(
     (row: number, col: number) =>
@@ -433,6 +444,11 @@ export function GoViewerProvider({
   )
   const reset = useCallback(
     () => dispatch({ type: "reset" }),
+    [],
+  )
+  const applyStartAt = useCallback(
+    (startAt: "start" | "end") =>
+      dispatch({ type: "applyStartAt", startAt }),
     [],
   )
   const goToStart = useCallback(
@@ -497,6 +513,7 @@ export function GoViewerProvider({
       moveNumber: state.viewIndex,
       totalMoves: state.moves.length,
       hasUserMoves: state.hasUserMoves,
+      loadId: state.loadId,
       moveNumberAt: view.moveNumberAt,
       capturedStones: view.capturedStones,
       labels: state.labels,
@@ -507,6 +524,7 @@ export function GoViewerProvider({
       placeStone,
       pass,
       reset,
+      applyStartAt,
       goToStart,
       goToEnd,
       stepBack,
@@ -520,6 +538,7 @@ export function GoViewerProvider({
       state.viewIndex,
       state.moves.length,
       state.hasUserMoves,
+      state.loadId,
       state.labels,
       state.lastIllegalReason,
       state.playerBlack,
@@ -529,6 +548,7 @@ export function GoViewerProvider({
       placeStone,
       pass,
       reset,
+      applyStartAt,
       goToStart,
       goToEnd,
       stepBack,

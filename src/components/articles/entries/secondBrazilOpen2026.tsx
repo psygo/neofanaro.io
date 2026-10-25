@@ -134,9 +134,9 @@ export function SecondBrazilOpen2026({
         <GoViewer
           label="fatal-joseki"
           sgf="/articles/second-brazil-open-2026/joseki_uyama.sgf"
-          startAt="end"
         >
           <GoViewerBoard
+            startAt="end"
             interactive={true}
             showMoveNumbers={true}
             region={{
@@ -186,9 +186,8 @@ export function SecondBrazilOpen2026({
         <GoViewer
           label="fatal-joseki"
           sgf="/articles/second-brazil-open-2026/alexandre_amaro_vs_philippe_fanaro.sgf"
-          startAt="end"
         >
-          <GoViewerBoard interactive={true} />
+          <GoViewerBoard startAt="end" interactive={true} />
           <GoViewerControls />
           <GoViewerPlayers />
           <GoViewerLegend>
@@ -210,9 +209,8 @@ export function SecondBrazilOpen2026({
         <GoViewer
           label="fatal-joseki"
           sgf="/articles/second-brazil-open-2026/alexandre_amaro_vs_philippe_fanaro_tiebreaker.sgf"
-          startAt="end"
         >
-          <GoViewerBoard interactive={true} />
+          <GoViewerBoard startAt="end" interactive={true} />
           <GoViewerControls />
           <GoViewerPlayers />
           <GoViewerLegend>

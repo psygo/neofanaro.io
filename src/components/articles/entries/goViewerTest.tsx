@@ -204,14 +204,16 @@ export function GoViewerTest({ article }: ArticleProps) {
           right — the numerals should visibly read as serif
           on the right:
         </ArticleParagraph>
-        <GoViewer sgf={sampleSgf} startAt="end">
+        <GoViewer sgf={sampleSgf}>
           <GoViewerBoard
+            startAt="end"
             showMoveNumbers
             interactive={false}
           />
         </GoViewer>
-        <GoViewer sgf={sampleSgf} startAt="end">
+        <GoViewer sgf={sampleSgf}>
           <GoViewerBoard
+            startAt="end"
             showMoveNumbers
             interactive={false}
             fontFamily={goViewerLatexFont}
@@ -240,8 +242,9 @@ export function GoViewerTest({ article }: ArticleProps) {
           border, white stones with a black border, and the
           site&apos;s sans-serif font):
         </ArticleParagraph>
-        <GoViewer sgf={sampleSgf} startAt="end">
+        <GoViewer sgf={sampleSgf}>
           <GoViewerBoard
+            startAt="end"
             {...goViewerBookishTheme}
             showMoveNumbers
             interactive={false}
@@ -259,22 +262,25 @@ export function GoViewerTest({ article }: ArticleProps) {
           fallback that doesn&apos;t pull in the LaTeX
           webfont):
         </ArticleParagraph>
-        <GoViewer sgf={sampleSgf} startAt="end">
+        <GoViewer sgf={sampleSgf}>
           <GoViewerBoard
+            startAt="end"
             showMoveNumbers
             interactive={false}
             fontFamily={goViewerSansFont}
           />
         </GoViewer>
-        <GoViewer sgf={sampleSgf} startAt="end">
+        <GoViewer sgf={sampleSgf}>
           <GoViewerBoard
+            startAt="end"
             showMoveNumbers
             interactive={false}
             fontFamily={goViewerMonoFont}
           />
         </GoViewer>
-        <GoViewer sgf={sampleSgf} startAt="end">
+        <GoViewer sgf={sampleSgf}>
           <GoViewerBoard
+            startAt="end"
             showMoveNumbers
             interactive={false}
             fontFamily={goViewerSerifFont}
@@ -293,14 +299,16 @@ export function GoViewerTest({ article }: ArticleProps) {
           here gets captured by Black 3; compare the two
           boards below:
         </ArticleParagraph>
-        <GoViewer sgf={captureEmphasisSgf} startAt="end">
+        <GoViewer sgf={captureEmphasisSgf}>
           <GoViewerBoard
+            startAt="end"
             showMoveNumbers
             interactive={false}
           />
         </GoViewer>
-        <GoViewer sgf={captureEmphasisSgf} startAt="end">
+        <GoViewer sgf={captureEmphasisSgf}>
           <GoViewerBoard
+            startAt="end"
             showMoveNumbers
             interactive={false}
             showCapturedStones
@@ -355,8 +363,12 @@ export function GoViewerTest({ article }: ArticleProps) {
           hand-made SGF this position is built on top of —
           use the controls to step back through moves 1-19:
         </ArticleParagraph>
-        <GoViewer sgf={dowonPairGo2Sgf} startAt="end">
-          <GoViewerBoard cellSize={14} showMoveNumbers />
+        <GoViewer sgf={dowonPairGo2Sgf}>
+          <GoViewerBoard
+            startAt="end"
+            cellSize={14}
+            showMoveNumbers
+          />
           <GoViewerControls />
           <GoViewerInfo />
         </GoViewer>
@@ -380,11 +392,9 @@ export function GoViewerTest({ article }: ArticleProps) {
             Should you connect at A?
           </GoDiagramLegend>
         </GoDiagram>
-        <GoViewer
-          sgf="/articles/haengma3/1.sgf"
-          startAt="end"
-        >
+        <GoViewer sgf="/articles/haengma3/1.sgf">
           <GoViewerBoard
+            startAt="end"
             {...goViewerBookishTheme}
             region={{
               minRow: 0,
@@ -410,11 +420,9 @@ export function GoViewerTest({ article }: ArticleProps) {
             A joseki originating the same position.
           </GoDiagramLegend>
         </GoDiagram>
-        <GoViewer
-          sgf="/articles/haengma3/2.sgf"
-          startAt="end"
-        >
+        <GoViewer sgf="/articles/haengma3/2.sgf">
           <GoViewerBoard
+            startAt="end"
             {...goViewerBookishTheme}
             region={{
               minRow: 0,
@@ -440,11 +448,9 @@ export function GoViewerTest({ article }: ArticleProps) {
             How the tiger&apos;s mouth changes things.
           </GoDiagramLegend>
         </GoDiagram>
-        <GoViewer
-          sgf="/articles/haengma3/2.1.sgf"
-          startAt="end"
-        >
+        <GoViewer sgf="/articles/haengma3/2.1.sgf">
           <GoViewerBoard
+            startAt="end"
             {...goViewerBookishTheme}
             region={{
               minRow: 0,
@@ -470,11 +476,9 @@ export function GoViewerTest({ article }: ArticleProps) {
             Black 3 locks White in.
           </GoDiagramLegend>
         </GoDiagram>
-        <GoViewer
-          sgf="/articles/haengma3/3.sgf"
-          startAt="end"
-        >
+        <GoViewer sgf="/articles/haengma3/3.sgf">
           <GoViewerBoard
+            startAt="end"
             {...goViewerBookishTheme}
             region={{
               minRow: 0,
@@ -500,11 +504,9 @@ export function GoViewerTest({ article }: ArticleProps) {
             White fails to cut, while weakening the A stone.
           </GoDiagramLegend>
         </GoDiagram>
-        <GoViewer
-          sgf="/articles/haengma3/4.sgf"
-          startAt="end"
-        >
+        <GoViewer sgf="/articles/haengma3/4.sgf">
           <GoViewerBoard
+            startAt="end"
             {...goViewerBookishTheme}
             region={{
               minRow: 0,
@@ -531,11 +533,9 @@ export function GoViewerTest({ article }: ArticleProps) {
             AI prefers the empty triangle.
           </GoDiagramLegend>
         </GoDiagram>
-        <GoViewer
-          sgf="/articles/haengma3/5.sgf"
-          startAt="end"
-        >
+        <GoViewer sgf="/articles/haengma3/5.sgf">
           <GoViewerBoard
+            startAt="end"
             {...goViewerBookishTheme}
             region={{
               minRow: 0,
@@ -562,11 +562,9 @@ export function GoViewerTest({ article }: ArticleProps) {
             despite the dumpling shape.
           </GoDiagramLegend>
         </GoDiagram>
-        <GoViewer
-          sgf="/articles/haengma3/6.sgf"
-          startAt="end"
-        >
+        <GoViewer sgf="/articles/haengma3/6.sgf">
           <GoViewerBoard
+            startAt="end"
             {...goViewerBookishTheme}
             region={{
               minRow: 0,
@@ -593,11 +591,9 @@ export function GoViewerTest({ article }: ArticleProps) {
             White escalates the fight.
           </GoDiagramLegend>
         </GoDiagram>
-        <GoViewer
-          sgf="/articles/haengma3/6.1.sgf"
-          startAt="end"
-        >
+        <GoViewer sgf="/articles/haengma3/6.1.sgf">
           <GoViewerBoard
+            startAt="end"
             {...goViewerBookishTheme}
             region={{
               minRow: 0,
@@ -687,8 +683,9 @@ export function GoViewerTest({ article }: ArticleProps) {
           <code>&lt;GoViewer&gt;</code> child, right after
           the board:
         </ArticleParagraph>
-        <GoViewer sgf={sampleSgf} startAt="end">
+        <GoViewer sgf={sampleSgf}>
           <GoViewerBoard
+            startAt="end"
             {...goViewerBookishTheme}
             interactive={false}
           />
@@ -714,8 +711,9 @@ export function GoViewerTest({ article }: ArticleProps) {
           Desert — an illustrated sunset board, sharing its
           glossy stone renders with the Hikaru theme below:
         </ArticleParagraph>
-        <GoViewer sgf={sampleSgf} startAt="end">
+        <GoViewer sgf={sampleSgf}>
           <GoViewerBoard
+            startAt="end"
             {...goViewerDesertTheme}
             showMoveNumbers
             interactive={false}
@@ -725,8 +723,9 @@ export function GoViewerTest({ article }: ArticleProps) {
           Hikaru — the same glossy, dark-outlined stones on
           a plain warm wood color:
         </ArticleParagraph>
-        <GoViewer sgf={sampleSgf} startAt="end">
+        <GoViewer sgf={sampleSgf}>
           <GoViewerBoard
+            startAt="end"
             {...goViewerHikaruTheme}
             showMoveNumbers
             interactive={false}
@@ -736,8 +735,9 @@ export function GoViewerTest({ article }: ArticleProps) {
           Kaya — a classic photographic wood board with
           slate/shell stone renders:
         </ArticleParagraph>
-        <GoViewer sgf={sampleSgf} startAt="end">
+        <GoViewer sgf={sampleSgf}>
           <GoViewerBoard
+            startAt="end"
             {...goViewerKayaTheme}
             showMoveNumbers
             interactive={false}

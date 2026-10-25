@@ -227,6 +227,18 @@ function PointMark({
 }
 
 export type GoViewerBoardProps = {
+  // Only meaningful when the shared <GoViewer> was given an `sgf`:
+  // whether this board initially shows the setup position with no
+  // moves applied ("start", the default — right for a game record
+  // meant to be stepped through) or the final position with every
+  // move applied ("end" — right for displaying a finished position/
+  // problem solution, especially when no <GoViewerControls> is
+  // rendered to step forward with). Lives here rather than on
+  // <GoViewer> since it's about how *this* board displays the shared
+  // game state, not the state itself — a second <GoViewerBoard> on
+  // the same <GoViewer> could reasonably want to open on a different
+  // position (e.g. a before/after pair).
+  startAt?: "start" | "end"
   region?: BoardRegion
   cellSize?: number
   // Rendered pixel size — `size` is shorthand for both `width` and
@@ -288,6 +300,7 @@ export type GoViewerBoardProps = {
 }
 
 export function GoViewerBoard({
+  startAt = "start",
   region,
   cellSize = defaultCellSize,
   size = region ? 330 : undefined,
@@ -386,7 +399,18 @@ export function GoViewerBoard({
     labels,
     moveNumber: viewIndex,
     placeStone,
+    applyStartAt,
+    loadId,
   } = useGoViewer()
+
+  // Re-applied whenever a fresh board is loaded (`loadId`), not just
+  // on mount, so a parent swapping which SGF is shown (or a dev Fast
+  // Refresh correcting this prop) still opens on the right position.
+  useLayoutEffect(() => {
+    applyStartAt(startAt)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [startAt, loadId])
+
   const [hoveredPoint, setHoveredPoint] = useState<{
     row: number
     col: number

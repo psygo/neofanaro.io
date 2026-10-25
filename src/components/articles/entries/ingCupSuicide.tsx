@@ -81,11 +81,9 @@ export function IngCupSuicide({ article }: ArticleProps) {
             seki?
           </GoDiagramLegend>
         </GoDiagram> */}
-        <GoViewer
-          sgf="/articles/ing-cup-suicide/1.sgf"
-          startAt="end"
-        >
+        <GoViewer sgf="/articles/ing-cup-suicide/1.sgf">
           <GoViewerBoard
+            startAt="end"
             interactive={false}
             region={{
               minRow: 0,
@@ -112,11 +110,9 @@ export function IngCupSuicide({ article }: ArticleProps) {
             Black 2 and 4 are played elsewhere.
           </GoDiagramLegend>
         </GoDiagram> */}
-        <GoViewer
-          sgf="/articles/ing-cup-suicide/2.sgf"
-          startAt="end"
-        >
+        <GoViewer sgf="/articles/ing-cup-suicide/2.sgf">
           <GoViewerBoard
+            startAt="end"
             interactive={false}
             region={{
               minRow: 0,
@@ -140,11 +136,9 @@ export function IngCupSuicide({ article }: ArticleProps) {
             bigger eye.
           </GoDiagramLegend>
         </GoDiagram> */}
-        <GoViewer
-          sgf="/articles/ing-cup-suicide/3.sgf"
-          startAt="end"
-        >
+        <GoViewer sgf="/articles/ing-cup-suicide/3.sgf">
           <GoViewerBoard
+            startAt="end"
             interactive={false}
             region={{
               minRow: 0,
@@ -180,11 +174,9 @@ export function IngCupSuicide({ article }: ArticleProps) {
             Black can now race with White more freely.
           </GoDiagramLegend>
         </GoDiagram> */}
-        <GoViewer
-          sgf="/articles/ing-cup-suicide/4.sgf"
-          startAt="end"
-        >
+        <GoViewer sgf="/articles/ing-cup-suicide/4.sgf">
           <GoViewerBoard
+            startAt="end"
             interactive={false}
             region={{
               minRow: 0,

@@ -63,11 +63,9 @@ export function PostAiOpeningHierarchy({
           </GoDiagram>
         </div> */}
         <div className="flex flex-col items-center justify-center gap-6 px-8 sm:flex-row">
-          <GoViewer
-            sgf="/articles/post-ai-opening-hierarchy/sanrensei.sgf"
-            startAt="end"
-          >
+          <GoViewer sgf="/articles/post-ai-opening-hierarchy/sanrensei.sgf">
             <GoViewerBoard
+              startAt="end"
               region={{
                 minRow: 0,
                 maxRow: 18,
@@ -80,11 +78,9 @@ export function PostAiOpeningHierarchy({
               The Sanrensei Fuseki
             </GoViewerLegend>
           </GoViewer>
-          <GoViewer
-            sgf="/articles/post-ai-opening-hierarchy/chinese.sgf"
-            startAt="end"
-          >
+          <GoViewer sgf="/articles/post-ai-opening-hierarchy/chinese.sgf">
             <GoViewerBoard
+              startAt="end"
               region={{
                 minRow: 0,
                 maxRow: 18,

@@ -75,10 +75,7 @@ export function SugeundaesajeonGlobal({
             This first problem is a brilliant illustration
             of flow and interaction effects.
           </ArticleParagraph>
-          <GoViewer
-            label="2479"
-            sgf="/articles/sugeundaesajeon-global/2479.sgf"
-          >
+          <GoViewer sgf="/articles/sugeundaesajeon-global/2479.sgf">
             <GoViewerBoard interactive={true} />
             <GoViewerLegend>
               Problem 2479, White to play.
@@ -88,12 +85,9 @@ export function SugeundaesajeonGlobal({
             We have to link the forcing moves on both sides
             in order to have them collide:
           </ArticleParagraph>
-          <GoViewer
-            label="2479_1"
-            sgf="/articles/sugeundaesajeon-global/2479_1.sgf"
-            startAt="end"
-          >
+          <GoViewer sgf="/articles/sugeundaesajeon-global/2479_1.sgf">
             <GoViewerBoard
+              startAt="end"
               interactive={true}
               showMoveNumbers
               showCapturedStones
@@ -107,12 +101,9 @@ export function SugeundaesajeonGlobal({
           <ArticleParagraph>
             If Black tries to save it all...
           </ArticleParagraph>
-          <GoViewer
-            label="2479_2"
-            sgf="/articles/sugeundaesajeon-global/2479_2.sgf"
-            startAt="end"
-          >
+          <GoViewer sgf="/articles/sugeundaesajeon-global/2479_2.sgf">
             <GoViewerBoard
+              startAt="end"
               interactive={true}
               showMoveNumbers
               showCapturedStones
@@ -133,10 +124,7 @@ export function SugeundaesajeonGlobal({
             definitely quite problematic. Not for their
             setup, but for their solution.
           </ArticleParagraph>
-          <GoViewer
-            label="2478"
-            sgf="/articles/sugeundaesajeon-global/2478.sgf"
-          >
+          <GoViewer sgf="/articles/sugeundaesajeon-global/2478.sgf">
             <GoViewerBoard interactive={true} />
             <GoViewerLegend>
               Problem 2478, White to play.
@@ -152,12 +140,9 @@ export function SugeundaesajeonGlobal({
             <DiagramRef label="2478_1" /> to be around 2.3
             points.
           </ArticleParagraph>
-          <GoViewer
-            label="2478_1"
-            sgf="/articles/sugeundaesajeon-global/2478_1.sgf"
-            startAt="end"
-          >
+          <GoViewer sgf="/articles/sugeundaesajeon-global/2478_1.sgf">
             <GoViewerBoard
+              startAt="end"
               interactive={true}
               showMoveNumbers
             />
@@ -172,12 +157,9 @@ export function SugeundaesajeonGlobal({
             <DiagramRef label="2478_2" />, not 1 on Dia.{" "}
             <DiagramRef label="2478_1" />.
           </ArticleParagraph>
-          <GoViewer
-            label="2478_2"
-            sgf="/articles/sugeundaesajeon-global/2478_2.sgf"
-            startAt="end"
-          >
+          <GoViewer sgf="/articles/sugeundaesajeon-global/2478_2.sgf">
             <GoViewerBoard
+              startAt="end"
               interactive={true}
               showMoveNumbers
             />
@@ -192,12 +174,9 @@ export function SugeundaesajeonGlobal({
             &nbsp;first. If Black, tries to kill the top,
             only then does the book&apos;s tesuji shine:
           </ArticleParagraph>
-          <GoViewer
-            label="2478_3"
-            sgf="/articles/sugeundaesajeon-global/2478_3.sgf"
-            startAt="end"
-          >
+          <GoViewer sgf="/articles/sugeundaesajeon-global/2478_3.sgf">
             <GoViewerBoard
+              startAt="end"
               interactive={true}
               showMoveNumbers
             />
@@ -213,31 +192,33 @@ export function SugeundaesajeonGlobal({
           <ArticleSubSectionTitle>
             Problem 2482
           </ArticleSubSectionTitle>
-          <ArticleParagraph>T</ArticleParagraph>
-          <GoViewer
-            label="2482"
-            sgf="/articles/sugeundaesajeon-global/2482.sgf"
-          >
+          <ArticleParagraph>
+            Again, Black has a potentially troublesome
+            capture on the right side. How can White use it?
+          </ArticleParagraph>
+          <GoViewer sgf="/articles/sugeundaesajeon-global/2482.sgf">
             <GoViewerBoard interactive={true} />
             <GoViewerLegend>
               Problem 2482, White to play.
             </GoViewerLegend>
           </GoViewer>
-          <ArticleParagraph>W</ArticleParagraph>
-          <GoViewer
-            label="2479_1"
-            sgf="/articles/sugeundaesajeon-global/2479_1.sgf"
-            startAt="end"
-          >
+          <ArticleParagraph>
+            White uses a forcing move on the right with 1 to
+            then drive the A stones. Due to the shortage of
+            liberties, disconnecting White&apos;s group in
+            the B direction isn&apos;t possible. And Black 8
+            is necessary, given the C weakness.
+          </ArticleParagraph>
+          <GoViewer sgf="/articles/sugeundaesajeon-global/2482_1.sgf">
             <GoViewerBoard
+              startAt="end"
               interactive={true}
               showMoveNumbers
               showCapturedStones
             />
             <GoViewerControls />
             <GoViewerLegend>
-              Black needs to save one side, saving both
-              isn&pos;t possible.
+              White pierces through on the right side.
             </GoViewerLegend>
           </GoViewer>
         </ArticleSubSection>
