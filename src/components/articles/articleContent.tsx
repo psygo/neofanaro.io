@@ -7,6 +7,8 @@ import Link from "next/link"
 
 import { WithReactChildren } from "@types"
 
+import { slugify } from "@utils"
+
 import { ArticleImageLightbox } from "./articleImageLightbox"
 
 export { ArticleTableOfContents } from "./articleToc"
@@ -230,10 +232,24 @@ export function ArticleCode({
   )
 }
 
+// A readable slug when the title is plain text (e.g. "Problem 2479"
+// -> "problem-2479"), so the TOC and the heading's own permalink
+// share a stable, shareable URL instead of useId()'s opaque one.
+// Falls back to that opaque id for titles with non-text children,
+// or if two titles slugify to the same thing.
+function useHeadingId(
+  children: WithReactChildren["children"],
+): string {
+  const fallbackId = useId()
+  return typeof children === "string"
+    ? slugify(children) || fallbackId
+    : fallbackId
+}
+
 export function ArticleSectionTitle({
   children,
 }: WithReactChildren) {
-  const id = useId()
+  const id = useHeadingId(children)
 
   // The visible number is a CSS counter (see .article-section-title
   // in globals.css), not React state — it has to stay in sync with
@@ -244,7 +260,12 @@ export function ArticleSectionTitle({
       id={id}
       className="article-section-title font-extrabold"
     >
-      {children}
+      <a
+        href={`#${id}`}
+        className="font-extrabold text-inherit no-underline hover:underline"
+      >
+        {children}
+      </a>
     </h2>
   )
 }
@@ -255,14 +276,19 @@ export function ArticleSectionTitle({
 export function ArticleSubSectionTitle({
   children,
 }: WithReactChildren) {
-  const id = useId()
+  const id = useHeadingId(children)
 
   return (
     <h3
       id={id}
       className="article-subsection-title font-bold"
     >
-      {children}
+      <a
+        href={`#${id}`}
+        className="font-bold text-inherit no-underline hover:underline"
+      >
+        {children}
+      </a>
     </h3>
   )
 }

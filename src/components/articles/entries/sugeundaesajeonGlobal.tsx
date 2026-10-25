@@ -66,6 +66,7 @@ export function SugeundaesajeonGlobal({
 
       <ArticleSection>
         <ArticleSectionTitle>Problems</ArticleSectionTitle>
+
         <ArticleSubSection>
           <ArticleSubSectionTitle>
             Problem 2479
@@ -204,6 +205,39 @@ export function SugeundaesajeonGlobal({
             <GoViewerLegend>
               The book&apos;s tesuji shines even brighter
               when we tenuki first.
+            </GoViewerLegend>
+          </GoViewer>
+        </ArticleSubSection>
+
+        <ArticleSubSection>
+          <ArticleSubSectionTitle>
+            Problem 2482
+          </ArticleSubSectionTitle>
+          <ArticleParagraph>T</ArticleParagraph>
+          <GoViewer
+            label="2482"
+            sgf="/articles/sugeundaesajeon-global/2482.sgf"
+          >
+            <GoViewerBoard interactive={true} />
+            <GoViewerLegend>
+              Problem 2482, White to play.
+            </GoViewerLegend>
+          </GoViewer>
+          <ArticleParagraph>W</ArticleParagraph>
+          <GoViewer
+            label="2479_1"
+            sgf="/articles/sugeundaesajeon-global/2479_1.sgf"
+            startAt="end"
+          >
+            <GoViewerBoard
+              interactive={true}
+              showMoveNumbers
+              showCapturedStones
+            />
+            <GoViewerControls />
+            <GoViewerLegend>
+              Black needs to save one side, saving both
+              isn&pos;t possible.
             </GoViewerLegend>
           </GoViewer>
         </ArticleSubSection>

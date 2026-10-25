@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 import { ArticleWithComments } from "@types"
 
@@ -63,6 +63,18 @@ export function Article({
     fontSizeClasses[
       article.currentPlayer?.articleFontSize ?? ""
     ] ?? ""
+
+  // On a fresh load (not a client-side nav), the App Router's own
+  // scroll restoration resets scroll to the top during hydration,
+  // clobbering the browser's native scroll-to-#hash — so it has to
+  // be redone manually once that settles.
+  useEffect(() => {
+    if (!window.location.hash) return
+    const id = decodeURIComponent(
+      window.location.hash.slice(1),
+    )
+    document.getElementById(id)?.scrollIntoView()
+  }, [])
 
   return (
     <article

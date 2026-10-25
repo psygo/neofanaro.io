@@ -78,17 +78,17 @@ export function ArticleTableOfContents() {
           <h2 className="mt-0 text-xl font-bold">
             {lang === "pt" ? "Índice" : "Table of Contents"}
           </h2>
-          <ol className="flex flex-col gap-0 pl-8 text-[11pt]">
+          <ol className="flex list-none flex-col gap-0 pl-5 text-[11pt]">
             {sections.map((section) => (
-              <li
-                key={section.id}
-                className="mt-0 mb-0 marker:text-slate-900 dark:marker:text-slate-50"
-              >
+              <li key={section.id} className="mt-0 mb-0">
                 <a
                   href={`#${section.id}`}
-                  className="no-underline underline-offset-4 hover:underline hover:decoration-[1.5px]"
+                  className="flex no-underline underline-offset-4 hover:underline hover:decoration-[1.5px]"
                 >
-                  {section.title}
+                  <span className="inline-block w-4.5 shrink-0 tabular-nums">
+                    {section.number}.
+                  </span>
+                  <span>{section.title}</span>
                 </a>
                 {section.subsections.length > 0 && (
                   <ol className="mt-0.5 mb-0 flex list-none flex-col pl-5">
@@ -100,10 +100,12 @@ export function ArticleTableOfContents() {
                         >
                           <a
                             href={`#${subsection.id}`}
-                            className="no-underline underline-offset-4 hover:underline hover:decoration-[1.5px]"
+                            className="flex no-underline underline-offset-4 hover:underline hover:decoration-[1.5px]"
                           >
-                            {subsection.number}.{" "}
-                            {subsection.title}
+                            <span className="inline-block w-7.5 shrink-0 tabular-nums">
+                              {subsection.number}.
+                            </span>
+                            <span>{subsection.title}</span>
                           </a>
                         </li>
                       ),
