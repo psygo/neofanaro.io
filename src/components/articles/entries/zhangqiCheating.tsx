@@ -37,7 +37,10 @@ export function ZhangqiCheating({ article }: ArticleProps) {
           <ArticleLink href="https://ai-sensei.com/">
             AI Sensei
           </ArticleLink>
-          . But Zhangqi offers a feature which truly sets it
+          .
+        </ArticleParagraph>
+        <ArticleParagraph>
+          But Zhangqi offers a feature which truly sets it
           apart: it can estimate your rank from the quality
           of your moves. AI Sensei, much like{" "}
           <ArticleLink href="https://github.com/sanderland/katrain">
@@ -78,10 +81,10 @@ export function ZhangqiCheating({ article }: ArticleProps) {
             </ArticleLink>
             , with an auto-translation from Chinese. Shin
             Jinseo 9p is estimated as 11.2d Fox, while
-            KataGo receives a 12d rating. Shin Jinseo 9p is
-            often officially rated as a Fox 10d, perhaps he
-            gets Fox 11d due to the inflation mentioned down
-            below.
+            KataGo receives a 12d, AI/Demigod rating. Shin
+            Jinseo 9p is often officially rated as a Fox
+            10d, perhaps he gets Fox 11d due to the
+            inflation mentioned down below.
           </ImageLegend>
         </ArticleImageWithLegend>
         <ArticleYouTubeIframe
@@ -96,17 +99,21 @@ export function ZhangqiCheating({ article }: ArticleProps) {
           lot tend to take lower percentages, without that
           meaning much since those percentages didn&apos;t
           take into account the difficulty behind each move.
-          Zhangqi offers a solution to that problem with the
-          &quot;fit&quot; and &quot;difficulty&quot;
-          columns, and the variance on the first column,
-          denoted by the orange number after &quot;±&quot;.
         </ArticleParagraph>
         <ArticleParagraph>
-          It&apos;s unfortunate Zhangqi seems to estimate
-          ranks by sections, it isn&apos;t able to give each
-          move a rank yet. It would be amazing to see a rank
-          graph for each move, much like what we get for
-          points and percentages. And there are some
+          Zhangqi offers a solution to that problem not only
+          with the Fox ratings but with the &quot;fit&quot;
+          and &quot;difficulty&quot; columns, plus the
+          variance on the first column, denoted by the
+          orange number after &quot;±&quot;.
+        </ArticleParagraph>
+        <ArticleParagraph>
+          It&apos;s unfortunate this relatively new Chinese
+          platform seems to estimate ranks by game sections,
+          it isn&apos;t capable to give each move an
+          individual rank just yet. It would be amazing to
+          see a rank graph per move, much like what we get
+          for points and percentages. And there are some
           constraints a game needs to meet in order to get
           rank estimates. For example, each game needs at
           least 100 moves to receive a rank; and the endgame
@@ -119,13 +126,13 @@ export function ZhangqiCheating({ article }: ArticleProps) {
           their AI to estimate each player&apos;s strength
           from a large database of blitz games. So, if
           you&apos;re playing with 30s or 60s byo-yomi on
-          Fox, your moves will be of higher quality than the
-          AI&apos;s reference points.
+          Fox, your moves will be of a higher quality than
+          the AI&apos;s reference points.
         </ArticleParagraph>
         <ArticleParagraph>
-          Anyhow, getting back to the main topic, Zhangqi
-          has used its ranking tool to then estimate how
-          many players are cheating with AI.{" "}
+          Anyhow, finally getting back to the main topic,
+          Zhangqi has used its ranking tool to then estimate
+          how many players are cheating with AI.{" "}
           <ArticleLink href="https://www.bilibili.com/en/video/BV1iHo6BSESd/">
             According to their research
           </ArticleLink>
@@ -152,14 +159,14 @@ export function ZhangqiCheating({ article }: ArticleProps) {
           a similar rank in real life.
         </ArticleParagraph>
         <ArticleParagraph>
-          What I usually do and recommend, and that&apos;s
-          something I was doing even before the AI era
-          &mdash; yes, I&apos;m really that old &mdash; is
-          to check the current window&apos;s win/loss record
-          on my opponent&apos;s card. If there are way too
-          many losses, either that player is really that
-          strong, or maybe we&apos;ve found ourselves a
-          cheater &mdash; do you wanna take a chance?
+          What I usually do and recommend &mdash; and
+          that&apos;s something I was doing even before the
+          AI era &mdash; is to check the current
+          window&apos;s win/loss record on my
+          opponent&apos;s card. If there are way too many
+          wins, either that player is really that strong, or
+          maybe we&apos;ve found ourselves a cheater &mdash;
+          do you wanna take a chance?
         </ArticleParagraph>
         <ArticleImageWithLegend
           src="/articles/zhangqi-cheating/shin_jinseo_fox.jpeg"
@@ -203,12 +210,14 @@ export function ZhangqiCheating({ article }: ArticleProps) {
         </ArticleParagraph>
         <ArticleParagraph>
           On the 8d trial, they found that 18% of players
-          played beyond top pro level (world champion
-          actually), and 18% played just like AIs. Playing
-          beyond top pro level might mean the cheater is
-          just not following <em>all</em> the AI
-          recommendations, which would lead the average
-          evaluation down a bit.
+          performed beyond top pro level (world champion
+          actually), and 18% played just like AIs. To
+          compete beyond top pro level might mean the
+          cheater is simply just not following <em>all</em>{" "}
+          the AI recommendations &mdash; these could be
+          called &quot;cyborg&quot; cheaters &mdash;, which
+          would lead the average evaluation down a bit, and
+          make cheating much harder to detect.
         </ArticleParagraph>
         <ArticleImageWithLegend
           src="/articles/zhangqi-cheating/zhangqi_8d_pie_chart.png"
@@ -217,7 +226,8 @@ export function ZhangqiCheating({ article }: ArticleProps) {
         >
           <ImageLegend>
             18% of 8d&apos;s are beyond top pro (world
-            champion); and 18% are AIs.
+            champion); and 18% are AIs, according to
+            Zhangqi.
           </ImageLegend>
         </ArticleImageWithLegend>
         <ArticleParagraph>
@@ -248,10 +258,10 @@ export function ZhangqiCheating({ article }: ArticleProps) {
         <ArticleParagraph>
           If you take into account that ranking up on Fox is
           quite demanding on that range &mdash; you need to
-          win 15 games in a 20-game window &mdash;, having
-          3-4 games out of those 20 be virtually unwinnable
-          makes leveling up borderline impossible.
-          That&apos;s why you should check your
+          win 15 games in a 20-game sliding window &mdash;,
+          having 3-4 games out of those 20 be virtually
+          unwinnable makes leveling up borderline
+          impossible. That&apos;s why you should check your
           opponent&apos;s current window before continuing
           the game past the first 10 moves &mdash; Fox
           annuls games with 10 or fewer moves.
@@ -259,10 +269,13 @@ export function ZhangqiCheating({ article }: ArticleProps) {
         <ArticleBlockQuote>
           By the way, Fox&apos;s way of ranking up and down
           is very harsh compared to typical Elo rating. In
-          normal Elo, a one-rank difference (100 points)
+          regular Elo, a one-rank difference (100 points)
           should mean a 65% win rate for the stronger
-          player, not 15/20 or 75%. A 3:4 rate would mean a
-          2-stone difference in Elo (200 points).
+          player, around 2 out of 3 games, not 15/20 or 75%.
+          A 3:4 rate would mean a 2-stone difference in Elo
+          (200 points). In the end, Fox ranks might have a
+          2-stone difference within each rank, compared to
+          Elo systems.
         </ArticleBlockQuote>
         <ArticleParagraph>
           Here&apos;s the full video for the 8d analysis:
@@ -323,11 +336,17 @@ export function ZhangqiCheating({ article }: ArticleProps) {
           of cheaters&apos; games as a service &mdash;
           ideally, of course, that should be done across all
           games &mdash;, since that can be done in an
-          automated way. In chess, since so much of the game
-          could be memorized, players could argue they can
-          play a borderline perfect game, but in Go, playing
-          more than 200 moves at AI quality in the 7-8d
-          range is astronomically unlikely.
+          automated way, and quite cheaply so at this point.
+        </ArticleParagraph>
+        <ArticleParagraph>
+          In chess, since so much of the game could be
+          memorized, players could argue they are able to
+          play a borderline perfect game. But, in Go,
+          playing more than 200 moves at AI quality &mdash;
+          compared to 50-80 moves for chess &mdash; in the
+          7-8d range is astronomically unlikely, so using
+          cheating detection tools might be even safer and
+          simpler.
         </ArticleParagraph>
         <ArticleImageWithLegend
           src="/articles/zhangqi-cheating/zhangqi_top_pro.png"
@@ -345,6 +364,92 @@ export function ZhangqiCheating({ article }: ArticleProps) {
           </ImageLegend>
         </ArticleImageWithLegend>
       </ArticleSection>
+      <ArticleSection>
+        <ArticleSectionTitle>Appendix</ArticleSectionTitle>
+        <ArticleParagraph>
+          After posting this article, especially{" "}
+          <ArticleLink href="https://www.reddit.com/r/baduk/comments/1xe9goh/zhangqis_36_of_fox_8d_are_ai_cheaters_22_for_7d/">
+            on Reddit
+          </ArticleLink>
+          , and discussing it a bit more with Alexandre
+          Amaro 8d Fox, I&apos;ve received a some feedback,
+          which I&apos;ll be sharing in this appendix
+          section:
+        </ArticleParagraph>
+        <ArticleUnorderedList>
+          <li>
+            From my own and many others&apos; experiences,
+            cheating from Fox 6d downwards is incredibly
+            rare.
+          </li>
+          <li>
+            The term &quot;cyborg&quot;, used in{" "}
+            <ArticleLink href="https://www.reddit.com/r/baduk/comments/1xe9goh/comment/19rl4q89hi35u/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button">
+              TelegraphGo&apos;s comment on Reddit
+            </ArticleLink>
+            , for players who don&apos;t use AI for{" "}
+            <em>all</em> the moves is quite useful, and has
+            been incorporated into this article. Those
+            players are the most difficult to reliably label
+            as cheaters.
+          </li>
+          <li>
+            Even though Fox 7-8d players typically
+            don&apos;t play at AI level, many of them can
+            play up to perhaps 70 moves close to perfect. As
+            TelegraphGo mentions, if you&apos;ve been primed
+            or triggered before playing against such an
+            opponent, you might assume they are cheating and
+            get tilted, but maybe they are just playing
+            outstandingly well.
+          </li>
+          <li>
+            There is the possibility that longer time
+            settings might make it more unlikely to
+            encounter cheaters. Since AI offers high quality
+            moves at low playouts, cheaters might be more
+            inclined into playing quickly, which means they
+            might not feel like waiting for their opponents
+            on longer time settings such as Fox&apos;s 20min
+            + 3x60s.
+          </li>
+          <li>
+            Zhangqi calculated the 36% (8d) and 22% (7d)
+            statistics from the title by claiming that:
+            anything from 8d onwards for Fox 7d is cheating;
+            and anything from 9d for Fox 8d. That might be a
+            bit exaggerated, and is at any rate at least a
+            bit subjective. If we shift the bar up by one
+            rank on each, we get 19.5% for Fox 8d, and 15.2%
+            for Fox 7d.
+          </li>
+        </ArticleUnorderedList>
+        <ArticleImageWithLegend
+          src="/articles/zhangqi-cheating/fox_7d_reworked_stats.jpeg"
+          height={100}
+          width={550}
+        >
+          <ImageLegend>
+            If we shift the Fox 7d&apos;s bar by one rank,
+            to 9d, the cheater&apos;s percentage goes down
+            to 15.2%.
+          </ImageLegend>
+        </ArticleImageWithLegend>
+        <ArticleImageWithLegend
+          src="/articles/zhangqi-cheating/fox_8d_reworked_stats.jpeg"
+          height={100}
+          width={550}
+        >
+          <ImageLegend>
+            If we shift the Fox 8d&apos;s bar by one rank,
+            to 10d, the cheater&apos;s percentage goes down
+            to 19.5%.
+          </ImageLegend>
+        </ArticleImageWithLegend>
+      </ArticleSection>
     </Article>
   )
 }
+
+//   - ⁠TelegraphGo's comment
+//   - Don't forget to mention that, from the bell curve charts, the percentages would change (show the images).
