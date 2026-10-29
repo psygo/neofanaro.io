@@ -372,9 +372,9 @@ export function ZhangqiCheating({ article }: ArticleProps) {
             on Reddit
           </ArticleLink>
           , and discussing it a bit more with Alexandre
-          Amaro 8d Fox, I&apos;ve received a some feedback,
-          which I&apos;ll be sharing in this appendix
-          section:
+          Amaro 8d Fox, I&apos;ve received some feedback and
+          extra info which I&apos;ll be sharing in this
+          appendix section:
         </ArticleParagraph>
         <ArticleUnorderedList>
           <li>
@@ -404,24 +404,23 @@ export function ZhangqiCheating({ article }: ArticleProps) {
             outstandingly well.
           </li>
           <li>
-            There is the possibility that longer time
-            settings might make it more unlikely to
-            encounter cheaters. Since AI offers high quality
-            moves at low playouts, cheaters might be more
-            inclined into playing quickly, which means they
-            might not feel like waiting for their opponents
-            on longer time settings such as Fox&apos;s 20min
-            + 3x60s.
+            It&apos;s possible that longer time settings
+            might make it more unlikely to encounter
+            cheaters. Since AI offers high quality moves at
+            low playouts, cheaters might be more inclined
+            into playing quickly, which means they might not
+            feel like waiting for their opponents on longer
+            time settings such as Fox&apos;s 20min + 3x60s.
           </li>
           <li>
-            Zhangqi calculated the 36% (8d) and 22% (7d)
-            statistics from the title by claiming that:
+            Zhangqi calculated the 36% (Fox 8d) and 22% (Fox
+            7d) statistics from the title by claiming that:
             anything from 8d onwards for Fox 7d is cheating;
             and anything from 9d for Fox 8d. That might be a
             bit exaggerated, and is at any rate at least a
             bit subjective. If we shift the bar up by one
-            rank on each, we get 19.5% for Fox 8d, and 15.2%
-            for Fox 7d.
+            rank on each, we get 19.5% (1 in 5) for Fox 8d,
+            and 15.2% (1 in ~7) for Fox 7d.
           </li>
         </ArticleUnorderedList>
         <ArticleImageWithLegend
@@ -432,7 +431,7 @@ export function ZhangqiCheating({ article }: ArticleProps) {
           <ImageLegend>
             If we shift the Fox 7d&apos;s bar by one rank,
             to 9d, the cheater&apos;s percentage goes down
-            to 15.2%.
+            to 15.2% (1 in ~7).
           </ImageLegend>
         </ArticleImageWithLegend>
         <ArticleImageWithLegend
@@ -443,7 +442,7 @@ export function ZhangqiCheating({ article }: ArticleProps) {
           <ImageLegend>
             If we shift the Fox 8d&apos;s bar by one rank,
             to 10d, the cheater&apos;s percentage goes down
-            to 19.5%.
+            to 19.5% (1 in 5).
           </ImageLegend>
         </ArticleImageWithLegend>
       </ArticleSection>
