@@ -350,3 +350,96 @@ export const commentVotesRelations = relations(
     }),
   }),
 )
+
+export const productsTable = pgTable("products", {
+  id: serial().primaryKey(),
+  slug: text().notNull().unique(),
+  titleEn: text("title_en").notNull(),
+  titlePt: text("title_pt").notNull(),
+  descriptionEn: text("description_en").notNull(),
+  descriptionPt: text("description_pt").notNull(),
+  priceCents: integer("price_cents").notNull(),
+  tags: json().notNull().default([]),
+  active: boolean().notNull().default(true),
+})
+
+export const productsRelations = relations(
+  productsTable,
+  ({ many }) => ({
+    cartItems: many(cartItemsTable),
+    orderItems: many(orderItemsTable),
+  }),
+)
+
+export const cartItemsTable = pgTable(
+  "cart_items",
+  {
+    id: serial().primaryKey(),
+    playerId: integer("player_id").notNull(),
+    productId: integer("product_id").notNull(),
+    quantity: integer().notNull().default(1),
+  },
+  (table) => [
+    uniqueIndex("cart_item_idx").on(
+      table.playerId,
+      table.productId,
+    ),
+  ],
+)
+
+export const cartItemsRelations = relations(
+  cartItemsTable,
+  ({ one }) => ({
+    player: one(players, {
+      fields: [cartItemsTable.playerId],
+      references: [players.id],
+    }),
+    product: one(productsTable, {
+      fields: [cartItemsTable.productId],
+      references: [productsTable.id],
+    }),
+  }),
+)
+
+export const ordersTable = pgTable("orders", {
+  id: serial().primaryKey(),
+  playerId: integer("player_id"),
+  orderNumber: text("order_number").notNull().unique(),
+  totalCents: integer("total_cents").notNull(),
+  // "mock_completed" until real Stripe checkout lands.
+  status: text().notNull().default("mock_completed"),
+  createdAt: timestamp("created_at").notNull().defaultNow(),
+})
+
+export const ordersRelations = relations(
+  ordersTable,
+  ({ one, many }) => ({
+    player: one(players, {
+      fields: [ordersTable.playerId],
+      references: [players.id],
+    }),
+    items: many(orderItemsTable),
+  }),
+)
+
+export const orderItemsTable = pgTable("order_items", {
+  id: serial().primaryKey(),
+  orderId: integer("order_id").notNull(),
+  productId: integer("product_id").notNull(),
+  quantity: integer().notNull(),
+  unitPriceCents: integer("unit_price_cents").notNull(),
+})
+
+export const orderItemsRelations = relations(
+  orderItemsTable,
+  ({ one }) => ({
+    order: one(ordersTable, {
+      fields: [orderItemsTable.orderId],
+      references: [ordersTable.id],
+    }),
+    product: one(productsTable, {
+      fields: [orderItemsTable.productId],
+      references: [productsTable.id],
+    }),
+  }),
+)

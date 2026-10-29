@@ -1,4 +1,5 @@
 export * from "./article"
 export * from "./comment"
+export * from "./store"
 export * from "./utils"
 export * from "./vote"

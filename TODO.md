@@ -2,6 +2,14 @@
 
 ## Priorities
 
+- Extra blunders article
+  - The extras are on a a comment on a [Go Game Series video](https://youtu.be/LkzDawFyAGA).
+  - Also mention my "psygo's Corner" post on tennis.
+- An article on us taking both good sides of different, conflicting coins.
+  - For example, we could be demanding on ourselves, but take it lightly if we fail.
+  - Believe we are good and if we fail, pardon ourselves.
+    - Of course, we shouldn't go too far, and we should only apply this to fields in which we are minimally competent.
+
 - For improving the Zhangqi article (add an appendix section):
   - ⁠TelegraphGo's comment
   - ⁠Mention that from 6d below, bots are almost inexistent.

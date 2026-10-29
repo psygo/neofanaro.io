@@ -35,6 +35,7 @@ export function Nav({ player }: NavProps) {
         <SoftwareLogo />
         <TeacherLogo />
         <BlogLogo />
+        {player?.moderator && <StoreLogo />}
         {player?.moderator && <AnalyticsLogo />}
         <CpiSuspense>
           <LanguageIcon />
@@ -90,6 +91,18 @@ function BlogLogo() {
       src="/nav/book.svg"
       alt="Blog"
       href="/articles"
+      size={23.5}
+      className="opacity-70 dark:opacity-80 dark:invert"
+    />
+  )
+}
+
+function StoreLogo() {
+  return (
+    <NavIcon
+      src="/nav/store.svg"
+      alt="Store"
+      href="/store"
       size={23.5}
       className="opacity-70 dark:opacity-80 dark:invert"
     />

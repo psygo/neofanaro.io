@@ -38,7 +38,7 @@ export function SugeundaesajeonGlobal({
             <em>Tesuji Encyclopedia</em>
           </ArticleLink>
           . However, still, most people are probably unaware
-          that problem collection features two parts: a
+          that that problem collection features two parts: a
           first for the expected, local tesuji problems; but
           also a second, for global problems.
         </ArticleParagraph>
@@ -51,6 +51,15 @@ export function SugeundaesajeonGlobal({
           at them, and I believe solving them is perhaps an
           even truer mark of expert skill than solving the
           more standard problems.
+        </ArticleParagraph>
+        <ArticleParagraph>
+          That&apos;s not to say they don&apos;t have issues
+          though. Many of those problems are outdated with
+          respect to AI, of course, and some even show wrong
+          ideas for solutions. Nonetheless, going through
+          those challenges and identifying imperfections
+          within the problems are great training
+          experiences.
         </ArticleParagraph>
         <ArticleImageWithLegend
           src="/articles/sugeundaesajeon-global/sugeundaesajeon_downscaled.png"
@@ -99,7 +108,7 @@ export function SugeundaesajeonGlobal({
             <GoViewerControls />
             <GoViewerLegend>
               Black needs to save one side, saving both
-              isn&pos;t possible.
+              isn&apos;t possible.
             </GoViewerLegend>
           </GoViewer>
           <ArticleParagraph>
@@ -125,7 +134,7 @@ export function SugeundaesajeonGlobal({
           </ArticleSubSectionTitle>
           <ArticleParagraph>
             Some problems in the book, though, are
-            definitely quite problematic. Not for their
+            definitely quite... problematic. Not for their
             setup, but for their solution.
           </ArticleParagraph>
           <GoViewer sgf="/articles/sugeundaesajeon-global/2478.sgf">
@@ -167,8 +176,27 @@ export function SugeundaesajeonGlobal({
               interactive={true}
               showMoveNumbers
             />
+            <GoViewerControls />
             <GoViewerLegend>
-              Problem 2478, White to play.
+              White strikes at the vital point to stay
+              minimally safe, before taking the crucial
+              point of 11.
+            </GoViewerLegend>
+          </GoViewer>
+          <ArticleParagraph>
+            Black could try to resist, and might even kill
+            White, but at what cost:
+          </ArticleParagraph>
+          <GoViewer sgf="/articles/sugeundaesajeon-global/2478_4.sgf">
+            <GoViewerBoard
+              startAt="end"
+              interactive={true}
+              showMoveNumbers
+            />
+            <GoViewerControls />
+            <GoViewerLegend>
+              Black should have even bailed out from this
+              fight with 3 at White 4.
             </GoViewerLegend>
           </GoViewer>
           <ArticleParagraph>
@@ -224,7 +252,7 @@ export function SugeundaesajeonGlobal({
             />
             <GoViewerControls />
             <GoViewerLegend>
-              White pierces through on the right side.
+              White pierces through the right side.
             </GoViewerLegend>
           </GoViewer>
         </ArticleSubSection>
@@ -258,8 +286,8 @@ export function SugeundaesajeonGlobal({
             />
             <GoViewerControls />
             <GoViewerLegend>
-              White is squeezed while Black reinforces the A
-              group.
+              White is squeezed, while Black reinforces the
+              A group.
             </GoViewerLegend>
           </GoViewer>
           <ArticleParagraph>
@@ -270,15 +298,18 @@ export function SugeundaesajeonGlobal({
             . If you&apos;re gonna get squeezed at the
             beginning of the game, and all you have to show
             for it is second line territory, things did not
-            go so well. Also, on another topic, AI dislikes
-            the joseki on the top-left quite a bit; Black
-            should at least turn at B instead of 19.
+            go so well.
+          </ArticleParagraph>
+          <ArticleParagraph>
+            Also, on another topic, AI dislikes the joseki
+            on the top-left quite a bit; Black should at
+            least turn at B instead of 19.
           </ArticleParagraph>
           <ArticleParagraph>
             AI recommends resisting with an interesting
             technique which pops up in this joseki &mdash;
-            and which appeared in my game against Uyama
-            Hissao during my{" "}
+            which appeared in my game against Uyama Hissao
+            during my{" "}
             <ArticleLink
               internal
               href="second-brazil-open-2026"
@@ -343,7 +374,7 @@ export function SugeundaesajeonGlobal({
             </GoViewerLegend>
           </GoViewer>
           <ArticleParagraph>
-            If Black insists on trying to kill, Black has a
+            If Black insists on trying to kill, White has a
             tesuji up its sleeve:
           </ArticleParagraph>
           <GoViewer sgf="/articles/sugeundaesajeon-global/2534_4.sgf">
@@ -375,8 +406,9 @@ export function SugeundaesajeonGlobal({
             </GoViewerLegend>
           </GoViewer>
           <ArticleParagraph>
-            Through a sacrifice, Black manages to find a way
-            out, potentially killing White&apos;s A group:
+            Through a clever sacrifice, Black manages to
+            find a way out, potentially killing White&apos;s
+            A group:
           </ArticleParagraph>
           <GoViewer sgf="/articles/sugeundaesajeon-global/2516_1.sgf">
             <GoViewerBoard
@@ -389,10 +421,19 @@ export function SugeundaesajeonGlobal({
             <GoViewerLegend>
               As Black escapes, White&apos;s A is going to
               suffer tremendously, if it doesn&apos;t
-              outright dies.
+              outright just die.
             </GoViewerLegend>
           </GoViewer>
         </ArticleSubSection>
+        <ArticleSection>
+          <ArticleSectionTitle>Outro</ArticleSectionTitle>
+          <ArticleParagraph>
+            What do you think about this sample of the
+            global problems? Leave the ones you found best
+            in the comments, perhaps in the future I might
+            add them to this article.
+          </ArticleParagraph>
+        </ArticleSection>
       </ArticleSection>
     </Article>
   )
