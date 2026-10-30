@@ -25,6 +25,8 @@ type StoreContextValue = {
   cartError: "not_signed_in" | null
   addToCart: (productId: number) => void
   setQuantity: (productId: number, quantity: number) => void
+  // Resolves to the Stripe Checkout URL to redirect to, or null on
+  // failure (cartError is set in that case).
   checkout: () => Promise<string | null>
 }
 
@@ -100,7 +102,7 @@ export function StoreProvider({
       return null
     }
     setCart({})
-    return result.orderNumber ?? null
+    return result.checkoutUrl ?? null
   }
 
   const cartCount = Object.values(cart).reduce(

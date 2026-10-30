@@ -1,5 +1,7 @@
 "use server"
 
+import { headers } from "next/headers"
+
 import { eq } from "drizzle-orm"
 
 import {
@@ -10,16 +12,13 @@ import {
   productsTable,
 } from "@db"
 import { getCurrentPlayer } from "@server/auth/session"
+import { stripe } from "@server/payments/stripe"
 
 export type CheckoutResult = {
   errorCode?: "not_signed_in" | "empty_cart"
-  orderNumber?: string
+  checkoutUrl?: string
 }
 
-// Stands in for the real flow: redirecting to a Stripe Checkout
-// Session (or confirming a Payment Intent), then waiting on its
-// webhook to actually fulfill the order. See store.tsx's own doc
-// for the rest of what real payments would need.
 export async function checkout(): Promise<CheckoutResult> {
   const player = await getCurrentPlayer()
   if (!player) return { errorCode: "not_signed_in" }
@@ -29,6 +28,7 @@ export async function checkout(): Promise<CheckoutResult> {
       productId: cartItemsTable.productId,
       quantity: cartItemsTable.quantity,
       priceCents: productsTable.priceCents,
+      titleEn: productsTable.titleEn,
     })
     .from(cartItemsTable)
     .innerJoin(
@@ -66,9 +66,38 @@ export async function checkout(): Promise<CheckoutResult> {
     })),
   )
 
+  const origin =
+    (await headers()).get("origin") ??
+    "http://localhost:3000"
+
+  const session = await stripe.checkout.sessions.create({
+    mode: "payment",
+    customer_email: player.email ?? undefined,
+    line_items: items.map((item) => ({
+      quantity: item.quantity,
+      price_data: {
+        currency: "usd",
+        unit_amount: item.priceCents,
+        product_data: { name: item.titleEn },
+      },
+    })),
+    metadata: { orderId: String(order.id) },
+    success_url: `${origin}/store/success?order=${orderNumber}`,
+    cancel_url: `${origin}/store`,
+  })
+
+  await db
+    .update(ordersTable)
+    .set({ stripeCheckoutSessionId: session.id })
+    .where(eq(ordersTable.id, order.id))
+
+  // Cleared now rather than on webhook confirmation: Stripe Checkout
+  // already snapshotted these items into order_items above, and
+  // leaving them in the cart would let the player re-checkout the
+  // same items into a second order while the first session is open.
   await db
     .delete(cartItemsTable)
     .where(eq(cartItemsTable.playerId, player.id))
 
-  return { orderNumber }
+  return { checkoutUrl: session.url ?? undefined }
 }

@@ -268,7 +268,6 @@ export function SugeundaesajeonGlobal({
           </ArticleParagraph>
           <GoViewer sgf="/articles/sugeundaesajeon-global/2534.sgf">
             <GoViewerBoard interactive={true} />
-            <GoViewerControls />
             <GoViewerLegend>
               Problem 2534, Black to play.
             </GoViewerLegend>
@@ -400,7 +399,6 @@ export function SugeundaesajeonGlobal({
           </ArticleParagraph>
           <GoViewer sgf="/articles/sugeundaesajeon-global/2516.sgf">
             <GoViewerBoard interactive={true} />
-            <GoViewerControls />
             <GoViewerLegend>
               Problem 2516, Black to play.
             </GoViewerLegend>

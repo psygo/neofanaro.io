@@ -87,11 +87,15 @@ export function ArticleLink({
   )
 }
 
+const listPadding = "pr-5 pl-8 sm:pr-8 sm:pl-12"
+
 export function ArticleOrderedList({
   children,
 }: WithReactChildren) {
   return (
-    <ol className="pr-8 pl-10 text-justify hyphens-auto sm:pl-12 [&>li]:my-1 [&>li]:pl-1">
+    <ol
+      className={`${listPadding} text-justify hyphens-auto [&>li]:my-1 [&>li]:pl-1`}
+    >
       {children}
     </ol>
   )
@@ -101,7 +105,9 @@ export function ArticleUnorderedList({
   children,
 }: WithReactChildren) {
   return (
-    <ul className="mt-0 mb-0 pr-8 pl-12 text-justify hyphens-auto [&>li]:my-1 [&>li]:pl-0.5 [&>li]:marker:text-slate-700 dark:[&>li]:marker:text-slate-400">
+    <ul
+      className={`${listPadding} sm:12 mt-0 mb-0 text-justify hyphens-auto [&>li]:my-1 [&>li]:pl-0.5 [&>li]:marker:text-slate-700 dark:[&>li]:marker:text-slate-400`}
+    >
       {children}
     </ul>
   )

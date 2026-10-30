@@ -40,7 +40,7 @@ export function SignInForm() {
   return (
     <form
       action={formAction}
-      className="flex w-full max-w-70 flex-col gap-3"
+      className="flex w-full max-w-96 flex-col gap-3"
     >
       <input
         name="email"

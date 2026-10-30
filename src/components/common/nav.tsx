@@ -1,5 +1,7 @@
 "use client"
 
+import { useEffect, useState } from "react"
+
 import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
@@ -19,6 +21,15 @@ type NavProps = {
 }
 
 export function Nav({ player }: NavProps) {
+  // Only moderators see the store nav link in production, but it
+  // should stay reachable on localhost for testing without needing
+  // a moderator account signed in there.
+  const [isLocalhost, setIsLocalhost] = useState(false)
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- syncing from an external system (window.location) on mount, the sanctioned use case for this pattern
+    setIsLocalhost(window.location.hostname === "localhost")
+  }, [])
+
   return (
     <nav
       className="mx-auto rounded-full bg-slate-100 pt-2.5 pb-2.5 ring-1 ring-slate-200 dark:bg-slate-900 dark:ring-slate-800"
@@ -35,7 +46,9 @@ export function Nav({ player }: NavProps) {
         <SoftwareLogo />
         <TeacherLogo />
         <BlogLogo />
-        {player?.moderator && <StoreLogo />}
+        {(player?.moderator || isLocalhost) && (
+          <StoreLogo />
+        )}
         {player?.moderator && <AnalyticsLogo />}
         <CpiSuspense>
           <LanguageIcon />

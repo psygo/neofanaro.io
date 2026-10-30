@@ -406,8 +406,13 @@ export const ordersTable = pgTable("orders", {
   playerId: integer("player_id"),
   orderNumber: text("order_number").notNull().unique(),
   totalCents: integer("total_cents").notNull(),
-  // "mock_completed" until real Stripe checkout lands.
-  status: text().notNull().default("mock_completed"),
+  // "pending" until the Stripe webhook confirms payment, then
+  // "paid", or "failed"/"canceled" if it never completes.
+  status: text().notNull().default("pending"),
+  stripeCheckoutSessionId: text(
+    "stripe_checkout_session_id",
+  ),
+  stripePaymentIntentId: text("stripe_payment_intent_id"),
   createdAt: timestamp("created_at").notNull().defaultNow(),
 })
 

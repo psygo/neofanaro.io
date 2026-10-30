@@ -38,25 +38,13 @@ export function ProductDetail({
       <div
         className={`${containerOutline} flex flex-col gap-4`}
       >
-        <div className="flex flex-col gap-2">
-          <h1 className="text-xl font-black sm:text-2xl">
-            {localizedText(
-              product.titleEn,
-              product.titlePt,
-              lang,
-            )}
-          </h1>
-          <div className="flex flex-wrap gap-2">
-            {product.tags.map((tag) => (
-              <span
-                key={tag}
-                className="rounded-2xl border border-gray-300 bg-gray-100 px-2 py-0.5 text-xs font-semibold text-gray-700 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-        </div>
+        <h1 className="text-xl font-black sm:text-2xl">
+          {localizedText(
+            product.titleEn,
+            product.titlePt,
+            lang,
+          )}
+        </h1>
         <p className="text-gray-700 dark:text-slate-300">
           {localizedText(
             product.descriptionEn,
@@ -64,6 +52,16 @@ export function ProductDetail({
             lang,
           )}
         </p>
+        <div className="flex flex-wrap gap-2">
+          {product.tags.map((tag) => (
+            <span
+              key={tag}
+              className="rounded-2xl border border-gray-300 bg-gray-100 px-2 py-0.5 text-xs font-semibold text-gray-700 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
         <div className="flex items-center justify-between gap-4 border-t border-gray-200 pt-4 dark:border-slate-700">
           <p className="text-xl font-bold">
             {formatPrice(product.priceCents, lang)}
