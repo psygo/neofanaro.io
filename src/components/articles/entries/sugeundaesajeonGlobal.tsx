@@ -2,6 +2,7 @@ import { ArticleProps } from "@types"
 
 import { Article } from "@components/articles/article"
 import {
+  ArticleBlockQuote,
   ArticleImageWithLegend,
   ArticleLink,
   ArticleParagraph,
@@ -61,6 +62,13 @@ export function SugeundaesajeonGlobal({
           within the problems are great training
           experiences.
         </ArticleParagraph>
+        <ArticleBlockQuote>
+          The Tesuji Encyclopedia is{" "}
+          <ArticleLink href="https://www.101weiqi.com/book/3/">
+            Book #3
+          </ArticleLink>{" "}
+          on 101weiqi.
+        </ArticleBlockQuote>
         <ArticleImageWithLegend
           src="/articles/sugeundaesajeon-global/sugeundaesajeon_downscaled.png"
           height={100}

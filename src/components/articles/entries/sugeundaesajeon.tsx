@@ -123,6 +123,13 @@ export function Sugeundaesajeon({ article }: ArticleProps) {
             </ArticleLink>
             .
           </ArticleParagraph>
+          <ArticleBlockQuote>
+            The Tesuji Encyclopedia is{" "}
+            <ArticleLink href="https://www.101weiqi.com/book/3/">
+              Book #3
+            </ArticleLink>{" "}
+            on 101weiqi.
+          </ArticleBlockQuote>
           <ArticleParagraph>
             I&apos;ve only created a Portuguese edition so
             far, but most of the book consists of problems

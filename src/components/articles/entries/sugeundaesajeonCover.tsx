@@ -42,6 +42,13 @@ export function SugeundaesajeonCover({
           that problem collection. Let&apos;s take a look at
           what makes those problems special.
         </ArticleParagraph>
+        <ArticleBlockQuote>
+          The Tesuji Encyclopedia is{" "}
+          <ArticleLink href="https://www.101weiqi.com/book/3/">
+            Book #3
+          </ArticleLink>{" "}
+          on 101weiqi.
+        </ArticleBlockQuote>
         <ArticleImageWithLegend
           src="/articles/sugeundaesajeon-cover/sugeundaesajeon_my_cover.png"
           height={100}
