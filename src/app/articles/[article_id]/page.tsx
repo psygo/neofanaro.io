@@ -1,4 +1,4 @@
-import { Metadata } from "next"
+import Metadata from "next"
 
 import { ArticleWithComments } from "@types"
 
@@ -31,6 +31,7 @@ import {
   SampleSizeAndCommonSense,
   SecondBrazilOpen2026,
   Sugeundaesajeon,
+  SugeundaesajeonCover,
   SugeundaesajeonGlobal,
   TennozanLeague,
   TewariDelight2,
@@ -127,6 +128,8 @@ function whichArticle(
       return <SampleSizeAndCommonSense article={post} />
     case "sugeundaesajeon":
       return <Sugeundaesajeon article={post} />
+    case "sugeundaesajeon-cover":
+      return <SugeundaesajeonCover article={post} />
     case "sugeundaesajeon-global":
       return <SugeundaesajeonGlobal article={post} />
     case "what-is-go-about":
