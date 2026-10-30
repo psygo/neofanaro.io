@@ -110,7 +110,12 @@ export function SugeundaesajeonCover({
               }}
             />
             <GoViewerLegend>
-              The top-left problem on my cover.
+              The top-left problem on my cover. That&apos;s
+              problem{" "}
+              <ArticleLink href="https://www.101weiqi.com/q/501513/">
+                Q-501,513
+              </ArticleLink>{" "}
+              on 101weiqi.
             </GoViewerLegend>
           </GoViewer>
           <ArticleParagraph>
@@ -209,7 +214,12 @@ export function SugeundaesajeonCover({
               }}
             />
             <GoViewerLegend>
-              The top-right problem on my cover.
+              The top-right problem on my cover. That&apos;s
+              problem{" "}
+              <ArticleLink href="https://www.101weiqi.com/q/47377/">
+                Q-47,377
+              </ArticleLink>{" "}
+              on 101weiqi.
             </GoViewerLegend>
           </GoViewer>
           <ArticleParagraph>
@@ -392,7 +402,11 @@ export function SugeundaesajeonCover({
               }}
             />
             <GoViewerLegend>
-              The bottom-left problem.
+              The bottom-left problem. That&apos;s problem{" "}
+              <ArticleLink href="https://www.101weiqi.com/q/47736/">
+                Q-47736
+              </ArticleLink>{" "}
+              on 101weiqi.
             </GoViewerLegend>
           </GoViewer>
           <ArticleParagraph>
@@ -465,12 +479,15 @@ export function SugeundaesajeonCover({
           <ArticleParagraph>
             Despite Black 1 in{" "}
             <DiagramRef label="bottom_right_1" />
-            &nbsp;being the book&apos;s solution,
-            that&apos;s not what AI recommends. Playing the
-            atari first is the optimal solution because
-            otherwise White will prevent it in order to cut
-            the 3 black stones on the side, as in{" "}
-            <DiagramRef label="bottom_right_4" />.
+            &nbsp;being the book&apos;s solution,{" "}
+            <ArticleLink href="https://ai-sensei.com/game/wCbiGfZSh7TjX5eXM8TDgvMzi5u2/29fa2461-a0af-41bc-bcf2-5aba607269bf">
+              that&apos;s not what AI recommends
+            </ArticleLink>
+            . Playing the atari first is the optimal
+            solution because otherwise White will prevent it
+            in order to cut the 3 black stones on the side,
+            as in Dia. <DiagramRef label="bottom_right_4" />
+            .
           </ArticleParagraph>
           <GoViewer sgf="/articles/sugeundaesajeon-cover/bottom_right_4.sgf">
             <GoViewerBoard
@@ -575,6 +592,14 @@ export function SugeundaesajeonCover({
             White breaks out, but at a high cost.
           </GoViewerLegend>
         </GoViewer>
+      </ArticleSection>
+      <ArticleSection>
+        <ArticleSectionTitle>Outro</ArticleSectionTitle>
+        <ArticleParagraph>
+          So, what do you think about this problem
+          selection? Do you have others you find better?
+          Leave them in the comments!
+        </ArticleParagraph>
       </ArticleSection>
     </Article>
   )

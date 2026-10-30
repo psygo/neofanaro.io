@@ -2,6 +2,9 @@
 
 ## Priorities
 
+- Add links to the Tesuji Encyclopedia article to the other articles.
+- Add links to the Encyclopedia of Tesuji book on 101weiqi.
+
 - Extra blunders article
   - The extras are on a a comment on a [Go Game Series video](https://youtu.be/LkzDawFyAGA).
   - Also mention my "psygo's Corner" post on tennis.
