@@ -368,6 +368,213 @@ export function SugeundaesajeonCover({
             </GoViewerLegend>
           </GoViewer>
         </ArticleSubSection>
+        <ArticleSubSection>
+          <ArticleSubSectionTitle>
+            Bottom-Left
+          </ArticleSubSectionTitle>
+          <ArticleParagraph>
+            This problem&apos;s solution I couldn&apos;t see
+            coming at all. But I&apos;ve tried it on some
+            friends and they found it much more easily.
+          </ArticleParagraph>
+          <GoViewer sgf="/articles/sugeundaesajeon-cover/bottom_left.sgf">
+            <GoViewerBoard
+              width={425}
+              startAt="end"
+              interactive={true}
+              showMoveNumbers
+              showCapturedStones
+              region={{
+                minRow: 9,
+                maxRow: 18,
+                minCol: 0,
+                maxCol: 10,
+              }}
+            />
+            <GoViewerLegend>
+              The bottom-left problem.
+            </GoViewerLegend>
+          </GoViewer>
+          <ArticleParagraph>
+            The variation attemps for this problem are a
+            very good way of improving your skills as well.
+          </ArticleParagraph>
+        </ArticleSubSection>
+        <ArticleSubSection>
+          <ArticleSubSectionTitle>
+            Bottom-Right
+          </ArticleSubSectionTitle>
+          <ArticleParagraph>
+            I believe there are 3 possible answers for the
+            first move in this tsumego, but 2 of them lose a
+            bit at least.
+          </ArticleParagraph>
+          <GoViewer sgf="/articles/sugeundaesajeon-cover/bottom_right.sgf">
+            <GoViewerBoard
+              width={425}
+              startAt="end"
+              interactive={true}
+              showMoveNumbers
+              showCapturedStones
+              region={{
+                minRow: 7,
+                maxRow: 18,
+                minCol: 7,
+                maxCol: 18,
+              }}
+            />
+            <GoViewerLegend>
+              The bottom-right problem. That&apos;s{" "}
+              <ArticleLink href="https://www.101weiqi.com/q/45803/">
+                Q-45,803
+              </ArticleLink>{" "}
+              on 101weiqi.
+            </GoViewerLegend>
+          </GoViewer>
+          <ArticleParagraph>
+            The key here is to notice how short on liberties
+            White&apos;s stones are. They are basically all
+            linked by kosumis, which is usually a type of
+            conditional connection which gets squeezed and
+            turned into empty triangles very easily.
+          </ArticleParagraph>
+          <ArticleParagraph>
+            If White tries to resist the squeeze, it simply
+            dies:
+          </ArticleParagraph>
+          <GoViewer sgf="/articles/sugeundaesajeon-cover/bottom_right_1.sgf">
+            <GoViewerBoard
+              width={425}
+              startAt="end"
+              interactive={true}
+              showMoveNumbers
+              showCapturedStones
+              region={{
+                minRow: 7,
+                maxRow: 18,
+                minCol: 7,
+                maxCol: 18,
+              }}
+            />
+            <GoViewerControls />
+            <GoViewerLegend>
+              Containing Black&apos;s exit is just not
+              possible.
+            </GoViewerLegend>
+          </GoViewer>
+          <ArticleParagraph>
+            Despite Black 1 in{" "}
+            <DiagramRef label="bottom_right_1" />
+            &nbsp;being the book&apos;s solution,
+            that&apos;s not what AI recommends. Playing the
+            atari first is the optimal solution because
+            otherwise White will prevent it in order to cut
+            the 3 black stones on the side, as in{" "}
+            <DiagramRef label="bottom_right_4" />.
+          </ArticleParagraph>
+          <GoViewer sgf="/articles/sugeundaesajeon-cover/bottom_right_4.sgf">
+            <GoViewerBoard
+              width={425}
+              startAt="end"
+              interactive={true}
+              showMoveNumbers
+              showCapturedStones
+              region={{
+                minRow: 7,
+                maxRow: 18,
+                minCol: 7,
+                maxCol: 18,
+              }}
+            />
+            <GoViewerControls />
+            <GoViewerLegend>
+              Containing Black&apos;s exit is just not
+              possible.
+            </GoViewerLegend>
+          </GoViewer>
+          <ArticleParagraph>
+            After the atari, if White keeps resisting, we
+            will eventually reacth Dia.{" "}
+            <DiagramRef label="bottom_right_1" />. And, if
+            White fixes the elephant in the room, Black can
+            capture the corner:
+          </ArticleParagraph>
+          <GoViewer sgf="/articles/sugeundaesajeon-cover/bottom_right_2.sgf">
+            <GoViewerBoard
+              width={425}
+              startAt="end"
+              interactive={true}
+              showMoveNumbers
+              showCapturedStones
+              region={{
+                minRow: 7,
+                maxRow: 18,
+                minCol: 7,
+                maxCol: 18,
+              }}
+            />
+            <GoViewerControls />
+            <GoViewerLegend>
+              Preventing Black&apos;s exit ends up with the
+              corner being captured.
+            </GoViewerLegend>
+          </GoViewer>
+          <ArticleParagraph>
+            White could try to create a totally unplayable
+            ko with 2 in Dia.{" "}
+            <DiagramRef label="bottom_right_3" />,
+            nonetheless Black will still have the option to
+            simply revert to everything collapsing:
+          </ArticleParagraph>
+          <GoViewer sgf="/articles/sugeundaesajeon-cover/bottom_right_3.sgf">
+            <GoViewerBoard
+              width={425}
+              startAt="end"
+              interactive={true}
+              showMoveNumbers
+              showCapturedStones
+              region={{
+                minRow: 7,
+                maxRow: 18,
+                minCol: 7,
+                maxCol: 18,
+              }}
+            />
+            <GoViewerControls />
+            <GoViewerLegend>
+              White tries to resist with an unplayable ko,
+              but Black could revert things back if White
+              keeps resisting to the max.
+            </GoViewerLegend>
+          </GoViewer>
+          <ArticleParagraph>
+            Starting with a throw-in in order to create a
+            shortage of liberties or ko is another possible
+            solution in the sense that it works to escape.
+            But White will be more than happy about it
+            because it can fix the corner while also
+            capturing Black&apos;s stones on the side:
+          </ArticleParagraph>
+        </ArticleSubSection>
+        <GoViewer sgf="/articles/sugeundaesajeon-cover/bottom_right_5.sgf">
+          <GoViewerBoard
+            width={425}
+            startAt="end"
+            interactive={true}
+            showMoveNumbers
+            showCapturedStones
+            region={{
+              minRow: 7,
+              maxRow: 18,
+              minCol: 7,
+              maxCol: 18,
+            }}
+          />
+          <GoViewerControls />
+          <GoViewerLegend>
+            White breaks out, but at a high cost.
+          </GoViewerLegend>
+        </GoViewer>
       </ArticleSection>
     </Article>
   )
