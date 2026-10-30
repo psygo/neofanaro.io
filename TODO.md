@@ -11,17 +11,7 @@
   - Believe we are good and if we fail, pardon ourselves.
     - Of course, we shouldn't go too far, and we should only apply this to fields in which we are minimally competent.
 
-- For improving the Zhangqi article (add an appendix section):
-  - ⁠TelegraphGo's comment
-  - ⁠Mention that from 6d below, bots are almost inexistent.
-  - ⁠Players using bot moves sometimes are named "cyborg"s.
-  - ⁠It's much more difficult to identify and dodge the cyborgs. Their win/loss ratio is much more mixed, and it's much more difficult to prove the cheating in isolation.
-  - ⁠Analyzing games with AI at low playouts is very cheap.
-  - ⁠20min + 3x60s seems to have less cheaters.
-  - Don't forget to mention that, from the bell curve charts, the percentages would change (show the images).
-
 - Tolkien's Despise for Allegory
-- The Global Problems from the Tesuji Encyclopedia
 - Biggest blunders in Go history.
 
 - Add some sort of reset button for the Go Viewer when the user clicks on the board and would like to go back to the original.
