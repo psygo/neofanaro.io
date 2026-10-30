@@ -2,6 +2,8 @@
 
 import { useEffect, useRef } from "react"
 
+import { mainMaxWidthRem } from "@styles"
+
 export type ArticleWidthSliderProps = {
   maxWidth: number
   setMaxWidth: (w: number) => void
@@ -25,7 +27,7 @@ export function ArticleWidthSlider({
         (e.clientX - dragState.current.startX) / 16
       setMaxWidth(
         Math.min(
-          56,
+          mainMaxWidthRem,
           Math.max(
             20,
             dragState.current.startWidth + delta,

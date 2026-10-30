@@ -85,6 +85,11 @@ export const garamondFontStack =
 // ---------------------------------------------------------
 // Global Styles
 
+// <Main>'s own sm:max-w-300 (300 * 0.25rem), kept here so the
+// article width slider can let an article stretch exactly as wide
+// as the page allows.
+export const mainMaxWidthRem = 75
+
 export const containerOutline =
   "rounded-xl border border-gray-300 px-4 pt-3 pb-3.5 transition-all duration-300 ease-in-out hover:bg-gray-100 hover:duration-200 dark:border-slate-700 dark:bg-slate-900 dark:hover:bg-slate-800"
 
