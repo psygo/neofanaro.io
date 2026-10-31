@@ -145,20 +145,13 @@ export function GoViewerControls({
   const atEnd = moveNumber === totalMoves
 
   return (
-    // 3 separately-orderable flex children — nav, move-numbers/pass,
-    // reset — plus a forced line-break spacer (`basis-full`, only
-    // present below `sm`) between nav and the other two. Below `sm`
-    // that spacer always pushes move-numbers/pass/reset onto their
-    // own second line (order 3, after nav's order 1), regardless of
-    // whether they'd have technically fit — a deterministic break
-    // rather than the arbitrary mid-row wrap plain `flex-wrap` would
-    // produce. At `sm` and up the spacer disappears and `sm:order-*`
-    // puts move-numbers/pass back on the left of nav and reset back
-    // on the right, matching the original single-row layout.
+    // Two rows, always — nav on top, move-numbers/pass/reset below —
+    // rather than a single row that only wraps once the viewport
+    // gets too narrow to fit it.
     <div
-      className={`mx-auto flex max-w-full flex-wrap items-center justify-center gap-1 rounded-lg p-1 dark:bg-slate-950 ${className}`}
+      className={`mx-auto flex max-w-full flex-col items-center gap-1 rounded-lg p-1 dark:bg-slate-950 ${className}`}
     >
-      <div className="order-1 flex items-center gap-1 sm:order-2">
+      <div className="flex items-center gap-1">
         <button
           type="button"
           title="Go to start"
@@ -217,11 +210,7 @@ export function GoViewerControls({
           <SkipEndIcon />
         </button>
       </div>
-      <div
-        aria-hidden
-        className="order-2 basis-full sm:hidden"
-      />
-      <div className="order-3 flex items-center gap-1 sm:order-1">
+      <div className="flex items-center gap-1">
         <button
           type="button"
           title={
@@ -242,15 +231,15 @@ export function GoViewerControls({
         >
           <PassIcon />
         </button>
+        <button
+          type="button"
+          title="Reset"
+          onClick={reset}
+          className={buttonClasses}
+        >
+          <ResetIcon />
+        </button>
       </div>
-      <button
-        type="button"
-        title="Reset"
-        onClick={reset}
-        className={`order-3 ${buttonClasses}`}
-      >
-        <ResetIcon />
-      </button>
     </div>
   )
 }

@@ -287,10 +287,11 @@ export type GoViewerBoardProps = {
   // from this module) to match the site's LaTeX-styled SVG diagrams.
   fontFamily?: string
   // Defaults to the shared <GoViewer>'s own `showMoveNumbers` state
-  // (toggled from <GoViewerControls>, true until switched off) —
-  // pass this explicitly to pin a board's numbers independently of
-  // that toggle (e.g. a diagram meant to stay numbered regardless of
-  // what the reader does elsewhere on the same board).
+  // (toggled from <GoViewerControls>, true until switched off).
+  // `true` here is the same as leaving it unset — it still follows
+  // that toggle. Only `false` pins a board's numbers off regardless
+  // of the toggle (e.g. a diagram meant to stay unnumbered even if
+  // the reader switches numbers on elsewhere on the same board).
   showMoveNumbers?: boolean
   // With `showMoveNumbers`, only numbers this move or later are
   // drawn — earlier ones render as plain, unlabeled stones. Useful
@@ -411,8 +412,15 @@ export function GoViewerBoard({
     loadId,
   } = useGoViewer()
 
+  // `true` is the same as the unset default, so it still follows the
+  // shared toggle (<GoViewerControls>'s "#" button) — only an
+  // explicit `false` counts as a genuine pin, overriding the toggle
+  // to keep a board's numbers off regardless of what the reader does
+  // elsewhere on the same diagram.
   const showMoveNumbers =
-    showMoveNumbersProp ?? contextShowMoveNumbers
+    showMoveNumbersProp === false
+      ? false
+      : contextShowMoveNumbers
 
   // Re-applied whenever a fresh board is loaded (`loadId`), not just
   // on mount, so a parent swapping which SGF is shown (or a dev Fast
