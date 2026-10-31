@@ -229,6 +229,7 @@ export function OkaoigoAiArticles({
             startAt="end"
             interactive={false}
           />
+          <GoViewerControls />
           <GoViewerLegend>
             Through a sacrifice and a tesuji, White exposes
             Black&apos;s shortage of liberties on the left,

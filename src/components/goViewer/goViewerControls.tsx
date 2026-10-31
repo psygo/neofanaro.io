@@ -145,15 +145,83 @@ export function GoViewerControls({
   const atEnd = moveNumber === totalMoves
 
   return (
-    // `relative` lets the left/right groups below be positioned off
-    // to either side without taking up flex space of their own —
-    // reset appearing once the user has placed a stone would
-    // otherwise widen this row and re-center it, shifting every
-    // other button.
+    // 3 separately-orderable flex children — nav, move-numbers/pass,
+    // reset — plus a forced line-break spacer (`basis-full`, only
+    // present below `sm`) between nav and the other two. Below `sm`
+    // that spacer always pushes move-numbers/pass/reset onto their
+    // own second line (order 3, after nav's order 1), regardless of
+    // whether they'd have technically fit — a deterministic break
+    // rather than the arbitrary mid-row wrap plain `flex-wrap` would
+    // produce. At `sm` and up the spacer disappears and `sm:order-*`
+    // puts move-numbers/pass back on the left of nav and reset back
+    // on the right, matching the original single-row layout.
     <div
-      className={`relative flex items-center gap-1 rounded-lg p-1 dark:bg-slate-950 ${className}`}
+      className={`mx-auto flex max-w-full flex-wrap items-center justify-center gap-1 rounded-lg p-1 dark:bg-slate-950 ${className}`}
     >
-      <div className="absolute top-1/2 right-full mr-2 flex -translate-y-1/2 items-center gap-1">
+      <div className="order-1 flex items-center gap-1 sm:order-2">
+        <button
+          type="button"
+          title="Go to start"
+          onClick={goToStart}
+          disabled={atStart}
+          className={buttonClasses}
+        >
+          <SkipStartIcon />
+        </button>
+        <button
+          type="button"
+          title={`Back ${jumpSteps} moves`}
+          onClick={() => jumpBack(jumpSteps)}
+          disabled={atStart}
+          className={buttonClasses}
+        >
+          <JumpBackIcon />
+        </button>
+        <button
+          type="button"
+          title="Previous move"
+          onClick={stepBack}
+          disabled={atStart}
+          className={buttonClasses}
+        >
+          <StepBackIcon />
+        </button>
+        <span className="min-w-8 px-1 text-center text-sm font-semibold text-slate-700 tabular-nums dark:text-slate-300">
+          {moveNumber}
+        </span>
+        <button
+          type="button"
+          title="Next move"
+          onClick={stepForward}
+          disabled={atEnd}
+          className={buttonClasses}
+        >
+          <StepForwardIcon />
+        </button>
+        <button
+          type="button"
+          title={`Forward ${jumpSteps} moves`}
+          onClick={() => jumpForward(jumpSteps)}
+          disabled={atEnd}
+          className={buttonClasses}
+        >
+          <JumpForwardIcon />
+        </button>
+        <button
+          type="button"
+          title="Go to end"
+          onClick={goToEnd}
+          disabled={atEnd}
+          className={buttonClasses}
+        >
+          <SkipEndIcon />
+        </button>
+      </div>
+      <div
+        aria-hidden
+        className="order-2 basis-full sm:hidden"
+      />
+      <div className="order-3 flex items-center gap-1 sm:order-1">
         <button
           type="button"
           title={
@@ -177,66 +245,9 @@ export function GoViewerControls({
       </div>
       <button
         type="button"
-        title="Go to start"
-        onClick={goToStart}
-        disabled={atStart}
-        className={buttonClasses}
-      >
-        <SkipStartIcon />
-      </button>
-      <button
-        type="button"
-        title={`Back ${jumpSteps} moves`}
-        onClick={() => jumpBack(jumpSteps)}
-        disabled={atStart}
-        className={buttonClasses}
-      >
-        <JumpBackIcon />
-      </button>
-      <button
-        type="button"
-        title="Previous move"
-        onClick={stepBack}
-        disabled={atStart}
-        className={buttonClasses}
-      >
-        <StepBackIcon />
-      </button>
-      <span className="min-w-8 px-1 text-center text-sm font-semibold text-slate-700 tabular-nums dark:text-slate-300">
-        {moveNumber}
-      </span>
-      <button
-        type="button"
-        title="Next move"
-        onClick={stepForward}
-        disabled={atEnd}
-        className={buttonClasses}
-      >
-        <StepForwardIcon />
-      </button>
-      <button
-        type="button"
-        title={`Forward ${jumpSteps} moves`}
-        onClick={() => jumpForward(jumpSteps)}
-        disabled={atEnd}
-        className={buttonClasses}
-      >
-        <JumpForwardIcon />
-      </button>
-      <button
-        type="button"
-        title="Go to end"
-        onClick={goToEnd}
-        disabled={atEnd}
-        className={buttonClasses}
-      >
-        <SkipEndIcon />
-      </button>
-      <button
-        type="button"
         title="Reset"
         onClick={reset}
-        className={`absolute top-1/2 left-full ml-2 -translate-y-1/2 ${buttonClasses}`}
+        className={`order-3 ${buttonClasses}`}
       >
         <ResetIcon />
       </button>
