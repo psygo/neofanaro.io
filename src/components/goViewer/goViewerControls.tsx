@@ -3,7 +3,7 @@
 import { useGoViewer } from "./goViewerContext"
 
 const buttonClasses =
-  "flex h-8 w-8 cursor-pointer items-center justify-center rounded-md text-slate-700 transition duration-300 hover:bg-slate-200 disabled:cursor-not-allowed disabled:opacity-40 dark:text-slate-300 dark:hover:bg-slate-700"
+  "flex h-8 w-8 cursor-pointer items-center justify-center rounded-md text-slate-700 transition duration-150 hover:bg-slate-200 active:bg-slate-300 disabled:cursor-not-allowed disabled:opacity-40 disabled:active:bg-transparent dark:text-slate-300 dark:hover:bg-slate-700 dark:active:bg-slate-600"
 
 function Triangle({
   direction,
