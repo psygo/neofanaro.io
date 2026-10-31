@@ -411,7 +411,7 @@ export function SugeundaesajeonCover({
             <GoViewerLegend>
               The bottom-left problem. That&apos;s problem{" "}
               <ArticleLink href="https://www.101weiqi.com/q/47736/">
-                Q-47736
+                Q-47,736
               </ArticleLink>{" "}
               on 101weiqi.
             </GoViewerLegend>

@@ -39,7 +39,7 @@ export function SugeundaesajeonGlobal({
             <em>Tesuji Encyclopedia</em>
           </ArticleLink>
           . However, still, most people are probably unaware
-          that that problem collection features two parts: a
+          that problem collection features two parts: a
           first for the expected, local tesuji problems; but
           also a second, for global problems.
         </ArticleParagraph>
@@ -204,7 +204,9 @@ export function SugeundaesajeonGlobal({
             <GoViewerControls />
             <GoViewerLegend>
               Black should have even bailed out from this
-              fight with 3 at White 4.
+              fight with 3 at White 4. Crawling on the
+              second line is so short on liberties it&apos;s
+              still difficult to kill White.
             </GoViewerLegend>
           </GoViewer>
           <ArticleParagraph>
@@ -223,7 +225,8 @@ export function SugeundaesajeonGlobal({
             <GoViewerControls />
             <GoViewerLegend>
               The book&apos;s tesuji shines even brighter
-              when we tenuki first.
+              when we tenuki first. Of course, this demands
+              outworldly skill on White&apos;s part.
             </GoViewerLegend>
           </GoViewer>
         </ArticleSubSection>
@@ -233,8 +236,8 @@ export function SugeundaesajeonGlobal({
             Problem 2482
           </ArticleSubSectionTitle>
           <ArticleParagraph>
-            Again, Black has a potentially troublesome
-            capture on the right side. How can White use it?
+            Black has a potentially troublesome capture on
+            the right side. How can White use it?
           </ArticleParagraph>
           <GoViewer sgf="/articles/sugeundaesajeon-global/2482.sgf">
             <GoViewerBoard interactive={true} />
@@ -271,7 +274,7 @@ export function SugeundaesajeonGlobal({
           </ArticleSubSectionTitle>
           <ArticleParagraph>
             Here&apos;s another problem with great
-            techniques from both sides, at least when
+            techniques from both sides, especially when
             considering the AI refutations.
           </ArticleParagraph>
           <GoViewer sgf="/articles/sugeundaesajeon-global/2534.sgf">
@@ -309,14 +312,15 @@ export function SugeundaesajeonGlobal({
           </ArticleParagraph>
           <ArticleParagraph>
             Also, on another topic, AI dislikes the joseki
-            on the top-left quite a bit; Black should at
-            least turn at B instead of 19.
+            on the top-left quite a bit; among many other
+            reasons, Black should at least turn at B instead
+            of 19.
           </ArticleParagraph>
           <ArticleParagraph>
             AI recommends resisting with an interesting
             technique which pops up in this joseki &mdash;
-            which appeared in my game against Uyama Hissao
-            during my{" "}
+            and which appeared in my game against Uyama
+            Hissao during my{" "}
             <ArticleLink
               internal
               href="second-brazil-open-2026"
@@ -366,7 +370,7 @@ export function SugeundaesajeonGlobal({
           <ArticleParagraph>
             However, that&apos;s not the optimal sequence
             for both sides. This is what AI recommends as
-            the optimal solution:
+            one of the optimal solutions:
           </ArticleParagraph>
           <GoViewer sgf="/articles/sugeundaesajeon-global/2534_3.sgf">
             <GoViewerBoard
@@ -382,7 +386,8 @@ export function SugeundaesajeonGlobal({
           </GoViewer>
           <ArticleParagraph>
             If Black insists on trying to kill, White has a
-            tesuji up its sleeve:
+            tesuji up its sleeve, which hinges largely on
+            counting the ko threats:
           </ArticleParagraph>
           <GoViewer sgf="/articles/sugeundaesajeon-global/2534_4.sgf">
             <GoViewerBoard
@@ -425,9 +430,9 @@ export function SugeundaesajeonGlobal({
             />
             <GoViewerControls />
             <GoViewerLegend>
-              As Black escapes, White&apos;s A is going to
-              suffer tremendously, if it doesn&apos;t
-              outright just die.
+              As Black escapes, White&apos;s A group is
+              going to suffer tremendously, if it
+              doesn&apos;t outright just die.
             </GoViewerLegend>
           </GoViewer>
         </ArticleSubSection>

@@ -130,6 +130,18 @@ export function Sugeundaesajeon({ article }: ArticleProps) {
             </ArticleLink>{" "}
             on 101weiqi.
           </ArticleBlockQuote>
+          <ArticleBlockQuote>
+            <ArticleParagraph>
+              Check out my follow-up article on the{" "}
+              <ArticleLink
+                internal
+                href="/articles/sugeundaesajeon-global"
+              >
+                global problems in the Tesuji Encyclopedia
+              </ArticleLink>
+              .
+            </ArticleParagraph>
+          </ArticleBlockQuote>
           <ArticleParagraph>
             I&apos;ve only created a Portuguese edition so
             far, but most of the book consists of problems
