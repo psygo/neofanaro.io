@@ -115,15 +115,17 @@ function CenteredText({
 
 // A number/label two or more digits wide reads as visually larger
 // than a single digit at the same font size (it fills more of the
-// available width), so it gets a modest size reduction to keep it
-// comfortably inside its stone or backing gap.
+// available width), so it gets a size reduction to keep it
+// comfortably inside its stone or backing gap — a further step down
+// once it hits 3 digits (100+), which would otherwise overflow.
 function shrinkForMultiDigit(
   fontSize: number,
   text: string | number,
 ): number {
-  return String(text).length > 1
-    ? fontSize * 0.88
-    : fontSize
+  const length = String(text).length
+  if (length > 2) return fontSize * 0.7
+  if (length > 1) return fontSize * 0.88
+  return fontSize
 }
 
 // SGF's TR/SQ/CR point marks (see goSgf.ts, which folds them into
@@ -246,7 +248,7 @@ export type GoViewerBoardProps = {
   // individually for a non-square render. None of these change the
   // board's own intrinsic geometry (that's `cellSize`/`padding`) —
   // they just scale the final SVG output, the same way an <img>'s
-  // width/height would. Defaults to 330 when `region` is set (a
+  // width/height would. Defaults to 400 when `region` is set (a
   // partial/cropped board), since those don't otherwise have a
   // sensible intrinsic width to fill their container with; a full
   // board stays fluid (fills its container) unless given explicitly.
@@ -284,6 +286,11 @@ export type GoViewerBoardProps = {
   // browser's sans-serif stack; pass `goViewerLatexFont` (exported
   // from this module) to match the site's LaTeX-styled SVG diagrams.
   fontFamily?: string
+  // Defaults to the shared <GoViewer>'s own `showMoveNumbers` state
+  // (toggled from <GoViewerControls>, true until switched off) —
+  // pass this explicitly to pin a board's numbers independently of
+  // that toggle (e.g. a diagram meant to stay numbered regardless of
+  // what the reader does elsewhere on the same board).
   showMoveNumbers?: boolean
   // With `showMoveNumbers`, only numbers this move or later are
   // drawn — earlier ones render as plain, unlabeled stones. Useful
@@ -303,7 +310,7 @@ export function GoViewerBoard({
   startAt = "start",
   region,
   cellSize = defaultCellSize,
-  size = region ? 330 : undefined,
+  size = region ? 400 : undefined,
   width: widthOverride,
   height: heightOverride,
   padding = defaultPadding,
@@ -321,7 +328,7 @@ export function GoViewerBoard({
   backgroundColor: backgroundColorProp,
   gridColor: gridColorProp,
   fontFamily: fontFamilyProp,
-  showMoveNumbers = false,
+  showMoveNumbers: showMoveNumbersProp,
   fromNumber = 1,
   showCapturedStones = false,
   className = "",
@@ -398,10 +405,14 @@ export function GoViewerBoard({
     capturedStones,
     labels,
     moveNumber: viewIndex,
+    showMoveNumbers: contextShowMoveNumbers,
     placeStone,
     applyStartAt,
     loadId,
   } = useGoViewer()
+
+  const showMoveNumbers =
+    showMoveNumbersProp ?? contextShowMoveNumbers
 
   // Re-applied whenever a fresh board is loaded (`loadId`), not just
   // on mount, so a parent swapping which SGF is shown (or a dev Fast

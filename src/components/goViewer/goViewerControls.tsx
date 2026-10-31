@@ -105,6 +105,14 @@ function ResetIcon() {
   )
 }
 
+function PassIcon() {
+  return <span className="text-sm font-semibold">P</span>
+}
+
+function MoveNumbersIcon() {
+  return <span className="text-sm font-semibold">#</span>
+}
+
 export type GoViewerControlsProps = {
   jumpSteps?: number
   className?: string
@@ -121,13 +129,15 @@ export function GoViewerControls({
   const {
     moveNumber,
     totalMoves,
-    hasUserMoves,
     goToStart,
     goToEnd,
     stepBack,
     stepForward,
     jumpBack,
     jumpForward,
+    pass,
+    showMoveNumbers,
+    toggleShowMoveNumbers,
     reset,
   } = useGoViewer()
 
@@ -135,13 +145,36 @@ export function GoViewerControls({
   const atEnd = moveNumber === totalMoves
 
   return (
-    // `relative` lets the reset button below be positioned off to
-    // the side without taking up flex space of its own — appearing
-    // once the user has clicked a stone in would otherwise widen
-    // this row and re-center it, shifting every other button.
+    // `relative` lets the left/right groups below be positioned off
+    // to either side without taking up flex space of their own —
+    // reset appearing once the user has placed a stone would
+    // otherwise widen this row and re-center it, shifting every
+    // other button.
     <div
       className={`relative flex items-center gap-1 rounded-lg p-1 dark:bg-slate-950 ${className}`}
     >
+      <div className="absolute top-1/2 right-full mr-2 flex -translate-y-1/2 items-center gap-1">
+        <button
+          type="button"
+          title={
+            showMoveNumbers
+              ? "Hide move numbers"
+              : "Show move numbers"
+          }
+          onClick={toggleShowMoveNumbers}
+          className={buttonClasses}
+        >
+          <MoveNumbersIcon />
+        </button>
+        <button
+          type="button"
+          title="Pass"
+          onClick={pass}
+          className={buttonClasses}
+        >
+          <PassIcon />
+        </button>
+      </div>
       <button
         type="button"
         title="Go to start"
@@ -199,16 +232,14 @@ export function GoViewerControls({
       >
         <SkipEndIcon />
       </button>
-      {hasUserMoves && (
-        <button
-          type="button"
-          title="Reset"
-          onClick={reset}
-          className={`absolute top-1/2 left-full ml-2 -translate-y-1/2 ${buttonClasses}`}
-        >
-          <ResetIcon />
-        </button>
-      )}
+      <button
+        type="button"
+        title="Reset"
+        onClick={reset}
+        className={`absolute top-1/2 left-full ml-2 -translate-y-1/2 ${buttonClasses}`}
+      >
+        <ResetIcon />
+      </button>
     </div>
   )
 }

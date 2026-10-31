@@ -76,7 +76,10 @@ export function SugeundaesajeonCover({
           <ArticleBlockQuote>
             In another Tesuji Encyclopedia article, I also
             went through{" "}
-            <ArticleLink href="/articles/sugeundaesajeon-global">
+            <ArticleLink
+              internal
+              href="/articles/sugeundaesajeon-global"
+            >
               its global problems
             </ArticleLink>
             .

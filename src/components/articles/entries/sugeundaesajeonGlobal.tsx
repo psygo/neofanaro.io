@@ -97,7 +97,11 @@ export function SugeundaesajeonGlobal({
             of flow and interaction effects.
           </ArticleParagraph>
           <GoViewer sgf="/articles/sugeundaesajeon-global/2479.sgf">
-            <GoViewerBoard interactive={true} />
+            <GoViewerBoard
+              interactive={true}
+              showMoveNumbers
+            />
+            <GoViewerControls />
             <GoViewerLegend>
               Problem 2479, White to play.
             </GoViewerLegend>
@@ -147,6 +151,7 @@ export function SugeundaesajeonGlobal({
           </ArticleParagraph>
           <GoViewer sgf="/articles/sugeundaesajeon-global/2478.sgf">
             <GoViewerBoard interactive={true} />
+            <GoViewerControls />
             <GoViewerLegend>
               Problem 2478, White to play.
             </GoViewerLegend>
@@ -241,6 +246,7 @@ export function SugeundaesajeonGlobal({
           </ArticleParagraph>
           <GoViewer sgf="/articles/sugeundaesajeon-global/2482.sgf">
             <GoViewerBoard interactive={true} />
+            <GoViewerControls />
             <GoViewerLegend>
               Problem 2482, White to play.
             </GoViewerLegend>
@@ -279,6 +285,7 @@ export function SugeundaesajeonGlobal({
           </ArticleParagraph>
           <GoViewer sgf="/articles/sugeundaesajeon-global/2534.sgf">
             <GoViewerBoard interactive={true} />
+            <GoViewerControls />
             <GoViewerLegend>
               Problem 2534, Black to play.
             </GoViewerLegend>
@@ -412,6 +419,7 @@ export function SugeundaesajeonGlobal({
           </ArticleParagraph>
           <GoViewer sgf="/articles/sugeundaesajeon-global/2516.sgf">
             <GoViewerBoard interactive={true} />
+            <GoViewerControls />
             <GoViewerLegend>
               Problem 2516, Black to play.
             </GoViewerLegend>

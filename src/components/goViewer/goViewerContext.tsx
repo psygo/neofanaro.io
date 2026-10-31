@@ -20,6 +20,7 @@ import {
   Stone,
   applySetup,
   createEmptyBoard,
+  otherStone,
   playMove,
   replayMoves,
 } from "./goRules"
@@ -48,6 +49,18 @@ export type GoViewerState = {
   labels: SgfLabel[]
   viewIndex: number
   lastIllegalReason: IllegalReason | null
+  // Flips who's shown/acted on as "to move" at the current
+  // viewIndex, without touching `moves` or `viewIndex` themselves —
+  // lets a reader correct/explore "actually, White plays here" on a
+  // diagram without recording a pass or bumping the move counter.
+  // Reset by every action that changes position (nav, place, pass,
+  // reset) since it only ever applies to "right here, right now".
+  toMoveFlipped: boolean
+  // Whether <GoViewerBoard> shows move numbers on stones, for boards
+  // that don't pin their own `showMoveNumbers` prop — toggled from
+  // <GoViewerControls>, so it lives here rather than as a prop so a
+  // control elsewhere in the tree can flip it.
+  showMoveNumbers: boolean
   // From the SGF's own PB/PW, when loaded from one.
   playerBlack?: string
   playerWhite?: string
@@ -56,6 +69,8 @@ export type GoViewerState = {
 type Action =
   | { type: "place"; row: number; col: number }
   | { type: "pass" }
+  | { type: "toggleToMove" }
+  | { type: "toggleShowMoveNumbers" }
   | { type: "reset" }
   | { type: "applyStartAt"; startAt: "start" | "end" }
   | { type: "goToStart" }
@@ -108,6 +123,8 @@ function fromParsedSgf(
     labels: parsed.labels,
     viewIndex: 0,
     lastIllegalReason: null,
+    toMoveFlipped: false,
+    showMoveNumbers: true,
     playerBlack: parsed.gameInfo.playerBlack,
     playerWhite: parsed.gameInfo.playerWhite,
   }
@@ -125,11 +142,14 @@ function reducer(
         state.moves,
         state.viewIndex,
       )
+      const toMove = state.toMoveFlipped
+        ? otherStone(view.toMove)
+        : view.toMove
       const outcome = playMove(
         view.board,
         action.row,
         action.col,
-        view.toMove,
+        toMove,
         view.koPoint,
       )
       if (!outcome.legal) {
@@ -151,7 +171,7 @@ function reducer(
           type: "place",
           row: action.row,
           col: action.col,
-          color: view.toMove,
+          color: toMove,
         },
       ]
       return {
@@ -160,6 +180,7 @@ function reducer(
         viewIndex: moves.length,
         hasUserMoves: true,
         lastIllegalReason: null,
+        toMoveFlipped: false,
       }
     }
     case "pass": {
@@ -169,13 +190,16 @@ function reducer(
         state.moves,
         state.viewIndex,
       )
+      const toMove = state.toMoveFlipped
+        ? otherStone(view.toMove)
+        : view.toMove
       const truncated = state.moves.slice(
         0,
         state.viewIndex,
       )
       const moves: RecordedMove[] = [
         ...truncated,
-        { type: "pass", color: view.toMove },
+        { type: "pass", color: toMove },
       ]
       return {
         ...state,
@@ -183,8 +207,20 @@ function reducer(
         viewIndex: moves.length,
         hasUserMoves: true,
         lastIllegalReason: null,
+        toMoveFlipped: false,
       }
     }
+    case "toggleToMove":
+      return {
+        ...state,
+        toMoveFlipped: !state.toMoveFlipped,
+        lastIllegalReason: null,
+      }
+    case "toggleShowMoveNumbers":
+      return {
+        ...state,
+        showMoveNumbers: !state.showMoveNumbers,
+      }
     case "reset":
       return {
         ...state,
@@ -192,6 +228,7 @@ function reducer(
         viewIndex: state.initialViewIndex,
         hasUserMoves: false,
         lastIllegalReason: null,
+        toMoveFlipped: false,
       }
     // Dispatched by <GoViewerBoard> itself (which owns `startAt` —
     // see its own doc) right after a fresh load — unlike goToEnd,
@@ -206,6 +243,7 @@ function reducer(
         viewIndex,
         initialViewIndex: viewIndex,
         lastIllegalReason: null,
+        toMoveFlipped: false,
       }
     }
     case "goToStart":
@@ -213,18 +251,21 @@ function reducer(
         ...state,
         viewIndex: 0,
         lastIllegalReason: null,
+        toMoveFlipped: false,
       }
     case "goToEnd":
       return {
         ...state,
         viewIndex: state.moves.length,
         lastIllegalReason: null,
+        toMoveFlipped: false,
       }
     case "stepBack":
       return {
         ...state,
         viewIndex: Math.max(0, state.viewIndex - 1),
         lastIllegalReason: null,
+        toMoveFlipped: false,
       }
     case "stepForward":
       return {
@@ -234,6 +275,7 @@ function reducer(
           state.viewIndex + 1,
         ),
         lastIllegalReason: null,
+        toMoveFlipped: false,
       }
     case "jumpBack":
       return {
@@ -243,6 +285,7 @@ function reducer(
           state.viewIndex - action.steps,
         ),
         lastIllegalReason: null,
+        toMoveFlipped: false,
       }
     case "jumpForward":
       return {
@@ -252,6 +295,7 @@ function reducer(
           state.viewIndex + action.steps,
         ),
         lastIllegalReason: null,
+        toMoveFlipped: false,
       }
     case "loadSgf":
       return {
@@ -291,6 +335,8 @@ function initialState(
     labels,
     viewIndex: 0,
     lastIllegalReason: null,
+    toMoveFlipped: false,
+    showMoveNumbers: true,
   }
 }
 
@@ -310,6 +356,7 @@ export type GoViewerContextValue = {
   capturedStones: CapturedStone[]
   labels: SgfLabel[]
   lastIllegalReason: IllegalReason | null
+  showMoveNumbers: boolean
   // From the SGF's own PB/PW, when loaded from one.
   playerBlack?: string
   playerWhite?: string
@@ -317,6 +364,8 @@ export type GoViewerContextValue = {
   label?: string
   placeStone: (row: number, col: number) => void
   pass: () => void
+  toggleToMove: () => void
+  toggleShowMoveNumbers: () => void
   reset: () => void
   // Dispatched by <GoViewerBoard> itself — see its own `startAt` doc.
   applyStartAt: (startAt: "start" | "end") => void
@@ -442,6 +491,14 @@ export function GoViewerProvider({
     () => dispatch({ type: "pass" }),
     [],
   )
+  const toggleToMove = useCallback(
+    () => dispatch({ type: "toggleToMove" }),
+    [],
+  )
+  const toggleShowMoveNumbers = useCallback(
+    () => dispatch({ type: "toggleShowMoveNumbers" }),
+    [],
+  )
   const reset = useCallback(
     () => dispatch({ type: "reset" }),
     [],
@@ -505,7 +562,9 @@ export function GoViewerProvider({
     () => ({
       boardSize: state.boardSize,
       board: view.board,
-      toMove: view.toMove,
+      toMove: state.toMoveFlipped
+        ? otherStone(view.toMove)
+        : view.toMove,
       koPoint: view.koPoint,
       captures: view.captures,
       lastMove: view.lastMove,
@@ -518,11 +577,14 @@ export function GoViewerProvider({
       capturedStones: view.capturedStones,
       labels: state.labels,
       lastIllegalReason: state.lastIllegalReason,
+      showMoveNumbers: state.showMoveNumbers,
       playerBlack: state.playerBlack,
       playerWhite: state.playerWhite,
       label,
       placeStone,
       pass,
+      toggleToMove,
+      toggleShowMoveNumbers,
       reset,
       applyStartAt,
       goToStart,
@@ -541,12 +603,16 @@ export function GoViewerProvider({
       state.loadId,
       state.labels,
       state.lastIllegalReason,
+      state.toMoveFlipped,
+      state.showMoveNumbers,
       state.playerBlack,
       state.playerWhite,
       label,
       view,
       placeStone,
       pass,
+      toggleToMove,
+      toggleShowMoveNumbers,
       reset,
       applyStartAt,
       goToStart,

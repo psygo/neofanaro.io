@@ -9,6 +9,7 @@ import {
   ArticleImageWithLegend,
   NoWrap,
   ImageLegend,
+  ArticleYouTubeIframe,
 } from "../articleContent"
 // import { GoDiagram, GoDiagramLegend } from "../goDiagram"
 import {
@@ -208,6 +209,20 @@ export function IngCupSuicide({ article }: ArticleProps) {
           group, now we have to examine if a suicide could
           erase the privileges.
         </ArticleParagraph>
+      </ArticleSection>
+      <ArticleSection>
+        <ArticleSectionTitle>Appendix</ArticleSectionTitle>
+        <ArticleParagraph>
+          <ArticleLink href="https://gomagic.org/">
+            Go Magic
+          </ArticleLink>{" "}
+          later published a wonderful video on the rules
+          topic, with more examples:
+        </ArticleParagraph>
+        <ArticleYouTubeIframe
+          src="https://www.youtube.com/embed/x2Euxl3DEtU"
+          title="When Dead Stones Won't Die: The Moonshine Life Mystery"
+        />
       </ArticleSection>
     </Article>
   )
