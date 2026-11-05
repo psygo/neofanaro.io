@@ -47,7 +47,10 @@ export function TopBlunders({ article }: ArticleProps) {
           Neither I nor Go Game Series (GGS) would like to
           shame anyone. Cataloging those out is just a way
           for us to treat ourselves less harshly whenever we
-          are the ones on the sad end of the story.{" "}
+          are the ones on the sad end of the story. And
+          somehow I feel like I&apos;m able to turn their
+          pain into learning of my own, making it less
+          likely I end up playing the same mistakes.
         </ArticleParagraph>
         <ArticleImageWithLegend
           src="/articles/top-blunders/blunder_tennis.jpeg"
@@ -159,7 +162,11 @@ export function TopBlunders({ article }: ArticleProps) {
               <ArticleLink href="https://senseis.xmp.net/?Blunder">
                 Blunder
               </ArticleLink>{" "}
-              page offers yet another example:
+              page offers yet another example, from{" "}
+              <ArticleLink href="/article/top-blunders/1983-03-16_cho_vs_fujisawa.sgf">
+                Game 7 of the 1983 Kisei Title Match
+              </ArticleLink>
+              :
             </ArticleParagraph>
             <GoViewer sgf="/articles/top-blunders/cho_chikun_vs_fujisawa_shuko.sgf">
               <GoViewerBoard
@@ -179,8 +186,8 @@ export function TopBlunders({ article }: ArticleProps) {
             </GoViewer>
             <ArticleParagraph>
               Instead, Fujisawa could have captured
-              White&apos;s stone, which would lead to a
-              half-point game:
+              White&apos;s stone, which would lead both
+              players to a half-point game:
             </ArticleParagraph>
             <GoViewer sgf="/articles/top-blunders/cho_chikun_vs_fujisawa_shuko_variant.sgf">
               <GoViewerBoard
@@ -217,11 +224,10 @@ export function TopBlunders({ article }: ArticleProps) {
               . In it, Cho played an illegal move, a
               suicide.
             </ArticleParagraph>
-            <GoViewer sgf="/articles/top-blunders/cho_vs_choi.sgf">
+            <GoViewer sgf="/articles/top-blunders/cho_hunhyun_vs_choi_cheolhan.sgf">
               <GoViewerBoard
                 startAt="end"
-                interactive={true}
-                showMoveNumbers
+                showMoveNumbers={false}
                 showCapturedStones
               />
               <GoViewerPlayers
@@ -306,13 +312,13 @@ export function TopBlunders({ article }: ArticleProps) {
             >
               <ImageLegend>
                 White induces Black into playing a
-                self-atari.{" "}
+                self-atari. Black was also winning.
               </ImageLegend>
             </ArticleImageWithLegend>
             <ArticleParagraph>
               The players are Kim Dongyeop 9p and Kim
               Jongjun 7p, both of them are veterans of
-              Korean Go. One of the commentator for that
+              Korean Go. One of the commentators for that
               game is none other than Do Eunkyo 1p, from the{" "}
               <ArticleLink href="https://www.youtube.com/@eunkyodo">
                 Go Inside
