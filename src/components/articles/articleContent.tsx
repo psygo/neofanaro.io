@@ -303,7 +303,7 @@ export function ArticleBlockQuote({
   children,
 }: WithReactChildren) {
   return (
-    <blockquote className="mr-8 ml-8 border-gray-300 pl-2.5 text-justify font-normal text-slate-600 not-italic dark:border-slate-700 dark:text-slate-400 [&_p:first-of-type]:before:content-[''] [&_p:last-of-type]:after:content-['']">
+    <blockquote className="mr-8 ml-8 border-gray-300 pl-2.5 font-normal text-slate-600 not-italic dark:border-slate-700 dark:text-slate-400 [&_p:first-of-type]:before:content-[''] [&_p:last-of-type]:after:content-['']">
       {children}
     </blockquote>
   )
