@@ -14,7 +14,6 @@ import {
   ArticleTableOfContents,
   ArticleTimestamp,
   ArticleYouTubeIframe,
-  DiagramRef,
   ImageLegend,
 } from "../articleContent"
 import {
@@ -34,7 +33,7 @@ export function TopBlunders({ article }: ArticleProps) {
           Go Game Series&apos; Blunders Compilation
         </ArticleSectionTitle>
         <ArticleParagraph>
-          This article is just an extension on another{" "}
+          This article is an extension on another{" "}
           <ArticleLink href="https://youtu.be/LkzDawFyAGA">
             outstanding video from Go Game Series
           </ArticleLink>
@@ -284,6 +283,55 @@ export function TopBlunders({ article }: ArticleProps) {
               Mathematics and Theoretical Computer Science.
             </ArticleBlockQuote>
           </ArticleSubSection>
+          <ArticleSubSection>
+            <ArticleSubSectionTitle>
+              When A Senior Pro Bullies/Tricks/Induces His
+              Peer Into A Self-Atari
+            </ArticleSubSectionTitle>
+            <ArticleParagraph>
+              I don&apos;t have enough data on this one to
+              judge if White bullied, tricked or induced
+              Black, but, while playing the dames, White
+              points at a self-atari move and Black falls
+              right into it.
+            </ArticleParagraph>
+            <ArticleYouTubeIframe
+              src="https://www.youtube.com/embed/7F_3miRj79k"
+              title="Top 5 Biggest Blunders In Go!"
+            />
+            <ArticleImageWithLegend
+              src="/articles/top-blunders/white_bully.png"
+              height={100}
+              width={500}
+            >
+              <ImageLegend>
+                White induces Black into playing a
+                self-atari.{" "}
+              </ImageLegend>
+            </ArticleImageWithLegend>
+            <ArticleParagraph>
+              The players are Kim Dongyeop 9p and Kim
+              Jongjun 7p, both of them are veterans of
+              Korean Go. One of the commentator for that
+              game is none other than Do Eunkyo 1p, from the{" "}
+              <ArticleLink href="https://www.youtube.com/@eunkyodo">
+                Go Inside
+              </ArticleLink>{" "}
+              YouTube channel, and the video is on one of{" "}
+              <ArticleLink href="https://www.youtube.com/@goproyeonwoo">
+                Pro Yeonwoo
+              </ArticleLink>
+              &apos;s channels.
+            </ArticleParagraph>
+          </ArticleSubSection>
+        </ArticleSection>
+        <ArticleSection>
+          <ArticleSectionTitle>Outro</ArticleSectionTitle>
+          <ArticleParagraph>
+            So, what do you think? Too sad? Any other
+            spectacular blunders I didn&apos;t mention?
+            Leave them in the comments!
+          </ArticleParagraph>
         </ArticleSection>
       </ArticleSection>
     </Article>
