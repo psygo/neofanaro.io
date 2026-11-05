@@ -391,3 +391,11 @@ export function NoWrap({ children }: NoWrapProps) {
     <span className="whitespace-nowrap">{children}</span>
   )
 }
+
+type ArticleTimestampProps = WithReactChildren
+
+export function ArticleTimestamp({
+  children,
+}: ArticleTimestampProps) {
+  return <span className="text-gray-200">{children}</span>
+}

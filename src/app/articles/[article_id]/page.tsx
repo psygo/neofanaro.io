@@ -35,6 +35,7 @@ import {
   SugeundaesajeonGlobal,
   TennozanLeague,
   TewariDelight2,
+  TopBlunders,
   WhatIsGoAbout,
   ZhangqiCheating,
 } from "@components/articles/entries/exports"
@@ -120,10 +121,6 @@ function whichArticle(
       return <Pumu article={post} />
     case "second-brazil-open-2026":
       return <SecondBrazilOpen2026 article={post} />
-    case "tennozan-league":
-      return <TennozanLeague article={post} />
-    case "tewari-delight-2":
-      return <TewariDelight2 article={post} />
     case "sample-size-and-common-sense":
       return <SampleSizeAndCommonSense article={post} />
     case "sugeundaesajeon":
@@ -132,6 +129,12 @@ function whichArticle(
       return <SugeundaesajeonCover article={post} />
     case "sugeundaesajeon-global":
       return <SugeundaesajeonGlobal article={post} />
+    case "tennozan-league":
+      return <TennozanLeague article={post} />
+    case "tewari-delight-2":
+      return <TewariDelight2 article={post} />
+    case "top-blunders":
+      return <TopBlunders article={post} />
     case "what-is-go-about":
       return <WhatIsGoAbout article={post} />
     case "zhangqi-cheating":
