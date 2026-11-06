@@ -33,7 +33,7 @@ export function TopBlunders({ article }: ArticleProps) {
           Go Game Series&apos; Blunders Compilation
         </ArticleSectionTitle>
         <ArticleParagraph>
-          This article is an extension on another{" "}
+          This article is an extension to another{" "}
           <ArticleLink href="https://youtu.be/LkzDawFyAGA">
             outstanding video from Go Game Series
           </ArticleLink>
@@ -44,13 +44,23 @@ export function TopBlunders({ article }: ArticleProps) {
           title="Top 5 Biggest Blunders In Go!"
         />
         <ArticleParagraph>
-          Neither I nor Go Game Series (GGS) would like to
-          shame anyone. Cataloging those out is just a way
-          for us to treat ourselves less harshly whenever we
-          are the ones on the sad end of the story. And
-          somehow I feel like I&apos;m able to turn their
-          pain into learning of my own, making it less
-          likely I end up playing the same mistakes.
+          It&apos;s worth noting that neither I nor Go Game
+          Series (GGS) would like to shame anyone.
+          Cataloging these blunders is just a way for us to
+          treat ourselves less harshly whenever we are the
+          ones on the sad end of the story, by realizing
+          even legendary players have also experienced them.
+        </ArticleParagraph>
+        <ArticleParagraph>
+          If there&apos;s anything to say about these pro
+          examples more directly, I would definitely
+          emphasize that I admire those pros&apos; willpower
+          to move on and persist.
+        </ArticleParagraph>
+        <ArticleParagraph>
+          And, personally, somehow I feel like I&apos;m able
+          to turn their pain into learning of my own, making
+          it less likely I end up playing the same mistakes.
         </ArticleParagraph>
         <ArticleImageWithLegend
           src="/articles/top-blunders/blunder_tennis.jpeg"
@@ -68,12 +78,6 @@ export function TopBlunders({ article }: ArticleProps) {
           </ImageLegend>
         </ArticleImageWithLegend>
         <ArticleParagraph>
-          If there&apos;s anything to say about these pro
-          examples more directly, I would definitely
-          emphasize that admire those pro&apos;s willpower
-          to move on and persist.
-        </ArticleParagraph>
-        <ArticleParagraph>
           In GGS&apos;s video, these are the blunders he
           goes over:
         </ArticleParagraph>
@@ -86,8 +90,8 @@ export function TopBlunders({ article }: ArticleProps) {
           <li>
             <ArticleTimestamp>00:32</ArticleTimestamp>{" "}
             <em>Byun Sangil&apos;s Self-Slaps</em>, Byun
-            Sangil 9p vs Choi Jeong 9p, for the Samsung Cup
-            2022.
+            Sangil 9p vs Choi Jeong 9p, for the 2022 Samsung
+            Cup.
           </li>
           <li>
             <ArticleTimestamp>00:48</ArticleTimestamp>{" "}
@@ -104,7 +108,7 @@ export function TopBlunders({ article }: ArticleProps) {
           <li>
             <ArticleTimestamp>09:26</ArticleTimestamp>{" "}
             &quot;Ke Jie&apos;s Famous Slap&quot;, a game
-            between Ke Jie 9p and Park Junghwan 9p, 2019.
+            between Ke Jie 9p and Park Junghwan 9p, in 2019.
           </li>
           <li>
             <ArticleTimestamp>13:08</ArticleTimestamp>{" "}
@@ -115,8 +119,8 @@ export function TopBlunders({ article }: ArticleProps) {
           <li>
             <ArticleTimestamp>22:48</ArticleTimestamp>{" "}
             &quot;Most Traumatizing Event&quot;, Park Jieun
-            9p vs Kim Chaeyoung 1p, in the 2014 Female
-            Kuksu.
+            9p vs Kim Chaeyoung 1p, for the 2014 Female
+            Kuksu title.
           </li>
         </ArticleOrderedList>
         <ArticleParagraph>
@@ -133,11 +137,11 @@ export function TopBlunders({ article }: ArticleProps) {
               Nakano Yasuhiro&apos;s Self-Atari
             </ArticleSubSectionTitle>
             <ArticleParagraph>
-              One of them is in{" "}
+              One of them is in the last section of
+              ALOUTOULOU&apos;s very funny meme compilation,{" "}
               <ArticleLink href="https://youtu.be/r1vIvOD5iGQ?t=51">
-                ALOUTOULOU&apos;s very funny meme
-                compilation, &quot;Everyone is HERE (Game of
-                Go Edition)&quot;
+                &quot;Everyone is HERE (Game of Go
+                Edition)&quot;
               </ArticleLink>
               :
             </ArticleParagraph>
@@ -145,12 +149,26 @@ export function TopBlunders({ article }: ArticleProps) {
               src="https://www.youtube.com/embed/r1vIvOD5iGQ"
               title="Top 5 Biggest Blunders In Go!"
             />
+            <ArticleImageWithLegend
+              src="/articles/top-blunders/nakano_self_atari.png"
+              height={100}
+              width={500}
+            >
+              <ImageLegend>
+                Nakano&apos;s (Black) self-atari. Black was
+                winning, and there were mostly only dames
+                left.
+              </ImageLegend>
+            </ArticleImageWithLegend>
             <ArticleParagraph>
               That blunder comes from a game between Ishida
               Yoshio 9p and Nakano Yasuhiro 9p for the 2006,
-              53rd NHK Cup. Later, in an interview, Nakano
-              said he was afraid at the time that he would
-              be stripped of his professional title.
+              53rd NHK Cup.
+            </ArticleParagraph>
+            <ArticleParagraph>
+              Later, in an interview, 14 years later, Nakano
+              said he was worried he would be stripped of
+              his professional title.
             </ArticleParagraph>
           </ArticleSubSection>
           <ArticleSubSection>
@@ -163,7 +181,7 @@ export function TopBlunders({ article }: ArticleProps) {
                 Blunder
               </ArticleLink>{" "}
               page offers yet another example, from{" "}
-              <ArticleLink href="/article/top-blunders/1983-03-16_cho_vs_fujisawa.sgf">
+              <ArticleLink href="https://homepages.cwi.nl/~aeb/go/games/games/Cho_Chikun/tournaments/Kisei.html#:~:text=268-,sgf,-42">
                 Game 7 of the 1983 Kisei Title Match
               </ArticleLink>
               :
@@ -205,14 +223,22 @@ export function TopBlunders({ article }: ArticleProps) {
                 How the game should have continued.
               </GoViewerLegend>
             </GoViewer>
+            <ArticleParagraph>
+              That game broke Fujisawa Shuko 9p&apos;s
+              6-year streak as the reigning{" "}
+              <ArticleLink href="https://senseis.xmp.net/?Kisei">
+                Kisei
+              </ArticleLink>
+              , the most prestigious title in Japan.
+            </ArticleParagraph>
           </ArticleSubSection>
           <ArticleSubSection>
             <ArticleSubSectionTitle>
               Cho Hunhyun&apos;s Suicide
             </ArticleSubSectionTitle>
             <ArticleParagraph>
-              Sensei&apos;s Library catalogs another blunder
-              example on its{" "}
+              Sensei&apos;s Library documents another
+              blunder example on its{" "}
               <ArticleLink href="https://senseis.xmp.net/?Suicide">
                 suicide
               </ArticleLink>{" "}
@@ -263,7 +289,7 @@ export function TopBlunders({ article }: ArticleProps) {
                 An Unexpected Effect of The Suicide Rule
               </ArticleLink>{" "}
               &mdash; , I discussed how suicides could
-              change some board positions&apos;s outcomes,
+              change some board positions&apos; outcomes,
               enriching the game.
             </ArticleBlockQuote>
             <ArticleImageWithLegend
@@ -272,8 +298,7 @@ export function TopBlunders({ article }: ArticleProps) {
               width={450}
             >
               <ImageLegend>
-                That specific example was also featured in
-                one of my{" "}
+                That specific example was also a part of my{" "}
                 <ArticleLink href="https://www.instagram.com/p/DGqF7gZKrCh/?img_index=1">
                   &quot;psygo&apos; Corner&quot; posts
                 </ArticleLink>
