@@ -174,9 +174,9 @@ export function TopBlunders({ article }: ArticleProps) {
               53rd NHK Cup.
             </ArticleParagraph>
             <ArticleParagraph>
-              Later, in an interview, 14 years later, Nakano
-              said he was worried he would be stripped of
-              his professional title at the time, due to the
+              In an interview, 14 years later, Nakano said
+              he was worried he would be stripped of his
+              professional title at the time, due to the
               self-atari mistake.
             </ArticleParagraph>
           </ArticleSubSection>
@@ -279,10 +279,9 @@ export function TopBlunders({ article }: ArticleProps) {
               </GoViewerLegend>
             </GoViewer>
             <ArticleParagraph>
-              It&apos;s a pity a suicide is an illegal move.
-              The deficit of gifting your opponent a stone
-              while also passing your turn is painful
-              enough, no?
+              It&apos;s a pity suicides are illegal. The
+              deficit of gifting your opponent a stone while
+              also passing your turn is painful enough, no?
             </ArticleParagraph>
             <ArticleParagraph>
               And{" "}
@@ -313,7 +312,7 @@ export function TopBlunders({ article }: ArticleProps) {
               <ImageLegend>
                 That specific example was also a part of my{" "}
                 <ArticleLink href="https://www.instagram.com/p/DGqF7gZKrCh/?img_index=1">
-                  &quot;psygo&apos; Corner&quot; posts
+                  &quot;psygo&apos;s Corner&quot; posts
                 </ArticleLink>
                 .
               </ImageLegend>
@@ -379,7 +378,7 @@ export function TopBlunders({ article }: ArticleProps) {
             Leave them in the comments!
           </ArticleParagraph>
           <ArticleParagraph>
-            Another aspect of this topic is tackling the why
+            Another aspect of this topic is tackling why
             people still make these giant mistakes, what
             triggers these situations. Overall, from my
             experience, it&apos;s usually a mix of:
@@ -400,7 +399,8 @@ export function TopBlunders({ article }: ArticleProps) {
             rate by practicing more tsumegos and playing
             more, as I believe in large part these types of
             huge mistakes can be offloaded to our monkey,
-            instinctual brain.
+            instinctual brain &mdash; or are we actually
+            fixing our monkey brains instead?
           </ArticleParagraph>
           <ArticleParagraph>
             But I do also try to be more aware of potential
