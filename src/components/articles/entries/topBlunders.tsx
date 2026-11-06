@@ -13,7 +13,9 @@ import {
   ArticleSubSectionTitle,
   ArticleTableOfContents,
   ArticleTimestamp,
+  ArticleUnorderedList,
   ArticleYouTubeIframe,
+  DiagramRef,
   ImageLegend,
 } from "../articleContent"
 import {
@@ -49,18 +51,24 @@ export function TopBlunders({ article }: ArticleProps) {
           Cataloging these blunders is just a way for us to
           treat ourselves less harshly whenever we are the
           ones on the sad end of the story, by realizing
-          even legendary players have also experienced them.
+          even legendary players have also experienced these
+          tragic moments.
         </ArticleParagraph>
         <ArticleParagraph>
           If there&apos;s anything to say about these pro
           examples more directly, I would definitely
-          emphasize that I admire those pros&apos; willpower
-          to move on and persist.
+          emphasize that those pros&apos; willpower to move
+          on and persist is admirable and commendable. All
+          the more when considering how East Asians are so
+          harsh on themselves and one another, and how shame
+          takes a much bigger part in their culture than in
+          the West.
         </ArticleParagraph>
         <ArticleParagraph>
-          And, personally, somehow I feel like I&apos;m able
-          to turn their pain into learning of my own, making
-          it less likely I end up playing the same mistakes.
+          Additionally, personally, somehow I feel like
+          I&apos;m able to turn their pain into learning of
+          my own, making it less likely I end up playing the
+          same mistakes.
         </ArticleParagraph>
         <ArticleImageWithLegend
           src="/articles/top-blunders/blunder_tennis.jpeg"
@@ -78,8 +86,8 @@ export function TopBlunders({ article }: ArticleProps) {
           </ImageLegend>
         </ArticleImageWithLegend>
         <ArticleParagraph>
-          In GGS&apos;s video, these are the blunders he
-          goes over:
+          These are the blunders covered in GGS&apos;s
+          video:
         </ArticleParagraph>
         <ArticleOrderedList>
           <li>
@@ -126,7 +134,7 @@ export function TopBlunders({ article }: ArticleProps) {
         <ArticleParagraph>
           A list of highly unfortunate events indeed, to say
           the least. However, some of the most spectacular
-          weren&apos;t included in that video.
+          weren&apos;t included in that video...
         </ArticleParagraph>
         <ArticleSection>
           <ArticleSectionTitle>
@@ -168,7 +176,8 @@ export function TopBlunders({ article }: ArticleProps) {
             <ArticleParagraph>
               Later, in an interview, 14 years later, Nakano
               said he was worried he would be stripped of
-              his professional title.
+              his professional title at the time, due to the
+              self-atari mistake.
             </ArticleParagraph>
           </ArticleSubSection>
           <ArticleSubSection>
@@ -203,9 +212,11 @@ export function TopBlunders({ article }: ArticleProps) {
               </GoViewerLegend>
             </GoViewer>
             <ArticleParagraph>
-              Instead, Fujisawa could have captured
-              White&apos;s stone, which would lead both
-              players to a half-point game:
+              Instead of connecting in Dia.{" "}
+              <DiagramRef label="cho_chikun_vs_fujisawa_shuko" />
+              , Fujisawa could have captured a white stone,
+              which would then lead both players to a
+              half-point game:
             </ArticleParagraph>
             <GoViewer sgf="/articles/top-blunders/cho_chikun_vs_fujisawa_shuko_variant.sgf">
               <GoViewerBoard
@@ -263,6 +274,8 @@ export function TopBlunders({ article }: ArticleProps) {
               <GoViewerControls />
               <GoViewerLegend>
                 Cho Hunhyun 9p plays an illegal suicide.
+                Instead, he probably intended to go for the
+                ko at A.
               </GoViewerLegend>
             </GoViewer>
             <ArticleParagraph>
@@ -336,15 +349,17 @@ export function TopBlunders({ article }: ArticleProps) {
               width={500}
             >
               <ImageLegend>
-                White induces Black into playing a
-                self-atari. Black was also winning.
+                White bullies/tricks/induces Black into
+                playing a self-atari. Black was also
+                winning...
               </ImageLegend>
             </ArticleImageWithLegend>
             <ArticleParagraph>
               The players are Kim Dongyeop 9p and Kim
-              Jongjun 7p, both of them are veterans of
-              Korean Go. One of the commentators for that
-              game is none other than Do Eunkyo 1p, from the{" "}
+              Jongjun 7p, both veterans of Korean Go and
+              former top players. One of the commentators
+              for that game is none other than Do Eunkyo 1p,
+              from the{" "}
               <ArticleLink href="https://www.youtube.com/@eunkyodo">
                 Go Inside
               </ArticleLink>{" "}
@@ -362,6 +377,39 @@ export function TopBlunders({ article }: ArticleProps) {
             So, what do you think? Too sad? Any other
             spectacular blunders I didn&apos;t mention?
             Leave them in the comments!
+          </ArticleParagraph>
+          <ArticleParagraph>
+            Another aspect of this topic is tackling the why
+            people still make these giant mistakes, what
+            triggers these situations. Overall, from my
+            experience, it&apos;s usually a mix of:
+          </ArticleParagraph>
+          <ArticleUnorderedList>
+            <li>Lapses in focus</li>
+            <li>Time pressure</li>
+          </ArticleUnorderedList>
+          <ArticleParagraph>
+            Perhaps even more shameful than the blunders
+            themselves is the current state of not
+            systematizing what&apos;s behind this
+            psychological and skill-related problem, both in
+            terms of diagnosis and solutions.
+          </ArticleParagraph>
+          <ArticleParagraph>
+            On my end, I did manage to improve my blunder
+            rate by practicing more tsumegos and playing
+            more, as I believe in large part these types of
+            huge mistakes can be offloaded to our monkey,
+            instinctual brain.
+          </ArticleParagraph>
+          <ArticleParagraph>
+            But I do also try to be more aware of potential
+            trivial problems I might need to fix beforehand,
+            especially under time-pressure. If you&apos;re
+            feeling idle during a game, maybe a way of
+            maintaining focus and lowering risks could be
+            just going through those trivial sentes you and
+            your opponent have.
           </ArticleParagraph>
         </ArticleSection>
       </ArticleSection>
