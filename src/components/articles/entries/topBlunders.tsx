@@ -47,11 +47,12 @@ export function TopBlunders({ article }: ArticleProps) {
         />
         <ArticleParagraph>
           It&apos;s worth noting that neither I nor Go Game
-          Series (GGS) would like to shame anyone.
-          Cataloging these blunders is just a way for us to
-          treat ourselves less harshly whenever we are the
-          ones on the sad end of the story, by realizing
-          even legendary players have also experienced these
+          Series (GGS) would like to shame anyone &mdash; I
+          have probably done worse after all! Cataloging
+          these blunders is just a way for us to treat
+          ourselves less harshly whenever we are the ones on
+          the sad end of the story, by realizing even
+          legendary players have also experienced these
           tragic moments.
         </ArticleParagraph>
         <ArticleParagraph>
