@@ -378,38 +378,86 @@ export function TopBlunders({ article }: ArticleProps) {
             Leave them in the comments!
           </ArticleParagraph>
           <ArticleParagraph>
-            Another aspect of this topic is tackling why
+            Another aspect of this theme is tackling why
             people still make these giant mistakes, what
-            triggers these situations. Overall, from my
-            experience, it&apos;s usually a mix of:
+            triggers these situations and how to prevent
+            them. Overall, from my experience, it&apos;s
+            usually a mix of:
           </ArticleParagraph>
           <ArticleUnorderedList>
             <li>Lapses in focus</li>
             <li>Time pressure</li>
           </ArticleUnorderedList>
           <ArticleParagraph>
-            Perhaps even more shameful than the blunders
-            themselves is the current state of not
+            Imagine how the pressure from everyone watching
+            you during televised matches could muddle your
+            focus! As you struggle to regain your focus,
+            there goes your thinking time!
+          </ArticleParagraph>
+          <ArticleParagraph>
+            Many players and teachers do have their systems
+            and set of recommendations for dealing with this
+            problem, but I quite frankly think we&apos;re
+            sorely lacking a more established, scientific
+            solution here. Especially when considering
+            we&apos;ve been playing this game for at least
+            2,500 years already. Are there no other sports
+            with thoroughly tested frameworks?
+          </ArticleParagraph>
+          <ArticleBlockQuote>
+            If you&apos;re making too many blunders, Inseong
+            Hwang 8d EGF recommends playing a high volume of
+            quick games, since that usually means
+            you&apos;re out of practice.
+          </ArticleBlockQuote>
+          <ArticleParagraph>
+            The bare minimum to call this done would demand
+            players be able to consistently realize in
+            real-time when they are susceptible to
+            committing such mistakes, I would say.
+          </ArticleParagraph>
+          {/* <ArticleParagraph>
+            For the blunders during televised matches,
+            handling the pressure can hinder focus
+            dramatically.
+          </ArticleParagraph>
+          <ArticleParagraph>
+            Anyhow, perhaps even more shameful than the
+            blunders themselves is the current state of not
             systematizing what&apos;s behind this
             psychological and skill-related problem, both in
             terms of diagnosis and solutions.
           </ArticleParagraph>
           <ArticleParagraph>
+            Of course, veteran players do have sets of
+            solutions, but I still feel it&apos;s lacking
+            and non-exhaustive.
+          </ArticleParagraph> */}
+          <ArticleParagraph>
             On my end, I did manage to improve my blunder
             rate by practicing more tsumegos and playing
-            more, as I believe in large part these types of
-            huge mistakes can be offloaded to our monkey,
-            instinctual brain &mdash; or are we actually
-            fixing our monkey brains instead?
+            more, as I believe, in large part, that these
+            types of huge mistakes can be offloaded to our
+            monkey, instinctual brain &mdash; or are we
+            actually fixing our monkey brains instead?
           </ArticleParagraph>
           <ArticleParagraph>
-            But I do also try to be more aware of potential
+            But I do also try to be more aware of likely
             trivial problems I might need to fix beforehand,
-            especially under time-pressure. If you&apos;re
+            especially under time pressure. If you&apos;re
             feeling idle during a game, maybe a way of
-            maintaining focus and lowering risks could be
-            just going through those trivial sentes you and
-            your opponent have.
+            maintaining focus while also lowering risks
+            could be just going through those trivial sentes
+            you and your opponent have &mdash; you might
+            even find out some of those are actually not
+            sente!
+          </ArticleParagraph>
+          <ArticleParagraph>
+            Lastly, in case you&apos;re overwhelmed by
+            others potentially shaming you, I suggest{" "}
+            psychologically <em>reframing</em> the issue:
+            take joy from how others will feel once they
+            lose to a supposed idiot.
           </ArticleParagraph>
         </ArticleSection>
       </ArticleSection>
