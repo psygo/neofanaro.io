@@ -853,7 +853,8 @@ export function SugeundaesajeonCover({
           />
           <GoViewerControls />
           <GoViewerLegend>
-            White breaks out, but at a high cost.
+            Black breaks out, and White gets some
+            compensation with the bottom capture.
           </GoViewerLegend>
         </GoViewer>
       </ArticleSection>
