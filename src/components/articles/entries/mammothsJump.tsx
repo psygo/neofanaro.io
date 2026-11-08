@@ -500,10 +500,7 @@ export function MammothsJump({ article }: ArticleProps) {
           John Fairbairn. And, on Amazon Japan, it also has
           its own book:{" "}
           <ArticleLink href="https://amzn.asia/d/04LDkwOj">
-            <NoWrap>
-              囲碁 定石研究　タイガーシマリ
-              (棋力向上シリーズ)
-            </NoWrap>
+            囲碁 定石研究　タイガーシマリ (棋力向上シリーズ)
           </ArticleLink>{" "}
           .
         </ArticleParagraph>

@@ -314,7 +314,7 @@ export function GoViewerBoard({
   startAt = "start",
   region,
   cellSize = defaultCellSize,
-  size = region ? 300 : undefined,
+  size: sizeProp,
   width: widthProp,
   height: heightOverride,
   padding = defaultPadding,
@@ -423,6 +423,19 @@ export function GoViewerBoard({
   // board's own `size` default (below) only kicks in when neither is
   // set.
   const widthOverride = widthProp ?? contextWidth
+
+  // Only this fully-defaulted case (a partial/cropped board with no
+  // size given anywhere) gets a *responsive* cap — 350px on a small
+  // viewport, 400px above that (the `max-w-[...] sm:max-w-[...]`
+  // classes below) — rather than the single fixed pixel value an
+  // explicit `size`/`width`/`height`/<GoViewer width={...}> always
+  // resolves to.
+  const usesDefaultPartialWidth =
+    region !== undefined &&
+    sizeProp === undefined &&
+    widthOverride === undefined &&
+    heightOverride === undefined
+  const size = sizeProp ?? (region ? 400 : undefined)
 
   // `true` is the same as the unset default, so it still follows the
   // shared toggle (<GoViewerControls>'s "#" button) — only an
@@ -752,7 +765,7 @@ export function GoViewerBoard({
       viewBox={`0 0 ${naturalWidth} ${naturalHeight}`}
       width={svgWidth}
       height={svgHeight}
-      className={`rounded-sm ${className}`}
+      className={`rounded-sm ${usesDefaultPartialWidth ? "max-w-87.5 sm:max-w-100" : ""} ${className}`}
       style={{
         backgroundColor,
         backgroundImage: backgroundImage
@@ -766,9 +779,14 @@ export function GoViewerBoard({
         // forcing horizontal scroll.
         width: "100%",
         height: "auto",
-        maxWidth: hasExplicitSize
-          ? `${svgWidth}px`
-          : "100%",
+        // `usesDefaultPartialWidth` is capped via the responsive
+        // `max-w-*` classes above instead — an inline `maxWidth`
+        // here would always win over them regardless of viewport.
+        maxWidth: usesDefaultPartialWidth
+          ? undefined
+          : hasExplicitSize
+            ? `${svgWidth}px`
+            : "100%",
       }}
     >
       {horizontalSegments}

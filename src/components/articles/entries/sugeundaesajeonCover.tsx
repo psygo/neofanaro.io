@@ -134,13 +134,15 @@ export function SugeundaesajeonCover({
           <ArticleParagraph>
             As usual, we must assume the ladder works for
             Black, so escaping with the A stone in Dia.{" "}
-            <DiagramRef label="top_left_1" /> isn&apos;t
-            really a possibility.
+            <DiagramRef label="top_left_1" />
+            &nbsp;isn&apos;t really a possibility.
           </ArticleParagraph>
           <ArticleParagraph>
-            Playing the typical atari is too simple. That
-            sort of thinking helps a ton when trying to
-            solve tsumegos, by the way.
+            Playing the typical atari is too simple for a
+            tesuji problem. We&apos;re talking about
+            brilliant moves here after all. That sort of
+            thinking helps a ton when trying to solve
+            tsumegos, by the way.
           </ArticleParagraph>
           <GoViewer
             sgf="/articles/sugeundaesajeon-cover/top_left_1.sgf"
@@ -167,10 +169,11 @@ export function SugeundaesajeonCover({
           <ArticleParagraph>
             There&apos;s a chance Black would have captured
             at B instead of 2 in Dia.{" "}
-            <DiagramRef label="top_left_1" />. However,
-            Black would then probably have to suffer the
-            atari at White 2 instead. That&apos;s a huge
-            hint:
+            <DiagramRef label="top_left_1" />, especially
+            since it eliminates the need for a working
+            ladder. However, Black would then probably have
+            to suffer the atari at White 2 instead.
+            That&apos;s a huge hint:
           </ArticleParagraph>
           <GoViewer
             sgf="/articles/sugeundaesajeon-cover/top_left_2.sgf"
@@ -198,7 +201,7 @@ export function SugeundaesajeonCover({
             Black ends up in a lot of trouble. Connecting
             the ko is terrible shape, and White gets an
             extra stone at the top. But fighting that ko is
-            an unthinkable flower ko for White.
+            an unthinkable flower ko.
           </ArticleParagraph>
         </ArticleSubSection>
         <ArticleSubSection>
@@ -207,10 +210,9 @@ export function SugeundaesajeonCover({
           </ArticleSubSectionTitle>
           <ArticleParagraph>
             Next is a problem which tests out your side
-            life-and-death and &quot; my opponent&apos;s
-            best move is my best move &quot; thinking
-            &mdash; the latter being what Inseong Hwang 8d
-            EGF calls{" "}
+            life-and-death and &quot;my opponent&apos;s best
+            move is my best move &quot; thinking &mdash; the
+            latter being what Inseong Hwang 8d EGF calls{" "}
             <ArticleLink href="https://eyd.yunguseng.com/videos/index.php?id=686">
               &quot;1-2-3 reading&quot;
             </ArticleLink>
@@ -243,10 +245,10 @@ export function SugeundaesajeonCover({
           </GoViewer>
           <ArticleParagraph>
             Just sliding isn&apos;t enough to live. White
-            will reduce Black&apos;s shape the famous 2-2-2,
-            which is very often dead on the side, especially
-            when the triangle-marked stones have no external
-            liberties:
+            will reduce Black&apos;s shape down to the
+            famous 2-2-2, which is very often dead on the
+            side, especially when the triangle-marked stones
+            have no external liberties:
           </ArticleParagraph>
           <GoViewer
             sgf="/articles/sugeundaesajeon-cover/top_right_1.sgf"
@@ -269,11 +271,6 @@ export function SugeundaesajeonCover({
               Sliding isn&apos;t enough.
             </GoViewerLegend>
           </GoViewer>
-          <ArticleParagraph>
-            The peep is of Black 1 on Dia.{" "}
-            <DiagramRef label="top_right_2" /> is much
-            better. The naïve solution would go like this:
-          </ArticleParagraph>
           <ArticleParagraph>
             White should be very careful here. Just blocking
             in Dia. <DiagramRef label="top_right_6" /> seems
@@ -301,6 +298,11 @@ export function SugeundaesajeonCover({
               push first.
             </GoViewerLegend>
           </GoViewer>
+          <ArticleParagraph>
+            Black&apos;s peep, 1 on Dia.{" "}
+            <DiagramRef label="top_right_2" />, is much
+            better. The naïve solution would go like this:
+          </ArticleParagraph>
           <GoViewer
             sgf="/articles/sugeundaesajeon-cover/top_right_2.sgf"
             width={425}
@@ -323,14 +325,15 @@ export function SugeundaesajeonCover({
             </GoViewerLegend>
           </GoViewer>
           <ArticleParagraph>
-            With 3, Black expands its internal shape a bit
-            beyond the 2-2-2 shape, which guarantees life.
-            However, White won&apos;t be so kind, White will
+            With 3 on <DiagramRef label="top_right_2" />,
+            Black expands its internal shape a bit beyond
+            the 2-2-2 shape, which guarantees life. However,
+            there&apos;s no reason to be so kind, White will
             push first, as in Dia.{" "}
             <DiagramRef label="top_right_3" />. If you then
-            block, White won&apos;t block directly, White
-            will hit the vital point first, and we end up
-            with the 2-2-2 once again.
+            block, before connecting directly, White will
+            hit the vital point first, and we end up with
+            the 2-2-2 once again.
           </ArticleParagraph>
           <GoViewer
             sgf="/articles/sugeundaesajeon-cover/top_right_3.sgf"
@@ -355,10 +358,35 @@ export function SugeundaesajeonCover({
             </GoViewerLegend>
           </GoViewer>
           <ArticleParagraph>
-            Now we finally get to the key move of the
-            problem actually, the reason I chose this
-            specific tsumego. Can you apply 1-2-3 reading
-            here?
+            Note that Black can&apos;t cut through directly,
+            otherwise White will connect underneath:
+          </ArticleParagraph>
+          <GoViewer
+            sgf="/articles/sugeundaesajeon-cover/top_right_7.sgf"
+            width={425}
+          >
+            <GoViewerBoard
+              startAt="end"
+              interactive={true}
+              showMoveNumbers
+              showCapturedStones
+              region={{
+                minRow: 0,
+                maxRow: 7,
+                minCol: 6,
+                maxCol: 18,
+              }}
+            />
+            <GoViewerControls />
+            <GoViewerLegend>
+              Black cuts through, but White connects
+              underneath.
+            </GoViewerLegend>
+          </GoViewer>
+          <ArticleParagraph>
+            Now we finally get to the crux of the problem
+            actually, the reason I chose this specific
+            tsumego. Can you apply 1-2-3 reading here?
           </ArticleParagraph>
           <GoViewer
             sgf="/articles/sugeundaesajeon-cover/top_right_4.sgf"
@@ -378,7 +406,7 @@ export function SugeundaesajeonCover({
             />
             <GoViewerControls />
             <GoViewerLegend>
-              The key move for this problem.
+              Black 3, the key move.
             </GoViewerLegend>
           </GoViewer>
           <ArticleParagraph>
@@ -405,7 +433,7 @@ export function SugeundaesajeonCover({
             />
             <GoViewerControls />
             <GoViewerLegend>
-              The key move for this problem.
+              The correct solution to the top-right problem.
             </GoViewerLegend>
           </GoViewer>
         </ArticleSubSection>
@@ -416,7 +444,8 @@ export function SugeundaesajeonCover({
           <ArticleParagraph>
             This problem&apos;s solution I couldn&apos;t see
             coming at all. But I&apos;ve tried it on some
-            friends and they found it much more easily.
+            friends and the results were surprising. Are you
+            able to find the brilliant move here?
           </ArticleParagraph>
           <GoViewer
             sgf="/articles/sugeundaesajeon-cover/bottom_left.sgf"
@@ -443,7 +472,7 @@ export function SugeundaesajeonCover({
             </GoViewerLegend>
           </GoViewer>
           <ArticleParagraph>
-            The variation attemps for this problem are a
+            The variation attempts for this problem are a
             very good way of improving your skills as well.
           </ArticleParagraph>
           <ArticleParagraph>
@@ -469,11 +498,11 @@ export function SugeundaesajeonCover({
             <GoViewerControls />
             <GoViewerLegend>
               Trying out a typical kosumi tesuji in the
-              corner.
+              corner won&apos;t work for Black.
             </GoViewerLegend>
           </GoViewer>
           <ArticleParagraph>
-            It looks like it works, but, no, it
+            It looks like it works, but, nope, it
             doesn&apos;t. White 8 in Dia.{" "}
             <DiagramRef label="bottom_left_1" />
             &nbsp;guarantees Black can&apos;t play at A.
@@ -481,7 +510,7 @@ export function SugeundaesajeonCover({
           <ArticleParagraph>
             White needs to be careful about how to kill. If
             White tries a more direct liberty reduction
-            instead as in Dia.{" "}
+            instead, as in Dia.{" "}
             <DiagramRef label="bottom_left_2" />, we get a
             ko.
           </ArticleParagraph>
@@ -561,8 +590,9 @@ export function SugeundaesajeonCover({
             </GoViewerLegend>
           </GoViewer>
           <ArticleParagraph>
-            However, that&apos;s not actually 100% correct.
-            White still has an ace up its sleeve.
+            However, that&apos;s not actually the 100%
+            correct solution. White still has an ace up its
+            sleeve.
           </ArticleParagraph>
           <GoViewer
             sgf="/articles/sugeundaesajeon-cover/bottom_left_5.sgf"
@@ -584,20 +614,21 @@ export function SugeundaesajeonCover({
             <GoViewerLegend>
               White creates a desperate ko in the corner to
               capture everything. White could also have
-              started the ko by starting at 6.
+              started the ko by first playing at 6.
             </GoViewerLegend>
           </GoViewer>
           <ArticleParagraph>
-            With the brilliant move of White 2, we reach ko.
-            But White should be careful, since losing this
-            means a bigger loss overall, this is the type of
-            ko you should only trigger if there&apos;s no
-            other way of winning the game.
+            With the brilliant move of White 2, we reach a
+            ko. But White should be careful, since failing
+            here means a bigger loss overall, this is the
+            type of ko you should only trigger if
+            there&apos;s no other way of winning the game.
           </ArticleParagraph>
           <ArticleParagraph>
             That position might look a bit esoteric, but it
             could come up, for instance, from a common 3-3
-            invasion against a 4-4 + keima enclosure:
+            invasion against a &quot;4-4 + keima&quot;
+            enclosure:
           </ArticleParagraph>
           <GoViewer
             sgf="/articles/sugeundaesajeon-cover/bottom_left_6.sgf"
@@ -618,11 +649,13 @@ export function SugeundaesajeonCover({
             <GoViewerControls />
             <GoViewerLegend>
               White uses the same tesuji to survive in a 3-3
-              invasion against a 4-4 + keima enclosure.
+              invasion against a &quot;4-4 + keima&quot;
+              enclosure.
             </GoViewerLegend>
           </GoViewer>
           <ArticleParagraph>
-            That last situation was covered in an{" "}
+            This last situation was covered in at the end of
+            an{" "}
             <ArticleLink href="https://youtu.be/bLn4UsbjdWA">
               outstanding invasion lecture by Inseong Hwang
               8d EGF
@@ -675,8 +708,8 @@ export function SugeundaesajeonCover({
             turned into empty triangles very easily.
           </ArticleParagraph>
           <ArticleParagraph>
-            If White tries to resist the squeeze, it simply
-            dies:
+            In that sense, if White tries to resist the
+            squeeze, it simply dies:
           </ArticleParagraph>
           <GoViewer
             sgf="/articles/sugeundaesajeon-cover/bottom_right_1.sgf"
@@ -701,7 +734,7 @@ export function SugeundaesajeonCover({
             </GoViewerLegend>
           </GoViewer>
           <ArticleParagraph>
-            Despite Black 1 in{" "}
+            Despite Black 1 on Dia.{" "}
             <DiagramRef label="bottom_right_1" />
             &nbsp;being the book&apos;s solution,{" "}
             <ArticleLink href="https://ai-sensei.com/game/wCbiGfZSh7TjX5eXM8TDgvMzi5u2/29fa2461-a0af-41bc-bcf2-5aba607269bf">
@@ -731,13 +764,13 @@ export function SugeundaesajeonCover({
             />
             <GoViewerControls />
             <GoViewerLegend>
-              Containing Black&apos;s exit is just not
-              possible.
+              White accepts Black&apos;s escape, but
+              switches to capturing the stones on the side.
             </GoViewerLegend>
           </GoViewer>
           <ArticleParagraph>
             After the atari, if White keeps resisting, we
-            will eventually reacth Dia.{" "}
+            will eventually reach Dia.{" "}
             <DiagramRef label="bottom_right_1" />. And, if
             White fixes the elephant in the room, Black can
             capture the corner:
@@ -768,8 +801,8 @@ export function SugeundaesajeonCover({
             White could try to create a totally unplayable
             ko with 2 in Dia.{" "}
             <DiagramRef label="bottom_right_3" />,
-            nonetheless Black will still have the option to
-            simply revert to everything collapsing:
+            nonetheless Black will still have the option of
+            simply reverting to everything collapsing:
           </ArticleParagraph>
           <GoViewer
             sgf="/articles/sugeundaesajeon-cover/bottom_right_3.sgf"
@@ -791,7 +824,7 @@ export function SugeundaesajeonCover({
             <GoViewerLegend>
               White tries to resist with an unplayable ko,
               but Black could revert things back if White
-              keeps resisting to the max.
+              keeps on resisting to the max.
             </GoViewerLegend>
           </GoViewer>
           <ArticleParagraph>
@@ -799,8 +832,8 @@ export function SugeundaesajeonCover({
             shortage of liberties or ko is another possible
             solution in the sense that it works to escape.
             But White will be more than happy about it
-            because it can fix the corner while also
-            capturing Black&apos;s stones on the side:
+            because, once again, it can fix the corner while
+            also capturing Black&apos;s stones on the side:
           </ArticleParagraph>
         </ArticleSubSection>
         <GoViewer
