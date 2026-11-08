@@ -25,6 +25,17 @@ export type GoViewerProps = {
   // Takes precedence over `boardSize` when given (the board size
   // comes from the SGF's own SZ property).
   sgf?: string
+  // The main way of sizing a diagram — caps this <GoViewer> (board,
+  // controls, players, legend, all of it) at this many pixels wide,
+  // while still letting it shrink fluidly below that on a narrower
+  // viewport (same as an <img> with no explicit size). Shared down
+  // to <GoViewerBoard> as its own default `width` (an explicit
+  // `width`/`height`/`size` on the board itself still wins), and
+  // used by <GoViewerControls>/<GoViewerPlayers> (each its own
+  // container-query boundary — see their own doc for why it isn't
+  // set here) as the width their own text/controls scale down
+  // against once it narrows.
+  width?: number
   // Static point labels (e.g. "A", "1") for boards not loaded from
   // an SGF — ignored when `sgf` is given, since its own LB labels
   // take over.
@@ -55,6 +66,7 @@ export function GoViewer({
   labels,
   firstToMove,
   label,
+  width,
   className = "",
   children,
 }: GoViewerProps) {
@@ -65,9 +77,21 @@ export function GoViewer({
       labels={labels}
       firstToMove={firstToMove}
       label={label ?? defaultLabelFromSgf(sgf)}
+      width={width}
     >
       <div
-        className={`not-prose flex flex-col items-center gap-4 px-1 py-4 ${className}`}
+        className={`not-prose mx-auto flex w-full flex-col items-center gap-4 px-1 py-4 ${className}`}
+        style={{
+          maxWidth: width,
+          // Deliberately NOT a container-query boundary (no
+          // `containerType` here) — that implies CSS style
+          // containment, which would isolate the `dia-diagram`
+          // counter <GoViewerLegend> relies on from its siblings,
+          // breaking "Dia. N." numbering across multiple <GoViewer>s
+          // in the same article. <GoViewerControls>/<GoViewerPlayers>
+          // establish their own (smaller) containment boundary
+          // instead, scoped to just themselves.
+        }}
       >
         {children}
       </div>

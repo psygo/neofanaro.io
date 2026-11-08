@@ -84,6 +84,7 @@ export function IngCupSuicide({ article }: ArticleProps) {
         </GoDiagram> */}
         <GoViewer sgf="/articles/ing-cup-suicide/1.sgf">
           <GoViewerBoard
+            width={300}
             startAt="end"
             interactive={false}
             region={{
@@ -113,6 +114,7 @@ export function IngCupSuicide({ article }: ArticleProps) {
         </GoDiagram> */}
         <GoViewer sgf="/articles/ing-cup-suicide/2.sgf">
           <GoViewerBoard
+            width={300}
             startAt="end"
             interactive={false}
             region={{
@@ -139,6 +141,7 @@ export function IngCupSuicide({ article }: ArticleProps) {
         </GoDiagram> */}
         <GoViewer sgf="/articles/ing-cup-suicide/3.sgf">
           <GoViewerBoard
+            width={300}
             startAt="end"
             interactive={false}
             region={{
@@ -177,6 +180,7 @@ export function IngCupSuicide({ article }: ArticleProps) {
         </GoDiagram> */}
         <GoViewer sgf="/articles/ing-cup-suicide/4.sgf">
           <GoViewerBoard
+            width={300}
             startAt="end"
             interactive={false}
             region={{

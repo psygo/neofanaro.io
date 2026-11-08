@@ -362,6 +362,8 @@ export type GoViewerContextValue = {
   playerWhite?: string
   // See GoViewerProviderProps' own doc.
   label?: string
+  // See GoViewerProviderProps' own doc.
+  width?: number
   placeStone: (row: number, col: number) => void
   pass: () => void
   toggleToMove: () => void
@@ -405,6 +407,12 @@ export type GoViewerProviderProps = {
   // (if any), so authors set this once on <GoViewer> itself rather
   // than on the legend.
   label?: string
+  // The main way of sizing a diagram — see <GoViewer>'s own doc.
+  // Shared here (rather than passed to each piece individually) so
+  // <GoViewerBoard>, <GoViewerControls>, <GoViewerPlayers>, and
+  // <GoViewerLegend> all size themselves against the same number
+  // without every caller having to repeat it.
+  width?: number
   children: React.ReactNode
 }
 
@@ -414,6 +422,7 @@ export function GoViewerProvider({
   labels,
   firstToMove,
   label,
+  width,
   children,
 }: GoViewerProviderProps) {
   const isPath = sgf?.startsWith("/")
@@ -581,6 +590,7 @@ export function GoViewerProvider({
       playerBlack: state.playerBlack,
       playerWhite: state.playerWhite,
       label,
+      width,
       placeStone,
       pass,
       toggleToMove,
@@ -608,6 +618,7 @@ export function GoViewerProvider({
       state.playerBlack,
       state.playerWhite,
       label,
+      width,
       view,
       placeStone,
       pass,

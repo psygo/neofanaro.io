@@ -106,9 +106,11 @@ export function SugeundaesajeonCover({
             encyclopedia if it didn&apos;t have anything
             special behind it.
           </ArticleParagraph>
-          <GoViewer sgf="/articles/sugeundaesajeon-cover/top_left.sgf">
+          <GoViewer
+            sgf="/articles/sugeundaesajeon-cover/top_left.sgf"
+            width={350}
+          >
             <GoViewerBoard
-              width={350}
               startAt="end"
               interactive={true}
               showMoveNumbers
@@ -140,9 +142,11 @@ export function SugeundaesajeonCover({
             sort of thinking helps a ton when trying to
             solve tsumegos, by the way.
           </ArticleParagraph>
-          <GoViewer sgf="/articles/sugeundaesajeon-cover/top_left_1.sgf">
+          <GoViewer
+            sgf="/articles/sugeundaesajeon-cover/top_left_1.sgf"
+            width={350}
+          >
             <GoViewerBoard
-              width={350}
               startAt="end"
               interactive={true}
               showMoveNumbers
@@ -168,9 +172,11 @@ export function SugeundaesajeonCover({
             atari at White 2 instead. That&apos;s a huge
             hint:
           </ArticleParagraph>
-          <GoViewer sgf="/articles/sugeundaesajeon-cover/top_left_2.sgf">
+          <GoViewer
+            sgf="/articles/sugeundaesajeon-cover/top_left_2.sgf"
+            width={350}
+          >
             <GoViewerBoard
-              width={350}
               startAt="end"
               interactive={true}
               showMoveNumbers
@@ -210,9 +216,11 @@ export function SugeundaesajeonCover({
             </ArticleLink>
             .
           </ArticleParagraph>
-          <GoViewer sgf="/articles/sugeundaesajeon-cover/top_right.sgf">
+          <GoViewer
+            sgf="/articles/sugeundaesajeon-cover/top_right.sgf"
+            width={425}
+          >
             <GoViewerBoard
-              width={425}
               startAt="end"
               interactive={true}
               showMoveNumbers
@@ -240,9 +248,11 @@ export function SugeundaesajeonCover({
             when the triangle-marked stones have no external
             liberties:
           </ArticleParagraph>
-          <GoViewer sgf="/articles/sugeundaesajeon-cover/top_right_1.sgf">
+          <GoViewer
+            sgf="/articles/sugeundaesajeon-cover/top_right_1.sgf"
+            width={425}
+          >
             <GoViewerBoard
-              width={425}
               startAt="end"
               interactive={true}
               showMoveNumbers
@@ -269,9 +279,11 @@ export function SugeundaesajeonCover({
             in Dia. <DiagramRef label="top_right_6" /> seems
             to work at first, but Black can create a ko:
           </ArticleParagraph>
-          <GoViewer sgf="/articles/sugeundaesajeon-cover/top_right_6.sgf">
+          <GoViewer
+            sgf="/articles/sugeundaesajeon-cover/top_right_6.sgf"
+            width={425}
+          >
             <GoViewerBoard
-              width={425}
               startAt="end"
               interactive={true}
               showMoveNumbers
@@ -289,9 +301,11 @@ export function SugeundaesajeonCover({
               push first.
             </GoViewerLegend>
           </GoViewer>
-          <GoViewer sgf="/articles/sugeundaesajeon-cover/top_right_2.sgf">
+          <GoViewer
+            sgf="/articles/sugeundaesajeon-cover/top_right_2.sgf"
+            width={425}
+          >
             <GoViewerBoard
-              width={425}
               startAt="end"
               interactive={true}
               showMoveNumbers
@@ -318,9 +332,11 @@ export function SugeundaesajeonCover({
             will hit the vital point first, and we end up
             with the 2-2-2 once again.
           </ArticleParagraph>
-          <GoViewer sgf="/articles/sugeundaesajeon-cover/top_right_3.sgf">
+          <GoViewer
+            sgf="/articles/sugeundaesajeon-cover/top_right_3.sgf"
+            width={425}
+          >
             <GoViewerBoard
-              width={425}
               startAt="end"
               interactive={true}
               showMoveNumbers
@@ -344,9 +360,11 @@ export function SugeundaesajeonCover({
             specific tsumego. Can you apply 1-2-3 reading
             here?
           </ArticleParagraph>
-          <GoViewer sgf="/articles/sugeundaesajeon-cover/top_right_4.sgf">
+          <GoViewer
+            sgf="/articles/sugeundaesajeon-cover/top_right_4.sgf"
+            width={425}
+          >
             <GoViewerBoard
-              width={425}
               startAt="end"
               interactive={true}
               showMoveNumbers
@@ -369,9 +387,11 @@ export function SugeundaesajeonCover({
             then Black can finally reach the 2-2-3 shape and
             live.
           </ArticleParagraph>
-          <GoViewer sgf="/articles/sugeundaesajeon-cover/top_right_5.sgf">
+          <GoViewer
+            sgf="/articles/sugeundaesajeon-cover/top_right_5.sgf"
+            width={425}
+          >
             <GoViewerBoard
-              width={425}
               startAt="end"
               interactive={true}
               showMoveNumbers
@@ -398,9 +418,11 @@ export function SugeundaesajeonCover({
             coming at all. But I&apos;ve tried it on some
             friends and they found it much more easily.
           </ArticleParagraph>
-          <GoViewer sgf="/articles/sugeundaesajeon-cover/bottom_left.sgf">
+          <GoViewer
+            sgf="/articles/sugeundaesajeon-cover/bottom_left.sgf"
+            width={425}
+          >
             <GoViewerBoard
-              width={425}
               startAt="end"
               interactive={true}
               showMoveNumbers
@@ -428,9 +450,11 @@ export function SugeundaesajeonCover({
             For example, if you try the typical ko shape in
             the corner:
           </ArticleParagraph>
-          <GoViewer sgf="/articles/sugeundaesajeon-cover/bottom_left_1.sgf">
+          <GoViewer
+            sgf="/articles/sugeundaesajeon-cover/bottom_left_1.sgf"
+            width={425}
+          >
             <GoViewerBoard
-              width={425}
               startAt="end"
               interactive={true}
               showMoveNumbers
@@ -461,9 +485,11 @@ export function SugeundaesajeonCover({
             <DiagramRef label="bottom_left_2" />, we get a
             ko.
           </ArticleParagraph>
-          <GoViewer sgf="/articles/sugeundaesajeon-cover/bottom_left_2.sgf">
+          <GoViewer
+            sgf="/articles/sugeundaesajeon-cover/bottom_left_2.sgf"
+            width={425}
+          >
             <GoViewerBoard
-              width={425}
               startAt="end"
               interactive={true}
               showMoveNumbers
@@ -486,9 +512,11 @@ export function SugeundaesajeonCover({
             extending the liberties with an empty triangle
             while allowing for life in the corner:
           </ArticleParagraph>
-          <GoViewer sgf="/articles/sugeundaesajeon-cover/bottom_left_3.sgf">
+          <GoViewer
+            sgf="/articles/sugeundaesajeon-cover/bottom_left_3.sgf"
+            width={425}
+          >
             <GoViewerBoard
-              width={425}
               startAt="end"
               interactive={true}
               showMoveNumbers
@@ -511,9 +539,11 @@ export function SugeundaesajeonCover({
             captures the C stones by cutting at B. And, if
             White connects at B, Black simply lives:
           </ArticleParagraph>
-          <GoViewer sgf="/articles/sugeundaesajeon-cover/bottom_left_4.sgf">
+          <GoViewer
+            sgf="/articles/sugeundaesajeon-cover/bottom_left_4.sgf"
+            width={425}
+          >
             <GoViewerBoard
-              width={425}
               startAt="end"
               interactive={true}
               showMoveNumbers
@@ -534,9 +564,11 @@ export function SugeundaesajeonCover({
             However, that&apos;s not actually 100% correct.
             White still has an ace up its sleeve.
           </ArticleParagraph>
-          <GoViewer sgf="/articles/sugeundaesajeon-cover/bottom_left_5.sgf">
+          <GoViewer
+            sgf="/articles/sugeundaesajeon-cover/bottom_left_5.sgf"
+            width={425}
+          >
             <GoViewerBoard
-              width={425}
               startAt="end"
               interactive={true}
               showMoveNumbers
@@ -567,9 +599,11 @@ export function SugeundaesajeonCover({
             could come up, for instance, from a common 3-3
             invasion against a 4-4 + keima enclosure:
           </ArticleParagraph>
-          <GoViewer sgf="/articles/sugeundaesajeon-cover/bottom_left_6.sgf">
+          <GoViewer
+            sgf="/articles/sugeundaesajeon-cover/bottom_left_6.sgf"
+            width={425}
+          >
             <GoViewerBoard
-              width={425}
               startAt="end"
               interactive={true}
               showMoveNumbers
@@ -609,9 +643,11 @@ export function SugeundaesajeonCover({
             first move in this tsumego, but 2 of them lose a
             bit at least.
           </ArticleParagraph>
-          <GoViewer sgf="/articles/sugeundaesajeon-cover/bottom_right.sgf">
+          <GoViewer
+            sgf="/articles/sugeundaesajeon-cover/bottom_right.sgf"
+            width={425}
+          >
             <GoViewerBoard
-              width={425}
               startAt="end"
               interactive={true}
               showMoveNumbers
@@ -642,9 +678,11 @@ export function SugeundaesajeonCover({
             If White tries to resist the squeeze, it simply
             dies:
           </ArticleParagraph>
-          <GoViewer sgf="/articles/sugeundaesajeon-cover/bottom_right_1.sgf">
+          <GoViewer
+            sgf="/articles/sugeundaesajeon-cover/bottom_right_1.sgf"
+            width={425}
+          >
             <GoViewerBoard
-              width={425}
               startAt="end"
               interactive={true}
               showMoveNumbers
@@ -675,9 +713,11 @@ export function SugeundaesajeonCover({
             as in Dia. <DiagramRef label="bottom_right_4" />
             .
           </ArticleParagraph>
-          <GoViewer sgf="/articles/sugeundaesajeon-cover/bottom_right_4.sgf">
+          <GoViewer
+            sgf="/articles/sugeundaesajeon-cover/bottom_right_4.sgf"
+            width={425}
+          >
             <GoViewerBoard
-              width={425}
               startAt="end"
               interactive={true}
               showMoveNumbers
@@ -702,9 +742,11 @@ export function SugeundaesajeonCover({
             White fixes the elephant in the room, Black can
             capture the corner:
           </ArticleParagraph>
-          <GoViewer sgf="/articles/sugeundaesajeon-cover/bottom_right_2.sgf">
+          <GoViewer
+            sgf="/articles/sugeundaesajeon-cover/bottom_right_2.sgf"
+            width={425}
+          >
             <GoViewerBoard
-              width={425}
               startAt="end"
               interactive={true}
               showMoveNumbers
@@ -729,9 +771,11 @@ export function SugeundaesajeonCover({
             nonetheless Black will still have the option to
             simply revert to everything collapsing:
           </ArticleParagraph>
-          <GoViewer sgf="/articles/sugeundaesajeon-cover/bottom_right_3.sgf">
+          <GoViewer
+            sgf="/articles/sugeundaesajeon-cover/bottom_right_3.sgf"
+            width={425}
+          >
             <GoViewerBoard
-              width={425}
               startAt="end"
               interactive={true}
               showMoveNumbers
@@ -759,9 +803,11 @@ export function SugeundaesajeonCover({
             capturing Black&apos;s stones on the side:
           </ArticleParagraph>
         </ArticleSubSection>
-        <GoViewer sgf="/articles/sugeundaesajeon-cover/bottom_right_5.sgf">
+        <GoViewer
+          sgf="/articles/sugeundaesajeon-cover/bottom_right_5.sgf"
+          width={425}
+        >
           <GoViewerBoard
-            width={425}
             startAt="end"
             interactive={true}
             showMoveNumbers

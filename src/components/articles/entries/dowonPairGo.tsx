@@ -295,11 +295,11 @@ export function DowonPairGo({ article }: ArticleProps) {
             showMoveNumbers
             fromNumber={68}
           />
-          <GoViewerControls />
           <GoViewerPlayers
             playerBlack="Shibano Toramaru 芝野虎丸 9p"
             playerWhite="Wang Xinghao 王星昊 9p"
           />
+          <GoViewerControls />
           <GoViewerLegend>
             White should have sacrificed the top and
             destroyed the top-right corner.

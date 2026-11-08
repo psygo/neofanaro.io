@@ -2,8 +2,17 @@
 
 import { useGoViewer } from "./goViewerContext"
 
+// Sized off the shared <GoViewer>'s own container width (`cqw`, see
+// its `containerType: "inline-size"`) rather than the viewport, so
+// buttons shrink with how narrow the diagram itself actually renders
+// — capped at a comfortable tap-target size on a wide board, down to
+// a smaller one once the container (and so the board) gets tight.
 const buttonClasses =
-  "flex h-8 w-8 cursor-pointer items-center justify-center rounded-md text-slate-700 transition duration-150 hover:bg-slate-200 active:bg-slate-300 disabled:cursor-not-allowed disabled:opacity-40 disabled:active:bg-transparent dark:text-slate-300 dark:hover:bg-slate-700 dark:active:bg-slate-600"
+  "flex h-[clamp(1.625rem,9cqw,2rem)] w-[clamp(1.625rem,9cqw,2rem)] cursor-pointer items-center justify-center rounded-md text-slate-700 transition duration-150 hover:bg-slate-200 active:bg-slate-300 disabled:cursor-not-allowed disabled:opacity-40 disabled:active:bg-transparent dark:text-slate-300 dark:hover:bg-slate-700 dark:active:bg-slate-600"
+const moveCounterClasses =
+  "min-w-[2rem] px-1 text-center text-[clamp(0.75rem,3.4cqw,0.875rem)] font-semibold text-slate-700 tabular-nums dark:text-slate-300"
+const buttonIconTextClasses =
+  "text-[clamp(0.75rem,3.4cqw,0.875rem)] font-semibold"
 
 function Triangle({
   direction,
@@ -106,11 +115,11 @@ function ResetIcon() {
 }
 
 function PassIcon() {
-  return <span className="text-sm font-semibold">P</span>
+  return <span className={buttonIconTextClasses}>P</span>
 }
 
 function MoveNumbersIcon() {
-  return <span className="text-sm font-semibold">#</span>
+  return <span className={buttonIconTextClasses}>#</span>
 }
 
 export type GoViewerControlsProps = {
@@ -147,11 +156,17 @@ export function GoViewerControls({
   return (
     // Two rows, always — nav on top, move-numbers/pass/reset below —
     // rather than a single row that only wraps once the viewport
-    // gets too narrow to fit it.
+    // gets too narrow to fit it. Its own `containerType` (rather
+    // than the shared <GoViewer>'s) scopes the `cqw` units below to
+    // just this element — putting it on <GoViewer> instead would
+    // imply CSS style containment there, which isolates the
+    // `dia-diagram` counter <GoViewerLegend> relies on and breaks
+    // "Dia. N." numbering across sibling diagrams.
     <div
-      className={`mx-auto flex max-w-full flex-col items-center gap-1 rounded-lg p-1 dark:bg-slate-950 ${className}`}
+      className={`mx-auto flex max-w-full flex-col items-center gap-[clamp(0.125rem,1cqw,0.25rem)] rounded-lg p-1 dark:bg-slate-950 ${className}`}
+      style={{ containerType: "inline-size" }}
     >
-      <div className="flex items-center gap-1">
+      <div className="flex items-center gap-[clamp(0.125rem,1cqw,0.25rem)]">
         <button
           type="button"
           title="Go to start"
@@ -179,7 +194,7 @@ export function GoViewerControls({
         >
           <StepBackIcon />
         </button>
-        <span className="min-w-8 px-1 text-center text-sm font-semibold text-slate-700 tabular-nums dark:text-slate-300">
+        <span className={moveCounterClasses}>
           {moveNumber}
         </span>
         <button
@@ -210,7 +225,7 @@ export function GoViewerControls({
           <SkipEndIcon />
         </button>
       </div>
-      <div className="flex items-center gap-1">
+      <div className="flex items-center gap-[clamp(0.125rem,1cqw,0.25rem)]">
         <button
           type="button"
           title={

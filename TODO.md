@@ -2,8 +2,6 @@
 
 ## Priorities
 
-- Names of the players should shrink
-
 - Tesuji Encyclopedia Cover article
   - Add links to the Tesuji Encyclopedia article to the other articles.
   - Mention the source video: [Inseong's Invasion Masterclass](https://youtu.be/bLn4UsbjdWA?t=3692)

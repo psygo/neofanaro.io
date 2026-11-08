@@ -115,11 +115,11 @@ export function OkaoigoAiArticles({
             interactive={false}
             showMoveNumbers
           />
-          <GoViewerControls />
           <GoViewerPlayers
             playerBlack="Unknown Pro"
             playerWhite="Fine Art 绝艺"
           />
+          <GoViewerControls />
           <GoViewerLegend>
             How should you deal with Black&apos;s cut?
           </GoViewerLegend>
@@ -202,11 +202,11 @@ export function OkaoigoAiArticles({
             interactive={false}
             showMoveNumbers
           />
-          <GoViewerControls />
           <GoViewerPlayers
             playerBlack="Unknown Pro"
             playerWhite="Fine Art 绝艺"
           />
+          <GoViewerControls />
           <GoViewerLegend>
             How can White survive or escape?
           </GoViewerLegend>

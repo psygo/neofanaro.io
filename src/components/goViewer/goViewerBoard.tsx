@@ -248,10 +248,13 @@ export type GoViewerBoardProps = {
   // individually for a non-square render. None of these change the
   // board's own intrinsic geometry (that's `cellSize`/`padding`) —
   // they just scale the final SVG output, the same way an <img>'s
-  // width/height would. Defaults to 400 when `region` is set (a
-  // partial/cropped board), since those don't otherwise have a
-  // sensible intrinsic width to fill their container with; a full
-  // board stays fluid (fills its container) unless given explicitly.
+  // width/height would. `width` here defaults to the shared
+  // <GoViewer width={...}> (the main way of sizing a diagram — see
+  // its own doc); when neither that nor any of these is set, a
+  // partial/cropped board (`region`) falls back to 300, since it
+  // doesn't otherwise have a sensible intrinsic width to fill its
+  // container with — a full board stays fluid (fills its container)
+  // unless given a size some other way.
   size?: number
   width?: number
   height?: number
@@ -311,8 +314,8 @@ export function GoViewerBoard({
   startAt = "start",
   region,
   cellSize = defaultCellSize,
-  size = region ? 400 : undefined,
-  width: widthOverride,
+  size = region ? 300 : undefined,
+  width: widthProp,
   height: heightOverride,
   padding = defaultPadding,
   coordinatePadding = defaultCoordinatePadding,
@@ -407,10 +410,19 @@ export function GoViewerBoard({
     labels,
     moveNumber: viewIndex,
     showMoveNumbers: contextShowMoveNumbers,
+    width: contextWidth,
     placeStone,
     applyStartAt,
     loadId,
   } = useGoViewer()
+
+  // An explicit `width`/`height`/`size` on the board itself always
+  // wins; otherwise falls back to the shared <GoViewer width={...}>
+  // (see its own doc) — same aspect-preserving behavior as if that
+  // number had been passed here directly, so a partial/cropped
+  // board's own `size` default (below) only kicks in when neither is
+  // set.
+  const widthOverride = widthProp ?? contextWidth
 
   // `true` is the same as the unset default, so it still follows the
   // shared toggle (<GoViewerControls>'s "#" button) — only an
