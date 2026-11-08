@@ -31,7 +31,7 @@ export function SugeundaesajeonCover({
       <ArticleSection>
         <ArticleSectionTitle>Context</ArticleSectionTitle>
         <ArticleParagraph>
-          On a previous article, I shared{" "}
+          In a previous article, I shared{" "}
           <ArticleLink
             internal
             href="/articles/sugeundaesajeon"
@@ -91,9 +91,9 @@ export function SugeundaesajeonCover({
         <ArticleSectionTitle>Problems</ArticleSectionTitle>
         <ArticleParagraph>
           Imagine the problems on my cover as isolated in
-          their respective quadrants. And in this
-          encyclopedia, you need to figure out whose turn it
-          is.
+          their respective quadrants. And note that, in this
+          edition of the encyclopedia, you need to figure
+          out whose turn it is.
         </ArticleParagraph>
         <ArticleSubSection>
           <ArticleSubSectionTitle>
@@ -200,8 +200,8 @@ export function SugeundaesajeonCover({
           <ArticleParagraph>
             Black ends up in a lot of trouble. Connecting
             the ko is terrible shape, and White gets an
-            extra stone at the top. But fighting that ko is
-            an unthinkable flower ko.
+            extra stone at the top. But fighting here is an
+            unthinkable flower ko.
           </ArticleParagraph>
         </ArticleSubSection>
         <ArticleSubSection>
@@ -211,7 +211,7 @@ export function SugeundaesajeonCover({
           <ArticleParagraph>
             Next is a problem which tests out your side
             life-and-death and &quot;my opponent&apos;s best
-            move is my best move &quot; thinking &mdash; the
+            move is my best move&quot; thinking &mdash; the
             latter being what Inseong Hwang 8d EGF calls{" "}
             <ArticleLink href="https://eyd.yunguseng.com/videos/index.php?id=686">
               &quot;1-2-3 reading&quot;
@@ -654,8 +654,7 @@ export function SugeundaesajeonCover({
             </GoViewerLegend>
           </GoViewer>
           <ArticleParagraph>
-            This last situation was covered in at the end of
-            an{" "}
+            This last situation was covered at the end of an{" "}
             <ArticleLink href="https://youtu.be/bLn4UsbjdWA">
               outstanding invasion lecture by Inseong Hwang
               8d EGF
@@ -704,7 +703,7 @@ export function SugeundaesajeonCover({
             The key here is to notice how short on liberties
             White&apos;s stones are. They are basically all
             linked by kosumis, which is usually a type of
-            conditional connection which gets squeezed and
+            conditional connection that gets squeezed and
             turned into empty triangles very easily.
           </ArticleParagraph>
           <ArticleParagraph>
@@ -772,8 +771,8 @@ export function SugeundaesajeonCover({
             After the atari, if White keeps resisting, we
             will eventually reach Dia.{" "}
             <DiagramRef label="bottom_right_1" />. And, if
-            White fixes the elephant in the room, Black can
-            capture the corner:
+            White addresses the elephant in the room, Black
+            can capture the corner:
           </ArticleParagraph>
           <GoViewer
             sgf="/articles/sugeundaesajeon-cover/bottom_right_2.sgf"
