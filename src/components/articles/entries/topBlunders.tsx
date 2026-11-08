@@ -453,6 +453,11 @@ export function TopBlunders({ article }: ArticleProps) {
             even find out some of those are actually not
             sente!
           </ArticleParagraph>
+          <ArticleBlockQuote>
+            Solving tsumegos before a playing sessions also
+            helps a lot with spending your daily blunder
+            quota!
+          </ArticleBlockQuote>
           <ArticleParagraph>
             Lastly, in case you&apos;re overwhelmed by
             others potentially shaming you, I suggest{" "}

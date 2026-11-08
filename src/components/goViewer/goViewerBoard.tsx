@@ -943,7 +943,7 @@ export function GoViewerBoard({
                   />
                 )
               )}
-              {isKoPoint && !stone && (
+              {isKoPoint && !displayStone && (
                 <circle
                   cx={pixelX(col)}
                   cy={pixelY(row)}

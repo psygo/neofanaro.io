@@ -11,6 +11,7 @@ import {
   ArticleSubSection,
   ArticleSubSectionTitle,
   ArticleTableOfContents,
+  ArticleYouTubeIframe,
   DiagramRef,
   ImageLegend,
 } from "../articleContent"
@@ -423,6 +424,181 @@ export function SugeundaesajeonCover({
             The variation attemps for this problem are a
             very good way of improving your skills as well.
           </ArticleParagraph>
+          <ArticleParagraph>
+            For example, if you try the typical ko shape in
+            the corner:
+          </ArticleParagraph>
+          <GoViewer sgf="/articles/sugeundaesajeon-cover/bottom_left_1.sgf">
+            <GoViewerBoard
+              width={425}
+              startAt="end"
+              interactive={true}
+              showMoveNumbers
+              showCapturedStones
+              region={{
+                minRow: 9,
+                maxRow: 18,
+                minCol: 0,
+                maxCol: 10,
+              }}
+            />
+            <GoViewerControls />
+            <GoViewerLegend>
+              Trying out a typical kosumi tesuji in the
+              corner.
+            </GoViewerLegend>
+          </GoViewer>
+          <ArticleParagraph>
+            It looks like it works, but, no, it
+            doesn&apos;t. White 8 in Dia.{" "}
+            <DiagramRef label="bottom_left_1" />
+            &nbsp;guarantees Black can&apos;t play at A.
+          </ArticleParagraph>
+          <ArticleParagraph>
+            White needs to be careful about how to kill. If
+            White tries a more direct liberty reduction
+            instead as in Dia.{" "}
+            <DiagramRef label="bottom_left_2" />, we get a
+            ko.
+          </ArticleParagraph>
+          <GoViewer sgf="/articles/sugeundaesajeon-cover/bottom_left_2.sgf">
+            <GoViewerBoard
+              width={425}
+              startAt="end"
+              interactive={true}
+              showMoveNumbers
+              showCapturedStones
+              region={{
+                minRow: 9,
+                maxRow: 18,
+                minCol: 0,
+                maxCol: 10,
+              }}
+            />
+            <GoViewerControls />
+            <GoViewerLegend>
+              A more direct liberty reduction allows Black
+              to create a ko.
+            </GoViewerLegend>
+          </GoViewer>
+          <ArticleParagraph>
+            The correct solution to this problem is
+            extending the liberties with an empty triangle
+            while allowing for life in the corner:
+          </ArticleParagraph>
+          <GoViewer sgf="/articles/sugeundaesajeon-cover/bottom_left_3.sgf">
+            <GoViewerBoard
+              width={425}
+              startAt="end"
+              interactive={true}
+              showMoveNumbers
+              showCapturedStones
+              region={{
+                minRow: 9,
+                maxRow: 18,
+                minCol: 0,
+                maxCol: 10,
+              }}
+            />
+            <GoViewerControls />
+            <GoViewerLegend>
+              Black creates miai between A and B.
+            </GoViewerLegend>
+          </GoViewer>
+          <ArticleParagraph>
+            If White plays A in Dia.{" "}
+            <DiagramRef label="bottom_left_3" />, Black
+            captures the C stones by cutting at B. And, if
+            White connects at B, Black simply lives:
+          </ArticleParagraph>
+          <GoViewer sgf="/articles/sugeundaesajeon-cover/bottom_left_4.sgf">
+            <GoViewerBoard
+              width={425}
+              startAt="end"
+              interactive={true}
+              showMoveNumbers
+              showCapturedStones
+              region={{
+                minRow: 9,
+                maxRow: 18,
+                minCol: 0,
+                maxCol: 10,
+              }}
+            />
+            <GoViewerControls />
+            <GoViewerLegend>
+              Black lives in the corner.
+            </GoViewerLegend>
+          </GoViewer>
+          <ArticleParagraph>
+            However, that&apos;s not actually 100% correct.
+            White still has an ace up its sleeve.
+          </ArticleParagraph>
+          <GoViewer sgf="/articles/sugeundaesajeon-cover/bottom_left_5.sgf">
+            <GoViewerBoard
+              width={425}
+              startAt="end"
+              interactive={true}
+              showMoveNumbers
+              showCapturedStones
+              region={{
+                minRow: 9,
+                maxRow: 18,
+                minCol: 0,
+                maxCol: 10,
+              }}
+            />
+            <GoViewerControls />
+            <GoViewerLegend>
+              White creates a desperate ko in the corner to
+              capture everything. White could also have
+              started the ko by starting at 6.
+            </GoViewerLegend>
+          </GoViewer>
+          <ArticleParagraph>
+            With the brilliant move of White 2, we reach ko.
+            But White should be careful, since losing this
+            means a bigger loss overall, this is the type of
+            ko you should only trigger if there&apos;s no
+            other way of winning the game.
+          </ArticleParagraph>
+          <ArticleParagraph>
+            That position might look a bit esoteric, but it
+            could come up, for instance, from a common 3-3
+            invasion against a 4-4 + keima enclosure:
+          </ArticleParagraph>
+          <GoViewer sgf="/articles/sugeundaesajeon-cover/bottom_left_6.sgf">
+            <GoViewerBoard
+              width={425}
+              startAt="end"
+              interactive={true}
+              showMoveNumbers
+              showCapturedStones
+              region={{
+                minRow: 0,
+                maxRow: 10,
+                minCol: 8,
+                maxCol: 18,
+              }}
+            />
+            <GoViewerControls />
+            <GoViewerLegend>
+              White uses the same tesuji to survive in a 3-3
+              invasion against a 4-4 + keima enclosure.
+            </GoViewerLegend>
+          </GoViewer>
+          <ArticleParagraph>
+            That last situation was covered in an{" "}
+            <ArticleLink href="https://youtu.be/bLn4UsbjdWA">
+              outstanding invasion lecture by Inseong Hwang
+              8d EGF
+            </ArticleLink>
+            .
+          </ArticleParagraph>
+          <ArticleYouTubeIframe
+            src="https://www.youtube.com/embed/bLn4UsbjdWA"
+            title="Top 5 Biggest Blunders In Go!"
+          />
         </ArticleSubSection>
         <ArticleSubSection>
           <ArticleSubSectionTitle>
