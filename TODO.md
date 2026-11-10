@@ -2,10 +2,6 @@
 
 ## Priorities
 
-- Tesuji Encyclopedia Cover article
-  - Add links to the Tesuji Encyclopedia article to the other articles.
-  - Mention the source video: [Inseong's Invasion Masterclass](https://youtu.be/bLn4UsbjdWA?t=3692)
-
 ## Bugs
 
 ## Articles
@@ -21,6 +17,8 @@
 - Extra blunders article
   - The extras are on a a comment on a [Go Game Series video](https://youtu.be/LkzDawFyAGA).
   - Also mention my "psygo's Corner" post on tennis.
+- [How many Go positions with 3-4, 3-3 and 4-4](https://chatgpt.com/share/6af31b46-5e38-83e8-a841-4eb0247108b1)
+  - Much more complicated than expected.
 
 ### Edits
 

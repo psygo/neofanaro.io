@@ -16,6 +16,7 @@ import {
   GoViewerTest,
   Haengma3,
   IngCupSuicide,
+  KifuBook,
   Lang101,
   LatexBackgammon,
   LatexShogi,
@@ -95,6 +96,8 @@ function whichArticle(
       return <Haengma3 article={post} />
     case "ing-cup-suicide":
       return <IngCupSuicide article={post} />
+    case "kifu-book":
+      return <KifuBook article={post} />
     case "lang101":
       return <Lang101 article={post} />
     case "latex-backgammon":
