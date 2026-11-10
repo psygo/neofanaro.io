@@ -44,11 +44,20 @@ export function KifuBook({ article }: ArticleProps) {
           <ArticleLink href="https://github.com/psygo/tsumego_workbooks">
             @psygo/tsumego_workbooks
           </ArticleLink>
-          . One major benefit of doing things like this is
-          the ease of editing and customizing. For example,
-          if you would like to take out the coordinates to
-          get more space for the board itself, doing so is
-          as easy as changing a single parameter.
+          .
+        </ArticleParagraph>
+        <ArticleParagraph>
+          One major benefit of doing things with code is the
+          ease of editing and customizing. For example, if
+          you would like to take out the coordinates to get
+          more space for the board itself, doing so is as
+          easy as changing a single parameter.
+        </ArticleParagraph>
+        <ArticleParagraph>
+          A lot of people might not want to buy or print the
+          whole book, but might want to use a kifu page here
+          and there. So use the PDF on demand and print the
+          pages you see fit!
         </ArticleParagraph>
         <ArticleBlockQuote>
           I have also included pages for the 9&times;9 and
