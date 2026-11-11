@@ -126,7 +126,7 @@ export function MyFavoriteManga({ article }: ArticleProps) {
           . Besides lending his name to the title of the
           highly rated and recommended eponymous novel by
           Susanna Clarke (
-          <ArticleLink href="https://www.goodreads.com/book/show/50202953-piranesi?ac=1&from_search=true&qid=igWWKez2kr&rank=1">
+          <ArticleLink href="https://www.goodreads.com/book/show/50202953-piranesi">
             Piranesi
           </ArticleLink>
           ), Giovanni Piranesi (1720 - 1778) was also a
@@ -207,6 +207,11 @@ export function MyFavoriteManga({ article }: ArticleProps) {
             </ArticleLink>
           </li>
           <li>
+            <ArticleLink href="https://www.goodreads.com/book/show/41735535-oldboy-1">
+              Oldboy
+            </ArticleLink>
+          </li>
+          <li>
             <ArticleLink href="https://www.goodreads.com/book/show/25783832-one-punch-man-vol-1">
               One Punch Man
             </ArticleLink>
@@ -227,7 +232,7 @@ export function MyFavoriteManga({ article }: ArticleProps) {
             </ArticleLink>
           </li>
           <li>
-            <ArticleLink href="https://www.goodreads.com/book/show/6759156-dorohedoro-vol-1?ac=1&from_search=true&qid=to0XvXnyva&rank=1">
+            <ArticleLink href="https://www.goodreads.com/book/show/6759156-dorohedoro-vol-1">
               Dorohedoro
             </ArticleLink>
           </li>
