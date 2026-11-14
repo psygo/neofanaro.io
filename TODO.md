@@ -2,6 +2,8 @@
 
 ## Priorities
 
+- Create a Tesuji Encyclopedia Series
+
 ## Bugs
 
 ## Articles
