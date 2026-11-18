@@ -13,6 +13,7 @@ import {
   DowonPairGo,
   Gerentia,
   GobanWeb,
+  GoHallOfFame,
   GoViewerTest,
   Haengma3,
   IngCupSuicide,
@@ -90,6 +91,8 @@ function whichArticle(
       return <Gerentia article={post} />
     case "goban-web":
       return <GobanWeb article={post} />
+    case "go-hall-of-fame":
+      return <GoHallOfFame article={post} />
     case "go-viewer-test":
       return <GoViewerTest article={post} />
     case "haengma3":

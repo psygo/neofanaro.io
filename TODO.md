@@ -3,6 +3,10 @@
 ## Priorities
 
 - Create a Tesuji Encyclopedia Series
+- AI Sensei Embed Component
+  - Don't forget the "Current Move" feature.
+- Add a "Highlighted" or "Featured" articles section.
+  - Maybe both to the articles and home pages.
 
 ## Bugs
 
@@ -10,17 +14,28 @@
 
 ## Go
 
+- Tips for Crawling on the Second Line
+  - 5 on the second line creates an eye.
+  - [SJS vs Byun Sangil on the 2026 Samsung Cup Semifinal](https://youtu.be/NaiOxgP8BZE)
+  - [My current favorite joseki when the other player tries to squeeze](https://ai-sensei.com/game/wCbiGfZSh7TjX5eXM8TDgvMzi5u2/bedf7a57-7b86-470d-92b7-c8e9252b67e8)
+  - [Inseong vs Pro teacher on the crawling forever game](https://ai-sensei.com/game/wCbiGfZSh7TjX5eXM8TDgvMzi5u2/xhDBZQMmhGHBJo0QxYMp)
 - Layers of thought in Go as a much better way of assessing progress.
   - Dealing with the rules, then ataris, then second line basic patterns, etc.
   - Dealing with the clock is also another layer, I suppose.
   - Where am I in the layers?
-- Kifu Book
 - [Tewari Delight #1](https://youtu.be/c3GU2td0To8)
 - Extra blunders article
   - The extras are on a a comment on a [Go Game Series video](https://youtu.be/LkzDawFyAGA).
   - Also mention my "psygo's Corner" post on tennis.
 - [How many Go positions with 3-4, 3-3 and 4-4](https://chatgpt.com/share/6af31b46-5e38-83e8-a841-4eb0247108b1)
   - Much more complicated than expected.
+- 2026 Games of the Year
+  - Mention my [Go - Reviews] and [Go - Pro Games] playlists.
+  1. [SJS vs Byun Sangil for the 2026 Samsung Cup](https://youtu.be/NaiOxgP8BZE)
+  2. [Fukuoka Kotaro vs Ichiriki](https://youtu.be/G_C3MC8B17w?list=PLMYMhzMuvitRTPetvlWIy4rUhQNkT1zmh)
+  3. [SJS vs Byun Sangil for the 2026 Korean National Team League](https://youtu.be/a45BnGx7UDM?list=PLeL-TssJiolY)
+- My Go Hall of Fame website
+  - My Wikipedia Timeline component.
 
 ### Edits
 
@@ -44,6 +59,7 @@
   - Believe we are good and if we fail, pardon ourselves.
     - Of course, we shouldn't go too far, and we should only apply this to fields in which we are minimally competent.
 - Tolkien's Despise for Allegory
+  - [Some books ChatGPT recommended](https://chatgpt.com/share/6afdb47d-4884-83e9-9394-21541414505d)
 
 ## UI
 

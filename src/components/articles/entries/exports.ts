@@ -1,6 +1,7 @@
 export * from "./bestOfFanaroio"
 export * from "./dowonPairGo"
 export * from "./gerentia"
+export * from "./goHallOfFame"
 export * from "./gobanWeb"
 export * from "./goViewerTest"
 export * from "./haengma3"
