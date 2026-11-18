@@ -378,6 +378,53 @@ export function ArticleBilibiliIframe({
   )
 }
 
+// AI Sensei's own page always renders a fixed-height top bar (64px)
+// above a square board (exactly as tall as it is wide), followed by
+// the player names, move-review arrows and win-rate graph, which
+// together always add a further fixed 493.765625px below the board
+// regardless of viewport width (measured directly against the live
+// site at several widths, under its own mobile layout breakpoint —
+// above ~700px wide it switches to a sidebar layout instead of this
+// top bar). So the iframe is rendered one `cqw`-scaled copy of itself
+// (`containerType` on its container below) oversized by the top bar's
+// height, then pulled up by that same amount and clipped by the
+// container's `overflow-hidden` — cropping the top bar out while
+// keeping the board, arrows and graph, at any width.
+const AI_SENSEI_TOP_BAR_HEIGHT = 64
+const AI_SENSEI_CONTENT_BELOW_BOARD = 493.765625
+
+export function ArticleAiSenseiIframe({
+  src,
+  title,
+}: ArticleIframeProps) {
+  return (
+    <div className="mt-5 mb-5 flex justify-center">
+      <div
+        className="mx-2 w-full max-w-lg sm:mx-6"
+        style={{ containerType: "inline-size" }}
+      >
+        <div
+          className="overflow-hidden rounded-md border border-slate-200 shadow-lg sm:rounded-lg dark:border-slate-700"
+          style={{
+            height: `calc(100cqw + ${AI_SENSEI_CONTENT_BELOW_BOARD}px)`,
+          }}
+        >
+          <iframe
+            src={src}
+            title={title}
+            style={{
+              width: "100cqw",
+              height: `calc(100cqw + ${AI_SENSEI_TOP_BAR_HEIGHT + AI_SENSEI_CONTENT_BELOW_BOARD}px)`,
+              marginTop: `-${AI_SENSEI_TOP_BAR_HEIGHT}px`,
+              border: 0,
+            }}
+          />
+        </div>
+      </div>
+    </div>
+  )
+}
+
 export function ArticleDivider() {
   return (
     <hr className="mt-6 mb-6 border border-gray-300 dark:border-slate-700" />

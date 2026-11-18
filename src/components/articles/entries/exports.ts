@@ -1,4 +1,5 @@
 export * from "./bestOfFanaroio"
+export * from "./bestGamesOf2026"
 export * from "./dowonPairGo"
 export * from "./gerentia"
 export * from "./goHallOfFame"

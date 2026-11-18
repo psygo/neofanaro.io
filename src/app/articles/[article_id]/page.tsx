@@ -9,6 +9,7 @@ import { Main } from "@components/common/main"
 import { CpiSuspense } from "@components/common/cpiSuspense"
 
 import {
+  BestGamesOf2026,
   BestOfFanaroio,
   DowonPairGo,
   Gerentia,
@@ -85,6 +86,8 @@ function whichArticle(
   switch (path) {
     case "best-of-fanaroio":
       return <BestOfFanaroio article={post} />
+    case "best-games-of-2026":
+      return <BestGamesOf2026 article={post} />
     case "dowon-pairgo":
       return <DowonPairGo article={post} />
     case "gerentia":
