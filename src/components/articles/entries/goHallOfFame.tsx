@@ -2,6 +2,7 @@ import { ArticleProps } from "@types"
 
 import { Article } from "@components/articles/article"
 import {
+  ArticleBlockQuote,
   ArticleImageWithLegend,
   ArticleLink,
   ArticleParagraph,
@@ -44,6 +45,13 @@ export function GoHallOfFame({ article }: ArticleProps) {
           being tightly connected, providing many other
           visualization possibilities as well.
         </ArticleParagraph>
+        <ArticleBlockQuote>
+          My timeline is largely based on the great{" "}
+          <ArticleLink href="https://senseis.xmp.net/?GoHistory">
+            Sensei&apos;s Library &quot;Go History&quot;
+          </ArticleLink>
+          &nbsp;page.
+        </ArticleBlockQuote>
         <ArticleImageWithLegend
           src="/articles/go-hall-of-fame/timeline_1.png"
           width={600}

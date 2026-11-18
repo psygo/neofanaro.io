@@ -3,7 +3,7 @@
 ## Priorities
 
 - Create a Tesuji Encyclopedia Series
-- AI Sensei Embed Component
+- AI Sensei Embedded Component
   - Don't forget the "Current Move" feature.
 - Add a "Highlighted" or "Featured" articles section.
   - Maybe both to the articles and home pages.
@@ -24,9 +24,6 @@
   - Dealing with the clock is also another layer, I suppose.
   - Where am I in the layers?
 - [Tewari Delight #1](https://youtu.be/c3GU2td0To8)
-- Extra blunders article
-  - The extras are on a a comment on a [Go Game Series video](https://youtu.be/LkzDawFyAGA).
-  - Also mention my "psygo's Corner" post on tennis.
 - [How many Go positions with 3-4, 3-3 and 4-4](https://chatgpt.com/share/6af31b46-5e38-83e8-a841-4eb0247108b1)
   - Much more complicated than expected.
 - 2026 Games of the Year
@@ -34,8 +31,7 @@
   1. [SJS vs Byun Sangil for the 2026 Samsung Cup](https://youtu.be/NaiOxgP8BZE)
   2. [Fukuoka Kotaro vs Ichiriki](https://youtu.be/G_C3MC8B17w?list=PLMYMhzMuvitRTPetvlWIy4rUhQNkT1zmh)
   3. [SJS vs Byun Sangil for the 2026 Korean National Team League](https://youtu.be/a45BnGx7UDM?list=PLeL-TssJiolY)
-- My Go Hall of Fame website
-  - My Wikipedia Timeline component.
+- Wikipedia Timeline Component
 
 ### Edits
 
@@ -51,6 +47,7 @@
 
 - Aquarifolio
 - An article about my Go Viewer.
+- CrossLang
 
 ## Others
 
