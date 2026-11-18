@@ -393,10 +393,22 @@ export function ArticleBilibiliIframe({
 const AI_SENSEI_TOP_BAR_HEIGHT = 64
 const AI_SENSEI_CONTENT_BELOW_BOARD = 493.765625
 
+type ArticleAiSenseiIframeProps = ArticleIframeProps & {
+  // Which move AI Sensei opens the game at — its own `?move=N` URL
+  // param.
+  move?: number
+}
+
 export function ArticleAiSenseiIframe({
   src,
   title,
-}: ArticleIframeProps) {
+  move,
+}: ArticleAiSenseiIframeProps) {
+  const srcWithMove =
+    move === undefined
+      ? src
+      : `${src}${src.includes("?") ? "&" : "?"}move=${move}`
+
   return (
     <div className="mt-5 mb-5 flex justify-center">
       <div
@@ -410,7 +422,7 @@ export function ArticleAiSenseiIframe({
           }}
         >
           <iframe
-            src={src}
+            src={srcWithMove}
             title={title}
             style={{
               width: "100cqw",
