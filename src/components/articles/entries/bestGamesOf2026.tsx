@@ -35,7 +35,7 @@ export function BestGamesOf2026({ article }: ArticleProps) {
         <ArticleUnorderedList>
           <li>
             <ArticleLink href="https://www.youtube.com/@JianqiuChen">
-              Go Game Series &mdash; YouTube Channel
+              Go Games Series &mdash; YouTube Channel
             </ArticleLink>
           </li>
           <li>
@@ -73,7 +73,7 @@ export function BestGamesOf2026({ article }: ArticleProps) {
           />
           <ArticleYouTubeIframe
             src="https://www.youtube.com/embed/6alyCMYmrBw"
-            title="Go Game Series - Shin Jinseo 9p vs Byun Sangil 9p &mdash; The 2026 Samsung Cup - Semi-Final"
+            title="Go Games Series - Shin Jinseo 9p vs Byun Sangil 9p &mdash; The 2026 Samsung Cup - Semi-Final"
           />
           <ArticleParagraph>
             Both Korean 9p&apos;s played like demigods, so
@@ -117,7 +117,7 @@ export function BestGamesOf2026({ article }: ArticleProps) {
           </ArticleParagraph>
           <ArticleYouTubeIframe
             src="https://www.youtube.com/embed/G_C3MC8B17w"
-            title="Go Game Series - Fukuoka Kotaro 7p vs Ichiriki Ryo 9p - Honinbo Title Match - Game 4"
+            title="Go Games Series - Fukuoka Kotaro 7p vs Ichiriki Ryo 9p - Honinbo Title Match - Game 4"
           />
           <ArticleParagraph>
             Against Ichiriki Ryo 9p, we expect gargantuan
@@ -179,7 +179,7 @@ export function BestGamesOf2026({ article }: ArticleProps) {
           </ArticleParagraph>
           <ArticleYouTubeIframe
             src="https://www.youtube.com/embed/rSZ7tmyRbpI"
-            title="Go Game Series - Shibano Toramaru 9p vs Ichiriki Ryo 9p &mdash; Meijin Title Match - Game 7"
+            title="Go Games Series - Shibano Toramaru 9p vs Ichiriki Ryo 9p &mdash; Meijin Title Match - Game 7"
           />
           <ArticleAiSenseiIframe
             src="https://ai-sensei.com/game/wCbiGfZSh7TjX5eXM8TDgvMzi5u2/316be452-c0b4-4def-ab00-1cc363a79cc8?move=66"

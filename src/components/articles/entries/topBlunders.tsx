@@ -32,12 +32,12 @@ export function TopBlunders({ article }: ArticleProps) {
       <ArticleTableOfContents />
       <ArticleSection>
         <ArticleSectionTitle>
-          Go Game Series&apos; Blunders Compilation
+          Go Games Series&apos; Blunders Compilation
         </ArticleSectionTitle>
         <ArticleParagraph>
           This article is an extension to another{" "}
           <ArticleLink href="https://youtu.be/LkzDawFyAGA">
-            outstanding video from Go Game Series
+            outstanding video from Go Games Series
           </ArticleLink>
           :
         </ArticleParagraph>

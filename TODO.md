@@ -39,7 +39,7 @@
 - Add a mention to the next shapes in the series, such as the [_scorpion_](https://senseis.xmp.net/?ScorpionShape) and.
 - Some other Mammoth's Jump examples, maybe keep it for a follow-up article (add a section to those articles with the series catalog):
   - [From a game against Ariel (move 66)](https://online-go.com/game/91113672)
-  - [Two examples from one of Go Game Series videos](https://youtu.be/dM-riBSFGKI?t=113)
+  - [Two examples from one of Go Games Series videos](https://youtu.be/dM-riBSFGKI?t=113)
     - 1:53
     - 13:17
   - [Choi Jeong's Attack against Yu Zhiying 8p](https://youtu.be/pdo5b_TrfwY?t=442)

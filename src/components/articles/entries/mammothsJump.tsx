@@ -425,16 +425,16 @@ export function MammothsJump({ article }: ArticleProps) {
           If you would like to know how Black should deal
           with White&apos;s pokes, check out{" "}
           <ArticleLink href="https://youtu.be/FqiSshkeXKM?t=2218">
-            Go Game Series&apos;s{" "}
+            Go Games Series&apos;s{" "}
             <em>China Japan Super Go Match</em> series
           </ArticleLink>{" "}
-          &mdash; Go Game Series is, in my opinion, the best
-          Go YouTube channel at this point &mdash;, which is
-          where that example comes from:
+          &mdash; Go Games Series is, in my opinion, the
+          best Go YouTube channel at this point &mdash;,
+          which is where that example comes from:
         </ArticleParagraph>
         <ArticleYouTubeIframe
           src="https://www.youtube.com/embed/FqiSshkeXKM"
-          title="Go Game Series - TIGER'S TEETH! [China Japan Super Go Match] Season 1 Episode 3"
+          title="Go Games Series - TIGER'S TEETH! [China Japan Super Go Match] Season 1 Episode 3"
         />
       </ArticleSection>
       <ArticleSection>
