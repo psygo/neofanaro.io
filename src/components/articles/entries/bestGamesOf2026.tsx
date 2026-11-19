@@ -12,6 +12,8 @@ import {
   ArticleSubSection,
   ArticleTableOfContents,
   ArticleUnorderedList,
+  ArticleImageWithLegend,
+  ImageLegend,
 } from "../articleContent"
 
 export function BestGamesOf2026({ article }: ArticleProps) {
@@ -33,7 +35,7 @@ export function BestGamesOf2026({ article }: ArticleProps) {
         <ArticleUnorderedList>
           <li>
             <ArticleLink href="https://www.youtube.com/@JianqiuChen">
-              Go Game Series YouTube Channel
+              Go Game Series &mdash; YouTube Channel
             </ArticleLink>
           </li>
           <li>
@@ -75,9 +77,25 @@ export function BestGamesOf2026({ article }: ArticleProps) {
           />
           <ArticleParagraph>
             Both Korean 9p&apos;s played like demigods, so
-            close to AI almost the whole game, with the game
-            on a knife&apos;s edge the whole time.
+            close to AI almost the whole game... with the
+            game on a knife&apos;s edge the whole time.
+            Baduk TV had to hide their AI evaluation bar
+            from the stream multiple times during the match,
+            due to AI going crazy with its estimates.
           </ArticleParagraph>
+          <ArticleParagraph>
+            SJS&apos;s face when the fight for the ko on the
+            right and the multiple dragons escalated
+            summarizes everything pretty well:
+          </ArticleParagraph>
+          <ArticleImageWithLegend
+            src="/articles/best-games-of-2026/sjs_wtf_face.jpeg"
+            width={600}
+          >
+            <ImageLegend>
+              If even SJS reacts to this game like this...
+            </ImageLegend>
+          </ArticleImageWithLegend>
           <ArticleAiSenseiIframe
             src="https://ai-sensei.com/game/wCbiGfZSh7TjX5eXM8TDgvMzi5u2/0398c1d0-86c8-403c-9d1f-d411ecbd2c12"
             title="Shin Jinseo 9p vs Byun Sangil 9p &mdash; The 2026 Samsung Cup - Semi-Final"
@@ -142,6 +160,30 @@ export function BestGamesOf2026({ article }: ArticleProps) {
           <ArticleAiSenseiIframe
             src="https://ai-sensei.com/game/wCbiGfZSh7TjX5eXM8TDgvMzi5u2/5c3b02a3-d941-47a2-aa42-0cfbfcfc783f"
             title="Shin Jinseo 9p vs Byun Sangil 9p - AI Sensei analysis"
+            move={84}
+          />
+        </ArticleSubSection>
+        <ArticleSubSection>
+          <ArticleSubSectionTitle>
+            Shibano Toramaru 9p vs Ichiriki Ryo 9p &mdash;
+            Meijin Title Match - Game 7
+          </ArticleSubSectionTitle>
+          <ArticleParagraph>
+            In the final game for the prestigious and
+            historical{" "}
+            <ArticleLink href="https://senseis.xmp.net/?Meijin">
+              Meijin
+            </ArticleLink>{" "}
+            title, Shibano and Ichiriki both went all in
+            from start to finish.
+          </ArticleParagraph>
+          <ArticleYouTubeIframe
+            src="https://www.youtube.com/embed/rSZ7tmyRbpI"
+            title="Go Game Series - Shibano Toramaru 9p vs Ichiriki Ryo 9p &mdash; Meijin Title Match - Game 7"
+          />
+          <ArticleAiSenseiIframe
+            src="https://ai-sensei.com/game/wCbiGfZSh7TjX5eXM8TDgvMzi5u2/316be452-c0b4-4def-ab00-1cc363a79cc8?move=66"
+            title="Shibano Toramaru 9p vs Ichiriki Ryo 9p &mdash; Meijin Title Match - Game 7"
             move={84}
           />
         </ArticleSubSection>
