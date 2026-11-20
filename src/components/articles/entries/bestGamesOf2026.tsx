@@ -14,6 +14,7 @@ import {
   ArticleUnorderedList,
   ArticleImageWithLegend,
   ImageLegend,
+  ArticleQuote,
 } from "../articleContent"
 
 export function BestGamesOf2026({ article }: ArticleProps) {
@@ -57,8 +58,8 @@ export function BestGamesOf2026({ article }: ArticleProps) {
         </ArticleSectionTitle>
         <ArticleSubSection>
           <ArticleSubSectionTitle>
-            Shin Jinseo 9p vs Byun Sangil 9p &mdash; The
-            2026 Samsung Cup - Semi-Final
+            Shin Jinseo 9p vs Byun Sangil 9p &mdash; 2026
+            Samsung Cup - Semi-Final
           </ArticleSubSectionTitle>
           <ArticleParagraph>
             Going into this game, Byun Sangil was facing a
@@ -138,8 +139,8 @@ export function BestGamesOf2026({ article }: ArticleProps) {
         </ArticleSubSection>
         <ArticleSubSection>
           <ArticleSubSectionTitle>
-            Shin Jinseo 9p vs Byun Sangil 9p &mdash; The
-            Korean National Team League
+            Shin Jinseo 9p vs Byun Sangil 9p &mdash; Korean
+            National Team League
           </ArticleSubSectionTitle>
           <ArticleParagraph>
             After losing yet another world championship
@@ -184,6 +185,45 @@ export function BestGamesOf2026({ article }: ArticleProps) {
           <ArticleAiSenseiIframe
             src="https://ai-sensei.com/game/wCbiGfZSh7TjX5eXM8TDgvMzi5u2/316be452-c0b4-4def-ab00-1cc363a79cc8?move=66"
             title="Shibano Toramaru 9p vs Ichiriki Ryo 9p &mdash; Meijin Title Match - Game 7"
+            move={84}
+          />
+        </ArticleSubSection>
+        <ArticleSubSection>
+          <ArticleSubSectionTitle>
+            Li Weiqing 9p vs Byun Sangil 9p &mdash; 2026
+            Samsung Cup - Final - Game 3
+          </ArticleSubSectionTitle>
+          <ArticleParagraph>
+            Li Qincheng 9p had an amazing run during the
+            2026 Samsung Cup. World famous for being the
+            fastest top professional, he pretty much managed
+            to beat Gu Zihao 9p using only 30 min out of 2h,
+            while Gu Zihao struggled with byo-yomi.
+          </ArticleParagraph>
+          <ArticleParagraph>
+            However, the 2 last games of the final will
+            likely make him change his approach to time
+            management. The whole Go community watched as he
+            played quickly during key moments which could
+            have completely change the outcome of the game.
+            During both of Byun Sangil 9p&apos;s wins in the
+            final, Li Qincheng still had more than an hour
+            on the clock:
+          </ArticleParagraph>
+          <ArticleQuote>
+            Spending an hour thinking or spending your whole
+            life regretting not having thought for an hour?
+          </ArticleQuote>
+          <ArticleParagraph>
+            That is the question.
+          </ArticleParagraph>
+          <ArticleYouTubeIframe
+            src="https://www.youtube.com/embed/dAR8K40-GdA"
+            title="Baduk TV - Li Weiqing 9p vs Byun Sangil 9p - 2026 - Samsung Cup - Final - Game 3"
+          />
+          <ArticleAiSenseiIframe
+            src="https://ai-sensei.com/game/wCbiGfZSh7TjX5eXM8TDgvMzi5u2/11116c83-aa4c-4037-9a68-5cb2de8c87d3?move=116"
+            title="Baduk TV - Li Weiqing 9p vs Byun Sangil 9p - 2026 - Samsung Cup - Final - Game 3"
             move={84}
           />
         </ArticleSubSection>
