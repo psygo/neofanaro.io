@@ -14,7 +14,8 @@
 
 ## Go
 
-- Best Chinese Go YouTubers (and Bilibili and Youkou).
+- Best CJK YouTube Channels
+  - Chinese Go YouTubers (and Bilibili and Youkou).
 - Tips for Crawling on the Second Line
   - 5 on the second line creates an eye.
   - [SJS vs Byun Sangil on the 2026 Samsung Cup Semifinal](https://youtu.be/NaiOxgP8BZE)

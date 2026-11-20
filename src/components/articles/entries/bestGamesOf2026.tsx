@@ -58,8 +58,8 @@ export function BestGamesOf2026({ article }: ArticleProps) {
         </ArticleSectionTitle>
         <ArticleSubSection>
           <ArticleSubSectionTitle>
-            Shin Jinseo 9p vs Byun Sangil 9p &mdash; 2026
-            Samsung Cup - Semi-Final
+            Shin Jinseo 9p vs Byun Sangil 9p &mdash; Samsung
+            Cup - Semi-Final
           </ArticleSubSectionTitle>
           <ArticleParagraph>
             Going into this game, Byun Sangil was facing a
@@ -70,11 +70,11 @@ export function BestGamesOf2026({ article }: ArticleProps) {
           </ArticleParagraph>
           <ArticleYouTubeIframe
             src="https://www.youtube.com/embed/NaiOxgP8BZE"
-            title="Baduk TV - Shin Jinseo 9p vs Byun Sangil 9p &mdash; The 2026 Samsung Cup - Semi-Final"
+            title="Baduk TV - Shin Jinseo 9p vs Byun Sangil 9p &mdash; The Samsung Cup - Semi-Final"
           />
           <ArticleYouTubeIframe
             src="https://www.youtube.com/embed/6alyCMYmrBw"
-            title="Go Games Series - Shin Jinseo 9p vs Byun Sangil 9p &mdash; The 2026 Samsung Cup - Semi-Final"
+            title="Go Games Series - Shin Jinseo 9p vs Byun Sangil 9p &mdash; The Samsung Cup - Semi-Final"
           />
           <ArticleParagraph>
             Both Korean 9p&apos;s played like demigods, so
@@ -99,7 +99,7 @@ export function BestGamesOf2026({ article }: ArticleProps) {
           </ArticleImageWithLegend>
           <ArticleAiSenseiIframe
             src="https://ai-sensei.com/game/wCbiGfZSh7TjX5eXM8TDgvMzi5u2/0398c1d0-86c8-403c-9d1f-d411ecbd2c12"
-            title="Shin Jinseo 9p vs Byun Sangil 9p &mdash; The 2026 Samsung Cup - Semi-Final"
+            title="Shin Jinseo 9p vs Byun Sangil 9p &mdash; The Samsung Cup - Semi-Final"
             move={49}
           />
         </ArticleSubSection>
@@ -190,8 +190,8 @@ export function BestGamesOf2026({ article }: ArticleProps) {
         </ArticleSubSection>
         <ArticleSubSection>
           <ArticleSubSectionTitle>
-            Li Weiqing 9p vs Byun Sangil 9p &mdash; 2026
-            Samsung Cup - Final - Game 3
+            Li Weiqing 9p vs Byun Sangil 9p &mdash; Samsung
+            Cup - Final - Game 3
           </ArticleSubSectionTitle>
           <ArticleParagraph>
             Li Qincheng 9p had an amazing run during the
@@ -219,11 +219,11 @@ export function BestGamesOf2026({ article }: ArticleProps) {
           </ArticleParagraph>
           <ArticleYouTubeIframe
             src="https://www.youtube.com/embed/dAR8K40-GdA"
-            title="Baduk TV - Li Weiqing 9p vs Byun Sangil 9p - 2026 - Samsung Cup - Final - Game 3"
+            title="Baduk TV - Li Weiqing 9p vs Byun Sangil 9p - Samsung Cup - Final - Game 3"
           />
           <ArticleAiSenseiIframe
             src="https://ai-sensei.com/game/wCbiGfZSh7TjX5eXM8TDgvMzi5u2/11116c83-aa4c-4037-9a68-5cb2de8c87d3?move=116"
-            title="Baduk TV - Li Weiqing 9p vs Byun Sangil 9p - 2026 - Samsung Cup - Final - Game 3"
+            title="Baduk TV - Li Weiqing 9p vs Byun Sangil 9p - Samsung Cup - Final - Game 3"
             move={84}
           />
         </ArticleSubSection>
