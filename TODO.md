@@ -16,6 +16,7 @@
 
 - Best CJK YouTube Channels
   - Chinese Go YouTubers (and Bilibili and Youkou).
+- Wikipedia Timeline Component
 - Tips for Crawling on the Second Line
   - 5 on the second line creates an eye.
   - [SJS vs Byun Sangil on the 2026 Samsung Cup Semifinal](https://youtu.be/NaiOxgP8BZE)
@@ -33,7 +34,6 @@
   1. [SJS vs Byun Sangil for the 2026 Samsung Cup](https://youtu.be/NaiOxgP8BZE)
   2. [Fukuoka Kotaro vs Ichiriki](https://youtu.be/G_C3MC8B17w?list=PLMYMhzMuvitRTPetvlWIy4rUhQNkT1zmh)
   3. [SJS vs Byun Sangil for the 2026 Korean National Team League](https://youtu.be/a45BnGx7UDM?list=PLeL-TssJiolY)
-- Wikipedia Timeline Component
 
 ### Edits
 

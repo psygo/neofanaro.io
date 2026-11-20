@@ -51,7 +51,8 @@ export function KifuBook({ article }: ArticleProps) {
           ease of editing and customizing. For example, if
           you would like to take out the coordinates to get
           more space for the board itself, doing so is as
-          easy as changing a single parameter.
+          easy as changing a single parameter. And the same
+          goes for translating it into another language.
         </ArticleParagraph>
         <ArticleParagraph>
           A lot of people might not want to buy or print the
