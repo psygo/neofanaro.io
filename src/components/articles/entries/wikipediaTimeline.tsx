@@ -10,6 +10,7 @@ import {
   ArticleSectionTitle,
   ArticleUnorderedList,
   ArticleCode,
+  ArticleBlockQuote,
 } from "../articleContent"
 import { ArticleGitHubReadme } from "../githubReadme"
 
@@ -52,6 +53,25 @@ export function WikipediaTimeline({
           asking myself why other websites, such as
           Wikipedia itself, didn&apos;t have one.
         </ArticleParagraph>
+        <ArticleBlockQuote>
+          Here&apos;s a draft of a{" "}
+          <ArticleLink href="https://en.wikipedia.org/wiki/User:Fanaro009/Timeline_of_Go">
+            Timeline of Go
+          </ArticleLink>
+          , created by AI, based on Wikipedia&apos;s{" "}
+          <ArticleLink href="https://en.wikipedia.org/wiki/History_of_Go">
+            History of Go
+          </ArticleLink>
+          , Sensei&apos;s Library{" "}
+          <ArticleLink href="https://senseis.xmp.net/?GoHistory">
+            Go History
+          </ArticleLink>{" "}
+          and my{" "}
+          <ArticleLink href="https://go-hall-of-fame.vercel.app/timeline">
+            Go Hall of Fame&apos;s Timeline
+          </ArticleLink>
+          .
+        </ArticleBlockQuote>
         <ArticleImageWithLegend
           src="/articles/go-hall-of-fame/timeline_1.png"
           width={600}
