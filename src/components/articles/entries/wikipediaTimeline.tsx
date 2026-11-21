@@ -35,9 +35,9 @@ export function WikipediaTimeline({
           </ImageLegend>
         </ArticleImageWithLegend>
         <ArticleParagraph>
-          Recently, I had the idea of creating a{" "}
+          Recently, I got into the mindset of creating a{" "}
           <ArticleLink href="https://go-hall-of-fame.vercel.app/">
-            Go Hall of Fame
+            Go (board game) Hall of Fame
           </ArticleLink>
           {/* &mdash; which I discuss here:{" "}
           <ArticleLink
@@ -56,7 +56,10 @@ export function WikipediaTimeline({
           src="/articles/go-hall-of-fame/timeline_1.png"
           width={600}
         >
-          <ImageLegend>A timeline example (1).</ImageLegend>
+          <ImageLegend>
+            A timeline example (1). Players and games are
+            not only links, but entities in the database.
+          </ImageLegend>
         </ArticleImageWithLegend>
         <ArticleImageWithLegend
           src="/articles/go-hall-of-fame/timeline_2.png"
@@ -90,9 +93,9 @@ export function WikipediaTimeline({
           </ArticleLink>
           , but they turn out to be highly inefficient when
           the component features multiple levels of nesting,
-          which ends up blowing up article size on memory
-          pretty quickly. Thus, in the end, I implemented
-          things with{" "}
+          which ends up blowing up the article&apos;s total
+          size pretty quickly. Thus, in the end, I
+          implemented things using{" "}
           <ArticleLink href="https://en.wikipedia.org/wiki/Wikipedia:Lua">
             Wikipedia Lua Modules
           </ArticleLink>
@@ -107,14 +110,15 @@ export function WikipediaTimeline({
           could take months.
         </ArticleParagraph>
         <ArticleParagraph>
-          Hopefully, I won&apos;t need a lengthy process for
-          getting this going. And I&apos;ve also added a
-          view switcher dropdown button to preserve the
-          original timeline visualizations people had
-          developed prior to my component, so nothing will
-          be lost in any articles &mdash; my component is
-          even able to automatically generate list and table
-          views from the timeline view itself!
+          Hopefully, I won&apos;t need such a lengthy
+          process for enabling this to the public. And
+          I&apos;ve also added a view switcher dropdown
+          button to preserve the original timeline
+          visualizations people had developed prior to my
+          component, so nothing will be lost in any articles
+          &mdash; my component is even able to automatically
+          generate list and table views from the timeline
+          view itself!
         </ArticleParagraph>
         <ArticleGitHubReadme href="https://github.com/psygo/wikipedia_timeline" />
       </ArticleSection>
