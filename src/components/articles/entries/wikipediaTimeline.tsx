@@ -78,7 +78,7 @@ export function WikipediaTimeline({
           <ImageLegend>
             The converted article for the{" "}
             <ArticleLink href="https://en.wikipedia.org/wiki/User:Fanaro009/Timeline_of_historic_inventions">
-              Timeline of Historic Inventions
+              Timeline of historic inventions
             </ArticleLink>
             .
           </ImageLegend>
