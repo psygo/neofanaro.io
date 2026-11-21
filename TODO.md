@@ -2,6 +2,7 @@
 
 ## Priorities
 
+- Github Embed
 - Create a Tesuji Encyclopedia Series
 - AI Sensei Embedded Component
   - Don't forget the "Current Move" feature.

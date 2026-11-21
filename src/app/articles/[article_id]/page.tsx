@@ -40,6 +40,7 @@ import {
   TewariDelight2,
   TopBlunders,
   WhatIsGoAbout,
+  WikipediaTimeline,
   ZhangqiCheating,
 } from "@components/articles/entries/exports"
 
@@ -146,6 +147,8 @@ function whichArticle(
       return <TopBlunders article={post} />
     case "what-is-go-about":
       return <WhatIsGoAbout article={post} />
+    case "wikipedia-timeline":
+      return <WikipediaTimeline article={post} />
     case "zhangqi-cheating":
       return <ZhangqiCheating article={post} />
     default:

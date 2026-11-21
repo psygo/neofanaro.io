@@ -226,6 +226,18 @@ export function BestGamesOf2026({ article }: ArticleProps) {
             things around, but some world class players have
             historically only had one chance.
           </ArticleParagraph>
+          <ArticleParagraph>
+            And I guess I&apos;m on the same boat, since I
+            also played a move in an important game while
+            having time to spare, during my{" "}
+            <ArticleLink
+              internal
+              href="/articles/second-brazil-open-2026"
+            >
+              2nd place run in the 2026 Brazil Open
+            </ArticleLink>
+            .
+          </ArticleParagraph>
           <ArticleYouTubeIframe
             src="https://www.youtube.com/embed/dAR8K40-GdA"
             title="Baduk TV - Li Weiqing 9p vs Byun Sangil 9p - Samsung Cup - Final - Game 3"
