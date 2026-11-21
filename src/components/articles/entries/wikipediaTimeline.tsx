@@ -5,7 +5,13 @@ import {
   ArticleParagraph,
   ArticleSection,
   ArticleLink,
+  ArticleImageWithLegend,
+  ImageLegend,
+  ArticleSectionTitle,
+  ArticleUnorderedList,
+  ArticleCode,
 } from "../articleContent"
+import { ArticleGitHubReadme } from "../githubReadme"
 
 export function WikipediaTimeline({
   article,
@@ -13,6 +19,21 @@ export function WikipediaTimeline({
   return (
     <Article article={article}>
       <ArticleSection>
+        <ArticleImageWithLegend
+          src="/articles/wikipedia-timeline/timeline_images_of_earth.png"
+          height={100}
+          width={600}
+        >
+          <ImageLegend>
+            The converted article for the{" "}
+            <ArticleLink href="https://en.wikipedia.org/wiki/Timeline_of_first_images_of_Earth_from_space">
+              Timeline of images of Earth from space
+            </ArticleLink>
+            . I&apos;ve also added a dropdown switcher for
+            preserving the previous table or list views (and
+            you could also add any other views).
+          </ImageLegend>
+        </ArticleImageWithLegend>
         <ArticleParagraph>
           Recently, I had the idea of creating a{" "}
           <ArticleLink href="https://go-hall-of-fame.vercel.app/">
@@ -31,12 +52,37 @@ export function WikipediaTimeline({
           asking myself why other websites, such as
           Wikipedia itself, didn&apos;t have one.
         </ArticleParagraph>
+        <ArticleImageWithLegend
+          src="/articles/go-hall-of-fame/timeline_1.png"
+          width={600}
+        >
+          <ImageLegend>A timeline example (1).</ImageLegend>
+        </ArticleImageWithLegend>
+        <ArticleImageWithLegend
+          src="/articles/go-hall-of-fame/timeline_2.png"
+          width={600}
+        >
+          <ImageLegend>A timeline example (2).</ImageLegend>
+        </ArticleImageWithLegend>
         <ArticleParagraph>
           Wikipedia is not only open to the public for
           editing, but also open source and open to software
           contributions as well. So creating new components
           for it is possible.
         </ArticleParagraph>
+        <ArticleImageWithLegend
+          src="/articles/wikipedia-timeline/timeline_historic_inventions.png"
+          height={100}
+          width={600}
+        >
+          <ImageLegend>
+            The converted article for the{" "}
+            <ArticleLink href="https://en.wikipedia.org/wiki/User:Fanaro009/Timeline_of_historic_inventions">
+              Timeline of Historic Inventions
+            </ArticleLink>
+            .
+          </ImageLegend>
+        </ArticleImageWithLegend>
         <ArticleParagraph>
           My first try at a timeline component was through{" "}
           <ArticleLink href="https://en.wikipedia.org/wiki/Wikipedia:Template_namespace">
@@ -57,9 +103,67 @@ export function WikipediaTimeline({
             MediaWiki Extension
           </ArticleLink>
           , but that step depends on the Wikipedia
-          maintainers&apos; wanting your feature, and the
-          process could take months.
+          maintainers wanting your feature, and the process
+          could take months.
         </ArticleParagraph>
+        <ArticleParagraph>
+          Hopefully, I won&apos;t need a lengthy process for
+          getting this going. And I&apos;ve also added a
+          view switcher dropdown button to preserve the
+          original timeline visualizations people had
+          developed prior to my component, so nothing will
+          be lost in any articles &mdash; my component is
+          even able to automatically generate list and table
+          views from the timeline view itself!
+        </ArticleParagraph>
+        <ArticleGitHubReadme href="https://github.com/psygo/wikipedia_timeline" />
+      </ArticleSection>
+      <ArticleSection>
+        <ArticleSectionTitle>
+          References
+        </ArticleSectionTitle>
+        <ArticleUnorderedList>
+          <li>
+            <ArticleLink href="https://en.wikipedia.org/wiki/Wikipedia:Village_pump_(proposals)#Timeline_Visual_Component">
+              Wikipedia Timeline Proposal
+            </ArticleLink>
+          </li>
+          <li>
+            <ArticleLink href="https://en.wikipedia.org/w/index.php?title=Module:TimelineRail">
+              Timeline Rail Lua Module
+            </ArticleLink>
+          </li>
+          <li>Drafts</li>
+          <ArticleUnorderedList>
+            <li>
+              <ArticleLink href="https://en.wikipedia.org/wiki/User:Fanaro009/Timeline_of_first_images_of_Earth_from_space">
+                Timeline of images of Earth from Space
+              </ArticleLink>
+            </li>
+            <li>
+              <ArticleLink href="https://en.wikipedia.org/wiki/User:Fanaro009/Timeline_of_historic_inventions">
+                Timeline of historic inventions
+              </ArticleLink>
+            </li>
+            <li>
+              <ArticleLink href="https://en.wikipedia.org/wiki/User:Fanaro009/Timeline_of_artificial_intelligence">
+                Timeline of artificial intelligence
+              </ArticleLink>
+            </li>
+          </ArticleUnorderedList>
+          <li>
+            <ArticleLink href="https://github.com/psygo/wikipedia_timeline">
+              @psygo/wikipedia_timeline
+            </ArticleLink>
+          </li>
+          <ArticleUnorderedList>
+            <li>
+              <ArticleLink href="https://psygo.github.io/wikipedia_timeline/">
+                @psygo/wikipedia_timeline
+              </ArticleLink>
+            </li>
+          </ArticleUnorderedList>
+        </ArticleUnorderedList>
       </ArticleSection>
     </Article>
   )
