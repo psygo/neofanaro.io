@@ -194,11 +194,14 @@ export function BestGamesOf2026({ article }: ArticleProps) {
             Cup - Final - Game 3
           </ArticleSubSectionTitle>
           <ArticleParagraph>
-            Li Qincheng 9p had an amazing run during the
-            2026 Samsung Cup. World famous for being the
-            fastest top professional, he pretty much managed
-            to beat Gu Zihao 9p using only 30 min out of 2h,
-            while Gu Zihao struggled with byo-yomi.
+            <ArticleLink href="https://senseis.xmp.net/?LiQincheng">
+              Li Qincheng 9p
+            </ArticleLink>{" "}
+            had an amazing run during the 2026 Samsung Cup.
+            World famous for being the fastest top
+            professional, he pretty much managed to beat Gu
+            Zihao 9p using only 30 min out of 2h, while Gu
+            Zihao struggled with byo-yomi.
           </ArticleParagraph>
           <ArticleParagraph>
             However, the 2 last games of the final will
@@ -217,9 +220,23 @@ export function BestGamesOf2026({ article }: ArticleProps) {
           <ArticleParagraph>
             That is the question.
           </ArticleParagraph>
+          <ArticleParagraph>
+            Li Qincheng 9p is still not that old (b. 1998),
+            so he&apos;ll have other opportunities to turn
+            things around, but some world class players have
+            historically only had one chance.
+          </ArticleParagraph>
           <ArticleYouTubeIframe
             src="https://www.youtube.com/embed/dAR8K40-GdA"
             title="Baduk TV - Li Weiqing 9p vs Byun Sangil 9p - Samsung Cup - Final - Game 3"
+          />
+          <ArticleYouTubeIframe
+            src="https://www.youtube.com/embed/ENC4KWGDbVE"
+            title="Lee Hyunwook - Li Weiqing 9p vs Byun Sangil 9p - Samsung Cup - Final - Game 3"
+          />
+          <ArticleYouTubeIframe
+            src="https://www.youtube.com/embed/YwMLi4x8Fho"
+            title="Go Games Series - Li Weiqing 9p vs Byun Sangil 9p - Samsung Cup - Final - Game 3"
           />
           <ArticleAiSenseiIframe
             src="https://ai-sensei.com/game/wCbiGfZSh7TjX5eXM8TDgvMzi5u2/11116c83-aa4c-4037-9a68-5cb2de8c87d3?move=116"
