@@ -227,6 +227,14 @@ export function BestGamesOf2026({ article }: ArticleProps) {
             historically only had one chance.
           </ArticleParagraph>
           <ArticleParagraph>
+            All that said, as Go Games Series&apos;s
+            Jiangqiu Chen emphasizes, it looks more and more
+            as if this behavior is actually a psychological
+            impediment or limitation for Li Weiqing 9p,
+            maybe he has extreme difficulties to be able to
+            focus for long stretches of time.
+          </ArticleParagraph>
+          <ArticleParagraph>
             And I guess I&apos;m on the same boat, since I
             also played a move in an important game while
             having time to spare, during my{" "}
