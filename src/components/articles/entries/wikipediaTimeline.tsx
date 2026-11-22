@@ -9,7 +9,6 @@ import {
   ImageLegend,
   ArticleSectionTitle,
   ArticleUnorderedList,
-  ArticleCode,
   ArticleBlockQuote,
 } from "../articleContent"
 import { ArticleGitHubReadme } from "../githubReadme"
@@ -53,25 +52,6 @@ export function WikipediaTimeline({
           asking myself why other websites, such as
           Wikipedia itself, didn&apos;t have one.
         </ArticleParagraph>
-        <ArticleBlockQuote>
-          Here&apos;s a draft of a{" "}
-          <ArticleLink href="https://en.wikipedia.org/wiki/User:Fanaro009/Timeline_of_Go">
-            Timeline of Go
-          </ArticleLink>
-          , created by AI, based on Wikipedia&apos;s{" "}
-          <ArticleLink href="https://en.wikipedia.org/wiki/History_of_Go">
-            History of Go
-          </ArticleLink>
-          , Sensei&apos;s Library{" "}
-          <ArticleLink href="https://senseis.xmp.net/?GoHistory">
-            Go History
-          </ArticleLink>{" "}
-          and my{" "}
-          <ArticleLink href="https://go-hall-of-fame.vercel.app/timeline">
-            Go Hall of Fame&apos;s Timeline
-          </ArticleLink>
-          .
-        </ArticleBlockQuote>
         <ArticleImageWithLegend
           src="/articles/go-hall-of-fame/timeline_1.png"
           width={600}
@@ -86,6 +66,30 @@ export function WikipediaTimeline({
           width={600}
         >
           <ImageLegend>A timeline example (2).</ImageLegend>
+        </ArticleImageWithLegend>
+        <ArticleImageWithLegend
+          src="/articles/wikipedia-timeline/timeline_of_go_1.png"
+          width={600}
+        >
+          <ImageLegend>
+            A{" "}
+            <ArticleLink href="https://en.wikipedia.org/wiki/Timeline_of_Go">
+              Timeline of Go
+            </ArticleLink>
+            , based on Wikipedia&apos;s{" "}
+            <ArticleLink href="https://en.wikipedia.org/wiki/History_of_Go">
+              History of Go
+            </ArticleLink>
+            , Sensei&apos;s Library{" "}
+            <ArticleLink href="https://senseis.xmp.net/?GoHistory">
+              Go History
+            </ArticleLink>{" "}
+            and my{" "}
+            <ArticleLink href="https://go-hall-of-fame.vercel.app/timeline">
+              Go Hall of Fame&apos;s Timeline
+            </ArticleLink>
+            .
+          </ImageLegend>
         </ArticleImageWithLegend>
         <ArticleParagraph>
           Wikipedia is not only open to the public for
@@ -148,8 +152,20 @@ export function WikipediaTimeline({
         </ArticleSectionTitle>
         <ArticleUnorderedList>
           <li>
+            <ArticleLink href="https://github.com/psygo/wikipedia_timeline">
+              @psygo/wikipedia_timeline
+            </ArticleLink>
+          </li>
+          <ArticleUnorderedList>
+            <li>
+              <ArticleLink href="https://psygo.github.io/wikipedia_timeline/">
+                Wikipedia Timeline Rail Demo
+              </ArticleLink>
+            </li>
+          </ArticleUnorderedList>
+          <li>
             <ArticleLink href="https://en.wikipedia.org/wiki/Wikipedia:Village_pump_(proposals)#Timeline_Visual_Component">
-              Wikipedia Timeline Proposal
+              Wikipedia Timeline Component Proposal
             </ArticleLink>
           </li>
           <li>
@@ -157,13 +173,23 @@ export function WikipediaTimeline({
               Timeline Rail Lua Module
             </ArticleLink>
           </li>
+          <li>
+            Public Wikipedia Articles
+            <ArticleUnorderedList>
+              <li>
+                <ArticleLink href="https://en.wikipedia.org/wiki/Timeline_of_first_images_of_Earth_from_space">
+                  Timeline of images of Earth from Space
+                </ArticleLink>
+              </li>
+              <li>
+                <ArticleLink href="https://en.wikipedia.org/wiki/Timeline_of_Go">
+                  Timeline of Go
+                </ArticleLink>
+              </li>
+            </ArticleUnorderedList>
+          </li>
           <li>Drafts</li>
           <ArticleUnorderedList>
-            <li>
-              <ArticleLink href="https://en.wikipedia.org/wiki/User:Fanaro009/Timeline_of_first_images_of_Earth_from_space">
-                Timeline of images of Earth from Space
-              </ArticleLink>
-            </li>
             <li>
               <ArticleLink href="https://en.wikipedia.org/wiki/User:Fanaro009/Timeline_of_historic_inventions">
                 Timeline of historic inventions
@@ -172,18 +198,6 @@ export function WikipediaTimeline({
             <li>
               <ArticleLink href="https://en.wikipedia.org/wiki/User:Fanaro009/Timeline_of_artificial_intelligence">
                 Timeline of artificial intelligence
-              </ArticleLink>
-            </li>
-          </ArticleUnorderedList>
-          <li>
-            <ArticleLink href="https://github.com/psygo/wikipedia_timeline">
-              @psygo/wikipedia_timeline
-            </ArticleLink>
-          </li>
-          <ArticleUnorderedList>
-            <li>
-              <ArticleLink href="https://psygo.github.io/wikipedia_timeline/">
-                @psygo/wikipedia_timeline
               </ArticleLink>
             </li>
           </ArticleUnorderedList>
