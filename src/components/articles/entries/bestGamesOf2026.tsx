@@ -62,12 +62,15 @@ export function BestGamesOf2026({ article }: ArticleProps) {
             Cup - Semi-Final
           </ArticleSubSectionTitle>
           <ArticleParagraph>
-            Going into this game, Byun Sangil was facing a
-            9-43 head-to-head record against Shin Jinseo 9p.
-            In a post-game interview, when asked about it,
-            he said there was no way not to be conscious
-            about it.
+            Going into this game, Byun Sangil 9p was facing
+            a 9-43 head-to-head record against Shin Jinseo
+            9p. In a post-game interview, when asked about
+            it, he even said:
           </ArticleParagraph>
+          <ArticleQuote>
+            &quot;There is no way not to be conscious about
+            it.&quot;
+          </ArticleQuote>
           <ArticleYouTubeIframe
             src="https://www.youtube.com/embed/NaiOxgP8BZE"
             title="Baduk TV - Shin Jinseo 9p vs Byun Sangil 9p &mdash; The Samsung Cup - Semi-Final"
@@ -78,11 +81,11 @@ export function BestGamesOf2026({ article }: ArticleProps) {
           />
           <ArticleParagraph>
             Both Korean 9p&apos;s played like demigods, so
-            close to AI almost the whole game... with the
-            game on a knife&apos;s edge the whole time.
-            Baduk TV had to hide their AI evaluation bar
-            from the stream multiple times during the match,
-            due to AI going crazy with its estimates.
+            close to AI almost the entire game, with the
+            game constantly on a knife&apos;s edge. Baduk TV
+            had to hide their AI evaluation bar from the
+            stream multiple times during the match, due to
+            AI going crazy with its estimates.
           </ArticleParagraph>
           <ArticleParagraph>
             SJS&apos;s face when the fight for the ko on the
@@ -175,8 +178,13 @@ export function BestGamesOf2026({ article }: ArticleProps) {
             <ArticleLink href="https://senseis.xmp.net/?Meijin">
               Meijin
             </ArticleLink>{" "}
-            title, Shibano and Ichiriki both went all in
+            title, Shibano and Ichiriki both went all-in
             from start to finish.
+          </ArticleParagraph>
+          <ArticleParagraph>
+            Starting with one of the most complex post-AI
+            josekis on the top-left, the game became a
+            tesuji-fest till the end.
           </ArticleParagraph>
           <ArticleYouTubeIframe
             src="https://www.youtube.com/embed/rSZ7tmyRbpI"
