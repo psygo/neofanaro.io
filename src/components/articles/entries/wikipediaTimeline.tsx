@@ -144,6 +144,29 @@ export function WikipediaTimeline({
           generate list and table views from the timeline
           view itself!
         </ArticleParagraph>
+        <ArticleBlockQuote>
+          <ArticleParagraph>
+            I have to say I&apos;m quite shocked by
+            Wikipedia opting for its templates and modules
+            having to be reimplemented in each and every
+            language. This is likely the number one tenant
+            for good software engineering: D.R.Y., i.e.
+            don&apos;t repeat yourself. It makes code so
+            much more difficult to maintain...{" "}
+          </ArticleParagraph>
+          <ArticleParagraph>
+            People need to basically copy-paste their code
+            potentially hundreds of times to make it
+            available on other languages. There are
+            proposals for changing that, such as the{" "}
+            <ArticleLink href="https://www.mediawiki.org/wiki/Global_templates">
+              Global templates
+            </ArticleLink>
+            , but it is ridiculous that, in 2026, 25 years
+            after Wikipedia&apos;s founding, we still have
+            to deal with this.
+          </ArticleParagraph>
+        </ArticleBlockQuote>
         <ArticleGitHubReadme href="https://github.com/psygo/wikipedia_timeline" />
       </ArticleSection>
       <ArticleSection>

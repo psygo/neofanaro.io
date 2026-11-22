@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import {
   usePathname,
   useRouter,
@@ -24,40 +24,88 @@ import { ArticleCard } from "./articleCard"
 
 const ARTICLES_PER_PAGE = 10
 
+function tagsFromUrl(searchParams: URLSearchParams) {
+  const raw = searchParams.get("tags")
+  return raw ? raw.split(",").filter(Boolean) : []
+}
+
+function orderByFromUrl(searchParams: URLSearchParams) {
+  return searchParams.get("orderBy") === "views"
+    ? OrderBy.views
+    : OrderBy.date
+}
+
+function directionFromUrl(
+  searchParams: URLSearchParams,
+): SortDirection {
+  return searchParams.get("direction") === "asc"
+    ? "asc"
+    : "desc"
+}
+
 export function ArticlesSection() {
   const lang = useLang()
   const { articles, setArticles, allTags } = useArticles()
-  const [selectedTags, setSelectedTags] = useState<
-    string[]
-  >([])
-  const [orderBy, setOrderBy] = useState(OrderBy.date)
-  const [direction, setDirection] =
-    useState<SortDirection>("desc")
-  const [filtersOpen, setFiltersOpen] = useState(false)
   const router = useRouter()
   const pathname = usePathname()
   const searchParams = useSearchParams()
+  const [selectedTags, setSelectedTags] = useState<
+    string[]
+  >(() => tagsFromUrl(searchParams))
+  const [orderBy, setOrderBy] = useState(() =>
+    orderByFromUrl(searchParams),
+  )
+  const [direction, setDirection] = useState<SortDirection>(
+    () => directionFromUrl(searchParams),
+  )
+  const [filtersOpen, setFiltersOpen] = useState(false)
   const pageFromUrl = Number(searchParams.get("page"))
   const page = pageFromUrl > 0 ? pageFromUrl : 1
 
-  function setPage(newPage: number) {
+  function updateParams(
+    updates: Record<string, string | null>,
+  ) {
     const params = new URLSearchParams(
       searchParams.toString(),
     )
-    if (newPage > 1) {
-      params.set("page", String(newPage))
-    } else {
-      params.delete("page")
+    for (const [key, value] of Object.entries(updates)) {
+      if (value === null) params.delete(key)
+      else params.set(key, value)
     }
     router.replace(`${pathname}?${params.toString()}`, {
       scroll: false,
     })
   }
 
+  function setPage(newPage: number) {
+    updateParams({
+      page: newPage > 1 ? String(newPage) : null,
+    })
+  }
+
+  // Filters present in the URL on first load (e.g. a link in from the
+  // home page's featured categories) aren't reflected in the articles
+  // fetched server-side for `allTags`/`initialArticles`, so refetch
+  // once against them.
+  useEffect(() => {
+    const tags = tagsFromUrl(searchParams)
+    const initialOrderBy = orderByFromUrl(searchParams)
+    const initialDirection = directionFromUrl(searchParams)
+    if (
+      tags.length > 0 ||
+      initialOrderBy !== OrderBy.date ||
+      initialDirection !== "desc"
+    ) {
+      refetch(tags, initialOrderBy, initialDirection, false)
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
   async function refetch(
     tags: string[],
     newOrderBy: OrderBy,
     newDirection: SortDirection,
+    resetPage = true,
   ) {
     const filtered = await get_articles(
       newOrderBy,
@@ -66,25 +114,38 @@ export function ArticlesSection() {
       newDirection,
     )
     if (filtered) setArticles(filtered)
-    setPage(1)
+    if (resetPage) setPage(1)
   }
 
   function handleTagsChange(tags: string[]) {
     setSelectedTags(tags)
-    refetch(tags, orderBy, direction)
+    refetch(tags, orderBy, direction, false)
+    updateParams({
+      tags: tags.length > 0 ? tags.join(",") : null,
+      page: null,
+    })
   }
 
   function handleOrderByChange(value: string) {
     const newOrderBy =
       value === "views" ? OrderBy.views : OrderBy.date
     setOrderBy(newOrderBy)
-    refetch(selectedTags, newOrderBy, direction)
+    refetch(selectedTags, newOrderBy, direction, false)
+    updateParams({
+      orderBy:
+        newOrderBy === OrderBy.views ? "views" : null,
+      page: null,
+    })
   }
 
   function handleDirectionChange(value: string) {
     const newDirection = value as SortDirection
     setDirection(newDirection)
-    refetch(selectedTags, orderBy, newDirection)
+    refetch(selectedTags, orderBy, newDirection, false)
+    updateParams({
+      direction: newDirection === "asc" ? "asc" : null,
+      page: null,
+    })
   }
 
   const pageCount = Math.max(
