@@ -32,6 +32,8 @@ export function WikipediaTimeline({
             . I&apos;ve also added a dropdown switcher for
             preserving the previous table or list views (and
             you could also add any other views).
+            Unfortunately some of the features are not
+            present in the app version of Wikipedia yet.
           </ImageLegend>
         </ArticleImageWithLegend>
         <ArticleParagraph>
@@ -57,15 +59,25 @@ export function WikipediaTimeline({
           width={600}
         >
           <ImageLegend>
-            A timeline example (1). Players and games are
-            not only links, but entities in the database.
+            A{" "}
+            <ArticleLink href="https://go-hall-of-fame.vercel.app/timeline">
+              timeline
+            </ArticleLink>{" "}
+            example (1). Players and games are not only
+            links, but entities in the database.
           </ImageLegend>
         </ArticleImageWithLegend>
         <ArticleImageWithLegend
           src="/articles/go-hall-of-fame/timeline_2.png"
           width={600}
         >
-          <ImageLegend>A timeline example (2).</ImageLegend>
+          <ImageLegend>
+            A{" "}
+            <ArticleLink href="https://go-hall-of-fame.vercel.app/timeline">
+              timeline
+            </ArticleLink>{" "}
+            example (2).
+          </ImageLegend>
         </ArticleImageWithLegend>
         <ArticleImageWithLegend
           src="/articles/wikipedia-timeline/timeline_of_go_1.png"
@@ -93,9 +105,10 @@ export function WikipediaTimeline({
         </ArticleImageWithLegend>
         <ArticleParagraph>
           Wikipedia is not only open to the public for
-          editing, but also open source and open to software
-          contributions as well. So creating new components
-          for it is possible.
+          content editing, but also open source and open to
+          software contributions as well. So creating new
+          components for it is possible, even if you&apos;re
+          not an official maintainer.
         </ArticleParagraph>
         <ArticleImageWithLegend
           src="/articles/wikipedia-timeline/timeline_historic_inventions.png"
@@ -139,7 +152,8 @@ export function WikipediaTimeline({
           I&apos;ve also added a view switcher dropdown
           button to preserve the original timeline
           visualizations people had developed prior to my
-          component, so nothing will be lost in any articles
+          component &mdash; usually lists and tables
+          &mdash;, so nothing will be lost in any articles
           &mdash; my component is even able to automatically
           generate list and table views from the timeline
           view itself!
@@ -150,24 +164,42 @@ export function WikipediaTimeline({
             Wikipedia opting for its templates and modules
             having to be reimplemented in each and every
             language. This is likely the number one tenant
-            for good software engineering: D.R.Y., i.e.
-            don&apos;t repeat yourself. It makes code so
-            much more difficult to maintain...{" "}
+            for good software engineering: D.R.Y., i.e.{" "}
+            <ArticleLink href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself">
+              don&apos;t repeat yourself
+            </ArticleLink>
+            . It makes code so much more difficult and
+            annoying to maintain...{" "}
           </ArticleParagraph>
           <ArticleParagraph>
             People need to basically copy-paste their code
-            potentially hundreds of times to make it
-            available on other languages. There are
+            potentially hundreds of times in order to make
+            it available in other languages. There are
             proposals for changing that, such as the{" "}
             <ArticleLink href="https://www.mediawiki.org/wiki/Global_templates">
               Global templates
-            </ArticleLink>
-            , but it is ridiculous that, in 2026, 25 years
-            after Wikipedia&apos;s founding, we still have
-            to deal with this.
+            </ArticleLink>{" "}
+            one, but it is ridiculous that, in 2026, 25
+            years after Wikipedia&apos;s founding, we still
+            have to deal with this.
           </ArticleParagraph>
         </ArticleBlockQuote>
         <ArticleGitHubReadme href="https://github.com/psygo/wikipedia_timeline" />
+        <ArticleImageWithLegend
+          src="/articles/wikipedia-timeline/Fanaro009.png"
+          height={100}
+          width={600}
+        >
+          <ImageLegend>
+            My user page on Wikipedia,{" "}
+            <ArticleLink href="https://en.wikipedia.org/wiki/User:Fanaro009">
+              Fanaro009
+            </ArticleLink>
+            . Wikipedia enables the same features for a user
+            page as for regular articles. Customize your
+            page as well!
+          </ImageLegend>
+        </ArticleImageWithLegend>
       </ArticleSection>
       <ArticleSection>
         <ArticleSectionTitle>
@@ -224,6 +256,11 @@ export function WikipediaTimeline({
               </ArticleLink>
             </li>
           </ArticleUnorderedList>
+          <li>
+            <ArticleLink href="https://en.wikipedia.org/wiki/User:Fanaro009">
+              Fanaro009 on Wikipedia
+            </ArticleLink>
+          </li>
         </ArticleUnorderedList>
       </ArticleSection>
     </Article>
