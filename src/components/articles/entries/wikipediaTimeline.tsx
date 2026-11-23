@@ -168,8 +168,8 @@ export function WikipediaTimeline({
         </ArticleParagraph>
         <ArticleParagraph>
           I really wish my feature becomes a mainstay, as it
-          feels like a contribution to humanity :). Fingers
-          crossed!
+          feels like a contribution to humanity and a
+          lifetime achievement! :) Fingers crossed!
         </ArticleParagraph>
         <ArticleBlockQuote>
           <ArticleParagraph>
