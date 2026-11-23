@@ -64,7 +64,7 @@ export function WikipediaTimeline({
               timeline
             </ArticleLink>{" "}
             example (1). Players and games are not only
-            links, but entities in the database.
+            links, but entities in the database as well.
           </ImageLegend>
         </ArticleImageWithLegend>
         <ArticleImageWithLegend
@@ -148,22 +148,24 @@ export function WikipediaTimeline({
         </ArticleParagraph>
         <ArticleParagraph>
           Hopefully, I won&apos;t need such a lengthy
-          process for enabling this to the public. And
-          I&apos;ve also added a view switcher dropdown
-          button to preserve the original timeline
-          visualizations people had developed prior to my
-          component &mdash; usually lists and tables
-          &mdash;, so nothing will be lost in any articles
-          &mdash; my component is even able to automatically
-          generate list and table views from the timeline
-          view itself!
+          process for releasing this to the public. And
+          I&apos;ve even added a{" "}
+          <ArticleLink href="https://en.wikipedia.org/wiki/Wikipedia_talk:Gadget#ViewSwitcher_for_Timelines">
+            view switcher dropdown button
+          </ArticleLink>{" "}
+          to preserve the original timeline visualizations
+          people had developed prior to my component &mdash;
+          usually lists and tables &mdash;, so nothing will
+          be lost from any articles &mdash; my component is
+          even able to automatically generate list and table
+          views from the timeline view itself!
         </ArticleParagraph>
         <ArticleBlockQuote>
           <ArticleParagraph>
             I have to say I&apos;m quite shocked by
             Wikipedia opting for its templates and modules
             having to be reimplemented in each and every
-            language. This is likely the number one tenant
+            language. This is likely the number one tenet
             for good software engineering: D.R.Y., i.e.{" "}
             <ArticleLink href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself">
               don&apos;t repeat yourself

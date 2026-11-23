@@ -2,12 +2,11 @@
 
 ## Priorities
 
-- Github Embed
 - Create a Tesuji Encyclopedia Series
-- AI Sensei Embedded Component
-  - Don't forget the "Current Move" feature.
 - Add a "Highlighted" or "Featured" articles section.
   - Maybe both to the articles and home pages.
+- Timeline for my career.
+  - I could even use what I developed for Wikipedia.
 
 ## Bugs
 
