@@ -148,17 +148,23 @@ export function WikipediaTimeline({
         </ArticleParagraph>
         <ArticleParagraph>
           Hopefully, I won&apos;t need such a lengthy
-          process for releasing this to the public. And
-          I&apos;ve even added a{" "}
+          process for releasing this to the public.
+          Actually, my component is already public, however
+          Wikipedia recommends against public articles
+          depending on user code, so it&apos;s likely they
+          will ask me to take it down.
+        </ArticleParagraph>
+        <ArticleParagraph>
+          But I&apos;ve also added a{" "}
           <ArticleLink href="https://en.wikipedia.org/wiki/Wikipedia_talk:Gadget#ViewSwitcher_for_Timelines">
             view switcher dropdown button
           </ArticleLink>{" "}
           to preserve the original timeline visualizations
-          people had developed prior to my component &mdash;
-          usually lists and tables &mdash;, so nothing will
-          be lost from any articles &mdash; my component is
-          even able to automatically generate list and table
-          views from the timeline view itself!
+          people had developed prior to my component, so
+          nothing will be lost from any articles &mdash; my
+          component is even able to automatically generate
+          list and table views from the timeline view
+          itself!
         </ArticleParagraph>
         <ArticleBlockQuote>
           <ArticleParagraph>
