@@ -166,6 +166,11 @@ export function WikipediaTimeline({
           list and table views from the timeline view
           itself!
         </ArticleParagraph>
+        <ArticleParagraph>
+          I really wish my feature becomes a mainstay, as it
+          feels like a contribution to humanity :). Fingers
+          crossed!
+        </ArticleParagraph>
         <ArticleBlockQuote>
           <ArticleParagraph>
             I have to say I&apos;m quite shocked by
