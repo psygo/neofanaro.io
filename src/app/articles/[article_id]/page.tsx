@@ -20,6 +20,7 @@ import {
   GoHallOfFame,
   GoViewerTest,
   Haengma3,
+  HowManyGoPositions,
   IngCupSuicide,
   KifuBook,
   Lang101,
@@ -110,6 +111,8 @@ function whichArticle(
       return <GoViewerTest article={post} />
     case "haengma3":
       return <Haengma3 article={post} />
+    case "how-many-go-positions":
+      return <HowManyGoPositions article={post} />
     case "ing-cup-suicide":
       return <IngCupSuicide article={post} />
     case "kifu-book":
