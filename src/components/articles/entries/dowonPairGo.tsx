@@ -21,8 +21,6 @@ import {
   GoViewerPlayers,
 } from "@components/goViewer/exports"
 
-import { SITE_URL } from "@utils"
-
 export function DowonPairGo({ article }: ArticleProps) {
   return (
     <Article article={article}>
@@ -115,7 +113,7 @@ export function DowonPairGo({ article }: ArticleProps) {
             more, do check my{" "}
             <ArticleLink
               internal
-              href={`${SITE_URL}/articles/one-year-in-asia`}
+              href="/articles/one-year-in-asia"
             >
               video summary
             </ArticleLink>{" "}
