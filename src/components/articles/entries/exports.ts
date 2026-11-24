@@ -1,6 +1,7 @@
 export * from "./bestOfFanaroio"
 export * from "./bestGamesOf2026"
 export * from "./chineseYouTubersAutodub"
+export * from "./choChikunAuto"
 export * from "./christmasTsumego2026"
 export * from "./dowonPairGo"
 export * from "./gerentia"

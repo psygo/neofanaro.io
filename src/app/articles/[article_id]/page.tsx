@@ -12,6 +12,7 @@ import {
   BestGamesOf2026,
   BestOfFanaroio,
   ChineseYouTubersAutodub,
+  ChoChikunAuto,
   ChristmasTsumegos2026,
   DowonPairGo,
   Gerentia,
@@ -93,6 +94,8 @@ function whichArticle(
       return <BestGamesOf2026 article={post} />
     case "chinese-youtubers-autodub":
       return <ChineseYouTubersAutodub article={post} />
+    case "cho-chikun-auto":
+      return <ChoChikunAuto article={post} />
     case "christmas-tsumegos-2026":
       return <ChristmasTsumegos2026 article={post} />
     case "dowon-pairgo":
