@@ -1,6 +1,6 @@
 "use client"
 
-import { useId, useState } from "react"
+import { useId, useState, type ReactNode } from "react"
 
 import Image from "next/image"
 import Link from "next/link"
@@ -312,40 +312,72 @@ export function ArticleBlockQuote({
 type ArticleIframeProps = {
   title: string
   src: string
+  // Rendered below the iframe, inside the same width-capped column —
+  // meant for an `ImageLegend` caption, but takes anything.
+  children?: ReactNode
+}
+
+// Shared caption slot under an iframe, matching `ImageLegend`'s own
+// text styling (see `ArticleImageWithLegend`) so a caption reads the
+// same whether it sits under an image or an iframe.
+function ArticleIframeCaption({
+  children,
+}: WithReactChildren) {
+  return (
+    <div className="px-2 text-sm text-slate-600 sm:text-base dark:text-slate-400 [&>p]:mt-0 [&>p]:mb-0">
+      {children}
+    </div>
+  )
 }
 
 export function ArticleIframe({
   title,
   src,
+  children,
 }: ArticleIframeProps) {
   return (
-    <iframe
-      id="inlineFrameExample"
-      title={title}
-      width={0}
-      height={0}
-      src={src}
-      className="mx-auto h-60 w-full px-3"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowFullScreen
-    ></iframe>
+    <div className="flex flex-col gap-2">
+      <iframe
+        id="inlineFrameExample"
+        title={title}
+        width={0}
+        height={0}
+        src={src}
+        className="mx-auto h-60 w-full px-3"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+      ></iframe>
+      {children && (
+        <ArticleIframeCaption>
+          {children}
+        </ArticleIframeCaption>
+      )}
+    </div>
   )
 }
 
 export function ArticleYouTubeIframe({
   src,
   title,
+  children,
 }: ArticleIframeProps) {
   return (
     <div className="mt-5 mb-5 flex justify-center">
-      <div className="mx-2 flex aspect-video w-full max-w-lg items-center overflow-hidden rounded-md border border-slate-200 shadow-lg sm:mx-6 sm:rounded-lg dark:border-slate-700">
-        <iframe
-          className="h-full w-full"
-          src={src}
-          title={title}
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        />
+      <div className="mx-2 flex w-full max-w-lg flex-col gap-2 sm:mx-6">
+        <div className="flex aspect-video w-full items-center overflow-hidden rounded-md border border-slate-200 shadow-lg sm:rounded-lg dark:border-slate-700">
+          <iframe
+            className="h-full w-full"
+            src={src}
+            title={title}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
+        </div>
+        {children && (
+          <ArticleIframeCaption>
+            {children}
+          </ArticleIframeCaption>
+        )}
       </div>
     </div>
   )
@@ -354,6 +386,7 @@ export function ArticleYouTubeIframe({
 export function ArticleBilibiliIframe({
   src,
   title,
+  children,
 }: ArticleIframeProps) {
   // Unlike YouTube, bilibili's player autoplays (muted) purely from
   // its own URL param, regardless of the iframe's `allow` list — so
@@ -364,15 +397,22 @@ export function ArticleBilibiliIframe({
 
   return (
     <div className="mt-5 mb-5 flex justify-center">
-      <div className="mx-6 flex aspect-video w-full max-w-lg items-center overflow-hidden rounded-lg border border-slate-200 shadow-lg dark:border-slate-700">
-        <iframe
-          className="h-full w-full"
-          src={autoplayDisabledSrc}
-          title={title}
-          scrolling="no"
-          allow="encrypted-media; fullscreen"
-          allowFullScreen
-        />
+      <div className="mx-6 flex w-full max-w-lg flex-col gap-2">
+        <div className="flex aspect-video w-full items-center overflow-hidden rounded-lg border border-slate-200 shadow-lg dark:border-slate-700">
+          <iframe
+            className="h-full w-full"
+            src={autoplayDisabledSrc}
+            title={title}
+            scrolling="no"
+            allow="encrypted-media; fullscreen"
+            allowFullScreen
+          />
+        </div>
+        {children && (
+          <ArticleIframeCaption>
+            {children}
+          </ArticleIframeCaption>
+        )}
       </div>
     </div>
   )
@@ -403,6 +443,7 @@ export function ArticleAiSenseiIframe({
   src,
   title,
   move,
+  children,
 }: ArticleAiSenseiIframeProps) {
   const srcWithMove =
     move === undefined
@@ -412,7 +453,7 @@ export function ArticleAiSenseiIframe({
   return (
     <div className="mt-5 mb-5 flex justify-center">
       <div
-        className="mx-2 w-full max-w-lg sm:mx-6"
+        className="mx-2 flex w-full max-w-lg flex-col gap-2 sm:mx-6"
         style={{ containerType: "inline-size" }}
       >
         <div
@@ -432,6 +473,58 @@ export function ArticleAiSenseiIframe({
             }}
           />
         </div>
+        {children && (
+          <ArticleIframeCaption>
+            {children}
+          </ArticleIframeCaption>
+        )}
+      </div>
+    </div>
+  )
+}
+
+// Instagram's own "/embed/" page has no fixed-pixel chrome to crop out
+// (unlike AI Sensei's top bar) — its total height just scales linearly
+// with width, measured here across several widths against the actual
+// embed page: height ≈ 1.3 * width + 207.14px.
+const INSTAGRAM_HEIGHT_RATIO = 1.3
+const INSTAGRAM_FIXED_CHROME_PX = 207.14
+
+export function ArticleInstagramIframe({
+  src,
+  title,
+  children,
+}: ArticleIframeProps) {
+  const embedSrc = `${src.split("?")[0].replace(/\/$/, "")}/embed/`
+
+  return (
+    <div className="mt-8 mb-5 flex justify-center">
+      <div
+        className="mx-2 flex w-full max-w-lg flex-col gap-2 sm:mx-6"
+        style={{ containerType: "inline-size" }}
+      >
+        <div
+          className="overflow-hidden rounded-md border border-slate-200 shadow-lg sm:rounded-lg dark:border-slate-700"
+          style={{
+            height: `calc(${INSTAGRAM_HEIGHT_RATIO * 100}cqw + ${INSTAGRAM_FIXED_CHROME_PX}px)`,
+          }}
+        >
+          <iframe
+            src={embedSrc}
+            title={title}
+            scrolling="no"
+            style={{
+              width: "100%",
+              height: "100%",
+              border: 0,
+            }}
+          />
+        </div>
+        {children && (
+          <ArticleIframeCaption>
+            {children}
+          </ArticleIframeCaption>
+        )}
       </div>
     </div>
   )

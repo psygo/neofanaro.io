@@ -11,6 +11,7 @@ import {
   NoWrap,
   ImageLegend,
   ArticleYouTubeIframe,
+  ArticleInstagramIframe,
 } from "../articleContent"
 // import { GoDiagram, GoDiagramLegend } from "../goDiagram"
 import {
@@ -32,7 +33,7 @@ export function ChristmasTsumegos2026({
           Here we go with an extra Christmas problem!
         </ArticleParagraph>
         <ArticleParagraph>
-          I say extra because about 2 years ago, before I
+          I say extra because, about 2 years ago, before I
           went on a more-than-a-year journey in Asia, I
           published a video on some Christmas problems I had
           found:
@@ -59,11 +60,14 @@ export function ChristmasTsumegos2026({
         </ArticleParagraph>
         <ArticleParagraph>
           Fast-forward to 2026, and now I have an extra
-          &quot;tree&quot; problem to share, one
-          accidentally I accidentally found while skimming
-          through a pro-level tsumego book at Flower Baduk,
-          a Go school in the middle of Seoul, where I spent
-          most of my time in Korea during 2025 with BIBA
+          &quot;tree&quot; problem to share, one I
+          accidentally found while skimming through a
+          pro-level tsumego book at Flower Baduk, a Go
+          school for adults in the middle of Seoul, where I
+          spent most of my time in Korea during 2025 with{" "}
+          <ArticleLink href="https://www.bibabaduk.online/">
+            BIBA
+          </ArticleLink>{" "}
           &mdash; check out my{" "}
           <ArticleLink
             internal
@@ -80,7 +84,7 @@ export function ChristmasTsumegos2026({
           </ArticleLink>{" "}
           articles.
         </ArticleParagraph>
-        <ArticleImageWithLegend
+        {/* <ArticleImageWithLegend
           src="/articles/christmas-tsumegos-2026/pro_tsumego_book.webp"
           width={500}
         >
@@ -98,7 +102,19 @@ export function ChristmasTsumegos2026({
             The 2026 Christmas Problem, in the bottom-left
             of page 12.
           </ImageLegend>
-        </ArticleImageWithLegend>
+        </ArticleImageWithLegend> */}
+        <ArticleInstagramIframe
+          src="https://www.instagram.com/p/DYYUIFMDwIV/?img_index=1"
+          title="fanaro009 - Christmas Tsumego 2026 Instagram post"
+        >
+          <ImageLegend>
+            The pro-level tsumego book, created by the
+            Korean Ministry of Culture, Sports and Tourism,
+            and KSPO (Korean Sports Promotion Organization).
+            The 2026 Christmas Problem, in the bottom-left
+            of page 12.
+          </ImageLegend>
+        </ArticleInstagramIframe>
         <ArticleParagraph>
           Unfortunately, I couldn&apos;t scan the whole
           book, because Moon Dowon 3p gifted it away to
@@ -112,20 +128,20 @@ export function ChristmasTsumegos2026({
             interactive={false}
             region={{
               minRow: 0,
-              maxRow: 11,
+              maxRow: 10,
               minCol: 9,
               maxCol: 18,
             }}
           />
           <GoViewerLegend>
-            The 2026 Christmas Tsumego
+            The 2026 Christmas Tsumego, Black to play.
           </GoViewerLegend>
         </GoViewer>
         <ArticleParagraph>
           But, anyways, all the problems in that book are
-          more difficult than any of us will likely to ever
-          solve. The one that&apos;s the topic of today is
-          classed as a 5 dan tsumego on 101weiqi (
+          more difficult than any of us will likely ever
+          solve. The one that&apos;s the today&apos;s topic
+          is classed as a 5 dan tsumego on 101weiqi (
           <ArticleLink href="https://www.101weiqi.com/q/159738/">
             Q-159,738
           </ArticleLink>
@@ -140,11 +156,12 @@ export function ChristmasTsumegos2026({
             interactive={false}
             region={{
               minRow: 0,
-              maxRow: 11,
+              maxRow: 10,
               minCol: 9,
               maxCol: 18,
             }}
           />
+          <GoViewerControls />
           <GoViewerLegend>
             The solution to this year&apos;s Christmas
             problem.
