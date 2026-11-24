@@ -232,6 +232,11 @@ export function MyFavoriteManga({ article }: ArticleProps) {
             </ArticleLink>
           </li>
           <li>
+            <ArticleLink href="https://www.goodreads.com/book/show/5939286-ikkyu-band-1">
+              Ikkyu
+            </ArticleLink>
+          </li>
+          <li>
             <ArticleLink href="https://www.goodreads.com/book/show/6759156-dorohedoro-vol-1">
               Dorohedoro
             </ArticleLink>

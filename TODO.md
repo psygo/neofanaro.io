@@ -14,6 +14,7 @@
 
 ## Go
 
+- [Double Elephant's Jump](https://youtu.be/B90PL_TuWPo?t=418)
 - Best CJK YouTube Channels
   - Chinese Go YouTubers (and Bilibili and Youkou).
 - Wikipedia Timeline Component

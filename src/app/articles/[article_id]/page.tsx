@@ -11,6 +11,7 @@ import { CpiSuspense } from "@components/common/cpiSuspense"
 import {
   BestGamesOf2026,
   BestOfFanaroio,
+  ChineseYouTubersAutodub,
   ChristmasTsumegos2026,
   DowonPairGo,
   Gerentia,
@@ -90,6 +91,8 @@ function whichArticle(
       return <BestOfFanaroio article={post} />
     case "best-games-of-2026":
       return <BestGamesOf2026 article={post} />
+    case "chinese-youtubers-autodub":
+      return <ChineseYouTubersAutodub article={post} />
     case "christmas-tsumegos-2026":
       return <ChristmasTsumegos2026 article={post} />
     case "dowon-pairgo":
