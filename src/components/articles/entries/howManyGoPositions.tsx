@@ -231,7 +231,7 @@ export function HowManyGoPositions({
                 Total
               </ArticleTableCell>
               <ArticleTableCell className="px-3 py-4 font-bold">
-                <ArticleMath>{String.raw`1696`}</ArticleMath>
+                <ArticleMath>{String.raw`\textbf{1696}`}</ArticleMath>
               </ArticleTableCell>
               <ArticleTableCell className="px-3 py-4 font-bold">
                 Sum of fixed positions across all eight

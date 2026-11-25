@@ -35,6 +35,7 @@ export function SoftwareWorkSection({
       <div className="flex w-full flex-col gap-4">
         <CpiSuspense>
           <Gia />
+          <WikipediaTimeline />
           <Aquarifolio />
           <Magi />
           <Fic starTotal={stars.fic} />
@@ -278,6 +279,52 @@ function Lang101() {
     //   tags={["react native", "app", "typescript", "ai"]}
     //   starTotal={20}
     // />
+  )
+}
+
+function WikipediaTimeline() {
+  const lang = useLang()
+
+  return (
+    <Link
+      href="/articles/wikipedia-timeline"
+      target="_blank"
+      rel="noreferrer noopener"
+      className={`${containerOutline} bg-gray-0 flex w-full flex-row items-center gap-5 px-4.5 py-3`}
+    >
+      <div className="relative hidden h-22.5 w-22.5 shrink-0 sm:block">
+        <Image
+          loading="eager"
+          src="/software_work/wikipedia_timeline.png"
+          alt="Wikipedia Timeline"
+          fill
+          sizes="90px"
+          className="rounded-lg object-contain"
+        />
+      </div>
+      <div className="flex flex-col gap-3">
+        <div className="flex items-center gap-2">
+          <h3 className="text-md font-bold sm:text-lg">
+            Wikipedia Timeline
+          </h3>
+          <Image
+            loading="eager"
+            src="/software_work/wikipedia_timeline.png"
+            alt="Wikipedia Timeline Logo"
+            width={0}
+            height={0}
+            sizes="100vw"
+            className="h-6 w-6 rounded object-contain sm:hidden"
+          />
+        </div>
+        <p className="-mt-2 text-sm text-slate-950 dark:text-slate-300">
+          {lang === "pt"
+            ? "Um componente React de linha do tempo interativa"
+            : "An interactive timeline React component"}
+        </p>
+        <Tags tags={["react", "typescript", "component"]} />
+      </div>
+    </Link>
   )
 }
 
