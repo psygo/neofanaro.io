@@ -319,8 +319,8 @@ function WikipediaTimeline() {
         </div>
         <p className="-mt-2 text-sm text-slate-950 dark:text-slate-300">
           {lang === "pt"
-            ? "Um componente React de linha do tempo interativa"
-            : "An interactive timeline React component"}
+            ? "Um componente de linha do tempo para a Wikipédia"
+            : "A Timeline Component for Wikipedia"}
         </p>
         <Tags tags={["react", "typescript", "component"]} />
       </div>

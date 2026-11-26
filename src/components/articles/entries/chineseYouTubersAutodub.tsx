@@ -5,6 +5,7 @@ import {
   ArticleParagraph,
   ArticleSection,
   ArticleLink,
+  ArticleYouTubeIframe,
 } from "../articleContent"
 import {
   ArticleTable,
@@ -192,6 +193,27 @@ export function ChineseYouTubersAutodub({
             </ArticleTableRow>
           </ArticleTableBody>
         </ArticleTable>
+        <ArticleParagraph>
+          It&apos;s worth emphasizing how outstanding some
+          of these channels are, especially{" "}
+          <ArticleLink href="https://www.youtube.com/@haifongigo">
+            @haifongigo
+          </ArticleLink>
+          . It features commentary videos from some of
+          Taiwan&apos;s top pros, including{" "}
+          <ArticleLink href="https://senseis.xmp.net/?XuHaohong">
+            Xu Haohong 9p
+          </ArticleLink>
+          , winner of the 2022 Asian Games &mdash; with one
+          of the most epic runs ever, winning it over the
+          best players of the tournament: Shin Jinseo 9p,
+          Park Junghwan 9p, Ke Jie 9p, among others &mdash;
+          and Taiwan&apos;s #1 player.
+        </ArticleParagraph>
+        <ArticleYouTubeIframe
+          src="https://www.youtube.com/embed/oguZn6N7B1U"
+          title="2026 Meijin Tournament: Self-Commentary by Hsu Hao-hung"
+        />
         <ArticleParagraph>
           On Bilibili, I only know of{" "}
           <ArticleLink href="https://space.bilibili.com/en/271671622">

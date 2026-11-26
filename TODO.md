@@ -2,6 +2,9 @@
 
 ## Priorities
 
+- Emphasize that some of the channels in the Chinese YouTubers articles have content from world class pros, such as the haifong channel.
+  - E.g. [this Xu Haohong 9p commentary](https://youtu.be/oguZn6N7B1U)
+
 - Create a Tesuji Encyclopedia Series
 - Add a "Highlighted" or "Featured" articles section.
   - Maybe both to the articles and home pages.
