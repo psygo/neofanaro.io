@@ -33,6 +33,7 @@ import {
   MammothsJump,
   MinCJKForGo,
   MyFavoriteManga,
+  NewYtdKbdNav,
   OkaoigoAiArticles,
   OneYearInAsia,
   PostAiOpeningHierarchy,
@@ -139,6 +140,8 @@ function whichArticle(
       return <MinCJKForGo article={post} />
     case "my-favorite-manga":
       return <MyFavoriteManga article={post} />
+    case "new-ytd-kbd-nav":
+      return <NewYtdKbdNav article={post} />
     case "okaoigo-ai-articles":
       return <OkaoigoAiArticles article={post} />
     case "one-year-in-asia":
