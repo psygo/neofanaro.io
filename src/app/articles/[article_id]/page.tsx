@@ -23,6 +23,7 @@ import {
   HowManyGoPositions,
   IngCupSuicide,
   KifuBook,
+  KoreanYouTubersAutodub,
   Lang101,
   LatexBackgammon,
   LatexShogi,
@@ -115,6 +116,8 @@ function whichArticle(
       return <HowManyGoPositions article={post} />
     case "ing-cup-suicide":
       return <IngCupSuicide article={post} />
+    case "korean-youtubers-autodub":
+      return <KoreanYouTubersAutodub article={post} />
     case "kifu-book":
       return <KifuBook article={post} />
     case "lang101":
