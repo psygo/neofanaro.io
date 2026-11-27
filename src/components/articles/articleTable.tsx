@@ -1,23 +1,37 @@
 import { WithReactChildren } from "@types"
 
+type ArticleTableProps = WithReactChildren & {
+  className?: string
+}
+
 export function ArticleTable({
   children,
-}: WithReactChildren) {
+  className = "",
+}: ArticleTableProps) {
   return (
     <div className="not-prose mr-4 ml-4 overflow-x-auto rounded-lg border border-slate-200 dark:border-slate-700">
-      <table className="w-full border-collapse text-center text-sm">
+      <table
+        className={`w-full border-collapse text-center text-sm ${className}`}
+      >
         {children}
       </table>
     </div>
   )
 }
 
+type ArticleTableHeadProps = WithReactChildren & {
+  className?: string
+}
+
 export function ArticleTableHead({
   children,
-}: WithReactChildren) {
+  className = "",
+}: ArticleTableHeadProps) {
   return (
     <thead>
-      <tr className="divide-x divide-slate-200 bg-slate-100 dark:divide-slate-700 dark:bg-slate-800">
+      <tr
+        className={`divide-x divide-slate-200 bg-slate-100 dark:divide-slate-700 dark:bg-slate-800 ${className}`}
+      >
         {children}
       </tr>
     </thead>
@@ -41,17 +55,29 @@ export function ArticleTableHeaderCell({
   )
 }
 
+type ArticleTableBodyProps = WithReactChildren & {
+  className?: string
+}
+
 export function ArticleTableBody({
   children,
-}: WithReactChildren) {
-  return <tbody>{children}</tbody>
+  className = "",
+}: ArticleTableBodyProps) {
+  return <tbody className={className}>{children}</tbody>
+}
+
+type ArticleTableRowProps = WithReactChildren & {
+  className?: string
 }
 
 export function ArticleTableRow({
   children,
-}: WithReactChildren) {
+  className = "",
+}: ArticleTableRowProps) {
   return (
-    <tr className="divide-x divide-slate-200 odd:bg-white even:bg-slate-50 dark:divide-slate-700 dark:odd:bg-slate-900 dark:even:bg-slate-800">
+    <tr
+      className={`divide-x divide-slate-200 odd:bg-white even:bg-slate-50 dark:divide-slate-700 dark:odd:bg-slate-900 dark:even:bg-slate-800 ${className}`}
+    >
       {children}
     </tr>
   )

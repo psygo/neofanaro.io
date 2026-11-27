@@ -81,7 +81,22 @@ export function ChineseYouTubersAutodub({
               Content&apos;s Rank
             </ArticleTableHeaderCell>
           </ArticleTableHead>
-          <ArticleTableBody>
+          <ArticleTableBody className="text-left">
+            <ArticleTableRow>
+              <ArticleTableCell>海峰棋院</ArticleTableCell>
+              <ArticleTableCell>
+                <ArticleLink href="https://www.youtube.com/@haifongigo">
+                  @haifongigo
+                </ArticleLink>
+              </ArticleTableCell>
+              <ArticleTableCell className="text-center font-bold">
+                ✓
+              </ArticleTableCell>
+              <ArticleTableCell>
+                Commentary
+              </ArticleTableCell>
+              <ArticleTableCell>9p</ArticleTableCell>
+            </ArticleTableRow>
             <ArticleTableRow>
               <ArticleTableCell>
                 職業棋士劉建昌
@@ -91,56 +106,13 @@ export function ChineseYouTubersAutodub({
                   @teacherliugo
                 </ArticleLink>
               </ArticleTableCell>
-              <ArticleTableCell className="font-bold">
+              <ArticleTableCell className="text-center font-bold">
                 ✓
               </ArticleTableCell>
               <ArticleTableCell>
                 Commentary
               </ArticleTableCell>
               <ArticleTableCell>Pro</ArticleTableCell>
-            </ArticleTableRow>
-            <ArticleTableRow>
-              <ArticleTableCell>
-                Jian Jian Good Go Game World
-              </ArticleTableCell>
-              <ArticleTableCell>
-                <ArticleLink href="https://www.youtube.com/@jianjian888/">
-                  @jianjian888
-                </ArticleLink>
-              </ArticleTableCell>
-              <ArticleTableCell>✗</ArticleTableCell>
-              <ArticleTableCell>
-                Commentary Archive
-              </ArticleTableCell>
-              <ArticleTableCell>9p</ArticleTableCell>
-            </ArticleTableRow>
-            <ArticleTableRow>
-              <ArticleTableCell>海峰棋院</ArticleTableCell>
-              <ArticleTableCell>
-                <ArticleLink href="https://www.youtube.com/@haifongigo">
-                  @haifongigo
-                </ArticleLink>
-              </ArticleTableCell>
-              <ArticleTableCell className="font-bold">
-                ✓
-              </ArticleTableCell>
-              <ArticleTableCell>
-                Commentary
-              </ArticleTableCell>
-              <ArticleTableCell>9p</ArticleTableCell>
-            </ArticleTableRow>
-            <ArticleTableRow>
-              <ArticleTableCell>
-                下围棋的小林
-              </ArticleTableCell>
-              <ArticleTableCell>
-                <ArticleLink href="https://www.youtube.com/@wqxiaolin">
-                  @wqxiaolin
-                </ArticleLink>
-              </ArticleTableCell>
-              <ArticleTableCell>✗</ArticleTableCell>
-              <ArticleTableCell>Joseki</ArticleTableCell>
-              <ArticleTableCell>Fox 9d</ArticleTableCell>
             </ArticleTableRow>
             <ArticleTableRow>
               <ArticleTableCell>
@@ -151,7 +123,7 @@ export function ChineseYouTubersAutodub({
                   @chenlintaoweiqi
                 </ArticleLink>
               </ArticleTableCell>
-              <ArticleTableCell className="font-bold">
+              <ArticleTableCell className="text-center font-bold">
                 ✓
               </ArticleTableCell>
               <ArticleTableCell>
@@ -168,7 +140,7 @@ export function ChineseYouTubersAutodub({
                   @MingYueTanQi
                 </ArticleLink>
               </ArticleTableCell>
-              <ArticleTableCell className="font-bold">
+              <ArticleTableCell className="text-center font-bold">
                 ✓
               </ArticleTableCell>
               <ArticleTableCell>
@@ -179,17 +151,51 @@ export function ChineseYouTubersAutodub({
               </ArticleTableCell>
             </ArticleTableRow>
             <ArticleTableRow>
+              <ArticleTableCell>
+                Jian Jian Good Go Game World
+              </ArticleTableCell>
+              <ArticleTableCell>
+                <ArticleLink href="https://www.youtube.com/@jianjian888/">
+                  @jianjian888
+                </ArticleLink>
+              </ArticleTableCell>
+              <ArticleTableCell className="text-center">
+                ✗
+              </ArticleTableCell>
+              <ArticleTableCell>
+                Commentary Archive
+              </ArticleTableCell>
+              <ArticleTableCell>9p</ArticleTableCell>
+            </ArticleTableRow>
+            <ArticleTableRow>
               <ArticleTableCell>围棋教室</ArticleTableCell>
               <ArticleTableCell>
                 <ArticleLink href="https://www.youtube.com/@%E5%9B%B4%E6%A3%8B%E6%95%99%E5%AE%A4">
                   @围棋教室
                 </ArticleLink>
               </ArticleTableCell>
-              <ArticleTableCell>✗</ArticleTableCell>
+              <ArticleTableCell className="text-center">
+                ✗
+              </ArticleTableCell>
               <ArticleTableCell>
                 Commentary
               </ArticleTableCell>
               <ArticleTableCell>Unknown</ArticleTableCell>
+            </ArticleTableRow>
+            <ArticleTableRow>
+              <ArticleTableCell>
+                下围棋的小林
+              </ArticleTableCell>
+              <ArticleTableCell>
+                <ArticleLink href="https://www.youtube.com/@wqxiaolin">
+                  @wqxiaolin
+                </ArticleLink>
+              </ArticleTableCell>
+              <ArticleTableCell className="text-center">
+                ✗
+              </ArticleTableCell>
+              <ArticleTableCell>Joseki</ArticleTableCell>
+              <ArticleTableCell>Fox 9d</ArticleTableCell>
             </ArticleTableRow>
           </ArticleTableBody>
         </ArticleTable>
