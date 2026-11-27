@@ -17,6 +17,8 @@
 
 ## Go
 
+- [Puyu Go App](https://puyogo.app/)
+- [When Pokemon Meets Go - igo9x9](https://igo9x9.github.io/sikatsu/?fbclid=IwZXh0bgNhZW0CMTEAAR25eianS882sdLzwENkpSJuYJxtONL7IR2elfehZkUJKNGV1HqLsQVM8hM_aem_ZmFrZWR1bW15MTZieXRlcw)
 - [Double Elephant's Jump](https://youtu.be/B90PL_TuWPo?t=418)
 - Best CJK YouTube Channels
   - Chinese Go YouTubers (and Bilibili and Youkou).

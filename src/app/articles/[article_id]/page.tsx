@@ -22,6 +22,7 @@ import {
   Haengma3,
   HowManyGoPositions,
   IngCupSuicide,
+  JapaneseYouTubersAutodub,
   KifuBook,
   KoreanYouTubersAutodub,
   Lang101,
@@ -116,6 +117,8 @@ function whichArticle(
       return <HowManyGoPositions article={post} />
     case "ing-cup-suicide":
       return <IngCupSuicide article={post} />
+    case "japanese-youtubers-autodub":
+      return <JapaneseYouTubersAutodub article={post} />
     case "korean-youtubers-autodub":
       return <KoreanYouTubersAutodub article={post} />
     case "kifu-book":

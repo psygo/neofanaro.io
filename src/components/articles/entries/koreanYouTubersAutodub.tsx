@@ -41,7 +41,7 @@ export function KoreanYouTubersAutodub({
         </ArticleParagraph>
         <ArticleParagraph>
           <ArticleLink href="https://www.youtube.com/@BadukTV_official">
-            Baduk TV
+            Baduk 바둑 TV
           </ArticleLink>{" "}
           is one of the treasures of the Go world, an
           unparalleled resource. I often check out what live
@@ -51,7 +51,7 @@ export function KoreanYouTubersAutodub({
         <ArticleParagraph>
           Another highlight is definitely{" "}
           <ArticleLink href="https://www.youtube.com/@leehyunwooktv">
-            Lee Hyunwook 9p
+            Lee Hyunwook 이현욱 9p
           </ArticleLink>
           &apos;s channel. A Korean 9p offering us free
           commentary is a real gift to be cherished.
@@ -208,7 +208,7 @@ export function KoreanYouTubersAutodub({
         <ArticleParagraph>
           One channel which really puzzles me is{" "}
           <ArticleLink href="https://www.youtube.com/@%EA%B9%80%EC%84%B1%EB%A3%A1%EB%B0%94%EB%91%91%EB%9E%A9">
-            Kim Seongryong
+            Kim Seongryong 김성룡
           </ArticleLink>
           &apos;s. I really don&apos;t know how he is able
           to pump out so much high quality content.
