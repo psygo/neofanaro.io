@@ -28,14 +28,17 @@ export async function get_article(path: string) {
 
 export async function get_articles(
   orderBy: OrderBy = OrderBy.date,
-  includeDrafts = false,
+  includeDrafts: boolean | "only" = false,
   tags?: string[],
   direction: SortDirection = "desc",
 ): Promise<ArticleWithVotes[] | undefined> {
   try {
-    const draftCondition = includeDrafts
-      ? undefined
-      : eq(articlesTable.draft, false)
+    const draftCondition =
+      includeDrafts === "only"
+        ? eq(articlesTable.draft, true)
+        : includeDrafts
+          ? undefined
+          : eq(articlesTable.draft, false)
 
     const tagCondition =
       tags && tags.length > 0

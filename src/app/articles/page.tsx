@@ -16,9 +16,12 @@ export default async function Articles({
   const { draft } = await searchParams
   // "?draft" alone (no "=true") still means true — Next hands that
   // through as an empty string, not undefined, so only an explicit
-  // "false" should actually disable it.
-  const includeDrafts =
-    draft !== undefined && draft !== "false"
+  // "false" should actually disable it. "?draft=only" means drafts
+  // exclusively, instead of drafts plus regular articles.
+  const includeDrafts: boolean | "only" =
+    draft === "only"
+      ? "only"
+      : draft !== undefined && draft !== "false"
   const articles = await get_articles(
     undefined,
     includeDrafts,
