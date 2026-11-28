@@ -48,7 +48,15 @@ export function JapaneseYouTubersAutodub({
           <ArticleLink href="https://www.youtube.com/@nihonkiin_ch">
             Nihon Kiin 日本棋
           </ArticleLink>
-          &apos;s channel is also a Go world treasure.
+          &apos;s channel is also a Go world treasure. Some
+          years ago they had also created a separate channel
+          for English content, the{" "}
+          <ArticleLink href="https://www.youtube.com/@nihonkiingochannelforovers8076">
+            Nihon Kiin Go Channel for overseas
+          </ArticleLink>
+          , with content featuring Japanese superstars, such
+          as Ichiriki Ryo 9p, but that channel is now
+          inactive.
         </ArticleParagraph>
         <ArticleParagraph>
           Two other notable channels are{" "}
@@ -164,6 +172,23 @@ export function JapaneseYouTubersAutodub({
               </ArticleTableCell>
               <ArticleTableCell>
                 Live Matches
+              </ArticleTableCell>
+              <ArticleTableCell>9p</ArticleTableCell>
+            </ArticleTableRow>
+            <ArticleTableRow>
+              <ArticleTableCell>
+                Nihon Kiin Go Channel for overseas
+              </ArticleTableCell>
+              <ArticleTableCell>
+                <ArticleLink href="https://www.youtube.com/@nihonkiingochannelforovers8076">
+                  @nihonkiingochannelforovers8076
+                </ArticleLink>
+              </ArticleTableCell>
+              <ArticleTableCell className="text-center">
+                English Native
+              </ArticleTableCell>
+              <ArticleTableCell>
+                Commentary
               </ArticleTableCell>
               <ArticleTableCell>9p</ArticleTableCell>
             </ArticleTableRow>
